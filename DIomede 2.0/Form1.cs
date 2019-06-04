@@ -29,27 +29,29 @@ namespace WindowsFormsApp2
                 Utente u = op.cercaUtente(textBox1.Text);
                 if (u != null)
                 {
-                    if(u.Password.Equals(textBox2.Text))
+                    if (u.Password.Equals(textBox2.Text))
                     {
-                        String path = Directory.GetCurrentDirectory();
-                        if (!Directory.Exists(path + "\\Login"))
+                        if (checkBox1.Checked)
                         {
-                            Directory.CreateDirectory(path + "\\Login");
-                            if (File.Exists(path + "\\Login\\user.txt"))
+                            String path = Directory.GetCurrentDirectory();
+                            if (!Directory.Exists(path + "\\Login"))
                             {
-                                File.Create(path + "\\Login\\user.txt");
+                                Directory.CreateDirectory(path + "\\Login");
+                                if (File.Exists(path + "\\Login\\user.txt"))
+                                {
+                                    File.Create(path + "\\Login\\user.txt");
 
+                                }
                             }
+                            StreamWriter sw = new StreamWriter(path + "\\Login\\user.txt");
+                            sw.WriteLine("user:" + textBox1.Text + "\npass:" + textBox2.Text);
+                            sw.Close();
                         }
-                        StreamWriter sw = new StreamWriter(path + "\\Login\\user.txt");
-                        sw.WriteLine("user:" + textBox1.Text + "\npass:" + textBox2.Text);
-                        sw.Close();
                         if (u.Ruolo == 1)
                         {
                             Form2 frm = new Form2();
                             frm.Show();
                             this.Hide();
-                            Application.Run(new Form2());
                         }
                     }
                     else
@@ -59,7 +61,7 @@ namespace WindowsFormsApp2
                 }
                 textBox2.Clear();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("Utente non trovato!");
             }
@@ -67,6 +69,7 @@ namespace WindowsFormsApp2
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            checkBox1.Checked = true;
             String path = Directory.GetCurrentDirectory();
             if (Directory.Exists(path + "\\Login"))
             {
@@ -95,6 +98,24 @@ namespace WindowsFormsApp2
                     }
                     sr.Close();
                 }
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Operazione op = new Operazione("Utenza");
+                Utente u = op.cercaUtente(textBox1.Text);
+                if (textBox2.Text != null)
+                {
+                    op.modificaDatiUtente(u.Id, u.Username, textBox2.Text);
+                    MessageBox.Show("Inserito con successo");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Impossibile registrare la password!");
             }
         }
     }

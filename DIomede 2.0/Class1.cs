@@ -83,6 +83,7 @@ namespace Database
                 while (lettore.Read())
                 {
                     Utente utente = new Utente();
+                    utente.Id = (Int32)lettore[0];
                     utente.Username = (String)lettore[1];
                     utente.Password = (String)lettore[2];
                     utente.Ruolo = (Int32)lettore[3];
@@ -104,7 +105,7 @@ namespace Database
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("UPDATE `UTENTI` SET `USERNAME`=" + u + ",`PASSWORD`=" + p + " WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command = new MySqlCommand("UPDATE `UTENTI` SET `USERNAME`='" + u + "',`PASSWORD`='" + p + "' WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -156,6 +157,7 @@ namespace Database
     }
     public class Utente
     {
+        private int id;
         private String username;
         private String password;
         private int ruolo;
@@ -163,6 +165,7 @@ namespace Database
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
         public int Ruolo { get => ruolo; set => ruolo = value; }
+        public int Id { get => id; set => id = value; }
     }
     public class Ruolo
     {
