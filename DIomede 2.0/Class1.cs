@@ -104,7 +104,6 @@ namespace Database
             try
             {
                 con.Open();
-                MySqlDataReader lettore = null;
                 MySqlCommand command = new MySqlCommand("UPDATE `UTENTI` SET `USERNAME`=" + u + ",`PASSWORD`=" + p + " WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
