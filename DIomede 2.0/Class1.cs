@@ -11,9 +11,9 @@ namespace Database
     {
 
         MySqlConnection conn = new MySqlConnection();
-        public Operazione()
+        public Operazione(String nomeDB)
         {
-            conn.ConnectionString = "User Id=; Host=192.168.1.135;Port = 3307;Database=Utenza;Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
+            conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database="+ nomeDB + ";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
         }
         public Utente cercaUtente(String u)
         {
@@ -77,7 +77,7 @@ namespace Database
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `UTENTI` WHERE `USERNAME` = '" + u + "'", con);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `UTENTI` WHERE `USERNAME` = '" + user + "'", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
