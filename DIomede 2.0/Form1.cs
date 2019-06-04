@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace WindowsFormsApp2
         public Form1()
         {
             InitializeComponent();
+        }
+
+        MySqlConnection conn = new MySqlConnection();
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            open();
+
+        }
+        public void open()
+        {
+            conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database=Utenza;Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
+            conn.Open();
         }
     }
 }

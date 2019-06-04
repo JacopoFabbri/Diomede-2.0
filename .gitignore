@@ -1,0 +1,15 @@
+﻿################################################################################
+# Il file gitignore è stato creato automaticamente da Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/VSWorkspaceState.json
+/.vs/slnx.sqlite
+/.vs/ProjectSettings.json
+/.vs/Diomede-2.0/v16/.suo
+/.vs/Diomede-2.0/v16
+/.vs
+/DIomede 2.0/.vs/Diomede 2.0/v16/Server/sqlite3/storage.ide-wal
+/DIomede 2.0/.vs/Diomede 2.0/v16/Server/sqlite3/storage.ide-shm
+/DIomede 2.0/.vs/Diomede 2.0/v16/Server/sqlite3/storage.ide
+/DIomede 2.0/.vs/Diomede 2.0/v16/Server/sqlite3/db.lock
+/DIomede 2.0/.vs/Diomede 2.0/v16/Server/sqlite3
