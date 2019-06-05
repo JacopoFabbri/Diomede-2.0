@@ -49,7 +49,7 @@ namespace Diomede2
                             sw.WriteLine("user:" + textBox1.Text + "\npass:" + textBox2.Text);
                             sw.Close();
                         }
-                        if (utente.Ruolo == 1 && utente.Ruolo == 4)
+                        if (utente.Ruolo == 1 || utente.Ruolo == 4)
                         {
                             listView1.Items.Add("Occupazione");
                             listView1.Items.Add("Ponteggi");
@@ -64,7 +64,7 @@ namespace Diomede2
                     }
                     else
                     {
-                        MessageBox.Show("Password errata riprovare!");
+                        MessageBox.Show("Password errata riprovare!","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Error);
                         textBox2.Clear();
                     }
                 }
@@ -119,12 +119,12 @@ namespace Diomede2
                 if (textBox2.Text != null)
                 {
                     op.modificaDatiUtente(utente.Id, utente.Username, textBox2.Text);
-                    MessageBox.Show("Inserito con successo");
+                    MessageBox.Show("Inserito con successo","Login:",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Impossibile registrare la password!");
+                MessageBox.Show("Impossibile registrare la password!","Attenzione:");
             }
         }
 

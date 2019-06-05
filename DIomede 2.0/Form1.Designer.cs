@@ -128,9 +128,9 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(3, 217);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(68, 17);
+            this.checkBox1.Size = new System.Drawing.Size(73, 17);
             this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "ricordami";
+            this.checkBox1.Text = "Ricordami";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -139,7 +139,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 43);
             this.button2.TabIndex = 5;
-            this.button2.Text = "modifica password";
+            this.button2.Text = "Modifica Password";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
@@ -196,7 +196,7 @@
             this.ClientSize = new System.Drawing.Size(599, 333);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
