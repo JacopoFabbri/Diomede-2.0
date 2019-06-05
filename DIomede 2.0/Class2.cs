@@ -208,7 +208,7 @@ namespace Diomede2
                     cliente.Pec = (String)lettore[5];
                     cliente.Email = (String)lettore[6];
                     cliente.Iva = (String)lettore[7];
-                    cliente.Iva = (String)lettore[8];
+                    cliente.Tel = (String)lettore[8];
                 }
             }
             catch (Exception ex)
