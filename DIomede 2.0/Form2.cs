@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp2
+namespace Diomede2
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        public Form2(String s, Utente u)
         {
             InitializeComponent();
         }

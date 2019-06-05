@@ -11,10 +11,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp2
+namespace Diomede2
 {
     public partial class Form1 : Form
     {
+        private Utente utente;
         public Form1()
         {
             InitializeComponent();
@@ -23,13 +24,14 @@ namespace WindowsFormsApp2
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            listView1.Clear();
             try
             {
                 Operazione op = new Operazione("Utenza");
-                Utente u = op.cercaUtente(textBox1.Text);
-                if (u != null)
+                utente = op.cercaUtente(textBox1.Text);
+                if (utente != null)
                 {
-                    if (u.Password.Equals(textBox2.Text))
+                    if (utente.Password.Equals(textBox2.Text))
                     {
                         if (checkBox1.Checked)
                         {
@@ -47,23 +49,34 @@ namespace WindowsFormsApp2
                             sw.WriteLine("user:" + textBox1.Text + "\npass:" + textBox2.Text);
                             sw.Close();
                         }
-                        if (u.Ruolo == 1)
+                        if (utente.Ruolo == 1)
                         {
-                            Form2 frm = new Form2();
-                            frm.Show();
-                            this.Hide();
+                            listView1.Items.Add("Occupazione");
+                            listView1.Items.Add("Ponteggi");
+                            listView1.Items.Add("Pratiche Edili");
+                            listView1.Items.Add("Carpenterie Metalliche");
+                        }else if(utente.Ruolo == 4)
+                        {
+                            listView1.Items.Add("Occupazione");
+                            listView1.Items.Add("Ponteggi");
+                            listView1.Items.Add("Pratiche Edili");
+                            listView1.Items.Add("Carpenterie Metalliche");
+                        }else if(utente.Ruolo == 3)
+                        {
+                            listView1.Items.Add("Ponteggi");
                         }
                     }
                     else
                     {
                         MessageBox.Show("Password errata riprovare!");
+                        textBox2.Clear();
                     }
                 }
-                textBox2.Clear();
             }
             catch (Exception)
             {
                 MessageBox.Show("Utente non trovato!");
+                textBox2.Clear();
             }
         }
 
@@ -106,10 +119,10 @@ namespace WindowsFormsApp2
             try
             {
                 Operazione op = new Operazione("Utenza");
-                Utente u = op.cercaUtente(textBox1.Text);
+                utente = op.cercaUtente(textBox1.Text);
                 if (textBox2.Text != null)
                 {
-                    op.modificaDatiUtente(u.Id, u.Username, textBox2.Text);
+                    op.modificaDatiUtente(utente.Id, utente.Username, textBox2.Text);
                     MessageBox.Show("Inserito con successo");
                 }
             }
@@ -117,6 +130,11 @@ namespace WindowsFormsApp2
             {
                 MessageBox.Show("Impossibile registrare la password!");
             }
+        }
+
+        private void ListView1_Click(object sender, EventArgs e)
+        {
+            Form2 frm = new Form2(listView1.SelectedItems[0].Text, utente);
         }
     }
 }
