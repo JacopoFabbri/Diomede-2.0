@@ -28,7 +28,7 @@ namespace Diomede2
         }
         public List<Cliente> cercaClienti()
         {
-            List<Cliente> lista = null;
+            List<Cliente> lista = new List<Cliente>();
             try
             {
                 ClienteDB cDB = new ClienteDB(conn);
@@ -42,7 +42,7 @@ namespace Diomede2
         }
         public List<Cliente> cercaClientiNome(String n)
         {
-            List<Cliente> lista = null;
+            List<Cliente> lista = new List<Cliente>();
             try
             {
                 ClienteDB cDB = new ClienteDB(conn);
@@ -85,7 +85,7 @@ namespace Diomede2
             try
             {
                 ClienteDB cDB = new ClienteDB(conn);
-                cDB.rimuoviUtente(id);
+                cDB.rimuoviCliente(id);
             }
             catch (Exception e)
             {
@@ -105,7 +105,7 @@ namespace Diomede2
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `ANAGRAFICACLIENTI`(`NOME`, `INDIRIZZO`, `CAP`, `CITTA`, `PEC`, `EMAIL`, `PARTITAIVA`, `TELEFONOFISSO`) VALUES('" + nome + "','" + indirizzo + "','" + cap + "','" + citta + "','" + pec + "','" + email + "','" + partitaIva + "','" + telefono + "'", con);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `ANAGRAFICACLIENTI`(`NOME`, `INDIRIZZO`, `CAP`, `CITTA`, `PEC`, `EMAIL`, `PARTITAIVA`, `TELEFONOFISSO`) VALUES('" + nome + "','" + indirizzo + "','" + cap + "','" + citta + "','" + pec + "','" + email + "','" + partitaIva + "','" + telefono + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -119,7 +119,7 @@ namespace Diomede2
         }
         public List<Cliente> listaClienti()
         {
-            List<Cliente> lista = null;
+            List<Cliente> lista = new List<Cliente>();
             try
             {
                 con.Open();
@@ -138,7 +138,7 @@ namespace Diomede2
                     cliente.Pec = (String)lettore[5];
                     cliente.Email = (String)lettore[6];
                     cliente.Iva = (String)lettore[7];
-                    cliente.Iva = (String)lettore[8];
+                    cliente.Tel = (String)lettore[8];
                     lista.Add(cliente);
                 }
             }
@@ -154,7 +154,7 @@ namespace Diomede2
         }
         public List<Cliente> listaClienti(String n)
         {
-            List<Cliente> lista = null;
+            List<Cliente> lista = new List<Cliente>();
             try
             {
                 con.Open();
@@ -173,7 +173,7 @@ namespace Diomede2
                     cliente.Pec = (String)lettore[5];
                     cliente.Email = (String)lettore[6];
                     cliente.Iva = (String)lettore[7];
-                    cliente.Iva = (String)lettore[8];
+                    cliente.Tel = (String)lettore[8];
                     lista.Add(cliente);
                 }
             }
@@ -208,7 +208,7 @@ namespace Diomede2
                     cliente.Pec = (String)lettore[5];
                     cliente.Email = (String)lettore[6];
                     cliente.Iva = (String)lettore[7];
-                    cliente.Iva = (String)lettore[8];
+                    cliente.Tel = (String)lettore[8];
                 }
             }
             catch (Exception ex)
@@ -226,7 +226,7 @@ namespace Diomede2
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("UPDATE `ANAGRAFICACLIENTI` SET `NOME`='" + nome + "',`INDIRIZZO`='" + indirizzo + "',`CAP`='" + cap + "',`CITTA`='" + citta + "',`PEC`='" + pec + "',`EMAIL`='" + email + "' WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command = new MySqlCommand("UPDATE `ANAGRAFICACLIENTI` SET `NOME`='" + nome + "',`INDIRIZZO`='" + indirizzo + "',`CAP`='" + cap + "',`CITTA`='" + citta + "',`PEC`='" + pec + "',`EMAIL`='" + email + "',`PARTITAIVA`='" + partitaIva + "',`TELEFONO`='" + telefono + "' WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -238,7 +238,7 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public void rimuoviUtente(int id)
+        public void rimuoviCliente(int id)
         {
             try
             {

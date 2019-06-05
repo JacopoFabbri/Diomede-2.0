@@ -26,5 +26,11 @@ namespace Diomede2
         {
 
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Form3 frm = new Form3(settore);
+            frm.Show();
+        }
     }
 }
