@@ -147,7 +147,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::WindowsFormsApp2.Properties.Resources.LOGO_DEFINITIVO;
+            this.pictureBox1.Image = global::Diomede2.Properties.Resources.LOGO_DEFINITIVO;
             this.pictureBox1.Location = new System.Drawing.Point(565, 294);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);

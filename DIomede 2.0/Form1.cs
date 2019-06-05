@@ -68,10 +68,14 @@ namespace Diomede2
                         textBox2.Clear();
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Utente non trovato!");
+                }
             }
             catch (Exception)
             {
-                MessageBox.Show("Utente non trovato!");
+                MessageBox.Show("Errore non specificato riprovare!");
                 textBox2.Clear();
             }
         }
