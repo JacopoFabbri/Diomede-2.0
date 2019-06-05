@@ -22,9 +22,17 @@ namespace Diomede2
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            op = new OperazionePraticheEdili(db);
-            dataGridView1.DataSource = op.cercaClienti();
+            try
+            {
+                op = new OperazionePraticheEdili(db);
+                dataGridView1.DataSource = op.cercaClienti();
+                dataGridView1.Columns[0].Visible = false;
 
+            }
+            catch
+            {
+                MessageBox.Show("Impossibile accedere a quest'area !!!");
+            }
         }
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
