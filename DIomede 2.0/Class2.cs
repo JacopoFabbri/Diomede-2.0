@@ -138,7 +138,7 @@ namespace Diomede2
                     cliente.Pec = (String)lettore[5];
                     cliente.Email = (String)lettore[6];
                     cliente.Iva = (String)lettore[7];
-                    cliente.Iva = (String)lettore[8];
+                    cliente.Tel = (String)lettore[8];
                     lista.Add(cliente);
                 }
             }
@@ -173,7 +173,7 @@ namespace Diomede2
                     cliente.Pec = (String)lettore[5];
                     cliente.Email = (String)lettore[6];
                     cliente.Iva = (String)lettore[7];
-                    cliente.Iva = (String)lettore[8];
+                    cliente.Tel = (String)lettore[8];
                     lista.Add(cliente);
                 }
             }
@@ -226,7 +226,7 @@ namespace Diomede2
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("UPDATE `ANAGRAFICACLIENTI` SET `NOME`='" + nome + "',`INDIRIZZO`='" + indirizzo + "',`CAP`='" + cap + "',`CITTA`='" + citta + "',`PEC`='" + pec + "',`EMAIL`='" + email + "' WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command = new MySqlCommand("UPDATE `ANAGRAFICACLIENTI` SET `NOME`='" + nome + "',`INDIRIZZO`='" + indirizzo + "',`CAP`='" + cap + "',`CITTA`='" + citta + "',`PEC`='" + pec + "',`EMAIL`='" + email + "',`PARTITAIVA`='" + partitaIva + "',`TELEFONO`='" + telefono + "' WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)

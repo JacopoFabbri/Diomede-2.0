@@ -21,7 +21,8 @@ namespace Diomede2
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            
+            Form4 frm = new Form4(db);
+            frm.Show();
         }
 
         private void Button1_Click(object sender, EventArgs e)
