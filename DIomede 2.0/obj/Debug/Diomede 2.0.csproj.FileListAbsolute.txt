@@ -32,3 +32,4 @@ C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\bin\Debug\Diomede2.exe
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\bin\Debug\Diomede2.pdb
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.exe
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.pdb
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Form3.resources
