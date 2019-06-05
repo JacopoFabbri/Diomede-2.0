@@ -462,10 +462,10 @@ namespace Diomede2
         private String pec;
         private String email;
         private String iva;
-        private String ditta;
+        private Int32 ditta;
         private String cellulare;
         private String telefono;
-        private String ruolo;
+        private Int32 ruolo;
 
         public int Id { get => id; set => id = value; }
         public string Nome { get => nome; set => nome = value; }
@@ -475,10 +475,10 @@ namespace Diomede2
         public string Pec { get => pec; set => pec = value; }
         public string Email { get => email; set => email = value; }
         public string Iva { get => iva; set => iva = value; }
-        public string Ditta { get => ditta; set => ditta = value; }
+        public Int32 Ditta { get => ditta; set => ditta = value; }
         public string Cellulare { get => cellulare; set => cellulare = value; }
         public string Tel { get => telefono; set => telefono = value; }
-        public string Ruolo { get => ruolo; set => ruolo = value; }
+        public Int32 Ruolo { get => ruolo; set => ruolo = value; }
         public string Telefono { get; internal set; }
     }
 }
