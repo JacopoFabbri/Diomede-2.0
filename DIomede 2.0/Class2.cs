@@ -28,7 +28,7 @@ namespace Diomede2
         }
         public List<Cliente> cercaClienti()
         {
-            List<Cliente> lista = null;
+            List<Cliente> lista = new List<Cliente>();
             try
             {
                 ClienteDB cDB = new ClienteDB(conn);
@@ -42,7 +42,7 @@ namespace Diomede2
         }
         public List<Cliente> cercaClientiNome(String n)
         {
-            List<Cliente> lista = null;
+            List<Cliente> lista = new List<Cliente>();
             try
             {
                 ClienteDB cDB = new ClienteDB(conn);
@@ -119,7 +119,7 @@ namespace Diomede2
         }
         public List<Cliente> listaClienti()
         {
-            List<Cliente> lista = null;
+            List<Cliente> lista = new List<Cliente>();
             try
             {
                 con.Open();
@@ -154,7 +154,7 @@ namespace Diomede2
         }
         public List<Cliente> listaClienti(String n)
         {
-            List<Cliente> lista = null;
+            List<Cliente> lista = new List<Cliente>();
             try
             {
                 con.Open();
