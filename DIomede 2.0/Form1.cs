@@ -65,6 +65,7 @@ namespace Diomede2
                         {
                             listView1.Items.Add("Ponteggi");
                         }
+                        button2.Visible = true;
                     }
                     else
                     {
@@ -119,7 +120,7 @@ namespace Diomede2
             try
             {
                 Operazione op = new Operazione("Utenza");
-                utente = op.cercaUtente(textBox1.Text);
+                utente = op.cercaUtente(utente.Username);
                 if (textBox2.Text != null)
                 {
                     op.modificaDatiUtente(utente.Id, utente.Username, textBox2.Text);
