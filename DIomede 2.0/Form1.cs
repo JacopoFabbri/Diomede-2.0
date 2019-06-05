@@ -49,18 +49,13 @@ namespace Diomede2
                             sw.WriteLine("user:" + textBox1.Text + "\npass:" + textBox2.Text);
                             sw.Close();
                         }
-                        if (utente.Ruolo == 1)
+                        if (utente.Ruolo == 1 && utente.Ruolo == 4)
                         {
                             listView1.Items.Add("Occupazione");
                             listView1.Items.Add("Ponteggi");
-                            listView1.Items.Add("Pratiche Edili");
-                            listView1.Items.Add("Carpenterie Metalliche");
-                        }else if(utente.Ruolo == 4)
-                        {
-                            listView1.Items.Add("Occupazione");
-                            listView1.Items.Add("Ponteggi");
-                            listView1.Items.Add("Pratiche Edili");
-                            listView1.Items.Add("Carpenterie Metalliche");
+                            listView1.Items.Add("PraticheEdili");
+                            listView1.Items.Add("CarpenterieMetalliche");
+                        
                         }else if(utente.Ruolo == 3)
                         {
                             listView1.Items.Add("Ponteggi");
@@ -136,6 +131,7 @@ namespace Diomede2
         private void ListView1_Click(object sender, EventArgs e)
         {
             Form2 frm = new Form2(listView1.SelectedItems[0].Text, utente);
+            frm.Show();
         }
     }
 }
