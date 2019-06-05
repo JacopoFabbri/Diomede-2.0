@@ -10,7 +10,7 @@ namespace Database
     class Operazione
     {
 
-        MySqlConnection conn = new MySqlConnection();
+        public MySqlConnection conn = new MySqlConnection();
         public Operazione(String nomeDB)
         {
             conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database="+ nomeDB + ";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";

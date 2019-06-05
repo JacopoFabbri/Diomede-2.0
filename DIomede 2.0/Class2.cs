@@ -7,7 +7,92 @@ using System.Threading.Tasks;
 
 namespace Diomede2
 {
-
+    class OperazionePraticheEdili
+    {
+        public MySqlConnection conn = new MySqlConnection();
+        public OperazionePraticheEdili(String nomeDB)
+        {
+            conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database=" + nomeDB + ";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
+        }
+        public void inserimentoCliente(String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
+        {
+            try
+            {
+                ClienteDB cDB = new ClienteDB(conn);
+                cDB.inserimento(nome, indirizzo, cap, citta, pec, email, partitaIva, telefono);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public List<Cliente> cercaClienti()
+        {
+            List<Cliente> lista = null;
+            try
+            {
+                ClienteDB cDB = new ClienteDB(conn);
+                lista = cDB.listaClienti();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public List<Cliente> cercaClientiNome(String n)
+        {
+            List<Cliente> lista = null;
+            try
+            {
+                ClienteDB cDB = new ClienteDB(conn);
+                lista = cDB.listaClienti(n);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public Cliente cercaClientiId(int id)
+        {
+            Cliente cliente = null;
+            try
+            {
+                ClienteDB cDB = new ClienteDB(conn);
+                cliente = cDB.cercaCliente(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return cliente;
+        }
+        public void upgradeUtente(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
+        {
+            try
+            {
+                ClienteDB cDB = new ClienteDB(conn);
+                cDB.aggiornaUtente(id, nome, indirizzo, cap, citta, pec, email, partitaIva, telefono);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void cancellaUtente(int id)
+        {
+            try
+            {
+                ClienteDB cDB = new ClienteDB(conn);
+                cDB.rimuoviUtente(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+    }
     public class ClienteDB
     {
         MySqlConnection con = null;
@@ -74,7 +159,7 @@ namespace Diomede2
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `ANAGRAFICACLIENTI` WHERE `NOME` = '" + n +"'", con);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `ANAGRAFICACLIENTI` WHERE `NOME` = '" + n + "'", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
