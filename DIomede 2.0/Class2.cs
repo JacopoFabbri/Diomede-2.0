@@ -85,7 +85,7 @@ namespace Diomede2
             try
             {
                 ClienteDB cDB = new ClienteDB(conn);
-                cDB.rimuoviUtente(id);
+                cDB.rimuoviCliente(id);
             }
             catch (Exception e)
             {
@@ -238,7 +238,7 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public void rimuoviUtente(int id)
+        public void rimuoviCliente(int id)
         {
             try
             {
