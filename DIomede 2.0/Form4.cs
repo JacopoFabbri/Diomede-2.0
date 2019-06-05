@@ -32,6 +32,7 @@ namespace Diomede2
             catch
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
+                Application.Exit();
             }
         }
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -65,11 +66,19 @@ namespace Diomede2
                         op.cancellaUtente((int)dataGridView1.Rows[e.Row.Index].Cells[0].Value);
                         MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    catch (Exception ex)
+                    catch
                     {
                         MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+        }
+
+        private void Form4_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Control)
+            {
+                
             }
         }
     }
