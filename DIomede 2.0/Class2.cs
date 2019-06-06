@@ -344,9 +344,9 @@ namespace Diomede2
             }
             return contatto;
         }
-        public Bozza filtraBozza(String s, String g)
+        public List<Bozza> filtraBozza(String s, String g)
         {
-            Bozza contatto = null;
+            List<Bozza> contatto = null;
             try
             {
                 BozzaDB bDB = new BozzaDB(conn);
