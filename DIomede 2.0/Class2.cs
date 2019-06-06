@@ -875,8 +875,193 @@ namespace Diomede2
         }
 
     }
-    public class Cliente
+    public class BozzaDB
     {
+        MySqlConnection con = null;
+
+        public BozzaDB(MySqlConnection conn)
+        {
+            con = conn;
+        }
+        public void inserimento(String data, String pacchetto, String importo, String numerocommessa)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("INSERT INTO `BOZZA`(`DATA`, `PACCHETTO`,`IMPORTO`,`NUMEROCOMMESSA`) VALUES('" + data + "','" + pacchetto + "','" + importo + "','" + numerocommessa + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<Bozza> listaBozza()
+        {
+            List<Bozza> lista = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `BOZZA`", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Bozza bozza = new Bozza();
+                    bozza.Id = (Int32)lettore[0];
+                    bozza.Data = (DateTime)lettore[1];
+                    bozza.Pacchetto = (Int32)lettore[2];
+                    bozza.Importo = (Double)lettore[3];
+                    bozza.NumeroCommessa = (String)lettore[4];
+                    lista.Add(bozza);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public List<Bozza> listaBozza(String n)
+        {
+            List<Bozza> lista = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `BOZZA` WHERE `ID` = '" + n + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Bozza bozza = new Bozza();
+                    bozza.Id = (Int32)lettore[0];
+                    bozza.Data = (DateTime)lettore[1];
+                    bozza.Pacchetto = (Int32)lettore[2];
+                    bozza.Importo = (Double)lettore[3];
+                    bozza.NumeroCommessa = (String)lettore[4];
+                    lista.Add(bozza);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public Bozza cercaBozza(int id)
+        {
+            Bozza bozza = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `BOZZA` WHERE `ID` = '" + id + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Bozza b = new Bozza();
+                    bozza.Id = (Int32)lettore[0];
+                    bozza.Data = (DateTime)lettore[1];
+                    bozza.Pacchetto = (Int32)lettore[2];
+                    bozza.Importo = (Double)lettore[3];
+                    bozza.NumeroCommessa = (String)lettore[4];
+                    bozza = b;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return bozza;
+        }
+        public Bozza filtroBozza(String s, String g)
+        {
+            Bozza bozza = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `BOZZA` WHERE `" + s + "` = '" + g + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Bozza b = new Bozza();
+                    bozza.Id = (Int32)lettore[0];
+                    bozza.Data = (DateTime)lettore[1];
+                    bozza.Pacchetto = (Int32)lettore[2];
+                    bozza.Importo = (Double)lettore[3];
+                    bozza.NumeroCommessa = (String)lettore[4];
+                    bozza = b;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return bozza;
+        }
+        public void aggiornaRuoli(int id, String data, String pacchetto, String importo, String numerocommessa)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("UPDATE `BOZZA` SET `DATA`='" + data + "',`PACCHETTO`='" + pacchetto + "',`IMPORTO`='" + importo + "',`NUMEROCOMMESSA`='" + numerocommessa + "' WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void rimuoviBozza(int id)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("DELETE FROM `BOZZA` WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+    }
+    public class Cliente
+        {
         private int id;
         private String nome;
         private String indirizzo;
@@ -935,6 +1120,20 @@ namespace Diomede2
         public int Id { get => id; set => id = value; }
         public string Nome { get => nome; set => nome = value; }
         public string Desc { get => desc; set => desc = value; }
+    }
+    public class Bozza
+    {
+        private int id;
+        private DataTime data;
+        private int pacchetto;
+        private Double importo;
+        private String numerocommessa;
+
+        public int Id { get => id; set => id = value; }
+        public DataTime Data { get => data; set => data = value; }
+        public int Pacchetto { get => pacchetto; set => pacchetto = value; }
+        public Double Importo { get => importo; set => importo = value; }
+        public String NumeroCommessa { get => numerocommessa; set => numerocommessa = value; }
     }
 }
 
