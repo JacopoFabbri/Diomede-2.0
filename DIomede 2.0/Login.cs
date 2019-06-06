@@ -140,5 +140,9 @@ namespace Diomede2
 
         }
 
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
