@@ -13,20 +13,12 @@ namespace Diomede2
     public partial class Form3 : Form
     {
         String db;
-        Form2 formPrecendente;
-        public Form3(String dbName, Form2 frm)
+        public Form3(String dbName)
         {
-            formPrecendente = frm;
             db = dbName;
             InitializeComponent();
         }
 
-        private void Form3_Load(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form4 frm1 = new Form4(db, this);
-            frm1.Show();
-        }
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -41,9 +33,5 @@ namespace Diomede2
             }
         }
 
-        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            formPrecendente.Show();
-        }
     }
 }

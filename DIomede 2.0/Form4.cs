@@ -14,8 +14,8 @@ namespace Diomede2
     {
         String db;
         OperazionePraticheEdili op;
-        Form3 formPrecente;
-        public Form4(String dbName, Form3 frm)
+        Form2 formPrecente;
+        public Form4(String dbName, Form2 frm)
         {
             formPrecente = frm;
             db = dbName;
@@ -36,6 +36,7 @@ namespace Diomede2
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();
             }
+            formPrecente.Hide();
             dataGridView1.Focus();
         }
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -94,7 +95,20 @@ namespace Diomede2
 
         private void Form4_FormClosed(object sender, FormClosedEventArgs e)
         {
-            formPrecente.Show();
+            try
+            {
+                formPrecente.Show();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Form3 frm = new Form3(db);
+            frm.Show();
         }
     }
 }

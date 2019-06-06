@@ -40,7 +40,7 @@ namespace Diomede2
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Form3 frm = new Form3(settore, this);
+            Form4 frm = new Form4(settore, this);
             frm.Show();
             this.Hide();
         }
