@@ -1124,13 +1124,13 @@ namespace Diomede2
     public class Bozza
     {
         private int id;
-        private DataTime data;
+        private DateTime data;
         private int pacchetto;
         private Double importo;
         private String numerocommessa;
 
         public int Id { get => id; set => id = value; }
-        public DataTime Data { get => data; set => data = value; }
+        public DateTime Data { get => data; set => data = value; }
         public int Pacchetto { get => pacchetto; set => pacchetto = value; }
         public Double Importo { get => importo; set => importo = value; }
         public String NumeroCommessa { get => numerocommessa; set => numerocommessa = value; }
