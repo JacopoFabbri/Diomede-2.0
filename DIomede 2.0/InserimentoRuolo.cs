@@ -12,7 +12,7 @@ namespace Diomede2
 {
     public partial class InserimentoRuolo : Form
     {
-        String db;
+        readonly String db;
         public InserimentoRuolo(String dbName)
         {
             db = dbName;
@@ -29,7 +29,7 @@ namespace Diomede2
             try
             {
                 OperazionePraticheEdili op = new OperazionePraticheEdili(db);
-                op.inserimentoRuolo(textBox1.Text, textBox2.Text);
+                op.InserimentoRuolo(textBox1.Text, textBox2.Text);
             }
             catch (Exception)
             {

@@ -12,9 +12,9 @@ namespace Diomede2
 {
     public partial class ListaClienti : Form
     {
-        String db;
+        readonly String db;
         OperazionePraticheEdili op;
-        Dashboard formPrecente;
+        readonly Dashboard formPrecente;
         public ListaClienti(String dbName, Dashboard frm)
         {
             formPrecente = frm;
@@ -27,7 +27,7 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
-                dataGridView1.DataSource = op.cercaClienti();
+                dataGridView1.DataSource = op.CercaClienti();
                 dataGridView1.Columns[0].Visible = false;
 
             }
@@ -58,7 +58,7 @@ namespace Diomede2
                     {
                         try
                         {
-                            op.updateCliente((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["INDIRIZZO"].Value + "", riga.Cells["CAP"].Value + "", riga.Cells["CITTA"].Value + "", riga.Cells["PEC"].Value + "", riga.Cells["EMAIL"].Value + "", riga.Cells["Iva"].Value + "", riga.Cells["Tel"].Value + "");
+                            op.UpdateCliente((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["INDIRIZZO"].Value + "", riga.Cells["CAP"].Value + "", riga.Cells["CITTA"].Value + "", riga.Cells["PEC"].Value + "", riga.Cells["EMAIL"].Value + "", riga.Cells["Iva"].Value + "", riga.Cells["Tel"].Value + "");
                         }
                         catch
                         {
@@ -68,7 +68,7 @@ namespace Diomede2
                     }
                 }
             }
-            dataGridView1.DataSource = op.cercaClienti();
+            dataGridView1.DataSource = op.CercaClienti();
             dataGridView1.Columns[0].Visible = false;
 
         }
@@ -99,8 +99,8 @@ namespace Diomede2
                 {
                     try
                     {
-                        Cliente clienti = op.cercaClientiId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
-                        op.cancellaCliente((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        Cliente clienti = op.CercaClientiId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        op.CancellaCliente((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
                         MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch
@@ -109,14 +109,14 @@ namespace Diomede2
                     }
                 }
             }
-            dataGridView1.DataSource = op.cercaClienti();
+            dataGridView1.DataSource = op.CercaClienti();
             dataGridView1.Columns[0].Visible = false;
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
 
-            dataGridView1.DataSource = op.cercaClienti();
+            dataGridView1.DataSource = op.CercaClienti();
             dataGridView1.Columns[0].Visible = false;
         }
 

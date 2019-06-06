@@ -12,8 +12,8 @@ namespace Diomede2
 {
     public partial class InserimentoContratto : Form
     {
-        String db;
-        Cliente cliente;
+        readonly String db;
+        readonly Cliente cliente;
         List<Ruolo> lista;
         public InserimentoContratto(Cliente c, String dbName)
         {
@@ -28,7 +28,7 @@ namespace Diomede2
             Ruoli frm = new Ruoli(db);
             frm.Show();
             OperazionePraticheEdili op = new OperazionePraticheEdili(db);
-            lista = op.cercaRuolo();
+            lista = op.CercaRuolo();
             if (lista != null)
             {
                 foreach (Ruolo r in lista)
@@ -49,7 +49,7 @@ namespace Diomede2
                 OperazionePraticheEdili op = new OperazionePraticheEdili(db);
                 if (!comboBox1.Text.Equals("Ruolo"))
                 {
-                    op.inserimentoContatto(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, textBox8.Text, textBox9.Text, textBox10.Text,"" + lista[comboBox1.SelectedIndex].Id);
+                    op.InserimentoContatto(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, textBox8.Text, textBox9.Text, textBox10.Text,"" + lista[comboBox1.SelectedIndex].Id);
                     MessageBox.Show("Operazione effettuata");
                     this.Close();
 

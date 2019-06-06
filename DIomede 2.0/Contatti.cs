@@ -12,10 +12,10 @@ namespace Diomede2
 {
     public partial class Contatti : Form
     {
-        Cliente cliente;
-        String db;
+        readonly Cliente cliente;
+        readonly String db;
         OperazionePraticheEdili op;
-        Dashboard formPrecente;
+        readonly Dashboard formPrecente;
         public Contatti(Cliente c, String dbName, Dashboard frm)
         {
             formPrecente = frm;
@@ -31,7 +31,7 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
-                List<Contatto> lista = op.filtraContratto("DITTA", "" + cliente.Id);
+                List<Contatto> lista = op.FiltraContratto("DITTA", "" + cliente.Id);
                 if (lista != null)
                 {
                     dataGridView1.DataSource = lista;
@@ -67,8 +67,8 @@ namespace Diomede2
                 {
                     try
                     {
-                        Contatto clienti = op.cercaContattoId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
-                        op.cacellaContatto((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        Contatto clienti = op.CercaContattoId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        op.CacellaContatto((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
                         MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch
@@ -98,7 +98,7 @@ namespace Diomede2
                     {
                         try
                         {
-                            op.updateContatto((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["INDIRIZZO"].Value + "", riga.Cells["CAP"].Value + "", riga.Cells["CITTA"].Value + "", riga.Cells["PEC"].Value + "", riga.Cells["EMAIL"].Value + "", riga.Cells["Iva"].Value + "", (int)riga.Cells["DITTA"].Value, riga.Cells["CELLULARE"].Value + "", riga.Cells["TEL"].Value + "", riga.Cells["RUOLO"].Value + "");
+                            op.UpdateContatto((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["INDIRIZZO"].Value + "", riga.Cells["CAP"].Value + "", riga.Cells["CITTA"].Value + "", riga.Cells["PEC"].Value + "", riga.Cells["EMAIL"].Value + "", riga.Cells["Iva"].Value + "", (int)riga.Cells["DITTA"].Value, riga.Cells["CELLULARE"].Value + "", riga.Cells["TEL"].Value + "", riga.Cells["RUOLO"].Value + "");
                         }
                         catch
                         {
@@ -108,7 +108,7 @@ namespace Diomede2
                     }
                 }
             }
-            dataGridView1.DataSource = op.filtraContratto("DITTA", "" + cliente.Id);
+            dataGridView1.DataSource = op.FiltraContratto("DITTA", "" + cliente.Id);
             dataGridView1.Columns[0].Visible = false;
 
         }

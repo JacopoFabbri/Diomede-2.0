@@ -12,7 +12,7 @@ namespace Diomede2
 {
     public partial class InserimentoCliente : Form
     {
-        String db;
+        readonly String db;
         public InserimentoCliente(String dbName)
         {
             db = dbName;
@@ -25,7 +25,7 @@ namespace Diomede2
             try
             {
                 OperazionePraticheEdili op = new OperazionePraticheEdili(db);
-                op.inserimentoCliente(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, textBox8.Text);
+                op.InserimentoCliente(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, textBox8.Text);
                 MessageBox.Show("Operazione effettuata");
                 this.Close();
             }

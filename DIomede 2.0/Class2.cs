@@ -14,39 +14,25 @@ namespace Diomede2
         {
             conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database=" + nomeDB + ";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
         }
-        public void inserimentoCliente(String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
+        public void InserimentoCliente(String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
         {
             try
             {
                 ClienteDB cDB = new ClienteDB(conn);
-                cDB.inserimento(nome, indirizzo, cap, citta, pec, email, partitaIva, telefono);
+                cDB.Inserimento(nome, indirizzo, cap, citta, pec, email, partitaIva, telefono);
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
         }
-        public List<Cliente> cercaClienti()
+        public List<Cliente> CercaClienti()
         {
-            List<Cliente> lista = new List<Cliente>();
+            List<Cliente> lista;
             try
             {
                 ClienteDB cDB = new ClienteDB(conn);
-                lista = cDB.listaClienti();
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.ToString());
-            }
-            return lista;
-        }
-        public List<Cliente> cercaClientiNome(String n)
-        {
-            List<Cliente> lista = new List<Cliente>();
-            try
-            {
-                ClienteDB cDB = new ClienteDB(conn);
-                lista = cDB.listaClienti(n);
+                lista = cDB.ListaClienti();
             }
             catch (Exception e)
             {
@@ -54,13 +40,27 @@ namespace Diomede2
             }
             return lista;
         }
-        public Cliente cercaClientiId(int id)
+        public List<Cliente> CercaClientiNome(String n)
         {
-            Cliente cliente = null;
+            List<Cliente> lista;
             try
             {
                 ClienteDB cDB = new ClienteDB(conn);
-                cliente = cDB.cercaCliente(id);
+                lista = cDB.ListaClienti(n);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public Cliente CercaClientiId(int id)
+        {
+            Cliente cliente;
+            try
+            {
+                ClienteDB cDB = new ClienteDB(conn);
+                cliente = cDB.CercaCliente(id);
             }
             catch (Exception e)
             {
@@ -68,13 +68,13 @@ namespace Diomede2
             }
             return cliente;
         }
-        public List<Cliente> filtraClienti(String s, String g)
+        public List<Cliente> FiltraClienti(String s, String g)
         {
-            List<Cliente> cliente = null;
+            List<Cliente> cliente;
             try
             {
                 ClienteDB cDB = new ClienteDB(conn);
-                cliente = cDB.filtroCliente(s, g);
+                cliente = cDB.FiltroCliente(s, g);
             }
             catch (Exception e)
             {
@@ -82,49 +82,49 @@ namespace Diomede2
             }
             return cliente;
         }
-        public void updateCliente(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
+        public void UpdateCliente(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
         {
             try
             {
                 ClienteDB cDB = new ClienteDB(conn);
-                cDB.aggiornaCliente(id, nome, indirizzo, cap, citta, pec, email, partitaIva, telefono);
+                cDB.AggiornaCliente(id, nome, indirizzo, cap, citta, pec, email, partitaIva, telefono);
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
         }
-        public void cancellaCliente(int id)
+        public void CancellaCliente(int id)
         {
             try
             {
                 ClienteDB cDB = new ClienteDB(conn);
-                cDB.rimuoviCliente(id);
+                cDB.RimuoviCliente(id);
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
         }
-        public void inserimentoContatto(String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String ditta, String cellulare, String telefono, String ruolo)
+        public void InserimentoContatto(String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String ditta, String cellulare, String telefono, String ruolo)
         {
             try
             {
                 ContattoDB cDB = new ContattoDB(conn);
-                cDB.inserimento(nome, indirizzo, cap, citta, pec, email, partitaIva, ditta, cellulare, telefono, ruolo);
+                cDB.Inserimento(nome, indirizzo, cap, citta, pec, email, partitaIva, ditta, cellulare, telefono, ruolo);
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
         }
-        public List<Contatto> cercaContratti()
+        public List<Contatto> CercaContratti()
         {
-            List<Contatto> lista = new List<Contatto>();
+            List<Contatto> lista;
             try
             {
                 ContattoDB cDB = new ContattoDB(conn);
-                lista = cDB.listaContatti();
+                lista = cDB.ListaContatti();
             }
             catch (Exception e)
             {
@@ -132,13 +132,13 @@ namespace Diomede2
             }
             return lista;
         }
-        public List<Contatto> cercaContattoNome(String n)
+        public List<Contatto> CercaContattoNome(String n)
         {
-            List<Contatto> lista = new List<Contatto>();
+            List<Contatto> lista;
             try
             {
                 ContattoDB cDB = new ContattoDB(conn);
-                lista = cDB.listaClienti(n);
+                lista = cDB.ListaClienti(n);
             }
             catch (Exception e)
             {
@@ -146,13 +146,13 @@ namespace Diomede2
             }
             return lista;
         }
-        public Contatto cercaContattoId(int id)
+        public Contatto CercaContattoId(int id)
         {
-            Contatto contatto = null;
+            Contatto contatto;
             try
             {
                 ContattoDB cDB = new ContattoDB(conn);
-                contatto = cDB.cercaContatto(id);
+                contatto = cDB.CercaContatto(id);
             }
             catch (Exception e)
             {
@@ -160,13 +160,13 @@ namespace Diomede2
             }
             return contatto;
         }
-        public List<Contatto> filtraContratto(String s, String g)
+        public List<Contatto> FiltraContratto(String s, String g)
         {
-            List<Contatto> contattos = null;
+            List<Contatto> contattos;
             try
             {
                 ContattoDB cDB = new ContattoDB(conn);
-                contattos = cDB.filtroContatto(s, g);
+                contattos = cDB.FiltroContatto(s, g);
             }
             catch (Exception e)
             {
@@ -174,49 +174,49 @@ namespace Diomede2
             }
             return contattos;
         }
-        public void updateContatto(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, int ditta, String cellulare, string telefono, string ruolo)
+        public void UpdateContatto(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, int ditta, String cellulare, string telefono, string ruolo)
         {
             try
             {
                 ContattoDB cDB = new ContattoDB(conn);
-                cDB.aggiornaContatto(id, nome, indirizzo, cap, citta, pec, email, partitaIva, ditta, cellulare, telefono, ruolo);
+                cDB.AggiornaContatto(id, nome, indirizzo, cap, citta, pec, email, partitaIva, ditta, cellulare, telefono, ruolo);
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
         }
-        public void cacellaContatto(int id)
+        public void CacellaContatto(int id)
         {
             try
             {
                 ContattoDB cDB = new ContattoDB(conn);
-                cDB.rimuoviContatto(id);
+                cDB.RimuoviContatto(id);
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
         }
-        public void inserimentoRuolo(String nome, String desc)
+        public void InserimentoRuolo(String nome, String desc)
         {
             try
             {
                 RuoloDB cDB = new RuoloDB(conn);
-                cDB.inserimento(nome, desc);
+                cDB.Inserimento(nome, desc);
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
         }
-        public List<Ruolo> cercaRuolo()
+        public List<Ruolo> CercaRuolo()
         {
-            List<Ruolo> lista = new List<Ruolo>();
+            List<Ruolo> lista;
             try
             {
                 RuoloDB cDB = new RuoloDB(conn);
-                lista = cDB.listaRuoli();
+                lista = cDB.ListaRuoli();
             }
             catch (Exception e)
             {
@@ -224,13 +224,13 @@ namespace Diomede2
             }
             return lista;
         }
-        public List<Ruolo> cercaRuoloNome(String n)
+        public List<Ruolo> CercaRuoloNome(String n)
         {
-            List<Ruolo> lista = new List<Ruolo>();
+            List<Ruolo> lista;
             try
             {
                 RuoloDB cDB = new RuoloDB(conn);
-                lista = cDB.listaRuoli(n);
+                lista = cDB.ListaRuoli(n);
             }
             catch (Exception e)
             {
@@ -238,13 +238,13 @@ namespace Diomede2
             }
             return lista;
         }
-        public Ruolo cercaRuoloId(int id)
+        public Ruolo CercaRuoloId(int id)
         {
-            Ruolo contatto = null;
+            Ruolo contatto;
             try
             {
                 RuoloDB cDB = new RuoloDB(conn);
-                contatto = cDB.cercaRuoli(id);
+                contatto = cDB.CercaRuoli(id);
             }
             catch (Exception e)
             {
@@ -252,13 +252,13 @@ namespace Diomede2
             }
             return contatto;
         }
-        public List<Ruolo> filtraRuolo(String s, String g)
+        public List<Ruolo> FiltraRuolo(String s, String g)
         {
-            List<Ruolo> ruolo = new List<Ruolo>();
+            List<Ruolo> ruolo;
             try
             {
                 RuoloDB cDB = new RuoloDB(conn);
-                ruolo = cDB.filtroRuoli(s, g);
+                ruolo = cDB.FiltroRuoli(s, g);
             }
             catch (Exception e)
             {
@@ -266,49 +266,49 @@ namespace Diomede2
             }
             return ruolo;
         }
-        public void updateRuolo(int id, String nome, String desc)
+        public void UpdateRuolo(int id, String nome, String desc)
         {
             try
             {
                 RuoloDB cDB = new RuoloDB(conn);
-                cDB.aggiornaRuoli(id, nome, desc);
+                cDB.AggiornaRuoli(id, nome, desc);
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
         }
-        public void cancellaRuolo(int id)
+        public void CancellaRuolo(int id)
         {
             try
             {
                 RuoloDB cDB = new RuoloDB(conn);
-                cDB.rimuoviRuolo(id);
+                cDB.RimuoviRuolo(id);
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
         }
-        public void inserimentoBozza(String data, String pacchetto, String importo, String numerocommessa)
+        public void InserimentoBozza(String data, String pacchetto, String importo, String numerocommessa)
         {
             try
             {
                 BozzaDB bDB = new BozzaDB(conn);
-                bDB.inserimento(data, pacchetto, importo, numerocommessa);
+                bDB.Inserimento(data, pacchetto, importo, numerocommessa);
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
         }
-        public List<Bozza> cercaBozza()
+        public List<Bozza> CercaBozza()
         {
-            List<Bozza> lista = new List<Bozza>();
+            List<Bozza> lista;
             try
             {
                 BozzaDB bDB = new BozzaDB(conn);
-                lista = bDB.listaBozza();
+                lista = bDB.ListaBozza();
             }
             catch (Exception e)
             {
@@ -316,13 +316,13 @@ namespace Diomede2
             }
             return lista;
         }
-        public List<Bozza> cercaBozza(String n)
+        public List<Bozza> CercaBozza(String n)
         {
-            List<Bozza> lista = new List<Bozza>();
+            List<Bozza> lista;
             try
             {
                 BozzaDB bDB = new BozzaDB(conn);
-                lista = bDB.listaBozza(n);
+                lista = bDB.ListaBozza(n);
             }
             catch (Exception e)
             {
@@ -330,13 +330,13 @@ namespace Diomede2
             }
             return lista;
         }
-        public Bozza cercaBozzaId(int id)
+        public Bozza CercaBozzaId(int id)
         {
-            Bozza contatto = null;
+            Bozza contatto;
             try
             {
                 BozzaDB bDB = new BozzaDB(conn);
-                contatto = bDB.cercaBozza(id);
+                contatto = bDB.CercaBozza(id);
             }
             catch (Exception e)
             {
@@ -344,13 +344,13 @@ namespace Diomede2
             }
             return contatto;
         }
-        public List<Bozza> filtraBozza(String s, String g)
+        public List<Bozza> FiltraBozza(String s, String g)
         {
-            List<Bozza> contatto = null;
+            List<Bozza> contatto ;
             try
             {
                 BozzaDB bDB = new BozzaDB(conn);
-                contatto = bDB.filtroBozza(s, g);
+                contatto = bDB.FiltroBozza(s, g);
             }
             catch (Exception e)
             {
@@ -358,24 +358,24 @@ namespace Diomede2
             }
             return contatto;
         }
-        public void updateBozza(int id, String data, String pacchetto, String importo, String numerocommessa)
+        public void UpdateBozza(int id, String data, String pacchetto, String importo, String numerocommessa)
         {
             try
             {
                 BozzaDB bDB = new BozzaDB(conn);
-                bDB.aggiornaBozza(id, data, pacchetto, importo, numerocommessa);
+                bDB.AggiornaBozza(id, data, pacchetto, importo, numerocommessa);
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
         }
-        public void cancellaBozza(int id)
+        public void CancellaBozza(int id)
         {
             try
             {
                 BozzaDB bDB = new BozzaDB(conn);
-                bDB.rimuoviBozza(id);
+                bDB.RimuoviBozza(id);
             }
             catch (Exception e)
             {
@@ -386,12 +386,12 @@ namespace Diomede2
 
     public class ClienteDB
     {
-        MySqlConnection con = null;
+        readonly MySqlConnection con;
         public ClienteDB(MySqlConnection conn)
         {
             con = conn;
         }
-        public void inserimento(String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
+        public void Inserimento(String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
         {
             try
             {
@@ -408,7 +408,7 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public List<Cliente> listaClienti()
+        public List<Cliente> ListaClienti()
         {
             List<Cliente> lista = new List<Cliente>();
             try
@@ -420,16 +420,18 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Cliente cliente = new Cliente();
-                    cliente.Id = (Int32)lettore[0];
-                    cliente.Nome = (String)lettore[1];
-                    cliente.Indirizzo = (String)lettore[2];
-                    cliente.Cap = (String)lettore[3];
-                    cliente.Citta = (String)lettore[4];
-                    cliente.Pec = (String)lettore[5];
-                    cliente.Email = (String)lettore[6];
-                    cliente.Iva = (String)lettore[7];
-                    cliente.Tel = (String)lettore[8];
+                    Cliente cliente = new Cliente
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Indirizzo = (String)lettore[2],
+                        Cap = (String)lettore[3],
+                        Citta = (String)lettore[4],
+                        Pec = (String)lettore[5],
+                        Email = (String)lettore[6],
+                        Iva = (String)lettore[7],
+                        Tel = (String)lettore[8]
+                    };
                     lista.Add(cliente);
                 }
             }
@@ -443,7 +445,7 @@ namespace Diomede2
             }
             return lista;
         }
-        public List<Cliente> listaClienti(String n)
+        public List<Cliente> ListaClienti(String n)
         {
             List<Cliente> lista = new List<Cliente>();
             try
@@ -455,16 +457,18 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Cliente cliente = new Cliente();
-                    cliente.Id = (Int32)lettore[0];
-                    cliente.Nome = (String)lettore[1];
-                    cliente.Indirizzo = (String)lettore[2];
-                    cliente.Cap = (String)lettore[3];
-                    cliente.Citta = (String)lettore[4];
-                    cliente.Pec = (String)lettore[5];
-                    cliente.Email = (String)lettore[6];
-                    cliente.Iva = (String)lettore[7];
-                    cliente.Tel = (String)lettore[8];
+                    Cliente cliente = new Cliente
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Indirizzo = (String)lettore[2],
+                        Cap = (String)lettore[3],
+                        Citta = (String)lettore[4],
+                        Pec = (String)lettore[5],
+                        Email = (String)lettore[6],
+                        Iva = (String)lettore[7],
+                        Tel = (String)lettore[8]
+                    };
                     lista.Add(cliente);
                 }
             }
@@ -478,7 +482,7 @@ namespace Diomede2
             }
             return lista;
         }
-        public Cliente cercaCliente(int id)
+        public Cliente CercaCliente(int id)
         {
             Cliente cliente = null;
             try
@@ -490,16 +494,18 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    cliente = new Cliente();
-                    cliente.Id = (Int32)lettore[0];
-                    cliente.Nome = (String)lettore[1];
-                    cliente.Indirizzo = (String)lettore[2];
-                    cliente.Cap = (String)lettore[3];
-                    cliente.Citta = (String)lettore[4];
-                    cliente.Pec = (String)lettore[5];
-                    cliente.Email = (String)lettore[6];
-                    cliente.Iva = (String)lettore[7];
-                    cliente.Tel = (String)lettore[8];
+                    cliente = new Cliente
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Indirizzo = (String)lettore[2],
+                        Cap = (String)lettore[3],
+                        Citta = (String)lettore[4],
+                        Pec = (String)lettore[5],
+                        Email = (String)lettore[6],
+                        Iva = (String)lettore[7],
+                        Tel = (String)lettore[8]
+                    };
                 }
             }
             catch (Exception ex)
@@ -512,7 +518,7 @@ namespace Diomede2
             }
             return cliente;
         }
-        public List<Cliente> filtroCliente(String s, String g)
+        public List<Cliente> FiltroCliente(String s, String g)
         {
             List<Cliente> cliente = new List<Cliente>();
             try
@@ -524,16 +530,18 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Cliente c = new Cliente();
-                    c.Id = (Int32)lettore[0];
-                    c.Nome = (String)lettore[1];
-                    c.Indirizzo = (String)lettore[2];
-                    c.Cap = (String)lettore[3];
-                    c.Citta = (String)lettore[4];
-                    c.Pec = (String)lettore[5];
-                    c.Email = (String)lettore[6];
-                    c.Iva = (String)lettore[7];
-                    c.Tel = (String)lettore[8];
+                    Cliente c = new Cliente
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Indirizzo = (String)lettore[2],
+                        Cap = (String)lettore[3],
+                        Citta = (String)lettore[4],
+                        Pec = (String)lettore[5],
+                        Email = (String)lettore[6],
+                        Iva = (String)lettore[7],
+                        Tel = (String)lettore[8]
+                    };
                     cliente.Add(c);
                 }
             }
@@ -547,7 +555,7 @@ namespace Diomede2
             }
             return cliente;
         }
-        public void aggiornaCliente(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
+        public void AggiornaCliente(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
         {
             try
             {
@@ -564,7 +572,7 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public void rimuoviCliente(int id)
+        public void RimuoviCliente(int id)
         {
             try
             {
@@ -584,13 +592,13 @@ namespace Diomede2
     }
     public class ContattoDB
     {
-        MySqlConnection con = null;
+        readonly MySqlConnection con;
 
         public ContattoDB(MySqlConnection conn)
         {
             con = conn;
         }
-        public void inserimento(String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String ditta, String cellulare, String telefono, String ruolo)
+        public void Inserimento(String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String ditta, String cellulare, String telefono, String ruolo)
         {
             try
             {
@@ -607,7 +615,7 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public List<Contatto> listaContatti()
+        public List<Contatto> ListaContatti()
         {
             List<Contatto> lista = null;
             try
@@ -619,19 +627,21 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Contatto contatto = new Contatto();
-                    contatto.Id = (Int32)lettore[0];
-                    contatto.Nome = (String)lettore[1];
-                    contatto.Indirizzo = (String)lettore[2];
-                    contatto.Cap = (String)lettore[3];
-                    contatto.Citta = (String)lettore[4];
-                    contatto.Pec = (String)lettore[5];
-                    contatto.Email = (String)lettore[6];
-                    contatto.Iva = (String)lettore[7];
-                    contatto.Ditta = (Int32)lettore[8];
-                    contatto.Cellulare = (String)lettore[9];
-                    contatto.Tel = (String)lettore[10];
-                    contatto.Ruolo = (Int32)lettore[11];
+                    Contatto contatto = new Contatto
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Indirizzo = (String)lettore[2],
+                        Cap = (String)lettore[3],
+                        Citta = (String)lettore[4],
+                        Pec = (String)lettore[5],
+                        Email = (String)lettore[6],
+                        Iva = (String)lettore[7],
+                        Ditta = (Int32)lettore[8],
+                        Cellulare = (String)lettore[9],
+                        Tel = (String)lettore[10],
+                        Ruolo = (Int32)lettore[11]
+                    };
                     lista.Add(contatto);
                 }
             }
@@ -645,7 +655,7 @@ namespace Diomede2
             }
             return lista;
         }
-        public List<Contatto> listaClienti(String n)
+        public List<Contatto> ListaClienti(String n)
         {
             List<Contatto> lista = null;
             try
@@ -657,19 +667,21 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Contatto contatto = new Contatto();
-                    contatto.Id = (Int32)lettore[0];
-                    contatto.Nome = (String)lettore[1];
-                    contatto.Indirizzo = (String)lettore[2];
-                    contatto.Cap = (String)lettore[3];
-                    contatto.Citta = (String)lettore[4];
-                    contatto.Pec = (String)lettore[5];
-                    contatto.Email = (String)lettore[6];
-                    contatto.Iva = (String)lettore[7];
-                    contatto.Ditta = (Int32)lettore[8];
-                    contatto.Cellulare = (String)lettore[9];
-                    contatto.Tel = (String)lettore[10];
-                    contatto.Ruolo = (Int32)lettore[11];
+                    Contatto contatto = new Contatto
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Indirizzo = (String)lettore[2],
+                        Cap = (String)lettore[3],
+                        Citta = (String)lettore[4],
+                        Pec = (String)lettore[5],
+                        Email = (String)lettore[6],
+                        Iva = (String)lettore[7],
+                        Ditta = (Int32)lettore[8],
+                        Cellulare = (String)lettore[9],
+                        Tel = (String)lettore[10],
+                        Ruolo = (Int32)lettore[11]
+                    };
                     lista.Add(contatto);
                 }
             }
@@ -683,7 +695,7 @@ namespace Diomede2
             }
             return lista;
         }
-        public Contatto cercaContatto(int id)
+        public Contatto CercaContatto(int id)
         {
             Contatto Contatto = null;
             try
@@ -695,19 +707,21 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Contatto contatto = new Contatto();
-                    contatto.Id = (Int32)lettore[0];
-                    contatto.Nome = (String)lettore[1];
-                    contatto.Indirizzo = (String)lettore[2];
-                    contatto.Cap = (String)lettore[3];
-                    contatto.Citta = (String)lettore[4];
-                    contatto.Pec = (String)lettore[5];
-                    contatto.Email = (String)lettore[6];
-                    contatto.Iva = (String)lettore[7];
-                    contatto.Ditta = (Int32)lettore[8];
-                    contatto.Cellulare = (String)lettore[9];
-                    contatto.Tel = (String)lettore[10];
-                    contatto.Ruolo = (Int32)lettore[11];
+                    Contatto contatto = new Contatto
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Indirizzo = (String)lettore[2],
+                        Cap = (String)lettore[3],
+                        Citta = (String)lettore[4],
+                        Pec = (String)lettore[5],
+                        Email = (String)lettore[6],
+                        Iva = (String)lettore[7],
+                        Ditta = (Int32)lettore[8],
+                        Cellulare = (String)lettore[9],
+                        Tel = (String)lettore[10],
+                        Ruolo = (Int32)lettore[11]
+                    };
                 }
             }
             catch (Exception ex)
@@ -720,7 +734,7 @@ namespace Diomede2
             }
             return Contatto;
         }
-        public List<Contatto> filtroContatto(String s, String g)
+        public List<Contatto> FiltroContatto(String s, String g)
         {
             List<Contatto> contattos = new List<Contatto>();
             try
@@ -732,19 +746,21 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Contatto contatto = new Contatto();
-                    contatto.Id = (Int32)lettore[0];
-                    contatto.Nome = (String)lettore[1];
-                    contatto.Indirizzo = (String)lettore[2];
-                    contatto.Cap = (String)lettore[3];
-                    contatto.Citta = (String)lettore[4];
-                    contatto.Pec = (String)lettore[5];
-                    contatto.Email = (String)lettore[6];
-                    contatto.Iva = (String)lettore[7];
-                    contatto.Ditta = (Int32)lettore[8];
-                    contatto.Cellulare = (String)lettore[9];
-                    contatto.Tel = (String)lettore[10];
-                    contatto.Ruolo = (Int32)lettore[11];
+                    Contatto contatto = new Contatto
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Indirizzo = (String)lettore[2],
+                        Cap = (String)lettore[3],
+                        Citta = (String)lettore[4],
+                        Pec = (String)lettore[5],
+                        Email = (String)lettore[6],
+                        Iva = (String)lettore[7],
+                        Ditta = (Int32)lettore[8],
+                        Cellulare = (String)lettore[9],
+                        Tel = (String)lettore[10],
+                        Ruolo = (Int32)lettore[11]
+                    };
                     contattos.Add(contatto);
                 }
             }
@@ -758,7 +774,7 @@ namespace Diomede2
             }
             return contattos;
         }
-        public void aggiornaContatto(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, int ditta, String cellulare, string telefono, string ruolo)
+        public void AggiornaContatto(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, int ditta, String cellulare, string telefono, string ruolo)
         {
             try
             {
@@ -775,7 +791,7 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public void rimuoviContatto(int id)
+        public void RimuoviContatto(int id)
         {
             try
             {
@@ -795,13 +811,13 @@ namespace Diomede2
     }
     public class RuoloDB
     {
-        MySqlConnection con = null;
+        readonly MySqlConnection con;
 
         public RuoloDB(MySqlConnection conn)
         {
             con = conn;
         }
-        public void inserimento(String nome, String desc)
+        public void Inserimento(String nome, String desc)
         {
             try
             {
@@ -818,7 +834,7 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public List<Ruolo> listaRuoli()
+        public List<Ruolo> ListaRuoli()
         {
             List<Ruolo> lista = new List<Ruolo>();
             try
@@ -830,10 +846,12 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Ruolo ruolo = new Ruolo();
-                    ruolo.Id = (Int32)lettore[0];
-                    ruolo.Nome = (String)lettore[1];
-                    ruolo.Desc = (String)lettore[2];
+                    Ruolo ruolo = new Ruolo
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Desc = (String)lettore[2]
+                    };
                     lista.Add(ruolo);
                 }
             }
@@ -847,7 +865,7 @@ namespace Diomede2
             }
             return lista;
         }
-        public List<Ruolo> listaRuoli(String n)
+        public List<Ruolo> ListaRuoli(String n)
         {
             List<Ruolo> lista = new List<Ruolo>();
             try
@@ -859,10 +877,12 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Ruolo ruolo = new Ruolo();
-                    ruolo.Id = (Int32)lettore[0];
-                    ruolo.Nome = (String)lettore[1];
-                    ruolo.Desc = (String)lettore[2];
+                    Ruolo ruolo = new Ruolo
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Desc = (String)lettore[2]
+                    };
                     lista.Add(ruolo);
                 }
             }
@@ -876,7 +896,7 @@ namespace Diomede2
             }
             return lista;
         }
-        public Ruolo cercaRuoli(int id)
+        public Ruolo CercaRuoli(int id)
         {
             Ruolo ruolo = null;
             try
@@ -888,10 +908,12 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Ruolo r = new Ruolo();
-                    r.Id = (Int32)lettore[0];
-                    r.Nome = (String)lettore[1];
-                    r.Desc = (String)lettore[2];
+                    Ruolo r = new Ruolo
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Desc = (String)lettore[2]
+                    };
                     ruolo = r;
                 }
             }
@@ -905,7 +927,7 @@ namespace Diomede2
             }
             return ruolo;
         }
-        public List<Ruolo> filtroRuoli(String s, String g)
+        public List<Ruolo> FiltroRuoli(String s, String g)
         {
             List<Ruolo> ruolo = new List<Ruolo>();
             try
@@ -917,10 +939,12 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Ruolo r = new Ruolo();
-                    r.Id = (Int32)lettore[0];
-                    r.Nome = (String)lettore[1];
-                    r.Desc = (String)lettore[2];
+                    Ruolo r = new Ruolo
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Desc = (String)lettore[2]
+                    };
                     ruolo.Add(r);
                 }
             }
@@ -934,7 +958,7 @@ namespace Diomede2
             }
             return ruolo;
         }
-        public void aggiornaRuoli(int id, String nome, String desc)
+        public void AggiornaRuoli(int id, String nome, String desc)
         {
             try
             {
@@ -951,7 +975,7 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public void rimuoviRuolo(int id)
+        public void RimuoviRuolo(int id)
         {
             try
             {
@@ -972,13 +996,13 @@ namespace Diomede2
     }
     public class BozzaDB
     {
-        MySqlConnection con = null;
+        readonly MySqlConnection con = null;
 
         public BozzaDB(MySqlConnection conn)
         {
             con = conn;
         }
-        public void inserimento(String data, String pacchetto, String importo, String numerocommessa)
+        public void Inserimento(String data, String pacchetto, String importo, String numerocommessa)
         {
             try
             {
@@ -995,7 +1019,7 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public List<Bozza> listaBozza()
+        public List<Bozza> ListaBozza()
         {
             List<Bozza> lista = null;
             try
@@ -1007,12 +1031,14 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Bozza bozza = new Bozza();
-                    bozza.Id = (Int32)lettore[0];
-                    bozza.Data = (DateTime)lettore[1];
-                    bozza.Pacchetto = (Int32)lettore[2];
-                    bozza.Importo = (Double)lettore[3];
-                    bozza.NumeroCommessa = (String)lettore[4];
+                    Bozza bozza = new Bozza
+                    {
+                        Id = (Int32)lettore[0],
+                        Data = (DateTime)lettore[1],
+                        Pacchetto = (Int32)lettore[2],
+                        Importo = (Double)lettore[3],
+                        NumeroCommessa = (String)lettore[4]
+                    };
                     lista.Add(bozza);
                 }
             }
@@ -1026,7 +1052,7 @@ namespace Diomede2
             }
             return lista;
         }
-        public List<Bozza> listaBozza(String n)
+        public List<Bozza> ListaBozza(String n)
         {
             List<Bozza> lista = null;
             try
@@ -1038,12 +1064,14 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Bozza bozza = new Bozza();
-                    bozza.Id = (Int32)lettore[0];
-                    bozza.Data = (DateTime)lettore[1];
-                    bozza.Pacchetto = (Int32)lettore[2];
-                    bozza.Importo = (Double)lettore[3];
-                    bozza.NumeroCommessa = (String)lettore[4];
+                    Bozza bozza = new Bozza
+                    {
+                        Id = (Int32)lettore[0],
+                        Data = (DateTime)lettore[1],
+                        Pacchetto = (Int32)lettore[2],
+                        Importo = (Double)lettore[3],
+                        NumeroCommessa = (String)lettore[4]
+                    };
                     lista.Add(bozza);
                 }
             }
@@ -1057,7 +1085,7 @@ namespace Diomede2
             }
             return lista;
         }
-        public Bozza cercaBozza(int id)
+        public Bozza CercaBozza(int id)
         {
             Bozza bozza = null;
             try
@@ -1088,7 +1116,7 @@ namespace Diomede2
             }
             return bozza;
         }
-        public List<Bozza> filtroBozza(String s, String g)
+        public List<Bozza> FiltroBozza(String s, String g)
         {
             List<Bozza> bozza = new List<Bozza>();
             try
@@ -1100,12 +1128,14 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Bozza b = new Bozza();
-                    b.Id = (Int32)lettore[0];
-                    b.Data = (DateTime)lettore[1];
-                    b.Pacchetto = (Int32)lettore[2];
-                    b.Importo = (Double)lettore[3];
-                    b.NumeroCommessa = (String)lettore[4];
+                    Bozza b = new Bozza
+                    {
+                        Id = (Int32)lettore[0],
+                        Data = (DateTime)lettore[1],
+                        Pacchetto = (Int32)lettore[2],
+                        Importo = (Double)lettore[3],
+                        NumeroCommessa = (String)lettore[4]
+                    };
                     bozza.Add(b);
                 }
             }
@@ -1119,7 +1149,7 @@ namespace Diomede2
             }
             return bozza;
         }
-        public void aggiornaBozza(int id, String data, String pacchetto, String importo, String numerocommessa)
+        public void AggiornaBozza(int id, String data, String pacchetto, String importo, String numerocommessa)
         {
             try
             {
@@ -1136,7 +1166,7 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public void rimuoviBozza(int id)
+        public void RimuoviBozza(int id)
         {
             try
             {
@@ -1157,13 +1187,13 @@ namespace Diomede2
     }
     public class CommessaDB
     {
-        MySqlConnection con = null;
+        readonly MySqlConnection con = null;
 
         public CommessaDB(MySqlConnection conn)
         {
             con = conn;
         }
-        public void inserimento(String ditta, String tipologia, String numerocommessa, String data, String referente)
+        public void Inserimento(String ditta, String tipologia, String numerocommessa, String data, String referente)
         {
             try
             {
@@ -1180,7 +1210,7 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public List<Commessa> listaCommesse()
+        public List<Commessa> ListaCommesse()
         {
             List<Commessa> lista = new List<Commessa>();
             try
@@ -1192,13 +1222,15 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Commessa commessa = new Commessa();
-                    commessa.Id = (Int32)lettore[0];
-                    commessa.Ditta = (Int32)lettore[1];
-                    commessa.Tipologia = (Int32)lettore[2];
-                    commessa.NumeroCommessa = (String)lettore[3];
-                    commessa.Data = (DateTime)lettore[4];
-                    commessa.Referente = (String)lettore[5];
+                    Commessa commessa = new Commessa
+                    {
+                        Id = (Int32)lettore[0],
+                        Ditta = (Int32)lettore[1],
+                        Tipologia = (Int32)lettore[2],
+                        NumeroCommessa = (String)lettore[3],
+                        Data = (DateTime)lettore[4],
+                        Referente = (String)lettore[5]
+                    };
                     lista.Add(commessa);
                 }
             }
@@ -1212,7 +1244,7 @@ namespace Diomede2
             }
             return lista;
         }
-        public List<Commessa> listaCommesse(String n)
+        public List<Commessa> ListaCommesse(String n)
         {
             List<Commessa> lista = new List<Commessa>();
             try
@@ -1224,13 +1256,15 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Commessa commessa = new Commessa();
-                    commessa.Id = (Int32)lettore[0];
-                    commessa.Ditta = (Int32)lettore[1];
-                    commessa.Tipologia = (Int32)lettore[2];
-                    commessa.NumeroCommessa = (String)lettore[3];
-                    commessa.Data = (DateTime)lettore[4];
-                    commessa.Referente = (String)lettore[5];
+                    Commessa commessa = new Commessa
+                    {
+                        Id = (Int32)lettore[0],
+                        Ditta = (Int32)lettore[1],
+                        Tipologia = (Int32)lettore[2],
+                        NumeroCommessa = (String)lettore[3],
+                        Data = (DateTime)lettore[4],
+                        Referente = (String)lettore[5]
+                    };
                     lista.Add(commessa);
                 }
             }
@@ -1244,7 +1278,7 @@ namespace Diomede2
             }
             return lista;
         }
-        public Commessa cercaCommesse(int id)
+        public Commessa CercaCommesse(int id)
         {
             Commessa commessa = null;
             try
@@ -1276,7 +1310,7 @@ namespace Diomede2
             }
             return commessa;
         }
-        public List<Commessa> filtroCommesse(String s, String g)
+        public List<Commessa> FiltroCommesse(String s, String g)
         {
             List<Commessa> commessa = new List<Commessa>();
             try
@@ -1288,13 +1322,15 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Commessa c = new Commessa();
-                    c.Id = (Int32)lettore[0];
-                    c.Ditta = (Int32)lettore[1];
-                    c.Tipologia = (Int32)lettore[2];
-                    c.NumeroCommessa = (String)lettore[3];
-                    c.Data = (DateTime)lettore[4];
-                    c.Referente = (String)lettore[5];
+                    Commessa c = new Commessa
+                    {
+                        Id = (Int32)lettore[0],
+                        Ditta = (Int32)lettore[1],
+                        Tipologia = (Int32)lettore[2],
+                        NumeroCommessa = (String)lettore[3],
+                        Data = (DateTime)lettore[4],
+                        Referente = (String)lettore[5]
+                    };
                     commessa.Add(c);
                 }
             }
@@ -1308,7 +1344,7 @@ namespace Diomede2
             }
             return commessa;
         }
-        public void aggiornaCommesse(int id, String ditta, String tipologia, String numerocommessa, String data, String referente)
+        public void AggiornaCommesse(int id, String ditta, String tipologia, String numerocommessa, String data, String referente)
         {
             try
             {
@@ -1325,7 +1361,7 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public void rimuoviCommessa(int id)
+        public void RimuoviCommessa(int id)
         {
             try
             {
@@ -1346,13 +1382,13 @@ namespace Diomede2
     }
     public class LavorazioniDB
     {
-        MySqlConnection con = null;
+        readonly MySqlConnection con = null;
 
         public LavorazioniDB(MySqlConnection conn)
         {
             con = conn;
         }
-        public void inserimento(String operazione, String pacchetto, String importo)
+        public void Inserimento(String operazione, String pacchetto, String importo)
         {
             try
             {
@@ -1369,7 +1405,7 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public List<Lavorazione> listaLavorazioni()
+        public List<Lavorazione> ListaLavorazioni()
         {
             List<Lavorazione> lista = new List<Lavorazione>();
             try
@@ -1381,11 +1417,14 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Lavorazione lavorazione = new Lavorazione();
-                    lavorazione.Id = (Int32)lettore[0];
-                    lavorazione.Operazione = (String)lettore[1];
-                    lavorazione.Pacchetto = (Int32)lettore[2];
-                    lavorazione.Importo = (Double)lettore[3]; ;
+                    Lavorazione lavorazione = new Lavorazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Operazione = (String)lettore[1],
+                        Pacchetto = (Int32)lettore[2],
+                        Importo = (Double)lettore[3]
+                    };
+                    ;
                     lista.Add(lavorazione);
                 }
             }
@@ -1399,7 +1438,7 @@ namespace Diomede2
             }
             return lista;
         }
-        public List<Lavorazione> listaLavorazioni(String n)
+        public List<Lavorazione> ListaLavorazioni(String n)
         {
             List<Lavorazione> lista = new List<Lavorazione>();
             try
@@ -1411,11 +1450,14 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Lavorazione lavorazione = new Lavorazione();
-                    lavorazione.Id = (Int32)lettore[0];
-                    lavorazione.Operazione = (String)lettore[1];
-                    lavorazione.Pacchetto = (Int32)lettore[2];
-                    lavorazione.Importo = (Double)lettore[3]; ;
+                    Lavorazione lavorazione = new Lavorazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Operazione = (String)lettore[1],
+                        Pacchetto = (Int32)lettore[2],
+                        Importo = (Double)lettore[3]
+                    };
+                    ;
                     lista.Add(lavorazione);
                 }
             }
@@ -1429,7 +1471,7 @@ namespace Diomede2
             }
             return lista;
         }
-        public Lavorazione cercaLavorazione(int id)
+        public Lavorazione CercaLavorazione(int id)
         {
             Lavorazione lavorazione = null;
             try
@@ -1459,7 +1501,7 @@ namespace Diomede2
             }
             return lavorazione;
         }
-        public List<Lavorazione> filtroLavorazioni(String s, String g)
+        public List<Lavorazione> FiltroLavorazioni(String s, String g)
         {
             List<Lavorazione> lavorazione = new List<Lavorazione>();
             try
@@ -1471,11 +1513,14 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Lavorazione l = new Lavorazione();
-                    l.Id = (Int32)lettore[0];
-                    l.Operazione = (String)lettore[1];
-                    l.Pacchetto = (Int32)lettore[2];
-                    l.Importo = (Double)lettore[3]; ;
+                    Lavorazione l = new Lavorazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Operazione = (String)lettore[1],
+                        Pacchetto = (Int32)lettore[2],
+                        Importo = (Double)lettore[3]
+                    };
+                    ;
                     lavorazione.Add(l);
                 }
             }
@@ -1489,7 +1534,7 @@ namespace Diomede2
             }
             return lavorazione;
         }
-        public void aggiornaLavorazioni(int id, String operazione, String pacchetto, String importo)
+        public void AggiornaLavorazioni(int id, String operazione, String pacchetto, String importo)
         {
             try
             {
@@ -1506,7 +1551,7 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public void rimuoviLavorazioni(int id)
+        public void RimuoviLavorazioni(int id)
         {
             try
             {
@@ -1632,5 +1677,3 @@ namespace Diomede2
 
     }
 }
-
-

@@ -13,23 +13,21 @@ namespace Diomede2
 {
     public partial class Dashboard : Form
     {
-        private String settore;
-        private Utente user;
+        private readonly String settore;
         private OperazionePraticheEdili op;
         private List<Cliente> lista;
-        private Login formPrecedente;
-        public Dashboard(String s, Utente u, Login f)
+        private readonly Login formPrecedente;
+        public Dashboard(String s, Login f)
         {
             formPrecedente = f;
             settore = s;
-            user = u;
             InitializeComponent();
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             op = new OperazionePraticheEdili(settore);
-            lista = op.cercaClienti();
+            lista = op.CercaClienti();
             if (lista != null) {
                 foreach (Cliente c in lista)
                 {

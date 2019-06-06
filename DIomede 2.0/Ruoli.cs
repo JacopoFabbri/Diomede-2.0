@@ -12,7 +12,7 @@ namespace Diomede2
 {
     public partial class Ruoli : Form
     {
-        private String db;
+        private readonly String db;
         OperazionePraticheEdili op;
         public Ruoli(String dbNAme)
         {
@@ -25,7 +25,7 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
-                List<Ruolo> lista = op.cercaRuolo();
+                List<Ruolo> lista = op.CercaRuolo();
                 if (lista != null)
                 {
                     dataGridView1.DataSource = lista;
@@ -62,7 +62,7 @@ namespace Diomede2
                     {
                         try
                         {
-                            op.updateRuolo((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["DESC"].Value + "");
+                            op.UpdateRuolo((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["DESC"].Value + "");
                         }
                         catch
                         {
@@ -72,7 +72,7 @@ namespace Diomede2
                     }
                 }
             }
-            dataGridView1.DataSource = op.cercaRuolo();
+            dataGridView1.DataSource = op.CercaRuolo();
             dataGridView1.Columns[0].Visible = false;
 
         }
@@ -85,8 +85,8 @@ namespace Diomede2
                 {
                     try
                     {
-                        Ruolo clienti = op.cercaRuoloId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
-                        op.cancellaRuolo((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        Ruolo clienti = op.CercaRuoloId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        op.CancellaRuolo((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
                         MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch
@@ -95,7 +95,7 @@ namespace Diomede2
                     }
                 }
             }
-            dataGridView1.DataSource = op.cercaRuolo();
+            dataGridView1.DataSource = op.CercaRuolo();
             dataGridView1.Columns[0].Visible = false;
         }
 
