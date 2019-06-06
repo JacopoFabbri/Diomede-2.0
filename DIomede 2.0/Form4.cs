@@ -34,6 +34,7 @@ namespace Diomede2
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();
             }
+            dataGridView1.Focus();
         }
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -88,5 +89,6 @@ namespace Diomede2
             dataGridView1.Columns[0].Visible = false;
 
         }
+
     }
 }

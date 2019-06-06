@@ -40,6 +40,8 @@ namespace Diomede2
         {
             Form3 frm = new Form3(settore);
             frm.Show();
+            Form4 frm1 = new Form4(settore);
+            frm1.Show();
         }
 
         private void ListView1_Click(object sender, EventArgs e)
