@@ -35,3 +35,5 @@ C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.pdb
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Form3.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Form4.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Form5.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Form6.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Form7.resources

@@ -43,16 +43,6 @@ namespace Diomede2
             }
         }
 
-        private void DataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            if (dataGridView1.Rows[e.RowIndex].IsNewRow)
-            {
-                foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
-                {
-                    cella.Style.BackColor = Color.Bisque;
-                }
-            }
-        }
         private void DataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
 
