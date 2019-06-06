@@ -32,9 +32,14 @@ namespace Diomede2
                     dataGridView1.Columns[0].Visible = false;
 
                 }
+                else
+                {
+                    Form8 frm = new Form8(db);
+                    frm.Show();
+                }
 
             }
-            catch (Exception ex)
+            catch 
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();
