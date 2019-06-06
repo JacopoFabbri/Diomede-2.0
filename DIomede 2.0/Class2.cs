@@ -537,7 +537,7 @@ namespace Diomede2
                     contatto.Iva = (String)lettore[7];
                     contatto.Ditta = (Int32)lettore[8];
                     contatto.Cellulare = (String)lettore[9];
-                    contatto.Telefono = (String)lettore[10];
+                    contatto.Tel = (String)lettore[10];
                     contatto.Ruolo = (Int32)lettore[11];
                     lista.Add(contatto);
                 }
@@ -575,7 +575,7 @@ namespace Diomede2
                     contatto.Iva = (String)lettore[7];
                     contatto.Ditta = (Int32)lettore[8];
                     contatto.Cellulare = (String)lettore[9];
-                    contatto.Telefono = (String)lettore[10];
+                    contatto.Tel = (String)lettore[10];
                     contatto.Ruolo = (Int32)lettore[11];
                     lista.Add(contatto);
                 }
@@ -613,7 +613,7 @@ namespace Diomede2
                     contatto.Iva = (String)lettore[7];
                     contatto.Ditta = (Int32)lettore[8];
                     contatto.Cellulare = (String)lettore[9];
-                    contatto.Telefono = (String)lettore[10];
+                    contatto.Tel = (String)lettore[10];
                     contatto.Ruolo = (Int32)lettore[11];
                 }
             }
@@ -650,7 +650,7 @@ namespace Diomede2
                     contatto.Iva = (String)lettore[7];
                     contatto.Ditta = (Int32)lettore[8];
                     contatto.Cellulare = (String)lettore[9];
-                    contatto.Telefono = (String)lettore[10];
+                    contatto.Tel = (String)lettore[10];
                     contatto.Ruolo = (Int32)lettore[11];
                     contattos.Add(contatto);
                 }
@@ -1481,7 +1481,6 @@ namespace Diomede2
         public string Cellulare { get => cellulare; set => cellulare = value; }
         public string Tel { get => telefono; set => telefono = value; }
         public int Ruolo { get => ruolo; set => ruolo = value; }
-        public string Telefono { get; internal set; }
     }
     public class Ruolo
     {
