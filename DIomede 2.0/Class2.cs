@@ -198,6 +198,98 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
+        public void inserimentoRuolo(String nome, String desc)
+        {
+            try
+            {
+                RuoloDB cDB = new RuoloDB(conn);
+                cDB.inserimento(nome, desc);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public List<Ruolo> cercaRuolo()
+        {
+            List<Ruolo> lista = new List<Ruolo>();
+            try
+            {
+                RuoloDB cDB = new RuoloDB(conn);
+                lista = cDB.listaRuoli();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public List<Ruolo> cercaRuoloNome(String n)
+        {
+            List<Ruolo> lista = new List<Ruolo>();
+            try
+            {
+                RuoloDB cDB = new RuoloDB(conn);
+                lista = cDB.listaRuoli(n);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public Ruolo cercaRuoloId(int id)
+        {
+            Ruolo contatto = null;
+            try
+            {
+                RuoloDB cDB = new RuoloDB(conn);
+                contatto = cDB.cercaRuoli(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public Ruolo filtraRuolo(String s, String g)
+        {
+            Ruolo contatto = null;
+            try
+            {
+                RuoloDB cDB = new RuoloDB(conn);
+                contatto = cDB.filtroRuoli(s, g);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public void updateRuolo(int id, String nome, String desc)
+        {
+            try
+            {
+                RuoloDB cDB = new RuoloDB(conn);
+                cDB.aggiornaRuoli(id, nome, desc);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void cancellaRuolo(int id)
+        {
+            try
+            {
+                RuoloDB cDB = new RuoloDB(conn);
+                cDB.rimuoviRuolo(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
     }
     public class ClienteDB
     {
@@ -606,11 +698,11 @@ namespace Diomede2
             }
         }
     }
-    public class RuoloDb
+    public class RuoloDB
     {
         MySqlConnection con = null;
 
-        public RuoloDb(MySqlConnection conn)
+        public RuoloDB(MySqlConnection conn)
         {
             con = conn;
         }
