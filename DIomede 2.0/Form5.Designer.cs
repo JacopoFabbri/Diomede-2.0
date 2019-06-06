@@ -76,14 +76,14 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(563, 140);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(558, 140);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(189, 3);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(87, 20);
+            this.textBox3.Size = new System.Drawing.Size(86, 20);
             this.textBox3.TabIndex = 2;
             this.textBox3.Text = "Cap";
             // 
@@ -105,7 +105,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(282, 3);
+            this.textBox4.Location = new System.Drawing.Point(281, 3);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(87, 20);
             this.textBox4.TabIndex = 3;
@@ -113,7 +113,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(375, 3);
+            this.textBox5.Location = new System.Drawing.Point(374, 3);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(87, 20);
             this.textBox5.TabIndex = 4;
@@ -139,13 +139,13 @@
             // 
             this.textBox8.Location = new System.Drawing.Point(189, 73);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(87, 20);
+            this.textBox8.Size = new System.Drawing.Size(86, 20);
             this.textBox8.TabIndex = 7;
             this.textBox8.Text = "Ditta";
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(282, 73);
+            this.textBox9.Location = new System.Drawing.Point(281, 73);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(87, 20);
             this.textBox9.TabIndex = 9;
@@ -153,7 +153,7 @@
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(375, 73);
+            this.textBox10.Location = new System.Drawing.Point(374, 73);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(87, 20);
             this.textBox10.TabIndex = 10;
@@ -161,19 +161,20 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(468, 73);
+            this.button1.Location = new System.Drawing.Point(467, 73);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(71, 20);
             this.button1.TabIndex = 8;
             this.button1.Text = "Inserisci";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(468, 3);
+            this.comboBox1.Location = new System.Drawing.Point(467, 3);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(91, 21);
+            this.comboBox1.Size = new System.Drawing.Size(88, 21);
             this.comboBox1.TabIndex = 11;
             this.comboBox1.Text = "Ruolo";
             // 

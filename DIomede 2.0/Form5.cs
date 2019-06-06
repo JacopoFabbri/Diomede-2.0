@@ -60,5 +60,6 @@ namespace Diomede2
                 MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
             }
         }
+
     }
 }
