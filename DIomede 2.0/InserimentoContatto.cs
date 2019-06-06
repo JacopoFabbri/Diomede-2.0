@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Diomede2
 {
-    public partial class InserimentoContratto : Form
+    public partial class InserimentoContatto : Form
     {
         readonly String db;
         readonly Cliente cliente;
         List<Ruolo> lista;
-        public InserimentoContratto(Cliente c, String dbName)
+        public InserimentoContatto(Cliente c, String dbName)
         {
             cliente = c;
             db = dbName;
@@ -50,7 +50,7 @@ namespace Diomede2
                 if (!comboBox1.Text.Equals("Ruolo"))
                 {
                     op.InserimentoContatto(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, textBox8.Text, textBox9.Text, textBox10.Text,"" + lista[comboBox1.SelectedIndex].Id);
-                    MessageBox.Show("Operazione effettuata");
+                    MessageBox.Show("Operazione effettuata","Inserito",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Close();
 
                 }
