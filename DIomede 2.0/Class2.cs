@@ -74,7 +74,7 @@ namespace Diomede2
             try
             {
                 ClienteDB cDB = new ClienteDB(conn);
-                cliente = cDB.filtroCliente(s,g);
+                cliente = cDB.filtroCliente(s, g);
             }
             catch (Exception e)
             {
@@ -334,7 +334,7 @@ namespace Diomede2
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `ANAGRAFICACLIENTI` WHERE `"+s+"` = '" + g + "'", con);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `ANAGRAFICACLIENTI` WHERE `" + s + "` = '" + g + "'", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
@@ -606,6 +606,191 @@ namespace Diomede2
             }
         }
     }
+    public class RuoloDb
+    {
+        MySqlConnection con = null;
+
+        public RuoloDb(MySqlConnection conn)
+        {
+            con = conn;
+        }
+        public void inserimento(String nome, String desc)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("INSERT INTO `RUOLI`(`NOME`, `DESC`) VALUES('" + nome + "','" + desc + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<Ruolo> listaRuoli()
+        {
+            List<Ruolo> lista = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `RUOLI`", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Ruolo ruolo = new Ruolo();
+                    ruolo.Id = (Int32)lettore[0];
+                    ruolo.Nome = (String)lettore[1];
+                    ruolo.Desc = (String)lettore[2];
+                    lista.Add(ruolo);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public List<Ruolo> listaClienti(String n)
+        {
+            List<Ruolo> lista = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `RUOLI` WHERE `NOME` = '" + n + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Ruolo ruolo = new Ruolo();
+                    ruolo.Id = (Int32)lettore[0];
+                    ruolo.Nome = (String)lettore[1];
+                    ruolo.Desc = (String)lettore[2];
+                    lista.Add(ruolo);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public Ruolo cercaContatto(int id)
+        {
+            Ruolo ruolo = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `RUOLI` WHERE `ID` = '" + id + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Ruolo r = new Ruolo();
+                    r.Id = (Int32)lettore[0];
+                    r.Nome = (String)lettore[1];
+                    r.Desc = (String)lettore[2];
+                    ruolo = r;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return ruolo;
+        }
+        public Contatto filtroContatto(String s, String g)
+        {
+            Contatto Contatto = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `ANAGRAFICACONTATTI` WHERE `" + s + "` = '" + g + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Contatto contatto = new Contatto();
+                    contatto.Id = (Int32)lettore[0];
+                    contatto.Nome = (String)lettore[1];
+                    contatto.Indirizzo = (String)lettore[2];
+                    contatto.Cap = (String)lettore[3];
+                    contatto.Citta = (String)lettore[4];
+                    contatto.Pec = (String)lettore[5];
+                    contatto.Email = (String)lettore[6];
+                    contatto.Iva = (String)lettore[7];
+                    contatto.Ditta = (Int32)lettore[8];
+                    contatto.Cellulare = (String)lettore[9];
+                    contatto.Telefono = (String)lettore[10];
+                    contatto.Ruolo = (Int32)lettore[11];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return Contatto;
+        }
+        public void aggiornaContatto(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, int ditta, String cellulare, string telefono, string ruolo)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("UPDATE `ANAGRAFICACONTATTI` SET `NOME`='" + nome + "',`INDIRIZZO`='" + indirizzo + "',`CAP`='" + cap + "',`CITTA`='" + citta + "',`PEC`='" + pec + "',`EMAIL`='" + email + "',`PARTITAIVA`='" + partitaIva + "',`DITTA`='" + ditta + "',`TELEFONOCELLULARE`='" + cellulare + "',`TELEFONOFISSO`='" + telefono + "',`RUOLO`='" + ruolo + "' WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void rimuoviContatto(int id)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("DELETE FROM `ANAGRAFICACONTATTI` WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+    }
     public class Cliente
     {
         private int id;
@@ -656,6 +841,16 @@ namespace Diomede2
         public string Tel { get => telefono; set => telefono = value; }
         public int Ruolo { get => ruolo; set => ruolo = value; }
         public string Telefono { get; internal set; }
+    }
+    public class Ruolo
+    {
+        private int id;
+        private String nome;
+        private String desc;
+
+        public int Id { get => id; set => id = value; }
+        public string Nome { get => nome; set => nome = value; }
+        public string Desc { get => desc; set => desc = value; }
     }
 }
 
