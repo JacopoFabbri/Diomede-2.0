@@ -660,7 +660,7 @@ namespace Diomede2
             }
             return lista;
         }
-        public List<Ruolo> listaClienti(String n)
+        public List<Ruolo> listaRuoli(String n)
         {
             List<Ruolo> lista = null;
             try
@@ -689,7 +689,7 @@ namespace Diomede2
             }
             return lista;
         }
-        public Ruolo cercaContatto(int id)
+        public Ruolo cercaRuoli(int id)
         {
             Ruolo ruolo = null;
             try
@@ -718,9 +718,9 @@ namespace Diomede2
             }
             return ruolo;
         }
-        public Contatto filtroContatto(String s, String g)
+        public Ruolo filtroRuoli(String s, String g)
         {
-            Contatto Contatto = null;
+            Ruolo ruolo = null;
             try
             {
                 con.Open();
@@ -753,9 +753,9 @@ namespace Diomede2
             {
                 con.Close();
             }
-            return Contatto;
+            return ruolo;
         }
-        public void aggiornaContatto(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, int ditta, String cellulare, string telefono, string ruolo)
+        public void aggiornaRuoli(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, int ditta, String cellulare, string telefono, string ruolo)
         {
             try
             {
@@ -772,7 +772,7 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public void rimuoviContatto(int id)
+        public void rimuoviRuolo(int id)
         {
             try
             {
