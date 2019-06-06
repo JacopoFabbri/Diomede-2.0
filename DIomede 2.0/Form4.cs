@@ -94,6 +94,8 @@ namespace Diomede2
                     }
                 }
             }
+            dataGridView1.DataSource = op.cercaClienti();
+            dataGridView1.Columns[0].Visible = false;
 
         }
     }
