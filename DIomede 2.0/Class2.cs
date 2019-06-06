@@ -68,19 +68,33 @@ namespace Diomede2
             }
             return cliente;
         }
-        public void upgradeUtente(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
+        public Cliente filtraClienti(String s, String g)
+        {
+            Cliente cliente = null;
+            try
+            {
+                ClienteDB cDB = new ClienteDB(conn);
+                cliente = cDB.filtroCliente(s,g);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return cliente;
+        }
+        public void updateCliente(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
         {
             try
             {
                 ClienteDB cDB = new ClienteDB(conn);
-                cDB.aggiornaUtente(id, nome, indirizzo, cap, citta, pec, email, partitaIva, telefono);
+                cDB.aggiornaCliente(id, nome, indirizzo, cap, citta, pec, email, partitaIva, telefono);
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
         }
-        public void cancellaUtente(int id)
+        public void cancellaCliente(int id)
         {
             try
             {
@@ -221,7 +235,41 @@ namespace Diomede2
             }
             return cliente;
         }
-        public void aggiornaUtente(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
+        public Cliente filtroCliente(String s, String g)
+        {
+            Cliente cliente = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `ANAGRAFICACLIENTI` WHERE `"+s+"` = '" + g + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    cliente = new Cliente();
+                    cliente.Id = (Int32)lettore[0];
+                    cliente.Nome = (String)lettore[1];
+                    cliente.Indirizzo = (String)lettore[2];
+                    cliente.Cap = (String)lettore[3];
+                    cliente.Citta = (String)lettore[4];
+                    cliente.Pec = (String)lettore[5];
+                    cliente.Email = (String)lettore[6];
+                    cliente.Iva = (String)lettore[7];
+                    cliente.Tel = (String)lettore[8];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return cliente;
+        }
+        public void aggiornaCliente(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
         {
             try
             {
@@ -259,7 +307,6 @@ namespace Diomede2
     public class ContattoDB
     {
         MySqlConnection con = null;
-        private Contatto contatto;
 
         public ContattoDB(MySqlConnection conn)
         {
@@ -395,6 +442,43 @@ namespace Diomede2
             }
             return Contatto;
         }
+        public Contatto filtroContratto(String s, String g)
+        {
+            Contatto Contatto = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `ANAGRAFICACONTATTI` WHERE `" + s + "` = '" + g + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Contatto contatto = new Contatto();
+                    contatto.Id = (Int32)lettore[0];
+                    contatto.Nome = (String)lettore[1];
+                    contatto.Indirizzo = (String)lettore[2];
+                    contatto.Cap = (String)lettore[3];
+                    contatto.Citta = (String)lettore[4];
+                    contatto.Pec = (String)lettore[5];
+                    contatto.Email = (String)lettore[6];
+                    contatto.Iva = (String)lettore[7];
+                    contatto.Ditta = (Int32)lettore[8];
+                    contatto.Cellulare = (String)lettore[9];
+                    contatto.Telefono = (String)lettore[10];
+                    contatto.Ruolo = (Int32)lettore[11];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return Contatto;
+        }
         public void aggiornaContatto(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String ditta, String cellulare, string telefono, string ruolo)
         {
             try
@@ -462,10 +546,10 @@ namespace Diomede2
         private String pec;
         private String email;
         private String iva;
-        private Int32 ditta;
+        private int ditta;
         private String cellulare;
         private String telefono;
-        private Int32 ruolo;
+        private int ruolo;
 
         public int Id { get => id; set => id = value; }
         public string Nome { get => nome; set => nome = value; }
@@ -475,10 +559,10 @@ namespace Diomede2
         public string Pec { get => pec; set => pec = value; }
         public string Email { get => email; set => email = value; }
         public string Iva { get => iva; set => iva = value; }
-        public Int32 Ditta { get => ditta; set => ditta = value; }
+        public int Ditta { get => ditta; set => ditta = value; }
         public string Cellulare { get => cellulare; set => cellulare = value; }
         public string Tel { get => telefono; set => telefono = value; }
-        public Int32 Ruolo { get => ruolo; set => ruolo = value; }
+        public int Ruolo { get => ruolo; set => ruolo = value; }
         public string Telefono { get; internal set; }
     }
 }

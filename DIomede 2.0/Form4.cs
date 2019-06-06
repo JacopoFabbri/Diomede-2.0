@@ -63,7 +63,7 @@ namespace Diomede2
                     try
                     {
                         Cliente clienti = op.cercaClientiId((int)dataGridView1.Rows[e.Row.Index].Cells[1].Value);
-                        op.cancellaUtente((int)dataGridView1.Rows[e.Row.Index].Cells[0].Value);
+                        op.cancellaCliente((int)dataGridView1.Rows[e.Row.Index].Cells[0].Value);
                         MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch
