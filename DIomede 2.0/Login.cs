@@ -134,7 +134,7 @@ namespace Diomede2
 
         private void ListView1_Click(object sender, EventArgs e)
         {
-            Dashboard frm = new Dashboard(listView1.SelectedItems[0].Text, utente, this);
+            Dashboard frm = new Dashboard(listView1.SelectedItems[0].Text, this);
             frm.Show();
             this.Hide();
 
