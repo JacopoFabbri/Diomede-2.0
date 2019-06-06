@@ -19,11 +19,6 @@ namespace Diomede2
             InitializeComponent();
         }
 
-        private void Form3_Load(object sender, EventArgs e)
-        {
-            Form4 frm = new Form4(db);
-            frm.Show();
-        }
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -31,11 +26,14 @@ namespace Diomede2
             {
                 OperazionePraticheEdili op = new OperazionePraticheEdili(db);
                 op.inserimentoCliente(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, textBox8.Text);
+                MessageBox.Show("Operazione effettuata");
+                this.Close();
             }
             catch (Exception)
             {
                 MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
             }
         }
+
     }
 }
