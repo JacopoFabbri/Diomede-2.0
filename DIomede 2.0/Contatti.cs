@@ -50,7 +50,7 @@ namespace Diomede2
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            InserimentoContratto frm = new InserimentoContratto(cliente, db);
+            InserimentoContatto frm = new InserimentoContatto(cliente, db);
             frm.Show();
         }
 
