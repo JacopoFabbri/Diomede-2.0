@@ -101,6 +101,8 @@ namespace Diomede2
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = op.cercaRuolo();
+            dataGridView1.Columns[0].Visible = false;
 
         }
 
