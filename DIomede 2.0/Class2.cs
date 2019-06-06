@@ -68,9 +68,9 @@ namespace Diomede2
             }
             return cliente;
         }
-        public Cliente filtraClienti(String s, String g)
+        public List<Cliente> filtraClienti(String s, String g)
         {
-            Cliente cliente = null;
+            List<Cliente> cliente = null;
             try
             {
                 ClienteDB cDB = new ClienteDB(conn);
@@ -160,19 +160,19 @@ namespace Diomede2
             }
             return contatto;
         }
-        public Contatto filtraContratto(String s, String g)
+        public List<Contatto> filtraContratto(String s, String g)
         {
-            Contatto contatto = null;
+            List<Contatto> contattos = null;
             try
             {
                 ContattoDB cDB = new ContattoDB(conn);
-                contatto = cDB.filtroContatto(s, g);
+                contattos = cDB.filtroContatto(s, g);
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
-            return contatto;
+            return contattos;
         }
         public void updateContatto(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, int ditta, String cellulare, string telefono, string ruolo)
         {
@@ -419,9 +419,9 @@ namespace Diomede2
             }
             return cliente;
         }
-        public Cliente filtroCliente(String s, String g)
+        public List<Cliente> filtroCliente(String s, String g)
         {
-            Cliente cliente = null;
+            List<Cliente> cliente = new List<Cliente>();
             try
             {
                 con.Open();
@@ -431,16 +431,17 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    cliente = new Cliente();
-                    cliente.Id = (Int32)lettore[0];
-                    cliente.Nome = (String)lettore[1];
-                    cliente.Indirizzo = (String)lettore[2];
-                    cliente.Cap = (String)lettore[3];
-                    cliente.Citta = (String)lettore[4];
-                    cliente.Pec = (String)lettore[5];
-                    cliente.Email = (String)lettore[6];
-                    cliente.Iva = (String)lettore[7];
-                    cliente.Tel = (String)lettore[8];
+                    Cliente c = new Cliente();
+                    c.Id = (Int32)lettore[0];
+                    c.Nome = (String)lettore[1];
+                    c.Indirizzo = (String)lettore[2];
+                    c.Cap = (String)lettore[3];
+                    c.Citta = (String)lettore[4];
+                    c.Pec = (String)lettore[5];
+                    c.Email = (String)lettore[6];
+                    c.Iva = (String)lettore[7];
+                    c.Tel = (String)lettore[8];
+                    cliente.Add(c);
                 }
             }
             catch (Exception ex)
@@ -626,9 +627,9 @@ namespace Diomede2
             }
             return Contatto;
         }
-        public Contatto filtroContatto(String s, String g)
+        public List<Contatto> filtroContatto(String s, String g)
         {
-            Contatto Contatto = null;
+            List<Contatto> contattos = new List<Contatto>();
             try
             {
                 con.Open();
@@ -651,6 +652,7 @@ namespace Diomede2
                     contatto.Cellulare = (String)lettore[9];
                     contatto.Telefono = (String)lettore[10];
                     contatto.Ruolo = (Int32)lettore[11];
+                    contattos.Add(contatto);
                 }
             }
             catch (Exception ex)
@@ -661,7 +663,7 @@ namespace Diomede2
             {
                 con.Close();
             }
-            return Contatto;
+            return contattos;
         }
         public void aggiornaContatto(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, int ditta, String cellulare, string telefono, string ruolo)
         {

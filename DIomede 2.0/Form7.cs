@@ -34,9 +34,12 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
-                dataGridView1.DataSource = op.cercaClienti();
-                dataGridView1.Columns[0].Visible = false;
-
+                List<Contatto> lista = op.filtraContratto("DITTA", "" + cliente.Id);
+                if (lista != null)
+                {
+                    dataGridView1.DataSource = lista;
+                    dataGridView1.Columns[0].Visible = false;
+                }
             }
             catch
             {
