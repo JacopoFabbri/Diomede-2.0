@@ -62,5 +62,6 @@ namespace Diomede2
             Form5 frm = new Form5(cliente, db);
             frm.Show();
         }
+
     }
 }

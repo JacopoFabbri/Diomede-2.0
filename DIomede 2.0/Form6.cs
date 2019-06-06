@@ -98,5 +98,16 @@ namespace Diomede2
             dataGridView1.DataSource = op.cercaRuolo();
             dataGridView1.Columns[0].Visible = false;
         }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Form8 frm = new Form8(db);
+            frm.Show();
+        }
     }
 }
