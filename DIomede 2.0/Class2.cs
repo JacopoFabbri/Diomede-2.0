@@ -711,7 +711,7 @@ namespace Diomede2
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `RUOLI`(`NOME`, `DESC`) VALUES('" + nome + "','" + desc + "'", con);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `RUOLI`(`NOME`, `DESC`) VALUES('" + nome + "','" + desc + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -725,7 +725,7 @@ namespace Diomede2
         }
         public List<Ruolo> listaRuoli()
         {
-            List<Ruolo> lista = null;
+            List<Ruolo> lista = new List<Ruolo>();
             try
             {
                 con.Open();
@@ -754,7 +754,7 @@ namespace Diomede2
         }
         public List<Ruolo> listaRuoli(String n)
         {
-            List<Ruolo> lista = null;
+            List<Ruolo> lista = new List<Ruolo>();
             try
             {
                 con.Open();

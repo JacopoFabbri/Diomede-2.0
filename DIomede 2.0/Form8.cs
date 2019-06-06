@@ -23,5 +23,18 @@ namespace Diomede2
         {
 
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OperazionePraticheEdili op = new OperazionePraticheEdili(db);
+                op.inserimentoRuolo(textBox1.Text, textBox2.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
+            }
+        }
     }
 }
