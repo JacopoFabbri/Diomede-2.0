@@ -15,6 +15,7 @@ namespace Diomede2
     {
         private String settore;
         private Utente user;
+        private OperazionePraticheEdili op;
         public Form2(String s, Utente u)
         {
             settore = s;
@@ -24,7 +25,14 @@ namespace Diomede2
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            op = new OperazionePraticheEdili(settore);
+            List<Cliente> lista = op.cercaClienti();
+            if (lista != null) {
+                foreach (Cliente c in lista)
+                {
+                    listView1.Items.Add(c.Nome);
+                }
+            }
         }
 
         private void Button1_Click(object sender, EventArgs e)

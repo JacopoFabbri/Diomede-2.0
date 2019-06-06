@@ -106,6 +106,98 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
+        public void inserimentoContatto(String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String ditta, String cellulare, String telefono, String ruolo)
+        {
+            try
+            {
+                ContattoDB cDB = new ContattoDB(conn);
+                cDB.inserimento(nome, indirizzo, cap, citta, pec, email, partitaIva, ditta, cellulare, telefono, ruolo);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public List<Contatto> cercaContratti()
+        {
+            List<Contatto> lista = new List<Contatto>();
+            try
+            {
+                ContattoDB cDB = new ContattoDB(conn);
+                lista = cDB.listaContatti();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public List<Contatto> cercaContattoNome(String n)
+        {
+            List<Contatto> lista = new List<Contatto>();
+            try
+            {
+                ContattoDB cDB = new ContattoDB(conn);
+                lista = cDB.listaClienti(n);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public Contatto cercaContattoId(int id)
+        {
+            Contatto contatto = null;
+            try
+            {
+                ContattoDB cDB = new ContattoDB(conn);
+                contatto = cDB.cercaContatto(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public Contatto filtraContratto(String s, String g)
+        {
+            Contatto contatto = null;
+            try
+            {
+                ContattoDB cDB = new ContattoDB(conn);
+                contatto = cDB.filtroContatto(s, g);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public void updateContatto(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, int ditta, String cellulare, string telefono, string ruolo)
+        {
+            try
+            {
+                ContattoDB cDB = new ContattoDB(conn);
+                cDB.aggiornaContatto(id, nome, indirizzo, cap, citta, pec, email, partitaIva, ditta, cellulare, telefono, ruolo);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void cacellaContatto(int id)
+        {
+            try
+            {
+                ContattoDB cDB = new ContattoDB(conn);
+                cDB.rimuoviContatto(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
     }
     public class ClienteDB
     {
@@ -442,7 +534,7 @@ namespace Diomede2
             }
             return Contatto;
         }
-        public Contatto filtroContratto(String s, String g)
+        public Contatto filtroContatto(String s, String g)
         {
             Contatto Contatto = null;
             try
@@ -479,7 +571,7 @@ namespace Diomede2
             }
             return Contatto;
         }
-        public void aggiornaContatto(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String ditta, String cellulare, string telefono, string ruolo)
+        public void aggiornaContatto(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, int ditta, String cellulare, string telefono, string ruolo)
         {
             try
             {
