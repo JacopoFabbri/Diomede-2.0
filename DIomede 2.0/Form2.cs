@@ -50,8 +50,6 @@ namespace Diomede2
             Cliente cliente = lista[listView1.SelectedItems[0].Index];
             Form7 frm1 = new Form7(cliente, settore, this);
             frm1.Show();
-            Form5 frm = new Form5(cliente, settore);
-            frm.Show();
 
         }
 
