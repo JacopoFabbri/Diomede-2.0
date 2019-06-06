@@ -10,30 +10,31 @@ using System.Windows.Forms;
 
 namespace Diomede2
 {
-    public partial class Form3 : Form
+    public partial class InserimentoRuolo : Form
     {
         String db;
-        public Form3(String dbName)
+        public InserimentoRuolo(String dbName)
         {
             db = dbName;
             InitializeComponent();
         }
 
+        private void Form8_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void Button1_Click(object sender, EventArgs e)
         {
             try
             {
                 OperazionePraticheEdili op = new OperazionePraticheEdili(db);
-                op.inserimentoCliente(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, textBox8.Text);
-                MessageBox.Show("Operazione effettuata");
-                this.Close();
+                op.inserimentoRuolo(textBox1.Text, textBox2.Text);
             }
             catch (Exception)
             {
                 MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
             }
         }
-
     }
 }

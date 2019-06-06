@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Diomede2
 {
-    public partial class Form4 : Form
+    public partial class ListaClienti : Form
     {
         String db;
         OperazionePraticheEdili op;
-        Form2 formPrecente;
-        public Form4(String dbName, Form2 frm)
+        Dashboard formPrecente;
+        public ListaClienti(String dbName, Dashboard frm)
         {
             formPrecente = frm;
             db = dbName;
@@ -87,7 +87,7 @@ namespace Diomede2
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            Form3 frm = new Form3(db);
+            InserimentoCliente frm = new InserimentoCliente(db);
             frm.Show();
         }
 

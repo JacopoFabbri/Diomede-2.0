@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Diomede2
 {
-    public partial class Form5 : Form
+    public partial class InserimentoContratto : Form
     {
         String db;
         Cliente cliente;
         List<Ruolo> lista;
-        public Form5(Cliente c, String dbName)
+        public InserimentoContratto(Cliente c, String dbName)
         {
             cliente = c;
             db = dbName;
@@ -25,7 +25,7 @@ namespace Diomede2
         private void Form5_Load(object sender, EventArgs e)
         {
             textBox8.Text = "" + cliente.Id;
-            Form6 frm = new Form6(db);
+            Ruoli frm = new Ruoli(db);
             frm.Show();
             OperazionePraticheEdili op = new OperazionePraticheEdili(db);
             lista = op.cercaRuolo();

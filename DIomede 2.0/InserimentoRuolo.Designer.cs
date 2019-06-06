@@ -1,6 +1,6 @@
 ﻿namespace Diomede2
 {
-    partial class Form8
+    partial class InserimentoRuolo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form8));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InserimentoRuolo));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();

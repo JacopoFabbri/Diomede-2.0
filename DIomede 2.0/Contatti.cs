@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Diomede2
 {
-    public partial class Form7 : Form
+    public partial class Contatti : Form
     {
         Cliente cliente;
         String db;
         OperazionePraticheEdili op;
-        Form2 formPrecente;
-        public Form7(Cliente c, String dbName, Form2 frm)
+        Dashboard formPrecente;
+        public Contatti(Cliente c, String dbName, Dashboard frm)
         {
             formPrecente = frm;
             cliente = c;
@@ -50,7 +50,7 @@ namespace Diomede2
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            Form5 frm = new Form5(cliente, db);
+            InserimentoContratto frm = new InserimentoContratto(cliente, db);
             frm.Show();
         }
 
@@ -61,7 +61,23 @@ namespace Diomede2
 
         private void Button3_Click(object sender, EventArgs e)
         {
-
+            if (dataGridView1.SelectedRows != null)
+            {
+                if (MessageBox.Show("Stai per eliminare " + (String)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?", "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        Contatto clienti = op.cercaContattoId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        op.cacellaContatto((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            Form7_Load(sender, e);
         }
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -82,7 +98,7 @@ namespace Diomede2
                     {
                         try
                         {
-                            op.updateContatto((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["INDIRIZZO"].Value + "", riga.Cells["CAP"].Value + "", riga.Cells["CITTA"].Value + "", riga.Cells["PEC"].Value + "", riga.Cells["EMAIL"].Value + "", riga.Cells["Iva"].Value + "", (int) riga.Cells["DITTA"].Value , riga.Cells["CELLULARE"].Value + "", riga.Cells["TEL"].Value + "", riga.Cells["RUOLO"].Value + "");
+                            op.updateContatto((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["INDIRIZZO"].Value + "", riga.Cells["CAP"].Value + "", riga.Cells["CITTA"].Value + "", riga.Cells["PEC"].Value + "", riga.Cells["EMAIL"].Value + "", riga.Cells["Iva"].Value + "", (int)riga.Cells["DITTA"].Value, riga.Cells["CELLULARE"].Value + "", riga.Cells["TEL"].Value + "", riga.Cells["RUOLO"].Value + "");
                         }
                         catch
                         {
@@ -92,7 +108,7 @@ namespace Diomede2
                     }
                 }
             }
-            dataGridView1.DataSource = op.filtraContratto("DITTA","" + cliente.Id);
+            dataGridView1.DataSource = op.filtraContratto("DITTA", "" + cliente.Id);
             dataGridView1.Columns[0].Visible = false;
 
         }

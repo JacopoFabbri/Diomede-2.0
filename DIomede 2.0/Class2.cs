@@ -252,19 +252,19 @@ namespace Diomede2
             }
             return contatto;
         }
-        public Ruolo filtraRuolo(String s, String g)
+        public List<Ruolo> filtraRuolo(String s, String g)
         {
-            Ruolo contatto = null;
+            List<Ruolo> ruolo = new List<Ruolo>();
             try
             {
                 RuoloDB cDB = new RuoloDB(conn);
-                contatto = cDB.filtroRuoli(s, g);
+                ruolo = cDB.filtroRuoli(s, g);
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
-            return contatto;
+            return ruolo;
         }
         public void updateRuolo(int id, String nome, String desc)
         {
@@ -905,9 +905,9 @@ namespace Diomede2
             }
             return ruolo;
         }
-        public Ruolo filtroRuoli(String s, String g)
+        public List<Ruolo> filtroRuoli(String s, String g)
         {
-            Ruolo ruolo = null;
+            List<Ruolo> ruolo = new List<Ruolo>();
             try
             {
                 con.Open();
@@ -921,7 +921,7 @@ namespace Diomede2
                     r.Id = (Int32)lettore[0];
                     r.Nome = (String)lettore[1];
                     r.Desc = (String)lettore[2];
-                    ruolo = r;
+                    ruolo.Add(r);
                 }
             }
             catch (Exception ex)
@@ -1088,9 +1088,9 @@ namespace Diomede2
             }
             return bozza;
         }
-        public Bozza filtroBozza(String s, String g)
+        public List<Bozza> filtroBozza(String s, String g)
         {
-            Bozza bozza = null;
+            List<Bozza> bozza = new List<Bozza>();
             try
             {
                 con.Open();
@@ -1101,12 +1101,12 @@ namespace Diomede2
                 while (lettore.Read())
                 {
                     Bozza b = new Bozza();
-                    bozza.Id = (Int32)lettore[0];
-                    bozza.Data = (DateTime)lettore[1];
-                    bozza.Pacchetto = (Int32)lettore[2];
-                    bozza.Importo = (Double)lettore[3];
-                    bozza.NumeroCommessa = (String)lettore[4];
-                    bozza = b;
+                    b.Id = (Int32)lettore[0];
+                    b.Data = (DateTime)lettore[1];
+                    b.Pacchetto = (Int32)lettore[2];
+                    b.Importo = (Double)lettore[3];
+                    b.NumeroCommessa = (String)lettore[4];
+                    bozza.Add(b);
                 }
             }
             catch (Exception ex)
@@ -1276,9 +1276,9 @@ namespace Diomede2
             }
             return commessa;
         }
-        public Commessa filtroCommesse(String s, String g)
+        public List<Commessa> filtroCommesse(String s, String g)
         {
-            Commessa commessa = null;
+            List<Commessa> commessa = new List<Commessa>();
             try
             {
                 con.Open();
@@ -1289,13 +1289,13 @@ namespace Diomede2
                 while (lettore.Read())
                 {
                     Commessa c = new Commessa();
-                    commessa.Id = (Int32)lettore[0];
-                    commessa.Ditta = (Int32)lettore[1];
-                    commessa.Tipologia = (Int32)lettore[2];
-                    commessa.NumeroCommessa = (String)lettore[3];
-                    commessa.Data = (DateTime)lettore[4];
-                    commessa.Referente = (String)lettore[5];
-                    commessa = c;
+                    c.Id = (Int32)lettore[0];
+                    c.Ditta = (Int32)lettore[1];
+                    c.Tipologia = (Int32)lettore[2];
+                    c.NumeroCommessa = (String)lettore[3];
+                    c.Data = (DateTime)lettore[4];
+                    c.Referente = (String)lettore[5];
+                    commessa.Add(c);
                 }
             }
             catch (Exception ex)
@@ -1459,9 +1459,9 @@ namespace Diomede2
             }
             return lavorazione;
         }
-        public Lavorazione filtroLavorazioni(String s, String g)
+        public List<Lavorazione> filtroLavorazioni(String s, String g)
         {
-            Lavorazione lavorazione = null;
+            List<Lavorazione> lavorazione = new List<Lavorazione>();
             try
             {
                 con.Open();
@@ -1472,11 +1472,11 @@ namespace Diomede2
                 while (lettore.Read())
                 {
                     Lavorazione l = new Lavorazione();
-                    lavorazione.Id = (Int32)lettore[0];
-                    lavorazione.Operazione = (String)lettore[1];
-                    lavorazione.Pacchetto = (Int32)lettore[2];
-                    lavorazione.Importo = (Double)lettore[3]; ;
-                    lavorazione = l;
+                    l.Id = (Int32)lettore[0];
+                    l.Operazione = (String)lettore[1];
+                    l.Pacchetto = (Int32)lettore[2];
+                    l.Importo = (Double)lettore[3]; ;
+                    lavorazione.Add(l);
                 }
             }
             catch (Exception ex)
@@ -1526,7 +1526,7 @@ namespace Diomede2
 
     }
     public class Cliente
-        {
+    {
         private int id;
         private String nome;
         private String indirizzo;
