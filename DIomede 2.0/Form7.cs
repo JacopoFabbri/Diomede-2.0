@@ -52,16 +52,16 @@ namespace Diomede2
             dataGridView1.Focus();
         }
 
-        private void Form7_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            formPrecente.Show();
-        }
 
-        private void Button3_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             Form5 frm = new Form5(cliente, db);
             frm.Show();
         }
 
+        private void Form7_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formPrecente.Show();
+        }
     }
 }
