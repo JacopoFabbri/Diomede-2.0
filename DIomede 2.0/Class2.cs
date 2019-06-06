@@ -725,24 +725,16 @@ namespace Diomede2
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `ANAGRAFICACONTATTI` WHERE `" + s + "` = '" + g + "'", con);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `RUOLI` WHERE `" + s + "` = '" + g + "'", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
                 {
-                    Contatto contatto = new Contatto();
-                    contatto.Id = (Int32)lettore[0];
-                    contatto.Nome = (String)lettore[1];
-                    contatto.Indirizzo = (String)lettore[2];
-                    contatto.Cap = (String)lettore[3];
-                    contatto.Citta = (String)lettore[4];
-                    contatto.Pec = (String)lettore[5];
-                    contatto.Email = (String)lettore[6];
-                    contatto.Iva = (String)lettore[7];
-                    contatto.Ditta = (Int32)lettore[8];
-                    contatto.Cellulare = (String)lettore[9];
-                    contatto.Telefono = (String)lettore[10];
-                    contatto.Ruolo = (Int32)lettore[11];
+                    Ruolo r = new Ruolo();
+                    r.Id = (Int32)lettore[0];
+                    r.Nome = (String)lettore[1];
+                    r.Desc = (String)lettore[2];
+                    ruolo = r;
                 }
             }
             catch (Exception ex)
@@ -755,12 +747,12 @@ namespace Diomede2
             }
             return ruolo;
         }
-        public void aggiornaRuoli(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, int ditta, String cellulare, string telefono, string ruolo)
+        public void aggiornaRuoli(int id, String nome, String desc)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("UPDATE `ANAGRAFICACONTATTI` SET `NOME`='" + nome + "',`INDIRIZZO`='" + indirizzo + "',`CAP`='" + cap + "',`CITTA`='" + citta + "',`PEC`='" + pec + "',`EMAIL`='" + email + "',`PARTITAIVA`='" + partitaIva + "',`DITTA`='" + ditta + "',`TELEFONOCELLULARE`='" + cellulare + "',`TELEFONOFISSO`='" + telefono + "',`RUOLO`='" + ruolo + "' WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command = new MySqlCommand("UPDATE `RUOLI` SET `NOME`='" + nome + "',`DESC`='" + desc + "' WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -777,7 +769,7 @@ namespace Diomede2
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("DELETE FROM `ANAGRAFICACONTATTI` WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command = new MySqlCommand("DELETE FROM `RUOLI` WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
