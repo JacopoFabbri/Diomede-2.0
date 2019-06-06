@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Diomede2
 {
-    public partial class Form6 : Form
+    public partial class Ruoli : Form
     {
         private String db;
         OperazionePraticheEdili op;
-        public Form6(String dbNAme)
+        public Ruoli(String dbNAme)
         {
             db = dbNAme;
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace Diomede2
                 }
                 else
                 {
-                    Form8 frm = new Form8(db);
+                    InserimentoRuolo frm = new InserimentoRuolo(db);
                     frm.Show();
                 }
 
@@ -101,7 +101,7 @@ namespace Diomede2
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            Form8 frm = new Form8(db);
+            InserimentoRuolo frm = new InserimentoRuolo(db);
             frm.Show();
         }
 

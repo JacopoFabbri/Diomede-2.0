@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace Diomede2
 {
-    public partial class Form2 : Form
+    public partial class Dashboard : Form
     {
         private String settore;
         private Utente user;
         private OperazionePraticheEdili op;
         private List<Cliente> lista;
-        private Form1 formPrecedente;
-        public Form2(String s, Utente u, Form1 f)
+        private Login formPrecedente;
+        public Dashboard(String s, Utente u, Login f)
         {
             formPrecedente = f;
             settore = s;
@@ -40,7 +40,7 @@ namespace Diomede2
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Form4 frm = new Form4(settore, this);
+            ListaClienti frm = new ListaClienti(settore, this);
             frm.Show();
             this.Hide();
         }
@@ -48,7 +48,7 @@ namespace Diomede2
         private void ListView1_Click(object sender, EventArgs e)
         {
             Cliente cliente = lista[listView1.SelectedItems[0].Index];
-            Form7 frm1 = new Form7(cliente, settore, this);
+            Contatti frm1 = new Contatti(cliente, settore, this);
             frm1.Show();
 
         }
