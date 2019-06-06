@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -75,20 +76,12 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(564, 140);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(563, 140);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(97, 73);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(87, 20);
-            this.textBox7.TabIndex = 6;
-            this.textBox7.Text = "Partita Iva";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(191, 3);
+            this.textBox3.Location = new System.Drawing.Point(189, 3);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(87, 20);
             this.textBox3.TabIndex = 2;
@@ -96,7 +89,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(97, 3);
+            this.textBox2.Location = new System.Drawing.Point(96, 3);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(87, 20);
             this.textBox2.TabIndex = 1;
@@ -110,9 +103,17 @@
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Nome";
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(282, 3);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(87, 20);
+            this.textBox4.TabIndex = 3;
+            this.textBox4.Text = "Citta";
+            // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(377, 3);
+            this.textBox5.Location = new System.Drawing.Point(375, 3);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(87, 20);
             this.textBox5.TabIndex = 4;
@@ -126,34 +127,25 @@
             this.textBox6.TabIndex = 5;
             this.textBox6.Text = "Email";
             // 
-            // textBox4
+            // textBox7
             // 
-            this.textBox4.Location = new System.Drawing.Point(284, 3);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(87, 20);
-            this.textBox4.TabIndex = 3;
-            this.textBox4.Text = "Citta";
+            this.textBox7.Location = new System.Drawing.Point(96, 73);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(87, 20);
+            this.textBox7.TabIndex = 6;
+            this.textBox7.Text = "Partita Iva";
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(191, 73);
+            this.textBox8.Location = new System.Drawing.Point(189, 73);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(87, 20);
             this.textBox8.TabIndex = 7;
             this.textBox8.Text = "Ditta";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(470, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 20);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Inserisci";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(284, 73);
+            this.textBox9.Location = new System.Drawing.Point(282, 73);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(87, 20);
             this.textBox9.TabIndex = 9;
@@ -161,16 +153,25 @@
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(377, 73);
+            this.textBox10.Location = new System.Drawing.Point(375, 73);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(87, 20);
             this.textBox10.TabIndex = 10;
             this.textBox10.Text = "Tel.";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(468, 73);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(71, 20);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Inserisci";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(470, 3);
+            this.comboBox1.Location = new System.Drawing.Point(468, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(91, 21);
             this.comboBox1.TabIndex = 11;
@@ -182,8 +183,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 141);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form5";
-            this.Text = "Form5";
+            this.Text = "Inserimento Contatto";
             this.Load += new System.EventHandler(this.Form5_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

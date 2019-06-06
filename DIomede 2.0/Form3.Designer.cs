@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -68,14 +69,14 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(469, 204);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(465, 204);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(189, 105);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(87, 20);
+            this.textBox7.Size = new System.Drawing.Size(86, 20);
             this.textBox7.TabIndex = 6;
             this.textBox7.Text = "Partita Iva";
             // 
@@ -83,7 +84,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(189, 3);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(87, 20);
+            this.textBox3.Size = new System.Drawing.Size(86, 20);
             this.textBox3.TabIndex = 2;
             this.textBox3.Text = "Cap";
             // 
@@ -121,7 +122,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(282, 3);
+            this.textBox4.Location = new System.Drawing.Point(281, 3);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(87, 20);
             this.textBox4.TabIndex = 3;
@@ -129,7 +130,7 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(282, 105);
+            this.textBox8.Location = new System.Drawing.Point(281, 105);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(87, 20);
             this.textBox8.TabIndex = 7;
@@ -137,7 +138,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(375, 105);
+            this.button1.Location = new System.Drawing.Point(374, 105);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(71, 20);
             this.button1.TabIndex = 8;
@@ -151,8 +152,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 205);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "Inserimento Cliente";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
