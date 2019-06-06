@@ -13,14 +13,19 @@ namespace Diomede2
     public partial class Form3 : Form
     {
         String db;
-        public Form3(String dbName)
+        Form2 formPrecendente;
+        public Form3(String dbName, Form2 frm)
         {
+            formPrecendente = frm;
             db = dbName;
             InitializeComponent();
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            this.Hide();
+            Form4 frm1 = new Form4(db, this);
+            frm1.Show();
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -34,6 +39,11 @@ namespace Diomede2
             {
                 MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
             }
+        }
+
+        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            formPrecendente.Show();
         }
     }
 }

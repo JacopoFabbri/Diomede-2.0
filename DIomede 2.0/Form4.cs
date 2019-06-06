@@ -14,8 +14,10 @@ namespace Diomede2
     {
         String db;
         OperazionePraticheEdili op;
-        public Form4(String dbName)
+        Form3 formPrecente;
+        public Form4(String dbName, Form3 frm)
         {
+            formPrecente = frm;
             db = dbName;
             InitializeComponent();
         }
@@ -90,5 +92,9 @@ namespace Diomede2
 
         }
 
+        private void Form4_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formPrecente.Show();
+        }
     }
 }

@@ -134,8 +134,11 @@ namespace Diomede2
 
         private void ListView1_Click(object sender, EventArgs e)
         {
-            Form2 frm = new Form2(listView1.SelectedItems[0].Text, utente);
+            Form2 frm = new Form2(listView1.SelectedItems[0].Text, utente, this);
             frm.Show();
+            this.Hide();
+
         }
+
     }
 }

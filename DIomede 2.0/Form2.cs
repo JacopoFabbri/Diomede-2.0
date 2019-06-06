@@ -17,8 +17,10 @@ namespace Diomede2
         private Utente user;
         private OperazionePraticheEdili op;
         private List<Cliente> lista;
-        public Form2(String s, Utente u)
+        private Form1 formPrecedente;
+        public Form2(String s, Utente u, Form1 f)
         {
+            formPrecedente = f;
             settore = s;
             user = u;
             InitializeComponent();
@@ -38,10 +40,9 @@ namespace Diomede2
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Form3 frm = new Form3(settore);
+            Form3 frm = new Form3(settore, this);
             frm.Show();
-            Form4 frm1 = new Form4(settore);
-            frm1.Show();
+            this.Hide();
         }
 
         private void ListView1_Click(object sender, EventArgs e)
@@ -52,5 +53,9 @@ namespace Diomede2
 
         }
 
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formPrecedente.Show();
+        }
     }
 }
