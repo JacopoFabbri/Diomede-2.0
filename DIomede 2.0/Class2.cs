@@ -290,7 +290,100 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
+        public void inserimentoBozza(String data, String pacchetto, String importo, String numerocommessa)
+        {
+            try
+            {
+                BozzaDB bDB = new BozzaDB(conn);
+                bDB.inserimento(data, pacchetto, importo, numerocommessa);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public List<Bozza> cercaBozza()
+        {
+            List<Bozza> lista = new List<Bozza>();
+            try
+            {
+                BozzaDB bDB = new BozzaDB(conn);
+                lista = bDB.listaBozza();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public List<Bozza> cercaBozza(String n)
+        {
+            List<Bozza> lista = new List<Bozza>();
+            try
+            {
+                BozzaDB bDB = new BozzaDB(conn);
+                lista = bDB.listaBozza(n);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public Bozza cercaBozzaId(int id)
+        {
+            Bozza contatto = null;
+            try
+            {
+                BozzaDB bDB = new BozzaDB(conn);
+                contatto = bDB.cercaBozza(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public Bozza filtraBozza(String s, String g)
+        {
+            Bozza contatto = null;
+            try
+            {
+                BozzaDB bDB = new BozzaDB(conn);
+                contatto = bDB.filtroBozza(s, g);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public void updateBozza(int id, String data, String pacchetto, String importo, String numerocommessa)
+        {
+            try
+            {
+                BozzaDB bDB = new BozzaDB(conn);
+                bDB.aggiornaBozza(id, data, pacchetto, importo, numerocommessa);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void cancellaBozza(int id)
+        {
+            try
+            {
+                BozzaDB bDB = new BozzaDB(conn);
+                bDB.rimuoviBozza(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
     }
+
     public class ClienteDB
     {
         MySqlConnection con = null;
@@ -1026,7 +1119,7 @@ namespace Diomede2
             }
             return bozza;
         }
-        public void aggiornaRuoli(int id, String data, String pacchetto, String importo, String numerocommessa)
+        public void aggiornaBozza(int id, String data, String pacchetto, String importo, String numerocommessa)
         {
             try
             {
