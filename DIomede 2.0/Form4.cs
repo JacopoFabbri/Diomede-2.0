@@ -74,12 +74,27 @@ namespace Diomede2
             }
         }
 
-        private void Form4_KeyDown(object sender, KeyEventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            if(e.KeyCode == Keys.Control)
+            foreach (DataGridViewRow riga in dataGridView1.Rows)
             {
-                
+                if (riga.Cells[0].Value != null)
+                {
+                    if (riga.Cells[0].Style.ForeColor == Color.Red)
+                    {
+                        try
+                        {
+                            op.updateCliente((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["INDIRIZZO"].Value + "", riga.Cells["CAP"].Value + "", riga.Cells["CITTA"].Value + "", riga.Cells["PEC"].Value + "", riga.Cells["EMAIL"].Value + "", riga.Cells["Iva"].Value + "", riga.Cells["Tel"].Value + "");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                    }
+                }
             }
+
         }
     }
 }
