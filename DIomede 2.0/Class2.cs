@@ -1062,6 +1062,376 @@ namespace Diomede2
 
         }
     }
+    public class CommessaDB
+    {
+        MySqlConnection con = null;
+
+        public CommessaDB(MySqlConnection conn)
+        {
+            con = conn;
+        }
+        public void inserimento(String ditta, String tipologia, String numerocommessa, String data, String referente)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("INSERT INTO `COMMESSA`(`ID`, `DITTA`, `TIPOLOGIA`, `NUMEROCOMMESSA`, `DATA`, `REFERENTE`) VALUES('" + ditta + "','" + tipologia + "','" + numerocommessa + "','" + data + "','" + referente + "')", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<Commessa> listaCommesse()
+        {
+            List<Commessa> lista = new List<Commessa>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `COMMESSA`", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Commessa commessa = new Commessa();
+                    commessa.Id = (Int32)lettore[0];
+                    commessa.Ditta = (Int32)lettore[1];
+                    commessa.Tipologia = (Int32)lettore[2];
+                    commessa.NumeroCommessa = (String)lettore[3];
+                    commessa.Data = (DateTime)lettore[4];
+                    commessa.Referente = (String)lettore[5];
+                    lista.Add(commessa);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public List<Commessa> listaCommesse(String n)
+        {
+            List<Commessa> lista = new List<Commessa>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `COMMESSA` WHERE `ID` = '" + n + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Commessa commessa = new Commessa();
+                    commessa.Id = (Int32)lettore[0];
+                    commessa.Ditta = (Int32)lettore[1];
+                    commessa.Tipologia = (Int32)lettore[2];
+                    commessa.NumeroCommessa = (String)lettore[3];
+                    commessa.Data = (DateTime)lettore[4];
+                    commessa.Referente = (String)lettore[5];
+                    lista.Add(commessa);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public Commessa cercaCommesse(int id)
+        {
+            Commessa commessa = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `COMMESSA` WHERE `ID` = '" + id + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Commessa c = new Commessa();
+                    commessa.Id = (Int32)lettore[0];
+                    commessa.Ditta = (Int32)lettore[1];
+                    commessa.Tipologia = (Int32)lettore[2];
+                    commessa.NumeroCommessa = (String)lettore[3];
+                    commessa.Data = (DateTime)lettore[4];
+                    commessa.Referente = (String)lettore[5];
+                    commessa = c;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return commessa;
+        }
+        public Commessa filtroCommesse(String s, String g)
+        {
+            Commessa commessa = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `COMMESSA` WHERE `" + s + "` = '" + g + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Commessa c = new Commessa();
+                    commessa.Id = (Int32)lettore[0];
+                    commessa.Ditta = (Int32)lettore[1];
+                    commessa.Tipologia = (Int32)lettore[2];
+                    commessa.NumeroCommessa = (String)lettore[3];
+                    commessa.Data = (DateTime)lettore[4];
+                    commessa.Referente = (String)lettore[5];
+                    commessa = c;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return commessa;
+        }
+        public void aggiornaCommesse(int id, String ditta, String tipologia, String numerocommessa, String data, String referente)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("UPDATE `COMMESSA` SET `DITTA`='" + ditta + "',`TIPOLOGIA`='" + tipologia + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`DATA`='" + data + "',`REFERENTE`='" + referente + "' WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void rimuoviCommessa(int id)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("DELETE FROM `COMMESSA` WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+    }
+    public class LavorazioniDB
+    {
+        MySqlConnection con = null;
+
+        public LavorazioniDB(MySqlConnection conn)
+        {
+            con = conn;
+        }
+        public void inserimento(String operazione, String pacchetto, String importo)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("INSERT INTO `LAVORAZIONE`(`ID`, `OPERAZIONE`, `PACCHETTO`, `IMPORTO`) VALUES('" + operazione + "','" + pacchetto + "','" + importo + "')", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<Lavorazione> listaLavorazioni()
+        {
+            List<Lavorazione> lista = new List<Lavorazione>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `LAVORAZIONE`", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Lavorazione lavorazione = new Lavorazione();
+                    lavorazione.Id = (Int32)lettore[0];
+                    lavorazione.Operazione = (String)lettore[1];
+                    lavorazione.Pacchetto = (Int32)lettore[2];
+                    lavorazione.Importo = (Double)lettore[3]; ;
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public List<Lavorazione> listaLavorazioni(String n)
+        {
+            List<Lavorazione> lista = new List<Lavorazione>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `LAVORAZIONE` WHERE `ID` = '" + n + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Lavorazione lavorazione = new Lavorazione();
+                    lavorazione.Id = (Int32)lettore[0];
+                    lavorazione.Operazione = (String)lettore[1];
+                    lavorazione.Pacchetto = (Int32)lettore[2];
+                    lavorazione.Importo = (Double)lettore[3]; ;
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public Lavorazione cercaLavorazione(int id)
+        {
+            Lavorazione lavorazione = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `LAVORAZIONE` WHERE `ID` = '" + id + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Lavorazione l = new Lavorazione();
+                    lavorazione.Id = (Int32)lettore[0];
+                    lavorazione.Operazione = (String)lettore[1];
+                    lavorazione.Pacchetto = (Int32)lettore[2];
+                    lavorazione.Importo = (Double)lettore[3]; ;
+                    lavorazione = l;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lavorazione;
+        }
+        public Lavorazione filtroLavorazioni(String s, String g)
+        {
+            Lavorazione lavorazione = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `LAVORAZIONE` WHERE `" + s + "` = '" + g + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Lavorazione l = new Lavorazione();
+                    lavorazione.Id = (Int32)lettore[0];
+                    lavorazione.Operazione = (String)lettore[1];
+                    lavorazione.Pacchetto = (Int32)lettore[2];
+                    lavorazione.Importo = (Double)lettore[3]; ;
+                    lavorazione = l;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lavorazione;
+        }
+        public void aggiornaLavorazioni(int id, String operazione, String pacchetto, String importo)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("UPDATE `LAVORAZIONE` SET `OPERAZIONE`='" + operazione + "',`PACCHETTO`='" + pacchetto + "',`IMPORTO`='" + importo + "' WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void rimuoviLavorazioni(int id)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("DELETE FROM `LAVORAZIONE` WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+    }
     public class Cliente
         {
         private int id;
@@ -1136,6 +1506,38 @@ namespace Diomede2
         public int Pacchetto { get => pacchetto; set => pacchetto = value; }
         public Double Importo { get => importo; set => importo = value; }
         public String NumeroCommessa { get => numerocommessa; set => numerocommessa = value; }
+    }
+    public class Commessa
+    {
+        private int id;
+        private int ditta;
+        private int tipologia;
+        private String numerocommessa;
+        private DateTime data;
+        private String referente;
+
+
+        public int Id { get => id; set => id = value; }
+        public int Ditta { get => ditta; set => ditta = value; }
+        public int Tipologia { get => tipologia; set => tipologia = value; }
+        public String NumeroCommessa { get => numerocommessa; set => numerocommessa = value; }
+        public DateTime Data { get => data; set => data = value; }
+        public String Referente { get => referente; set => referente = value; }
+
+    }
+    public class Lavorazione
+    {
+        private int id;
+        private String operazione;
+        private int pacchetto;
+        private Double importo;
+
+
+        public int Id { get => id; set => id = value; }
+        public String Operazione { get => operazione; set => operazione = value; }
+        public int Pacchetto { get => pacchetto; set => pacchetto = value; }
+        public Double Importo { get => importo; set => importo = value; }
+
     }
 }
 
