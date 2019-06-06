@@ -76,22 +76,22 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(563, 140);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(557, 140);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(189, 3);
+            this.textBox3.Location = new System.Drawing.Point(187, 3);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(87, 20);
+            this.textBox3.Size = new System.Drawing.Size(86, 20);
             this.textBox3.TabIndex = 2;
             this.textBox3.Text = "Cap";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(96, 3);
+            this.textBox2.Location = new System.Drawing.Point(95, 3);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(87, 20);
+            this.textBox2.Size = new System.Drawing.Size(86, 20);
             this.textBox2.TabIndex = 1;
             this.textBox2.Text = "Indirizzo";
             // 
@@ -99,23 +99,23 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(3, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(87, 20);
+            this.textBox1.Size = new System.Drawing.Size(86, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Nome";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(282, 3);
+            this.textBox4.Location = new System.Drawing.Point(279, 3);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(87, 20);
+            this.textBox4.Size = new System.Drawing.Size(86, 20);
             this.textBox4.TabIndex = 3;
             this.textBox4.Text = "Citta";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(375, 3);
+            this.textBox5.Location = new System.Drawing.Point(371, 3);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(87, 20);
+            this.textBox5.Size = new System.Drawing.Size(86, 20);
             this.textBox5.TabIndex = 4;
             this.textBox5.Text = "Pec";
             // 
@@ -123,57 +123,59 @@
             // 
             this.textBox6.Location = new System.Drawing.Point(3, 73);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(87, 20);
+            this.textBox6.Size = new System.Drawing.Size(86, 20);
             this.textBox6.TabIndex = 5;
             this.textBox6.Text = "Email";
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(96, 73);
+            this.textBox7.Location = new System.Drawing.Point(95, 73);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(87, 20);
+            this.textBox7.Size = new System.Drawing.Size(86, 20);
             this.textBox7.TabIndex = 6;
             this.textBox7.Text = "Partita Iva";
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(189, 73);
+            this.textBox8.Location = new System.Drawing.Point(187, 73);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(87, 20);
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(86, 20);
             this.textBox8.TabIndex = 7;
             this.textBox8.Text = "Ditta";
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(282, 73);
+            this.textBox9.Location = new System.Drawing.Point(279, 73);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(87, 20);
+            this.textBox9.Size = new System.Drawing.Size(86, 20);
             this.textBox9.TabIndex = 9;
             this.textBox9.Text = "Cell.";
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(375, 73);
+            this.textBox10.Location = new System.Drawing.Point(371, 73);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(87, 20);
+            this.textBox10.Size = new System.Drawing.Size(86, 20);
             this.textBox10.TabIndex = 10;
             this.textBox10.Text = "Tel.";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(468, 73);
+            this.button1.Location = new System.Drawing.Point(463, 73);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(71, 20);
             this.button1.TabIndex = 8;
             this.button1.Text = "Inserisci";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(468, 3);
+            this.comboBox1.Location = new System.Drawing.Point(463, 3);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(91, 21);
+            this.comboBox1.Size = new System.Drawing.Size(88, 21);
             this.comboBox1.TabIndex = 11;
             this.comboBox1.Text = "Ruolo";
             // 

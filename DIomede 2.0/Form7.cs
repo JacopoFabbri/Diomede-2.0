@@ -24,11 +24,6 @@ namespace Diomede2
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
 
         private void Form7_Load(object sender, EventArgs e)
@@ -62,6 +57,44 @@ namespace Diomede2
         private void Form7_FormClosed(object sender, FormClosedEventArgs e)
         {
             formPrecente.Show();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
+            {
+                cella.Style.ForeColor = Color.Red;
+            }
+        }
+
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow riga in dataGridView1.Rows)
+            {
+                if (riga.Cells[0].Value != null)
+                {
+                    if (riga.Cells[0].Style.ForeColor == Color.Red)
+                    {
+                        try
+                        {
+                            op.updateContatto((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["INDIRIZZO"].Value + "", riga.Cells["CAP"].Value + "", riga.Cells["CITTA"].Value + "", riga.Cells["PEC"].Value + "", riga.Cells["EMAIL"].Value + "", riga.Cells["Iva"].Value + "", (int) riga.Cells["DITTA"].Value , riga.Cells["CELLULARE"].Value + "", riga.Cells["TEL"].Value + "", riga.Cells["RUOLO"].Value + "");
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                    }
+                }
+            }
+            dataGridView1.DataSource = op.filtraContratto("DITTA","" + cliente.Id);
+            dataGridView1.Columns[0].Visible = false;
+
         }
     }
 }
