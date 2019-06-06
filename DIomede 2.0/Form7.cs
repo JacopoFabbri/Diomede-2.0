@@ -12,9 +12,40 @@ namespace Diomede2
 {
     public partial class Form7 : Form
     {
-        public Form7()
+        Cliente cliente;
+        String db;
+        OperazionePraticheEdili op;
+        Form2 formPrecente;
+        public Form7(Cliente c, String dbName, Form2 frm)
         {
+            formPrecente = frm;
+            cliente = c;
+            db = dbName;
             InitializeComponent();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form7_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                op = new OperazionePraticheEdili(db);
+                dataGridView1.DataSource = op.cercaClienti();
+                dataGridView1.Columns[0].Visible = false;
+
+            }
+            catch
+            {
+                MessageBox.Show("Impossibile accedere a quest'area !!!");
+                Application.Exit();
+            }
+            formPrecente.Hide();
+            dataGridView1.Focus();
+        }
+
     }
 }

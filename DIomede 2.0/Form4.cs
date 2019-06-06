@@ -103,7 +103,7 @@ namespace Diomede2
                         op.cancellaCliente((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
                         MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    catch (Exception ex)
+                    catch
                     {
                         MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -119,5 +119,6 @@ namespace Diomede2
             dataGridView1.DataSource = op.cercaClienti();
             dataGridView1.Columns[0].Visible = false;
         }
+
     }
 }
