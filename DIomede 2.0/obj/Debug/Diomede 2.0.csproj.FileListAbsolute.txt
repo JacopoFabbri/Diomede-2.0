@@ -48,3 +48,4 @@ C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Inseriment
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Secret.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.visualizzatore.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.ListaBozze.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.ListaPacchetto.resources

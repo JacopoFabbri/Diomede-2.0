@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Diomede2
 {
-    public partial class ListaPacchetto : Form
+    public partial class InserisciPacchetto : Form
     {
-        public ListaPacchetto()
+        public InserisciPacchetto()
         {
             InitializeComponent();
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            InserisciPacchetto iP = new InserisciPacchetto();
         }
     }
 }
