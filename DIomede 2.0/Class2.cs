@@ -727,16 +727,16 @@ namespace Diomede2
                     Contatto contatto = new Contatto
                     {
                         Id = (Int32)lettore[0],
-                        Nome = (String)lettore[1],
-                        Indirizzo = (String)lettore[2],
-                        Cap = (String)lettore[3],
-                        Citta = (String)lettore[4],
-                        Pec = (String)lettore[5],
-                        Email = (String)lettore[6],
-                        Iva = (String)lettore[7],
+                        Nome = "" + lettore[1],
+                        Indirizzo = "" + lettore[2],
+                        Cap = "" + lettore[3],
+                        Citta = "" + lettore[4],
+                        Pec = "" + lettore[5],
+                        Email = "" + lettore[6],
+                        Iva = "" + lettore[7],
                         Ditta = (Int32)lettore[8],
-                        Cellulare = (String)lettore[9],
-                        Tel = (String)lettore[10],
+                        Cellulare = "" + lettore[9],
+                        Tel = "" + lettore[10],
                         Ruolo = (Int32)lettore[11]
                     };
                     lista.Add(contatto);
@@ -767,16 +767,16 @@ namespace Diomede2
                     Contatto contatto = new Contatto
                     {
                         Id = (Int32)lettore[0],
-                        Nome = (String)lettore[1],
-                        Indirizzo = (String)lettore[2],
-                        Cap = (String)lettore[3],
-                        Citta = (String)lettore[4],
-                        Pec = (String)lettore[5],
-                        Email = (String)lettore[6],
-                        Iva = (String)lettore[7],
+                        Nome = "" + lettore[1],
+                        Indirizzo = "" + lettore[2],
+                        Cap = "" + lettore[3],
+                        Citta = "" + lettore[4],
+                        Pec = "" + lettore[5],
+                        Email = "" + lettore[6],
+                        Iva = "" + lettore[7],
                         Ditta = (Int32)lettore[8],
-                        Cellulare = (String)lettore[9],
-                        Tel = (String)lettore[10],
+                        Cellulare = "" + lettore[9],
+                        Tel = "" + lettore[10],
                         Ruolo = (Int32)lettore[11]
                     };
                     lista.Add(contatto);
@@ -807,16 +807,16 @@ namespace Diomede2
                     Contatto contatto = new Contatto
                     {
                         Id = (Int32)lettore[0],
-                        Nome = (String)lettore[1],
-                        Indirizzo = (String)lettore[2],
-                        Cap = (String)lettore[3],
-                        Citta = (String)lettore[4],
-                        Pec = (String)lettore[5],
-                        Email = (String)lettore[6],
-                        Iva = (String)lettore[7],
+                        Nome = "" + lettore[1],
+                        Indirizzo = "" + lettore[2],
+                        Cap = "" + lettore[3],
+                        Citta = "" + lettore[4],
+                        Pec = "" + lettore[5],
+                        Email = "" + lettore[6],
+                        Iva = "" + lettore[7],
                         Ditta = (Int32)lettore[8],
-                        Cellulare = (String)lettore[9],
-                        Tel = (String)lettore[10],
+                        Cellulare = "" + lettore[9],
+                        Tel = "" + lettore[10],
                         Ruolo = (Int32)lettore[11]
                     };
                 }
@@ -846,16 +846,16 @@ namespace Diomede2
                     Contatto contatto = new Contatto
                     {
                         Id = (Int32)lettore[0],
-                        Nome = (String)lettore[1],
-                        Indirizzo = (String)lettore[2],
-                        Cap = (String)lettore[3],
-                        Citta = (String)lettore[4],
-                        Pec = (String)lettore[5],
-                        Email = (String)lettore[6],
-                        Iva = (String)lettore[7],
+                        Nome = "" + lettore[1],
+                        Indirizzo = "" + lettore[2],
+                        Cap = "" + lettore[3],
+                        Citta = "" + lettore[4],
+                        Pec = "" + lettore[5],
+                        Email = "" + lettore[6],
+                        Iva = "" + lettore[7],
                         Ditta = (Int32)lettore[8],
-                        Cellulare = (String)lettore[9],
-                        Tel = (String)lettore[10],
+                        Cellulare = "" + lettore[9],
+                        Tel = "" + lettore[10],
                         Ruolo = (Int32)lettore[11]
                     };
                     contattos.Add(contatto);
@@ -946,8 +946,8 @@ namespace Diomede2
                     Ruolo ruolo = new Ruolo
                     {
                         Id = (Int32)lettore[0],
-                        Nome = (String)lettore[1],
-                        Desc = (String)lettore[2]
+                        Nome = "" + lettore[1],
+                        Desc = "" + lettore[2]
                     };
                     lista.Add(ruolo);
                 }
@@ -976,9 +976,10 @@ namespace Diomede2
                 {
                     Ruolo ruolo = new Ruolo
                     {
+
                         Id = (Int32)lettore[0],
-                        Nome = (String)lettore[1],
-                        Desc = (String)lettore[2]
+                        Nome = "" + lettore[1],
+                        Desc = "" + lettore[2]
                     };
                     lista.Add(ruolo);
                 }
@@ -1007,9 +1008,10 @@ namespace Diomede2
                 {
                     Ruolo r = new Ruolo
                     {
+
                         Id = (Int32)lettore[0],
-                        Nome = (String)lettore[1],
-                        Desc = (String)lettore[2]
+                        Nome = "" + lettore[1],
+                        Desc = "" + lettore[2]
                     };
                     ruolo = r;
                 }
@@ -1038,9 +1040,10 @@ namespace Diomede2
                 {
                     Ruolo r = new Ruolo
                     {
+
                         Id = (Int32)lettore[0],
-                        Nome = (String)lettore[1],
-                        Desc = (String)lettore[2]
+                        Nome = "" + lettore[1],
+                        Desc = "" + lettore[2]
                     };
                     ruolo.Add(r);
                 }
@@ -1134,7 +1137,7 @@ namespace Diomede2
                         Data = (DateTime)lettore[1],
                         Pacchetto = (Int32)lettore[2],
                         Importo = (Double)lettore[3],
-                        NumeroCommessa = (String)lettore[4]
+                        NumeroCommessa = "" + lettore[4]
                     };
                     lista.Add(bozza);
                 }
@@ -1163,11 +1166,12 @@ namespace Diomede2
                 {
                     Bozza bozza = new Bozza
                     {
+
                         Id = (Int32)lettore[0],
                         Data = (DateTime)lettore[1],
                         Pacchetto = (Int32)lettore[2],
                         Importo = (Double)lettore[3],
-                        NumeroCommessa = (String)lettore[4]
+                        NumeroCommessa = "" + lettore[4]
                     };
                     lista.Add(bozza);
                 }
@@ -1194,12 +1198,14 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Bozza b = new Bozza();
-                    bozza.Id = (Int32)lettore[0];
-                    bozza.Data = (DateTime)lettore[1];
-                    bozza.Pacchetto = (Int32)lettore[2];
-                    bozza.Importo = (Double)lettore[3];
-                    bozza.NumeroCommessa = (String)lettore[4];
+                    Bozza b = new Bozza
+                    {
+                        Id = (Int32)lettore[0],
+                        Data = (DateTime)lettore[1],
+                        Pacchetto = (Int32)lettore[2],
+                        Importo = (Double)lettore[3],
+                        NumeroCommessa = (String)lettore[4]
+                    };
                     bozza = b;
                 }
             }
