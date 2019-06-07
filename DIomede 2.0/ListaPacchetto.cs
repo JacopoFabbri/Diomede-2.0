@@ -12,14 +12,17 @@ namespace Diomede2
 {
     public partial class ListaPacchetto : Form
     {
-        public ListaPacchetto()
+        readonly String db;
+        public ListaPacchetto(String dbName)
         {
+            db = dbName;
             InitializeComponent();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            InserisciPacchetto iP = new InserisciPacchetto();
+            InserisciPacchetto iP = new InserisciPacchetto(db);
+            iP.Show();
         }
     }
 }

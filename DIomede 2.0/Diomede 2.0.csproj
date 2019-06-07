@@ -82,6 +82,12 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Class2.cs" />
+    <Compile Include="InserisciLavorazione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserisciLavorazione.Designer.cs">
+      <DependentUpon>InserisciLavorazione.cs</DependentUpon>
+    </Compile>
     <Compile Include="InserisciPacchetto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     </Compile>
     <Compile Include="ListaBozze.Designer.cs">
       <DependentUpon>ListaBozze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaLavorazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaLavorazioni.Designer.cs">
+      <DependentUpon>ListaLavorazioni.cs</DependentUpon>
     </Compile>
     <Compile Include="ListaPacchetto.cs">
       <SubType>Form</SubType>
@@ -162,11 +174,17 @@
     <Compile Include="visualizzatore.Designer.cs">
       <DependentUpon>visualizzatore.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="InserisciLavorazione.resx">
+      <DependentUpon>InserisciLavorazione.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InserisciPacchetto.resx">
       <DependentUpon>InserisciPacchetto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaBozze.resx">
       <DependentUpon>ListaBozze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaLavorazioni.resx">
+      <DependentUpon>ListaLavorazioni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaPacchetto.resx">
       <DependentUpon>ListaPacchetto.cs</DependentUpon>

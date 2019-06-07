@@ -10,13 +10,16 @@ using System.Windows.Forms;
 
 namespace Diomede2
 {
-    public partial class InserisciPacchetto : Form
+    public partial class ListaLavorazioni : Form
     {
-        readonly String db;
-        public InserisciPacchetto(String dBName)
+        public ListaLavorazioni()
         {
-            db = dBName;
             InitializeComponent();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
