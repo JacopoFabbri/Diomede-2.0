@@ -14,12 +14,12 @@ namespace Diomede2
         {
             conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database=" + nomeDB + ";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
         }
-        public void InserimentoCliente(String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
+        public void InserimentoCliente(String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono, String sdi)
         {
             try
             {
                 ClienteDB cDB = new ClienteDB(conn);
-                cDB.Inserimento(nome, indirizzo, cap, citta, pec, email, partitaIva, telefono);
+                cDB.Inserimento(nome, indirizzo, cap, citta, pec, email, partitaIva, telefono, sdi);
             }
             catch (Exception e)
             {
@@ -82,12 +82,12 @@ namespace Diomede2
             }
             return cliente;
         }
-        public void UpdateCliente(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
+        public void UpdateCliente(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono, String sdi)
         {
             try
             {
                 ClienteDB cDB = new ClienteDB(conn);
-                cDB.AggiornaCliente(id, nome, indirizzo, cap, citta, pec, email, partitaIva, telefono);
+                cDB.AggiornaCliente(id, nome, indirizzo, cap, citta, pec, email, partitaIva, telefono, sdi);
             }
             catch (Exception e)
             {
@@ -484,12 +484,12 @@ namespace Diomede2
         {
             con = conn;
         }
-        public void Inserimento(String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
+        public void Inserimento(String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono, String sdi)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `ANAGRAFICACLIENTI`(`NOME`, `INDIRIZZO`, `CAP`, `CITTA`, `PEC`, `EMAIL`, `PARTITAIVA`, `TELEFONOFISSO`) VALUES('" + nome + "','" + indirizzo + "','" + cap + "','" + citta + "','" + pec + "','" + email + "','" + partitaIva + "','" + telefono + "')", con);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `ANAGRAFICACLIENTI`(`NOME`, `INDIRIZZO`, `CAP`, `CITTA`, `PEC`, `EMAIL`, `PARTITAIVA`, `TELEFONOFISSO`, `SDI`) VALUES('" + nome + "','" + indirizzo + "','" + cap + "','" + citta + "','" + pec + "','" + email + "','" + partitaIva + "','" + telefono + "','" + sdi + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -516,14 +516,15 @@ namespace Diomede2
                     Cliente cliente = new Cliente
                     {
                         Id = (Int32)lettore[0],
-                        Nome = (String)lettore[1],
-                        Indirizzo = (String)lettore[2],
-                        Cap = (String)lettore[3],
-                        Citta = (String)lettore[4],
-                        Pec = (String)lettore[5],
-                        Email = (String)lettore[6],
-                        Iva = (String)lettore[7],
-                        Tel = (String)lettore[8]
+                        Nome = "" + lettore[1],
+                        Indirizzo = "" + lettore[2],
+                        Cap = "" + lettore[3],
+                        Citta = "" + lettore[4],
+                        Pec = "" + lettore[5],
+                        Email = "" + lettore[6],
+                        Iva = "" + lettore[7],
+                        Tel = "" + lettore[8],
+                        Sdi = "" + lettore[9]
                     };
                     lista.Add(cliente);
                 }
@@ -553,14 +554,15 @@ namespace Diomede2
                     Cliente cliente = new Cliente
                     {
                         Id = (Int32)lettore[0],
-                        Nome = (String)lettore[1],
-                        Indirizzo = (String)lettore[2],
-                        Cap = (String)lettore[3],
-                        Citta = (String)lettore[4],
-                        Pec = (String)lettore[5],
-                        Email = (String)lettore[6],
-                        Iva = (String)lettore[7],
-                        Tel = (String)lettore[8]
+                        Nome = "" + lettore[1],
+                        Indirizzo = "" + lettore[2],
+                        Cap = "" + lettore[3],
+                        Citta = "" + lettore[4],
+                        Pec = "" + lettore[5],
+                        Email = "" + lettore[6],
+                        Iva = "" + lettore[7],
+                        Tel = "" + lettore[8],
+                        Sdi = "" + lettore[9]
                     };
                     lista.Add(cliente);
                 }
@@ -590,14 +592,15 @@ namespace Diomede2
                     cliente = new Cliente
                     {
                         Id = (Int32)lettore[0],
-                        Nome = (String)lettore[1],
-                        Indirizzo = (String)lettore[2],
-                        Cap = (String)lettore[3],
-                        Citta = (String)lettore[4],
-                        Pec = (String)lettore[5],
-                        Email = (String)lettore[6],
-                        Iva = (String)lettore[7],
-                        Tel = (String)lettore[8]
+                        Nome = "" + lettore[1],
+                        Indirizzo = "" + lettore[2],
+                        Cap = "" + lettore[3],
+                        Citta = "" + lettore[4],
+                        Pec = "" + lettore[5],
+                        Email = "" + lettore[6],
+                        Iva = "" + lettore[7],
+                        Tel = "" + lettore[8],
+                        Sdi = "" + lettore[9]
                     };
                 }
             }
@@ -626,14 +629,15 @@ namespace Diomede2
                     Cliente c = new Cliente
                     {
                         Id = (Int32)lettore[0],
-                        Nome = (String)lettore[1],
-                        Indirizzo = (String)lettore[2],
-                        Cap = (String)lettore[3],
-                        Citta = (String)lettore[4],
-                        Pec = (String)lettore[5],
-                        Email = (String)lettore[6],
-                        Iva = (String)lettore[7],
-                        Tel = (String)lettore[8]
+                        Nome = "" + lettore[1],
+                        Indirizzo = "" + lettore[2],
+                        Cap = "" + lettore[3],
+                        Citta = "" + lettore[4],
+                        Pec = "" + lettore[5],
+                        Email = "" + lettore[6],
+                        Iva = "" + lettore[7],
+                        Tel = "" + lettore[8],
+                        Sdi = "" + lettore[9]
                     };
                     cliente.Add(c);
                 }
@@ -648,12 +652,12 @@ namespace Diomede2
             }
             return cliente;
         }
-        public void AggiornaCliente(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono)
+        public void AggiornaCliente(int id, String nome, String indirizzo, String cap, String citta, String pec, String email, String partitaIva, String telefono, String sdi)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("UPDATE `ANAGRAFICACLIENTI` SET `NOME`='" + nome + "',`INDIRIZZO`='" + indirizzo + "',`CAP`='" + cap + "',`CITTA`='" + citta + "',`PEC`='" + pec + "',`EMAIL`='" + email + "',`PARTITAIVA`='" + partitaIva + "',`TELEFONOFISSO`='" + telefono + "' WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command = new MySqlCommand("UPDATE `ANAGRAFICACLIENTI` SET `NOME`='" + nome + "',`INDIRIZZO`='" + indirizzo + "',`CAP`='" + cap + "',`CITTA`='" + citta + "',`PEC`='" + pec + "',`EMAIL`='" + email + "',`PARTITAIVA`='" + partitaIva + "',`TELEFONOFISSO`='" + telefono + "',`SDI`='" + sdi + "' WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -1862,6 +1866,7 @@ namespace Diomede2
         private String email;
         private String iva;
         private String tel;
+        private String sdi;
 
         public int Id { get => id; set => id = value; }
         public string Nome { get => nome; set => nome = value; }
@@ -1872,6 +1877,7 @@ namespace Diomede2
         public string Iva { get => iva; set => iva = value; }
         public string Tel { get => tel; set => tel = value; }
         public string Pec { get => pec; set => pec = value; }
+        public string Sdi { get => sdi; set => sdi = value; }
     }
     public class Contatto
     {

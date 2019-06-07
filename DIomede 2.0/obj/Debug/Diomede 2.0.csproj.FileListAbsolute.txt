@@ -32,7 +32,6 @@ C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Login.reso
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Dashboard.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.InserimentoCliente.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.ListaClienti.resources
-C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.InserimentoContratto.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Ruoli.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Contatti.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.InserimentoRuolo.resources
@@ -45,3 +44,5 @@ C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Contatti.resou
 C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.InserimentoRuolo.resources
 C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.InserimentoContatto.resources
 C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Secret.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.InserimentoContatto.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Secret.resources

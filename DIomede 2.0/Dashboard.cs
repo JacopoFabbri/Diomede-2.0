@@ -24,8 +24,9 @@ namespace Diomede2
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        public void Form2_Load(object sender, EventArgs e)
         {
+            listView1.Clear();
             op = new OperazionePraticheEdili(settore);
             lista = op.CercaClienti();
             if (lista != null) {

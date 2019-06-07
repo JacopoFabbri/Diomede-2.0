@@ -25,7 +25,7 @@ namespace Diomede2
             try
             {
                 OperazionePraticheEdili op = new OperazionePraticheEdili(db);
-                op.InserimentoCliente(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, textBox8.Text);
+                op.InserimentoCliente(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, textBox8.Text, textBox9.Text);
                 MessageBox.Show("Operazione effettuata","Inserito",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 this.Close();
             }

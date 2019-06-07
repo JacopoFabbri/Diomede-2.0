@@ -58,7 +58,7 @@ namespace Diomede2
                     {
                         try
                         {
-                            op.UpdateCliente((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["INDIRIZZO"].Value + "", riga.Cells["CAP"].Value + "", riga.Cells["CITTA"].Value + "", riga.Cells["PEC"].Value + "", riga.Cells["EMAIL"].Value + "", riga.Cells["Iva"].Value + "", riga.Cells["Tel"].Value + "");
+                            op.UpdateCliente((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["INDIRIZZO"].Value + "", riga.Cells["CAP"].Value + "", riga.Cells["CITTA"].Value + "", riga.Cells["PEC"].Value + "", riga.Cells["EMAIL"].Value + "", riga.Cells["Iva"].Value + "", riga.Cells["Tel"].Value + "", riga.Cells["SDI"].Value + "");
                         }
                         catch
                         {
@@ -78,6 +78,7 @@ namespace Diomede2
             try
             {
                 formPrecente.Show();
+                formPrecente.Form2_Load(sender, e);
             }
             catch
             {
@@ -113,12 +114,7 @@ namespace Diomede2
             dataGridView1.Columns[0].Visible = false;
         }
 
-        private void Button1_Click_1(object sender, EventArgs e)
-        {
 
-            dataGridView1.DataSource = op.CercaClienti();
-            dataGridView1.Columns[0].Visible = false;
-        }
 
     }
 }
