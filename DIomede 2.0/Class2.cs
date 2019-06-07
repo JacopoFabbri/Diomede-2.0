@@ -346,7 +346,7 @@ namespace Diomede2
         }
         public List<Bozza> FiltraBozza(String s, String g)
         {
-            List<Bozza> contatto ;
+            List<Bozza> contatto;
             try
             {
                 BozzaDB bDB = new BozzaDB(conn);
@@ -382,6 +382,99 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
+        public void InserimentoMacrolavorazione(String nome, String desc)
+        {
+            try
+            {
+                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                bDB.Inserimento(nome, desc);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public List<MacroLavorazione> CercaMacroLavorazione()
+        {
+            List<MacroLavorazione> lista;
+            try
+            {
+                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                lista = bDB.ListaMacroLavorazioni();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public List<MacroLavorazione> CercaMacroLavorazione(String n)
+        {
+            List<MacroLavorazione> lista;
+            try
+            {
+                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                lista = bDB.ListaMacroLavorazioni(n);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public MacroLavorazione CercaMacroLavorazione(int id)
+        {
+            MacroLavorazione contatto;
+            try
+            {
+                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                contatto = bDB.CercaLavorazione(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public List<MacroLavorazione> FiltraMacroLavorazione(String s, String g)
+        {
+            List<MacroLavorazione> contatto;
+            try
+            {
+                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                contatto = bDB.FiltroLavorazioni(s, g);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public void UpdateMacroLavorazione(int id, String nome, String desc)
+        {
+            try
+            {
+                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                bDB.AggiornaLavorazioni(id, nome, desc);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void CancellaMacroLavorazione(int id)
+        {
+            try
+            {
+                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                bDB.RimuoviLavorazioni(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+
     }
 
     public class ClienteDB
@@ -1570,6 +1663,194 @@ namespace Diomede2
         }
 
     }
+    public class MacroLavorazioniDB
+    {
+        readonly MySqlConnection con = null;
+
+        public MacroLavorazioniDB(MySqlConnection conn)
+        {
+            con = conn;
+        }
+        public void Inserimento(String nome, String desc)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("INSERT INTO `TIPOLOGIAMACROLAVORAZIONI`(`NOME`, `DESCRIZIONE`) VALUES('" + nome + "','" + desc + "')", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<MacroLavorazione> ListaMacroLavorazioni()
+        {
+            List<MacroLavorazione> lista = new List<MacroLavorazione>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `TIPOLOGIAMACROLAVORAZIONI`", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    MacroLavorazione lavorazione = new MacroLavorazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Desc = (String)lettore[2],
+                    };
+                    ;
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public List<MacroLavorazione> ListaMacroLavorazioni(String n)
+        {
+            List<MacroLavorazione> lista = new List<MacroLavorazione>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `TIPOLOGIAMACROLAVORAZIONI` WHERE `ID` = '" + n + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    MacroLavorazione lavorazione = new MacroLavorazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Desc = (String)lettore[2],
+                    };
+                    ;
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public MacroLavorazione CercaLavorazione(int id)
+        {
+            MacroLavorazione lavorazione = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `TIPOLOGIAMACROLAVORAZIONI` WHERE `ID` = '" + id + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    MacroLavorazione l = new MacroLavorazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Desc = (String)lettore[2]
+                    };
+                    lavorazione = l;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lavorazione;
+        }
+        public List<MacroLavorazione> FiltroLavorazioni(String s, String g)
+        {
+            List<MacroLavorazione> lavorazione = new List<MacroLavorazione>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `TIPOLOGIAMACROLAVORAZIONI` WHERE `" + s + "` = '" + g + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    MacroLavorazione l = new MacroLavorazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Desc = (String)lettore[2],
+                    };
+                    ;
+                    lavorazione.Add(l);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lavorazione;
+        }
+        public void AggiornaLavorazioni(int id, String nome, String desc)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("UPDATE `TIPOLOGIAMACROLAVORAZIONI` SET `NOME`='" + nome + "',`DESCRIZIONE`='" + desc + "' WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void RimuoviLavorazioni(int id)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("DELETE FROM `TIPOLOGIAMACROLAVORAZIONI` WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+    }
     public class Cliente
     {
         private int id;
@@ -1675,5 +1956,15 @@ namespace Diomede2
         public int Pacchetto { get => pacchetto; set => pacchetto = value; }
         public Double Importo { get => importo; set => importo = value; }
 
+    }
+    public class MacroLavorazione
+    {
+        private int id;
+        private String nome;
+        private String desc;
+
+        public int Id { get => id; set => id = value; }
+        public string Nome { get => nome; set => nome = value; }
+        public string Desc { get => desc; set => desc = value; }
     }
 }
