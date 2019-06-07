@@ -36,6 +36,8 @@ namespace Diomede2
                 {
                     dataGridView1.DataSource = lista;
                     dataGridView1.Columns[0].Visible = false;
+                    dataGridView1.Columns[8].Visible = false;
+                    dataGridView1.Columns[11].ReadOnly = true;
                 }
             }
             catch
@@ -111,6 +113,17 @@ namespace Diomede2
             dataGridView1.DataSource = op.FiltraContratto("DITTA", "" + cliente.Id);
             dataGridView1.Columns[0].Visible = false;
 
+        }
+
+
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 11)
+            {
+                Ruolo r = op.CercaRuoloId((int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+                visualizzatore v = new visualizzatore(r.Nome);
+                v.Show();
+            }
         }
     }
 }
