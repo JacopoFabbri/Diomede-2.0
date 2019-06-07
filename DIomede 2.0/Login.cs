@@ -128,7 +128,7 @@ namespace Diomede2
             }
             catch (Exception)
             {
-                MessageBox.Show("Impossibile registrare la password!","Attenzione:");
+                MessageBox.Show("Impossibile registrare la password!","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
