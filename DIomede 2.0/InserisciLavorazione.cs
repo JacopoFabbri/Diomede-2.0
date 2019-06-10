@@ -14,7 +14,7 @@ namespace Diomede2
     {
         readonly ListaLavorazioni formPrecedente;
         readonly String db;
-        int id;
+        readonly int id;
         OperazionePraticheEdili op;
         public InserisciLavorazione(String dbName, ListaLavorazioni ll, int idPacchetto)
         {
@@ -36,7 +36,7 @@ namespace Diomede2
                 this.Close();
                 formPrecedente.ListaLavorazioni_Load(sender, e);
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati");
             }
