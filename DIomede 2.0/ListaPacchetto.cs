@@ -23,13 +23,11 @@ namespace Diomede2
             db = dbName;
             InitializeComponent();
         }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             InserisciPacchetto iP = new InserisciPacchetto(db);
             iP.Show();
         }
-
         private void Button4_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows != null)
@@ -38,7 +36,6 @@ namespace Diomede2
                 ll.Show();
             }
         }
-
         private void ListaPacchetto_FormClosing(object sender, FormClosingEventArgs e)
         {
             formPrecedente.Show();
@@ -50,31 +47,6 @@ namespace Diomede2
                 cella.Style.ForeColor = Color.Red;
             }
         }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow riga in dataGridView1.Rows)
-            {
-                if (riga.Cells[0].Value != null)
-                {
-                    if (riga.Cells[0].Style.ForeColor == Color.Red)
-                    {
-                        try
-                        {
-                            op.UpdateBozza((int)riga.Cells["ID"].Value, (DateTime)riga.Cells["DATA"].Value, riga.Cells["PACCHETTO"].Value + "", (double)riga.Cells["IMPORTO"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (int)riga.Cells["CLIENTE"].Value, (Boolean)riga.Cells["ACCETTAZIONE"].Value);
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
-                    }
-                }
-            }
-            dataGridView1.DataSource = op.CercaBozza();
-            dataGridView1.Columns[0].Visible = false;
-        }
-
         private void ListaPacchetto_Load(object sender, EventArgs e)
         {
             try
@@ -97,7 +69,6 @@ namespace Diomede2
                 Application.Exit();
             }
         }
-
         private void Button5_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows != null)
@@ -106,7 +77,6 @@ namespace Diomede2
             }
             this.Close();
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
@@ -124,6 +94,27 @@ namespace Diomede2
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         }
+                    }
+                }
+            }
+            dataGridView1.DataSource = op.CercaPacchetto();
+            dataGridView1.Columns[0].Visible = false;
+        }
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows != null)
+            {
+                if (MessageBox.Show("Stai per eliminare " + (String)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?", "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        Pacchetto clienti = op.CercaPacchetto((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        op.CancellaPacchetto((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

@@ -21,7 +21,6 @@ namespace Diomede2
             db = dbName;
             InitializeComponent();
         }
-
         private void ListaBozze_Load(object sender, EventArgs e)
         {
             try
@@ -52,7 +51,6 @@ namespace Diomede2
                 cella.Style.ForeColor = Color.Red;
             }
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
@@ -76,13 +74,11 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaBozza();
             dataGridView1.Columns[0].Visible = false;
         }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             InserimentoBozza ib = new InserimentoBozza(db, this);
             ib.Show();
         }
-
         private void Button3_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows != null)
@@ -104,7 +100,6 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaBozza();
             dataGridView1.Columns[0].Visible = false;
         }
-
         private void ListaBozze_FormClosing(object sender, FormClosingEventArgs e)
         {
             formPrecente.Show();
