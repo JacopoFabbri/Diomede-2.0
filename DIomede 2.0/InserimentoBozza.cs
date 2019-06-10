@@ -39,7 +39,7 @@ namespace Diomede2
             try
             {
 
-                op.InserimentoBozza(dateTimePicker1.Value, textBox2.Text, textBox3.Text, textBox4.Text, lista[comboBox1.SelectedIndex].Id, false);
+                op.InserimentoBozza(dateTimePicker1.Value, textBox2.Text, Double.Parse(textBox3.Text), textBox4.Text, lista[comboBox1.SelectedIndex].Id, false);
                 this.Close();
             }
             catch
