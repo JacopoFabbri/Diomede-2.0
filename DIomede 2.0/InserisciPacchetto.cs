@@ -13,10 +13,17 @@ namespace Diomede2
     public partial class InserisciPacchetto : Form
     {
         readonly String db;
+        OperazionePraticheEdili op;
         public InserisciPacchetto(String dBName)
         {
             db = dBName;
             InitializeComponent();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            op = new OperazionePraticheEdili(db);
+
         }
     }
 }
