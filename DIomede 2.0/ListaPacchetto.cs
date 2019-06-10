@@ -69,6 +69,7 @@ namespace Diomede2
             if (dataGridView1.SelectedRows != null) {
                 tb.Text = "" + dataGridView1.SelectedRows[0].Cells[0].Value;
             }
+            this.Close();
         }
     }
 }

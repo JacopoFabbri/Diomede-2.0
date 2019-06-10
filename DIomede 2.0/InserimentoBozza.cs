@@ -14,6 +14,7 @@ namespace Diomede2
     {
         readonly String db;
         readonly ListaBozze formPrecedente;
+        OperazionePraticheEdili op;
         public InserimentoBozza(String dbName, ListaBozze lb)
         {
             formPrecedente = lb;
@@ -32,5 +33,18 @@ namespace Diomede2
             formPrecedente.Show();
         }
 
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                op = new OperazionePraticheEdili(db);
+                op.InserimentoBozza(dateTimePicker1.Value, textBox2.Text, textBox3.Text, textBox4.Text);
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati");
+            }
+        }
     }
 }

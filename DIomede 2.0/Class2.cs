@@ -287,7 +287,7 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        public void InserimentoBozza(String data, String pacchetto, String importo, String numerocommessa)
+        public void InserimentoBozza(DateTime data, String pacchetto, String importo, String numerocommessa)
         {
             try
             {
@@ -355,7 +355,7 @@ namespace Diomede2
             }
             return contatto;
         }
-        public void UpdateBozza(int id, String data, String pacchetto, String importo, String numerocommessa)
+        public void UpdateBozza(int id, DateTime data, String pacchetto, Double importo, String numerocommessa)
         {
             try
             {
@@ -1191,12 +1191,12 @@ namespace Diomede2
         {
             con = conn;
         }
-        public void Inserimento(String data, String pacchetto, String importo, String numerocommessa)
+        public void Inserimento(DateTime data, String pacchetto, String importo, String numerocommessa)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `BOZZA`(`DATA`, `PACCHETTO`,`IMPORTO`,`NUMEROCOMMESSA`) VALUES('" + data + "','" + pacchetto + "','" + importo + "','" + numerocommessa + "'", con);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `BOZZA`(`DATA`, `PACCHETTO`,`IMPORTO`,`NUMEROCOMMESSA`) VALUES('" + data.ToString("yyyy/MM/dd") + "','" + pacchetto + "','" + importo + "','" + numerocommessa + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -1341,7 +1341,7 @@ namespace Diomede2
             }
             return bozza;
         }
-        public void AggiornaBozza(int id, String data, String pacchetto, String importo, String numerocommessa)
+        public void AggiornaBozza(int id, DateTime data, String pacchetto, Double importo, String numerocommessa)
         {
             try
             {
