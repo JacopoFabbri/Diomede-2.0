@@ -58,7 +58,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Name = "visualizzatore";
-            this.Text = "visualizzatore";
+            this.Text = "Visualizzatore";
             this.Load += new System.EventHandler(this.Visualizzatore_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Visualizzatore_KeyDown);
             this.ResumeLayout(false);
