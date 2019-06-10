@@ -32,8 +32,11 @@ namespace Diomede2
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            ListaLavorazioni ll = new ListaLavorazioni(this, db);
-            ll.Show();
+            if (dataGridView1.SelectedRows != null)
+            {
+                ListaLavorazioni ll = new ListaLavorazioni(this, db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
+                ll.Show();
+            }
         }
 
         private void ListaPacchetto_FormClosing(object sender, FormClosingEventArgs e)
@@ -66,7 +69,8 @@ namespace Diomede2
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows != null) {
+            if (dataGridView1.SelectedRows != null)
+            {
                 tb.Text = "" + dataGridView1.SelectedRows[0].Cells[0].Value;
             }
             this.Close();

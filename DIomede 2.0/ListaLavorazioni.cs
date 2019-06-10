@@ -14,8 +14,10 @@ namespace Diomede2
     {
         readonly ListaPacchetto formPrecedente;
         readonly String db;
-        public ListaLavorazioni(ListaPacchetto lp, String dbName)
+        readonly int idPacchetto;
+        public ListaLavorazioni(ListaPacchetto lp, String dbName, int id)
         {
+            idPacchetto = id;
             formPrecedente = lp;
             db = dbName;
             InitializeComponent();

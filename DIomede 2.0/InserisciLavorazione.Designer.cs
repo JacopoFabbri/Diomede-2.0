@@ -32,8 +32,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(501, 118);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(500, 118);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // textBox1
@@ -72,20 +72,29 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(170, 3);
+            this.textBox2.Location = new System.Drawing.Point(169, 3);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(124, 20);
             this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "Descrizione";
+            this.textBox2.Text = "Pacchetto";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(337, 62);
+            this.button1.Location = new System.Drawing.Point(335, 62);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 22);
             this.button1.TabIndex = 8;
             this.button1.Text = "Inserisci";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(169, 62);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(160, 49);
+            this.textBox5.TabIndex = 11;
+            this.textBox5.Text = "Descrizione";
             // 
             // textBox3
             // 
@@ -93,15 +102,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(124, 20);
             this.textBox3.TabIndex = 9;
-            this.textBox3.Text = "Descrizione";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(170, 62);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(124, 20);
-            this.textBox5.TabIndex = 11;
-            this.textBox5.Text = "Descrizione";
+            this.textBox3.Text = "Importo";
             // 
             // InserisciLavorazione
             // 
