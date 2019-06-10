@@ -384,7 +384,7 @@ namespace Diomede2
         {
             try
             {
-                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                TipologiaMacroLavorazioniDB bDB = new TipologiaMacroLavorazioniDB(conn);
                 bDB.Inserimento(nome, desc);
             }
             catch (Exception e)
@@ -392,12 +392,12 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        public List<MacroLavorazione> CercaMacroLavorazione()
+        public List<TipologiaMacroLavorazione> CercaMacroLavorazione()
         {
-            List<MacroLavorazione> lista;
+            List<TipologiaMacroLavorazione> lista;
             try
             {
-                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                TipologiaMacroLavorazioniDB bDB = new TipologiaMacroLavorazioniDB(conn);
                 lista = bDB.ListaMacroLavorazioni();
             }
             catch (Exception e)
@@ -406,12 +406,12 @@ namespace Diomede2
             }
             return lista;
         }
-        public List<MacroLavorazione> CercaMacroLavorazione(String n)
+        public List<TipologiaMacroLavorazione> CercaMacroLavorazione(String n)
         {
-            List<MacroLavorazione> lista;
+            List<TipologiaMacroLavorazione> lista;
             try
             {
-                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                TipologiaMacroLavorazioniDB bDB = new TipologiaMacroLavorazioniDB(conn);
                 lista = bDB.ListaMacroLavorazioni(n);
             }
             catch (Exception e)
@@ -420,12 +420,12 @@ namespace Diomede2
             }
             return lista;
         }
-        public MacroLavorazione CercaMacroLavorazione(int id)
+        public TipologiaMacroLavorazione CercaMacroLavorazione(int id)
         {
-            MacroLavorazione contatto;
+            TipologiaMacroLavorazione contatto;
             try
             {
-                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                TipologiaMacroLavorazioniDB bDB = new TipologiaMacroLavorazioniDB(conn);
                 contatto = bDB.CercaLavorazione(id);
             }
             catch (Exception e)
@@ -434,12 +434,12 @@ namespace Diomede2
             }
             return contatto;
         }
-        public List<MacroLavorazione> FiltraMacroLavorazione(String s, String g)
+        public List<TipologiaMacroLavorazione> FiltraMacroLavorazione(String s, String g)
         {
-            List<MacroLavorazione> contatto;
+            List<TipologiaMacroLavorazione> contatto;
             try
             {
-                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                TipologiaMacroLavorazioniDB bDB = new TipologiaMacroLavorazioniDB(conn);
                 contatto = bDB.FiltroLavorazioni(s, g);
             }
             catch (Exception e)
@@ -452,7 +452,7 @@ namespace Diomede2
         {
             try
             {
-                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                TipologiaMacroLavorazioniDB bDB = new TipologiaMacroLavorazioniDB(conn);
                 bDB.AggiornaLavorazioni(id, nome, desc);
             }
             catch (Exception e)
@@ -464,7 +464,7 @@ namespace Diomede2
         {
             try
             {
-                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                TipologiaMacroLavorazioniDB bDB = new TipologiaMacroLavorazioniDB(conn);
                 bDB.RimuoviLavorazioni(id);
             }
             catch (Exception e)
@@ -1884,11 +1884,11 @@ namespace Diomede2
         }
 
     }
-    public class MacroLavorazioniDB
+    public class TipologiaMacroLavorazioniDB
     {
         readonly MySqlConnection con = null;
 
-        public MacroLavorazioniDB(MySqlConnection conn)
+        public TipologiaMacroLavorazioniDB(MySqlConnection conn)
         {
             con = conn;
         }
@@ -1909,9 +1909,9 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public List<MacroLavorazione> ListaMacroLavorazioni()
+        public List<TipologiaMacroLavorazione> ListaMacroLavorazioni()
         {
-            List<MacroLavorazione> lista = new List<MacroLavorazione>();
+            List<TipologiaMacroLavorazione> lista = new List<TipologiaMacroLavorazione>();
             try
             {
                 con.Open();
@@ -1921,7 +1921,7 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    MacroLavorazione lavorazione = new MacroLavorazione
+                    TipologiaMacroLavorazione lavorazione = new TipologiaMacroLavorazione
                     {
                         Id = (Int32)lettore[0],
                         Nome = (String)lettore[1],
@@ -1941,9 +1941,9 @@ namespace Diomede2
             }
             return lista;
         }
-        public List<MacroLavorazione> ListaMacroLavorazioni(String n)
+        public List<TipologiaMacroLavorazione> ListaMacroLavorazioni(String n)
         {
-            List<MacroLavorazione> lista = new List<MacroLavorazione>();
+            List<TipologiaMacroLavorazione> lista = new List<TipologiaMacroLavorazione>();
             try
             {
                 con.Open();
@@ -1953,7 +1953,7 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    MacroLavorazione lavorazione = new MacroLavorazione
+                    TipologiaMacroLavorazione lavorazione = new TipologiaMacroLavorazione
                     {
                         Id = (Int32)lettore[0],
                         Nome = (String)lettore[1],
@@ -1973,9 +1973,9 @@ namespace Diomede2
             }
             return lista;
         }
-        public MacroLavorazione CercaLavorazione(int id)
+        public TipologiaMacroLavorazione CercaLavorazione(int id)
         {
-            MacroLavorazione lavorazione = null;
+            TipologiaMacroLavorazione lavorazione = null;
             try
             {
                 con.Open();
@@ -1985,7 +1985,7 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    MacroLavorazione l = new MacroLavorazione
+                    TipologiaMacroLavorazione l = new TipologiaMacroLavorazione
                     {
                         Id = (Int32)lettore[0],
                         Nome = (String)lettore[1],
@@ -2004,9 +2004,9 @@ namespace Diomede2
             }
             return lavorazione;
         }
-        public List<MacroLavorazione> FiltroLavorazioni(String s, String g)
+        public List<TipologiaMacroLavorazione> FiltroLavorazioni(String s, String g)
         {
-            List<MacroLavorazione> lavorazione = new List<MacroLavorazione>();
+            List<TipologiaMacroLavorazione> lavorazione = new List<TipologiaMacroLavorazione>();
             try
             {
                 con.Open();
@@ -2016,7 +2016,7 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    MacroLavorazione l = new MacroLavorazione
+                    TipologiaMacroLavorazione l = new TipologiaMacroLavorazione
                     {
                         Id = (Int32)lettore[0],
                         Nome = (String)lettore[1],
@@ -2373,7 +2373,7 @@ namespace Diomede2
         public Double Importo { get => importo; set => importo = value; }
         public string Desc { get => desc; set => desc = value; }
     }
-    public class MacroLavorazione
+    public class TipologiaMacroLavorazione
     {
         private int id;
         private String nome;
