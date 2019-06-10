@@ -12,8 +12,12 @@ namespace Diomede2
 {
     public partial class ListaLavorazioni : Form
     {
-        public ListaLavorazioni()
+        readonly ListaPacchetto formPrecedente;
+        readonly String db;
+        public ListaLavorazioni(ListaPacchetto lp, String dbName)
         {
+            formPrecedente = lp;
+            db = dbName;
             InitializeComponent();
         }
 

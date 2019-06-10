@@ -26,5 +26,16 @@ namespace Diomede2
             InserisciPacchetto iP = new InserisciPacchetto(db);
             iP.Show();
         }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            ListaLavorazioni ll = new ListaLavorazioni(this, db);
+            ll.Show();
+        }
+
+        private void ListaPacchetto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            formPrecedente.Show();
+        }
     }
 }
