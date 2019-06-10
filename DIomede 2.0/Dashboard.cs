@@ -46,14 +46,12 @@ namespace Diomede2
                 }
             }
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             ListaClienti frm = new ListaClienti(settore, this);
             frm.Show();
             this.Hide();
         }
-
         private void ListView1_Click(object sender, EventArgs e)
         {
             Cliente cliente = lista[listView1.SelectedItems[0].Index];
@@ -61,17 +59,21 @@ namespace Diomede2
             frm1.Show();
 
         }
-
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
             formPrecedente.Show();
         }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             ListaBozze lB = new ListaBozze(settore, this);
             lB.Show();
         }
+        private void ListView2_Click(object sender, EventArgs e)
+        {
+            Bozza bozza = listaBozze[listView2.SelectedItems[0].Index];
+            DaDefinire frm1 = new DaDefinire(bozza, settore, this);
+            frm1.Show();
 
+        }
     }
 }

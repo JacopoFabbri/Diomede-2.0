@@ -82,6 +82,12 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Class2.cs" />
+    <Compile Include="DaDefinire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DaDefinire.Designer.cs">
+      <DependentUpon>DaDefinire.cs</DependentUpon>
+    </Compile>
     <Compile Include="InserimentoBozza.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     <Compile Include="visualizzatore.Designer.cs">
       <DependentUpon>visualizzatore.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DaDefinire.resx">
+      <DependentUpon>DaDefinire.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InserimentoBozza.resx">
       <DependentUpon>InserimentoBozza.cs</DependentUpon>
     </EmbeddedResource>

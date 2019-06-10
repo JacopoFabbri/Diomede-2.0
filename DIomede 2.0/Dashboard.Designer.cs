@@ -73,6 +73,7 @@
             this.listView2.TabIndex = 3;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.List;
+            this.listView2.Click += new System.EventHandler(this.ListView2_Click);
             // 
             // Dashboard
             // 
