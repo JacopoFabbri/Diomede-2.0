@@ -23,7 +23,8 @@ namespace Diomede2
 
         private void Button2_Click(object sender, EventArgs e)
         {
-
+            InserisciLavorazione iL = new InserisciLavorazione(db,formPrecedente);
+            iL.Show();
         }
     }
 }
