@@ -287,12 +287,12 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        public void InserimentoBozza(DateTime data, String pacchetto, String importo, String numerocommessa)
+        public void InserimentoBozza(DateTime data, String pacchetto, String importo, String numerocommessa, int cliente, Boolean accettazione)
         {
             try
             {
                 BozzaDB bDB = new BozzaDB(conn);
-                bDB.Inserimento(data, pacchetto, importo, numerocommessa);
+                bDB.Inserimento(data, pacchetto, importo, numerocommessa, cliente, accettazione);
             }
             catch (Exception e)
             {
@@ -355,12 +355,12 @@ namespace Diomede2
             }
             return contatto;
         }
-        public void UpdateBozza(int id, DateTime data, String pacchetto, Double importo, String numerocommessa)
+        public void UpdateBozza(int id, DateTime data, String pacchetto, Double importo, String numerocommessa, int cliente, Boolean accettazione)
         {
             try
             {
                 BozzaDB bDB = new BozzaDB(conn);
-                bDB.AggiornaBozza(id, data, pacchetto, importo, numerocommessa);
+                bDB.AggiornaBozza(id, data, pacchetto, importo, numerocommessa, cliente, accettazione);
             }
             catch (Exception e)
             {
@@ -1191,12 +1191,12 @@ namespace Diomede2
         {
             con = conn;
         }
-        public void Inserimento(DateTime data, String pacchetto, String importo, String numerocommessa)
+        public void Inserimento(DateTime data, String pacchetto, String importo, String numerocommessa, int cliente, Boolean accettazione)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `BOZZA`(`DATA`, `PACCHETTO`,`IMPORTO`,`NUMEROCOMMESSA`) VALUES('" + data.ToString("yyyy/MM/dd") + "','" + pacchetto + "','" + importo + "','" + numerocommessa + "')", con);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `BOZZA`(`DATA`, `PACCHETTO`,`IMPORTO`,`NUMEROCOMMESSA`,`CLIENTE`,`ACCETTAZIONE`) VALUES('" + data.ToString("yyyy/MM/dd") + "','" + pacchetto + "','" + importo + "','" + numerocommessa + "','" + cliente + "','" + accettazione + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -1226,7 +1226,9 @@ namespace Diomede2
                         Data = (DateTime)lettore[1],
                         Pacchetto = (Int32)lettore[2],
                         Importo = (Double)lettore[3],
-                        NumeroCommessa = "" + lettore[4]
+                        NumeroCommessa = "" + lettore[4],
+                        Cliente = (Int32)lettore[5],
+                        Accetazione = (bool)lettore[6]
                     };
                     lista.Add(bozza);
                 }
@@ -1255,12 +1257,13 @@ namespace Diomede2
                 {
                     Bozza bozza = new Bozza
                     {
-
                         Id = (Int32)lettore[0],
                         Data = (DateTime)lettore[1],
                         Pacchetto = (Int32)lettore[2],
                         Importo = (Double)lettore[3],
-                        NumeroCommessa = "" + lettore[4]
+                        NumeroCommessa = "" + lettore[4],
+                        Cliente = (Int32)lettore[5],
+                        Accetazione = (bool)lettore[6]
                     };
                     lista.Add(bozza);
                 }
@@ -1293,7 +1296,9 @@ namespace Diomede2
                         Data = (DateTime)lettore[1],
                         Pacchetto = (Int32)lettore[2],
                         Importo = (Double)lettore[3],
-                        NumeroCommessa = (String)lettore[4]
+                        NumeroCommessa = (String)lettore[4],
+                        Cliente = (Int32)lettore[5],
+                        Accetazione = (bool)lettore[6]
                     };
                     bozza = b;
                 }
@@ -1326,7 +1331,9 @@ namespace Diomede2
                         Data = (DateTime)lettore[1],
                         Pacchetto = (Int32)lettore[2],
                         Importo = (Double)lettore[3],
-                        NumeroCommessa = (String)lettore[4]
+                        NumeroCommessa = (String)lettore[4],
+                        Cliente = (Int32)lettore[5],
+                        Accetazione = (bool)lettore[6]
                     };
                     bozza.Add(b);
                 }
@@ -1341,12 +1348,12 @@ namespace Diomede2
             }
             return bozza;
         }
-        public void AggiornaBozza(int id, DateTime data, String pacchetto, Double importo, String numerocommessa)
+        public void AggiornaBozza(int id, DateTime data, String pacchetto, Double importo, String numerocommessa, int cliente, bool accettazione)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("UPDATE `BOZZA` SET `DATA`='" + data + "',`PACCHETTO`='" + pacchetto + "',`IMPORTO`='" + importo + "',`NUMEROCOMMESSA`='" + numerocommessa + "' WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command = new MySqlCommand("UPDATE `BOZZA` SET `DATA`='" + data + "',`PACCHETTO`='" + pacchetto + "',`IMPORTO`='" + importo + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`CLIENTE`='" + cliente + "',`ACCETTAZIONE`='" + accettazione + "' WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -2207,12 +2214,16 @@ namespace Diomede2
         private int pacchetto;
         private Double importo;
         private String numerocommessa;
+        private int cliente;
+        private Boolean accetazione;
 
         public int Id { get => id; set => id = value; }
         public DateTime Data { get => data; set => data = value; }
         public int Pacchetto { get => pacchetto; set => pacchetto = value; }
         public Double Importo { get => importo; set => importo = value; }
         public String NumeroCommessa { get => numerocommessa; set => numerocommessa = value; }
+        public int Cliente { get => cliente; set => cliente = value; }
+        public bool Accetazione { get => accetazione; set => accetazione = value; }
     }
     public class Commessa
     {
