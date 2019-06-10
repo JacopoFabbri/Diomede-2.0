@@ -22,18 +22,15 @@ namespace Diomede2
             db = dbName;
             InitializeComponent();
         }
-
         private void TextBox2_Click(object sender, EventArgs e)
         {
             ListaPacchetto lp = new ListaPacchetto(db, this, textBox2);
             lp.Show();
         }
-
         private void InserimentoBozza_FormClosing(object sender, FormClosingEventArgs e)
         {
             formPrecedente.Show();
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             try
@@ -47,7 +44,6 @@ namespace Diomede2
                 MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati");
             }
         }
-
         private void InserimentoBozza_Load(object sender, EventArgs e)
         {
             op = new OperazionePraticheEdili(db);

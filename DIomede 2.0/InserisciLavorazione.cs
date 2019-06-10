@@ -15,6 +15,7 @@ namespace Diomede2
         readonly ListaLavorazioni formPrecedente;
         readonly String db;
         int id;
+        OperazionePraticheEdili op;
         public InserisciLavorazione(String dbName, ListaLavorazioni ll, int idPacchetto)
         {
             id = idPacchetto;
@@ -22,10 +23,22 @@ namespace Diomede2
             formPrecedente = ll;
             InitializeComponent();
         }
-
         private void InserisciLavorazione_Load(object sender, EventArgs e)
         {
             textBox2.Text = "" + id;
+            op = new OperazionePraticheEdili(db);
+        }
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                op.InserimentoLavorazione(textBox1.Text,int.Parse(textBox2.Text),double.Parse(textBox3.Text),textBox5.Text);
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati");
+            }
         }
     }
 }
