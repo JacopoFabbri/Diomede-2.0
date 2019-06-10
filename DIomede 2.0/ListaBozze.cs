@@ -85,7 +85,24 @@ namespace Diomede2
 
         private void Button3_Click(object sender, EventArgs e)
         {
-
+            if (dataGridView1.SelectedRows != null)
+            {
+                if (MessageBox.Show("Stai per eliminare " + (String)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[4].Value + " .Confermi?", "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        Bozza clienti = op.CercaBozzaId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        op.CancellaBozza((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            dataGridView1.DataSource = op.CercaBozza();
+            dataGridView1.Columns[0].Visible = false;
         }
 
         private void ListaBozze_FormClosing(object sender, FormClosingEventArgs e)
