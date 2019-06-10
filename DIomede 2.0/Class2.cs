@@ -1,9 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Diomede2
 {
@@ -290,12 +287,12 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        public void InserimentoBozza(String data, String pacchetto, String importo, String numerocommessa)
+        public void InserimentoBozza(DateTime data, String pacchetto, String importo, String numerocommessa, int cliente, Boolean accettazione)
         {
             try
             {
                 BozzaDB bDB = new BozzaDB(conn);
-                bDB.Inserimento(data, pacchetto, importo, numerocommessa);
+                bDB.Inserimento(data, pacchetto, importo, numerocommessa, cliente, accettazione);
             }
             catch (Exception e)
             {
@@ -358,12 +355,12 @@ namespace Diomede2
             }
             return contatto;
         }
-        public void UpdateBozza(int id, String data, String pacchetto, String importo, String numerocommessa)
+        public void UpdateBozza(int id, DateTime data, String pacchetto, Double importo, String numerocommessa, int cliente, Boolean accettazione)
         {
             try
             {
                 BozzaDB bDB = new BozzaDB(conn);
-                bDB.AggiornaBozza(id, data, pacchetto, importo, numerocommessa);
+                bDB.AggiornaBozza(id, data, pacchetto, importo, numerocommessa, cliente, accettazione);
             }
             catch (Exception e)
             {
@@ -468,6 +465,98 @@ namespace Diomede2
             {
                 MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
                 bDB.RimuoviLavorazioni(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void InserimentoPacchetto(String nome, String desc)
+        {
+            try
+            {
+                PacchettoDB bDB = new PacchettoDB(conn);
+                bDB.Inserimento(nome, desc);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public List<Pacchetto> CercaPacchetto()
+        {
+            List<Pacchetto> lista;
+            try
+            {
+                PacchettoDB bDB = new PacchettoDB(conn);
+                lista = bDB.ListaPacchetti();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public List<Pacchetto> CercaPacchetto(String n)
+        {
+            List<Pacchetto> lista;
+            try
+            {
+                PacchettoDB bDB = new PacchettoDB(conn);
+                lista = bDB.ListaPacchetti(n);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public Pacchetto CercaPacchetto(int id)
+        {
+            Pacchetto contatto;
+            try
+            {
+                PacchettoDB bDB = new PacchettoDB(conn);
+                contatto = bDB.CercaPacchetto(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public List<Pacchetto> FiltraPacchetto(String s, String g)
+        {
+            List<Pacchetto> contatto;
+            try
+            {
+                PacchettoDB bDB = new PacchettoDB(conn);
+                contatto = bDB.FiltroPacchetto(s, g);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public void UpdatePacchetto(int id, String nome, String desc)
+        {
+            try
+            {
+                PacchettoDB bDB = new PacchettoDB(conn);
+                bDB.AggiornaPacchetto(id, nome, desc);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void CancellaPacchetto(int id)
+        {
+            try
+            {
+                PacchettoDB bDB = new PacchettoDB(conn);
+                bDB.RimuoviPacchetto(id);
             }
             catch (Exception e)
             {
@@ -1102,12 +1191,20 @@ namespace Diomede2
         {
             con = conn;
         }
-        public void Inserimento(String data, String pacchetto, String importo, String numerocommessa)
+        public void Inserimento(DateTime data, String pacchetto, String importo, String numerocommessa, int cliente, Boolean accettazione)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `BOZZA`(`DATA`, `PACCHETTO`,`IMPORTO`,`NUMEROCOMMESSA`) VALUES('" + data + "','" + pacchetto + "','" + importo + "','" + numerocommessa + "'", con);
+                MySqlCommand command;
+                if (accettazione)
+                {
+                    command = new MySqlCommand("INSERT INTO `BOZZA`(`DATA`, `PACCHETTO`,`IMPORTO`,`NUMEROCOMMESSA`,`CLIENTE`,`ACCETTAZIONE`) VALUES('" + data.ToString("yyyy/MM/dd") + "','" + pacchetto + "','" + importo + "','" + numerocommessa + "','" + cliente + "','1')", con);
+                }
+                else
+                {
+                    command = new MySqlCommand("INSERT INTO `BOZZA`(`DATA`, `PACCHETTO`,`IMPORTO`,`NUMEROCOMMESSA`,`CLIENTE`,`ACCETTAZIONE`) VALUES('" + data.ToString("yyyy/MM/dd") + "','" + pacchetto + "','" + importo + "','" + numerocommessa + "','" + cliente + "','0')", con);
+                }
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -1121,7 +1218,7 @@ namespace Diomede2
         }
         public List<Bozza> ListaBozza()
         {
-            List<Bozza> lista = null;
+            List<Bozza> lista = new List<Bozza>();
             try
             {
                 con.Open();
@@ -1137,7 +1234,9 @@ namespace Diomede2
                         Data = (DateTime)lettore[1],
                         Pacchetto = (Int32)lettore[2],
                         Importo = (Double)lettore[3],
-                        NumeroCommessa = "" + lettore[4]
+                        NumeroCommessa = "" + lettore[4],
+                        Cliente = (Int32)lettore[5],
+                        Accetazione = (bool)lettore[6]
                     };
                     lista.Add(bozza);
                 }
@@ -1154,7 +1253,7 @@ namespace Diomede2
         }
         public List<Bozza> ListaBozza(String n)
         {
-            List<Bozza> lista = null;
+            List<Bozza> lista = new List<Bozza>();
             try
             {
                 con.Open();
@@ -1166,12 +1265,13 @@ namespace Diomede2
                 {
                     Bozza bozza = new Bozza
                     {
-
                         Id = (Int32)lettore[0],
                         Data = (DateTime)lettore[1],
                         Pacchetto = (Int32)lettore[2],
                         Importo = (Double)lettore[3],
-                        NumeroCommessa = "" + lettore[4]
+                        NumeroCommessa = "" + lettore[4],
+                        Cliente = (Int32)lettore[5],
+                        Accetazione = (bool)lettore[6]
                     };
                     lista.Add(bozza);
                 }
@@ -1204,7 +1304,9 @@ namespace Diomede2
                         Data = (DateTime)lettore[1],
                         Pacchetto = (Int32)lettore[2],
                         Importo = (Double)lettore[3],
-                        NumeroCommessa = (String)lettore[4]
+                        NumeroCommessa = (String)lettore[4],
+                        Cliente = (Int32)lettore[5],
+                        Accetazione = (bool)lettore[6]
                     };
                     bozza = b;
                 }
@@ -1237,7 +1339,9 @@ namespace Diomede2
                         Data = (DateTime)lettore[1],
                         Pacchetto = (Int32)lettore[2],
                         Importo = (Double)lettore[3],
-                        NumeroCommessa = (String)lettore[4]
+                        NumeroCommessa = (String)lettore[4],
+                        Cliente = (Int32)lettore[5],
+                        Accetazione = (bool)lettore[6]
                     };
                     bozza.Add(b);
                 }
@@ -1252,12 +1356,20 @@ namespace Diomede2
             }
             return bozza;
         }
-        public void AggiornaBozza(int id, String data, String pacchetto, String importo, String numerocommessa)
+        public void AggiornaBozza(int id, DateTime data, String pacchetto, Double importo, String numerocommessa, int cliente, bool accettazione)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("UPDATE `BOZZA` SET `DATA`='" + data + "',`PACCHETTO`='" + pacchetto + "',`IMPORTO`='" + importo + "',`NUMEROCOMMESSA`='" + numerocommessa + "' WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command;
+                if (accettazione)
+                {
+                    command = new MySqlCommand("UPDATE `BOZZA` SET `DATA`='" + data + "',`PACCHETTO`='" + pacchetto + "',`IMPORTO`='" + importo + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`CLIENTE`='" + cliente + "',`ACCETTAZIONE`='1' WHERE `ID` = '" + id + "'", con);
+                }
+                else
+                {
+                    command = new MySqlCommand("UPDATE `BOZZA` SET `DATA`='" + data + "',`PACCHETTO`='" + pacchetto + "',`IMPORTO`='" + importo + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`CLIENTE`='" + cliente + "',`ACCETTAZIONE`='0' WHERE `ID` = '" + id + "'", con);
+                }
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -1861,6 +1973,194 @@ namespace Diomede2
         }
 
     }
+    public class PacchettoDB
+    {
+        readonly MySqlConnection con = null;
+
+        public PacchettoDB(MySqlConnection conn)
+        {
+            con = conn;
+        }
+        public void Inserimento(String nome, String note)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("INSERT INTO `PACCHETTO`(`NOME`, `NOTE`) VALUES ('" + nome + "','" + note + "')", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<Pacchetto> ListaPacchetti()
+        {
+            List<Pacchetto> lista = new List<Pacchetto>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `PACCHETTO`", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Pacchetto lavorazione = new Pacchetto
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = "" + lettore[1],
+                        Note = "" + lettore[2],
+                    };
+                    ;
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public List<Pacchetto> ListaPacchetti(String n)
+        {
+            List<Pacchetto> lista = new List<Pacchetto>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `PACCHETTO` WHERE `ID` = '" + n + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Pacchetto lavorazione = new Pacchetto
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = "" + lettore[1],
+                        Note = "" + lettore[2],
+                    };
+                    ;
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public Pacchetto CercaPacchetto(int id)
+        {
+            Pacchetto lavorazione = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `PACCHETTO` WHERE `ID` = '" + id + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Pacchetto l = new Pacchetto
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = "" + lettore[1],
+                        Note = "" + lettore[2]
+                    };
+                    lavorazione = l;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lavorazione;
+        }
+        public List<Pacchetto> FiltroPacchetto(String s, String g)
+        {
+            List<Pacchetto> lavorazione = new List<Pacchetto>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `PACCHETTO` WHERE `" + s + "` = '" + g + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Pacchetto l = new Pacchetto
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = "" + lettore[1],
+                        Note = "" + lettore[2],
+                    };
+                    ;
+                    lavorazione.Add(l);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lavorazione;
+        }
+        public void AggiornaPacchetto(int id, String nome, String desc)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("UPDATE `PACCHETTO` SET `NOME`='" + nome + "',`NOTE`='" + desc + "' WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void RimuoviPacchetto(int id)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("DELETE FROM `PACCHETTO` WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+    }
     public class Cliente
     {
         private int id;
@@ -1930,12 +2230,16 @@ namespace Diomede2
         private int pacchetto;
         private Double importo;
         private String numerocommessa;
+        private int cliente;
+        private Boolean accettazione;
 
         public int Id { get => id; set => id = value; }
         public DateTime Data { get => data; set => data = value; }
         public int Pacchetto { get => pacchetto; set => pacchetto = value; }
         public Double Importo { get => importo; set => importo = value; }
         public String NumeroCommessa { get => numerocommessa; set => numerocommessa = value; }
+        public int Cliente { get => cliente; set => cliente = value; }
+        public bool Accettazione { get => accettazione; set => accettazione = value; }
     }
     public class Commessa
     {
@@ -1978,5 +2282,15 @@ namespace Diomede2
         public int Id { get => id; set => id = value; }
         public string Nome { get => nome; set => nome = value; }
         public string Desc { get => desc; set => desc = value; }
+    }
+    public class Pacchetto
+    {
+        private int id;
+        private String nome;
+        private String note;
+
+        public int Id { get => id; set => id = value; }
+        public string Nome { get => nome; set => nome = value; }
+        public string Note { get => note; set => note = value; }
     }
 }

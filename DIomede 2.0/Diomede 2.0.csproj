@@ -82,6 +82,42 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Class2.cs" />
+    <Compile Include="InserimentoBozza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoBozza.Designer.cs">
+      <DependentUpon>InserimentoBozza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserisciLavorazione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserisciLavorazione.Designer.cs">
+      <DependentUpon>InserisciLavorazione.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserisciPacchetto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserisciPacchetto.Designer.cs">
+      <DependentUpon>InserisciPacchetto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaBozze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaBozze.Designer.cs">
+      <DependentUpon>ListaBozze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaLavorazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaLavorazioni.Designer.cs">
+      <DependentUpon>ListaLavorazioni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPacchetto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaPacchetto.Designer.cs">
+      <DependentUpon>ListaPacchetto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +180,24 @@
     <Compile Include="visualizzatore.Designer.cs">
       <DependentUpon>visualizzatore.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="InserimentoBozza.resx">
+      <DependentUpon>InserimentoBozza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserisciLavorazione.resx">
+      <DependentUpon>InserisciLavorazione.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserisciPacchetto.resx">
+      <DependentUpon>InserisciPacchetto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaBozze.resx">
+      <DependentUpon>ListaBozze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaLavorazioni.resx">
+      <DependentUpon>ListaLavorazioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPacchetto.resx">
+      <DependentUpon>ListaPacchetto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

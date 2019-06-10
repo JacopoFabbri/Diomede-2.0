@@ -56,5 +56,11 @@ namespace Diomede2
         {
             formPrecedente.Show();
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            ListaBozze lB = new ListaBozze(settore, this);
+            lB.Show();
+        }
     }
 }
