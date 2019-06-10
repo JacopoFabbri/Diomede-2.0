@@ -1210,7 +1210,7 @@ namespace Diomede2
         }
         public List<Bozza> ListaBozza()
         {
-            List<Bozza> lista = null;
+            List<Bozza> lista = new List<Bozza>();
             try
             {
                 con.Open();
@@ -1243,7 +1243,7 @@ namespace Diomede2
         }
         public List<Bozza> ListaBozza(String n)
         {
-            List<Bozza> lista = null;
+            List<Bozza> lista = new List<Bozza>();
             try
             {
                 con.Open();
