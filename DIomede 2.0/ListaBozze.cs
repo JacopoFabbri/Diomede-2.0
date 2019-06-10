@@ -55,7 +55,26 @@ namespace Diomede2
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            
+            foreach (DataGridViewRow riga in dataGridView1.Rows)
+            {
+                if (riga.Cells[0].Value != null)
+                {
+                    if (riga.Cells[0].Style.ForeColor == Color.Red)
+                    {
+                        try
+                        {
+                            op.UpdateBozza((int)riga.Cells["ID"].Value, (DateTime)riga.Cells["DATA"].Value, riga.Cells["PACCHETTO"].Value + "", (double)riga.Cells["IMPORTO"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (int)riga.Cells["CLIENTE"].Value, (Boolean)riga.Cells["ACCETTAZIONE"].Value);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                    }
+                }
+            }
+            dataGridView1.DataSource = op.CercaBozza();
+            dataGridView1.Columns[0].Visible = false;
         }
 
         private void Button2_Click(object sender, EventArgs e)

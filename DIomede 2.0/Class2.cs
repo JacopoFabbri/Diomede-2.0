@@ -2231,7 +2231,7 @@ namespace Diomede2
         private Double importo;
         private String numerocommessa;
         private int cliente;
-        private Boolean accetazione;
+        private Boolean accettazione;
 
         public int Id { get => id; set => id = value; }
         public DateTime Data { get => data; set => data = value; }
@@ -2239,7 +2239,7 @@ namespace Diomede2
         public Double Importo { get => importo; set => importo = value; }
         public String NumeroCommessa { get => numerocommessa; set => numerocommessa = value; }
         public int Cliente { get => cliente; set => cliente = value; }
-        public bool Accetazione { get => accetazione; set => accetazione = value; }
+        public bool Accettazione { get => accettazione; set => accettazione = value; }
     }
     public class Commessa
     {
