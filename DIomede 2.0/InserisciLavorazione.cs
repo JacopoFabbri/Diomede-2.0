@@ -34,8 +34,9 @@ namespace Diomede2
             {
                 op.InserimentoLavorazione(textBox1.Text,int.Parse(textBox2.Text),double.Parse(textBox3.Text),textBox5.Text);
                 this.Close();
+                formPrecedente.ListaLavorazioni_Load(sender, e);
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati");
             }

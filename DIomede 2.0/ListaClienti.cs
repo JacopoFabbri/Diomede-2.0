@@ -21,7 +21,6 @@ namespace Diomede2
             db = dbName;
             InitializeComponent();
         }
-
         private void Form4_Load(object sender, EventArgs e)
         {
             try
@@ -46,8 +45,6 @@ namespace Diomede2
                 cella.Style.ForeColor = Color.Red;
             }
         }
-
-
         private void Button1_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
@@ -72,7 +69,6 @@ namespace Diomede2
             dataGridView1.Columns[0].Visible = false;
 
         }
-
         private void Form4_FormClosed(object sender, FormClosedEventArgs e)
         {
             try
@@ -85,13 +81,11 @@ namespace Diomede2
 
             }
         }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             InserimentoCliente frm = new InserimentoCliente(db);
             frm.Show();
         }
-
         private void Button3_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows != null)
@@ -113,8 +107,5 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaClienti();
             dataGridView1.Columns[0].Visible = false;
         }
-
-
-
     }
 }

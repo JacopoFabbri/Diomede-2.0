@@ -1701,7 +1701,7 @@ namespace Diomede2
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `LAVORAZIONE`(`ID`, `OPERAZIONE`, `PACCHETTO`, `IMPORTO`, `DESC`) VALUES('" + operazione + "','" + pacchetto + "','" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" + desc + "')", con);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `LAVORAZIONE`( `OPERAZIONE`, `PACCHETTO`, `IMPORTO`, `DESC`) VALUES('" + operazione + "','" + pacchetto + "','" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" + desc + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
