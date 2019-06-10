@@ -25,6 +25,7 @@ namespace Diomede2
             InitializeComponent();
         }
 
+
         public void Form2_Load(object sender, EventArgs e)
         {
             listView1.Clear();
