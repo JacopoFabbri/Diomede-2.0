@@ -25,7 +25,7 @@ namespace Diomede2
         }
         private void Button2_Click(object sender, EventArgs e)
         {
-            InserisciLavorazione iL = new InserisciLavorazione(db, this);
+            InserisciLavorazione iL = new InserisciLavorazione(db, this, idPacchetto);
             iL.Show();
         }
         private void Button1_Click(object sender, EventArgs e)

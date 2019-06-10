@@ -14,12 +14,18 @@ namespace Diomede2
     {
         readonly ListaLavorazioni formPrecedente;
         readonly String db;
-        public InserisciLavorazione(String dbName, ListaLavorazioni ll)
+        int id;
+        public InserisciLavorazione(String dbName, ListaLavorazioni ll, int idPacchetto)
         {
+            id = idPacchetto;
             db = dbName;
             formPrecedente = ll;
             InitializeComponent();
         }
 
+        private void InserisciLavorazione_Load(object sender, EventArgs e)
+        {
+            textBox2.Text = "" + id;
+        }
     }
 }

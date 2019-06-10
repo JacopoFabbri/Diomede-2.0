@@ -59,7 +59,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(500, 118);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(498, 118);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // textBox1
@@ -74,6 +74,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(169, 3);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(124, 20);
             this.textBox2.TabIndex = 1;
             this.textBox2.Text = "Pacchetto";
@@ -112,6 +113,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "InserisciLavorazione";
             this.Text = "InserisciLavorazione";
+            this.Load += new System.EventHandler(this.InserisciLavorazione_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
