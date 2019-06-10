@@ -1963,7 +1963,7 @@ namespace Diomede2
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `PACCHETTO(`NOME`, `NOTE`) VALUES ('" + nome + "','" + note + "')", con);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `PACCHETTO`(`NOME`, `NOTE`) VALUES ('" + nome + "','" + note + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)

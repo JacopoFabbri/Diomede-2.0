@@ -95,6 +95,8 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "InserisciPacchetto";
             this.Text = "InserisciPacchetto";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InserisciPacchetto_FormClosing);
+            this.Load += new System.EventHandler(this.InserisciPacchetto_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

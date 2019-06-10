@@ -14,6 +14,7 @@ namespace Diomede2
     {
         readonly String db;
         readonly InserimentoBozza formPrecedente;
+        OperazionePraticheEdili op;
         public ListaPacchetto(String dbName, InserimentoBozza ib)
         {
             formPrecedente = ib;
@@ -36,6 +37,34 @@ namespace Diomede2
         private void ListaPacchetto_FormClosing(object sender, FormClosingEventArgs e)
         {
             formPrecedente.Show();
+        }
+
+        private void ListaPacchetto_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                op = new OperazionePraticheEdili(db);
+                if (op.CercaPacchetto() != null)
+                {
+                    dataGridView1.DataSource = op.CercaPacchetto();
+                    dataGridView1.Columns[0].Visible = false;
+                }
+                else
+                {
+                    dataGridView1.DataSource = op.CercaPacchetto();
+
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Impossibile accedere a quest'area !!!");
+                Application.Exit();
+            }
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            formPrecedente.
         }
     }
 }

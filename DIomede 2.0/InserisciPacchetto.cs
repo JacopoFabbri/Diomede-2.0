@@ -23,6 +23,17 @@ namespace Diomede2
         private void Button1_Click(object sender, EventArgs e)
         {
             op = new OperazionePraticheEdili(db);
+            op.InserimentoPacchetto(textBox1.Text, textBox2.Text);
+            this.Close();
+        }
+
+        private void InserisciPacchetto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void InserisciPacchetto_Load(object sender, EventArgs e)
+        {
 
         }
     }
