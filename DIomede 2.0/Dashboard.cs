@@ -31,7 +31,8 @@ namespace Diomede2
             listView2.Clear();
             op = new OperazionePraticheEdili(settore);
             lista = op.CercaClienti();
-            if (lista != null) {
+            if (lista != null)
+            {
                 foreach (Cliente c in lista)
                 {
                     listView1.Items.Add(c.Nome);
@@ -71,7 +72,7 @@ namespace Diomede2
         private void ListView2_Click(object sender, EventArgs e)
         {
             Bozza bozza = listaBozze[listView2.SelectedItems[0].Index];
-            DaDefinire frm1 = new DaDefinire(bozza, settore, this);
+            ListaLavorazioni frm1 = new ListaLavorazioni(settore, bozza.Pacchetto);
             frm1.Show();
 
         }

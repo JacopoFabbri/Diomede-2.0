@@ -35,7 +35,7 @@ namespace Diomede2
 
                 if (dataGridView1.SelectedRows != null)
                 {
-                    ListaLavorazioni ll = new ListaLavorazioni(this, db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
+                    ListaLavorazioni ll = new ListaLavorazioni( db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
                     ll.Show();
                 }
             }

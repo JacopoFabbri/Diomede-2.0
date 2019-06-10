@@ -12,17 +12,16 @@ namespace Diomede2
 {
     public partial class ListaLavorazioni : Form
     {
-        readonly ListaPacchetto formPrecedente;
         readonly String db;
         readonly int idPacchetto;
         OperazionePraticheEdili op;
-        public ListaLavorazioni(ListaPacchetto lp, String dbName, int id)
+        public ListaLavorazioni( String dbName, int id)
         {
             idPacchetto = id;
-            formPrecedente = lp;
             db = dbName;
             InitializeComponent();
         }
+
         private void Button2_Click(object sender, EventArgs e)
         {
             InserisciLavorazione iL = new InserisciLavorazione(db, this, idPacchetto);
@@ -65,7 +64,6 @@ namespace Diomede2
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();
             }
-            formPrecedente.Hide();
         }
         private void Button3_Click(object sender, EventArgs e)
         {
