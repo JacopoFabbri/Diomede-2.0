@@ -123,6 +123,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ListaBozze";
             this.Text = "ListaBozze";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ListaBozze_FormClosing);
             this.Load += new System.EventHandler(this.ListaBozze_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

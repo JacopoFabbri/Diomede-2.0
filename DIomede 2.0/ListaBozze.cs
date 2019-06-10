@@ -60,12 +60,18 @@ namespace Diomede2
 
         private void Button2_Click(object sender, EventArgs e)
         {
-
+            InserimentoBozza ib = new InserimentoBozza(db, this);
+            ib.Show();
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ListaBozze_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            formPrecente.Show();
         }
     }
 }

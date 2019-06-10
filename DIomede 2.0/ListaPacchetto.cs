@@ -13,8 +13,10 @@ namespace Diomede2
     public partial class ListaPacchetto : Form
     {
         readonly String db;
-        public ListaPacchetto(String dbName)
+        readonly InserimentoBozza formPrecedente;
+        public ListaPacchetto(String dbName, InserimentoBozza ib)
         {
+            formPrecedente = ib;
             db = dbName;
             InitializeComponent();
         }
