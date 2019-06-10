@@ -38,7 +38,7 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
-                op.InserimentoBozza(dateTimePicker1.Value, textBox2.Text, textBox3.Text, textBox4.Text);
+                op.InserimentoBozza(dateTimePicker1.Value, textBox2.Text, textBox3.Text, textBox4.Text, false);
                 this.Close();
             }
             catch
@@ -47,5 +47,9 @@ namespace Diomede2
             }
         }
 
+        private void InserimentoBozza_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
