@@ -355,7 +355,7 @@ namespace Diomede2
             }
             return contatto;
         }
-        public void UpdateBozza(int id, DateTime data, String pacchetto, Double importo, String numerocommessa, int cliente, Boolean accettazione)
+        public void UpdateBozza(int id, DateTime data, String pacchetto, String importo, String numerocommessa, int cliente, Boolean accettazione)
         {
             try
             {
@@ -1236,7 +1236,7 @@ namespace Diomede2
                         Importo = (Double)lettore[3],
                         NumeroCommessa = "" + lettore[4],
                         Cliente = (Int32)lettore[5],
-                        Accetazione = (bool)lettore[6]
+                        Accettazione = (bool)lettore[6]
                     };
                     lista.Add(bozza);
                 }
@@ -1271,7 +1271,7 @@ namespace Diomede2
                         Importo = (Double)lettore[3],
                         NumeroCommessa = "" + lettore[4],
                         Cliente = (Int32)lettore[5],
-                        Accetazione = (bool)lettore[6]
+                        Accettazione = (bool)lettore[6]
                     };
                     lista.Add(bozza);
                 }
@@ -1306,7 +1306,7 @@ namespace Diomede2
                         Importo = (Double)lettore[3],
                         NumeroCommessa = (String)lettore[4],
                         Cliente = (Int32)lettore[5],
-                        Accetazione = (bool)lettore[6]
+                        Accettazione = (bool)lettore[6]
                     };
                     bozza = b;
                 }
@@ -1341,7 +1341,7 @@ namespace Diomede2
                         Importo = (Double)lettore[3],
                         NumeroCommessa = (String)lettore[4],
                         Cliente = (Int32)lettore[5],
-                        Accetazione = (bool)lettore[6]
+                        Accettazione = (bool)lettore[6]
                     };
                     bozza.Add(b);
                 }
@@ -1356,7 +1356,7 @@ namespace Diomede2
             }
             return bozza;
         }
-        public void AggiornaBozza(int id, DateTime data, String pacchetto, Double importo, String numerocommessa, int cliente, bool accettazione)
+        public void AggiornaBozza(int id, DateTime data, String pacchetto, String importo, String numerocommessa, int cliente, bool accettazione)
         {
             try
             {
@@ -1364,11 +1364,11 @@ namespace Diomede2
                 MySqlCommand command;
                 if (accettazione)
                 {
-                    command = new MySqlCommand("UPDATE `BOZZA` SET `DATA`='" + data + "',`PACCHETTO`='" + pacchetto + "',`IMPORTO`='" + importo + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`CLIENTE`='" + cliente + "',`ACCETTAZIONE`='1' WHERE `ID` = '" + id + "'", con);
+                    command = new MySqlCommand("UPDATE `BOZZA` SET `DATA`='" + data.ToString("yyyy/MM/dd") + "',`PACCHETTO`='" + pacchetto + "',`IMPORTO`='" + importo + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`CLIENTE`='" + cliente + "',`ACCETTAZIONE`='1' WHERE `ID` = '" + id + "'", con);
                 }
                 else
                 {
-                    command = new MySqlCommand("UPDATE `BOZZA` SET `DATA`='" + data + "',`PACCHETTO`='" + pacchetto + "',`IMPORTO`='" + importo + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`CLIENTE`='" + cliente + "',`ACCETTAZIONE`='0' WHERE `ID` = '" + id + "'", con);
+                    command = new MySqlCommand("UPDATE `BOZZA` SET `DATA`='" + data.ToString("yyyy/MM/dd") + "',`PACCHETTO`='" + pacchetto + "',`IMPORTO`='" + importo + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`CLIENTE`='" + cliente + "',`ACCETTAZIONE`='0' WHERE `ID` = '" + id + "'", con);
                 }
                 command.ExecuteNonQuery();
             }
