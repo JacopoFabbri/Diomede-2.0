@@ -564,6 +564,98 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
+        public void InserimentoLavorazione(String operazione, int pacchetto, double importo, String desc)
+        {
+            try
+            {
+                LavorazioniDB bDB = new LavorazioniDB(conn);
+                bDB.Inserimento(operazione, pacchetto, importo, desc);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public List<Lavorazione> CercaLavorazione()
+        {
+            List<Lavorazione> lista;
+            try
+            {
+                LavorazioniDB bDB = new LavorazioniDB(conn);
+                lista = bDB.ListaLavorazioni();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public List<Lavorazione> CercaLavorazione(String n)
+        {
+            List<Lavorazione> lista;
+            try
+            {
+                LavorazioniDB bDB = new LavorazioniDB(conn);
+                lista = bDB.ListaLavorazioni(n);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public Lavorazione CercaLavorazione(int id)
+        {
+            Lavorazione contatto;
+            try
+            {
+                LavorazioniDB bDB = new LavorazioniDB(conn);
+                contatto = bDB.CercaLavorazione(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public List<Lavorazione> FiltraLavorazione(String s, String g)
+        {
+            List<Lavorazione> contatto;
+            try
+            {
+                LavorazioniDB bDB = new LavorazioniDB(conn);
+                contatto = bDB.FiltroLavorazioni(s, g);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public void UpdateLavorazione(int id, String operazione, int pacchetto, double importo, String desc)
+        {
+            try
+            {
+                LavorazioniDB bDB = new LavorazioniDB(conn);
+                bDB.AggiornaLavorazioni(id, operazione, pacchetto, importo, desc);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void CancellaLavorazione(int id)
+        {
+            try
+            {
+                LavorazioniDB bDB = new LavorazioniDB(conn);
+                bDB.RimuoviLavorazioni(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
 
     }
 
@@ -1604,12 +1696,12 @@ namespace Diomede2
         {
             con = conn;
         }
-        public void Inserimento(String operazione, String pacchetto, String importo)
+        public void Inserimento(String operazione, int pacchetto, double importo, String desc)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `LAVORAZIONE`(`ID`, `OPERAZIONE`, `PACCHETTO`, `IMPORTO`) VALUES('" + operazione + "','" + pacchetto + "','" + importo + "')", con);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `LAVORAZIONE`(`ID`, `OPERAZIONE`, `PACCHETTO`, `IMPORTO`, `DESC`) VALUES('" + operazione + "','" + pacchetto + "','" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" + desc + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -1638,7 +1730,8 @@ namespace Diomede2
                         Id = (Int32)lettore[0],
                         Operazione = (String)lettore[1],
                         Pacchetto = (Int32)lettore[2],
-                        Importo = (Double)lettore[3]
+                        Importo = (Double)lettore[3],
+                        Desc = (String)lettore[4]
                     };
                     ;
                     lista.Add(lavorazione);
@@ -1671,7 +1764,8 @@ namespace Diomede2
                         Id = (Int32)lettore[0],
                         Operazione = (String)lettore[1],
                         Pacchetto = (Int32)lettore[2],
-                        Importo = (Double)lettore[3]
+                        Importo = (Double)lettore[3],
+                        Desc = (String)lettore[4]
                     };
                     ;
                     lista.Add(lavorazione);
@@ -1699,11 +1793,14 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Lavorazione l = new Lavorazione();
-                    lavorazione.Id = (Int32)lettore[0];
-                    lavorazione.Operazione = (String)lettore[1];
-                    lavorazione.Pacchetto = (Int32)lettore[2];
-                    lavorazione.Importo = (Double)lettore[3]; ;
+                    Lavorazione l = new Lavorazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Operazione = (String)lettore[1],
+                        Pacchetto = (Int32)lettore[2],
+                        Importo = (Double)lettore[3],
+                        Desc = (String)lettore[4]
+                    };
                     lavorazione = l;
                 }
             }
@@ -1734,7 +1831,8 @@ namespace Diomede2
                         Id = (Int32)lettore[0],
                         Operazione = (String)lettore[1],
                         Pacchetto = (Int32)lettore[2],
-                        Importo = (Double)lettore[3]
+                        Importo = (Double)lettore[3],
+                        Desc = (String)lettore[4]
                     };
                     ;
                     lavorazione.Add(l);
@@ -1750,12 +1848,12 @@ namespace Diomede2
             }
             return lavorazione;
         }
-        public void AggiornaLavorazioni(int id, String operazione, String pacchetto, String importo)
+        public void AggiornaLavorazioni(int id, String operazione, int pacchetto, double importo, String desc)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("UPDATE `LAVORAZIONE` SET `OPERAZIONE`='" + operazione + "',`PACCHETTO`='" + pacchetto + "',`IMPORTO`='" + importo + "' WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command = new MySqlCommand("UPDATE `LAVORAZIONE` SET `OPERAZIONE`='" + operazione + "',`PACCHETTO`='" + pacchetto + "',`IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "',`DESC`='" + desc + "' WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -2266,13 +2364,14 @@ namespace Diomede2
         private String operazione;
         private int pacchetto;
         private Double importo;
+        private String desc;
 
 
         public int Id { get => id; set => id = value; }
         public String Operazione { get => operazione; set => operazione = value; }
         public int Pacchetto { get => pacchetto; set => pacchetto = value; }
         public Double Importo { get => importo; set => importo = value; }
-
+        public string Desc { get => desc; set => desc = value; }
     }
     public class MacroLavorazione
     {

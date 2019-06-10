@@ -101,6 +101,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Aggiorna";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
@@ -120,6 +121,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ListaLavorazioni";
             this.Text = "ListaLavorazioni";
+            this.Load += new System.EventHandler(this.ListaLavorazioni_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);

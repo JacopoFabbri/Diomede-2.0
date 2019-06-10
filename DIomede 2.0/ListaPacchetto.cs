@@ -30,11 +30,20 @@ namespace Diomede2
         }
         private void Button4_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows != null)
+            try
             {
-                ListaLavorazioni ll = new ListaLavorazioni(this, db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
-                ll.Show();
+
+                if (dataGridView1.SelectedRows != null)
+                {
+                    ListaLavorazioni ll = new ListaLavorazioni(this, db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
+                    ll.Show();
+                }
             }
+            catch
+            {
+                MessageBox.Show("Nessuna riga selezionata \nSeleziona una riga prima di riprovare");
+            }
+
         }
         private void ListaPacchetto_FormClosing(object sender, FormClosingEventArgs e)
         {
