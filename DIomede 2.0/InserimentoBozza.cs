@@ -23,7 +23,7 @@ namespace Diomede2
 
         private void TextBox2_Click(object sender, EventArgs e)
         {
-            ListaPacchetto lp = new ListaPacchetto(db, this);
+            ListaPacchetto lp = new ListaPacchetto(db, this, textBox2);
             lp.Show();
         }
 
@@ -31,5 +31,6 @@ namespace Diomede2
         {
             formPrecedente.Show();
         }
+
     }
 }

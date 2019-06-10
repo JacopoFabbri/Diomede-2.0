@@ -12,8 +12,8 @@ namespace Diomede2
 {
     public partial class InserisciLavorazione : Form
     {
-        ListaLavorazioni formPrecedente;
-        String db;
+        readonly ListaLavorazioni formPrecedente;
+        readonly String db;
         public InserisciLavorazione(String dbName, ListaLavorazioni ll)
         {
             db = dbName;

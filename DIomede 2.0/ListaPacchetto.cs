@@ -15,8 +15,10 @@ namespace Diomede2
         readonly String db;
         readonly InserimentoBozza formPrecedente;
         OperazionePraticheEdili op;
-        public ListaPacchetto(String dbName, InserimentoBozza ib)
+        readonly TextBox tb;
+        public ListaPacchetto(String dbName, InserimentoBozza ib, TextBox textBox2)
         {
+            tb = textBox2;
             formPrecedente = ib;
             db = dbName;
             InitializeComponent();
@@ -64,7 +66,9 @@ namespace Diomede2
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            formPrecedente.
+            if (dataGridView1.SelectedRows != null) {
+                tb.Text = "" + dataGridView1.SelectedRows[0].Cells[0].Value;
+            }
         }
     }
 }
