@@ -2393,4 +2393,24 @@ namespace Diomede2
         public string Nome { get => nome; set => nome = value; }
         public string Note { get => note; set => note = value; }
     }
+    public class MacroLavorazione
+    {
+        private int id;
+        private String nome;
+        private DateTime dataInizio;
+        private DateTime dataFine;
+        private double prezzo;
+        private String numeroCommessa;
+        private int tipologia;
+        private String descrizione;
+
+        public int Id { get => id; set => id = value; }
+        public string Nome { get => nome; set => nome = value; }
+        public DateTime DataInizio { get => dataInizio; set => dataInizio = value; }
+        public DateTime DataFine { get => dataFine; set => dataFine = value; }
+        public double Prezzo { get => prezzo; set => prezzo = value; }
+        public string NumeroCommessa { get => numeroCommessa; set => numeroCommessa = value; }
+        public int Tipologia { get => tipologia; set => tipologia = value; }
+        public string Descrizione { get => descrizione; set => descrizione = value; }
+    }
 }
