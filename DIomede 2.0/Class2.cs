@@ -1196,7 +1196,15 @@ namespace Diomede2
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `BOZZA`(`DATA`, `PACCHETTO`,`IMPORTO`,`NUMEROCOMMESSA`,`CLIENTE`,`ACCETTAZIONE`) VALUES('" + data.ToString("yyyy/MM/dd") + "','" + pacchetto + "','" + importo + "','" + numerocommessa + "','" + cliente + "','" + accettazione + "')", con);
+                MySqlCommand command;
+                if (accettazione)
+                {
+                    command = new MySqlCommand("INSERT INTO `BOZZA`(`DATA`, `PACCHETTO`,`IMPORTO`,`NUMEROCOMMESSA`,`CLIENTE`,`ACCETTAZIONE`) VALUES('" + data.ToString("yyyy/MM/dd") + "','" + pacchetto + "','" + importo + "','" + numerocommessa + "','" + cliente + "','1')", con);
+                }
+                else
+                {
+                    command = new MySqlCommand("INSERT INTO `BOZZA`(`DATA`, `PACCHETTO`,`IMPORTO`,`NUMEROCOMMESSA`,`CLIENTE`,`ACCETTAZIONE`) VALUES('" + data.ToString("yyyy/MM/dd") + "','" + pacchetto + "','" + importo + "','" + numerocommessa + "','" + cliente + "','0')", con);
+                }
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -1353,7 +1361,15 @@ namespace Diomede2
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("UPDATE `BOZZA` SET `DATA`='" + data + "',`PACCHETTO`='" + pacchetto + "',`IMPORTO`='" + importo + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`CLIENTE`='" + cliente + "',`ACCETTAZIONE`='" + accettazione + "' WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command;
+                if (accettazione)
+                {
+                    command = new MySqlCommand("UPDATE `BOZZA` SET `DATA`='" + data + "',`PACCHETTO`='" + pacchetto + "',`IMPORTO`='" + importo + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`CLIENTE`='" + cliente + "',`ACCETTAZIONE`='1' WHERE `ID` = '" + id + "'", con);
+                }
+                else
+                {
+                    command = new MySqlCommand("UPDATE `BOZZA` SET `DATA`='" + data + "',`PACCHETTO`='" + pacchetto + "',`IMPORTO`='" + importo + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`CLIENTE`='" + cliente + "',`ACCETTAZIONE`='0' WHERE `ID` = '" + id + "'", con);
+                }
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)

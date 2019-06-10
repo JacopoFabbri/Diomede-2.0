@@ -15,6 +15,7 @@ namespace Diomede2
         readonly String db;
         readonly ListaBozze formPrecedente;
         OperazionePraticheEdili op;
+        List<Cliente> lista = new List<Cliente>();
         public InserimentoBozza(String dbName, ListaBozze lb)
         {
             formPrecedente = lb;
@@ -37,8 +38,8 @@ namespace Diomede2
         {
             try
             {
-                op = new OperazionePraticheEdili(db);
-                op.InserimentoBozza(dateTimePicker1.Value, textBox2.Text, textBox3.Text, textBox4.Text, false);
+
+                op.InserimentoBozza(dateTimePicker1.Value, textBox2.Text, textBox3.Text, textBox4.Text, lista[comboBox1.SelectedIndex].Id, false);
                 this.Close();
             }
             catch
@@ -49,7 +50,12 @@ namespace Diomede2
 
         private void InserimentoBozza_Load(object sender, EventArgs e)
         {
-
+            op = new OperazionePraticheEdili(db);
+            lista = op.CercaClienti();
+            foreach(Cliente c in lista)
+            {
+                comboBox1.Items.Add(c.Nome);
+            }
         }
     }
 }
