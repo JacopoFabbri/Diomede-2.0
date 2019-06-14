@@ -380,7 +380,7 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        public void InserimentoMacrolavorazione(String nome, String desc)
+        public void InserimentoTipologiaMacrolavorazione(String nome, String desc)
         {
             try
             {
@@ -392,7 +392,7 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        public List<TipologiaMacroLavorazione> CercaMacroLavorazione()
+        public List<TipologiaMacroLavorazione> CercaTipologiaMacroLavorazione()
         {
             List<TipologiaMacroLavorazione> lista;
             try
@@ -406,7 +406,7 @@ namespace Diomede2
             }
             return lista;
         }
-        public List<TipologiaMacroLavorazione> CercaMacroLavorazione(String n)
+        public List<TipologiaMacroLavorazione> CercaTipologiaMacroLavorazione(String n)
         {
             List<TipologiaMacroLavorazione> lista;
             try
@@ -420,7 +420,7 @@ namespace Diomede2
             }
             return lista;
         }
-        public TipologiaMacroLavorazione CercaMacroLavorazione(int id)
+        public TipologiaMacroLavorazione CercaTipologiaMacroLavorazione(int id)
         {
             TipologiaMacroLavorazione contatto;
             try
@@ -434,7 +434,7 @@ namespace Diomede2
             }
             return contatto;
         }
-        public List<TipologiaMacroLavorazione> FiltraMacroLavorazione(String s, String g)
+        public List<TipologiaMacroLavorazione> FiltraTipologiaMacroLavorazione(String s, String g)
         {
             List<TipologiaMacroLavorazione> contatto;
             try
@@ -448,7 +448,7 @@ namespace Diomede2
             }
             return contatto;
         }
-        public void UpdateMacroLavorazione(int id, String nome, String desc)
+        public void UpdateTipologiaMacroLavorazione(int id, String nome, String desc)
         {
             try
             {
@@ -460,7 +460,7 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        public void CancellaMacroLavorazione(int id)
+        public void CancellaTipologiaMacroLavorazione(int id)
         {
             try
             {
@@ -649,6 +649,190 @@ namespace Diomede2
             try
             {
                 LavorazioniDB bDB = new LavorazioniDB(conn);
+                bDB.RimuoviLavorazioni(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void InserimentoMacrolavorazione(String nome, DateTime dataInizio, DateTime dataFine, double prezzo, String numerocommessa, int tipologia, String desc)
+        {
+            try
+            {
+                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                bDB.Inserimento(nome, dataInizio, dataFine, prezzo, numerocommessa, tipologia, desc);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public List<MacroLavorazione> CercaMacroLavorazione()
+        {
+            List<MacroLavorazione> lista;
+            try
+            {
+                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                lista = bDB.ListaMacroLavorazioni();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public List<MacroLavorazione> CercaMacroLavorazione(String n)
+        {
+            List<MacroLavorazione> lista;
+            try
+            {
+                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                lista = bDB.ListaMacroLavorazioni(n);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public MacroLavorazione CercaMacroLavorazione(int id)
+        {
+            MacroLavorazione contatto;
+            try
+            {
+                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                contatto = bDB.CercaLavorazione(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public List<MacroLavorazione> FiltraMacroLavorazione(String s, String g)
+        {
+            List<MacroLavorazione> contatto;
+            try
+            {
+                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                contatto = bDB.FiltroLavorazioni(s, g);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public void UpdateMacroLavorazione(int id, String nome, DateTime dataInizio, DateTime dataFine, double prezzo, String numerocommessa, int tipologia, String desc)
+        {
+            try
+            {
+                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                bDB.AggiornaLavorazioni(id, nome, dataInizio, dataFine, prezzo, numerocommessa, tipologia, desc);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void CancellaMacroLavorazione(int id)
+        {
+            try
+            {
+                MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
+                bDB.RimuoviLavorazioni(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void InserimentoTipologialavorazione(String nome, String desc, double prezzo, String scadenze, int macrolavorazione)
+        {
+            try
+            {
+                TipologiaLavorazioniDB bDB = new TipologiaLavorazioniDB(conn);
+                bDB.Inserimento(nome, desc, prezzo, scadenze, macrolavorazione);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public List<TipologiaLavorazione> CercaTipologiaLavorazione()
+        {
+            List<TipologiaLavorazione> lista;
+            try
+            {
+                TipologiaLavorazioniDB bDB = new TipologiaLavorazioniDB(conn);
+                lista = bDB.ListaMacroLavorazioni();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public List<TipologiaLavorazione> CercaTipologiaLavorazione(String n)
+        {
+            List<TipologiaLavorazione> lista;
+            try
+            {
+                TipologiaLavorazioniDB bDB = new TipologiaLavorazioniDB(conn);
+                lista = bDB.ListaMacroLavorazioni(n);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public TipologiaLavorazione CercaTipologiaLavorazione(int id)
+        {
+            TipologiaLavorazione contatto;
+            try
+            {
+                TipologiaLavorazioniDB bDB = new TipologiaLavorazioniDB(conn);
+                contatto = bDB.CercaLavorazione(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public List<TipologiaLavorazione> FiltraTipologiaLavorazione(String s, String g)
+        {
+            List<TipologiaLavorazione> contatto;
+            try
+            {
+                TipologiaLavorazioniDB bDB = new TipologiaLavorazioniDB(conn);
+                contatto = bDB.FiltroLavorazioni(s, g);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public void UpdateLavorazione(int id, String nome, String desc, double prezzo, String scadenze, int macrolavorazione)
+        {
+            try
+            {
+                TipologiaLavorazioniDB bDB = new TipologiaLavorazioniDB(conn);
+                bDB.AggiornaLavorazioni(id, nome, desc, prezzo, scadenze, macrolavorazione);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void CancellaTipologiaLavorazione(int id)
+        {
+            try
+            {
+                TipologiaLavorazioniDB bDB = new TipologiaLavorazioniDB(conn);
                 bDB.RimuoviLavorazioni(id);
             }
             catch (Exception e)
@@ -2260,6 +2444,623 @@ namespace Diomede2
         }
 
     }
+    public class MacroLavorazioniDB
+    {
+        readonly MySqlConnection con = null;
+
+        public MacroLavorazioniDB(MySqlConnection conn)
+        {
+            con = conn;
+        }
+        public void Inserimento(String nome, DateTime dataInizio, DateTime dataFine, double prezzo, String numerocommessa, int tipologia, String desc)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("INSERT INTO `MACROLAVORAZIONI`(`NOME`, `DATAINIZIO`, `DATAFINE`, `PREZZO`, `NUMEROCOMMESSA`, `TIPOLOGIA`, `DESCRIZIONE`) VALUES('" + nome + "','" + dataInizio.ToString("yyyy/MM/dd") + "','" + dataFine.ToString("yyyy/MM/dd") + "','" + prezzo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" + numerocommessa + "','" + tipologia + "','" + desc + "')", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<MacroLavorazione> ListaMacroLavorazioni()
+        {
+            List<MacroLavorazione> lista = new List<MacroLavorazione>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `MACROLAVORAZIONI`", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    MacroLavorazione lavorazione = new MacroLavorazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        DataInizio = (DateTime)lettore[2],
+                        DataFine = (DateTime)lettore[3],
+                        Prezzo = (Double)lettore[4],
+                        NumeroCommessa = (String)lettore[5],
+                        Tipologia = (int)lettore[6],
+                        Descrizione = (String)lettore[7]
+                    };
+                    ;
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public List<MacroLavorazione> ListaMacroLavorazioni(String n)
+        {
+            List<MacroLavorazione> lista = new List<MacroLavorazione>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `MACROLAVORAZIONI` WHERE `ID` = '" + n + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    MacroLavorazione lavorazione = new MacroLavorazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        DataInizio = (DateTime)lettore[2],
+                        DataFine = (DateTime)lettore[3],
+                        Prezzo = (Double)lettore[4],
+                        NumeroCommessa = (String)lettore[5],
+                        Tipologia = (int)lettore[6],
+                        Descrizione = (String)lettore[7]
+                    };
+                    ;
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public MacroLavorazione CercaLavorazione(int id)
+        {
+            MacroLavorazione lavorazione = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `MACROLAVORAZIONI` WHERE `ID` = '" + id + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    MacroLavorazione l = new MacroLavorazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        DataInizio = (DateTime)lettore[2],
+                        DataFine = (DateTime)lettore[3],
+                        Prezzo = (Double)lettore[4],
+                        NumeroCommessa = (String)lettore[5],
+                        Tipologia = (int)lettore[6],
+                        Descrizione = (String)lettore[7]
+                    };
+                    lavorazione = l;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lavorazione;
+        }
+        public List<MacroLavorazione> FiltroLavorazioni(String s, String g)
+        {
+            List<MacroLavorazione> lavorazione = new List<MacroLavorazione>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `MACROLAVORAZIONI` WHERE `" + s + "` = '" + g + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    MacroLavorazione l = new MacroLavorazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        DataInizio = (DateTime)lettore[2],
+                        DataFine = (DateTime)lettore[3],
+                        Prezzo = (Double)lettore[4],
+                        NumeroCommessa = (String)lettore[5],
+                        Tipologia = (int)lettore[6],
+                        Descrizione = (String)lettore[7]
+                    };
+                    ;
+                    lavorazione.Add(l);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lavorazione;
+        }
+        public void AggiornaLavorazioni(int id, String nome, DateTime dataInizio, DateTime dataFine, double prezzo, String numerocommessa, int tipologia, String desc)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("UPDATE `TIPOLOGIAMACROLAVORAZIONI` SET `NOME`='" + nome + "',`DATAINIZIO`='" + dataInizio + "',`DATAFINE`='" + dataFine + "',`PREZZO`='" + prezzo + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`TIPOLOGIA`='" + tipologia + "',`DESCRIZION`='" + desc + "' WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void RimuoviLavorazioni(int id)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("DELETE FROM `MACROLAVORAZIONI` WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+    }
+    public class TipologiaLavorazioniDB
+    {
+        readonly MySqlConnection con = null;
+
+        public TipologiaLavorazioniDB(MySqlConnection conn)
+        {
+            con = conn;
+        }
+        public void Inserimento(String nome, String desc, double prezzo, String scadenze, int macrolavorazione)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("INSERT INTO `TIPOLOGIALAVORAZIONI`(`NOME`, `DESCRIZIONE`, `PREZZO`, `SCADENZE`, `MACROLAVORAZIONE`) VALUES('" + nome + "','" + desc + "','" + prezzo + "','" + scadenze + "','" + macrolavorazione + "')", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<TipologiaLavorazione> ListaMacroLavorazioni()
+        {
+            List<TipologiaLavorazione> lista = new List<TipologiaLavorazione>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `TIPOLOGIALAVORAZIONI`", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    TipologiaLavorazione lavorazione = new TipologiaLavorazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Descrizione = (String)lettore[2],
+                        Prezzo = (Double)lettore[3],
+                        Scadenze = (String)lettore[4],
+                        Macrolavorazione = (int)lettore[5]
+                    };
+                    ;
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public List<TipologiaLavorazione> ListaMacroLavorazioni(String n)
+        {
+            List<TipologiaLavorazione> lista = new List<TipologiaLavorazione>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `TIPOLOGIALAVORAZIONI` WHERE `ID` = '" + n + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    TipologiaLavorazione lavorazione = new TipologiaLavorazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Descrizione = (String)lettore[2],
+                        Prezzo = (Double)lettore[3],
+                        Scadenze = (String)lettore[4],
+                        Macrolavorazione = (int)lettore[5]
+                    };
+                    ;
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public TipologiaLavorazione CercaLavorazione(int id)
+        {
+            TipologiaLavorazione lavorazione = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `TIPOLOGIALAVORAZIONI` WHERE `ID` = '" + id + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    TipologiaLavorazione l = new TipologiaLavorazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Descrizione = (String)lettore[2],
+                        Prezzo = (Double)lettore[3],
+                        Scadenze = (String)lettore[4],
+                        Macrolavorazione = (int)lettore[5]
+                    };
+                    lavorazione = l;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lavorazione;
+        }
+        public List<TipologiaLavorazione> FiltroLavorazioni(String s, String g)
+        {
+            List<TipologiaLavorazione> lavorazione = new List<TipologiaLavorazione>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `TIPOLOGIALAVORAZIONI` WHERE `" + s + "` = '" + g + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    TipologiaLavorazione l = new TipologiaLavorazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Descrizione = (String)lettore[2],
+                        Prezzo = (Double)lettore[3],
+                        Scadenze = (String)lettore[4],
+                        Macrolavorazione = (int)lettore[5]
+                    };
+                    ;
+                    lavorazione.Add(l);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lavorazione;
+        }
+        public void AggiornaLavorazioni(int id, String nome, String desc, double prezzo, String scadenze, int macrolavorazione)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("UPDATE `TIPOLOGIALAVORAZIONI` SET `NOME`='" + nome + "',`DESCRIZIONE`='" + desc + "',`PREZZO`='" + prezzo + "',`SCADENZE`='" + scadenze + "',`MACROLAVORAZIONE`='" + macrolavorazione + "' WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void RimuoviLavorazioni(int id)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("DELETE FROM `TIPOLOGIALAVORAZIONI` WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+    }
+    public class OperazioneDB
+    {
+        readonly MySqlConnection con = null;
+
+        public OperazioneDB(MySqlConnection conn)
+        {
+            con = conn;
+        }
+        public void Inserimento(int commitente, int tipologia, DateTime data, String dataProtocollo, String dataVisuraLuogo, double offerta, String numeroCommessa)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("INSERT INTO `OPERAZIONI`(`COMMITENTE`, `TIPOLOGIA`, `DATA`, `DATAPROTOCOLLO`, `DATAVISURALUOGO`, `OFFERTA`, `NUMEROCOMMESSA`) VALUES('" + commitente + "','" + tipologia + "','" + data + "','" + dataProtocollo + "','" + dataVisuraLuogo + "','" + offerta + "','" + numeroCommessa + "')", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<Operazione> ListaOperazione()
+        {
+            List<Operazione> lista = new List<Operazione>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `OPERAZIONI`", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Operazione lavorazione = new Operazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Commitente = (Int32)lettore[1],
+                        Tipologia = (Int32)lettore[2],
+                        Data = (DateTime)lettore[3],
+                        DataProtocollo = (String)lettore[4],
+                        DataVisuraSopraluogo = (String)lettore[5],
+                        Offerta = (Double)lettore[6],
+                        NumeroCommessa = (String)lettore[7],
+                    };
+                    ;
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public List<Operazione> ListaOperazione(String n)
+        {
+            List<Operazione> lista = new List<Operazione>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `OPERAZIONI` WHERE `ID` = '" + n + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Operazione lavorazione = new Operazione
+                    {
+
+                        Id = (Int32)lettore[0],
+                        Commitente = (Int32)lettore[1],
+                        Tipologia = (Int32)lettore[2],
+                        Data = (DateTime)lettore[3],
+                        DataProtocollo = (String)lettore[4],
+                        DataVisuraSopraluogo = (String)lettore[5],
+                        Offerta = (Double)lettore[6],
+                        NumeroCommessa = (String)lettore[7],
+                    };
+                    ;
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public Operazione CercaOperazione(int id)
+        {
+            Operazione lavorazione = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `OPERAZIONI` WHERE `ID` = '" + id + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Operazione l = new Operazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Commitente = (Int32)lettore[1],
+                        Tipologia = (Int32)lettore[2],
+                        Data = (DateTime)lettore[3],
+                        DataProtocollo = (String)lettore[4],
+                        DataVisuraSopraluogo = (String)lettore[5],
+                        Offerta = (Double)lettore[6],
+                        NumeroCommessa = (String)lettore[7],
+                    };
+                    lavorazione = l;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lavorazione;
+        }
+        public List<Operazione> FiltroOperazione(String s, String g)
+        {
+            List<Operazione> lavorazione = new List<Operazione>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `OPERAZIONI` WHERE `" + s + "` = '" + g + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Operazione l = new Operazione
+                    {
+                        Id = (Int32)lettore[0],
+                        Commitente = (Int32)lettore[1],
+                        Tipologia = (Int32)lettore[2],
+                        Data = (DateTime)lettore[3],
+                        DataProtocollo = (String)lettore[4],
+                        DataVisuraSopraluogo = (String)lettore[5],
+                        Offerta = (Double)lettore[6],
+                        NumeroCommessa = (String)lettore[7],
+                    };
+                    ;
+                    lavorazione.Add(l);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lavorazione;
+        }
+        public void AggiornaOperazione(int id, int commitente, int tipologia, DateTime data, String dataProtocollo, String dataVisuraLuogo, double offerta, String numeroCommessa)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("UPDATE `TIPOLOGIALAVORAZIONI` SET `COMMITENTE`='" + commitente + "',`TIPOLOGIA`='" + tipologia + "',`DATA`='" + data + "',`DATAPROTOCOLLO`='" + dataProtocollo + "',`DATAVISURALUOGO`='" + dataVisuraLuogo + "',`OFFERTA`='" + offerta + "',`NUMEROCOMMESSA`='" + numeroCommessa + "' WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void RimuoviOperazione(int id)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("DELETE FROM `OPERAZIONI` WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+    }
     public class Cliente
     {
         private int id;
@@ -2412,5 +3213,41 @@ namespace Diomede2
         public string NumeroCommessa { get => numeroCommessa; set => numeroCommessa = value; }
         public int Tipologia { get => tipologia; set => tipologia = value; }
         public string Descrizione { get => descrizione; set => descrizione = value; }
+    }
+    public class TipologiaLavorazione
+    {
+        private int id;
+        private String nome;
+        private String descrizione;
+        private Double prezzo;
+        private String scadenze;
+        private int macrolavorazione;
+
+        public int Id { get => id; set => id = value; }
+        public string Nome { get => nome; set => nome = value; }
+        public string Descrizione { get => descrizione; set => descrizione = value; }
+        public double Prezzo { get => prezzo; set => prezzo = value; }
+        public string Scadenze { get => scadenze; set => scadenze = value; }
+        public int Macrolavorazione { get => macrolavorazione; set => macrolavorazione = value; }
+    }
+    public class Operazione
+    {
+        private int id;
+        private int commitente;
+        private int tipologia;
+        private DateTime data;
+        private String dataProtocollo;
+        private String dataVisuraSopraluogo;
+        private double offerta;
+        private String numeroCommessa;
+
+        public int Id { get => id; set => id = value; }
+        public int Commitente { get => commitente; set => commitente = value; }
+        public int Tipologia { get => tipologia; set => tipologia = value; }
+        public DateTime Data { get => data; set => data = value; }
+        public String DataProtocollo { get => dataProtocollo; set => dataProtocollo = value; }
+        public String DataVisuraSopraluogo { get => dataVisuraSopraluogo; set => dataVisuraSopraluogo = value; }
+        public double Offerta { get => offerta; set => offerta = value; }
+        public string NumeroCommessa { get => numeroCommessa; set => numeroCommessa = value; }
     }
 }
