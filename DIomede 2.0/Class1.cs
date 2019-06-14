@@ -7,22 +7,22 @@ using System.Threading.Tasks;
 
 namespace Database
 {
-    class Operazione
+    class Operaziones
     {
 
         public MySqlConnection conn = new MySqlConnection();
-        public Operazione(String nomeDB)
+        public Operaziones(String nomeDB)
         {
             conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database="+ nomeDB + ";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
         }
-        public Utente cercaUtente(String u)
+        public Utente CercaUtente(String u)
         {
-            Utente utente = null;
+            Utente utente;
             try
             {
 
                 UtenteDB db = new UtenteDB(conn);
-                utente = db.cercaUtente(u);
+                utente = db.CercaUtente(u);
 
             }
             catch (Exception e)
@@ -31,14 +31,14 @@ namespace Database
             }
             return utente;
         }
-        public Ruolo cercaRuolo(int i)
+        public Ruolo CercaRuolo(int i)
         {
-            Ruolo ruolo = null;
+            Ruolo ruolo;
             try
             {
 
                 RuoloDB db = new RuoloDB(conn);
-                ruolo = db.cercaRuolo(i);
+                ruolo = db.CercaRuolo(i);
 
             }
             catch (Exception e)
@@ -47,13 +47,13 @@ namespace Database
             }
             return ruolo;
         }
-        public void modificaDatiUtente(int id, String u, String p)
+        public void ModificaDatiUtente(int id, String u, String p)
         {
             try
             {
 
                 UtenteDB db = new UtenteDB(conn);
-                db.modificaUserPass(id, u, p);
+                db.ModificaUserPass(id, u, p);
 
             }
             catch (Exception e)
@@ -65,12 +65,12 @@ namespace Database
     }
     public class UtenteDB
     {
-        MySqlConnection con = null;
+        readonly MySqlConnection con = null;
         public UtenteDB(MySqlConnection conn)
         {
             con = conn;
         }
-        public Utente cercaUtente(String user)
+        public Utente CercaUtente(String user)
         {
             Utente u = null;
             try
@@ -82,11 +82,13 @@ namespace Database
 
                 while (lettore.Read())
                 {
-                    Utente utente = new Utente();
-                    utente.Id = (Int32)lettore[0];
-                    utente.Username = (String)lettore[1];
-                    utente.Password = (String)lettore[2];
-                    utente.Ruolo = (Int32)lettore[3];
+                    Utente utente = new Utente
+                    {
+                        Id = (Int32)lettore[0],
+                        Username = (String)lettore[1],
+                        Password = (String)lettore[2],
+                        Ruolo = (Int32)lettore[3]
+                    };
                     u = utente;
                 }
             }
@@ -100,7 +102,7 @@ namespace Database
             }
             return u;
         }
-        public void modificaUserPass(int id, String u, String p)
+        public void ModificaUserPass(int id, String u, String p)
         {
             try
             {
@@ -120,12 +122,12 @@ namespace Database
     }
     public class RuoloDB
     {
-        MySqlConnection con = null;
+        readonly MySqlConnection con = null;
         public RuoloDB(MySqlConnection conn)
         {
             con = conn;
         }
-        public Ruolo cercaRuolo(int id)
+        public Ruolo CercaRuolo(int id)
         {
             Ruolo r = null;
             try
@@ -137,10 +139,12 @@ namespace Database
 
                 while (lettore.Read())
                 {
-                    Ruolo ruolo = new Ruolo();
-                    ruolo.Nome = (String)lettore[1];
-                    ruolo.Macro = (String)lettore[2];
-                    ruolo.Job = (String)lettore[3];
+                    Ruolo ruolo = new Ruolo
+                    {
+                        Nome = (String)lettore[1],
+                        Macro = (String)lettore[2],
+                        Job = (String)lettore[3]
+                    };
                     r = ruolo;
                 }
             }

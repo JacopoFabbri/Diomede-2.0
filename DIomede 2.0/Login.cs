@@ -27,8 +27,8 @@ namespace Diomede2
             listView1.Clear();
             try
             {
-                Operazione op = new Operazione("Utenza");
-                utente = op.cercaUtente(textBox1.Text);
+                Operaziones op = new Operaziones("Utenza");
+                utente = op.CercaUtente(textBox1.Text);
                 if (utente != null)
                 {
                     if (utente.Password.Equals(textBox2.Text))
@@ -118,11 +118,11 @@ namespace Diomede2
         {
             try
             {
-                Operazione op = new Operazione("Utenza");
-                utente = op.cercaUtente(utente.Username);
+                Operaziones op = new Operaziones("Utenza");
+                utente = op.CercaUtente(utente.Username);
                 if (textBox2.Text != null)
                 {
-                    op.modificaDatiUtente(utente.Id, utente.Username, textBox2.Text);
+                    op.ModificaDatiUtente(utente.Id, utente.Username, textBox2.Text);
                     MessageBox.Show("Inserito con successo","Login:",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
             }
