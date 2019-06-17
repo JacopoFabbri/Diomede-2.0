@@ -12,9 +12,16 @@ namespace Diomede2
 {
     public partial class TIpologieMacrolavorazioni : Form
     {
-        public TIpologieMacrolavorazioni()
+        readonly String db;
+        public TIpologieMacrolavorazioni(String dbName)
         {
+            db = dbName;
             InitializeComponent();
+        }
+
+        private void TIpologieMacrolavorazioni_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

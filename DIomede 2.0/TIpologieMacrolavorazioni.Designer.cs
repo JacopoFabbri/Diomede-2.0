@@ -143,6 +143,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "TIpologieMacrolavorazioni";
             this.Text = "TIpologieMacrolavorazioni";
+            this.Load += new System.EventHandler(this.TIpologieMacrolavorazioni_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);

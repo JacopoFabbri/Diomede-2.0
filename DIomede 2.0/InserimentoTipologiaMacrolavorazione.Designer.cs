@@ -55,7 +55,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(401, 70);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(447, 100);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // textBox1
@@ -68,7 +68,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(136, 3);
+            this.textBox2.Location = new System.Drawing.Point(152, 3);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(124, 20);
             this.textBox2.TabIndex = 1;
@@ -76,9 +76,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(269, 38);
+            this.button1.Location = new System.Drawing.Point(301, 53);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 22);
+            this.button1.Size = new System.Drawing.Size(91, 23);
             this.button1.TabIndex = 8;
             this.button1.Text = "Inserisci";
             this.button1.UseVisualStyleBackColor = true;
@@ -88,7 +88,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(408, 75);
+            this.ClientSize = new System.Drawing.Size(455, 105);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "InserimentoTipologiaMacrolavorazione";
             this.Text = "InserimentoTipologiaMacrolavorazione";
