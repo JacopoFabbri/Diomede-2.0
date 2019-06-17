@@ -180,6 +180,12 @@
     <Compile Include="Secret.Designer.cs">
       <DependentUpon>Secret.cs</DependentUpon>
     </Compile>
+    <Compile Include="TIpologieMacrolavorazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TIpologieMacrolavorazioni.Designer.cs">
+      <DependentUpon>TIpologieMacrolavorazioni.cs</DependentUpon>
+    </Compile>
     <Compile Include="visualizzatore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </Compile>
     <EmbeddedResource Include="Secret.resx">
       <DependentUpon>Secret.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TIpologieMacrolavorazioni.resx">
+      <DependentUpon>TIpologieMacrolavorazioni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="visualizzatore.resx">
       <DependentUpon>visualizzatore.cs</DependentUpon>
