@@ -77,5 +77,11 @@ namespace Diomede2
             frm1.Show();
 
         }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            TipologieMacrolavorazioni tp = new TipologieMacrolavorazioni(settore);
+            tp.Show();
+        }
     }
 }

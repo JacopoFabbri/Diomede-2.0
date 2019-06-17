@@ -1,6 +1,6 @@
 ﻿namespace Diomede2
 {
-    partial class TIpologieMacrolavorazioni
+    partial class TipologieMacrolavorazioni
     {
         /// <summary>
         /// Required designer variable.
@@ -69,6 +69,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(804, 467);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellValueChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -127,6 +128,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Elimina";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button4
             // 
@@ -137,13 +139,13 @@
             this.button4.Text = "Gestione Operazioni";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // TIpologieMacrolavorazioni
+            // TipologieMacrolavorazioni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(903, 476);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "TIpologieMacrolavorazioni";
+            this.Name = "TipologieMacrolavorazioni";
             this.Text = "TIpologieMacrolavorazioni";
             this.Load += new System.EventHandler(this.TIpologieMacrolavorazioni_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

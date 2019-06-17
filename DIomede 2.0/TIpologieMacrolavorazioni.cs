@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Diomede2
 {
-    public partial class TIpologieMacrolavorazioni : Form
+    public partial class TipologieMacrolavorazioni : Form
     {
         readonly String db;
         OperazionePraticheEdili op;
-        public TIpologieMacrolavorazioni(String dbName)
+        public TipologieMacrolavorazioni(String dbName)
         {
             db = dbName;
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace Diomede2
                     {
                         try
                         {
-                            op.UpdateTipologiaMacroLavorazione((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", (int)riga.Cells["DESC"].Value + "");
+                            op.UpdateTipologiaMacroLavorazione((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "",riga.Cells["DESC"].Value + "");
                         }
                         catch
                         {
@@ -61,6 +61,35 @@ namespace Diomede2
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();
+            }
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows != null)
+            {
+                if (MessageBox.Show("Stai per eliminare " + (String)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?", "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        TipologiaMacroLavorazione clienti = op.CercaTipologiaMacroLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        op.CancellaTipologiaMacroLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        MessageBox.Show("Tipologia Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            dataGridView1.DataSource = op.CercaTipologiaMacroLavorazione();
+            dataGridView1.Columns[0].Visible = false;
+        }
+        private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
+            {
+                cella.Style.ForeColor = Color.Red;
             }
         }
     }
