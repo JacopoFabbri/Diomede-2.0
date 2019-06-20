@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Diomede2
 {
-    public partial class TipologieMacrolavorazioni : Form
+    public partial class ListaTipoogiaLavorazioni : Form
     {
         readonly String db;
         OperazionePraticheEdili op;
-        public TipologieMacrolavorazioni(String dbName)
+        public ListaTipoogiaLavorazioni(String dbName)
         {
             db = dbName;
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace Diomede2
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            InserimentoTipologiaMacrolavorazione iL = new InserimentoTipologiaMacrolavorazione(db);
+            InserisciTipologiaLavorazione iL = new InserisciTipologiaLavorazione(db);
             iL.Show();
         }
         private void Button1_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace Diomede2
                     {
                         try
                         {
-                            op.UpdateTipologiaMacroLavorazione((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["DESC"].Value + "");
+                            op.UpdateTipologiaLavorazione((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["DESC"].Value + "",(double) riga.Cells["PREZZO"].Value, riga.Cells["SCADENZE"].Value + "",(int) riga.Cells["MACROLAVORAZIONE"].Value);
                         }
                         catch
                         {
@@ -45,15 +45,15 @@ namespace Diomede2
                     }
                 }
             }
-            dataGridView1.DataSource = op.CercaTipologiaMacroLavorazione();
+            dataGridView1.DataSource = op.CercaTipologiaLavorazione();
             dataGridView1.Columns[0].Visible = false;
         }
-        private void TIpologieMacrolavorazioni_Load(object sender, EventArgs e)
+        private void TIpologialavorazioni_Load(object sender, EventArgs e)
         {
             try
             {
                 op = new OperazionePraticheEdili(db);
-                dataGridView1.DataSource = op.CercaTipologiaMacroLavorazione();
+                dataGridView1.DataSource = op.CercaTipologiaLavorazione();
                 dataGridView1.Columns[0].Visible = false;
 
             }
@@ -71,15 +71,16 @@ namespace Diomede2
                 {
                     if (MessageBox.Show("Stai per eliminare " + (String)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?", "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
-                        TipologiaMacroLavorazione clienti = op.CercaTipologiaMacroLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
-                        op.CancellaTipologiaMacroLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        TipologiaLavorazione clienti = op.CercaTipologiaLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        op.CancellaTipologiaLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
                         MessageBox.Show("Tipologia Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                 }
                 dataGridView1.DataSource = op.CercaTipologiaMacroLavorazione();
                 dataGridView1.Columns[0].Visible = false;
-            }catch
+            }
+            catch
             {
                 MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

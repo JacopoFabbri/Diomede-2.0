@@ -49,7 +49,7 @@
             this.webBrowser2.Name = "webBrowser2";
             this.webBrowser2.Size = new System.Drawing.Size(800, 450);
             this.webBrowser2.TabIndex = 1;
-            this.webBrowser2.Url = new System.Uri("https://www.youtube.com/watch?v=BJ0xBCwkg3E&t=195s", System.UriKind.Absolute);
+            this.webBrowser2.Url = new System.Uri("", System.UriKind.Relative);
             // 
             // Secret
             // 

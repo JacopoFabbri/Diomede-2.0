@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Diomede2
 {
-    public partial class InserimentoTipologiaMacrolavorazione : Form
+    public partial class InserisciTipologiaLavorazione : Form
     {
         readonly String db;
-        public InserimentoTipologiaMacrolavorazione(String dbName)
+        public InserisciTipologiaLavorazione(String dbName)
         {
             db = dbName;
             InitializeComponent();
@@ -31,8 +31,7 @@ namespace Diomede2
                 MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
             }
         }
-
-        private void InserimentoTipologiaMacrolavorazione_Load(object sender, EventArgs e)
+        private void InserisciTipologiaLavorazione_Load(object sender, EventArgs e)
         {
 
         }

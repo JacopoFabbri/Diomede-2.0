@@ -1,6 +1,6 @@
 ﻿namespace Diomede2
 {
-    partial class TipologieMacrolavorazioni
+    partial class ListaTipoogiaLavorazioni
     {
         /// <summary>
         /// Required designer variable.
@@ -52,13 +52,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(900, 473);
-            this.tableLayoutPanel1.TabIndex = 3;
+            this.tableLayoutPanel1.TabIndex = 4;
             // 
             // dataGridView1
             // 
@@ -69,7 +69,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(804, 467);
             this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellValueChanged);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellValueChanged);
             // 
             // tableLayoutPanel2
@@ -140,15 +139,15 @@
             this.button4.Text = "Gestione Operazioni";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // TipologieMacrolavorazioni
+            // ListaTipoogiaLavorazioni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 476);
+            this.ClientSize = new System.Drawing.Size(906, 478);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "TipologieMacrolavorazioni";
-            this.Text = "TIpologieMacrolavorazioni";
-            this.Load += new System.EventHandler(this.TIpologieMacrolavorazioni_Load);
+            this.Name = "ListaTipoogiaLavorazioni";
+            this.Text = "ListaTipoogiaLavorazioni";
+            this.Load += new System.EventHandler(this.TIpologialavorazioni_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);

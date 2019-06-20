@@ -816,7 +816,7 @@ namespace Diomede2
             }
             return contatto;
         }
-        public void UpdateLavorazione(int id, String nome, String desc, double prezzo, String scadenze, int macrolavorazione)
+        public void UpdateTipologiaLavorazione(int id, String nome, String desc, double prezzo, String scadenze, int macrolavorazione)
         {
             try
             {
