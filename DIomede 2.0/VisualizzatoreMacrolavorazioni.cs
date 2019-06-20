@@ -14,17 +14,21 @@ namespace Diomede2
     {
         List<TipologiaMacroLavorazione> lista;
         OperazionePraticheEdili op;
-        public VisualizzatoreMacrolavorazioni(String settore)
+        DataGridView data;
+        int riga;
+        public VisualizzatoreMacrolavorazioni(String settore, DataGridView dg, int x)
         {
             InitializeComponent();
             op = new OperazionePraticheEdili(settore);
+            data = dg;
+            riga = x;
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
             if(listView1.SelectedItems.Count > 0)
             {
-
+                data.Rows[riga].Cells[5].Value = lista[listView1.SelectedItems[0].Index].Id;
             }
             else
             {

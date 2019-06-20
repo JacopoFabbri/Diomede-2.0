@@ -97,7 +97,7 @@ namespace Diomede2
         {
             if(e.ColumnIndex == 5)
             {
-                VisualizzatoreMacrolavorazioni frm = new VisualizzatoreMacrolavorazioni(db);
+                VisualizzatoreMacrolavorazioni frm = new VisualizzatoreMacrolavorazioni(db, dataGridView1, e.RowIndex);
                 frm.Show();
             }
         }
