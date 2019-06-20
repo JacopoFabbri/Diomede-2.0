@@ -83,5 +83,11 @@ namespace Diomede2
             TipologieMacrolavorazioni tp = new TipologieMacrolavorazioni(settore);
             tp.Show();
         }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            ListaTipoogiaLavorazioni frm = new ListaTipoogiaLavorazioni(settore);
+            frm.Show();
+        }
     }
 }

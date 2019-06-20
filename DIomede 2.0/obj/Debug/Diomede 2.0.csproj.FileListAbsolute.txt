@@ -55,3 +55,6 @@ C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.ListaLavor
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.InserimentoBozza.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.InserimentoTipologiaMacrolavorazione.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.TIpologieMacrolavorazioni.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.InserisciTipologiaLavorazione.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.ListaTipoogiaLavorazioni.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.VisualizzatoreMacrolavorazioni.resources

@@ -204,6 +204,12 @@
     <Compile Include="visualizzatore.Designer.cs">
       <DependentUpon>visualizzatore.cs</DependentUpon>
     </Compile>
+    <Compile Include="VisualizzatoreMacrolavorazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualizzatoreMacrolavorazioni.Designer.cs">
+      <DependentUpon>VisualizzatoreMacrolavorazioni.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="InserimentoBozza.resx">
       <DependentUpon>InserimentoBozza.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="visualizzatore.resx">
       <DependentUpon>visualizzatore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizzatoreMacrolavorazioni.resx">
+      <DependentUpon>VisualizzatoreMacrolavorazioni.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

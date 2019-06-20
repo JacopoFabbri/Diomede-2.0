@@ -2665,7 +2665,7 @@ namespace Diomede2
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `TIPOLOGIALAVORAZIONI`(`NOME`, `DESCRIZIONE`, `PREZZO`, `SCADENZE`, `MACROLAVORAZIONE`) VALUES('" + nome + "','" + desc + "','" + prezzo + "','" + scadenze + "','" + macrolavorazione + "')", con);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `TIPOLOGIALAVORAZIONE`(`NOME`, `DESCRIZIONE`, `PREZZO`, `SCADENZE`, `MACROLAVORAZIONE`) VALUES('" + nome + "','" + desc + "','" + prezzo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" + scadenze + "','" + macrolavorazione + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -2684,7 +2684,7 @@ namespace Diomede2
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `TIPOLOGIALAVORAZIONI`", con);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `TIPOLOGIALAVORAZIONE`", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
@@ -2719,7 +2719,7 @@ namespace Diomede2
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `TIPOLOGIALAVORAZIONI` WHERE `ID` = '" + n + "'", con);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `TIPOLOGIALAVORAZIONE` WHERE `ID` = '" + n + "'", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
@@ -2754,7 +2754,7 @@ namespace Diomede2
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `TIPOLOGIALAVORAZIONI` WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `TIPOLOGIALAVORAZIONE` WHERE `ID` = '" + id + "'", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
@@ -2788,7 +2788,7 @@ namespace Diomede2
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `TIPOLOGIALAVORAZIONI` WHERE `" + s + "` = '" + g + "'", con);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `TIPOLOGIALAVORAZIONE` WHERE `" + s + "` = '" + g + "'", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
@@ -2821,7 +2821,7 @@ namespace Diomede2
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("UPDATE `TIPOLOGIALAVORAZIONI` SET `NOME`='" + nome + "',`DESCRIZIONE`='" + desc + "',`PREZZO`='" + prezzo + "',`SCADENZE`='" + scadenze + "',`MACROLAVORAZIONE`='" + macrolavorazione + "' WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command = new MySqlCommand("UPDATE `TIPOLOGIALAVORAZIONE` SET `NOME`='" + nome + "',`DESCRIZIONE`='" + desc + "',`PREZZO`='" + prezzo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "',`SCADENZE`='" + scadenze + "',`MACROLAVORAZIONE`='" + macrolavorazione + "' WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -2838,7 +2838,7 @@ namespace Diomede2
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("DELETE FROM `TIPOLOGIALAVORAZIONI` WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command = new MySqlCommand("DELETE FROM `TIPOLOGIALAVORAZIONE` WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
