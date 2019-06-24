@@ -28,8 +28,9 @@ namespace Diomede2
             try
             {
                 op.InserimentoTipologialavorazione(textBox1.Text, textBox2.Text, Convert.ToDouble(textBox3.Text), textBox4.Text,lista[comboBox1.SelectedIndex].Id);
+                this.Close();
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
             }
