@@ -31,11 +31,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -76,11 +74,9 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.button5, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.button2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.button3, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.button4, 0, 3);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(813, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
@@ -91,15 +87,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0005F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(84, 208);
             this.tableLayoutPanel2.TabIndex = 3;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(3, 167);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 21);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Seleziona";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -131,15 +118,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(3, 126);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 21);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Gestione Operazioni";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // ListaTipoogiaLavorazioni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,10 +139,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
     }
 }

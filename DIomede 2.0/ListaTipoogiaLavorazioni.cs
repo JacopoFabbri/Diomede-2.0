@@ -77,7 +77,7 @@ namespace Diomede2
 
                     }
                 }
-                dataGridView1.DataSource = op.CercaTipologiaMacroLavorazione();
+                dataGridView1.DataSource = op.CercaTipologiaLavorazione();
                 dataGridView1.Columns[0].Visible = false;
             }
             catch
@@ -101,5 +101,7 @@ namespace Diomede2
                 frm.Show();
             }
         }
+
+
     }
 }
