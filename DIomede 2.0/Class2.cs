@@ -840,6 +840,98 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
+        public void InserimentoCommessa(int ditta, String numeroCommessa, DateTime data, String referente)
+        {
+            try
+            {
+                CommessaDB bDB = new CommessaDB(conn);
+                bDB.Inserimento(ditta, numeroCommessa, data, referente);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public List<Commessa> CercaCommessa()
+        {
+            List<Commessa> lista;
+            try
+            {
+                CommessaDB bDB = new CommessaDB(conn);
+                lista = bDB.ListaCommesse();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public List<Commessa> CercaCommessa(String n)
+        {
+            List<Commessa> lista;
+            try
+            {
+                CommessaDB bDB = new CommessaDB(conn);
+                lista = bDB.ListaCommesse(n);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public Commessa CercaCommessa(int id)
+        {
+            Commessa contatto;
+            try
+            {
+                CommessaDB bDB = new CommessaDB(conn);
+                contatto = bDB.CercaCommesse(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public List<Commessa> FiltraCommessa(String s, String g)
+        {
+            List<Commessa> contatto;
+            try
+            {
+                CommessaDB bDB = new CommessaDB(conn);
+                contatto = bDB.FiltroCommesse(s, g);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public void UpdateCommessa(int id, int ditta, String numeroCommessa, DateTime data, String referente)
+        {
+            try
+            {
+                CommessaDB bDB = new CommessaDB(conn);
+                bDB.AggiornaCommesse(id, ditta, numeroCommessa, data, referente);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void CancellaCommessa(int id)
+        {
+            try
+            {
+                TipologiaLavorazioniDB bDB = new TipologiaLavorazioniDB(conn);
+                bDB.RimuoviLavorazioni(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
 
     }
 
@@ -1685,12 +1777,12 @@ namespace Diomede2
         {
             con = conn;
         }
-        public void Inserimento(String ditta, String tipologia, String numerocommessa, String data, String referente)
+        public void Inserimento(int ditta, String numerocommessa, DateTime data, String referente)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `COMMESSA`(`ID`, `DITTA`, `TIPOLOGIA`, `NUMEROCOMMESSA`, `DATA`, `REFERENTE`) VALUES('" + ditta + "','" + tipologia + "','" + numerocommessa + "','" + data + "','" + referente + "')", con);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `COMMESSA`(`ID`, `DITTA`, `NUMEROCOMMESSA`, `DATA`, `REFERENTE`) VALUES('" + ditta + "','" + numerocommessa + "','" + data + "','" + referente + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -1718,7 +1810,6 @@ namespace Diomede2
                     {
                         Id = (Int32)lettore[0],
                         Ditta = (Int32)lettore[1],
-                        Tipologia = (Int32)lettore[2],
                         NumeroCommessa = (String)lettore[3],
                         Data = (DateTime)lettore[4],
                         Referente = (String)lettore[5]
@@ -1752,7 +1843,6 @@ namespace Diomede2
                     {
                         Id = (Int32)lettore[0],
                         Ditta = (Int32)lettore[1],
-                        Tipologia = (Int32)lettore[2],
                         NumeroCommessa = (String)lettore[3],
                         Data = (DateTime)lettore[4],
                         Referente = (String)lettore[5]
@@ -1785,7 +1875,6 @@ namespace Diomede2
                     Commessa c = new Commessa();
                     commessa.Id = (Int32)lettore[0];
                     commessa.Ditta = (Int32)lettore[1];
-                    commessa.Tipologia = (Int32)lettore[2];
                     commessa.NumeroCommessa = (String)lettore[3];
                     commessa.Data = (DateTime)lettore[4];
                     commessa.Referente = (String)lettore[5];
@@ -1818,7 +1907,6 @@ namespace Diomede2
                     {
                         Id = (Int32)lettore[0],
                         Ditta = (Int32)lettore[1],
-                        Tipologia = (Int32)lettore[2],
                         NumeroCommessa = (String)lettore[3],
                         Data = (DateTime)lettore[4],
                         Referente = (String)lettore[5]
@@ -1836,12 +1924,12 @@ namespace Diomede2
             }
             return commessa;
         }
-        public void AggiornaCommesse(int id, String ditta, String tipologia, String numerocommessa, String data, String referente)
+        public void AggiornaCommesse(int id, int ditta, String numerocommessa, DateTime data, String referente)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("UPDATE `COMMESSA` SET `DITTA`='" + ditta + "',`TIPOLOGIA`='" + tipologia + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`DATA`='" + data + "',`REFERENTE`='" + referente + "' WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command = new MySqlCommand("UPDATE `COMMESSA` SET `DITTA`='" + ditta + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`DATA`='" + data.ToString("yyyy/MM/dd") + "',`REFERENTE`='" + referente + "' WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -3145,7 +3233,6 @@ namespace Diomede2
     {
         private int id;
         private int ditta;
-        private int tipologia;
         private String numerocommessa;
         private DateTime data;
         private String referente;
@@ -3153,7 +3240,6 @@ namespace Diomede2
 
         public int Id { get => id; set => id = value; }
         public int Ditta { get => ditta; set => ditta = value; }
-        public int Tipologia { get => tipologia; set => tipologia = value; }
         public String NumeroCommessa { get => numerocommessa; set => numerocommessa = value; }
         public DateTime Data { get => data; set => data = value; }
         public String Referente { get => referente; set => referente = value; }
