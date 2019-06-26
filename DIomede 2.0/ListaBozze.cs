@@ -62,6 +62,9 @@ namespace Diomede2
                         try
                         {
                             op.UpdateBozza((int)riga.Cells["ID"].Value, (DateTime)riga.Cells["DATA"].Value, riga.Cells["PACCHETTO"].Value + "", (double)riga.Cells["IMPORTO"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (int)riga.Cells["CLIENTE"].Value, (Boolean)riga.Cells["ACCETTAZIONE"].Value);
+                            if ((Boolean)riga.Cells["ACCETTAZIONE"].Value)
+                            {
+                            }
                         }
                         catch
                         {
