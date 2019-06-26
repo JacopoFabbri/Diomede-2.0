@@ -67,6 +67,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(804, 467);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellValueChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -92,6 +93,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Elimina";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button1
             // 
@@ -101,6 +103,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Aggiorna";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
