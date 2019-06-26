@@ -50,6 +50,11 @@ namespace Diomede2
             {
                 cella.Style.ForeColor = Color.Red;
             }
+            if(e.ColumnIndex == 6 && (Boolean)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == true)
+            {
+                op.InserimentoCommessa((int)dataGridView1.Rows[e.RowIndex].Cells["CLIENTE"].Value, dataGridView1.Rows[e.RowIndex].Cells["NUMEROCOMMESSA"].Value + "", (DateTime)dataGridView1.Rows[e.RowIndex].Cells["DATA"].Value, " ");
+            }
+            
         }
         private void Button1_Click(object sender, EventArgs e)
         {

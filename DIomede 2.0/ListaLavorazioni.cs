@@ -55,7 +55,8 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
-                dataGridView1.DataSource = op.CercaLavorazione();
+                if(op.FiltraLavorazione("PACCHETTO",idPacchetto + "").Count > 0)
+                dataGridView1.DataSource = op.FiltraLavorazione("PACCHETTO", idPacchetto + "");
                 dataGridView1.Columns[0].Visible = false;
 
             }
