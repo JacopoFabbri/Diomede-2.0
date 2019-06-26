@@ -7,6 +7,7 @@ namespace Diomede2
 {
     class OperazionePraticheEdili
     {
+
         public MySqlConnection conn = new MySqlConnection();
         public OperazionePraticheEdili(String nomeDB)
         {
