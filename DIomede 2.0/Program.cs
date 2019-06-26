@@ -14,9 +14,16 @@ namespace Diomede2
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            try
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Login());
+            }
+            catch
+            {
+                MessageBox.Show("impossibile caricare le risorse dell'applicazione");
+            }
         }
     }
 }
