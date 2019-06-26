@@ -89,5 +89,11 @@ namespace Diomede2
             ListaTipoogiaLavorazioni frm = new ListaTipoogiaLavorazioni(settore);
             frm.Show();
         }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            ListaCommesse frm = new ListaCommesse(settore, this);
+            frm.Show();
+        }
     }
 }
