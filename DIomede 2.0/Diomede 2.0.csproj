@@ -130,6 +130,12 @@
     <Compile Include="ListaLavorazioni.Designer.cs">
       <DependentUpon>ListaLavorazioni.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListaMacroLavorazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaMacroLavorazioni.Designer.cs">
+      <DependentUpon>ListaMacroLavorazioni.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaPacchetto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaLavorazioni.resx">
       <DependentUpon>ListaLavorazioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaMacroLavorazioni.resx">
+      <DependentUpon>ListaMacroLavorazioni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaPacchetto.resx">
       <DependentUpon>ListaPacchetto.cs</DependentUpon>

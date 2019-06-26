@@ -50,11 +50,8 @@ namespace Diomede2
             {
                 cella.Style.ForeColor = Color.Red;
             }
-            if(e.ColumnIndex == 6 && (Boolean)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == true)
-            {
-                op.InserimentoCommessa((int)dataGridView1.Rows[e.RowIndex].Cells["CLIENTE"].Value, dataGridView1.Rows[e.RowIndex].Cells["NUMEROCOMMESSA"].Value + "", (DateTime)dataGridView1.Rows[e.RowIndex].Cells["DATA"].Value, " ");
-            }
-            
+
+
         }
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -67,8 +64,12 @@ namespace Diomede2
                         try
                         {
                             op.UpdateBozza((int)riga.Cells["ID"].Value, (DateTime)riga.Cells["DATA"].Value, riga.Cells["PACCHETTO"].Value + "", (double)riga.Cells["IMPORTO"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (int)riga.Cells["CLIENTE"].Value, (Boolean)riga.Cells["ACCETTAZIONE"].Value);
-                            if ((Boolean)riga.Cells["ACCETTAZIONE"].Value)
+                            if ((Boolean)riga.Cells["ACCETTAZIONE"].Value == true)
                             {
+                                op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (DateTime)riga.Cells["DATA"].Value, " ");
+                                ListaMacroLavorazioni frm = new ListaMacroLavorazioni(db,(int) riga.Cells["COMMESSA"].Value );
+                                frm.Show();
+
                             }
                         }
                         catch
