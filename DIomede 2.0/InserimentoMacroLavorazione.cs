@@ -16,13 +16,12 @@ namespace Diomede2
         readonly String db;
         List<TipologiaMacroLavorazione> lista;
         OperazionePraticheEdili op;
+
         public InserimentoMacroLavorazione(String dbName)
         {
             db = dbName;
             InitializeComponent();
         }
-
-
         private void InserimentoMacroLavorazione_Load(object sender, EventArgs e)
         {
             op  = new OperazionePraticheEdili(db);
@@ -32,7 +31,6 @@ namespace Diomede2
                 comboBox1.Items.Add(t.Nome);
             }
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             try
@@ -44,7 +42,6 @@ namespace Diomede2
                 MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
             }
         }
-
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBox1.Text = lista[comboBox1.SelectedIndex].Nome + "";
