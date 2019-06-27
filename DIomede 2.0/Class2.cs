@@ -1598,35 +1598,17 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    if ((lettore[7] + "").Equals(""))
+                    Bozza bozza = new Bozza
                     {
-                        Bozza bozza = new Bozza
-                        {
-                            Id = (Int32)lettore[0],
-                            Data = (DateTime)lettore[1],
-                            Pacchetto = (Int32)lettore[2],
-                            Importo = (Double)lettore[3],
-                            NumeroCommessa = "" + lettore[4],
-                            Cliente = (Int32)lettore[5],
-                            Accettazione = (bool)lettore[6]
-                        };
-                        lista.Add(bozza);
-                    }
-                    else
-                    {
-                        Bozza bozza = new Bozza
-                        {
-                            Id = (Int32)lettore[0],
-                            Data = (DateTime)lettore[1],
-                            Pacchetto = (Int32)lettore[2],
-                            Importo = (Double)lettore[3],
-                            NumeroCommessa = "" + lettore[4],
-                            Cliente = (Int32)lettore[5],
-                            Accettazione = (bool)lettore[6],
-                            Commessa = (int)lettore[7]
-                        };
-                        lista.Add(bozza);
-                    }
+                        Id = (Int32)lettore[0],
+                        Data = (DateTime)lettore[1],
+                        Pacchetto = (Int32)lettore[2],
+                        Importo = (Double)lettore[3],
+                        NumeroCommessa = "" + lettore[4],
+                        Cliente = (Int32)lettore[5],
+                        Accettazione = (bool)lettore[6]
+                    };
+                    lista.Add(bozza);
                 }
             }
             catch (Exception ex)
@@ -1651,35 +1633,17 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    if ((lettore[7] + "").Equals(""))
+                    Bozza bozza = new Bozza
                     {
-                        Bozza bozza = new Bozza
-                        {
-                            Id = (Int32)lettore[0],
-                            Data = (DateTime)lettore[1],
-                            Pacchetto = (Int32)lettore[2],
-                            Importo = (Double)lettore[3],
-                            NumeroCommessa = "" + lettore[4],
-                            Cliente = (Int32)lettore[5],
-                            Accettazione = (bool)lettore[6]
-                        };
-                        lista.Add(bozza);
-                    }
-                    else
-                    {
-                        Bozza bozza = new Bozza
-                        {
-                            Id = (Int32)lettore[0],
-                            Data = (DateTime)lettore[1],
-                            Pacchetto = (Int32)lettore[2],
-                            Importo = (Double)lettore[3],
-                            NumeroCommessa = "" + lettore[4],
-                            Cliente = (Int32)lettore[5],
-                            Accettazione = (bool)lettore[6],
-                            Commessa = (int)lettore[7]
-                        };
-                        lista.Add(bozza);
-                    }
+                        Id = (Int32)lettore[0],
+                        Data = (DateTime)lettore[1],
+                        Pacchetto = (Int32)lettore[2],
+                        Importo = (Double)lettore[3],
+                        NumeroCommessa = "" + lettore[4],
+                        Cliente = (Int32)lettore[5],
+                        Accettazione = (bool)lettore[6]
+                    };
+                    lista.Add(bozza);
                 }
             }
             catch (Exception ex)
@@ -1704,35 +1668,17 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    if ((lettore[7] + "").Equals(""))
+                    Bozza b = new Bozza
                     {
-                        Bozza b = new Bozza
-                        {
-                            Id = (Int32)lettore[0],
-                            Data = (DateTime)lettore[1],
-                            Pacchetto = (Int32)lettore[2],
-                            Importo = (Double)lettore[3],
-                            NumeroCommessa = "" + lettore[4],
-                            Cliente = (Int32)lettore[5],
-                            Accettazione = (bool)lettore[6]
-                        };
-                        bozza = b;
-                    }
-                    else
-                    {
-                        Bozza b = new Bozza
-                        {
-                            Id = (Int32)lettore[0],
-                            Data = (DateTime)lettore[1],
-                            Pacchetto = (Int32)lettore[2],
-                            Importo = (Double)lettore[3],
-                            NumeroCommessa = "" + lettore[4],
-                            Cliente = (Int32)lettore[5],
-                            Accettazione = (bool)lettore[6],
-                            Commessa = (int)lettore[7]
-                        };
-                        bozza = b;
-                    }
+                        Id = (Int32)lettore[0],
+                        Data = (DateTime)lettore[1],
+                        Pacchetto = (Int32)lettore[2],
+                        Importo = (Double)lettore[3],
+                        NumeroCommessa = "" + lettore[4],
+                        Cliente = (Int32)lettore[5],
+                        Accettazione = (bool)lettore[6]
+                    };
+                    bozza = b;
                 }
             }
             catch (Exception ex)
@@ -1765,8 +1711,7 @@ namespace Diomede2
                         Importo = (Double)lettore[3],
                         NumeroCommessa = (String)lettore[4],
                         Cliente = (Int32)lettore[5],
-                        Accettazione = (bool)lettore[6],
-                        Commessa = (int)lettore[7]
+                        Accettazione = (bool)lettore[6]
                     };
                     bozza.Add(b);
                 }
@@ -3276,7 +3221,6 @@ namespace Diomede2
         private String numerocommessa;
         private int cliente;
         private Boolean accettazione;
-        private int commessa;
 
         public int Id { get => id; set => id = value; }
         public DateTime Data { get => data; set => data = value; }
@@ -3285,7 +3229,6 @@ namespace Diomede2
         public String NumeroCommessa { get => numerocommessa; set => numerocommessa = value; }
         public int Cliente { get => cliente; set => cliente = value; }
         public bool Accettazione { get => accettazione; set => accettazione = value; }
-        public int Commessa { get => commessa; set => commessa = value; }
     }
     public class Commessa
     {
