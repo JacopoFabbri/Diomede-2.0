@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Diomede2
 {
@@ -42,6 +43,12 @@ namespace Diomede2
             {
                 MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
             }
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = lista[comboBox1.SelectedIndex].Nome + "";
+            textBox4.Text = lista[comboBox1.SelectedIndex].Desc + "";
         }
     }
 }
