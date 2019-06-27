@@ -14,8 +14,7 @@ namespace Diomede2
     {
         List<TipologiaMacroLavorazione> lista;
         readonly String db;
-
-        OperazionePraticheEdili op;
+        private readonly OperazionePraticheEdili op;
         public InserisciTipologiaLavorazione(String dbName)
         {
             db = dbName;

@@ -66,7 +66,7 @@ namespace Diomede2
                             op.UpdateBozza((int)riga.Cells["ID"].Value, (DateTime)riga.Cells["DATA"].Value, riga.Cells["PACCHETTO"].Value + "", (double)riga.Cells["IMPORTO"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (int)riga.Cells["CLIENTE"].Value, (Boolean)riga.Cells["ACCETTAZIONE"].Value);
                             if ((Boolean)riga.Cells["ACCETTAZIONE"].Value == true)
                             {
-                                op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (DateTime)riga.Cells["DATA"].Value, "");
+                                op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (DateTime)riga.Cells["DATA"].Value, "", (int)riga.Cells["ID"].Value);
                                 ListaMacroLavorazioni frm = new ListaMacroLavorazioni(db,(int) riga.Cells["COMMESSA"].Value );
                                 frm.Show();
 
