@@ -67,12 +67,12 @@ namespace Diomede2
                             if ((Boolean)riga.Cells["ACCETTAZIONE"].Value == true)
                             {
                                 op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (DateTime)riga.Cells["DATA"].Value, "", (int)riga.Cells["ID"].Value);
-                                ListaMacroLavorazioni frm = new ListaMacroLavorazioni(db,(int) riga.Cells["COMMESSA"].Value );
+                                ListaMacroLavorazioni frm = new ListaMacroLavorazioni(db,(int) riga.Cells["ID"].Value );
                                 frm.Show();
 
                             }
                         }
-                        catch
+                        catch (Exception ex)
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
