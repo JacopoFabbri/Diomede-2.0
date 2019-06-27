@@ -54,20 +54,22 @@ namespace Diomede2
                     }
                 }
             }
-            dataGridView1.DataSource = op.CercaLavorazione();
+            dataGridView1.DataSource = op.CercaMacroLavorazione();
             dataGridView1.Columns[0].Visible = false;
         }
-        public void ListaLavorazioni_Load(object sender, EventArgs e)
+        public void ListaMacroLavorazioni_Load(object sender, EventArgs e)
         {
             try
             {
                 op = new OperazionePraticheEdili(db);
-                if (op.FiltraMacroLavorazione("COMMESSA",idMacroLavorazione + "").Count > 0)
+                if (op.FiltraMacroLavorazione("COMMESSA", idMacroLavorazione + "").Count > 0)
+                {
                     dataGridView1.DataSource = op.FiltraMacroLavorazione("COMMESSA", idMacroLavorazione + "");
-                dataGridView1.Columns[0].Visible = false;
+                    dataGridView1.Columns[0].Visible = false;
+                }
 
             }
-            catch
+            catch 
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();
@@ -95,9 +97,5 @@ namespace Diomede2
             dataGridView1.Columns[0].Visible = false;
         }
 
-        private void ListaMacroLavorazioni_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

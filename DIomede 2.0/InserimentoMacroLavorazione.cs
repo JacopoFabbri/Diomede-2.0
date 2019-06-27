@@ -36,7 +36,7 @@ namespace Diomede2
         {
             try
             {
-                op.InserimentoTipologiaMacrolavorazione(textBox1.Text, textBox2.Text);
+                op.InserimentoMacrolavorazione(textBox1.Text,dateTimePicker1.Value, dateTimePicker2.Value, Convert.ToDouble(textBox2.Text), textBox3.Text,lista[comboBox1.SelectedIndex].Id, textBox4.Text);
             }
             catch (Exception)
             {
