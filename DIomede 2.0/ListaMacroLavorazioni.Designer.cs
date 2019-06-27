@@ -67,6 +67,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(804, 467);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellValueChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -92,6 +93,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Elimina";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button1
             // 
@@ -101,6 +103,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Aggiorna";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
@@ -110,6 +113,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Aggiungi";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // ListaMacroLavorazioni
             // 
@@ -119,6 +123,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ListaMacroLavorazioni";
             this.Text = "ListaMacroLavorazioni";
+            this.Load += new System.EventHandler(this.ListaMacroLavorazioni_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);

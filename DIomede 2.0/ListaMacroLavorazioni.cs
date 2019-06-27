@@ -21,10 +21,18 @@ namespace Diomede2
             db = dbName;
             InitializeComponent();
         }
-
         private void Button2_Click(object sender, EventArgs e)
         {
+            InserimentoMacroLavorazione iP = new InserimentoMacroLavorazione(db);
+            iP.Show();
+        }
 
+        private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
+            {
+                cella.Style.ForeColor = Color.Red;
+            }
         }
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -85,6 +93,11 @@ namespace Diomede2
             }
             dataGridView1.DataSource = op.CercaLavorazione();
             dataGridView1.Columns[0].Visible = false;
+        }
+
+        private void ListaMacroLavorazioni_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
