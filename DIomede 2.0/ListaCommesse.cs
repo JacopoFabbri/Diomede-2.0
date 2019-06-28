@@ -33,7 +33,6 @@ namespace Diomede2
             catch (Exception ex)
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
-                Application.Exit();
             }
             formPrecente.Hide();
             dataGridView1.Focus();
@@ -77,26 +76,30 @@ namespace Diomede2
                 formPrecente.Show();
                 formPrecente.Form2_Load(sender, e);
             }
-            catch
+            catch 
             {
+                MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
         private void Button3_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows != null)
+            if (dataGridView1.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show("Stai per eliminare " + (String)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?", "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
+                for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
                 {
-                    try
+                    if (MessageBox.Show("Stai per eliminare " + (String)dataGridView1.Rows[dataGridView1.SelectedRows[i].Index].Cells[2].Value + " .Confermi?", "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
-                        Commessa clienti = op.CercaCommessa((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
-                        op.CancellaCommessa((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
-                        MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        try
+                        {
+                            Commessa clienti = op.CercaCommessa((int)dataGridView1.Rows[dataGridView1.SelectedRows[i].Index].Cells[0].Value);
+                            op.CancellaCommessa((int)dataGridView1.Rows[dataGridView1.SelectedRows[i].Index].Cells[0].Value);
+                            MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }

@@ -925,8 +925,8 @@ namespace Diomede2
         {
             try
             {
-                TipologiaLavorazioniDB bDB = new TipologiaLavorazioniDB(conn);
-                bDB.RimuoviLavorazioni(id);
+                CommessaDB bDB = new CommessaDB(conn);
+                bDB.RimuoviCommessa(id);
             }
             catch (Exception e)
             {
@@ -1902,6 +1902,7 @@ namespace Diomede2
         }
         public Commessa CercaCommesse(int id)
         {
+            DateTime dateValue;
             Commessa commessa = null;
             try
             {
@@ -1912,16 +1913,34 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Commessa c = new Commessa
+
+                    if (!(lettore[3] + "").Equals(""))
                     {
-                        Id = (Int32)lettore[0],
-                        Ditta = (Int32)lettore[1],
-                        NumeroCommessa = (String)lettore[3],
-                        Data = (DateTime)lettore[4],
-                        Referente = (String)lettore[5],
-                        Bozza = (int)lettore[6]
-                    };
-                    commessa = c;
+                        DateTime.TryParse(lettore[3] + "", out dateValue);
+                        Commessa c = new Commessa
+                        {
+                            Id = (Int32)lettore[0],
+                            Ditta = (Int32)lettore[1],
+                            NumeroCommessa = (String)lettore[2],
+                            Data = dateValue,
+                            Referente = "" + lettore[4],
+                            Bozza = (int)lettore[5]
+                        };
+                        commessa = c;
+                    }
+                    else
+                    {
+                        Commessa c = new Commessa
+                        {
+                            Id = (Int32)lettore[0],
+                            Ditta = (Int32)lettore[1],
+                            NumeroCommessa = (String)lettore[2],
+                            Data = new DateTime(),
+                            Referente = "" + lettore[4],
+                            Bozza = (int)lettore[5]
+                        };
+                        commessa = c;
+                    }
                 }
             }
             catch (Exception ex)
