@@ -27,8 +27,11 @@ namespace Diomede2
         private void InserimentoMacroLavorazione_Load(object sender, EventArgs e)
         {
             op = new OperazionePraticheEdili(db);
-            textBox3.Text = op.FiltraCommessa("BOZZA", idB + "")[0].NumeroCommessa;
-            textBox5.Text = op.FiltraCommessa("BOZZA", idB + "")[0].Id + "";
+            if (idB != 0)
+            {
+                textBox3.Text = op.FiltraCommessa("BOZZA", idB + "")[0].NumeroCommessa;
+                textBox5.Text = op.FiltraCommessa("BOZZA", idB + "")[0].Id + "";
+            }
             lista = op.CercaTipologiaMacroLavorazione();
             foreach(TipologiaMacroLavorazione t in lista)
             {

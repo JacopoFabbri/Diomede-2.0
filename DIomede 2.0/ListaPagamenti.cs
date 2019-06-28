@@ -10,26 +10,19 @@ using System.Windows.Forms;
 
 namespace Diomede2
 {
-    public partial class ListaMacroLavorazioni : Form
+    public partial class ListaPagamenti : Form
     {
         readonly String db;
-        readonly int idMacroLavorazione;
         OperazionePraticheEdili op;
-        public ListaMacroLavorazioni(String dbName, int id)
-        {
-            idMacroLavorazione = id;
-            db = dbName;
-            InitializeComponent();
-        }
-        public ListaMacroLavorazioni(String dbName)
+
+        public ListaPagamenti(String dbName)
         {
             db = dbName;
             InitializeComponent();
         }
         private void Button2_Click(object sender, EventArgs e)
         {
-            
-            InserimentoMacroLavorazione iP = new InserimentoMacroLavorazione(db, idMacroLavorazione);
+            InserisciPacchetto iP = new InserisciPacchetto(db);
             iP.Show();
         }
 
@@ -38,6 +31,28 @@ namespace Diomede2
             foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
             {
                 cella.Style.ForeColor = Color.Red;
+            }
+        }
+        private void ListaPagamenti_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                op = new OperazionePraticheEdili(db);
+                if (op.CercaPacchetto() != null)
+                {
+                    dataGridView1.DataSource = op.CercaPacchetto();
+                    dataGridView1.Columns[0].Visible = false;
+                }
+                else
+                {
+                    dataGridView1.DataSource = op.CercaPacchetto();
+
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Impossibile accedere a quest'area !!!");
+                Application.Exit();
             }
         }
         private void Button1_Click(object sender, EventArgs e)
@@ -50,7 +65,7 @@ namespace Diomede2
                     {
                         try
                         {
-                            op.UpdateMacroLavorazione((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", (DateTime)riga.Cells["DATAINIZIO"].Value, (DateTime)riga.Cells["DATAFINE"].Value, (double)riga.Cells["PREZZO"].Value , riga.Cells["NUMEROCOMMESSA"].Value + "", (int)riga.Cells["TIPOLOGIA"].Value, riga.Cells["DESC"].Value + "");
+                            op.UpdatePacchetto((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["NOTE"].Value + "");
                         }
                         catch
                         {
@@ -60,31 +75,8 @@ namespace Diomede2
                     }
                 }
             }
-            dataGridView1.DataSource = op.CercaMacroLavorazione();
+            dataGridView1.DataSource = op.CercaPacchetto();
             dataGridView1.Columns[0].Visible = false;
-        }
-        public void ListaMacroLavorazioni_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                op = new OperazionePraticheEdili(db);
-                if (op.FiltraMacroLavorazione("COMMESSA", idMacroLavorazione + "").Count > 0)
-                {
-                    dataGridView1.DataSource = op.FiltraMacroLavorazione("COMMESSA", idMacroLavorazione + "");
-                    dataGridView1.Columns[0].Visible = false;
-                }
-                else
-                {
-                    dataGridView1.DataSource = op.CercaMacroLavorazione();
-                    dataGridView1.Columns[0].Visible = false;
-                }
-
-            }
-            catch 
-            {
-                MessageBox.Show("Impossibile accedere a quest'area !!!");
-                Application.Exit();
-            }
         }
         private void Button3_Click(object sender, EventArgs e)
         {
@@ -94,8 +86,8 @@ namespace Diomede2
                 {
                     try
                     {
-                        MacroLavorazione clienti = op.CercaMacroLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
-                        op.CancellaMacroLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        Pacchetto clienti = op.CercaPacchetto((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        op.CancellaPacchetto((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
                         MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch
@@ -104,9 +96,10 @@ namespace Diomede2
                     }
                 }
             }
-            dataGridView1.DataSource = op.CercaMacroLavorazione();
+            dataGridView1.DataSource = op.CercaPacchetto();
             dataGridView1.Columns[0].Visible = false;
         }
+
 
     }
 }

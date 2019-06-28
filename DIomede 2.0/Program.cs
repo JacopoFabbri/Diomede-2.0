@@ -20,7 +20,7 @@ namespace Diomede2
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new Login());
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("impossibile caricare le risorse dell'applicazione");
             }

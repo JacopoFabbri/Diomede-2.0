@@ -30,7 +30,7 @@ namespace Diomede2
                 dataGridView1.Columns[0].Visible = false;
 
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
             }
@@ -96,7 +96,7 @@ namespace Diomede2
                             op.CancellaCommessa((int)dataGridView1.Rows[dataGridView1.SelectedRows[i].Index].Cells[0].Value);
                             MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        catch (Exception ex)
+                        catch 
                         {
                             MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }

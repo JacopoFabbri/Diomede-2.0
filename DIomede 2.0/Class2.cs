@@ -3230,6 +3230,231 @@ namespace Diomede2
         }
 
     }
+    public class PagamentoDB
+    {
+        readonly MySqlConnection con = null;
+
+        public PagamentoDB(MySqlConnection conn)
+        {
+            con = conn;
+        }
+        public void Inserimento(String numeroCommessa, double importo, String note, String fattura, DateTime dataFattura, DateTime data, int cliente, int commessa)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("INSERT INTO `PAGAMENTO`(`NUMEROCOMMESSA`, `IMPORTO`, `NOTE`, `FATTURA`, `DATAFATTURA`, `DATA`, `CLIENTE`, `COMMESSA`) VALUES('" + numeroCommessa + "','" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" + note + "','" + fattura + "','" + dataFattura + "','" + data + "','" + cliente + "','" + commessa + "')", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<Pagamento> ListaOperazione()
+        {
+            DateTime data, dataFattura;
+            List<Pagamento> lista = new List<Pagamento>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `PAGAMENTO`", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    DateTime.TryParse(lettore[5] + "", out data);
+                    DateTime.TryParse(lettore[6] + "", out dataFattura);
+                    Pagamento lavorazione = new Pagamento
+                    {
+                        Id = (Int32)lettore[0],
+                        NumeroCommessa = "" + lettore[1],
+                        Importo = Convert.ToDouble(lettore[2] + ""),
+                        Note = "" + lettore[3],
+                        Fattura = "" + lettore[4],
+                        Data = data,
+                        DataFattura = dataFattura,
+                        Cliente = (int)lettore[7],
+                        Commessa = (int)lettore[8]
+                    };
+
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public List<Pagamento> ListaOperazione(String n)
+        {
+            DateTime data, dataFattura;
+            List<Pagamento> lista = new List<Pagamento>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `PAGAMENTO` WHERE `ID` = '" + n + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    DateTime.TryParse(lettore[5] + "", out data);
+                    DateTime.TryParse(lettore[6] + "", out dataFattura);
+                    Pagamento lavorazione = new Pagamento
+                    {
+                        Id = (Int32)lettore[0],
+                        NumeroCommessa = "" + lettore[1],
+                        Importo = Convert.ToDouble(lettore[2] + ""),
+                        Note = "" + lettore[3],
+                        Fattura = "" + lettore[4],
+                        Data = data,
+                        DataFattura = dataFattura,
+                        Cliente = (int)lettore[7],
+                        Commessa = (int)lettore[8]
+                    };
+
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public Pagamento CercaOperazione(int id)
+        {
+            DateTime data, dataFattura;
+            Pagamento lavorazione = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `PAGAMENTO` WHERE `ID` = '" + id + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    DateTime.TryParse(lettore[5] + "", out data);
+                    DateTime.TryParse(lettore[6] + "", out dataFattura);
+                    Pagamento l = new Pagamento
+                    {
+                        Id = (Int32)lettore[0],
+                        NumeroCommessa = "" + lettore[1],
+                        Importo = Convert.ToDouble(lettore[2] + ""),
+                        Note = "" + lettore[3],
+                        Fattura = "" + lettore[4],
+                        Data = data,
+                        DataFattura = dataFattura,
+                        Cliente = (int)lettore[7],
+                        Commessa = (int)lettore[8]
+                    };
+
+                    lavorazione = l;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lavorazione;
+        }
+        public List<Pagamento> FiltroOperazione(String s, String g)
+        {
+            DateTime data, dataFattura;
+            List<Pagamento> lavorazione = new List<Pagamento>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `PAGAMENTO` WHERE `" + s + "` = '" + g + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    DateTime.TryParse(lettore[5] + "", out data);
+                    DateTime.TryParse(lettore[6] + "", out dataFattura);
+                    Pagamento l = new Pagamento
+                    {
+                        Id = (Int32)lettore[0],
+                        NumeroCommessa = "" + lettore[1],
+                        Importo = Convert.ToDouble(lettore[2] + ""),
+                        Note = "" + lettore[3],
+                        Fattura = "" + lettore[4],
+                        Data = data,
+                        DataFattura = dataFattura,
+                        Cliente = (int)lettore[7],
+                        Commessa = (int)lettore[8]
+                    };
+
+                    lavorazione.Add(l);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lavorazione;
+        }
+        public void AggiornaOperazione(int id, String numeroCommessa, double importo, String note, String fattura, DateTime dataFattura, DateTime data, int cliente, int commessa)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("UPDATE `PAGAMENTO` SET `NUMEROCOMMESSA`='" + numeroCommessa + "',`IMPORTO`='" + importo + "',`NOTE`='" + note + "',`FATTURA`='" + fattura + "',`DATAFATTURA`='" + dataFattura + "',`DATA`='" + data + "',`CLIENTE`='" + cliente + "',`COMMESSA`='" + commessa + "' WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void RimuoviOperazione(int id)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("DELETE FROM `PAGAMENTO` WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+    }
     public class Cliente
     {
         private int id;
@@ -3417,5 +3642,27 @@ namespace Diomede2
         public String DataVisuraSopraluogo { get => dataVisuraSopraluogo; set => dataVisuraSopraluogo = value; }
         public double Offerta { get => offerta; set => offerta = value; }
         public string NumeroCommessa { get => numeroCommessa; set => numeroCommessa = value; }
+    }
+    public class Pagamento
+    {
+        private int id;
+        private String numeroCommessa;
+        private Double importo;
+        private String note;
+        private String fattura;
+        private DateTime dataFattura;
+        private DateTime data;
+        private int cliente;
+        private int commessa;
+
+        public int Id { get => id; set => id = value; }
+        public string NumeroCommessa { get => numeroCommessa; set => numeroCommessa = value; }
+        public string Note { get => note; set => note = value; }
+        public string Fattura { get => fattura; set => fattura = value; }
+        public DateTime DataFattura { get => dataFattura; set => dataFattura = value; }
+        public DateTime Data { get => data; set => data = value; }
+        public int Cliente { get => cliente; set => cliente = value; }
+        public int Commessa { get => commessa; set => commessa = value; }
+        public Double Importo { get => importo; set => importo = value; }
     }
 }

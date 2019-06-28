@@ -148,6 +148,12 @@
     <Compile Include="ListaPacchetto.Designer.cs">
       <DependentUpon>ListaPacchetto.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListaPagamenti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaPagamenti.Designer.cs">
+      <DependentUpon>ListaPagamenti.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaTipoogiaLavorazioni.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaPacchetto.resx">
       <DependentUpon>ListaPacchetto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPagamenti.resx">
+      <DependentUpon>ListaPagamenti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaTipoogiaLavorazioni.resx">
       <DependentUpon>ListaTipoogiaLavorazioni.cs</DependentUpon>
