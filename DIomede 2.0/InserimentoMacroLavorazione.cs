@@ -34,6 +34,7 @@ namespace Diomede2
             {
                 comboBox1.Items.Add(t.Nome);
             }
+            this.Close();
         }
         private void Button1_Click(object sender, EventArgs e)
         {

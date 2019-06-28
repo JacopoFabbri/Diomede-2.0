@@ -1797,6 +1797,7 @@ namespace Diomede2
         }
         public List<Commessa> ListaCommesse()
         {
+            DateTime dateValue;
             List<Commessa> lista = new List<Commessa>();
             try
             {
@@ -1807,16 +1808,34 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Commessa commessa = new Commessa
+
+                    if (!(lettore[3] + "").Equals(""))
                     {
-                        Id = (Int32)lettore[0],
-                        Ditta = (Int32)lettore[1],
-                        NumeroCommessa = (String)lettore[3],
-                        Data = (DateTime)lettore[4],
-                        Referente = (String)lettore[5],
-                        Bozza = (int)lettore[6]
-                    };
-                    lista.Add(commessa);
+                        DateTime.TryParse(lettore[3] + "", out dateValue);
+                        Commessa c = new Commessa
+                        {
+                            Id = (Int32)lettore[0],
+                            Ditta = (Int32)lettore[1],
+                            NumeroCommessa = (String)lettore[2],
+                            Data = dateValue,
+                            Referente = "" + lettore[4],
+                            Bozza = (int)lettore[5]
+                        };
+                        lista.Add(c);
+                    }
+                    else
+                    {
+                        Commessa c = new Commessa
+                        {
+                            Id = (Int32)lettore[0],
+                            Ditta = (Int32)lettore[1],
+                            NumeroCommessa = (String)lettore[2],
+                            Data = new DateTime(),
+                            Referente = "" + lettore[4],
+                            Bozza = (int)lettore[5]
+                        };
+                        lista.Add(c);
+                    }
                 }
             }
             catch (Exception ex)
@@ -1831,6 +1850,7 @@ namespace Diomede2
         }
         public List<Commessa> ListaCommesse(String n)
         {
+            DateTime dateValue;
             List<Commessa> lista = new List<Commessa>();
             try
             {
@@ -1841,16 +1861,33 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Commessa commessa = new Commessa
+                    if (!(lettore[3] + "").Equals(""))
                     {
-                        Id = (Int32)lettore[0],
-                        Ditta = (Int32)lettore[1],
-                        NumeroCommessa = (String)lettore[3],
-                        Data = (DateTime)lettore[4],
-                        Referente = (String)lettore[5],
-                        Bozza = (int)lettore[6]
-                    };
-                    lista.Add(commessa);
+                        DateTime.TryParse(lettore[3] + "", out dateValue);
+                        Commessa c = new Commessa
+                        {
+                            Id = (Int32)lettore[0],
+                            Ditta = (Int32)lettore[1],
+                            NumeroCommessa = (String)lettore[2],
+                            Data = dateValue,
+                            Referente = "" + lettore[4],
+                            Bozza = (int)lettore[5]
+                        };
+                        lista.Add(c);
+                    }
+                    else
+                    {
+                        Commessa c = new Commessa
+                        {
+                            Id = (Int32)lettore[0],
+                            Ditta = (Int32)lettore[1],
+                            NumeroCommessa = (String)lettore[2],
+                            Data = new DateTime(),
+                            Referente = "" + lettore[4],
+                            Bozza = (int)lettore[5]
+                        };
+                        lista.Add(c);
+                    }
                 }
             }
             catch (Exception ex)
