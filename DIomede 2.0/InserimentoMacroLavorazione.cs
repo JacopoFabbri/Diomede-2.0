@@ -16,15 +16,18 @@ namespace Diomede2
         readonly String db;
         List<TipologiaMacroLavorazione> lista;
         OperazionePraticheEdili op;
+        private readonly int idB;
 
-        public InserimentoMacroLavorazione(String dbName)
+        public InserimentoMacroLavorazione(String dbName, int idBozza)
         {
+            idB = idBozza;
             db = dbName;
             InitializeComponent();
         }
         private void InserimentoMacroLavorazione_Load(object sender, EventArgs e)
         {
-            op  = new OperazionePraticheEdili(db);
+            op = new OperazionePraticheEdili(db);
+            textBox5.Text = op.FiltraCommessa("BOZZA", idB + "")[0].Id + "";
             lista = op.CercaTipologiaMacroLavorazione();
             foreach(TipologiaMacroLavorazione t in lista)
             {

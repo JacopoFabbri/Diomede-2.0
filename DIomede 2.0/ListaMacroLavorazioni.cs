@@ -23,7 +23,7 @@ namespace Diomede2
         }
         private void Button2_Click(object sender, EventArgs e)
         {
-            InserimentoMacroLavorazione iP = new InserimentoMacroLavorazione(db);
+            InserimentoMacroLavorazione iP = new InserimentoMacroLavorazione(db, idMacroLavorazione);
             iP.Show();
         }
 

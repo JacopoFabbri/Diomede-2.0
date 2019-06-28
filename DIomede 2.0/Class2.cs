@@ -1899,6 +1899,7 @@ namespace Diomede2
         }
         public List<Commessa> FiltroCommesse(String s, String g)
         {
+            DateTime dateValue;
             List<Commessa> commessa = new List<Commessa>();
             try
             {
@@ -1909,16 +1910,33 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    Commessa c = new Commessa
+                    if (!(lettore[4] + "").Equals(""))
                     {
-                        Id = (Int32)lettore[0],
-                        Ditta = (Int32)lettore[1],
-                        NumeroCommessa = (String)lettore[3],
-                        Data = (DateTime)lettore[4],
-                        Referente = (String)lettore[5],
-                        Bozza = (int)lettore[6]
-                    };
-                    commessa.Add(c);
+                        DateTime.TryParse(lettore[4] + "", out dateValue);
+                        Commessa c = new Commessa
+                        {
+                            Id = (Int32)lettore[0],
+                            Ditta = (Int32)lettore[1],
+                            NumeroCommessa = (String)lettore[3],
+                            Data = dateValue,
+                            Referente = "" + lettore[5],
+                            Bozza = (int)lettore[6]
+                        };
+                        commessa.Add(c);
+                    }
+                    else
+                    {
+                        Commessa c = new Commessa
+                        {
+                            Id = (Int32)lettore[0],
+                            Ditta = (Int32)lettore[1],
+                            NumeroCommessa = (String)lettore[3],
+                            Data = new DateTime(),
+                            Referente = "" + lettore[5],
+                            Bozza = (int)lettore[6]
+                        };
+                        commessa.Add(c);
+                    }
                 }
             }
             catch (Exception ex)
