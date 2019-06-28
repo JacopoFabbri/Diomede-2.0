@@ -21,6 +21,11 @@ namespace Diomede2
             db = dbName;
             InitializeComponent();
         }
+        public ListaMacroLavorazioni(String dbName)
+        {
+            db = dbName;
+            InitializeComponent();
+        }
         private void Button2_Click(object sender, EventArgs e)
         {
             InserimentoMacroLavorazione iP = new InserimentoMacroLavorazione(db, idMacroLavorazione);
@@ -67,6 +72,11 @@ namespace Diomede2
                     dataGridView1.DataSource = op.FiltraMacroLavorazione("COMMESSA", idMacroLavorazione + "");
                     dataGridView1.Columns[0].Visible = false;
                 }
+                else
+                {
+                    dataGridView1.DataSource = op.CercaMacroLavorazione();
+                    dataGridView1.Columns[0].Visible = false;
+                }
 
             }
             catch 
@@ -83,8 +93,8 @@ namespace Diomede2
                 {
                     try
                     {
-                        Lavorazione clienti = op.CercaLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
-                        op.CancellaLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        MacroLavorazione clienti = op.CercaMacroLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        op.CancellaMacroLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
                         MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch
@@ -93,7 +103,7 @@ namespace Diomede2
                     }
                 }
             }
-            dataGridView1.DataSource = op.CercaLavorazione();
+            dataGridView1.DataSource = op.CercaMacroLavorazione();
             dataGridView1.Columns[0].Visible = false;
         }
 

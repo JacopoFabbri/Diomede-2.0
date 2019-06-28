@@ -95,5 +95,11 @@ namespace Diomede2
             ListaCommesse frm = new ListaCommesse(settore, this);
             frm.Show();
         }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            ListaMacroLavorazioni frm = new ListaMacroLavorazioni(settore);
+            frm.Show();
+        }
     }
 }
