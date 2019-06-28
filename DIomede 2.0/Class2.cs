@@ -657,12 +657,12 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        public void InserimentoMacrolavorazione(String nome, DateTime dataInizio, DateTime dataFine, double prezzo, String numerocommessa, int tipologia, String desc)
+        public void InserimentoMacrolavorazione(String nome, DateTime dataInizio, DateTime dataFine, double prezzo, String numerocommessa, int tipologia, String desc, int commessa)
         {
             try
             {
                 MacroLavorazioniDB bDB = new MacroLavorazioniDB(conn);
-                bDB.Inserimento(nome, dataInizio, dataFine, prezzo, numerocommessa, tipologia, desc);
+                bDB.Inserimento(nome, dataInizio, dataFine, prezzo, numerocommessa, tipologia, desc, commessa);
             }
             catch (Exception e)
             {
@@ -1910,17 +1910,17 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    if (!(lettore[4] + "").Equals(""))
+                    if (!(lettore[3] + "").Equals(""))
                     {
-                        DateTime.TryParse(lettore[4] + "", out dateValue);
+                        DateTime.TryParse(lettore[3] + "", out dateValue);
                         Commessa c = new Commessa
                         {
                             Id = (Int32)lettore[0],
                             Ditta = (Int32)lettore[1],
-                            NumeroCommessa = (String)lettore[3],
+                            NumeroCommessa = (String)lettore[2],
                             Data = dateValue,
-                            Referente = "" + lettore[5],
-                            Bozza = (int)lettore[6]
+                            Referente = "" + lettore[4],
+                            Bozza = (int)lettore[5]
                         };
                         commessa.Add(c);
                     }
@@ -1930,10 +1930,10 @@ namespace Diomede2
                         {
                             Id = (Int32)lettore[0],
                             Ditta = (Int32)lettore[1],
-                            NumeroCommessa = (String)lettore[3],
+                            NumeroCommessa = (String)lettore[2],
                             Data = new DateTime(),
-                            Referente = "" + lettore[5],
-                            Bozza = (int)lettore[6]
+                            Referente = "" + lettore[4],
+                            Bozza = (int)lettore[5]
                         };
                         commessa.Add(c);
                     }
@@ -2565,12 +2565,12 @@ namespace Diomede2
         {
             con = conn;
         }
-        public void Inserimento(String nome, DateTime dataInizio, DateTime dataFine, double prezzo, String numerocommessa, int tipologia, String desc)
+        public void Inserimento(String nome, DateTime dataInizio, DateTime dataFine, double prezzo, String numerocommessa, int tipologia, String desc, int commessa)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `MACROLAVORAZIONI`(`NOME`, `DATAINIZIO`, `DATAFINE`, `PREZZO`, `NUMEROCOMMESSA`, `TIPOLOGIA`, `DESCRIZIONE`) VALUES('" + nome + "','" + dataInizio.ToString("yyyy/MM/dd") + "','" + dataFine.ToString("yyyy/MM/dd") + "','" + prezzo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" + numerocommessa + "','" + tipologia + "','" + desc + "')", con);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `MACROLAVORAZIONI`(`NOME`, `DATAINIZIO`, `DATAFINE`, `PREZZO`, `NUMEROCOMMESSA`, `TIPOLOGIA`, `DESCRIZIONE`, `COMMESSA`) VALUES('" + nome + "','" + dataInizio.ToString("yyyy/MM/dd") + "','" + dataFine.ToString("yyyy/MM/dd") + "','" + prezzo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" + numerocommessa + "','" + tipologia + "','" + desc + "','" + commessa + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)

@@ -27,6 +27,7 @@ namespace Diomede2
         private void InserimentoMacroLavorazione_Load(object sender, EventArgs e)
         {
             op = new OperazionePraticheEdili(db);
+            textBox3.Text = op.FiltraCommessa("BOZZA", idB + "")[0].NumeroCommessa;
             textBox5.Text = op.FiltraCommessa("BOZZA", idB + "")[0].Id + "";
             lista = op.CercaTipologiaMacroLavorazione();
             foreach(TipologiaMacroLavorazione t in lista)
@@ -38,7 +39,7 @@ namespace Diomede2
         {
             try
             {
-                op.InserimentoMacrolavorazione(textBox1.Text,dateTimePicker1.Value, dateTimePicker2.Value, Convert.ToDouble(textBox2.Text), textBox3.Text,lista[comboBox1.SelectedIndex].Id, textBox4.Text);
+                op.InserimentoMacrolavorazione(textBox1.Text,dateTimePicker1.Value, dateTimePicker2.Value, Convert.ToDouble(textBox2.Text), textBox3.Text,lista[comboBox1.SelectedIndex].Id, textBox4.Text, Convert.ToInt32(textBox5.Text));
             }
             catch (Exception)
             {
