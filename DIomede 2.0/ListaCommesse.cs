@@ -106,5 +106,11 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaCommessa();
             dataGridView1.Columns[0].Visible = false;
         }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            InserimentoPagamento frm = new InserimentoPagamento(db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
+            frm.Show();
+        }
     }
 }

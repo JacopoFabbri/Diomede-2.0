@@ -96,7 +96,7 @@ namespace Diomede2
                     }
                 }
             }
-            dataGridView1.DataSource = op.CercaPacchetto();
+            dataGridView1.DataSource = op.CercaPagamento();
             dataGridView1.Columns[0].Visible = false;
         }
 

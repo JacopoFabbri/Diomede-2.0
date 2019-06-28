@@ -3334,7 +3334,7 @@ namespace Diomede2
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `PAGAMENTO`(`NUMEROCOMMESSA`, `IMPORTO`, `NOTE`, `FATTURA`, `DATAFATTURA`, `DATA`, `CLIENTE`, `COMMESSA`) VALUES('" + numeroCommessa + "','" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" + note + "','" + fattura + "','" + dataFattura + "','" + data + "','" + cliente + "','" + commessa + "')", con);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `PAGAMENTO`(`NUMEROCOMMESSA`, `IMPORTO`, `NOTE`, `FATTURA`, `DATAFATTURA`, `DATA`, `CLIENTE`, `COMMESSA`) VALUES('" + numeroCommessa + "','" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" + note + "','" + fattura + "','" + dataFattura.ToString("yyyy/MM/dd") + "','" + data.ToString("yyyy/MM/dd") + "','" + cliente + "','" + commessa + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
