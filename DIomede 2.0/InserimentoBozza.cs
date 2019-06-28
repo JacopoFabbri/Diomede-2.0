@@ -53,5 +53,6 @@ namespace Diomede2
                 comboBox1.Items.Add(c.Nome);
             }
         }
+
     }
 }
