@@ -38,14 +38,14 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
-                if (op.CercaPacchetto() != null)
+                if (op.CercaPagamento() != null)
                 {
-                    dataGridView1.DataSource = op.CercaPacchetto();
+                    dataGridView1.DataSource = op.CercaPagamento();
                     dataGridView1.Columns[0].Visible = false;
                 }
                 else
                 {
-                    dataGridView1.DataSource = op.CercaPacchetto();
+                    dataGridView1.DataSource = op.CercaPagamento();
 
                 }
             }
@@ -65,7 +65,7 @@ namespace Diomede2
                     {
                         try
                         {
-                            op.UpdatePacchetto((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["NOTE"].Value + "");
+                            op.UpdatePagamento((int)riga.Cells["ID"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "",(double) riga.Cells["IMPORTO"].Value, riga.Cells["NOTE"].Value + "", riga.Cells["FATTURA"].Value + "", (DateTime)riga.Cells["DATAFATTURA"].Value,(DateTime) riga.Cells["DATA"].Value, (int)riga.Cells["CLIENTE"].Value,(int) riga.Cells["COMMESSA"].Value);
                         }
                         catch
                         {
@@ -75,7 +75,7 @@ namespace Diomede2
                     }
                 }
             }
-            dataGridView1.DataSource = op.CercaPacchetto();
+            dataGridView1.DataSource = op.CercaPagamento();
             dataGridView1.Columns[0].Visible = false;
         }
         private void Button3_Click(object sender, EventArgs e)
@@ -86,8 +86,8 @@ namespace Diomede2
                 {
                     try
                     {
-                        Pacchetto clienti = op.CercaPacchetto((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
-                        op.CancellaPacchetto((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        Pagamento clienti = op.CercaPagamento((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        op.CancellaPagamento((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
                         MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch

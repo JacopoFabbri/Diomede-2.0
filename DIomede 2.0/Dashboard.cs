@@ -101,5 +101,11 @@ namespace Diomede2
             ListaMacroLavorazioni frm = new ListaMacroLavorazioni(settore);
             frm.Show();
         }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            ListaPagamenti frm = new ListaPagamenti(settore);
+            frm.Show();
+        }
     }
 }

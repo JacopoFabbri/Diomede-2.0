@@ -933,7 +933,98 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-
+        public void InserimentoPagamento(String numeroCommessa, double importo, String note, String fattura, DateTime dataFattura, DateTime data, int cliente, int commessa)
+        {
+            try
+            {
+                PagamentoDB bDB = new PagamentoDB(conn);
+                bDB.Inserimento(numeroCommessa, importo, note, fattura, dataFattura, data, cliente, commessa);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public List<Pagamento> CercaPagamento()
+        {
+            List<Pagamento> lista;
+            try
+            {
+                PagamentoDB bDB = new PagamentoDB(conn);
+                lista = bDB.ListaOperazione();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public List<Pagamento> CercaPagamento(String n)
+        {
+            List<Pagamento> lista;
+            try
+            {
+                PagamentoDB bDB = new PagamentoDB(conn);
+                lista = bDB.ListaOperazione(n);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public Pagamento CercaPagamento(int id)
+        {
+            Pagamento contatto;
+            try
+            {
+                PagamentoDB bDB = new PagamentoDB(conn);
+                contatto = bDB.CercaOperazione(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public List<Pagamento> FiltraPagamento(String s, String g)
+        {
+            List<Pagamento> contatto;
+            try
+            {
+                PagamentoDB bDB = new PagamentoDB(conn);
+                contatto = bDB.FiltroOperazione(s, g);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public void UpdatePagamento(int id,String numeroCommessa, double importo, String note, String fattura, DateTime dataFattura, DateTime data, int cliente, int commessa)
+        {
+            try
+            {
+                PagamentoDB bDB = new PagamentoDB(conn);
+                bDB.AggiornaOperazione(id, numeroCommessa, importo, note, fattura, dataFattura, data, cliente, commessa);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void CancellaPagamento(int id)
+        {
+            try
+            {
+                PagamentoDB bDB = new PagamentoDB(conn);
+                bDB.RimuoviOperazione(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
     }
 
     public class ClienteDB
