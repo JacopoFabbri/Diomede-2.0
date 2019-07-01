@@ -63,6 +63,8 @@
             this.pagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaPagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView3 = new System.Windows.Forms.ListView();
+            this.mostraListaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nascondiListaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,7 +169,7 @@
             this.nascondiListaBozzeToolStripMenuItem});
             this.aggiungiToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
-            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.aggiungiToolStripMenuItem.Text = "Bozze";
             this.aggiungiToolStripMenuItem.Click += new System.EventHandler(this.AggiungiToolStripMenuItem_Click);
             // 
@@ -205,7 +207,7 @@
             this.listaPacchettoToolStripMenuItem,
             this.inserisciPacchettoToolStripMenuItem});
             this.pacchettoToolStripMenuItem.Name = "pacchettoToolStripMenuItem";
-            this.pacchettoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pacchettoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.pacchettoToolStripMenuItem.Text = "Pacchetto";
             // 
             // listaPacchettoToolStripMenuItem
@@ -237,7 +239,7 @@
             this.listaLavorazioniToolStripMenuItem,
             this.inserisciLavorazioniToolStripMenuItem});
             this.lavorazioniToolStripMenuItem.Name = "lavorazioniToolStripMenuItem";
-            this.lavorazioniToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lavorazioniToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.lavorazioniToolStripMenuItem.Text = "Lavorazioni";
             // 
             // listaLavorazioniToolStripMenuItem
@@ -260,7 +262,7 @@
             this.listaMacroLavorazioniToolStripMenuItem,
             this.inserisciMacroLavorazioniToolStripMenuItem});
             this.macrolavorazioniToolStripMenuItem.Name = "macrolavorazioniToolStripMenuItem";
-            this.macrolavorazioniToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.macrolavorazioniToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.macrolavorazioniToolStripMenuItem.Text = "Macro Lavorazioni";
             // 
             // listaMacroLavorazioniToolStripMenuItem
@@ -289,15 +291,17 @@
             // commesseToolStripMenuItem
             // 
             this.commesseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listaCommesseToolStripMenuItem});
+            this.listaCommesseToolStripMenuItem,
+            this.mostraListaCommesseToolStripMenuItem,
+            this.nascondiListaCommesseToolStripMenuItem});
             this.commesseToolStripMenuItem.Name = "commesseToolStripMenuItem";
-            this.commesseToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.commesseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.commesseToolStripMenuItem.Text = "Commesse";
             // 
             // listaCommesseToolStripMenuItem
             // 
             this.listaCommesseToolStripMenuItem.Name = "listaCommesseToolStripMenuItem";
-            this.listaCommesseToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.listaCommesseToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.listaCommesseToolStripMenuItem.Text = "Lista Commesse";
             this.listaCommesseToolStripMenuItem.Click += new System.EventHandler(this.ListaCommesseToolStripMenuItem_Click);
             // 
@@ -306,7 +310,7 @@
             this.macroLavorazioniToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listaMacroLavorazioniToolStripMenuItem1});
             this.macroLavorazioniToolStripMenuItem1.Name = "macroLavorazioniToolStripMenuItem1";
-            this.macroLavorazioniToolStripMenuItem1.Size = new System.Drawing.Size(171, 22);
+            this.macroLavorazioniToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.macroLavorazioniToolStripMenuItem1.Text = "Macro Lavorazioni";
             // 
             // listaMacroLavorazioniToolStripMenuItem1
@@ -329,7 +333,7 @@
             this.pagamentiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listaPagamentiToolStripMenuItem});
             this.pagamentiToolStripMenuItem.Name = "pagamentiToolStripMenuItem";
-            this.pagamentiToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.pagamentiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pagamentiToolStripMenuItem.Text = "Pagamenti";
             // 
             // listaPagamentiToolStripMenuItem
@@ -348,6 +352,20 @@
             this.listView3.UseCompatibleStateImageBehavior = false;
             this.listView3.View = System.Windows.Forms.View.List;
             this.listView3.Visible = false;
+            // 
+            // mostraListaCommesseToolStripMenuItem
+            // 
+            this.mostraListaCommesseToolStripMenuItem.Name = "mostraListaCommesseToolStripMenuItem";
+            this.mostraListaCommesseToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.mostraListaCommesseToolStripMenuItem.Text = "Mostra Lista Commesse";
+            this.mostraListaCommesseToolStripMenuItem.Click += new System.EventHandler(this.MostraListaCommesseToolStripMenuItem_Click);
+            // 
+            // nascondiListaCommesseToolStripMenuItem
+            // 
+            this.nascondiListaCommesseToolStripMenuItem.Name = "nascondiListaCommesseToolStripMenuItem";
+            this.nascondiListaCommesseToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.nascondiListaCommesseToolStripMenuItem.Text = "Nascondi Lista Commesse";
+            this.nascondiListaCommesseToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaCommesseToolStripMenuItem_Click);
             // 
             // Dashboard
             // 
@@ -406,5 +424,7 @@
         private System.Windows.Forms.ToolStripMenuItem pagamentiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaPagamentiToolStripMenuItem;
         private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ToolStripMenuItem mostraListaCommesseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nascondiListaCommesseToolStripMenuItem;
     }
 }

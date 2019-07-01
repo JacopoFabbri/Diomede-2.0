@@ -237,5 +237,15 @@ namespace Diomede2
             ListaPagamenti frm = new ListaPagamenti(settore);
             frm.Show();
         }
+
+        private void MostraListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView3.Visible = true;
+        }
+
+        private void NascondiListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView3.Visible = false;
+        }
     }
 }
