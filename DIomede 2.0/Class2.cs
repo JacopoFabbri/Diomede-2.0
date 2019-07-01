@@ -123,7 +123,7 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        public List<Contatto> CercaContratti()
+        public List<Contatto> CercaContatti()
         {
             List<Contatto> lista;
             try
