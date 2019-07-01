@@ -50,9 +50,7 @@ namespace Diomede2
         }
         private void Button1_Click(object sender, EventArgs e)
         {
-            ListaClienti frm = new ListaClienti(settore, this);
-            frm.Show();
-            this.Hide();
+
         }
         private void ListView1_Click(object sender, EventArgs e)
         {
@@ -106,6 +104,29 @@ namespace Diomede2
         {
             ListaPagamenti frm = new ListaPagamenti(settore);
             frm.Show();
+        }
+
+        private void ListaClientiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaClienti frm = new ListaClienti(settore, this);
+            frm.Show();
+            this.Hide();
+        }
+
+        private void AggiungiClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InserimentoCliente frm = new InserimentoCliente(settore);
+            frm.Show();
+        }
+
+        private void MostraListaClientiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1.Visible = true;
+        }
+
+        private void NascondiListaClientiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1.Visible = false;
         }
     }
 }
