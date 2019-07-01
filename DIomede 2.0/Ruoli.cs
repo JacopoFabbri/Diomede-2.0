@@ -14,8 +14,10 @@ namespace Diomede2
     {
         private readonly String db;
         OperazionePraticheEdili op;
-        public Ruoli(String dbNAme)
+        InserimentoContatto c;
+        public Ruoli(String dbNAme, InserimentoContatto c)
         {
+            this.c = c;
             db = dbNAme;
             InitializeComponent();
         }
@@ -34,7 +36,7 @@ namespace Diomede2
                 }
                 else
                 {
-                    InserimentoRuolo frm = new InserimentoRuolo(db);
+                    InserimentoRuolo frm = new InserimentoRuolo(db,c);
                     frm.Show();
                 }
 
@@ -101,7 +103,7 @@ namespace Diomede2
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            InserimentoRuolo frm = new InserimentoRuolo(db);
+            InserimentoRuolo frm = new InserimentoRuolo(db, c);
             frm.Show();
         }
 

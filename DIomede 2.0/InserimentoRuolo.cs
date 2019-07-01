@@ -13,8 +13,10 @@ namespace Diomede2
     public partial class InserimentoRuolo : Form
     {
         readonly String db;
-        public InserimentoRuolo(String dbName)
+        InserimentoContatto c;
+        public InserimentoRuolo(String dbName, InserimentoContatto c)
         {
+            this.c = c;
             db = dbName;
             InitializeComponent();
         }
@@ -31,6 +33,7 @@ namespace Diomede2
                 OperazionePraticheEdili op = new OperazionePraticheEdili(db);
                 op.InserimentoRuolo(textBox1.Text, textBox2.Text);
                 MessageBox.Show("Operazione effettuata", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                c.Form5_Load(sender, e);
                 this.Close();
             }
             catch (Exception)
