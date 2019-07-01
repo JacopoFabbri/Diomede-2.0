@@ -22,6 +22,11 @@ namespace Diomede2
             db = dbName;
             InitializeComponent();
         }
+        public InserimentoBozza(String dbName)
+        {
+            db = dbName;
+            InitializeComponent();
+        }
         private void TextBox2_Click(object sender, EventArgs e)
         {
             ListaPacchetto lp = new ListaPacchetto(db, this, textBox2);
@@ -29,7 +34,10 @@ namespace Diomede2
         }
         private void InserimentoBozza_FormClosing(object sender, FormClosingEventArgs e)
         {
-            formPrecedente.Show();
+            if (formPrecedente != null)
+            {
+                formPrecedente.Show();
+            }
         }
         private void Button1_Click(object sender, EventArgs e)
         {
