@@ -48,7 +48,7 @@ namespace Diomede2
                 if (!comboBox1.Text.Equals("Ruolo"))
                 {
                     op.InserimentoContatto(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, textBox8.Text, textBox9.Text, textBox10.Text,"" + lista[comboBox1.SelectedIndex].Id);
-                    MessageBox.Show("Operazione effettuata","Inserito",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Contatto Inserito","Inserito",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Close();
 
                 }

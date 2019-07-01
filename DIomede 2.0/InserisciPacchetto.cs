@@ -24,6 +24,7 @@ namespace Diomede2
         {
             op = new OperazionePraticheEdili(db);
             op.InserimentoPacchetto(textBox1.Text, textBox2.Text);
+            MessageBox.Show("Pacchetto Inserito", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 

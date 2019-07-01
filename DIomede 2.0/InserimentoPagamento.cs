@@ -39,6 +39,8 @@ namespace Diomede2
             try
             {
                 op.InserimentoPagamento(textBox1.Text, Convert.ToDouble(textBox2.Text), textBox3.Text, textBox4.Text, dateTimePicker1.Value, dateTimePicker2.Value, Convert.ToInt32(textBox5.Text), Convert.ToInt32(textBox6.Text));
+                MessageBox.Show("Pagamento inserito", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch (Exception)
             {

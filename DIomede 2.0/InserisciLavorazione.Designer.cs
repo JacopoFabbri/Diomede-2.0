@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InserisciLavorazione));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -59,7 +60,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(498, 118);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(497, 118);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // textBox1
@@ -72,7 +73,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(169, 3);
+            this.textBox2.Location = new System.Drawing.Point(168, 3);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(124, 20);
@@ -81,7 +82,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(335, 62);
+            this.button1.Location = new System.Drawing.Point(333, 62);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 22);
             this.button1.TabIndex = 8;
@@ -91,10 +92,10 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(169, 62);
+            this.textBox5.Location = new System.Drawing.Point(168, 62);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(160, 49);
+            this.textBox5.Size = new System.Drawing.Size(159, 49);
             this.textBox5.TabIndex = 11;
             this.textBox5.Text = "Descrizione";
             // 
@@ -112,8 +113,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 126);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InserisciLavorazione";
-            this.Text = "InserisciLavorazione";
+            this.Text = "Inserisci Lavorazione";
             this.Load += new System.EventHandler(this.InserisciLavorazione_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

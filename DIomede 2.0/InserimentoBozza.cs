@@ -37,6 +37,7 @@ namespace Diomede2
             {
 
                 op.InserimentoBozza(dateTimePicker1.Value, textBox2.Text, Double.Parse(textBox3.Text), textBox4.Text, lista[comboBox1.SelectedIndex].Id, false);
+                MessageBox.Show("Bozza Inserita", "Inserita:", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             catch

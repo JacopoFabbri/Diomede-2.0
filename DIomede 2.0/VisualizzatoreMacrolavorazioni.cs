@@ -29,6 +29,7 @@ namespace Diomede2
             if(listView1.SelectedItems.Count > 0)
             {
                 data.Rows[riga].Cells[5].Value = lista[listView1.SelectedItems[0].Index].Id;
+                this.Close();
             }
             else
             {

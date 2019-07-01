@@ -19,9 +19,9 @@ namespace Diomede2
             InitializeComponent();
         }
 
-        private void Form8_Load(object sender, EventArgs e)
+        private void Form8_Close(object sender, EventArgs e)
         {
-
+           
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace Diomede2
             {
                 OperazionePraticheEdili op = new OperazionePraticheEdili(db);
                 op.InserimentoRuolo(textBox1.Text, textBox2.Text);
-                MessageBox.Show("Operazione effettuata", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ruolo Inserito", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             catch (Exception)

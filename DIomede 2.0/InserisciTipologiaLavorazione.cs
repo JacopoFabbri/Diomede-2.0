@@ -27,6 +27,7 @@ namespace Diomede2
             try
             {
                 op.InserimentoTipologialavorazione(textBox1.Text, textBox2.Text, Convert.ToDouble(textBox3.Text), textBox4.Text,lista[comboBox1.SelectedIndex].Id);
+                MessageBox.Show("Tipologia di Lavorazione Inserita", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             catch
