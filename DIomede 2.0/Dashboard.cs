@@ -58,10 +58,6 @@ namespace Diomede2
                 }
             }
         }
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
         private void ListView1_Click(object sender, EventArgs e)
         {
             Cliente cliente = lista[listView1.SelectedItems[0].Index];
@@ -73,47 +69,13 @@ namespace Diomede2
         {
             formPrecedente.Show();
         }
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            ListaBozze lB = new ListaBozze(settore, this);
-            lB.Show();
-        }
+
         private void ListView2_Click(object sender, EventArgs e)
         {
             Bozza bozza = listaBozze[listView2.SelectedItems[0].Index];
             ListaLavorazioni frm1 = new ListaLavorazioni(settore, bozza.Pacchetto);
             frm1.Show();
 
-        }
-
-        private void Button3_Click(object sender, EventArgs e)
-        {
-            TipologieMacrolavorazioni tp = new TipologieMacrolavorazioni(settore);
-            tp.Show();
-        }
-
-        private void Button4_Click(object sender, EventArgs e)
-        {
-            ListaTipoogiaLavorazioni frm = new ListaTipoogiaLavorazioni(settore);
-            frm.Show();
-        }
-
-        private void Button5_Click(object sender, EventArgs e)
-        {
-            ListaCommesse frm = new ListaCommesse(settore, this);
-            frm.Show();
-        }
-
-        private void Button6_Click(object sender, EventArgs e)
-        {
-            ListaMacroLavorazioni frm = new ListaMacroLavorazioni(settore);
-            frm.Show();
-        }
-
-        private void Button7_Click(object sender, EventArgs e)
-        {
-            ListaPagamenti frm = new ListaPagamenti(settore);
-            frm.Show();
         }
 
         private void ListaClientiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -138,12 +100,6 @@ namespace Diomede2
         {
             listView1.Visible = false;
         }
-
-        private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListaBozze lB = new ListaBozze(settore, this);
@@ -185,23 +141,10 @@ namespace Diomede2
             TipologieMacrolavorazioni frm = new TipologieMacrolavorazioni(settore);
             frm.Show();
         }
-
-        private void ToolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void InserisciMacroLavorazioniToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InserimentoTipologiaMacrolavorazione frm = new InserimentoTipologiaMacrolavorazione(settore);
             frm.Show();
-        }
-
-
-
-        private void AggiungiContattoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void ListaContattiToolStripMenuItem_Click(object sender, EventArgs e)
