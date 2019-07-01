@@ -54,7 +54,7 @@ namespace Diomede2
                             listView1.Items.Add("Occupazione");
                             listView1.Items.Add("Ponteggi");
                             listView1.Items.Add("PraticheEdili");
-                            listView1.Items.Add("CarpenterieMetalliche");
+                            listView1.Items.Add("Carpenterie");
                         
                         }else if(utente.Ruolo == 3)
                         {

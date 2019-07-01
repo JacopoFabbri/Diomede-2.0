@@ -247,5 +247,10 @@ namespace Diomede2
         {
             listView3.Visible = false;
         }
+
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

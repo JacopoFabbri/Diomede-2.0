@@ -65,6 +65,7 @@
             this.listView3 = new System.Windows.Forms.ListView();
             this.mostraListaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nascondiListaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,7 +98,8 @@
             this.gestioneBozzeToolStripMenuItem,
             this.gestioneTipologieToolStripMenuItem,
             this.gestioneCommesseToolStripMenuItem,
-            this.gestioneEconomicaToolStripMenuItem});
+            this.gestioneEconomicaToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(769, 24);
@@ -367,6 +369,13 @@
             this.nascondiListaCommesseToolStripMenuItem.Text = "Nascondi Lista Commesse";
             this.nascondiListaCommesseToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaCommesseToolStripMenuItem_Click);
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,5 +435,6 @@
         private System.Windows.Forms.ListView listView3;
         private System.Windows.Forms.ToolStripMenuItem mostraListaCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nascondiListaCommesseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
