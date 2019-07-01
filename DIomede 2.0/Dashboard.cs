@@ -151,5 +151,48 @@ namespace Diomede2
             ListaPacchetto lp = new ListaPacchetto(settore);
             lp.Show();
         }
+
+        private void InserisciPacchettoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InserisciPacchetto iP = new InserisciPacchetto(settore);
+            iP.Show();
+        }
+
+        private void ListaLavorazioniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaTipoogiaLavorazioni frm = new ListaTipoogiaLavorazioni(settore);
+            frm.Show();
+        }
+
+        private void InserisciLavorazioniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InserisciTipologiaLavorazione iL = new InserisciTipologiaLavorazione(settore);
+            iL.Show();
+        }
+
+        private void ListaMacroLavorazioniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TipologieMacrolavorazioni frm = new TipologieMacrolavorazioni(settore);
+            frm.Show();
+        }
+
+        private void ToolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InserisciMacroLavorazioniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InserimentoTipologiaMacrolavorazione frm = new InserimentoTipologiaMacrolavorazione(settore);
+            frm.Show();
+        }
+
+        private void AggiungiContattiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            {
+                InserimentoContatto frm = new InserimentoContatto(cliente, settore);
+                frm.Show();
+            }
+        }
     }
 }
