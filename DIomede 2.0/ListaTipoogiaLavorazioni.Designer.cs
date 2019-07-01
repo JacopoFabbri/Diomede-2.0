@@ -127,7 +127,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListaTipoogiaLavorazioni";
-            this.Text = "Lista Tipoogia Lavorazioni";
+            this.Text = "Lista Tipologia Lavorazioni";
             this.Load += new System.EventHandler(this.TIpologialavorazioni_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
