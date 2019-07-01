@@ -71,7 +71,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(464, 158);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(460, 158);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // textBox3
@@ -100,7 +100,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(279, 3);
+            this.textBox4.Location = new System.Drawing.Point(278, 3);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(85, 20);
             this.textBox4.TabIndex = 3;
@@ -108,7 +108,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(371, 82);
+            this.button1.Location = new System.Drawing.Point(370, 82);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(71, 20);
             this.button1.TabIndex = 8;
@@ -118,7 +118,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(371, 3);
+            this.textBox5.Location = new System.Drawing.Point(370, 3);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(87, 20);
             this.textBox5.TabIndex = 4;
@@ -150,7 +150,7 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(279, 82);
+            this.textBox9.Location = new System.Drawing.Point(278, 82);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(85, 20);
             this.textBox9.TabIndex = 9;
@@ -165,6 +165,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InserimentoCliente";
             this.Text = "Inserimento Cliente";
+            this.Load += new System.EventHandler(this.InserimentoCliente_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

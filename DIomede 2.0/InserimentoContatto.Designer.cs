@@ -42,6 +42,7 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,19 +70,21 @@
             this.tableLayoutPanel1.Controls.Add(this.textBox8, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox9, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox10, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.comboBox1, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button2, 5, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(557, 140);
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(576, 147);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(187, 3);
+            this.textBox3.Location = new System.Drawing.Point(195, 3);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(86, 20);
             this.textBox3.TabIndex = 2;
@@ -89,7 +92,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(95, 3);
+            this.textBox2.Location = new System.Drawing.Point(99, 3);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(86, 20);
             this.textBox2.TabIndex = 1;
@@ -105,7 +108,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(279, 3);
+            this.textBox4.Location = new System.Drawing.Point(290, 3);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(86, 20);
             this.textBox4.TabIndex = 3;
@@ -113,7 +116,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(371, 3);
+            this.textBox5.Location = new System.Drawing.Point(386, 3);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(86, 20);
             this.textBox5.TabIndex = 4;
@@ -121,7 +124,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(3, 73);
+            this.textBox6.Location = new System.Drawing.Point(3, 51);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(86, 20);
             this.textBox6.TabIndex = 5;
@@ -129,7 +132,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(95, 73);
+            this.textBox7.Location = new System.Drawing.Point(99, 51);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(86, 20);
             this.textBox7.TabIndex = 6;
@@ -137,7 +140,7 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(187, 73);
+            this.textBox8.Location = new System.Drawing.Point(195, 51);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(86, 20);
@@ -146,7 +149,7 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(279, 73);
+            this.textBox9.Location = new System.Drawing.Point(290, 51);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(86, 20);
             this.textBox9.TabIndex = 9;
@@ -154,7 +157,7 @@
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(371, 73);
+            this.textBox10.Location = new System.Drawing.Point(386, 51);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(86, 20);
             this.textBox10.TabIndex = 10;
@@ -162,9 +165,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(463, 73);
+            this.button1.Location = new System.Drawing.Point(482, 51);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 20);
+            this.button1.Size = new System.Drawing.Size(91, 20);
             this.button1.TabIndex = 8;
             this.button1.Text = "Inserisci";
             this.button1.UseVisualStyleBackColor = true;
@@ -173,20 +176,30 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(463, 3);
+            this.comboBox1.Location = new System.Drawing.Point(482, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(88, 21);
             this.comboBox1.TabIndex = 11;
             this.comboBox1.Text = "Ruolo";
             // 
-            // Form5
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(482, 99);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(88, 27);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Inserisci Ruolo";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // InserimentoContatto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 141);
+            this.ClientSize = new System.Drawing.Size(591, 151);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form5";
+            this.Name = "InserimentoContatto";
             this.Text = "Inserimento Contatto";
             this.Load += new System.EventHandler(this.Form5_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -211,5 +224,6 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button2;
     }
 }

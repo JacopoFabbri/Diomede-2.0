@@ -30,6 +30,8 @@ namespace Diomede2
             {
                 OperazionePraticheEdili op = new OperazionePraticheEdili(db);
                 op.InserimentoRuolo(textBox1.Text, textBox2.Text);
+                MessageBox.Show("Operazione effettuata", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch (Exception)
             {

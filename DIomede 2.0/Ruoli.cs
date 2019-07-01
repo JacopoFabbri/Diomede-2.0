@@ -62,7 +62,7 @@ namespace Diomede2
                     {
                         try
                         {
-                            op.UpdateRuolo((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["DESC"].Value + "");
+                            op.UpdateRuolo((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["DESCRIZIONE"].Value + "");
                         }
                         catch
                         {
@@ -87,7 +87,7 @@ namespace Diomede2
                     {
                         Ruolo clienti = op.CercaRuoloId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
                         op.CancellaRuolo((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
-                        MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Ruolo Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch
                     {
@@ -103,6 +103,11 @@ namespace Diomede2
         {
             InserimentoRuolo frm = new InserimentoRuolo(db);
             frm.Show();
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+
         }
 
     }

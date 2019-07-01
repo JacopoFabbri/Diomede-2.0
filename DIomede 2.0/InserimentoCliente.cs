@@ -35,5 +35,9 @@ namespace Diomede2
             }
         }
 
+        private void InserimentoCliente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -25,8 +25,6 @@ namespace Diomede2
         private void Form5_Load(object sender, EventArgs e)
         {
             textBox8.Text = "" + cliente.Id;
-            Ruoli frm = new Ruoli(db);
-            frm.Show();
             OperazionePraticheEdili op = new OperazionePraticheEdili(db);
             lista = op.CercaRuolo();
             if (lista != null)
@@ -61,5 +59,10 @@ namespace Diomede2
             }
         }
 
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Ruoli frm = new Ruoli(db);
+            frm.Show();
+        }
     }
 }

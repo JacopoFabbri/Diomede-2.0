@@ -114,7 +114,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Aggiungi";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button1_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button1
             // 
@@ -126,15 +126,16 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Aggiorna";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // Form6
+            // Ruoli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 358);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form6";
+            this.Name = "Ruoli";
             this.Text = "Ruoli";
             this.Load += new System.EventHandler(this.Form6_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
