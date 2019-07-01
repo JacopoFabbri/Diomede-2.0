@@ -187,12 +187,45 @@ namespace Diomede2
             frm.Show();
         }
 
-        private void AggiungiContattiToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+        private void AggiungiContattoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            {
-                InserimentoContatto frm = new InserimentoContatto(cliente, settore);
-                frm.Show();
-            }
+
+        }
+
+        private void ListaContattiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Contatti frm = new Contatti(null, settore, this);
+            frm.Show();
+        }
+
+        private void VisualizzaListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView2.Visible = true;
+        }
+
+        private void NascondiListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView2.Visible = false;
+        }
+
+        private void ListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaCommesse frm = new ListaCommesse(settore, this);
+            frm.Show();
+        }
+
+        private void ListaMacroLavorazioniToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ListaMacroLavorazioni frm = new ListaMacroLavorazioni(settore);
+            frm.Show();
+        }
+
+        private void ListaPagamentiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaPagamenti frm = new ListaPagamenti(settore);
+            frm.Show();
         }
     }
 }

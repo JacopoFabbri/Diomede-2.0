@@ -22,8 +22,7 @@ namespace Diomede2
         }
         private void Button2_Click(object sender, EventArgs e)
         {
-            InserisciPacchetto iP = new InserisciPacchetto(db);
-            iP.Show();
+
         }
 
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
