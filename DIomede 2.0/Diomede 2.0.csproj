@@ -197,6 +197,12 @@
     <Compile Include="InserimentoContatto.Designer.cs">
       <DependentUpon>InserimentoContatto.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificaPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificaPassword.Designer.cs">
+      <DependentUpon>ModificaPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ruoli.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InserimentoContatto.resx">
       <DependentUpon>InserimentoContatto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificaPassword.resx">
+      <DependentUpon>ModificaPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ruoli.resx">
       <DependentUpon>Ruoli.cs</DependentUpon>
