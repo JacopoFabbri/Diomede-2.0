@@ -17,6 +17,7 @@ namespace Diomede2
         private OperazionePraticheEdili op;
         private List<Cliente> lista;
         private List<Bozza> listaBozze;
+        private List<Commessa> listaCommesse;
         private readonly Login formPrecedente;
         public Dashboard(String s, Login f)
         {
@@ -30,6 +31,7 @@ namespace Diomede2
         {
             listView1.Clear();
             listView2.Clear();
+            listView3.Clear();
             op = new OperazionePraticheEdili(settore);
             lista = op.CercaClienti();
             if (lista != null)
@@ -45,6 +47,14 @@ namespace Diomede2
                 foreach (Bozza c in listaBozze)
                 {
                     listView2.Items.Add(c.NumeroCommessa);
+                }
+            }
+            listaCommesse = op.CercaCommessa();
+            if (listaCommesse != null)
+            {
+                foreach (Commessa c in listaCommesse)
+                {
+                    listView3.Items.Add(c.NumeroCommessa);
                 }
             }
         }
