@@ -53,7 +53,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 447F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(900, 447);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
@@ -93,21 +93,21 @@
             // aggiornaToolStripMenuItem
             // 
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
-            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
             this.aggiornaToolStripMenuItem.Click += new System.EventHandler(this.AggiornaToolStripMenuItem_Click);
             // 
             // aggiungiToolStripMenuItem
             // 
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
-            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.aggiungiToolStripMenuItem.Text = "Aggiungi";
             this.aggiungiToolStripMenuItem.Click += new System.EventHandler(this.AggiungiToolStripMenuItem_Click);
             // 
             // eliminaToolStripMenuItem
             // 
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
-            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.eliminaToolStripMenuItem.Text = "Elimina";
             this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.EliminaToolStripMenuItem_Click);
             // 
@@ -115,6 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(907, 477);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
