@@ -31,13 +31,27 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
-                List<Contatto> lista = op.FiltraContratto("DITTA", "" + cliente.Id);
-                if (lista != null)
+                if (cliente == null)
                 {
-                    dataGridView1.DataSource = lista;
-                    dataGridView1.Columns[0].Visible = false;
-                    dataGridView1.Columns[8].Visible = false;
-                    dataGridView1.Columns[11].ReadOnly = true;
+                    List<Contatto> lista = op.CercaContatti();
+                    if (lista != null)
+                    {
+                        dataGridView1.DataSource = lista;
+                        dataGridView1.Columns[0].Visible = false;
+                        dataGridView1.Columns[8].Visible = false;
+                        dataGridView1.Columns[11].ReadOnly = true;
+                    }
+                }
+                else
+                {
+                    List<Contatto> lista = op.FiltraContratto("DITTA", "" + cliente.Id);
+                    if (lista != null)
+                    {
+                        dataGridView1.DataSource = lista;
+                        dataGridView1.Columns[0].Visible = false;
+                        dataGridView1.Columns[8].Visible = false;
+                        dataGridView1.Columns[11].ReadOnly = true;
+                    }
                 }
             }
             catch
