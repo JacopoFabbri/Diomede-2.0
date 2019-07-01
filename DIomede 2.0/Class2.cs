@@ -25,6 +25,12 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
+
+        internal void UpdateRuolo(int v, object id, string string1, object nome, string string2, object desc)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Cliente> CercaClienti()
         {
             List<Cliente> lista;

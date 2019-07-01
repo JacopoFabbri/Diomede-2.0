@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VisualizzatoreMacrolavorazioni));
             this.listView1 = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -47,7 +48,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
+            this.button1.Text = "Modifica";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -58,8 +59,9 @@
             this.ClientSize = new System.Drawing.Size(323, 337);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VisualizzatoreMacrolavorazioni";
-            this.Text = "VisualizzatoreMacrolavorazioni";
+            this.Text = "Visualizzatore Macrolavorazioni";
             this.Load += new System.EventHandler(this.VisualizzatoreMacrolavorazioni_Load);
             this.ResumeLayout(false);
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InserisciPacchetto));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -56,15 +57,15 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(408, 80);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(407, 80);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(139, 3);
+            this.textBox2.Location = new System.Drawing.Point(138, 3);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(130, 57);
+            this.textBox2.Size = new System.Drawing.Size(129, 57);
             this.textBox2.TabIndex = 1;
             this.textBox2.Text = "Note";
             // 
@@ -79,7 +80,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(334, 57);
+            this.button1.Location = new System.Drawing.Point(333, 57);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(71, 20);
             this.button1.TabIndex = 8;
@@ -93,8 +94,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(413, 84);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InserisciPacchetto";
-            this.Text = "InserisciPacchetto";
+            this.Text = "Inserisci Pacchetto";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InserisciPacchetto_FormClosing);
             this.Load += new System.EventHandler(this.InserisciPacchetto_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

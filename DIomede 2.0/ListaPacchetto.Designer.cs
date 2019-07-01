@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaPacchetto));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -147,8 +148,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(904, 474);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListaPacchetto";
-            this.Text = "ListaPacchetto";
+            this.Text = "Lista Pacchetto";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ListaPacchetto_FormClosing);
             this.Load += new System.EventHandler(this.ListaPacchetto_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

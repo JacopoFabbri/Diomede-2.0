@@ -73,7 +73,7 @@ namespace Diomede2
                     {
                         TipologiaMacroLavorazione clienti = op.CercaTipologiaMacroLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
                         op.CancellaTipologiaMacroLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
-                        MessageBox.Show("Tipologia Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Tipologia Eliminata", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                 }

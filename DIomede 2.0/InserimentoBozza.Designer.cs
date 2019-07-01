@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InserimentoBozza));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -62,7 +63,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(614, 102);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(612, 102);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // textBox2
@@ -123,8 +124,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(621, 104);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InserimentoBozza";
-            this.Text = "InserimentoBozza";
+            this.Text = "Inserimento Bozza";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InserimentoBozza_FormClosing);
             this.Load += new System.EventHandler(this.InserimentoBozza_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

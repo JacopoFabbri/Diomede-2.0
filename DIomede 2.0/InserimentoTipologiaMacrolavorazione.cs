@@ -25,6 +25,8 @@ namespace Diomede2
             {
                 OperazionePraticheEdili op = new OperazionePraticheEdili(db);
                 op.InserimentoTipologiaMacrolavorazione(textBox1.Text, textBox2.Text);
+                MessageBox.Show("Tipologia di macrolavorazione Inserita", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch (Exception)
             {
