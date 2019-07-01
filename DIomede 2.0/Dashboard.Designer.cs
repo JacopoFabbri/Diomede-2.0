@@ -42,14 +42,22 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaClientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aggiungiClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contattiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aggiungiContattoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostraListaClientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nascondiListaClientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contattiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aggiungiContattoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestioneBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestioneTipologieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestioneCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestioneEconomicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aggiungiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inserisciBozzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizzaListaBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nascondiListaBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pacchettoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaPacchettoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inserisciPacchettoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -182,20 +190,6 @@
             this.aggiungiClienteToolStripMenuItem.Text = "Aggiungi Cliente";
             this.aggiungiClienteToolStripMenuItem.Click += new System.EventHandler(this.AggiungiClienteToolStripMenuItem_Click);
             // 
-            // contattiToolStripMenuItem
-            // 
-            this.contattiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aggiungiContattoToolStripMenuItem});
-            this.contattiToolStripMenuItem.Name = "contattiToolStripMenuItem";
-            this.contattiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.contattiToolStripMenuItem.Text = "Contatti";
-            // 
-            // aggiungiContattoToolStripMenuItem
-            // 
-            this.aggiungiContattoToolStripMenuItem.Name = "aggiungiContattoToolStripMenuItem";
-            this.aggiungiContattoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aggiungiContattoToolStripMenuItem.Text = "Aggiungi Contatto";
-            // 
             // mostraListaClientiToolStripMenuItem
             // 
             this.mostraListaClientiToolStripMenuItem.Name = "mostraListaClientiToolStripMenuItem";
@@ -210,8 +204,25 @@
             this.nascondiListaClientiToolStripMenuItem.Text = "Nascondi Lista Clienti";
             this.nascondiListaClientiToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaClientiToolStripMenuItem_Click);
             // 
+            // contattiToolStripMenuItem
+            // 
+            this.contattiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aggiungiContattoToolStripMenuItem});
+            this.contattiToolStripMenuItem.Name = "contattiToolStripMenuItem";
+            this.contattiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.contattiToolStripMenuItem.Text = "Contatti";
+            // 
+            // aggiungiContattoToolStripMenuItem
+            // 
+            this.aggiungiContattoToolStripMenuItem.Name = "aggiungiContattoToolStripMenuItem";
+            this.aggiungiContattoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.aggiungiContattoToolStripMenuItem.Text = "Aggiungi Contatto";
+            // 
             // gestioneBozzeToolStripMenuItem
             // 
+            this.gestioneBozzeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aggiungiToolStripMenuItem,
+            this.pacchettoToolStripMenuItem});
             this.gestioneBozzeToolStripMenuItem.Name = "gestioneBozzeToolStripMenuItem";
             this.gestioneBozzeToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.gestioneBozzeToolStripMenuItem.Text = "Gestione Bozze";
@@ -233,6 +244,66 @@
             this.gestioneEconomicaToolStripMenuItem.Name = "gestioneEconomicaToolStripMenuItem";
             this.gestioneEconomicaToolStripMenuItem.Size = new System.Drawing.Size(127, 20);
             this.gestioneEconomicaToolStripMenuItem.Text = "Gestione Economica";
+            // 
+            // aggiungiToolStripMenuItem
+            // 
+            this.aggiungiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaBozzeToolStripMenuItem,
+            this.inserisciBozzaToolStripMenuItem,
+            this.visualizzaListaBozzeToolStripMenuItem,
+            this.nascondiListaBozzeToolStripMenuItem});
+            this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
+            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aggiungiToolStripMenuItem.Text = "Bozze";
+            this.aggiungiToolStripMenuItem.Click += new System.EventHandler(this.AggiungiToolStripMenuItem_Click);
+            // 
+            // listaBozzeToolStripMenuItem
+            // 
+            this.listaBozzeToolStripMenuItem.Name = "listaBozzeToolStripMenuItem";
+            this.listaBozzeToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.listaBozzeToolStripMenuItem.Text = "Lista Bozze";
+            this.listaBozzeToolStripMenuItem.Click += new System.EventHandler(this.ListaBozzeToolStripMenuItem_Click);
+            // 
+            // inserisciBozzaToolStripMenuItem
+            // 
+            this.inserisciBozzaToolStripMenuItem.Name = "inserisciBozzaToolStripMenuItem";
+            this.inserisciBozzaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.inserisciBozzaToolStripMenuItem.Text = "Inserisci Bozza";
+            this.inserisciBozzaToolStripMenuItem.Click += new System.EventHandler(this.InserisciBozzaToolStripMenuItem_Click);
+            // 
+            // visualizzaListaBozzeToolStripMenuItem
+            // 
+            this.visualizzaListaBozzeToolStripMenuItem.Name = "visualizzaListaBozzeToolStripMenuItem";
+            this.visualizzaListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.visualizzaListaBozzeToolStripMenuItem.Text = "Visualizza Lista Bozze";
+            // 
+            // nascondiListaBozzeToolStripMenuItem
+            // 
+            this.nascondiListaBozzeToolStripMenuItem.Name = "nascondiListaBozzeToolStripMenuItem";
+            this.nascondiListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.nascondiListaBozzeToolStripMenuItem.Text = "Nascondi Lista Bozze";
+            // 
+            // pacchettoToolStripMenuItem
+            // 
+            this.pacchettoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaPacchettoToolStripMenuItem,
+            this.inserisciPacchettoToolStripMenuItem});
+            this.pacchettoToolStripMenuItem.Name = "pacchettoToolStripMenuItem";
+            this.pacchettoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pacchettoToolStripMenuItem.Text = "Pacchetto";
+            // 
+            // listaPacchettoToolStripMenuItem
+            // 
+            this.listaPacchettoToolStripMenuItem.Name = "listaPacchettoToolStripMenuItem";
+            this.listaPacchettoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listaPacchettoToolStripMenuItem.Text = "Lista Pacchetto";
+            this.listaPacchettoToolStripMenuItem.Click += new System.EventHandler(this.ListaPacchettoToolStripMenuItem_Click);
+            // 
+            // inserisciPacchettoToolStripMenuItem
+            // 
+            this.inserisciPacchettoToolStripMenuItem.Name = "inserisciPacchettoToolStripMenuItem";
+            this.inserisciPacchettoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inserisciPacchettoToolStripMenuItem.Text = "Inserisci Pacchetto";
             // 
             // Dashboard
             // 
@@ -283,5 +354,13 @@
         private System.Windows.Forms.ToolStripMenuItem gestioneTipologieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestioneCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestioneEconomicaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aggiungiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaBozzeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inserisciBozzaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualizzaListaBozzeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nascondiListaBozzeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pacchettoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaPacchettoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inserisciPacchettoToolStripMenuItem;
     }
 }

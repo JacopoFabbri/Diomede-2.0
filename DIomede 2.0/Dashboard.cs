@@ -128,5 +128,28 @@ namespace Diomede2
         {
             listView1.Visible = false;
         }
+
+        private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaBozze lB = new ListaBozze(settore, this);
+            lB.Show();
+        }
+
+        private void InserisciBozzaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InserimentoBozza ib = new InserimentoBozza(settore);
+            ib.Show();
+        }
+
+        private void ListaPacchettoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaPacchetto lp = new ListaPacchetto(settore);
+            lp.Show();
+        }
     }
 }
