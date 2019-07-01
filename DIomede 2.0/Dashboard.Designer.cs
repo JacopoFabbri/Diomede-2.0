@@ -31,9 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.listView1 = new System.Windows.Forms.ListView();
             this.listView2 = new System.Windows.Forms.ListView();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +62,6 @@
             this.listaMacroLavorazioniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaPagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inserisciPagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,36 +86,6 @@
             this.listView2.View = System.Windows.Forms.View.List;
             this.listView2.Visible = false;
             this.listView2.Click += new System.EventHandler(this.ListView2_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(504, 259);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(180, 23);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Lista Commesse";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(504, 288);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(180, 23);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Lista MacroLavorazioni";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.Button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(577, 38);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(180, 23);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "Lista Pagamenti";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // menuStrip1
             // 
@@ -198,6 +164,7 @@
             this.inserisciBozzaToolStripMenuItem,
             this.visualizzaListaBozzeToolStripMenuItem,
             this.nascondiListaBozzeToolStripMenuItem});
+            this.aggiungiToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
             this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aggiungiToolStripMenuItem.Text = "Bozze";
@@ -243,14 +210,14 @@
             // listaPacchettoToolStripMenuItem
             // 
             this.listaPacchettoToolStripMenuItem.Name = "listaPacchettoToolStripMenuItem";
-            this.listaPacchettoToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.listaPacchettoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listaPacchettoToolStripMenuItem.Text = "Lista Pacchetto";
             this.listaPacchettoToolStripMenuItem.Click += new System.EventHandler(this.ListaPacchettoToolStripMenuItem_Click);
             // 
             // inserisciPacchettoToolStripMenuItem
             // 
             this.inserisciPacchettoToolStripMenuItem.Name = "inserisciPacchettoToolStripMenuItem";
-            this.inserisciPacchettoToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.inserisciPacchettoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.inserisciPacchettoToolStripMenuItem.Text = "Inserisci Pacchetto";
             this.inserisciPacchettoToolStripMenuItem.Click += new System.EventHandler(this.InserisciPacchettoToolStripMenuItem_Click);
             // 
@@ -293,7 +260,7 @@
             this.inserisciMacroLavorazioniToolStripMenuItem});
             this.macrolavorazioniToolStripMenuItem.Name = "macrolavorazioniToolStripMenuItem";
             this.macrolavorazioniToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.macrolavorazioniToolStripMenuItem.Text = "Macrolavorazioni";
+            this.macrolavorazioniToolStripMenuItem.Text = "Macro Lavorazioni";
             // 
             // listaMacroLavorazioniToolStripMenuItem
             // 
@@ -359,8 +326,7 @@
             // pagamentiToolStripMenuItem
             // 
             this.pagamentiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listaPagamentiToolStripMenuItem,
-            this.inserisciPagamentoToolStripMenuItem});
+            this.listaPagamentiToolStripMenuItem});
             this.pagamentiToolStripMenuItem.Name = "pagamentiToolStripMenuItem";
             this.pagamentiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pagamentiToolStripMenuItem.Text = "Pagamenti";
@@ -372,20 +338,11 @@
             this.listaPagamentiToolStripMenuItem.Text = "Lista Pagamenti";
             this.listaPagamentiToolStripMenuItem.Click += new System.EventHandler(this.ListaPagamentiToolStripMenuItem_Click);
             // 
-            // inserisciPagamentoToolStripMenuItem
-            // 
-            this.inserisciPagamentoToolStripMenuItem.Name = "inserisciPagamentoToolStripMenuItem";
-            this.inserisciPagamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.inserisciPagamentoToolStripMenuItem.Text = "Inserisci Pagamento";
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(769, 428);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.menuStrip1);
@@ -405,9 +362,6 @@
         #endregion
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
@@ -439,6 +393,5 @@
         private System.Windows.Forms.ToolStripMenuItem listaMacroLavorazioniToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem pagamentiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaPagamentiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inserisciPagamentoToolStripMenuItem;
     }
 }
