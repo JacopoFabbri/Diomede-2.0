@@ -42,7 +42,7 @@ namespace Diomede2
                 MessageBox.Show("Pagamento inserito", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
-            catch (Exception)
+            catch
             {
                 MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
             }

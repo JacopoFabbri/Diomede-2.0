@@ -72,6 +72,15 @@ namespace Diomede2
                 {
                     MessageBox.Show("Utente non trovato!");
                 }
+                listView1.Visible = true;
+                label1.Visible = false;
+                label2.Visible = false;
+                textBox1.Visible = false;
+                textBox2.Visible = false;
+                checkBox1.Visible = false;
+                button1.Visible = false;
+                button2.Visible = true;
+                button3.Visible = true;
             }
             catch (Exception)
             {
@@ -116,20 +125,8 @@ namespace Diomede2
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Operaziones op = new Operaziones("Utenza");
-                utente = op.CercaUtente(utente.Username);
-                if (textBox2.Text != null)
-                {
-                    op.ModificaDatiUtente(utente.Id, utente.Username, textBox2.Text);
-                    MessageBox.Show("Inserito con successo","Login:",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Impossibile registrare la password!","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
+            ModificaPassword frm = new ModificaPassword(utente);
+            frm.Show();
         }
 
         private void ListView1_Click(object sender, EventArgs e)
@@ -144,6 +141,19 @@ namespace Diomede2
         {
             Secret sec = new Secret();
             sec.Show();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            listView1.Visible = false;
+            label1.Visible = true;
+            label2.Visible = true;
+            textBox1.Visible = true;
+            textBox2.Visible = true;
+            checkBox1.Visible = true;
+            button1.Visible = true;
+            button2.Visible = false;
+            button3.Visible = false;
         }
     }
 }

@@ -22,7 +22,10 @@ namespace Diomede2
         }
         private void Button2_Click(object sender, EventArgs e)
         {
-
+            /*
+            InserimentoPagamento fmr = new InserimentoPagamento(db);
+            fmr.Show();
+            */
         }
 
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
