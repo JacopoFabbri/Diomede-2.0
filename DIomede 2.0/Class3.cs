@@ -17,12 +17,12 @@ namespace Diomede2
         }
 
 
-        public void InserimentoCommessa(int numero, int anno, String settore, String commessa, int cliente, String settoreIntero)
+        public void InserimentoCommessa(int numero, int anno, String settore, String commessa, int cliente, String settoreIntero, Boolean bozza)
         {
             try
             {
                 CommessaAmministrazioneDB bDB = new CommessaAmministrazioneDB(conn);
-                bDB.Inserimento(numero, anno, settore, commessa, cliente, settoreIntero);
+                bDB.Inserimento(numero, anno, settore, commessa, cliente, settoreIntero, bozza);
             }
             catch (Exception e)
             {
@@ -203,7 +203,7 @@ namespace Diomede2
             }
         }
 
-        public String GeneraCommessa(String s, ClienteAmministrazione c, String settore)
+        public String GeneraCommessa(String s, ClienteAmministrazione c, String settore, Boolean bozza)
         {
             try
             {
@@ -212,13 +212,13 @@ namespace Diomede2
                 List<CommessaAmministrazione> lista = FiltraCommessa("ANNO","" + anno);
                 if (lista.Count > 0)
                 {
-                    InserimentoCommessa(lista[lista.Count - 1].Numero + 1, anno, s, "" +( lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore);
+                    InserimentoCommessa(lista[lista.Count - 1].Numero + 1, anno, s, "" +( lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore, bozza);
 
                     commessa = "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s;
                 }
                 else
                 {
-                    InserimentoCommessa(1, anno, s, "" + 1 + "/" + anno + "/" + s, c.Id, settore);
+                    InserimentoCommessa(1, anno, s, "" + 1 + "/" + anno + "/" + s, c.Id, settore, bozza);
                     commessa = "" + 1 + "/" + anno + "/" + s;
                 }
                 return commessa;
@@ -241,12 +241,12 @@ namespace Diomede2
         {
             con = conn;
         }
-        public void Inserimento(int numero, int anno, String settore, String commessa, int cliente, String settoreIntero)
+        public void Inserimento(int numero, int anno, String settore, String commessa, int cliente, String settoreIntero, Boolean bozza)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `COMMESSA`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`) VALUES('" + numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" + settoreIntero + "')", con);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `COMMESSA`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`, `BOZZA`) VALUES('" + numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" + settoreIntero + "','" + bozza + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -278,7 +278,8 @@ namespace Diomede2
                         Settore = "" + lettore[3],
                         Commessa = "" + lettore[4],
                         Cliente = (int)lettore[5],
-                        SettoreIntero = "" + lettore[6]
+                        SettoreIntero = "" + lettore[6],
+                        Bozza = (Boolean)lettore[7]
 
                     };
 
@@ -315,7 +316,8 @@ namespace Diomede2
                         Settore = "" + lettore[3],
                         Commessa = "" + lettore[4],
                         Cliente = (int)lettore[5],
-                        SettoreIntero = "" + lettore[6]
+                        SettoreIntero = "" + lettore[6],
+                        Bozza = (Boolean)lettore[7]
 
                     };
 
@@ -352,7 +354,8 @@ namespace Diomede2
                         Settore = "" + lettore[3],
                         Commessa = "" + lettore[4],
                         Cliente = (int)lettore[5],
-                        SettoreIntero = "" + lettore[6]
+                        SettoreIntero = "" + lettore[6],
+                        Bozza = (Boolean)lettore[7]
 
                     };
 
@@ -389,7 +392,8 @@ namespace Diomede2
                         Settore = "" + lettore[3],
                         Commessa = "" + lettore[4],
                         Cliente = (int)lettore[5],
-                        SettoreIntero = "" + lettore[6]
+                        SettoreIntero = "" + lettore[6],
+                        Bozza = (Boolean)lettore[7]
 
                     };
 
@@ -672,6 +676,7 @@ namespace Diomede2
         private String commessa;
         private int cliente;
         private String settoreIntero;
+        private Boolean bozza;
 
         public int Id { get => id; set => id = value; }
         public int Numero { get => numero; set => numero = value; }
@@ -680,5 +685,6 @@ namespace Diomede2
         public string Commessa { get => commessa; set => commessa = value; }
         public int Cliente { get => cliente; set => cliente = value; }
         public string SettoreIntero { get => settoreIntero; set => settoreIntero = value; }
+        public bool Bozza { get => bozza; set => bozza = value; }
     }
 }

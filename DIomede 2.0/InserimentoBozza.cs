@@ -49,7 +49,17 @@ namespace Diomede2
                 if (listaAmministrazione.Count <=  0)
                     op1.InserimentoCliente(c.Nome, c.Tel, c.Email, c.Iva, c.Sdi);
                 List<ClienteAmministrazione> listaCliente = op1.CercaCliente();
-                String commessa  = op1.GeneraCommessa("PE", listaCliente[listaCliente.Count - 1], "PraticheEdili");
+                String commessa;
+                if (listaAmministrazione.Count <= 0)
+                {
+                    op1.InserimentoCliente(c.Nome, c.Tel, c.Email, c.Iva, c.Sdi);
+                    listaCliente = op1.CercaCliente();
+                    commessa = op1.GeneraCommessa("PE", listaCliente[listaCliente.Count - 1], "PraticheEdili", true);
+                }
+                else
+                {
+                    commessa = op1.GeneraCommessa("PE", listaAmministrazione[1], "PraticheEdili", true);
+                }
 
                 op.InserimentoBozza(dateTimePicker1.Value, textBox2.Text, Double.Parse(textBox3.Text), commessa, lista[comboBox1.SelectedIndex].Id, false);
                 MessageBox.Show("Bozza Inserita", "Inserita:", MessageBoxButtons.OK, MessageBoxIcon.Information);
