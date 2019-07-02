@@ -13,12 +13,18 @@ namespace Diomede2
     public partial class InserimentoCliente : Form
     {
         readonly String db;
+        ListaClienti form;
+        public InserimentoCliente(String dbName, ListaClienti frm)
+        {
+            form = frm;
+            db = dbName;
+            InitializeComponent();
+        }
         public InserimentoCliente(String dbName)
         {
             db = dbName;
             InitializeComponent();
         }
-
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -26,8 +32,16 @@ namespace Diomede2
             {
                 OperazionePraticheEdili op = new OperazionePraticheEdili(db);
                 op.InserimentoCliente(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, textBox8.Text, textBox9.Text);
-                MessageBox.Show("Cliente Inserito","Inserito",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                this.Close();
+                MessageBox.Show("Cliente Inserito", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (form == null)
+                {
+                    this.Close();
+                }
+                else
+                {
+                    form.Form4_Load(sender, e);
+                    this.Close();
+                }
             }
             catch (Exception)
             {

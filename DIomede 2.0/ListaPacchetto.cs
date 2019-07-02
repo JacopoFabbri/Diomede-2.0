@@ -208,11 +208,18 @@ namespace Diomede2
 
         private void SelezionaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows != null)
+            if (tb == null)
             {
-                tb.Text = "" + dataGridView1.SelectedRows[0].Cells[0].Value;
+                this.Close();
             }
-            this.Close();
+            else
+            {
+                if (dataGridView1.SelectedRows != null)
+                {
+                    tb.Text = "" + dataGridView1.SelectedRows[0].Cells[0].Value;
+                }
+                this.Close();
+            }
         }
     }
 }

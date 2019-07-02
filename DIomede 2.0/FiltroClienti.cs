@@ -48,6 +48,7 @@ namespace Diomede2
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboBox2.Items.Clear();
             if (comboBox1.SelectedItem.Equals("NOME"))
             {
                 foreach(Cliente c in lista)

@@ -93,6 +93,7 @@ namespace Diomede2
 
         private void MostraListaClientiToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Form2_Load(sender, e);
             listView1.Visible = true;
         }
 
@@ -155,6 +156,7 @@ namespace Diomede2
 
         private void VisualizzaListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Form2_Load(sender, e);
             listView2.Visible = true;
         }
 
@@ -183,6 +185,7 @@ namespace Diomede2
 
         private void MostraListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Form2_Load(sender, e);
             listView3.Visible = true;
         }
 
