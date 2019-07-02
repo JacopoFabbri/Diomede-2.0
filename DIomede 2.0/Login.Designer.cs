@@ -117,6 +117,8 @@
             // 
             // button3
             // 
+            this.button3.BackgroundImage = global::Diomede2.Properties.Resources.icons8_eliminare_48;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button3.Location = new System.Drawing.Point(153, 223);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 43);

@@ -174,6 +174,16 @@ namespace Diomede2.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_gestione_aziendale_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-gestione-aziendale-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_gestione_sviluppo_commerciale_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-gestione-sviluppo-commerciale-48", resourceCulture);

@@ -354,6 +354,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LOGO DEFINITIVO.ico" />
+    <None Include="Resources\icons8-gestione-aziendale-64.png" />
     <None Include="Resources\icons8-modifica-file-48.png" />
     <None Include="Resources\icons8-casella-di-controllo-selezionata-48.png" />
     <None Include="Resources\icons8-gestione-sviluppo-commerciale-48.png" />
