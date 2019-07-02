@@ -93,6 +93,17 @@ namespace Diomede2.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap depositphotos_136096742_stock_illustration_dollar_banknote_icon_illustration_isolated {
+            get {
+                object obj = ResourceManager.GetObject("depositphotos_136096742-stock-illustration-dollar-banknote-icon-illustration-isol" +
+                        "ated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap freccia_giu_in_basso_ios_simbolo_7_interfaccia_318_34332 {
             get {
                 object obj = ResourceManager.GetObject("freccia-giu-in-basso-ios-simbolo-7-interfaccia_318-34332", resourceCulture);

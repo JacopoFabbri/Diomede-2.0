@@ -54,7 +54,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 452F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(900, 452);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -85,12 +85,14 @@
             this.aggiornaToolStripMenuItem,
             this.eliminaToolStripMenuItem,
             this.pagamentoToolStripMenuItem});
+            this.operazioniToolStripMenuItem.Image = global::Diomede2.Properties.Resources._21276;
             this.operazioniToolStripMenuItem.Name = "operazioniToolStripMenuItem";
-            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.operazioniToolStripMenuItem.Text = "Operazioni";
             // 
             // aggiornaToolStripMenuItem
             // 
+            this.aggiornaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.images;
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
             this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
@@ -98,6 +100,7 @@
             // 
             // eliminaToolStripMenuItem
             // 
+            this.eliminaToolStripMenuItem.Image = global::Diomede2.Properties.Resources._39220;
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
             this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminaToolStripMenuItem.Text = "Elimina";
@@ -105,6 +108,7 @@
             // 
             // pagamentoToolStripMenuItem
             // 
+            this.pagamentoToolStripMenuItem.Image = global::Diomede2.Properties.Resources.depositphotos_136096742_stock_illustration_dollar_banknote_icon_illustration_isolated;
             this.pagamentoToolStripMenuItem.Name = "pagamentoToolStripMenuItem";
             this.pagamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pagamentoToolStripMenuItem.Text = "Pagamento";
