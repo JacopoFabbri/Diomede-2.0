@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InserimentoMacroLavorazione));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -64,31 +63,32 @@
             this.tableLayoutPanel1.Controls.Add(this.textBox4, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.comboBox1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox3, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1022, 86);
-            this.tableLayoutPanel1.TabIndex = 4;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1007, 58);
+            this.tableLayoutPanel1.TabIndex = 5;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(615, 3);
+            this.textBox2.Location = new System.Drawing.Point(606, 3);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(198, 20);
+            this.textBox2.Size = new System.Drawing.Size(195, 20);
             this.textBox2.TabIndex = 12;
+            this.textBox2.Text = "Prezzo";
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(411, 3);
+            this.dateTimePicker2.Location = new System.Drawing.Point(405, 3);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(198, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(195, 20);
             this.dateTimePicker2.TabIndex = 11;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(819, 46);
+            this.button1.Location = new System.Drawing.Point(807, 32);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 23);
             this.button1.TabIndex = 8;
@@ -98,58 +98,62 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(207, 3);
+            this.dateTimePicker1.Location = new System.Drawing.Point(204, 3);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(198, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(195, 20);
             this.dateTimePicker1.TabIndex = 10;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(3, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(198, 20);
+            this.textBox1.Size = new System.Drawing.Size(195, 20);
             this.textBox1.TabIndex = 9;
+            this.textBox1.Text = "Nome";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(615, 46);
+            this.textBox5.Location = new System.Drawing.Point(606, 32);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(198, 20);
+            this.textBox5.Size = new System.Drawing.Size(195, 20);
             this.textBox5.TabIndex = 16;
+            this.textBox5.Text = "Commessa";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(411, 46);
+            this.textBox4.Location = new System.Drawing.Point(405, 32);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(198, 20);
+            this.textBox4.Size = new System.Drawing.Size(195, 20);
             this.textBox4.TabIndex = 15;
+            this.textBox4.Text = "Descrizione";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(207, 46);
+            this.comboBox1.Location = new System.Drawing.Point(204, 32);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(198, 21);
+            this.comboBox1.Size = new System.Drawing.Size(195, 21);
             this.comboBox1.TabIndex = 14;
+            this.comboBox1.Text = "Tipologia";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(3, 46);
+            this.textBox3.Location = new System.Drawing.Point(3, 32);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(198, 20);
+            this.textBox3.Size = new System.Drawing.Size(195, 20);
             this.textBox3.TabIndex = 13;
+            this.textBox3.Text = "NumeroCommessa";
             // 
             // InserimentoMacroLavorazione
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1033, 93);
+            this.ClientSize = new System.Drawing.Size(1011, 73);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InserimentoMacroLavorazione";
-            this.Text = "Inserimento Macro Lavorazione";
-            this.Load += new System.EventHandler(this.InserimentoMacroLavorazione_Load);
+            this.Text = "InserimentoMacroLavorazioni";
+            this.Load += new System.EventHandler(this.InserimentoMacroLavorazioni_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
