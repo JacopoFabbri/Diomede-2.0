@@ -107,5 +107,10 @@ namespace Diomede2
                 MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

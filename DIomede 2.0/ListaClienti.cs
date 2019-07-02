@@ -159,5 +159,10 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaClienti();
             dataGridView1.Columns[0].Visible = false;
         }
+
+        private void FiltroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
