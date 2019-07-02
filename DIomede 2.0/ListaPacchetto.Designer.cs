@@ -36,8 +36,8 @@
             this.aggiornaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aggiungiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.selezionaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestioneToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.selezionaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -77,7 +77,9 @@
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.operazioniToolStripMenuItem});
+            this.operazioniToolStripMenuItem,
+            this.gestioneToolStripMenuItem1,
+            this.selezionaToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(904, 27);
@@ -89,19 +91,17 @@
             this.operazioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aggiornaToolStripMenuItem,
             this.aggiungiToolStripMenuItem,
-            this.eliminaToolStripMenuItem,
-            this.gestioneToolStripMenuItem,
-            this.selezionaToolStripMenuItem});
+            this.eliminaToolStripMenuItem});
             this.operazioniToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_servizi_48;
             this.operazioniToolStripMenuItem.Name = "operazioniToolStripMenuItem";
-            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(103, 23);
-            this.operazioniToolStripMenuItem.Text = "Operazioni";
+            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(60, 23);
+            this.operazioniToolStripMenuItem.Text = "Edit";
             // 
             // aggiornaToolStripMenuItem
             // 
             this.aggiornaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_sincronizzare_48;
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
-            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
             this.aggiornaToolStripMenuItem.Click += new System.EventHandler(this.AggiornaToolStripMenuItem_Click);
             // 
@@ -109,7 +109,7 @@
             // 
             this.aggiungiToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_più_48;
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
-            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.aggiungiToolStripMenuItem.Text = "Aggiungi";
             this.aggiungiToolStripMenuItem.Click += new System.EventHandler(this.AggiungiToolStripMenuItem_Click);
             // 
@@ -117,25 +117,25 @@
             // 
             this.eliminaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_cestino_48;
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
-            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.eliminaToolStripMenuItem.Text = "Elimina";
             this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.EliminaToolStripMenuItem_Click);
             // 
-            // gestioneToolStripMenuItem
+            // gestioneToolStripMenuItem1
             // 
-            this.gestioneToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_gestione_sviluppo_commerciale_48;
-            this.gestioneToolStripMenuItem.Name = "gestioneToolStripMenuItem";
-            this.gestioneToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
-            this.gestioneToolStripMenuItem.Text = "Gestione";
-            this.gestioneToolStripMenuItem.Click += new System.EventHandler(this.GestioneToolStripMenuItem_Click);
+            this.gestioneToolStripMenuItem1.Image = global::Diomede2.Properties.Resources.icons8_gestione_sviluppo_commerciale_48;
+            this.gestioneToolStripMenuItem1.Name = "gestioneToolStripMenuItem1";
+            this.gestioneToolStripMenuItem1.Size = new System.Drawing.Size(91, 23);
+            this.gestioneToolStripMenuItem1.Text = "Gestione";
+            this.gestioneToolStripMenuItem1.Click += new System.EventHandler(this.GestioneToolStripMenuItem1_Click);
             // 
-            // selezionaToolStripMenuItem
+            // selezionaToolStripMenuItem1
             // 
-            this.selezionaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_casella_di_controllo_selezionata_48;
-            this.selezionaToolStripMenuItem.Name = "selezionaToolStripMenuItem";
-            this.selezionaToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
-            this.selezionaToolStripMenuItem.Text = "Seleziona";
-            this.selezionaToolStripMenuItem.Click += new System.EventHandler(this.SelezionaToolStripMenuItem_Click);
+            this.selezionaToolStripMenuItem1.Image = global::Diomede2.Properties.Resources.icons8_casella_di_controllo_selezionata_48;
+            this.selezionaToolStripMenuItem1.Name = "selezionaToolStripMenuItem1";
+            this.selezionaToolStripMenuItem1.Size = new System.Drawing.Size(93, 23);
+            this.selezionaToolStripMenuItem1.Text = "Seleziona";
+            this.selezionaToolStripMenuItem1.Click += new System.EventHandler(this.SelezionaToolStripMenuItem1_Click);
             // 
             // ListaPacchetto
             // 
@@ -168,7 +168,7 @@
         private System.Windows.Forms.ToolStripMenuItem aggiornaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aggiungiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestioneToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem selezionaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestioneToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem selezionaToolStripMenuItem1;
     }
 }

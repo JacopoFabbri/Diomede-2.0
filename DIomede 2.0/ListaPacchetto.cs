@@ -189,7 +189,7 @@ namespace Diomede2
             dataGridView1.Columns[0].Visible = false;
         }
 
-        private void GestioneToolStripMenuItem_Click(object sender, EventArgs e)
+        private void GestioneToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -206,7 +206,7 @@ namespace Diomede2
             }
         }
 
-        private void SelezionaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SelezionaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows != null)
             {

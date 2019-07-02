@@ -56,6 +56,26 @@ namespace Diomede2
         }
         private void Button1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AggiornaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
             {
                 if (riga.Cells[0].Value != null)
@@ -79,7 +99,13 @@ namespace Diomede2
 
         }
 
-        private void Button3_Click(object sender, EventArgs e)
+        private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InserimentoRuolo frm = new InserimentoRuolo(db, c);
+            frm.Show();
+        }
+
+        private void EliminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows != null)
             {
@@ -100,17 +126,5 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaRuolo();
             dataGridView1.Columns[0].Visible = false;
         }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            InserimentoRuolo frm = new InserimentoRuolo(db, c);
-            frm.Show();
-        }
-
-        private void Button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
