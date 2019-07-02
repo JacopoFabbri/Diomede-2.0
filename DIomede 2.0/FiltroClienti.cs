@@ -53,63 +53,171 @@ namespace Diomede2
             {
                 foreach(Cliente c in lista)
                 {
-                    comboBox2.Items.Add(c.Nome);
+                    Boolean flag = true;
+                    foreach (Object o in comboBox2.Items)
+                    {
+                        if (c.Nome.Equals(o.ToString()))
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag)
+                    {
+                        comboBox2.Items.Add(c.Nome);
+                    }
                 }
             }
             else if (comboBox1.SelectedItem.Equals("INDIRIZZO"))
             {
                 foreach (Cliente c in lista)
                 {
-                    comboBox2.Items.Add(c.Indirizzo);
+                    Boolean flag = true;
+                    foreach (Object o in comboBox2.Items)
+                    {
+                        if (c.Indirizzo.Equals(o.ToString()))
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag)
+                    {
+                        comboBox2.Items.Add(c.Indirizzo);
+                    }
                 }
             }
             else if (comboBox1.SelectedItem.Equals("CAP"))
             {
                 foreach (Cliente c in lista)
                 {
-                    comboBox2.Items.Add(c.Cap);
+                    Boolean flag = true;
+                    foreach (Object o in comboBox2.Items)
+                    {
+                        if (c.Cap.Equals(o.ToString()))
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag)
+                    {
+                        comboBox2.Items.Add(c.Cap);
+                    }
                 }
             }
             else if (comboBox1.SelectedItem.Equals("CITTA"))
             {
                 foreach (Cliente c in lista)
                 {
-                    comboBox2.Items.Add(c.Citta);
+                    Boolean flag = true;
+                    foreach (Object o in comboBox2.Items)
+                    {
+                        if (c.Citta.Equals(o.ToString()))
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag)
+                    {
+                        comboBox2.Items.Add(c.Citta);
+                    }
                 }
             }
             else if (comboBox1.SelectedItem.Equals("PEC"))
             {
                 foreach (Cliente c in lista)
                 {
-                    comboBox2.Items.Add(c.Pec);
+                    Boolean flag = true;
+                    foreach (Object o in comboBox2.Items)
+                    {
+                        if (c.Pec.Equals(o.ToString()))
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag)
+                    {
+                        comboBox2.Items.Add(c.Pec);
+                    }
                 }
             }
             else if (comboBox1.SelectedItem.Equals("EMAIL"))
             {
                 foreach (Cliente c in lista)
                 {
-                    comboBox2.Items.Add(c.Email);
+                    Boolean flag = true;
+                    foreach (Object o in comboBox2.Items)
+                    {
+                        if (c.Email.Equals(o.ToString()))
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag)
+                    {
+                        comboBox2.Items.Add(c.Email);
+                    }
                 }
             }
             else if (comboBox1.SelectedItem.Equals("PARTITAIVA"))
             {
                 foreach (Cliente c in lista)
                 {
-                    comboBox2.Items.Add(c.Iva);
+                    Boolean flag = true;
+                    foreach (Object o in comboBox2.Items)
+                    {
+                        if (c.Iva.Equals(o.ToString()))
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag)
+                    {
+                        comboBox2.Items.Add(c.Iva);
+                    }
                 }
             }
             else if (comboBox1.SelectedItem.Equals("TELEFONOFISSO"))
             {
                 foreach (Cliente c in lista)
                 {
-                    comboBox2.Items.Add(c.Tel);
+                    Boolean flag = true;
+                    foreach (Object o in comboBox2.Items)
+                    {
+                        if (c.Tel.Equals(o.ToString()))
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag)
+                    {
+                        comboBox2.Items.Add(c.Tel);
+                    }
                 }
             }
             else if (comboBox1.SelectedItem.Equals("SDI"))
             {
                 foreach (Cliente c in lista)
                 {
-                    comboBox2.Items.Add(c.Sdi);
+                    Boolean flag = true;
+                    foreach (Object o in comboBox2.Items)
+                    {
+                        if (c.Sdi.Equals(o.ToString()))
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag)
+                    {
+                        comboBox2.Items.Add(c.Sdi);
+                    }
                 }
             }
         }
