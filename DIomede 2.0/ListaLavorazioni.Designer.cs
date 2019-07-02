@@ -86,28 +86,32 @@
             this.aggiornaToolStripMenuItem,
             this.aggiungiToolStripMenuItem,
             this.eliminaToolStripMenuItem});
+            this.operazioniToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_servizi_48;
             this.operazioniToolStripMenuItem.Name = "operazioniToolStripMenuItem";
-            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.operazioniToolStripMenuItem.Text = "Operazioni";
             // 
             // aggiornaToolStripMenuItem
             // 
+            this.aggiornaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_sincronizzare_48;
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
-            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
             this.aggiornaToolStripMenuItem.Click += new System.EventHandler(this.AggiornaToolStripMenuItem_Click);
             // 
             // aggiungiToolStripMenuItem
             // 
+            this.aggiungiToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_più_48;
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
-            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aggiungiToolStripMenuItem.Text = "Aggiungi";
             this.aggiungiToolStripMenuItem.Click += new System.EventHandler(this.AggiungiToolStripMenuItem_Click);
             // 
             // eliminaToolStripMenuItem
             // 
+            this.eliminaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_cestino_48;
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
-            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminaToolStripMenuItem.Text = "Elimina";
             this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.EliminaToolStripMenuItem_Click);
             // 

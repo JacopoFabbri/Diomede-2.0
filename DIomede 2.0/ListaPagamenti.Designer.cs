@@ -53,7 +53,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 449F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(900, 449);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
@@ -86,12 +86,14 @@
             this.operazioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aggiornaToolStripMenuItem,
             this.eliminaToolStripMenuItem});
+            this.operazioniToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_servizi_48;
             this.operazioniToolStripMenuItem.Name = "operazioniToolStripMenuItem";
-            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.operazioniToolStripMenuItem.Text = "Operazioni";
             // 
             // aggiornaToolStripMenuItem
             // 
+            this.aggiornaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_sincronizzare_48;
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
             this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
@@ -99,6 +101,7 @@
             // 
             // eliminaToolStripMenuItem
             // 
+            this.eliminaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_cestino_48;
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
             this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminaToolStripMenuItem.Text = "Elimina";

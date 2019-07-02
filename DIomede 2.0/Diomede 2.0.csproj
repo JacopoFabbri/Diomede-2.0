@@ -354,6 +354,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LOGO DEFINITIVO.ico" />
+    <None Include="Resources\icons8-casella-di-controllo-selezionata-48.png" />
+    <None Include="Resources\icons8-gestione-sviluppo-commerciale-48.png" />
+    <None Include="Resources\icons8-sacco-dei-soldi-16.png" />
+    <None Include="Resources\icons8-servizi-48.png" />
+    <None Include="Resources\icons8-cestino-48.png" />
+    <None Include="Resources\icons8-sincronizzare-48.png" />
+    <None Include="Resources\icons8-più-48.png" />
+    <None Include="Resources\icons8-aggiungere-il-contatto-alla-società-481.png" />
+    <None Include="Resources\icons8-eliminare-48.png" />
+    <None Include="Resources\21846246-botón-de-icono-de-papelera-rojo-web.png" />
+    <None Include="Resources\icons8-aggiungere-il-contatto-alla-società-48.png" />
     <None Include="Resources\depositphotos_136096742-stock-illustration-dollar-banknote-icon-illustration-isolated.jpg" />
     <None Include="Resources\images.jpg" />
     <None Include="Resources\freccia-giu-in-basso-ios-simbolo-7-interfaccia_318-34332.jpg" />

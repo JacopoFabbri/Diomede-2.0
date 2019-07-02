@@ -73,6 +73,16 @@ namespace Diomede2.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _21846246_botón_de_icono_de_papelera_rojo_web {
+            get {
+                object obj = ResourceManager.GetObject("21846246-botón-de-icono-de-papelera-rojo-web", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _39220 {
             get {
                 object obj = ResourceManager.GetObject("39220", resourceCulture);
@@ -107,6 +117,106 @@ namespace Diomede2.Properties {
         internal static System.Drawing.Bitmap freccia_giu_in_basso_ios_simbolo_7_interfaccia_318_34332 {
             get {
                 object obj = ResourceManager.GetObject("freccia-giu-in-basso-ios-simbolo-7-interfaccia_318-34332", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_aggiungere_il_contatto_alla_società_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-aggiungere-il-contatto-alla-società-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_aggiungere_il_contatto_alla_società_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-aggiungere-il-contatto-alla-società-481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_casella_di_controllo_selezionata_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-casella-di-controllo-selezionata-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cestino_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cestino-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_eliminare_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-eliminare-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_gestione_sviluppo_commerciale_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-gestione-sviluppo-commerciale-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_più_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-più-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sacco_dei_soldi_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sacco-dei-soldi-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_servizi_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-servizi-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sincronizzare_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sincronizzare-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
