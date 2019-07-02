@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.listView1 = new System.Windows.Forms.ListView();
             this.listView2 = new System.Windows.Forms.ListView();
@@ -66,12 +67,13 @@
             this.listaPagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView3 = new System.Windows.Forms.ListView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(12, 30);
+            this.listView1.Location = new System.Drawing.Point(12, 27);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(131, 389);
             this.listView1.TabIndex = 1;
@@ -82,7 +84,7 @@
             // 
             // listView2
             // 
-            this.listView2.Location = new System.Drawing.Point(151, 30);
+            this.listView2.Location = new System.Drawing.Point(151, 27);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(131, 389);
             this.listView2.TabIndex = 3;
@@ -93,6 +95,11 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.gestioneBozzeToolStripMenuItem,
@@ -100,9 +107,11 @@
             this.gestioneCommesseToolStripMenuItem,
             this.gestioneEconomicaToolStripMenuItem,
             this.exitToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
+            this.menuStrip1.Location = new System.Drawing.Point(597, 258);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(769, 27);
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip1.Size = new System.Drawing.Size(163, 161);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -378,7 +387,7 @@
             // 
             // listView3
             // 
-            this.listView3.Location = new System.Drawing.Point(288, 30);
+            this.listView3.Location = new System.Drawing.Point(288, 27);
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(131, 389);
             this.listView3.TabIndex = 10;
@@ -390,7 +399,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(769, 428);
             this.Controls.Add(this.listView3);
             this.Controls.Add(this.listView2);
@@ -447,5 +455,6 @@
         private System.Windows.Forms.ToolStripMenuItem mostraListaCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nascondiListaCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Timer timer1;
     }
 }

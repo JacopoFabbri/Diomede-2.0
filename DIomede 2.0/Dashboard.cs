@@ -195,5 +195,11 @@ namespace Diomede2
         {
             Application.Exit();
         }
+
+        private void MenuStrip1_Click(object sender, EventArgs e)
+        {
+            Secret s = new Secret();
+            s.Show();
+        }
     }
 }
