@@ -22,10 +22,40 @@ namespace Diomede2
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            InserimentoTipologiaMacrolavorazione iL = new InserimentoTipologiaMacrolavorazione(db);
-            iL.Show();
+
         }
         private void Button1_Click(object sender, EventArgs e)
+        {
+           
+        }
+        private void TIpologieMacrolavorazioni_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                op = new OperazionePraticheEdili(db);
+                dataGridView1.DataSource = op.CercaTipologiaMacroLavorazione();
+                dataGridView1.Columns[0].Visible = false;
+
+            }
+            catch
+            {
+                MessageBox.Show("Impossibile accedere a quest'area !!!");
+                Application.Exit();
+            }
+        }
+        private void Button3_Click(object sender, EventArgs e)
+        {
+           
+        }
+        private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
+            {
+                cella.Style.ForeColor = Color.Red;
+            }
+        }
+
+        private void AggiornaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
             {
@@ -48,22 +78,14 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaTipologiaMacroLavorazione();
             dataGridView1.Columns[0].Visible = false;
         }
-        private void TIpologieMacrolavorazioni_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                op = new OperazionePraticheEdili(db);
-                dataGridView1.DataSource = op.CercaTipologiaMacroLavorazione();
-                dataGridView1.Columns[0].Visible = false;
 
-            }
-            catch
-            {
-                MessageBox.Show("Impossibile accedere a quest'area !!!");
-                Application.Exit();
-            }
+        private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InserimentoTipologiaMacrolavorazione iL = new InserimentoTipologiaMacrolavorazione(db);
+            iL.Show();
         }
-        private void Button3_Click(object sender, EventArgs e)
+
+        private void EliminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -79,16 +101,10 @@ namespace Diomede2
                 }
                 dataGridView1.DataSource = op.CercaTipologiaMacroLavorazione();
                 dataGridView1.Columns[0].Visible = false;
-            }catch
+            }
+            catch
             {
                 MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
-            {
-                cella.Style.ForeColor = Color.Red;
             }
         }
     }
