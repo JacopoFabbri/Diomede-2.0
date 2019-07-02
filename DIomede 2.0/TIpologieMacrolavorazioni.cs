@@ -91,5 +91,10 @@ namespace Diomede2
                 cella.Style.ForeColor = Color.Red;
             }
         }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
