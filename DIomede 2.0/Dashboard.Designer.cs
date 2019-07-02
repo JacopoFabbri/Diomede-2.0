@@ -111,8 +111,9 @@
             this.gestioneBozzeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aggiungiToolStripMenuItem,
             this.pacchettoToolStripMenuItem});
+            this.gestioneBozzeToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_modifica_file_48;
             this.gestioneBozzeToolStripMenuItem.Name = "gestioneBozzeToolStripMenuItem";
-            this.gestioneBozzeToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.gestioneBozzeToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
             this.gestioneBozzeToolStripMenuItem.Text = "Gestione Bozze";
             // 
             // aggiungiToolStripMenuItem
@@ -124,7 +125,7 @@
             this.nascondiListaBozzeToolStripMenuItem});
             this.aggiungiToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
-            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aggiungiToolStripMenuItem.Text = "Bozze";
             // 
             // listaBozzeToolStripMenuItem
@@ -161,7 +162,7 @@
             this.listaPacchettoToolStripMenuItem,
             this.inserisciPacchettoToolStripMenuItem});
             this.pacchettoToolStripMenuItem.Name = "pacchettoToolStripMenuItem";
-            this.pacchettoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.pacchettoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pacchettoToolStripMenuItem.Text = "Pacchetto";
             // 
             // listaPacchettoToolStripMenuItem
