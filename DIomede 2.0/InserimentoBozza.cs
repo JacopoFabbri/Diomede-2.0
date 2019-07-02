@@ -43,13 +43,21 @@ namespace Diomede2
         {
             try
             {
+                OperazioneAmministrazione op1 = new OperazioneAmministrazione("Amministrazione");
+                Cliente c = lista[comboBox1.SelectedIndex];
+                List<ClienteAmministrazione> listaAmministrazione = op1.FiltraCliente("NOME", c.Nome);
+                if (listaAmministrazione.Count <=  0)
+                    op1.InserimentoCliente(c.Nome, c.Tel, c.Email, c.Iva, c.Sdi);
+                List<ClienteAmministrazione> listaCliente = op1.CercaCliente();
+                String commessa  = op1.GeneraCommessa("PE", listaCliente[listaCliente.Count - 1], "PraticheEdili");
 
-                op.InserimentoBozza(dateTimePicker1.Value, textBox2.Text, Double.Parse(textBox3.Text), textBox4.Text, lista[comboBox1.SelectedIndex].Id, false);
+                op.InserimentoBozza(dateTimePicker1.Value, textBox2.Text, Double.Parse(textBox3.Text), commessa, lista[comboBox1.SelectedIndex].Id, false);
                 MessageBox.Show("Bozza Inserita", "Inserita:", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
-            catch
+            catch (Exception ex)
             {
+
                 MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati");
             }
         }

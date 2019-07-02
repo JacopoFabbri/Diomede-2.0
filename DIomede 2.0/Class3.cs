@@ -71,7 +71,7 @@ namespace Diomede2
             }
             return contatto;
         }
-        public List<CommessaAmministrazione> FiltraPagamento(String s, String g)
+        public List<CommessaAmministrazione> FiltraCommessa(String s, String g)
         {
             List<CommessaAmministrazione> contatto;
             try
@@ -110,12 +110,12 @@ namespace Diomede2
             }
         }
 
-        public void InserimentoCliente(String nome, String desc, String tel, String email, String partitaIva, String sdi)
+        public void InserimentoCliente(String nome, String tel, String email, String partitaIva, String sdi)
         {
             try
             {
                 ClienteAmministrazioneDB bDB = new ClienteAmministrazioneDB(conn);
-                bDB.Inserimento(nome, desc, tel, email, partitaIva, sdi);
+                bDB.Inserimento(nome, tel, email, partitaIva, sdi);
             }
             catch (Exception e)
             {
@@ -178,12 +178,12 @@ namespace Diomede2
             }
             return contatto;
         }
-        public void UpdateCliente(int id, String nome, String desc, String tel, String email, String partitaIva, String sdi)
+        public void UpdateCliente(int id, String nome, String tel, String email, String partitaIva, String sdi)
         {
             try
             {
                 ClienteAmministrazioneDB bDB = new ClienteAmministrazioneDB(conn);
-                bDB.AggiornaCliente(id, nome, desc, tel, email, partitaIva, sdi);
+                bDB.AggiornaCliente(id, nome, tel, email, partitaIva, sdi);
             }
             catch (Exception e)
             {
@@ -203,6 +203,33 @@ namespace Diomede2
             }
         }
 
+        public String GeneraCommessa(String s, ClienteAmministrazione c, String settore)
+        {
+            try
+            {
+                String commessa;
+                int anno = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
+                List<CommessaAmministrazione> lista = FiltraCommessa("ANNO","" + anno);
+                if (lista.Count > 0)
+                {
+                    InserimentoCommessa(lista[lista.Count - 1].Numero + 1, anno, s, "" +( lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore);
+
+                    commessa = "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s;
+                }
+                else
+                {
+                    InserimentoCommessa(1, anno, s, "" + 1 + "/" + anno + "/" + s, c.Id, settore);
+                    commessa = "" + 1 + "/" + anno + "/" + s;
+                }
+                return commessa;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+
+
+        }
 
 
     }
@@ -423,12 +450,12 @@ namespace Diomede2
         {
             con = conn;
         }
-        public void Inserimento(String nome, String desc, String tel, String email, String partitaIva, String sdi)
+        public void Inserimento(String nome, String tel, String email, String partitaIva, String sdi)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `CLIENTI`( `NOME`, `DESCRIZIONE`, `TEL`, `EMAIL`, `PARTITAIVA`, `SDI`) VALUES('" + nome + "','" + desc + "','" + tel + "','" + email + "','" + partitaIva + "','" + sdi + "')", con);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `CLIENTI`( `NOME`, `TEL`, `EMAIL`, `PARTITAIVA`, `SDI`) VALUES('" + nome + "','" + tel + "','" + email + "','" + partitaIva + "','" + sdi + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -447,7 +474,7 @@ namespace Diomede2
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `CLIENTE`", con);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `CLIENTI`", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
@@ -456,11 +483,10 @@ namespace Diomede2
                     {
                         Id = (Int32)lettore[0],
                         Nome = "" + lettore[1],
-                        Desc = "" + lettore[2],
-                        Tel = "" + lettore[3],
-                        Email = "" + lettore[4],
-                        PartitaIva = "" + lettore[5],
-                        Sdi = "" + lettore[6]
+                        Tel = "" + lettore[2],
+                        Email = "" + lettore[3],
+                        PartitaIva = "" + lettore[4],
+                        Sdi = "" + lettore[5]
 
                     };
 
@@ -484,7 +510,7 @@ namespace Diomede2
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `CLIENTE` WHERE `ID` = '" + n + "'", con);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `CLIENTI` WHERE `ID` = '" + n + "'", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
@@ -493,11 +519,10 @@ namespace Diomede2
                     {
                         Id = (Int32)lettore[0],
                         Nome = "" + lettore[1],
-                        Desc = "" + lettore[2],
-                        Tel = "" + lettore[3],
-                        Email = "" + lettore[4],
-                        PartitaIva = "" + lettore[5],
-                        Sdi = "" + lettore[6]
+                        Tel = "" + lettore[2],
+                        Email = "" + lettore[3],
+                        PartitaIva = "" + lettore[4],
+                        Sdi = "" + lettore[5]
 
                     };
 
@@ -521,7 +546,7 @@ namespace Diomede2
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `CLIENTE` WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `CLIENTI` WHERE `ID` = '" + id + "'", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
@@ -530,11 +555,10 @@ namespace Diomede2
                     {
                         Id = (Int32)lettore[0],
                         Nome = "" + lettore[1],
-                        Desc = "" + lettore[2],
-                        Tel = "" + lettore[3],
-                        Email = "" + lettore[4],
-                        PartitaIva = "" + lettore[5],
-                        Sdi = "" + lettore[6]
+                        Tel = "" + lettore[2],
+                        Email = "" + lettore[3],
+                        PartitaIva = "" + lettore[4],
+                        Sdi = "" + lettore[5]
 
                     };
 
@@ -558,7 +582,7 @@ namespace Diomede2
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `CLIENTE` WHERE `" + s + "` = '" + g + "'", con);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `CLIENTI` WHERE `" + s + "` = '" + g + "'", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
@@ -567,11 +591,10 @@ namespace Diomede2
                     {
                         Id = (Int32)lettore[0],
                         Nome = "" + lettore[1],
-                        Desc = "" + lettore[2],
-                        Tel = "" + lettore[3],
-                        Email = "" + lettore[4],
-                        PartitaIva = "" + lettore[5],
-                        Sdi = "" + lettore[6]
+                        Tel = "" + lettore[2],
+                        Email = "" + lettore[3],
+                        PartitaIva = "" + lettore[4],
+                        Sdi = "" + lettore[5]
 
                     };
 
@@ -588,12 +611,12 @@ namespace Diomede2
             }
             return lavorazione;
         }
-        public void AggiornaCliente(int id, String nome, String desc, String tel, String email, String partitaIva, String sdi)
+        public void AggiornaCliente(int id, String nome,String tel, String email, String partitaIva, String sdi)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("UPDATE `CLIENTE` SET `NOME`='" + nome + "',`DESCRIZIONE`='" + desc + "',`TEL`='" + tel + "',`EMAIL`='" + email + "',`PARTITAIVA`='" + partitaIva + "',`SDI`='" + sdi + "' WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command = new MySqlCommand("UPDATE `CLIENTE` SET `NOME`='" + nome + "',`TEL`='" + tel + "',`EMAIL`='" + email + "',`PARTITAIVA`='" + partitaIva + "',`SDI`='" + sdi + "' WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -628,7 +651,6 @@ namespace Diomede2
     {
         private int id;
         private String nome;
-        private String desc;
         private String tel;
         private String email;
         private String partitaIva;
@@ -636,7 +658,6 @@ namespace Diomede2
 
         public int Id { get => id; set => id = value; }
         public string Nome { get => nome; set => nome = value; }
-        public string Desc { get => desc; set => desc = value; }
         public string Tel { get => tel; set => tel = value; }
         public string Email { get => email; set => email = value; }
         public string PartitaIva { get => partitaIva; set => partitaIva = value; }
