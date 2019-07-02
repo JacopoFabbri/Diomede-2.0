@@ -132,7 +132,7 @@ namespace Diomede2
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 5)
+            if(e.ColumnIndex == 6)
             {
                 foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
                 {
