@@ -83,3 +83,4 @@ C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Visualizzatore
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.ModificaPassword.resources
 C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.ModificaPassword.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.FiltroClienti.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.FiltroBozze.resources

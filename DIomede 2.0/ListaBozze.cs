@@ -140,5 +140,11 @@ namespace Diomede2
                 }
             }
         }
+
+        private void FiltraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FiltroBozze f = new FiltroBozze(dataGridView1, db);
+            f.Show();
+        }
     }
 }

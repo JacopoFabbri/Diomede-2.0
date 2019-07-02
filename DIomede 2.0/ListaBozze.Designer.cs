@@ -36,6 +36,7 @@
             this.aggiornaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aggiungiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filtraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -73,7 +74,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.operazioniToolStripMenuItem});
+            this.operazioniToolStripMenuItem,
+            this.filtraToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(906, 27);
@@ -96,7 +98,7 @@
             // 
             this.aggiornaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_sincronizzare_48;
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
-            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
             this.aggiornaToolStripMenuItem.Click += new System.EventHandler(this.AggiornaToolStripMenuItem_Click);
             // 
@@ -104,7 +106,7 @@
             // 
             this.aggiungiToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_più_48;
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
-            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.aggiungiToolStripMenuItem.Text = "Aggiungi";
             this.aggiungiToolStripMenuItem.Click += new System.EventHandler(this.AggiungiToolStripMenuItem_Click);
             // 
@@ -112,9 +114,16 @@
             // 
             this.eliminaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_cestino_48;
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
-            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.eliminaToolStripMenuItem.Text = "Elimina";
             this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.EliminaToolStripMenuItem_Click);
+            // 
+            // filtraToolStripMenuItem
+            // 
+            this.filtraToolStripMenuItem.Name = "filtraToolStripMenuItem";
+            this.filtraToolStripMenuItem.Size = new System.Drawing.Size(45, 23);
+            this.filtraToolStripMenuItem.Text = "Filtra";
+            this.filtraToolStripMenuItem.Click += new System.EventHandler(this.FiltraToolStripMenuItem_Click);
             // 
             // ListaBozze
             // 
@@ -147,5 +156,6 @@
         private System.Windows.Forms.ToolStripMenuItem aggiornaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aggiungiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filtraToolStripMenuItem;
     }
 }

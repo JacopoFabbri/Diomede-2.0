@@ -83,6 +83,12 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Class2.cs" />
     <Compile Include="Class3.cs" />
+    <Compile Include="FiltroBozze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiltroBozze.Designer.cs">
+      <DependentUpon>FiltroBozze.cs</DependentUpon>
+    </Compile>
     <Compile Include="FiltroClienti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     <Compile Include="VisualizzatoreMacrolavorazioni.Designer.cs">
       <DependentUpon>VisualizzatoreMacrolavorazioni.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FiltroBozze.resx">
+      <DependentUpon>FiltroBozze.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FiltroClienti.resx">
       <DependentUpon>FiltroClienti.cs</DependentUpon>
     </EmbeddedResource>
