@@ -85,12 +85,14 @@
             this.aggiornaToolStripMenuItem,
             this.aggiungiToolStripMenuItem,
             this.eliminaToolStripMenuItem});
+            this.operazioniToolStripMenuItem.Image = global::Diomede2.Properties.Resources._21276;
             this.operazioniToolStripMenuItem.Name = "operazioniToolStripMenuItem";
-            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.operazioniToolStripMenuItem.Text = "Operazioni";
             // 
             // aggiornaToolStripMenuItem
             // 
+            this.aggiornaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.images;
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
             this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
@@ -98,6 +100,7 @@
             // 
             // aggiungiToolStripMenuItem
             // 
+            this.aggiungiToolStripMenuItem.Image = global::Diomede2.Properties.Resources._52300;
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
             this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aggiungiToolStripMenuItem.Text = "Aggiungi";
@@ -105,6 +108,7 @@
             // 
             // eliminaToolStripMenuItem
             // 
+            this.eliminaToolStripMenuItem.Image = global::Diomede2.Properties.Resources._39220;
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
             this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminaToolStripMenuItem.Text = "Elimina";

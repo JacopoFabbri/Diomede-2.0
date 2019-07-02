@@ -85,12 +85,14 @@
             this.aggiornaToolStripMenuItem,
             this.aggiungiToolStripMenuItem,
             this.eliminaToolStripMenuItem});
+            this.operazioniToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("operazioniToolStripMenuItem.Image")));
             this.operazioniToolStripMenuItem.Name = "operazioniToolStripMenuItem";
-            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.operazioniToolStripMenuItem.Text = "Operazioni";
             // 
             // aggiornaToolStripMenuItem
             // 
+            this.aggiornaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aggiornaToolStripMenuItem.Image")));
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
             this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
@@ -98,6 +100,7 @@
             // 
             // aggiungiToolStripMenuItem
             // 
+            this.aggiungiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aggiungiToolStripMenuItem.Image")));
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
             this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aggiungiToolStripMenuItem.Text = "Aggiungi";
@@ -105,6 +108,7 @@
             // 
             // eliminaToolStripMenuItem
             // 
+            this.eliminaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("eliminaToolStripMenuItem.Image")));
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
             this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminaToolStripMenuItem.Text = "Elimina";

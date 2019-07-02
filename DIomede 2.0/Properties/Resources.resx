@@ -121,4 +121,19 @@
   <data name="LOGO DEFINITIVO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\LOGO DEFINITIVO.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="21276" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\21276.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="39220" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\39220.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="52300" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\52300.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="freccia-giu-in-basso-ios-simbolo-7-interfaccia_318-34332" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\freccia-giu-in-basso-ios-simbolo-7-interfaccia_318-34332.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

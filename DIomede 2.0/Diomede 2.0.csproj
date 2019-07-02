@@ -354,6 +354,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LOGO DEFINITIVO.ico" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\freccia-giu-in-basso-ios-simbolo-7-interfaccia_318-34332.jpg" />
+    <None Include="Resources\52300.png" />
+    <None Include="Resources\39220.png" />
+    <None Include="Resources\21276.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
