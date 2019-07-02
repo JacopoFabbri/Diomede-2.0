@@ -63,13 +63,6 @@ namespace Diomede2
             dataGridView1.Focus();
         }
 
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            InserimentoContatto frm = new InserimentoContatto(cliente, db);
-            frm.Show();
-        }
-
         private void Form7_FormClosed(object sender, FormClosedEventArgs e)
         {
             formPrecente.Show();
@@ -77,23 +70,7 @@ namespace Diomede2
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows != null)
-            {
-                if (MessageBox.Show("Stai per eliminare " + (String)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?", "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
-                {
-                    try
-                    {
-                        Contatto clienti = op.CercaContattoId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
-                        op.CacellaContatto((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
-                        MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            Form7_Load(sender, e);
+           
         }
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -103,8 +80,17 @@ namespace Diomede2
             }
         }
 
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 11)
+            {
+                Ruolo r = op.CercaRuoloId((int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+                visualizzatore v = new visualizzatore(r.Nome);
+                v.Show();
+            }
+        }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void AggiornaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
             {
@@ -129,15 +115,31 @@ namespace Diomede2
 
         }
 
-
-        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (e.ColumnIndex == 11)
+            InserimentoContatto frm = new InserimentoContatto(cliente, db);
+            frm.Show();
+        }
+
+        private void EliminaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows != null)
             {
-                Ruolo r = op.CercaRuoloId((int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
-                visualizzatore v = new visualizzatore(r.Nome);
-                v.Show();
+                if (MessageBox.Show("Stai per eliminare " + (String)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?", "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        Contatto clienti = op.CercaContattoId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        op.CacellaContatto((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
+            Form7_Load(sender, e);
         }
     }
 }

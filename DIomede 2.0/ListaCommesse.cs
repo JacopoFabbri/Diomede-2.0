@@ -138,11 +138,6 @@ namespace Diomede2
 
         }
 
-        private void Button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void EliminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
