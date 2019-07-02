@@ -89,8 +89,8 @@
             this.operazioniToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.operazioniToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_servizi_48;
             this.operazioniToolStripMenuItem.Name = "operazioniToolStripMenuItem";
-            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(103, 23);
-            this.operazioniToolStripMenuItem.Text = "Operazioni";
+            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(60, 23);
+            this.operazioniToolStripMenuItem.Text = "Edit";
             // 
             // aggiornaToolStripMenuItem
             // 

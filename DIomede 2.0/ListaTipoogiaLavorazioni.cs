@@ -102,6 +102,57 @@ namespace Diomede2
             }
         }
 
+        private void AggiornaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow riga in dataGridView1.Rows)
+            {
+                if (riga.Cells[0].Value != null)
+                {
+                    if (riga.Cells[0].Style.ForeColor == Color.Red)
+                    {
+                        try
+                        {
+                            op.UpdateTipologiaLavorazione((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["DESCRIZIONE"].Value + "", (double)riga.Cells["PREZZO"].Value, riga.Cells["SCADENZE"].Value + "", (int)riga.Cells["MACROLAVORAZIONE"].Value);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                        }
+                    }
+                }
+            }
+            dataGridView1.DataSource = op.CercaTipologiaLavorazione();
+            dataGridView1.Columns[0].Visible = false;
+        }
+
+        private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InserisciTipologiaLavorazione iL = new InserisciTipologiaLavorazione(db);
+            iL.Show();
+        }
+
+        private void EliminaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedRows != null)
+                {
+                    if (MessageBox.Show("Stai per eliminare " + (String)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?", "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        TipologiaLavorazione clienti = op.CercaTipologiaLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        op.CancellaTipologiaLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        MessageBox.Show("Tipologia Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+                dataGridView1.DataSource = op.CercaTipologiaLavorazione();
+                dataGridView1.Columns[0].Visible = false;
+            }
+            catch
+            {
+                MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
