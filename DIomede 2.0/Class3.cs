@@ -209,10 +209,10 @@ namespace Diomede2
             {
                 String commessa;
                 int anno = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
-                List<CommessaAmministrazione> lista = FiltraCommessa("ANNO","" + anno);
+                List<CommessaAmministrazione> lista = FiltraCommessa("ANNO", "" + anno);
                 if (lista.Count > 0)
                 {
-                    InserimentoCommessa(lista[lista.Count - 1].Numero + 1, anno, s, "" +( lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore, bozza);
+                    InserimentoCommessa(lista[lista.Count - 1].Numero + 1, anno, s, "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore, bozza);
 
                     commessa = "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s;
                 }
@@ -245,8 +245,13 @@ namespace Diomede2
         {
             try
             {
+                MySqlCommand command;
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `COMMESSA`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`, `BOZZA`) VALUES('" + numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" + settoreIntero + "','" + bozza + "')", con);
+                if (bozza)
+                    command = new MySqlCommand("INSERT INTO `COMMESSA`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`, `BOZZA`) VALUES('" + numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" + settoreIntero + "','" + 1 + "')", con);
+                else
+                    command = new MySqlCommand("INSERT INTO `COMMESSA`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`, `BOZZA`) VALUES('" + numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" + settoreIntero + "','" + 0 + "')", con);
+
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -270,18 +275,34 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    CommessaAmministrazione lavorazione = new CommessaAmministrazione
-                    {
-                        Id = (Int32)lettore[0],
-                        Numero = (int)lettore[1],
-                        Anno = (int)lettore[2],
-                        Settore = "" + lettore[3],
-                        Commessa = "" + lettore[4],
-                        Cliente = (int)lettore[5],
-                        SettoreIntero = "" + lettore[6],
-                        Bozza = (Boolean)lettore[7]
 
-                    };
+                    CommessaAmministrazione lavorazione;
+                    if ((int)lettore[7] == 1)
+                        lavorazione = new CommessaAmministrazione
+                        {
+                            Id = (Int32)lettore[0],
+                            Numero = (int)lettore[1],
+                            Anno = (int)lettore[2],
+                            Settore = "" + lettore[3],
+                            Commessa = "" + lettore[4],
+                            Cliente = (int)lettore[5],
+                            SettoreIntero = "" + lettore[6],
+                            Bozza = true
+
+                        };
+                    else
+                        lavorazione = new CommessaAmministrazione
+                        {
+                            Id = (Int32)lettore[0],
+                            Numero = (int)lettore[1],
+                            Anno = (int)lettore[2],
+                            Settore = "" + lettore[3],
+                            Commessa = "" + lettore[4],
+                            Cliente = (int)lettore[5],
+                            SettoreIntero = "" + lettore[6],
+                            Bozza = false
+
+                        };
 
                     lista.Add(lavorazione);
                 }
@@ -308,18 +329,33 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    CommessaAmministrazione lavorazione = new CommessaAmministrazione
-                    {
-                        Id = (Int32)lettore[0],
-                        Numero = (int)lettore[1],
-                        Anno = (int)lettore[2],
-                        Settore = "" + lettore[3],
-                        Commessa = "" + lettore[4],
-                        Cliente = (int)lettore[5],
-                        SettoreIntero = "" + lettore[6],
-                        Bozza = (Boolean)lettore[7]
+                    CommessaAmministrazione lavorazione;
+                    if ((int)lettore[7] == 1)
+                        lavorazione = new CommessaAmministrazione
+                        {
+                            Id = (Int32)lettore[0],
+                            Numero = (int)lettore[1],
+                            Anno = (int)lettore[2],
+                            Settore = "" + lettore[3],
+                            Commessa = "" + lettore[4],
+                            Cliente = (int)lettore[5],
+                            SettoreIntero = "" + lettore[6],
+                            Bozza = true
 
-                    };
+                        };
+                    else
+                        lavorazione = new CommessaAmministrazione
+                        {
+                            Id = (Int32)lettore[0],
+                            Numero = (int)lettore[1],
+                            Anno = (int)lettore[2],
+                            Settore = "" + lettore[3],
+                            Commessa = "" + lettore[4],
+                            Cliente = (int)lettore[5],
+                            SettoreIntero = "" + lettore[6],
+                            Bozza = false
+
+                        };
 
                     lista.Add(lavorazione);
                 }
@@ -346,18 +382,34 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    CommessaAmministrazione l = new CommessaAmministrazione
-                    {
-                        Id = (Int32)lettore[0],
-                        Numero = (int)lettore[1],
-                        Anno = (int)lettore[2],
-                        Settore = "" + lettore[3],
-                        Commessa = "" + lettore[4],
-                        Cliente = (int)lettore[5],
-                        SettoreIntero = "" + lettore[6],
-                        Bozza = (Boolean)lettore[7]
 
-                    };
+                    CommessaAmministrazione l;
+                    if ((int)lettore[7] == 1)
+                        l = new CommessaAmministrazione
+                        {
+                            Id = (Int32)lettore[0],
+                            Numero = (int)lettore[1],
+                            Anno = (int)lettore[2],
+                            Settore = "" + lettore[3],
+                            Commessa = "" + lettore[4],
+                            Cliente = (int)lettore[5],
+                            SettoreIntero = "" + lettore[6],
+                            Bozza = true
+
+                        };
+                    else
+                        l = new CommessaAmministrazione
+                        {
+                            Id = (Int32)lettore[0],
+                            Numero = (int)lettore[1],
+                            Anno = (int)lettore[2],
+                            Settore = "" + lettore[3],
+                            Commessa = "" + lettore[4],
+                            Cliente = (int)lettore[5],
+                            SettoreIntero = "" + lettore[6],
+                            Bozza = false
+
+                        };
 
                     lavorazione = l;
                 }
@@ -615,7 +667,7 @@ namespace Diomede2
             }
             return lavorazione;
         }
-        public void AggiornaCliente(int id, String nome,String tel, String email, String partitaIva, String sdi)
+        public void AggiornaCliente(int id, String nome, String tel, String email, String partitaIva, String sdi)
         {
             try
             {

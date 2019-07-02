@@ -129,5 +129,16 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaBozza();
             dataGridView1.Columns[0].Visible = false;
         }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == 5)
+            {
+                foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
+                {
+                    cella.Style.ForeColor = Color.Red;
+                }
+            }
+        }
     }
 }
