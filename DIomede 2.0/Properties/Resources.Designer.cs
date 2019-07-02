@@ -184,6 +184,16 @@ namespace Diomede2.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_modifica_file_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-modifica-file-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_più_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-più-48", resourceCulture);
