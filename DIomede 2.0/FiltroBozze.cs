@@ -18,6 +18,7 @@ namespace Diomede2
         OperazionePraticheEdili op;
         String db;
         List<Cliente> listaClienti = new List<Cliente>();
+        List<Pacchetto> listaPacchetti = new List<Pacchetto>();
         public FiltroBozze(DataGridView d, String dbName)
         {
             db = dbName;
@@ -49,6 +50,9 @@ namespace Diomede2
             if (comboBox1.SelectedItem.ToString().Equals("CLIENTE"))
             {
                 dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem, "" + listaClienti[comboBox2.SelectedIndex].Id);
+            }else if (comboBox1.SelectedItem.ToString().Equals("PACCHETTO"))
+            {
+                dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem, "" + listaPacchetti[comboBox2.SelectedIndex].Id);
             }
             else
             {
@@ -92,7 +96,8 @@ namespace Diomede2
                     }
                     if (flag)
                     {
-                        comboBox2.Items.Add(c.Pacchetto);
+                        listaPacchetti.Add(op.CercaPacchetto(c.Pacchetto));
+                        comboBox2.Items.Add(op.CercaPacchetto(c.Pacchetto).Nome);
                     }
                 }
             }
