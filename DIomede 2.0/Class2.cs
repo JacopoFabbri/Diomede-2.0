@@ -473,12 +473,12 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        public void InserimentoPacchetto(String nome, String desc)
+        public void InserimentoPacchetto(String nome, String desc, int id)
         {
             try
             {
                 PacchettoDB bDB = new PacchettoDB(conn);
-                bDB.Inserimento(nome, desc);
+                bDB.Inserimento(nome, desc, id);
             }
             catch (Exception e)
             {
@@ -541,12 +541,12 @@ namespace Diomede2
             }
             return contatto;
         }
-        public void UpdatePacchetto(int id, String nome, String desc)
+        public void UpdatePacchetto(int id, String nome, String desc,int tipo)
         {
             try
             {
                 PacchettoDB bDB = new PacchettoDB(conn);
-                bDB.AggiornaPacchetto(id, nome, desc);
+                bDB.AggiornaPacchetto(id, nome, desc, tipo);
             }
             catch (Exception e)
             {
@@ -2813,12 +2813,12 @@ namespace Diomede2
         {
             con = conn;
         }
-        public void Inserimento(String nome, String note)
+        public void Inserimento(String nome, String note, int id)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `PACCHETTO`(`NOME`, `NOTE`) VALUES ('" + nome + "','" + note + "')", con);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `PACCHETTO`(`NOME`, `NOTE`, `TIPOLOGIAMACROLAVORAZIONE`) VALUES ('" + nome + "','" + note + "','" + id + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -2847,6 +2847,7 @@ namespace Diomede2
                         Id = (Int32)lettore[0],
                         Nome = "" + lettore[1],
                         Note = "" + lettore[2],
+                        TipologiaMacro = (Int32)lettore[3]
                     };
                     ;
                     lista.Add(lavorazione);
@@ -2879,6 +2880,7 @@ namespace Diomede2
                         Id = (Int32)lettore[0],
                         Nome = "" + lettore[1],
                         Note = "" + lettore[2],
+                        TipologiaMacro = (Int32)lettore[3]
                     };
                     ;
                     lista.Add(lavorazione);
@@ -2910,7 +2912,8 @@ namespace Diomede2
                     {
                         Id = (Int32)lettore[0],
                         Nome = "" + lettore[1],
-                        Note = "" + lettore[2]
+                        Note = "" + lettore[2],
+                        TipologiaMacro = (Int32)lettore[3]
                     };
                     lavorazione = l;
                 }
@@ -2942,6 +2945,7 @@ namespace Diomede2
                         Id = (Int32)lettore[0],
                         Nome = "" + lettore[1],
                         Note = "" + lettore[2],
+                        TipologiaMacro = (Int32)lettore[3]
                     };
                     ;
                     lavorazione.Add(l);
@@ -2957,12 +2961,12 @@ namespace Diomede2
             }
             return lavorazione;
         }
-        public void AggiornaPacchetto(int id, String nome, String desc)
+        public void AggiornaPacchetto(int id, String nome, String desc, int tipo)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("UPDATE `PACCHETTO` SET `NOME`='" + nome + "',`NOTE`='" + desc + "' WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command = new MySqlCommand("UPDATE `PACCHETTO` SET `NOME`='" + nome + "',`NOTE`='" + desc + "',`TIPOLOGIAMACROLAVORAZIONE`='" + tipo + "' WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -3962,10 +3966,12 @@ namespace Diomede2
         private int id;
         private String nome;
         private String note;
+        private int tipologiaMacro;
 
         public int Id { get => id; set => id = value; }
         public string Nome { get => nome; set => nome = value; }
         public string Note { get => note; set => note = value; }
+        public int TipologiaMacro { get => tipologiaMacro; set => tipologiaMacro = value; }
     }
     public class MacroLavorazione
     {

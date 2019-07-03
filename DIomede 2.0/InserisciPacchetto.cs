@@ -14,16 +14,22 @@ namespace Diomede2
     {
         readonly String db;
         OperazionePraticheEdili op;
+        List<TipologiaMacroLavorazione> lista;
         public InserisciPacchetto(String dBName)
         {
             db = dBName;
             InitializeComponent();
+            op = new OperazionePraticheEdili(db);
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            op = new OperazionePraticheEdili(db);
-            op.InserimentoPacchetto(textBox1.Text, textBox2.Text);
+
+            op.InserimentoTipologiaMacrolavorazione(textBox1.Text, textBox2.Text);
+            lista = op.CercaTipologiaMacroLavorazione();
+            op.InserimentoPacchetto(textBox1.Text, textBox2.Text, lista[lista.Count - 1].Id);
+
+
             MessageBox.Show("Pacchetto Inserito", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }

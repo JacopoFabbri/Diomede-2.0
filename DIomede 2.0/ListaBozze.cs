@@ -129,7 +129,6 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaBozza();
             dataGridView1.Columns[0].Visible = false;
         }
-
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.ColumnIndex == 6)
@@ -141,11 +140,11 @@ namespace Diomede2
                 dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
             }
         }
-
         private void FiltraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FiltroBozze f = new FiltroBozze(dataGridView1, db);
             f.Show();
         }
+
     }
 }
