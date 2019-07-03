@@ -44,9 +44,6 @@ namespace Diomede2
                 Application.Exit();
             }
         }
-
-
-
         private void Button1_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem.ToString().Equals("CLIENTE"))
@@ -58,7 +55,6 @@ namespace Diomede2
                 dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem, "" + comboBox2.SelectedItem);
             }
         }
-
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBox2.Items.Clear();
