@@ -244,6 +244,16 @@ namespace Diomede2.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_inserisci_una_riga_sopra_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-inserisci-una-riga-sopra-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_lista_di_cose_da_fare_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-lista-di-cose-da-fare-100", resourceCulture);
@@ -267,6 +277,16 @@ namespace Diomede2.Properties {
         internal static System.Drawing.Bitmap icons8_modifica_utente_uomo_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8-modifica-utente-uomo-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pin_3_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pin-3-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

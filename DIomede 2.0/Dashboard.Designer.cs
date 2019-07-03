@@ -35,11 +35,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gestioneCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mostraListaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nascondiListaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.macroLavorazioniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaMacroLavorazioniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listView3 = new System.Windows.Forms.ListView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,6 +44,13 @@
             this.aggiungiClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostraListaClientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nascondiListaClientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestioneTipologieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.macrolavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaMacroLavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inserisciMacroLavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaLavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inserisciLavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestioneBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aggiungiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,13 +60,10 @@
             this.pacchettoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaPacchettoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserisciPacchettoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestioneTipologieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaLavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inserisciLavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.macrolavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaMacroLavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inserisciMacroLavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostraListaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nascondiListaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaMacroLavorazioniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gestioneEconomicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaPagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,15 +99,15 @@
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
-            this.gestioneBozzeToolStripMenuItem,
             this.gestioneTipologieToolStripMenuItem,
+            this.gestioneBozzeToolStripMenuItem,
             this.gestioneCommesseToolStripMenuItem,
             this.gestioneEconomicaToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, -3);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(785, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(905, 27);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -131,29 +131,6 @@
             this.commesseToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
             this.commesseToolStripMenuItem.Text = "Commesse";
             // 
-            // listaCommesseToolStripMenuItem
-            // 
-            this.listaCommesseToolStripMenuItem.Name = "listaCommesseToolStripMenuItem";
-            this.listaCommesseToolStripMenuItem.Size = new System.Drawing.Size(237, 24);
-            this.listaCommesseToolStripMenuItem.Text = "Lista Commesse";
-            this.listaCommesseToolStripMenuItem.Click += new System.EventHandler(this.ListaCommesseToolStripMenuItem_Click);
-            // 
-            // mostraListaCommesseToolStripMenuItem
-            // 
-            this.mostraListaCommesseToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_apri_libro_64;
-            this.mostraListaCommesseToolStripMenuItem.Name = "mostraListaCommesseToolStripMenuItem";
-            this.mostraListaCommesseToolStripMenuItem.Size = new System.Drawing.Size(237, 24);
-            this.mostraListaCommesseToolStripMenuItem.Text = "Mostra Lista Commesse";
-            this.mostraListaCommesseToolStripMenuItem.Click += new System.EventHandler(this.MostraListaCommesseToolStripMenuItem_Click);
-            // 
-            // nascondiListaCommesseToolStripMenuItem
-            // 
-            this.nascondiListaCommesseToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_rimuovi_immagine_48;
-            this.nascondiListaCommesseToolStripMenuItem.Name = "nascondiListaCommesseToolStripMenuItem";
-            this.nascondiListaCommesseToolStripMenuItem.Size = new System.Drawing.Size(237, 24);
-            this.nascondiListaCommesseToolStripMenuItem.Text = "Nascondi Lista Commesse";
-            this.nascondiListaCommesseToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaCommesseToolStripMenuItem_Click);
-            // 
             // macroLavorazioniToolStripMenuItem1
             // 
             this.macroLavorazioniToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -161,13 +138,6 @@
             this.macroLavorazioniToolStripMenuItem1.Name = "macroLavorazioniToolStripMenuItem1";
             this.macroLavorazioniToolStripMenuItem1.Size = new System.Drawing.Size(190, 24);
             this.macroLavorazioniToolStripMenuItem1.Text = "Macro Lavorazioni";
-            // 
-            // listaMacroLavorazioniToolStripMenuItem1
-            // 
-            this.listaMacroLavorazioniToolStripMenuItem1.Name = "listaMacroLavorazioniToolStripMenuItem1";
-            this.listaMacroLavorazioniToolStripMenuItem1.Size = new System.Drawing.Size(222, 24);
-            this.listaMacroLavorazioniToolStripMenuItem1.Text = "Lista Macro Lavorazioni";
-            this.listaMacroLavorazioniToolStripMenuItem1.Click += new System.EventHandler(this.ListaMacroLavorazioniToolStripMenuItem1_Click);
             // 
             // listView3
             // 
@@ -233,6 +203,67 @@
             this.nascondiListaClientiToolStripMenuItem.Text = "Nascondi Lista Clienti";
             this.nascondiListaClientiToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaClientiToolStripMenuItem_Click);
             // 
+            // gestioneTipologieToolStripMenuItem
+            // 
+            this.gestioneTipologieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.macrolavorazioniToolStripMenuItem,
+            this.lavorazioniToolStripMenuItem});
+            this.gestioneTipologieToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gestioneTipologieToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_elenco_numerato_64;
+            this.gestioneTipologieToolStripMenuItem.Name = "gestioneTipologieToolStripMenuItem";
+            this.gestioneTipologieToolStripMenuItem.Size = new System.Drawing.Size(150, 23);
+            this.gestioneTipologieToolStripMenuItem.Text = "Gestione Tipologie";
+            // 
+            // macrolavorazioniToolStripMenuItem
+            // 
+            this.macrolavorazioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaMacroLavorazioniToolStripMenuItem,
+            this.inserisciMacroLavorazioniToolStripMenuItem});
+            this.macrolavorazioniToolStripMenuItem.Name = "macrolavorazioniToolStripMenuItem";
+            this.macrolavorazioniToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
+            this.macrolavorazioniToolStripMenuItem.Text = "Macro Lavorazioni";
+            // 
+            // listaMacroLavorazioniToolStripMenuItem
+            // 
+            this.listaMacroLavorazioniToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_lista_di_cose_da_fare_100;
+            this.listaMacroLavorazioniToolStripMenuItem.Name = "listaMacroLavorazioniToolStripMenuItem";
+            this.listaMacroLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(242, 24);
+            this.listaMacroLavorazioniToolStripMenuItem.Text = "Lista Macro Lavorazioni";
+            this.listaMacroLavorazioniToolStripMenuItem.Click += new System.EventHandler(this.ListaMacroLavorazioniToolStripMenuItem_Click);
+            // 
+            // inserisciMacroLavorazioniToolStripMenuItem
+            // 
+            this.inserisciMacroLavorazioniToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_inserisci_una_riga_sopra_48;
+            this.inserisciMacroLavorazioniToolStripMenuItem.Name = "inserisciMacroLavorazioniToolStripMenuItem";
+            this.inserisciMacroLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(242, 24);
+            this.inserisciMacroLavorazioniToolStripMenuItem.Text = "Inserisci Macro Lavorazioni";
+            this.inserisciMacroLavorazioniToolStripMenuItem.Click += new System.EventHandler(this.InserisciMacroLavorazioniToolStripMenuItem_Click);
+            // 
+            // lavorazioniToolStripMenuItem
+            // 
+            this.lavorazioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaLavorazioniToolStripMenuItem,
+            this.inserisciLavorazioniToolStripMenuItem});
+            this.lavorazioniToolStripMenuItem.Name = "lavorazioniToolStripMenuItem";
+            this.lavorazioniToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
+            this.lavorazioniToolStripMenuItem.Text = "Lavorazioni";
+            // 
+            // listaLavorazioniToolStripMenuItem
+            // 
+            this.listaLavorazioniToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_lista_di_cose_da_fare_100;
+            this.listaLavorazioniToolStripMenuItem.Name = "listaLavorazioniToolStripMenuItem";
+            this.listaLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(199, 24);
+            this.listaLavorazioniToolStripMenuItem.Text = "Lista Lavorazioni";
+            this.listaLavorazioniToolStripMenuItem.Click += new System.EventHandler(this.ListaLavorazioniToolStripMenuItem_Click);
+            // 
+            // inserisciLavorazioniToolStripMenuItem
+            // 
+            this.inserisciLavorazioniToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_pin_3_48;
+            this.inserisciLavorazioniToolStripMenuItem.Name = "inserisciLavorazioniToolStripMenuItem";
+            this.inserisciLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(199, 24);
+            this.inserisciLavorazioniToolStripMenuItem.Text = "Inserisci Lavorazioni";
+            this.inserisciLavorazioniToolStripMenuItem.Click += new System.EventHandler(this.InserisciLavorazioniToolStripMenuItem_Click);
+            // 
             // gestioneBozzeToolStripMenuItem
             // 
             this.gestioneBozzeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -253,7 +284,7 @@
             this.nascondiListaBozzeToolStripMenuItem});
             this.aggiungiToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
-            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.aggiungiToolStripMenuItem.Text = "Bozze";
             // 
             // listaBozzeToolStripMenuItem
@@ -294,11 +325,12 @@
             this.listaPacchettoToolStripMenuItem,
             this.inserisciPacchettoToolStripMenuItem});
             this.pacchettoToolStripMenuItem.Name = "pacchettoToolStripMenuItem";
-            this.pacchettoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.pacchettoToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.pacchettoToolStripMenuItem.Text = "Pacchetto";
             // 
             // listaPacchettoToolStripMenuItem
             // 
+            this.listaPacchettoToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_lista_di_cose_da_fare_100;
             this.listaPacchettoToolStripMenuItem.Name = "listaPacchettoToolStripMenuItem";
             this.listaPacchettoToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
             this.listaPacchettoToolStripMenuItem.Text = "Lista Pacchetto";
@@ -312,62 +344,37 @@
             this.inserisciPacchettoToolStripMenuItem.Text = "Inserisci Pacchetto";
             this.inserisciPacchettoToolStripMenuItem.Click += new System.EventHandler(this.InserisciPacchettoToolStripMenuItem_Click);
             // 
-            // gestioneTipologieToolStripMenuItem
+            // listaCommesseToolStripMenuItem
             // 
-            this.gestioneTipologieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lavorazioniToolStripMenuItem,
-            this.macrolavorazioniToolStripMenuItem});
-            this.gestioneTipologieToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gestioneTipologieToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_elenco_numerato_64;
-            this.gestioneTipologieToolStripMenuItem.Name = "gestioneTipologieToolStripMenuItem";
-            this.gestioneTipologieToolStripMenuItem.Size = new System.Drawing.Size(150, 23);
-            this.gestioneTipologieToolStripMenuItem.Text = "Gestione Tipologie";
+            this.listaCommesseToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_lista_di_cose_da_fare_100;
+            this.listaCommesseToolStripMenuItem.Name = "listaCommesseToolStripMenuItem";
+            this.listaCommesseToolStripMenuItem.Size = new System.Drawing.Size(237, 24);
+            this.listaCommesseToolStripMenuItem.Text = "Lista Commesse";
+            this.listaCommesseToolStripMenuItem.Click += new System.EventHandler(this.ListaCommesseToolStripMenuItem_Click);
             // 
-            // lavorazioniToolStripMenuItem
+            // mostraListaCommesseToolStripMenuItem
             // 
-            this.lavorazioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listaLavorazioniToolStripMenuItem,
-            this.inserisciLavorazioniToolStripMenuItem});
-            this.lavorazioniToolStripMenuItem.Name = "lavorazioniToolStripMenuItem";
-            this.lavorazioniToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
-            this.lavorazioniToolStripMenuItem.Text = "Lavorazioni";
+            this.mostraListaCommesseToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_apri_libro_64;
+            this.mostraListaCommesseToolStripMenuItem.Name = "mostraListaCommesseToolStripMenuItem";
+            this.mostraListaCommesseToolStripMenuItem.Size = new System.Drawing.Size(237, 24);
+            this.mostraListaCommesseToolStripMenuItem.Text = "Mostra Lista Commesse";
+            this.mostraListaCommesseToolStripMenuItem.Click += new System.EventHandler(this.MostraListaCommesseToolStripMenuItem_Click);
             // 
-            // listaLavorazioniToolStripMenuItem
+            // nascondiListaCommesseToolStripMenuItem
             // 
-            this.listaLavorazioniToolStripMenuItem.Name = "listaLavorazioniToolStripMenuItem";
-            this.listaLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(199, 24);
-            this.listaLavorazioniToolStripMenuItem.Text = "Lista Lavorazioni";
-            this.listaLavorazioniToolStripMenuItem.Click += new System.EventHandler(this.ListaLavorazioniToolStripMenuItem_Click);
+            this.nascondiListaCommesseToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_rimuovi_immagine_48;
+            this.nascondiListaCommesseToolStripMenuItem.Name = "nascondiListaCommesseToolStripMenuItem";
+            this.nascondiListaCommesseToolStripMenuItem.Size = new System.Drawing.Size(237, 24);
+            this.nascondiListaCommesseToolStripMenuItem.Text = "Nascondi Lista Commesse";
+            this.nascondiListaCommesseToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaCommesseToolStripMenuItem_Click);
             // 
-            // inserisciLavorazioniToolStripMenuItem
+            // listaMacroLavorazioniToolStripMenuItem1
             // 
-            this.inserisciLavorazioniToolStripMenuItem.Name = "inserisciLavorazioniToolStripMenuItem";
-            this.inserisciLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(199, 24);
-            this.inserisciLavorazioniToolStripMenuItem.Text = "Inserisci Lavorazioni";
-            this.inserisciLavorazioniToolStripMenuItem.Click += new System.EventHandler(this.InserisciLavorazioniToolStripMenuItem_Click);
-            // 
-            // macrolavorazioniToolStripMenuItem
-            // 
-            this.macrolavorazioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listaMacroLavorazioniToolStripMenuItem,
-            this.inserisciMacroLavorazioniToolStripMenuItem});
-            this.macrolavorazioniToolStripMenuItem.Name = "macrolavorazioniToolStripMenuItem";
-            this.macrolavorazioniToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
-            this.macrolavorazioniToolStripMenuItem.Text = "Macro Lavorazioni";
-            // 
-            // listaMacroLavorazioniToolStripMenuItem
-            // 
-            this.listaMacroLavorazioniToolStripMenuItem.Name = "listaMacroLavorazioniToolStripMenuItem";
-            this.listaMacroLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(242, 24);
-            this.listaMacroLavorazioniToolStripMenuItem.Text = "Lista Macro Lavorazioni";
-            this.listaMacroLavorazioniToolStripMenuItem.Click += new System.EventHandler(this.ListaMacroLavorazioniToolStripMenuItem_Click);
-            // 
-            // inserisciMacroLavorazioniToolStripMenuItem
-            // 
-            this.inserisciMacroLavorazioniToolStripMenuItem.Name = "inserisciMacroLavorazioniToolStripMenuItem";
-            this.inserisciMacroLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(242, 24);
-            this.inserisciMacroLavorazioniToolStripMenuItem.Text = "Inserisci Macro Lavorazioni";
-            this.inserisciMacroLavorazioniToolStripMenuItem.Click += new System.EventHandler(this.InserisciMacroLavorazioniToolStripMenuItem_Click);
+            this.listaMacroLavorazioniToolStripMenuItem1.Image = global::Diomede2.Properties.Resources.icons8_lista_di_cose_da_fare_100;
+            this.listaMacroLavorazioniToolStripMenuItem1.Name = "listaMacroLavorazioniToolStripMenuItem1";
+            this.listaMacroLavorazioniToolStripMenuItem1.Size = new System.Drawing.Size(222, 24);
+            this.listaMacroLavorazioniToolStripMenuItem1.Text = "Lista Macro Lavorazioni";
+            this.listaMacroLavorazioniToolStripMenuItem1.Click += new System.EventHandler(this.ListaMacroLavorazioniToolStripMenuItem1_Click);
             // 
             // gestioneEconomicaToolStripMenuItem
             // 
@@ -385,14 +392,14 @@
             this.listaPagamentiToolStripMenuItem});
             this.pagamentiToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_sacco_dei_soldi_16;
             this.pagamentiToolStripMenuItem.Name = "pagamentiToolStripMenuItem";
-            this.pagamentiToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.pagamentiToolStripMenuItem.Size = new System.Drawing.Size(143, 24);
             this.pagamentiToolStripMenuItem.Text = "Pagamenti";
             // 
             // listaPagamentiToolStripMenuItem
             // 
             this.listaPagamentiToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_storico_dei_pagamenti_64;
             this.listaPagamentiToolStripMenuItem.Name = "listaPagamentiToolStripMenuItem";
-            this.listaPagamentiToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.listaPagamentiToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.listaPagamentiToolStripMenuItem.Text = "Lista Pagamenti";
             this.listaPagamentiToolStripMenuItem.Click += new System.EventHandler(this.ListaPagamentiToolStripMenuItem_Click);
             // 

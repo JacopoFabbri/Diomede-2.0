@@ -124,6 +124,9 @@
   <data name="icons8-gestione-aziendale-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-gestione-aziendale-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-inserisci-una-riga-sopra-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-inserisci-una-riga-sopra-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="39220" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\39220.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,8 +142,8 @@
   <data name="icons8-eliminare-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-eliminare-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-aggiungere-il-contatto-alla-società-481" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-aggiungere-il-contatto-alla-società-481.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-inserisci-tabella-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-inserisci-tabella-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-aggiungere-il-contatto-alla-società-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-aggiungere-il-contatto-alla-società-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,17 +154,17 @@
   <data name="icons8-elenco-numerato-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-elenco-numerato-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LOGO DEFINITIVO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\LOGO DEFINITIVO.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="freccia-giu-in-basso-ios-simbolo-7-interfaccia_318-34332" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\freccia-giu-in-basso-ios-simbolo-7-interfaccia_318-34332.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-scatola-di-cartone-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-scatola-di-cartone-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-aggiungere-il-contatto-alla-società-481" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-aggiungere-il-contatto-alla-società-481.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-sincronizzare-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-sincronizzare-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-inserisci-tabella-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-inserisci-tabella-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-lista-di-cose-da-fare-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-lista-di-cose-da-fare-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,16 +202,19 @@
   <data name="icons8-apri-libro-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-apri-libro-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="freccia-giu-in-basso-ios-simbolo-7-interfaccia_318-34332" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\freccia-giu-in-basso-ios-simbolo-7-interfaccia_318-34332.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LOGO DEFINITIVO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\LOGO DEFINITIVO.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-modifica-utente-uomo-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-modifica-utente-uomo-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-filtro-riempito-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-filtro-riempito-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-azienda-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-azienda-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-filtro-riempito-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-filtro-riempito-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-pin-3-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-pin-3-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
