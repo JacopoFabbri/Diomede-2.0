@@ -92,3 +92,4 @@ C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.FiltoLavorazio
 C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.FiltroBozze.resources
 C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.FiltroClienti.resources
 C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.ListaLavorazione.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.VisualizzatoreDitte.resources

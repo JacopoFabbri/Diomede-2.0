@@ -30,11 +30,7 @@ namespace Diomede2
                 {
                     dataGridView1.DataSource = op.CercaBozza();
                     dataGridView1.Columns[0].Visible = false;
-                }
-                else
-                {
-                    dataGridView1.DataSource = op.CercaBozza();
-
+                    dataGridView1.Columns[4].ReadOnly = true;
                 }
             }
             catch

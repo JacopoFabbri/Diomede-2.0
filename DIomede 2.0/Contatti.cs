@@ -38,7 +38,7 @@ namespace Diomede2
                     {
                         dataGridView1.DataSource = lista;
                         dataGridView1.Columns[0].Visible = false;
-                        dataGridView1.Columns[8].Visible = false;
+                        dataGridView1.Columns[8].ReadOnly = true;
                         dataGridView1.Columns[11].ReadOnly = true;
                     }
                 }
@@ -49,12 +49,12 @@ namespace Diomede2
                     {
                         dataGridView1.DataSource = lista;
                         dataGridView1.Columns[0].Visible = false;
-                        dataGridView1.Columns[8].Visible = false;
+                        dataGridView1.Columns[8].ReadOnly = true;
                         dataGridView1.Columns[11].ReadOnly = true;
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();
@@ -84,8 +84,11 @@ namespace Diomede2
         {
             if (e.ColumnIndex == 11)
             {
-                Ruolo r = op.CercaRuoloId((int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
-                visualizzatore v = new visualizzatore(r.Nome);
+                visualizzatore v = new visualizzatore(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value, dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                v.Show();
+            }else if(e.ColumnIndex == 8)
+            {
+                VisualizzatoreDitte v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value, dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
                 v.Show();
             }
         }
@@ -141,5 +144,6 @@ namespace Diomede2
             }
             Form7_Load(sender, e);
         }
+
     }
 }
