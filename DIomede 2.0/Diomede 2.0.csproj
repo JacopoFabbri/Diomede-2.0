@@ -399,6 +399,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LOGO DEFINITIVO.ico" />
+    <None Include="Resources\icons8-filtro-riempito-48.png" />
     <None Include="Resources\icons8-inserisci-tabella-48.png" />
     <None Include="Resources\icons8-scatola-di-cartone-48.png" />
     <None Include="Resources\icons8-modifica-utente-uomo-16.png" />

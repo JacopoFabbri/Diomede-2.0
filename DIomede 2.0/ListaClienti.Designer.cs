@@ -119,8 +119,9 @@
             // 
             // filtroToolStripMenuItem
             // 
+            this.filtroToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_filtro_riempito_48;
             this.filtroToolStripMenuItem.Name = "filtroToolStripMenuItem";
-            this.filtroToolStripMenuItem.Size = new System.Drawing.Size(52, 23);
+            this.filtroToolStripMenuItem.Size = new System.Drawing.Size(68, 23);
             this.filtroToolStripMenuItem.Text = "Filtro";
             this.filtroToolStripMenuItem.Click += new System.EventHandler(this.FiltroToolStripMenuItem_Click);
             // 

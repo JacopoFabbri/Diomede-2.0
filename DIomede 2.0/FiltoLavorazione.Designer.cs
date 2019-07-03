@@ -39,7 +39,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
+            this.button1.Text = "Filtra";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // comboBox2
@@ -58,7 +58,7 @@
             this.comboBox1.Size = new System.Drawing.Size(153, 21);
             this.comboBox1.TabIndex = 6;
             // 
-            // FiltoLavorazioni
+            // FiltoLavorazione
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -66,8 +66,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
-            this.Name = "FiltoLavorazioni";
-            this.Text = "FiltoLavorazioni";
+            this.Name = "FiltoLavorazione";
+            this.Text = "Filtro";
             this.ResumeLayout(false);
 
         }

@@ -120,8 +120,10 @@
             // 
             // filtraToolStripMenuItem
             // 
+            this.filtraToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.filtraToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_filtro_riempito_48;
             this.filtraToolStripMenuItem.Name = "filtraToolStripMenuItem";
-            this.filtraToolStripMenuItem.Size = new System.Drawing.Size(45, 23);
+            this.filtraToolStripMenuItem.Size = new System.Drawing.Size(67, 23);
             this.filtraToolStripMenuItem.Text = "Filtra";
             this.filtraToolStripMenuItem.Click += new System.EventHandler(this.FiltraToolStripMenuItem_Click);
             // 
