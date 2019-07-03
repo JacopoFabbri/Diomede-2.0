@@ -64,7 +64,7 @@ namespace Diomede2
         }
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InserimentoLavorazioni iL = new InserimentoLavorazioni(db, this);
+            InserimentoLavorazioni iL = new InserimentoLavorazioni(db, this, idMacroLavorazione);
             iL.Show();
         }
         private void EliminaToolStripMenuItem_Click(object sender, EventArgs e)

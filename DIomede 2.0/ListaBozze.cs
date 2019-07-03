@@ -91,7 +91,7 @@ namespace Diomede2
 
                             }
                         }
-                        catch
+                        catch (Exception ex)
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -138,6 +138,7 @@ namespace Diomede2
                 {
                     cella.Style.ForeColor = Color.Red;
                 }
+                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
             }
         }
 

@@ -168,5 +168,11 @@ namespace Diomede2
             InserimentoPagamento frm = new InserimentoPagamento(db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
             frm.Show();
         }
+
+        private void MacroLavorazioniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaMacroLavorazioni lm = new ListaMacroLavorazioni(db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
+            lm.Show();
+        }
     }
 }

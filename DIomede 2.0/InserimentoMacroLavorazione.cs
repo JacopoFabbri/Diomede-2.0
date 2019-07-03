@@ -32,9 +32,9 @@ namespace Diomede2
                 textBox5.Text = op.FiltraCommessa("BOZZA", idB + "")[0].Id + "";
             }
             lista = op.CercaTipologiaMacroLavorazione();
-            foreach (TipologiaMacroLavorazione t in lista)
+            foreach(TipologiaMacroLavorazione m in lista)
             {
-                comboBox1.Items.Add(t.Nome);
+                comboBox1.Items.Add(m.Nome);
             }
         }
 
@@ -46,7 +46,7 @@ namespace Diomede2
                 MessageBox.Show("Macrolavorazione inserita", "Inserita", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
-            catch (Exception)
+            catch
             {
                 MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
             }

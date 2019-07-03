@@ -16,8 +16,10 @@ namespace Diomede2
         readonly String db;
         List<MacroLavorazione> lista;
         OperazionePraticheEdili op;
-        public InserimentoLavorazioni(String dbName, ListaLavorazione ll)
+        int id;
+        public InserimentoLavorazioni(String dbName, ListaLavorazione ll, int idMacroLavorazione)
         {
+            id = idMacroLavorazione;
             db = dbName;
             formPrecedente = ll;
             InitializeComponent();
@@ -26,16 +28,13 @@ namespace Diomede2
         {
             op = new OperazionePraticheEdili(db);
             lista = op.CercaMacroLavorazione();
-            foreach(MacroLavorazione m in lista)
-            {
-                comboBox1.Items.Add(m.Nome);
-            }
+            textBox4.Text = "" + id;
         }
         private void Button1_Click(object sender, EventArgs e)
         {
             try
             {
-                op.InserimentoLavorazioni(textBox1.Text, textBox2.Text, textBox3.Text, lista[comboBox1.SelectedIndex].Id,Convert.ToDouble(textBox4.Text));
+                op.InserimentoLavorazioni(textBox1.Text, textBox2.Text, textBox3.Text, Convert.ToInt32(textBox4.Text),Convert.ToDouble(textBox4.Text));
                 MessageBox.Show("Lavorazione Inserita", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
                 formPrecedente.ListaLavorazione_Load(sender, e);
@@ -44,11 +43,6 @@ namespace Diomede2
             {
                 MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati");
             }
-        }
-
-        private void InserimentoLavorazioni_Load_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

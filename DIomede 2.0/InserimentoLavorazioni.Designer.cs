@@ -33,8 +33,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,14 +54,14 @@
             this.tableLayoutPanel1.Controls.Add(this.button1, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox4, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textBox5, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textBox4, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(494, 110);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(492, 110);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // textBox1
@@ -99,20 +99,21 @@
             this.textBox3.TabIndex = 12;
             this.textBox3.Text = "Scandenze";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 58);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(155, 21);
-            this.comboBox1.TabIndex = 13;
-            // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(167, 58);
+            this.textBox4.Enabled = false;
+            this.textBox4.Location = new System.Drawing.Point(3, 58);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(158, 20);
             this.textBox4.TabIndex = 14;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(167, 58);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(158, 20);
+            this.textBox5.TabIndex = 15;
+            this.textBox5.Text = "Prezzo";
             // 
             // InserimentoLavorazioni
             // 
@@ -122,7 +123,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "InserimentoLavorazioni";
             this.Text = "AggiungiLavorazioni";
-            this.Load += new System.EventHandler(this.InserimentoLavorazioni_Load_1);
+            this.Load += new System.EventHandler(this.InserimentoLavorazioni_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -137,7 +138,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }
