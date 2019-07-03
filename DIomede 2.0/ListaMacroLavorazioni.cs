@@ -158,5 +158,10 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaMacroLavorazione();
             dataGridView1.Columns[0].Visible = false;
         }
+
+        private void SelezionaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

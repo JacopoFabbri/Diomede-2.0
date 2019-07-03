@@ -25,12 +25,6 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-
-        internal void UpdateRuolo(int v, object id, string string1, object nome, string string2, object desc)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Cliente> CercaClienti()
         {
             List<Cliente> lista;
@@ -1007,7 +1001,7 @@ namespace Diomede2
             }
             return contatto;
         }
-        public void UpdatePagamento(int id,String numeroCommessa, double importo, String note, String fattura, DateTime dataFattura, DateTime data, int cliente, int commessa)
+        public void UpdatePagamento(int id, String numeroCommessa, double importo, String note, String fattura, DateTime dataFattura, DateTime data, int cliente, int commessa)
         {
             try
             {
@@ -1025,6 +1019,98 @@ namespace Diomede2
             {
                 PagamentoDB bDB = new PagamentoDB(conn);
                 bDB.RimuoviOperazione(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void InserimentoLavorazioni(String nome, String desc, String scadenze, int macro, double prezzo)
+        {
+            try
+            {
+                LavorazioneDB bDB = new LavorazioneDB(conn);
+                bDB.Inserimento(nome, desc, scadenze, macro, prezzo);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public List<Lavorazioni> CercaLavorazioni()
+        {
+            List<Lavorazioni> lista;
+            try
+            {
+                LavorazioneDB bDB = new LavorazioneDB(conn);
+                lista = bDB.ListaLavorazioni();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public List<Lavorazioni> CercaLavorazioni(String n)
+        {
+            List<Lavorazioni> lista;
+            try
+            {
+                LavorazioneDB bDB = new LavorazioneDB(conn);
+                lista = bDB.ListaLavorazioni(n);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return lista;
+        }
+        public Lavorazioni CercaLavorazioni(int id)
+        {
+            Lavorazioni contatto;
+            try
+            {
+                LavorazioneDB bDB = new LavorazioneDB(conn);
+                contatto = bDB.CercaLavorazione(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public List<Lavorazioni> FiltraLavorazioni(String s, String g)
+        {
+            List<Lavorazioni> contatto;
+            try
+            {
+                LavorazioneDB bDB = new LavorazioneDB(conn);
+                contatto = bDB.FiltroLavorazioni(s, g);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+            return contatto;
+        }
+        public void UpdateLavorazioni(int id, String nome, String desc, String scadenze, int macro, double prezzo)
+        {
+            try
+            {
+                LavorazioneDB bDB = new LavorazioneDB(conn);
+                bDB.AggiornaLavorazioni(id, nome, desc, scadenze, macro, prezzo);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void CancellaLavorazioni(int id)
+        {
+            try
+            {
+                LavorazioneDB bDB = new LavorazioneDB(conn);
+                bDB.RimuoviLavorazioni(id);
             }
             catch (Exception e)
             {
@@ -2321,6 +2407,203 @@ namespace Diomede2
             {
                 con.Open();
                 MySqlCommand command = new MySqlCommand("DELETE FROM `LAVORAZIONE` WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+    }
+    public class LavorazioneDB
+    {
+        readonly MySqlConnection con = null;
+
+        public LavorazioneDB(MySqlConnection conn)
+        {
+            con = conn;
+        }
+        public void Inserimento(String nome, String desc, String scadenze, int macro, double prezzo)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("INSERT INTO `LAVORAZIONI`( `NOME`, `DESC`, `SCADENZE`, `MACROLAVORAZIONE`, `PREZZO`) VALUES('" + nome + "','" + desc + "','" + scadenze + "','" + macro + "','" + prezzo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "')", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<Lavorazioni> ListaLavorazioni()
+        {
+            List<Lavorazioni> lista = new List<Lavorazioni>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `LAVORAZIONI`", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Lavorazioni lavorazione = new Lavorazioni
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Desc = (String)lettore[2],
+                        Scadenze = (String)lettore[3],
+                        MacroLavorazione = (Int32)lettore[4],
+                        Prezzo = (double)lettore[5]
+                    };
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public List<Lavorazioni> ListaLavorazioni(String n)
+        {
+            List<Lavorazioni> lista = new List<Lavorazioni>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `LAVORAZIONI` WHERE `ID` = '" + n + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Lavorazioni lavorazione = new Lavorazioni
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Desc = (String)lettore[2],
+                        Scadenze = (String)lettore[3],
+                        MacroLavorazione = (Int32)lettore[4],
+                        Prezzo = (double)lettore[5]
+                    };
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lista;
+        }
+        public Lavorazioni CercaLavorazione(int id)
+        {
+            Lavorazioni lavorazione = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `LAVORAZIONI` WHERE `ID` = '" + id + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Lavorazioni l = new Lavorazioni
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Desc = (String)lettore[2],
+                        Scadenze = (String)lettore[3],
+                        MacroLavorazione = (Int32)lettore[4],
+                        Prezzo = (double)lettore[5]
+                    };
+                    lavorazione = l;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lavorazione;
+        }
+        public List<Lavorazioni> FiltroLavorazioni(String s, String g)
+        {
+            List<Lavorazioni> lavorazione = new List<Lavorazioni>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `LAVORAZIONI` WHERE `" + s + "` = '" + g + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    Lavorazioni l = new Lavorazioni
+                    {
+                        Id = (Int32)lettore[0],
+                        Nome = (String)lettore[1],
+                        Desc = (String)lettore[2],
+                        Scadenze = (String)lettore[3],
+                        MacroLavorazione = (Int32)lettore[4],
+                        Prezzo = (double)lettore[5]
+                    };
+                    lavorazione.Add(l);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return lavorazione;
+        }
+        public void AggiornaLavorazioni(int id, String nome, String desc, String scadenze, int macro, double prezzo)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("UPDATE `LAVORAZIONI` SET `NOME`='" + nome + "',`DESC`='" + desc + "',`SCADENZE`='" + scadenze + "',`MACROLAVORAZIONE`='" + macro + "',`PREZZO`='" + prezzo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "' WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void RimuoviLavorazioni(int id)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("DELETE FROM `LAVORAZIONI` WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -3761,5 +4044,21 @@ namespace Diomede2
         public int Cliente { get => cliente; set => cliente = value; }
         public int Commessa { get => commessa; set => commessa = value; }
         public Double Importo { get => importo; set => importo = value; }
+    }
+    public class Lavorazioni
+    {
+        private int id;
+        private String nome;
+        private String desc;
+        private String scadenze;
+        private int macroLavorazione;
+        private double prezzo;
+
+        public int Id { get => id; set => id = value; }
+        public string Nome { get => nome; set => nome = value; }
+        public string Desc { get => desc; set => desc = value; }
+        public string Scadenze { get => scadenze; set => scadenze = value; }
+        public int MacroLavorazione { get => macroLavorazione; set => macroLavorazione = value; }
+        public double Prezzo { get => prezzo; set => prezzo = value; }
     }
 }
