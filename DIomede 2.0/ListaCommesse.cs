@@ -174,5 +174,11 @@ namespace Diomede2
             ListaMacroLavorazioni lm = new ListaMacroLavorazioni(db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
             lm.Show();
         }
+
+        private void SelezionaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Recap r = new Recap(db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
+            r.Show();
+        }
     }
 }
