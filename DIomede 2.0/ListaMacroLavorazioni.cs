@@ -38,7 +38,7 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
-                if (op.FiltraMacroLavorazione("COMMESSA", idMacroLavorazione + "").Count > 0)
+                if (idMacroLavorazione >= 0)
                 {
                     dataGridView1.DataSource = op.FiltraMacroLavorazione("COMMESSA", idMacroLavorazione + "");
                     dataGridView1.Columns[0].Visible = false;
@@ -107,6 +107,7 @@ namespace Diomede2
         }
         private void SelezionaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             ListaLavorazione ll = new ListaLavorazione(db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
             ll.Show();
         }
