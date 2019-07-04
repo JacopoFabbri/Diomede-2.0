@@ -369,6 +369,18 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
+        public void UpdateBozza(int id, Double importo)
+        {
+            try
+            {
+                BozzaDB bDB = new BozzaDB(conn);
+                bDB.AggiornaBozza(id, importo);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
         public void CancellaBozza(int id)
         {
             try
@@ -915,6 +927,18 @@ namespace Diomede2
             {
                 CommessaDB bDB = new CommessaDB(conn);
                 bDB.AggiornaCommesse(id, ditta, numeroCommessa, data, referente, indirizzoCantiere, tecnico, note);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void UpdateCommessa(int id, String note)
+        {
+            try
+            {
+                CommessaDB bDB = new CommessaDB(conn);
+                bDB.AggiornaCommesse(id, note);
             }
             catch (Exception e)
             {
@@ -1934,6 +1958,26 @@ namespace Diomede2
                 con.Close();
             }
         }
+        public void AggiornaBozza(int id, Double importo)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command;
+
+                    command = new MySqlCommand("UPDATE `BOZZA` SET `IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + " WHERE `ID` = '" + id + "'", con);
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
         public void RimuoviBozza(int id)
         {
             try
@@ -2215,6 +2259,23 @@ namespace Diomede2
             {
                 con.Open();
                 MySqlCommand command = new MySqlCommand("UPDATE `COMMESSA` SET `DITTA`='" + ditta + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`DATA`='" + data.ToString("yyyy/MM/dd") + "',`REFERENTE`='" + referente + "',`INDIRIZZOCANTIERE`='" + indirizzoCantiere + "',`TECNICOINTERNO`='" + tecnico + "',`NOTE`='" + note + "' WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void AggiornaCommesse(int id, String note)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand command = new MySqlCommand("UPDATE `COMMESSA` SET `NOTE`='" + note + "' WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)

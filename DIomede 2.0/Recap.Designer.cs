@@ -227,6 +227,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(438, 67);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
@@ -349,6 +350,7 @@
             this.button3.TabIndex = 9;
             this.button3.Text = "Aggiorna";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // textBox6
             // 

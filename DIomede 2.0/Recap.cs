@@ -43,7 +43,7 @@ namespace Diomede2
             foreach (MacroLavorazione m in listaMacrolavorazione)
             {
                 List<Lavorazioni> list = op.FiltraLavorazioni("MACROLAVORAZIONE", "" + m.Id);
-                foreach(Lavorazioni l in list)
+                foreach (Lavorazioni l in list)
                 {
                     listaLavorazioni.Add(l);
                 }
@@ -89,7 +89,7 @@ namespace Diomede2
             dataGridView2.Columns[0].Visible = false;
         }
 
-            private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
             {
@@ -127,6 +127,21 @@ namespace Diomede2
             foreach (DataGridViewCell cella in dataGridView2.Rows[e.RowIndex].Cells)
             {
                 cella.Style.ForeColor = Color.Red;
+            }
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                op.UpdateCommessa(commessa.Id, textBox6.Text);
+                op.UpdateBozza(commessa.Bozza, Convert.ToDouble(textBox5.Text));
+
+            }
+            catch
+            {
+                MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }
