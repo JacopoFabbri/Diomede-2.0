@@ -56,7 +56,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 443F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 450F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(899, 450);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -121,15 +121,17 @@
             // 
             // macroLavorazioniToolStripMenuItem
             // 
+            this.macroLavorazioniToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_elenco_numerato_64;
             this.macroLavorazioniToolStripMenuItem.Name = "macroLavorazioniToolStripMenuItem";
-            this.macroLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(129, 23);
-            this.macroLavorazioniToolStripMenuItem.Text = "MacroLavorazioni";
+            this.macroLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(149, 23);
+            this.macroLavorazioniToolStripMenuItem.Text = "Macro Lavorazioni";
             this.macroLavorazioniToolStripMenuItem.Click += new System.EventHandler(this.MacroLavorazioniToolStripMenuItem_Click);
             // 
             // selezionaToolStripMenuItem
             // 
+            this.selezionaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_casella_di_controllo_selezionata_48;
             this.selezionaToolStripMenuItem.Name = "selezionaToolStripMenuItem";
-            this.selezionaToolStripMenuItem.Size = new System.Drawing.Size(77, 23);
+            this.selezionaToolStripMenuItem.Size = new System.Drawing.Size(93, 23);
             this.selezionaToolStripMenuItem.Text = "Seleziona";
             this.selezionaToolStripMenuItem.Click += new System.EventHandler(this.SelezionaToolStripMenuItem_Click);
             // 

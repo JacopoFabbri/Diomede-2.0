@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Recap));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
@@ -135,9 +136,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.Size = new System.Drawing.Size(60, 13);
             this.label7.TabIndex = 6;
-            this.label7.Text = "label7";
+            this.label7.Text = "Pagamenti:";
             // 
             // tableLayoutPanel3
             // 
@@ -280,9 +281,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(3, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(64, 13);
             this.label6.TabIndex = 6;
-            this.label6.Text = "label6";
+            this.label6.Text = "Lavorazioni:";
             // 
             // dataGridView1
             // 
@@ -333,9 +334,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(3, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.Size = new System.Drawing.Size(33, 13);
             this.label8.TabIndex = 0;
-            this.label8.Text = "label8";
+            this.label8.Text = "Note:";
             // 
             // button3
             // 
@@ -378,6 +379,7 @@
             this.ClientSize = new System.Drawing.Size(882, 667);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Recap";
             this.Text = "Recap";
             this.Load += new System.EventHandler(this.Recap_Load);
