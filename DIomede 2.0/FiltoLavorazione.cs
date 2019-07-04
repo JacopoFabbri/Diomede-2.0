@@ -126,5 +126,10 @@ namespace Diomede2
                 }
             }
         }
+
+        private void FiltoLavorazione_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -70,6 +70,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FiltoLavorazione";
             this.Text = "Filtro";
+            this.Load += new System.EventHandler(this.FiltoLavorazione_Load);
             this.ResumeLayout(false);
 
         }
