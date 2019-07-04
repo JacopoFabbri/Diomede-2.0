@@ -88,7 +88,6 @@ C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.FiltoLavor
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.ListaLavorazione.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.InserimentoLavorazioni.resources
 C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.InserimentoLavorazioni.resources
-C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.FiltoLavorazione.resources
 C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.FiltroBozze.resources
 C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.FiltroClienti.resources
 C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.ListaLavorazione.resources
@@ -98,3 +97,4 @@ C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Visualizza
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Recap.resources
 C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Recap.resources
 C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.VisualizzatorePacchetto.resources
+C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.FiltroLavorazioni.resources

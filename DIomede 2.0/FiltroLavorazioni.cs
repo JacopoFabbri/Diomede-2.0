@@ -10,20 +10,20 @@ using System.Windows.Forms;
 
 namespace Diomede2
 {
-    public partial class FiltoLavorazione : Form
+    public partial class FiltroLavorazioni : Form
     {
         DataGridView dataTable;
         List<Lavorazione> lista;
         OperazionePraticheEdili op;
         String db;
-        public FiltoLavorazione(DataGridView d, String dbName)
+        public FiltroLavorazioni(DataGridView d, String dbName)
         {
             db = dbName;
             dataTable = d;
             InitializeComponent();
         }
 
-        private void FiltroBozze_Load(object sender, EventArgs e)
+        private void FiltroLavorazioni_Load(object sender, EventArgs e)
         {
             try
             {

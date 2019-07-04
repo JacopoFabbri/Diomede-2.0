@@ -36,6 +36,7 @@
             this.aggiornaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aggiungiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filtroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -74,7 +75,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.operazioniToolStripMenuItem});
+            this.operazioniToolStripMenuItem,
+            this.filtroToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(904, 27);
@@ -117,6 +119,15 @@
             this.eliminaToolStripMenuItem.Text = "Elimina";
             this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.EliminaToolStripMenuItem_Click);
             // 
+            // filtroToolStripMenuItem
+            // 
+            this.filtroToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.filtroToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_filtro_riempito_48;
+            this.filtroToolStripMenuItem.Name = "filtroToolStripMenuItem";
+            this.filtroToolStripMenuItem.Size = new System.Drawing.Size(68, 23);
+            this.filtroToolStripMenuItem.Text = "Filtro";
+            this.filtroToolStripMenuItem.Click += new System.EventHandler(this.FiltroToolStripMenuItem_Click);
+            // 
             // ListaLavorazioni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -148,5 +159,6 @@
         private System.Windows.Forms.ToolStripMenuItem aggiornaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aggiungiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filtroToolStripMenuItem;
     }
 }

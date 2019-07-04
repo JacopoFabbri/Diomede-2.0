@@ -96,5 +96,11 @@ namespace Diomede2
                 cella.Style.ForeColor = Color.Red;
             }
         }
+
+        private void FiltroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FiltroLavorazioni f = new FiltroLavorazioni(dataGridView1, db);
+            f.Show();
+        }
     }
 }
