@@ -40,13 +40,13 @@ namespace Diomede2
                 Application.Exit();
             }
         }
-        private void Button1_Click(object sender, EventArgs e)
+        private void Button1_Click_1(object sender, EventArgs e)
         {
 
                 dataTable.DataSource = op.FiltraLavorazione("" + comboBox1.SelectedItem, "" + comboBox2.SelectedItem);
             
         }
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             comboBox2.Items.Clear();
             if (comboBox1.SelectedItem.Equals("OPERAZIONE"))

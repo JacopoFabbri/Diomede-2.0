@@ -42,6 +42,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Filtra";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // comboBox2
             // 
@@ -58,6 +59,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(153, 21);
             this.comboBox1.TabIndex = 6;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged_1);
             // 
             // FiltroLavorazioni
             // 
