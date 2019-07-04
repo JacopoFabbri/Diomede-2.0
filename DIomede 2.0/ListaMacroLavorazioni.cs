@@ -107,9 +107,15 @@ namespace Diomede2
         }
         private void SelezionaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            ListaLavorazione ll = new ListaLavorazione(db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
-            ll.Show();
+            try
+            {
+                ListaLavorazione ll = new ListaLavorazione(db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
+                ll.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Controlla il valore del prezzo e riprova");
+            }
         }
     }
 }
