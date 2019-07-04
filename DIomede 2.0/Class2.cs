@@ -841,12 +841,12 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        public void InserimentoCommessa(int ditta, String numeroCommessa, DateTime data, String referente, int bozza)
+        public void InserimentoCommessa(int ditta, String numerocommessa, DateTime data, String referente, int bozza, String indirizzoCantiere, String tecnico, String note)
         {
             try
             {
                 CommessaDB bDB = new CommessaDB(conn);
-                bDB.Inserimento(ditta, numeroCommessa, data, referente, bozza);
+                bDB.Inserimento(ditta, numerocommessa, data, referente, bozza, indirizzoCantiere, tecnico,note);
             }
             catch (Exception e)
             {
@@ -909,12 +909,12 @@ namespace Diomede2
             }
             return contatto;
         }
-        public void UpdateCommessa(int id, int ditta, String numeroCommessa, DateTime data, String referente)
+        public void UpdateCommessa(int id, int ditta, String numeroCommessa, DateTime data, String referente, String indirizzoCantiere, String tecnico, String note)
         {
             try
             {
                 CommessaDB bDB = new CommessaDB(conn);
-                bDB.AggiornaCommesse(id, ditta, numeroCommessa, data, referente);
+                bDB.AggiornaCommesse(id, ditta, numeroCommessa, data, referente, indirizzoCantiere, tecnico, note);
             }
             catch (Exception e)
             {
@@ -1961,12 +1961,12 @@ namespace Diomede2
         {
             con = conn;
         }
-        public void Inserimento(int ditta, String numerocommessa, DateTime data, String referente, int bozza)
+        public void Inserimento(int ditta, String numerocommessa, DateTime data, String referente, int bozza,String indirizzoCantiere, String tecnico, String note)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO `COMMESSA`(`DITTA`, `NUMEROCOMMESSA`, `DATA`, `REFERENTE`, `BOZZA`) VALUES('" + ditta + "','" + numerocommessa + "','" + data.ToString("yyyy/MM/dd") + "','" + referente + "','" + bozza + "')", con);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `COMMESSA`(`DITTA`, `NUMEROCOMMESSA`, `DATA`, `REFERENTE`, `BOZZA`,`INDIRIZZOCANTIERE`,`TECNICOINTERNO`, `NOTE`) VALUES('" + ditta + "','" + numerocommessa + "','" + data.ToString("yyyy/MM/dd") + "','" + referente + "','" + bozza + "','" + indirizzoCantiere + "','" + tecnico + "','" + note + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -2002,7 +2002,10 @@ namespace Diomede2
                             NumeroCommessa = (String)lettore[2],
                             Data = dateValue,
                             Referente = "" + lettore[4],
-                            Bozza = (int)lettore[5]
+                            Bozza = (int)lettore[5],
+                            IndirizzoCantiere = "" + lettore[6],
+                            TecnicoInterno = "" + lettore[7],
+                            Note = "" + lettore [8]
                         };
                         lista.Add(c);
                     }
@@ -2054,7 +2057,10 @@ namespace Diomede2
                             NumeroCommessa = (String)lettore[2],
                             Data = dateValue,
                             Referente = "" + lettore[4],
-                            Bozza = (int)lettore[5]
+                            Bozza = (int)lettore[5],
+                            IndirizzoCantiere = "" + lettore[6],
+                            TecnicoInterno = "" + lettore[7],
+                            Note = "" + lettore[8]
                         };
                         lista.Add(c);
                     }
@@ -2067,7 +2073,10 @@ namespace Diomede2
                             NumeroCommessa = (String)lettore[2],
                             Data = new DateTime(),
                             Referente = "" + lettore[4],
-                            Bozza = (int)lettore[5]
+                            Bozza = (int)lettore[5],
+                            IndirizzoCantiere = "" + lettore[6],
+                            TecnicoInterno = "" + lettore[7],
+                            Note = "" + lettore[8]
                         };
                         lista.Add(c);
                     }
@@ -2107,7 +2116,10 @@ namespace Diomede2
                             NumeroCommessa = (String)lettore[2],
                             Data = dateValue,
                             Referente = "" + lettore[4],
-                            Bozza = (int)lettore[5]
+                            Bozza = (int)lettore[5],
+                            IndirizzoCantiere = "" + lettore[6],
+                            TecnicoInterno = "" + lettore[7],
+                            Note = "" + lettore[8]
                         };
                         commessa = c;
                     }
@@ -2120,7 +2132,10 @@ namespace Diomede2
                             NumeroCommessa = (String)lettore[2],
                             Data = new DateTime(),
                             Referente = "" + lettore[4],
-                            Bozza = (int)lettore[5]
+                            Bozza = (int)lettore[5],
+                            IndirizzoCantiere = "" + lettore[6],
+                            TecnicoInterno = "" + lettore[7],
+                            Note = "" + lettore[8]
                         };
                         commessa = c;
                     }
@@ -2159,7 +2174,10 @@ namespace Diomede2
                             NumeroCommessa = (String)lettore[2],
                             Data = dateValue,
                             Referente = "" + lettore[4],
-                            Bozza = (int)lettore[5]
+                            Bozza = (int)lettore[5],
+                            IndirizzoCantiere = "" + lettore[6],
+                            TecnicoInterno = "" + lettore[7],
+                            Note = "" + lettore[8]
                         };
                         commessa.Add(c);
                     }
@@ -2172,7 +2190,10 @@ namespace Diomede2
                             NumeroCommessa = (String)lettore[2],
                             Data = new DateTime(),
                             Referente = "" + lettore[4],
-                            Bozza = (int)lettore[5]
+                            Bozza = (int)lettore[5],
+                            IndirizzoCantiere = "" + lettore[6],
+                            TecnicoInterno = "" + lettore[7],
+                            Note = "" + lettore[8]
                         };
                         commessa.Add(c);
                     }
@@ -2188,12 +2209,12 @@ namespace Diomede2
             }
             return commessa;
         }
-        public void AggiornaCommesse(int id, int ditta, String numerocommessa, DateTime data, String referente)
+        public void AggiornaCommesse(int id, int ditta, String numerocommessa, DateTime data, String referente, String indirizzoCantiere, String tecnico, String note)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("UPDATE `COMMESSA` SET `DITTA`='" + ditta + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`DATA`='" + data.ToString("yyyy/MM/dd") + "',`REFERENTE`='" + referente + "' WHERE `ID` = '" + id + "'", con);
+                MySqlCommand command = new MySqlCommand("UPDATE `COMMESSA` SET `DITTA`='" + ditta + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`DATA`='" + data.ToString("yyyy/MM/dd") + "',`REFERENTE`='" + referente + "',`INDIRIZZOCANTIERE`='" + indirizzoCantiere + "',`TECNICOINTERNO`='" + tecnico + "',`NOTE`='" + note + "' WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -3928,6 +3949,8 @@ namespace Diomede2
         private String referente;
         private int bozza;
         private String indirizzoCantiere;
+        private String tecnicoInterno;
+        private String note;
 
 
         public int Id { get => id; set => id = value; }
@@ -3937,6 +3960,8 @@ namespace Diomede2
         public String Referente { get => referente; set => referente = value; }
         public int Bozza { get => bozza; set => bozza = value; }
         public string IndirizzoCantiere { get => indirizzoCantiere; set => indirizzoCantiere = value; }
+        public string Note { get => note; set => note = value; }
+        public string TecnicoInterno { get => tecnicoInterno; set => tecnicoInterno = value; }
     }
     public class Lavorazione
     {

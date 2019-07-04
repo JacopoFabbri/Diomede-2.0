@@ -81,7 +81,7 @@ namespace Diomede2
                                 {
                                     commessa = op1.GeneraCommessa("PE", listaAmministrazione[1], "PraticheEdili", false);
                                 }
-                                op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, commessa, (DateTime)riga.Cells["DATA"].Value, "", (int)riga.Cells["ID"].Value);
+                                op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, commessa, (DateTime)riga.Cells["DATA"].Value, "", (int)riga.Cells["ID"].Value, "", "", "");
 
 
                             }
@@ -140,7 +140,6 @@ namespace Diomede2
             FiltroBozze f = new FiltroBozze(dataGridView1, db);
             f.Show();
         }
-
         private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.ColumnIndex == 5)
