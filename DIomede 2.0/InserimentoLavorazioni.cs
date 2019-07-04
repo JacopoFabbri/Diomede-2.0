@@ -30,7 +30,7 @@ namespace Diomede2
             lista = op.CercaMacroLavorazione();
             textBox4.Text = "" + id;
         }
-        private void Button1_Click(object sender, EventArgs e)
+        private void Button1_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -44,5 +44,7 @@ namespace Diomede2
                 MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati");
             }
         }
+
+
     }
 }

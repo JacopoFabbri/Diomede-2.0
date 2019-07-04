@@ -37,6 +37,7 @@
             this.eliminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.macroLavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selezionaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -75,7 +76,8 @@
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.operazioniToolStripMenuItem,
-            this.macroLavorazioniToolStripMenuItem});
+            this.macroLavorazioniToolStripMenuItem,
+            this.selezionaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(904, 27);
@@ -124,6 +126,13 @@
             this.macroLavorazioniToolStripMenuItem.Text = "MacroLavorazioni";
             this.macroLavorazioniToolStripMenuItem.Click += new System.EventHandler(this.MacroLavorazioniToolStripMenuItem_Click);
             // 
+            // selezionaToolStripMenuItem
+            // 
+            this.selezionaToolStripMenuItem.Name = "selezionaToolStripMenuItem";
+            this.selezionaToolStripMenuItem.Size = new System.Drawing.Size(77, 23);
+            this.selezionaToolStripMenuItem.Text = "Seleziona";
+            this.selezionaToolStripMenuItem.Click += new System.EventHandler(this.SelezionaToolStripMenuItem_Click);
+            // 
             // ListaCommesse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,5 +165,6 @@
         private System.Windows.Forms.ToolStripMenuItem eliminaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pagamentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem macroLavorazioniToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selezionaToolStripMenuItem;
     }
 }
