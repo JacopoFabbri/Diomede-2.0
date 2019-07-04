@@ -233,6 +233,12 @@
     <Compile Include="ModificaPassword.Designer.cs">
       <DependentUpon>ModificaPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Recap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recap.Designer.cs">
+      <DependentUpon>Recap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ruoli.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -363,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificaPassword.resx">
       <DependentUpon>ModificaPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recap.resx">
+      <DependentUpon>Recap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ruoli.resx">
       <DependentUpon>Ruoli.cs</DependentUpon>

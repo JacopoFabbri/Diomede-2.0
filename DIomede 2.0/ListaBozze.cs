@@ -140,7 +140,6 @@ namespace Diomede2
             FiltroBozze f = new FiltroBozze(dataGridView1, db);
             f.Show();
         }
-
         private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.ColumnIndex == 5)
