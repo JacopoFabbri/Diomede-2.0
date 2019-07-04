@@ -59,7 +59,7 @@
             this.comboBox1.Size = new System.Drawing.Size(153, 21);
             this.comboBox1.TabIndex = 6;
             // 
-            // FiltoLavorazione
+            // FiltroLavorazioni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -68,9 +68,9 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FiltoLavorazione";
+            this.Name = "FiltroLavorazioni";
             this.Text = "Filtro";
-            this.Load += new System.EventHandler(this.FiltoLavorazione_Load);
+            this.Load += new System.EventHandler(this.FiltroLavorazioni_Load_1);
             this.ResumeLayout(false);
 
         }

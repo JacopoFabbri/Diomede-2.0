@@ -23,7 +23,7 @@ namespace Diomede2
             InitializeComponent();
         }
 
-        private void FiltroLavorazioni_Load(object sender, EventArgs e)
+        private void FiltroLavorazioni_Load_1(object sender, EventArgs e)
         {
             try
             {
@@ -127,9 +127,5 @@ namespace Diomede2
             }
         }
 
-        private void FiltoLavorazione_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
