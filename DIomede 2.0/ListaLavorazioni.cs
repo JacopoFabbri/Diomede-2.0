@@ -85,7 +85,11 @@ namespace Diomede2
                     }
                 }
             }
-            dataGridView1.DataSource = op.CercaLavorazione();
+            if (op.FiltraLavorazione("PACCHETTO", idPacchetto + "").Count > 0)
+            {
+                dataGridView1.DataSource = op.FiltraLavorazione("PACCHETTO", idPacchetto + "");
+                dataGridView1.Columns[0].Visible = false;
+            }
             dataGridView1.Columns[0].Visible = false;
         }
 
@@ -101,6 +105,11 @@ namespace Diomede2
         {
             FiltroLavorazioni f = new FiltroLavorazioni(dataGridView1, db);
             f.Show();
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
