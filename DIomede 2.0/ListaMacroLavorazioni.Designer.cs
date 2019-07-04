@@ -122,9 +122,10 @@
             // 
             // selezionaToolStripMenuItem
             // 
+            this.selezionaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_gestione_sviluppo_commerciale_48;
             this.selezionaToolStripMenuItem.Name = "selezionaToolStripMenuItem";
-            this.selezionaToolStripMenuItem.Size = new System.Drawing.Size(67, 23);
-            this.selezionaToolStripMenuItem.Text = "Gestisci";
+            this.selezionaToolStripMenuItem.Size = new System.Drawing.Size(91, 23);
+            this.selezionaToolStripMenuItem.Text = "Gestione";
             this.selezionaToolStripMenuItem.Click += new System.EventHandler(this.SelezionaToolStripMenuItem_Click);
             // 
             // ListaMacroLavorazioni

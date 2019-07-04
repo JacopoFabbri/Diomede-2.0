@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaLavorazione));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.operazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aggiornaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -119,8 +120,9 @@
             this.ClientSize = new System.Drawing.Size(912, 488);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListaLavorazione";
-            this.Text = "ListaLavorazione";
+            this.Text = "Lista Lavorazione";
             this.Load += new System.EventHandler(this.ListaLavorazione_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
