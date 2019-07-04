@@ -96,3 +96,5 @@ C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Visualizza
 C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.VisualizzatoreDitte.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.VisualizzatorePacchetto.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Recap.resources
+C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.Recap.resources
+C:\Users\Andre\Desktop\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.VisualizzatorePacchetto.resources
