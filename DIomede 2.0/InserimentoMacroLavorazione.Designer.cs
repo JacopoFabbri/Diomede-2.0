@@ -98,16 +98,15 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(183, 20);
             this.textBox4.TabIndex = 15;
-            this.textBox4.Text = "Descrizione";
             // 
             // textBox5
             // 
             this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox5.Enabled = false;
             this.textBox5.Location = new System.Drawing.Point(88, 434);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(183, 20);
             this.textBox5.TabIndex = 16;
-            this.textBox5.Text = "Commessa";
             // 
             // comboBox1
             // 
@@ -117,17 +116,16 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(183, 21);
             this.comboBox1.TabIndex = 14;
-            this.comboBox1.Text = "Tipologia";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // textBox3
             // 
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(88, 255);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(183, 20);
             this.textBox3.TabIndex = 13;
-            this.textBox3.Text = "NumeroCommessa";
             // 
             // textBox2
             // 
@@ -136,7 +134,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(183, 20);
             this.textBox2.TabIndex = 12;
-            this.textBox2.Text = "Prezzo";
             // 
             // dateTimePicker2
             // 
@@ -161,7 +158,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(183, 20);
             this.textBox1.TabIndex = 9;
-            this.textBox1.Text = "Nome";
             // 
             // button1
             // 
