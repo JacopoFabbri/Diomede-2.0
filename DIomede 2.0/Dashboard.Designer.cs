@@ -84,7 +84,7 @@
             // 
             // listView2
             // 
-            this.listView2.Location = new System.Drawing.Point(147, 31);
+            this.listView2.Location = new System.Drawing.Point(291, 31);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(131, 389);
             this.listView2.TabIndex = 3;
@@ -129,7 +129,7 @@
             this.nascondiListaClientiToolStripMenuItem});
             this.toolStripMenuItem2.Image = global::Diomede2.Properties.Resources.icons8_aggiungere_il_contatto_alla_società_481;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(108, 24);
             this.toolStripMenuItem2.Text = "Ditta";
             // 
             // listaClientiToolStripMenuItem
@@ -403,7 +403,7 @@
             // 
             // listView3
             // 
-            this.listView3.Location = new System.Drawing.Point(284, 31);
+            this.listView3.Location = new System.Drawing.Point(428, 31);
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(131, 389);
             this.listView3.TabIndex = 10;
