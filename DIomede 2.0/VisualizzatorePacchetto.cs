@@ -37,10 +37,11 @@ namespace Diomede2
             comboBox1.SelectedItem = op.CercaPacchetto(id).Nome;
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void Button1_Click_1(object sender, EventArgs e)
         {
             data.Value = lista[comboBox1.SelectedIndex].Id;
             this.Close();
         }
+
     }
 }
