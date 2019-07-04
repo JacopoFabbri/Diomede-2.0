@@ -1787,7 +1787,7 @@ namespace Diomede2
                         Data = (DateTime)lettore[1],
                         Pacchetto = (Int32)lettore[2],
                         Importo = (Double)lettore[3],
-                        NumeroCommessa = "" + lettore[4],
+                        IdentificativoPreventivo = "" + lettore[4],
                         Cliente = (Int32)lettore[5],
                         Accettazione = (bool)lettore[6]
                     };
@@ -1822,7 +1822,7 @@ namespace Diomede2
                         Data = (DateTime)lettore[1],
                         Pacchetto = (Int32)lettore[2],
                         Importo = (Double)lettore[3],
-                        NumeroCommessa = "" + lettore[4],
+                        IdentificativoPreventivo = "" + lettore[4],
                         Cliente = (Int32)lettore[5],
                         Accettazione = (bool)lettore[6]
                     };
@@ -1857,7 +1857,7 @@ namespace Diomede2
                         Data = (DateTime)lettore[1],
                         Pacchetto = (Int32)lettore[2],
                         Importo = (Double)lettore[3],
-                        NumeroCommessa = "" + lettore[4],
+                        IdentificativoPreventivo = "" + lettore[4],
                         Cliente = (Int32)lettore[5],
                         Accettazione = (bool)lettore[6]
                     };
@@ -1892,7 +1892,7 @@ namespace Diomede2
                         Data = (DateTime)lettore[1],
                         Pacchetto = (Int32)lettore[2],
                         Importo = (Double)lettore[3],
-                        NumeroCommessa = (String)lettore[4],
+                        IdentificativoPreventivo = (String)lettore[4],
                         Cliente = (Int32)lettore[5],
                         Accettazione = (bool)lettore[6]
                     };
@@ -3907,7 +3907,7 @@ namespace Diomede2
         private DateTime data;
         private int pacchetto;
         private Double importo;
-        private String numerocommessa;
+        private String identificativoPreventivo;
         private int cliente;
         private Boolean accettazione;
 
@@ -3915,7 +3915,7 @@ namespace Diomede2
         public DateTime Data { get => data; set => data = value; }
         public int Pacchetto { get => pacchetto; set => pacchetto = value; }
         public Double Importo { get => importo; set => importo = value; }
-        public String NumeroCommessa { get => numerocommessa; set => numerocommessa = value; }
+        public String IdentificativoPreventivo { get => identificativoPreventivo; set => identificativoPreventivo = value; }
         public int Cliente { get => cliente; set => cliente = value; }
         public bool Accettazione { get => accettazione; set => accettazione = value; }
     }
@@ -3923,18 +3923,20 @@ namespace Diomede2
     {
         private int id;
         private int ditta;
-        private String numerocommessa;
+        private String numeroCommessa;
         private DateTime data;
         private String referente;
         private int bozza;
+        private String indirizzoCantiere;
 
 
         public int Id { get => id; set => id = value; }
         public int Ditta { get => ditta; set => ditta = value; }
-        public String NumeroCommessa { get => numerocommessa; set => numerocommessa = value; }
+        public String NumeroCommessa { get => numeroCommessa; set => numeroCommessa = value; }
         public DateTime Data { get => data; set => data = value; }
         public String Referente { get => referente; set => referente = value; }
         public int Bozza { get => bozza; set => bozza = value; }
+        public string IndirizzoCantiere { get => indirizzoCantiere; set => indirizzoCantiere = value; }
     }
     public class Lavorazione
     {

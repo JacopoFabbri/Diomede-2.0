@@ -24,7 +24,6 @@ namespace Diomede2
             this.db = s;
             InitializeComponent();
         }
-
         private void Visualizzatore_Load(object sender, EventArgs e)
         {
 
@@ -37,13 +36,11 @@ namespace Diomede2
             comboBox1.SelectedItem = op.CercaRuoloId(id);
 
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             data.Value = lista[comboBox1.SelectedIndex].Id;
             this.Close();
         }
-
         private void Visualizzatore_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Escape)

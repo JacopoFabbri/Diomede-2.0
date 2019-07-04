@@ -46,7 +46,7 @@ namespace Diomede2
             {
                 foreach (Bozza c in listaBozze)
                 {
-                    listView2.Items.Add(c.NumeroCommessa);
+                    listView2.Items.Add(c.IdentificativoPreventivo);
                 }
             }
             listaCommesse = op.CercaCommessa();

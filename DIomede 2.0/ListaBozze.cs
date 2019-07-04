@@ -30,7 +30,7 @@ namespace Diomede2
                 {
                     dataGridView1.DataSource = op.CercaBozza();
                     dataGridView1.Columns[0].Visible = false;
-                    dataGridView1.Columns[4].ReadOnly = true;
+                    dataGridView1.Columns[3].ReadOnly = true;
                 }
             }
             catch
@@ -63,7 +63,7 @@ namespace Diomede2
                     {
                         try
                         {
-                            op.UpdateBozza((int)riga.Cells["ID"].Value, (DateTime)riga.Cells["DATA"].Value, riga.Cells["PACCHETTO"].Value + "", (double)riga.Cells["IMPORTO"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (int)riga.Cells["CLIENTE"].Value, (Boolean)riga.Cells["ACCETTAZIONE"].Value);
+                            op.UpdateBozza((int)riga.Cells["ID"].Value, (DateTime)riga.Cells["DATA"].Value, riga.Cells["PACCHETTO"].Value + "", (double)riga.Cells["IMPORTO"].Value, riga.Cells["IDENTIFICATIVOPREVENTIVO"].Value + "", (int)riga.Cells["CLIENTE"].Value, (Boolean)riga.Cells["ACCETTAZIONE"].Value);
                             if ((Boolean)riga.Cells["ACCETTAZIONE"].Value == true)
                             {
                                 OperazioneAmministrazione op1 = new OperazioneAmministrazione("Amministrazione");
@@ -75,15 +75,14 @@ namespace Diomede2
                                 {
                                     op1.InserimentoCliente(c.Nome, c.Tel, c.Email, c.Iva, c.Sdi);
                                     listaCliente = op1.CercaCliente();
-                                    commessa = op1.GeneraCommessa("PE", listaCliente[listaCliente.Count - 1], "PraticheEdili", true);
+                                    commessa = op1.GeneraCommessa("PE", listaCliente[listaCliente.Count - 1], "PraticheEdili", false);
                                 }
                                 else
                                 {
-                                    commessa = op1.GeneraCommessa("PE", listaAmministrazione[1], "PraticheEdili", true);
+                                    commessa = op1.GeneraCommessa("PE", listaAmministrazione[1], "PraticheEdili", false);
                                 }
-                                op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (DateTime)riga.Cells["DATA"].Value, "", (int)riga.Cells["ID"].Value);
-                                ListaMacroLavorazioni frm = new ListaMacroLavorazioni(db, (int)riga.Cells["ID"].Value);
-                                frm.Show();
+                                op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, commessa, (DateTime)riga.Cells["DATA"].Value, "", (int)riga.Cells["ID"].Value);
+
 
                             }
                         }
@@ -134,6 +133,9 @@ namespace Diomede2
                     cella.Style.ForeColor = Color.Red;
                 }
                 dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+            }else if(e.ColumnIndex == 6)
+            {
+
             }
         }
         private void FiltraToolStripMenuItem_Click(object sender, EventArgs e)

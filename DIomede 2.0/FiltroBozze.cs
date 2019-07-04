@@ -34,7 +34,7 @@ namespace Diomede2
                 comboBox1.Items.Add("DATA");
                 comboBox1.Items.Add("PACCHETTO");
                 comboBox1.Items.Add("IMPORTO");
-                comboBox1.Items.Add("NUMEROCOMMESSA");
+                comboBox1.Items.Add("IDENTIFICATIVOPREVENTIVO");
                 comboBox1.Items.Add("CLIENTE");
                 comboBox1.Items.Add("ACCETAZIONE");
                 lista = op.CercaBozza();
@@ -53,6 +53,10 @@ namespace Diomede2
             }else if (comboBox1.SelectedItem.ToString().Equals("PACCHETTO"))
             {
                 dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem, "" + listaPacchetti[comboBox2.SelectedIndex].Id);
+            }
+            else if (comboBox1.SelectedItem.ToString().Equals("IDENTIFICATIVOPREVENTIVO"))
+            {
+                dataTable.DataSource = op.FiltraBozza("NUMEROCOMMESSA", "" + listaPacchetti[comboBox2.SelectedIndex].Id);
             }
             else
             {
@@ -120,14 +124,14 @@ namespace Diomede2
                     }
                 }
             }
-            else if (comboBox1.SelectedItem.Equals("NUMEROCOMMESSA"))
+            else if (comboBox1.SelectedItem.Equals("IDENTIFICATIVOPREVENTIVO"))
             {
                 foreach (Bozza c in lista)
                 {
                     Boolean flag = true;
                     foreach (Object o in comboBox2.Items)
                     {
-                        if (c.NumeroCommessa.ToString().Equals(o.ToString()))
+                        if (c.IdentificativoPreventivo.ToString().Equals(o.ToString()))
                         {
                             flag = false;
                             break;
@@ -135,7 +139,7 @@ namespace Diomede2
                     }
                     if (flag)
                     {
-                        comboBox2.Items.Add(c.NumeroCommessa);
+                        comboBox2.Items.Add(c.IdentificativoPreventivo);
                     }
                 }
             }

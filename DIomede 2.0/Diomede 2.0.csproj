@@ -283,6 +283,12 @@
     <Compile Include="VisualizzatoreMacrolavorazioni.Designer.cs">
       <DependentUpon>VisualizzatoreMacrolavorazioni.cs</DependentUpon>
     </Compile>
+    <Compile Include="VisualizzatorePacchetto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualizzatorePacchetto.Designer.cs">
+      <DependentUpon>VisualizzatorePacchetto.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="InserimentoLavorazioni.resx">
       <DependentUpon>InserimentoLavorazioni.cs</DependentUpon>
     </EmbeddedResource>
@@ -391,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VisualizzatoreMacrolavorazioni.resx">
       <DependentUpon>VisualizzatoreMacrolavorazioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizzatorePacchetto.resx">
+      <DependentUpon>VisualizzatorePacchetto.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
