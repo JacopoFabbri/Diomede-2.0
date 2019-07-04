@@ -74,11 +74,13 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.operazioniToolStripMenuItem,
             this.filtraToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip1.Size = new System.Drawing.Size(906, 27);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
@@ -124,8 +126,8 @@
             this.filtraToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.filtraToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_filtro_riempito_48;
             this.filtraToolStripMenuItem.Name = "filtraToolStripMenuItem";
-            this.filtraToolStripMenuItem.Size = new System.Drawing.Size(67, 23);
-            this.filtraToolStripMenuItem.Text = "Filtra";
+            this.filtraToolStripMenuItem.Size = new System.Drawing.Size(68, 23);
+            this.filtraToolStripMenuItem.Text = "Filtro";
             this.filtraToolStripMenuItem.Click += new System.EventHandler(this.FiltraToolStripMenuItem_Click);
             // 
             // ListaBozze
