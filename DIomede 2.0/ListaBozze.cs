@@ -126,16 +126,13 @@ namespace Diomede2
         }
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 6)
+            if (e.ColumnIndex == 6)
             {
                 foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
                 {
                     cella.Style.ForeColor = Color.Red;
                 }
                 dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
-            }else if(e.ColumnIndex == 6)
-            {
-
             }
         }
         private void FiltraToolStripMenuItem_Click(object sender, EventArgs e)
@@ -144,5 +141,13 @@ namespace Diomede2
             f.Show();
         }
 
+        private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == 5)
+            {
+                VisualizzatoreDitte v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value, dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                v.Show();
+            }
+        }
     }
 }
