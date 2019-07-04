@@ -80,7 +80,7 @@ namespace Diomede2
             }
         }
 
-        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.ColumnIndex == 11)
             {

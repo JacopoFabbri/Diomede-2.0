@@ -180,5 +180,13 @@ namespace Diomede2
             Recap r = new Recap(db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
             r.Show();
         }
+        private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == 1)
+            {
+                VisualizzatoreDitte v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value, dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                v.Show();
+            }
+        }
     }
 }

@@ -24,14 +24,14 @@ namespace Diomede2
             InitializeComponent();
         }
         public ListaPacchetto(String dbName)
-        { 
+        {
             db = dbName;
             InitializeComponent();
         }
         private void ListaPacchetto_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (formPrecedente !=null)
-            formPrecedente.Show();
+            if (formPrecedente != null)
+                formPrecedente.Show();
         }
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -141,6 +141,9 @@ namespace Diomede2
                 }
                 this.Close();
             }
+
         }
+
     }
 }
+

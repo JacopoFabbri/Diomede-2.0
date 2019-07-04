@@ -147,5 +147,13 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaPagamento();
             dataGridView1.Columns[0].Visible = false;
         }
+        private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == 6)
+            {
+                VisualizzatoreDitte v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value, dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                v.Show();
+            }
+        }
     }
 }

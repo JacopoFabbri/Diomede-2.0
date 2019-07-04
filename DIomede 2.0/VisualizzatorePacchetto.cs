@@ -42,6 +42,13 @@ namespace Diomede2
             data.Value = lista[comboBox1.SelectedIndex].Id;
             this.Close();
         }
+        private void Visualizzatore_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
 
+        }
     }
 }

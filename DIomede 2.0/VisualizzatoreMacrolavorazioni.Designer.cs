@@ -63,6 +63,7 @@
             this.Name = "VisualizzatoreMacrolavorazioni";
             this.Text = "Visualizzatore Macrolavorazioni";
             this.Load += new System.EventHandler(this.VisualizzatoreMacrolavorazioni_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Visualizzatore_KeyDown);
             this.ResumeLayout(false);
 
         }

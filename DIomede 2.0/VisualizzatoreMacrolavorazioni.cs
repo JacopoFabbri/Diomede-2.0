@@ -26,7 +26,7 @@ namespace Diomede2
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if(listView1.SelectedItems.Count > 0)
+            if (listView1.SelectedItems.Count > 0)
             {
                 data.Rows[riga].Cells[5].Value = lista[listView1.SelectedItems[0].Index].Id;
                 this.Close();
@@ -40,12 +40,19 @@ namespace Diomede2
         private void VisualizzatoreMacrolavorazioni_Load(object sender, EventArgs e)
         {
             lista = op.CercaTipologiaMacroLavorazione();
-            if(lista.Count > 0)
+            if (lista.Count > 0)
             {
-                foreach(TipologiaMacroLavorazione t in lista)
+                foreach (TipologiaMacroLavorazione t in lista)
                 {
                     listView1.Items.Add(t.Nome);
                 }
+            }
+        }
+        private void Visualizzatore_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
             }
         }
     }

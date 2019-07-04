@@ -12,7 +12,7 @@ namespace Diomede2
 {
     public partial class visualizzatore : Form
     {
-        readonly String db;
+        String db;
         DataGridViewCell data;
         OperazionePraticheEdili op;
         List<Ruolo> lista;
@@ -21,19 +21,18 @@ namespace Diomede2
         {
             this.id = id;
             data = dg;
-            this.db = s;
+            db = s;
             InitializeComponent();
         }
         private void Visualizzatore_Load(object sender, EventArgs e)
         {
-
             op = new OperazionePraticheEdili(db);
             lista = op.CercaRuolo();
             foreach(Ruolo r in lista)
             {
                 comboBox1.Items.Add(r.Nome);
             }
-            comboBox1.SelectedItem = op.CercaRuoloId(id);
+            comboBox1.SelectedItem = op.CercaRuoloId(id).Nome;
 
         }
         private void Button1_Click(object sender, EventArgs e)

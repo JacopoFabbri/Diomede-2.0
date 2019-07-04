@@ -32,7 +32,7 @@ namespace Diomede2
         {
             try
             {
-                op.InserimentoLavorazione(textBox1.Text,int.Parse(textBox2.Text),double.Parse(textBox3.Text),textBox5.Text);
+                op.InserimentoLavorazione(textBox1.Text, int.Parse(textBox2.Text), double.Parse(textBox3.Text), textBox5.Text);
                 MessageBox.Show("Lavorazione Inserita", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
                 formPrecedente.ListaLavorazioni_Load(sender, e);
