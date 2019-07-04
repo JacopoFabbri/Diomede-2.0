@@ -62,7 +62,12 @@ namespace Diomede2
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            Ruoli frm = new Ruoli(db,this);
+
+        }
+
+        private void InserisciRuoloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ruoli frm = new Ruoli(db, this);
             frm.Show();
         }
     }
