@@ -55,7 +55,7 @@ namespace Diomede2
                     {
                         try
                         {
-                            op.UpdateCommessa((int)riga.Cells["ID"].Value,(int) riga.Cells["DITTA"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (DateTime)riga.Cells["DATA"].Value, riga.Cells["REFERENTE"].Value + "");
+                            op.UpdateCommessa((int)riga.Cells["ID"].Value,(int) riga.Cells["DITTA"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (DateTime)riga.Cells["DATA"].Value, riga.Cells["REFERENTE"].Value + "", "" + riga.Cells["INDIRIZZOCANTIERE"].Value, "" + riga.Cells["TECNICOINTERNO"].Value, "" + riga.Cells["NOTE"].Value);
                         }
                         catch
                         {
@@ -123,7 +123,7 @@ namespace Diomede2
                     {
                         try
                         {
-                            op.UpdateCommessa((int)riga.Cells["ID"].Value, (int)riga.Cells["DITTA"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (DateTime)riga.Cells["DATA"].Value, riga.Cells["REFERENTE"].Value + "");
+                            op.UpdateCommessa((int)riga.Cells["ID"].Value, (int)riga.Cells["DITTA"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (DateTime)riga.Cells["DATA"].Value, riga.Cells["REFERENTE"].Value + "", "" + riga.Cells["INDIRIZZOCANTIERE"].Value, "" + riga.Cells["TECNICOINTERNO"].Value, "" + riga.Cells["NOTE"].Value);
                         }
                         catch
                         {
