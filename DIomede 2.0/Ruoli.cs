@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Diomede2
 {
     public partial class Ruoli : Form
     {
-        private readonly String db;
-        OperazionePraticheEdili op;
-        InserimentoContatto c;
-        public Ruoli(String dbNAme, InserimentoContatto c)
+        private readonly string db;
+        private readonly InserimentoContatto c;
+        private OperazionePraticheEdili op;
+
+        public Ruoli(string dbNAme, InserimentoContatto c)
         {
             this.c = c;
             db = dbNAme;
@@ -27,19 +22,17 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
-                List<Ruolo> lista = op.CercaRuolo();
+                var lista = op.CercaRuolo();
                 if (lista != null)
                 {
                     dataGridView1.DataSource = lista;
                     dataGridView1.Columns[0].Visible = false;
-
                 }
                 else
                 {
-                    InserimentoRuolo frm = new InserimentoRuolo(db,c);
+                    var frm = new InserimentoRuolo(db, c);
                     frm.Show();
                 }
-
             }
             catch
             {
@@ -47,82 +40,76 @@ namespace Diomede2
                 Application.Exit();
             }
         }
+
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
-            {
-                cella.Style.ForeColor = Color.Red;
-            }
+            foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
         }
+
         private void Button1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-           
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
-
         }
 
         private void AggiornaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
-            {
                 if (riga.Cells[0].Value != null)
-                {
                     if (riga.Cells[0].Style.ForeColor == Color.Red)
-                    {
                         try
                         {
-                            op.UpdateRuolo((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["DESCRIZIONE"].Value + "");
+                            op.UpdateRuolo((int) riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "",
+                                riga.Cells["DESCRIZIONE"].Value + "");
                         }
                         catch
                         {
-                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                    }
-                }
-            }
+
             dataGridView1.DataSource = op.CercaRuolo();
             dataGridView1.Columns[0].Visible = false;
-
         }
 
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InserimentoRuolo frm = new InserimentoRuolo(db, c);
+            var frm = new InserimentoRuolo(db, c);
             frm.Show();
         }
 
         private void EliminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows != null)
-            {
-                if (MessageBox.Show("Stai per eliminare " + (String)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?", "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
-                {
+                if (MessageBox.Show(
+                        "Stai per eliminare " +
+                        (string) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?",
+                        "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) ==
+                    DialogResult.Yes)
                     try
                     {
-                        Ruolo clienti = op.CercaRuoloId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
-                        op.CancellaRuolo((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
-                        MessageBox.Show("Ruolo Eliminato", "Conferma", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        var clienti = op.CercaRuoloId((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]
+                            .Cells[0].Value);
+                        op.CancellaRuolo((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        MessageBox.Show("Ruolo Eliminato", "Conferma", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
                     }
                     catch
                     {
-                        MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
                     }
-                }
-            }
+
             dataGridView1.DataSource = op.CercaRuolo();
             dataGridView1.Columns[0].Visible = false;
         }

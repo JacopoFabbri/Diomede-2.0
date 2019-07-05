@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Diomede2
 {
     public partial class InserimentoTipologiaMacrolavorazione : Form
     {
-        readonly String db;
-        public InserimentoTipologiaMacrolavorazione(String dbName)
+        private readonly string db;
+
+        public InserimentoTipologiaMacrolavorazione(string dbName)
         {
             db = dbName;
             InitializeComponent();
@@ -23,10 +17,11 @@ namespace Diomede2
         {
             try
             {
-                OperazionePraticheEdili op = new OperazionePraticheEdili(db);
+                var op = new OperazionePraticheEdili(db);
                 op.InserimentoTipologiaMacrolavorazione(textBox1.Text, textBox2.Text);
-                MessageBox.Show("Tipologia di macrolavorazione Inserita", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                MessageBox.Show("Tipologia di macrolavorazione Inserita", "Inserito", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                Close();
             }
             catch (Exception)
             {
@@ -36,7 +31,6 @@ namespace Diomede2
 
         private void InserimentoTipologiaMacrolavorazione_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

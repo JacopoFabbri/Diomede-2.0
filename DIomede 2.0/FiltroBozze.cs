@@ -1,25 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Diomede2
 {
     public partial class FiltroBozze : Form
     {
-        DataGridView dataTable;
-        List<Bozza> lista;
-        OperazionePraticheEdili op;
-        String db;
-        List<Cliente> listaClienti = new List<Cliente>();
-        List<Pacchetto> listaPacchetti = new List<Pacchetto>();
-        public FiltroBozze(DataGridView d, String dbName)
+        private readonly DataGridView dataTable;
+        private readonly string db;
+        private List<Bozza> lista;
+        private readonly List<Cliente> listaClienti = new List<Cliente>();
+        private readonly List<Pacchetto> listaPacchetti = new List<Pacchetto>();
+        private OperazionePraticheEdili op;
+
+        public FiltroBozze(DataGridView d, string dbName)
         {
             db = dbName;
             dataTable = d;
@@ -45,145 +40,113 @@ namespace Diomede2
                 Application.Exit();
             }
         }
+
         private void Button1_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem.ToString().Equals("CLIENTE"))
-            {
-                dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem, "" + listaClienti[comboBox2.SelectedIndex].Id);
-            }else if (comboBox1.SelectedItem.ToString().Equals("PACCHETTO"))
-            {
-                dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem, "" + listaPacchetti[comboBox2.SelectedIndex].Id);
-            }
+                dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem,
+                    "" + listaClienti[comboBox2.SelectedIndex].Id);
+            else if (comboBox1.SelectedItem.ToString().Equals("PACCHETTO"))
+                dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem,
+                    "" + listaPacchetti[comboBox2.SelectedIndex].Id);
             else if (comboBox1.SelectedItem.ToString().Equals("IDENTIFICATIVOPREVENTIVO"))
-            {
-                dataTable.DataSource = op.FiltraBozza("NUMEROCOMMESSA", "" + listaPacchetti[comboBox2.SelectedIndex].Id);
-            }
+                dataTable.DataSource =
+                    op.FiltraBozza("NUMEROCOMMESSA", "" + listaPacchetti[comboBox2.SelectedIndex].Id);
             else
-            {
                 dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem, "" + comboBox2.SelectedItem);
-            }
         }
+
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBox2.Items.Clear();
             if (comboBox1.SelectedItem.Equals("DATA"))
-            {
-                foreach (Bozza c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
                         if (c.Data.ToString("yyyy-MM-dd").Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
-                    if (flag)
-                    {
-                        comboBox2.Items.Add(c.Data.ToString("yyyy-MM-dd"));
-                    }
+
+                    if (flag) comboBox2.Items.Add(c.Data.ToString("yyyy-MM-dd"));
                 }
-            }
             else if (comboBox1.SelectedItem.Equals("PACCHETTO"))
-            {
-                foreach (Bozza c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
                         if (c.Pacchetto.ToString().Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
+
                     if (flag)
                     {
                         listaPacchetti.Add(op.CercaPacchetto(c.Pacchetto));
                         comboBox2.Items.Add(op.CercaPacchetto(c.Pacchetto).Nome);
                     }
                 }
-            }
             else if (comboBox1.SelectedItem.Equals("IMPORTO"))
-            {
-                foreach (Bozza c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
                         if (c.Importo.ToString().Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
-                    if (flag)
-                    {
-                        comboBox2.Items.Add(c.Importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")));
-                    }
+
+                    if (flag) comboBox2.Items.Add(c.Importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")));
                 }
-            }
             else if (comboBox1.SelectedItem.Equals("IDENTIFICATIVOPREVENTIVO"))
-            {
-                foreach (Bozza c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
-                        if (c.IdentificativoPreventivo.ToString().Equals(o.ToString()))
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
+                        if (c.IdentificativoPreventivo.Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
-                    if (flag)
-                    {
-                        comboBox2.Items.Add(c.IdentificativoPreventivo);
-                    }
+
+                    if (flag) comboBox2.Items.Add(c.IdentificativoPreventivo);
                 }
-            }
             else if (comboBox1.SelectedItem.Equals("CLIENTE"))
-            {
-                foreach (Bozza c in lista)
+                foreach (var c in lista)
                 {
                     Cliente cliente;
                     cliente = op.CercaClientiId(c.Cliente);
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
                         if (cliente.Nome.Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
+
                     if (flag)
                     {
                         listaClienti.Add(cliente);
                         comboBox2.Items.Add(cliente.Nome);
                     }
                 }
-            }
             else if (comboBox1.SelectedItem.Equals("ACCETTAZIONE"))
-            {
-                foreach (Bozza c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
                         if (c.Accettazione.ToString().Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
-                    if (flag)
-                    {
-                        comboBox2.Items.Add(c.Accettazione);
-                    }
+
+                    if (flag) comboBox2.Items.Add(c.Accettazione);
                 }
-            }
         }
     }
 }

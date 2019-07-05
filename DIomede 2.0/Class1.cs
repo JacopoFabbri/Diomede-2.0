@@ -1,93 +1,91 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using MySql.Data.MySqlClient;
 
 namespace Database
 {
-    class Operaziones
+    internal class Operaziones
     {
-
         public MySqlConnection conn = new MySqlConnection();
-        public Operaziones(String nomeDB)
+
+        public Operaziones(string nomeDB)
         {
-            conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database="+ nomeDB + ";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
+            conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database=" + nomeDB +
+                                    ";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
         }
-        public Utente CercaUtente(String u)
+
+        public Utente CercaUtente(string u)
         {
             Utente utente;
             try
             {
-
-                UtenteDB db = new UtenteDB(conn);
+                var db = new UtenteDB(conn);
                 utente = db.CercaUtente(u);
-
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
+
             return utente;
         }
+
         public Ruolo CercaRuolo(int i)
         {
             Ruolo ruolo;
             try
             {
-
-                RuoloDB db = new RuoloDB(conn);
+                var db = new RuoloDB(conn);
                 ruolo = db.CercaRuolo(i);
-
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
+
             return ruolo;
         }
-        public void ModificaDatiUtente(int id, String u, String p)
+
+        public void ModificaDatiUtente(int id, string u, string p)
         {
             try
             {
-
-                UtenteDB db = new UtenteDB(conn);
+                var db = new UtenteDB(conn);
                 db.ModificaUserPass(id, u, p);
-
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
         }
-
     }
+
     public class UtenteDB
     {
-        readonly MySqlConnection con = null;
+        private readonly MySqlConnection con;
+
         public UtenteDB(MySqlConnection conn)
         {
             con = conn;
         }
-        public Utente CercaUtente(String user)
+
+        public Utente CercaUtente(string user)
         {
             Utente u = null;
             try
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `UTENTI` WHERE `USERNAME` = '" + user + "'", con);
+                var command = new MySqlCommand("SELECT * FROM `UTENTI` WHERE `USERNAME` = '" + user + "'", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
                 {
-                    Utente utente = new Utente
+                    var utente = new Utente
                     {
-                        Id = (Int32)lettore[0],
-                        Username = (String)lettore[1],
-                        Password = (String)lettore[2],
-                        Ruolo = (Int32)lettore[3]
+                        Id = (int) lettore[0],
+                        Username = (string) lettore[1],
+                        Password = (string) lettore[2],
+                        Ruolo = (int) lettore[3]
                     };
                     u = utente;
                 }
@@ -100,14 +98,19 @@ namespace Database
             {
                 con.Close();
             }
+
             return u;
         }
-        public void ModificaUserPass(int id, String u, String p)
+
+        public void ModificaUserPass(int id, string u, string p)
         {
             try
             {
                 con.Open();
-                MySqlCommand command = new MySqlCommand("UPDATE `UTENTI` SET `USERNAME`='" + u + "',`PASSWORD`='" + p + "' WHERE `ID` = '" + id + "'", con);
+                var command =
+                    new MySqlCommand(
+                        "UPDATE `UTENTI` SET `USERNAME`='" + u + "',`PASSWORD`='" + p + "' WHERE `ID` = '" + id + "'",
+                        con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -120,13 +123,16 @@ namespace Database
             }
         }
     }
+
     public class RuoloDB
     {
-        readonly MySqlConnection con = null;
+        private readonly MySqlConnection con;
+
         public RuoloDB(MySqlConnection conn)
         {
             con = conn;
         }
+
         public Ruolo CercaRuolo(int id)
         {
             Ruolo r = null;
@@ -134,16 +140,16 @@ namespace Database
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `Ruoli` WHERE `ID` = '" + id + "'", con);
+                var command = new MySqlCommand("SELECT * FROM `Ruoli` WHERE `ID` = '" + id + "'", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
                 {
-                    Ruolo ruolo = new Ruolo
+                    var ruolo = new Ruolo
                     {
-                        Nome = (String)lettore[1],
-                        Macro = (String)lettore[2],
-                        Job = (String)lettore[3]
+                        Nome = (string) lettore[1],
+                        Macro = (string) lettore[2],
+                        Job = (string) lettore[3]
                     };
                     r = ruolo;
                 }
@@ -156,29 +162,28 @@ namespace Database
             {
                 con.Close();
             }
+
             return r;
         }
     }
+
     public class Utente
     {
-        private int id;
-        private String username;
-        private String password;
-        private int ruolo;
+        public string Username { get; set; }
 
-        public string Username { get => username; set => username = value; }
-        public string Password { get => password; set => password = value; }
-        public int Ruolo { get => ruolo; set => ruolo = value; }
-        public int Id { get => id; set => id = value; }
+        public string Password { get; set; }
+
+        public int Ruolo { get; set; }
+
+        public int Id { get; set; }
     }
+
     public class Ruolo
     {
-        private String nome;
-        private String macro;
-        private String job;
+        public string Nome { get; set; }
 
-        public string Nome { get => nome; set => nome = value; }
-        public string Macro { get => macro; set => macro = value; }
-        public string Job { get => job; set => job = value; }
+        public string Macro { get; set; }
+
+        public string Job { get; set; }
     }
 }
