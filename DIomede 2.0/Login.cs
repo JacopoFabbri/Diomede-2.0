@@ -75,7 +75,6 @@ namespace Diomede2
                 textBox2.Visible = false;
                 checkBox1.Visible = false;
                 button1.Visible = false;
-                button2.Visible = false;
                 button3.Visible = true;
                 menuStrip1.Visible = true;
             }
@@ -132,7 +131,6 @@ namespace Diomede2
             textBox2.Visible = true;
             checkBox1.Visible = true;
             button1.Visible = true;
-            button2.Visible = false;
             button3.Visible = false;
             menuStrip1.Visible = false;
         }

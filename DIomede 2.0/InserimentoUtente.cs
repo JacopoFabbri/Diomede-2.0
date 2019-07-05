@@ -19,9 +19,13 @@ namespace Diomede2
         {
             o = new Operaziones("Utenza");
             lista = o.CercaRuolo();
-            foreach (var r in lista) comboBox1.Items.Add(r.Nome);
-        }
+            foreach (var r in lista)
+            {
+                if (r.ID != 1)
+                    comboBox1.Items.Add(r.Nome);
 
+            }
+        }
         private void Button1_Click(object sender, EventArgs e)
         {
             try
