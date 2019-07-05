@@ -144,16 +144,20 @@ namespace Diomede2
         {
             if (e.ColumnIndex == 5)
             {
-                VisualizzatoreDitte v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value, dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                v.Show();
+                if (e.RowIndex != -1)
+                {
+                    VisualizzatoreDitte v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value, dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                    v.Show();
+                }
             }
             else if (e.ColumnIndex == 2)
             {
-                VisualizzatorePacchetto v = new VisualizzatorePacchetto(db, (int)dataGridView1.Rows[e.RowIndex].Cells[2].Value, dataGridView1.Rows[e.RowIndex].Cells[2]);
-                v.Show();
+                if (e.RowIndex != -1)
+                {
+                    VisualizzatorePacchetto v = new VisualizzatorePacchetto(db, (int)dataGridView1.Rows[e.RowIndex].Cells[2].Value, dataGridView1.Rows[e.RowIndex].Cells[2]);
+                    v.Show();
+                }
             }
         }
-
-
     }
 }

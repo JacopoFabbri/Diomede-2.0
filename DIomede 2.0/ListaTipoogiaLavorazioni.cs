@@ -35,7 +35,7 @@ namespace Diomede2
                     {
                         try
                         {
-                            op.UpdateTipologiaLavorazione((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["DESCRIZIONE"].Value + "",(double) riga.Cells["PREZZO"].Value, riga.Cells["SCADENZE"].Value + "",(int) riga.Cells["MACROLAVORAZIONE"].Value);
+                            op.UpdateTipologiaLavorazione((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", riga.Cells["DESCRIZIONE"].Value + "", (double)riga.Cells["PREZZO"].Value, riga.Cells["SCADENZE"].Value + "", (int)riga.Cells["MACROLAVORAZIONE"].Value);
                         }
                         catch
                         {
@@ -95,10 +95,13 @@ namespace Diomede2
 
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 5)
+            if (e.ColumnIndex == 5)
             {
-                VisualizzatoreMacrolavorazioni frm = new VisualizzatoreMacrolavorazioni(db, dataGridView1, e.RowIndex);
-                frm.Show();
+                if (e.RowIndex != -1)
+                {
+                    VisualizzatoreMacrolavorazioni frm = new VisualizzatoreMacrolavorazioni(db, dataGridView1, e.RowIndex);
+                    frm.Show();
+                }
             }
         }
 
