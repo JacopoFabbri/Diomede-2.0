@@ -131,6 +131,12 @@
     <Compile Include="InserimentoTipologiaMacrolavorazione.Designer.cs">
       <DependentUpon>InserimentoTipologiaMacrolavorazione.cs</DependentUpon>
     </Compile>
+    <Compile Include="InserimentoUtente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoUtente.Designer.cs">
+      <DependentUpon>InserimentoUtente.cs</DependentUpon>
+    </Compile>
     <Compile Include="InserisciLavorazione.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InserimentoTipologiaMacrolavorazione.resx">
       <DependentUpon>InserimentoTipologiaMacrolavorazione.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserimentoUtente.resx">
+      <DependentUpon>InserimentoUtente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InserisciLavorazione.resx">
       <DependentUpon>InserisciLavorazione.cs</DependentUpon>

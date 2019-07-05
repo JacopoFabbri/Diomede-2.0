@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 
 namespace Database
 {
-    internal class Operaziones
+    public class Operaziones
     {
         public MySqlConnection conn = new MySqlConnection();
 
@@ -12,7 +13,18 @@ namespace Database
             conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database=" + nomeDB +
                                     ";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
         }
-
+        public void inserisciUtente(String user, String pass, int ruolo)
+        {
+            try
+            {
+                var db = new UtenteDB(conn);
+                db.inserisciUtente(user, pass, ruolo);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+        }
         public Utente CercaUtente(string u)
         {
             Utente utente;
@@ -45,6 +57,21 @@ namespace Database
             return ruolo;
         }
 
+        public List<Ruolo> CercaRuolo()
+        {
+            List<Ruolo> ruolo;
+            try
+            {
+                var db = new RuoloDB(conn);
+                ruolo = db.CercaRuolo();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+
+            return ruolo;
+        }
         public void ModificaDatiUtente(int id, string u, string p)
         {
             try
@@ -68,6 +95,23 @@ namespace Database
             con = conn;
         }
 
+        public void inserisciUtente(String user, String pass, int ruolo)
+        {
+            try
+            {
+                con.Open();
+                var command = new MySqlCommand("INSERT INTO `UTENTI` `USERNAME`, `PASSWORD`, `RUOLO`) VALUES ('" + user + "','" + pass + "','" + ruolo + "')");
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
         public Utente CercaUtente(string user)
         {
             Utente u = null;
@@ -82,10 +126,10 @@ namespace Database
                 {
                     var utente = new Utente
                     {
-                        Id = (int) lettore[0],
-                        Username = (string) lettore[1],
-                        Password = (string) lettore[2],
-                        Ruolo = (int) lettore[3]
+                        Id = (int)lettore[0],
+                        Username = (string)lettore[1],
+                        Password = (string)lettore[2],
+                        Ruolo = (int)lettore[3]
                     };
                     u = utente;
                 }
@@ -147,11 +191,45 @@ namespace Database
                 {
                     var ruolo = new Ruolo
                     {
-                        Nome = (string) lettore[1],
-                        Macro = (string) lettore[2],
-                        Job = (string) lettore[3]
+                        ID = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        Macro = (string)lettore[2],
+                        Job = (string)lettore[3]
                     };
                     r = ruolo;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return r;
+        }
+        public List<Ruolo> CercaRuolo()
+        {
+            List<Ruolo> r = new List<Ruolo>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                var command = new MySqlCommand("SELECT * FROM `Ruoli`", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    var ruolo = new Ruolo
+                    {
+                        ID = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        Macro = (string)lettore[2],
+                        Job = (string)lettore[3]
+                    };
+                    r.Add(ruolo);
                 }
             }
             catch (Exception ex)
@@ -180,6 +258,7 @@ namespace Database
 
     public class Ruolo
     {
+        public int ID { get; set; }
         public string Nome { get; set; }
 
         public string Macro { get; set; }

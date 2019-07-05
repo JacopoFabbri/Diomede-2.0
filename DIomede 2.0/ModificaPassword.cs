@@ -35,5 +35,11 @@ namespace Diomede2
                     MessageBoxIcon.Error);
             }
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            InserimentoUtente u = new InserimentoUtente();
+            u.Show();
+        }
     }
 }
