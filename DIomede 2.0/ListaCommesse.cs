@@ -184,7 +184,7 @@ namespace Diomede2
         {
             if (e.ColumnIndex == 1)
             {
-                if (e.RowIndex != 0)
+                if (e.RowIndex != -1)
                 {
                     VisualizzatoreDitte v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value, dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
                     v.Show();

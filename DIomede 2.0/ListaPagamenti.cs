@@ -67,7 +67,7 @@ namespace Diomede2
                     {
                         try
                         {
-                            op.UpdatePagamento((int)riga.Cells["ID"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "",(double) riga.Cells["IMPORTO"].Value, riga.Cells["NOTE"].Value + "", riga.Cells["FATTURA"].Value + "", (DateTime)riga.Cells["DATAFATTURA"].Value,(DateTime) riga.Cells["DATA"].Value, (int)riga.Cells["CLIENTE"].Value,(int) riga.Cells["COMMESSA"].Value);
+                            op.UpdatePagamento((int)riga.Cells["ID"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (double)riga.Cells["IMPORTO"].Value, riga.Cells["NOTE"].Value + "", riga.Cells["FATTURA"].Value + "", (DateTime)riga.Cells["DATAFATTURA"].Value, (DateTime)riga.Cells["DATA"].Value, (int)riga.Cells["CLIENTE"].Value, (int)riga.Cells["COMMESSA"].Value);
                         }
                         catch
                         {
@@ -151,8 +151,11 @@ namespace Diomede2
         {
             if (e.ColumnIndex == 6)
             {
-                VisualizzatoreDitte v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value, dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                v.Show();
+                if (e.RowIndex != -1)
+                {
+                    VisualizzatoreDitte v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value, dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                    v.Show();
+                }
             }
         }
     }

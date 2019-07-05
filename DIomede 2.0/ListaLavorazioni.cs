@@ -107,9 +107,5 @@ namespace Diomede2
             f.Show();
         }
 
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

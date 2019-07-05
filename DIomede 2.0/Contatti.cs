@@ -70,7 +70,7 @@ namespace Diomede2
 
         private void Button3_Click(object sender, EventArgs e)
         {
-           
+
         }
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -84,12 +84,19 @@ namespace Diomede2
         {
             if (e.ColumnIndex == 11)
             {
-                visualizzatore v = new visualizzatore(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value, dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                v.Show();
-            }else if(e.ColumnIndex == 8)
+                if (e.RowIndex != -1)
+                {
+                    visualizzatore v = new visualizzatore(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value, dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                    v.Show();
+                }
+            }
+            else if (e.ColumnIndex == 8)
             {
-                VisualizzatoreDitte v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value, dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                v.Show();
+                if (e.RowIndex != -1)
+                {
+                    VisualizzatoreDitte v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value, dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                    v.Show();
+                }
             }
         }
 
