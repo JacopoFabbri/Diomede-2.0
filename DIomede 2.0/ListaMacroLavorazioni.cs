@@ -38,7 +38,7 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
-                if (idMacroLavorazione >= 0)
+                if (idMacroLavorazione > 0)
                 {
                     dataGridView1.DataSource = op.FiltraMacroLavorazione("COMMESSA", idMacroLavorazione + "");
                     dataGridView1.Columns[0].Visible = false;
