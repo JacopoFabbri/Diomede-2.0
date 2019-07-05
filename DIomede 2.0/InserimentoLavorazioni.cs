@@ -24,6 +24,12 @@ namespace Diomede2
             formPrecedente = ll;
             InitializeComponent();
         }
+        public InserimentoLavorazioni(String dbName, int idMacroLavorazione)
+        {
+            id = idMacroLavorazione;
+            db = dbName;
+            InitializeComponent();
+        }
         private void InserimentoLavorazioni_Load(object sender, EventArgs e)
         {
             op = new OperazionePraticheEdili(db);
@@ -37,8 +43,11 @@ namespace Diomede2
                 op.InserimentoLavorazioni(textBox1.Text, textBox2.Text, textBox3.Text, Convert.ToInt32(textBox4.Text),Convert.ToDouble(textBox5.Text));
                 MessageBox.Show("Lavorazione Inserita", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
-                formPrecedente.ListaLavorazione_Load(sender, e);
-            }
+                if (formPrecedente != null)
+                {
+                    formPrecedente.ListaLavorazione_Load(sender, e);
+                }
+                }
             catch
             {
                 MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati");
