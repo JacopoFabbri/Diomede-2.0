@@ -22,7 +22,7 @@ namespace Diomede2
 
         private void InserimentoUtente_Load(object sender, EventArgs e)
         {
-            o = new Operaziones("Utenza");
+            o = new Operaziones("UTENTI");
             lista = o.CercaRuolo();
             foreach(Database.Ruolo r in lista)
             {
@@ -32,7 +32,6 @@ namespace Diomede2
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            o = new Operaziones("Utenza");
             try
             {
                 o.inserisciUtente(textBox1.Text, textBox2.Text, lista[comboBox1.SelectedIndex].ID);
