@@ -33,11 +33,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -74,27 +74,6 @@
             this.checkBox1.Text = "Ricordami";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(15, 223);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 43);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Modifica Password";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(153, 89);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 26);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
             // listView1
             // 
             this.listView1.Location = new System.Drawing.Point(43, 12);
@@ -118,6 +97,8 @@
             // button3
             // 
             this.button3.BackgroundImage = global::Diomede2.Properties.Resources.icons8_eliminare_48;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Cursor = System.Windows.Forms.Cursors.No;
             this.button3.Location = new System.Drawing.Point(153, 223);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 43);
@@ -126,6 +107,33 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::Diomede2.Properties.Resources.icons8_chiave_64;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.button1.Location = new System.Drawing.Point(153, 89);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 26);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Login";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::Diomede2.Properties.Resources.icons8_password_64;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.button2.Location = new System.Drawing.Point(15, 223);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(99, 43);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Modifica Password";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // Login
             // 

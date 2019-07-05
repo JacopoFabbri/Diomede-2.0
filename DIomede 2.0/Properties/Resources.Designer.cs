@@ -184,6 +184,16 @@ namespace Diomede2.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_chiave_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-chiave-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_elenco_numerato_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-elenco-numerato-64", resourceCulture);
@@ -264,6 +274,16 @@ namespace Diomede2.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_modifica_casella_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-modifica-casella-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_modifica_file_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-modifica-file-48", resourceCulture);
@@ -277,6 +297,26 @@ namespace Diomede2.Properties {
         internal static System.Drawing.Bitmap icons8_modifica_utente_uomo_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8-modifica-utente-uomo-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_nessuna_modifica_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-nessuna-modifica-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_password_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-password-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -307,6 +347,16 @@ namespace Diomede2.Properties {
         internal static System.Drawing.Bitmap icons8_più_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-più-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_quaderno_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-quaderno-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

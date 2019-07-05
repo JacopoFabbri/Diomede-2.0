@@ -426,6 +426,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LOGO DEFINITIVO.ico" />
+    <None Include="Resources\icons8-chiave-64.png" />
+    <None Include="Resources\icons8-password-64.png" />
+    <None Include="Resources\icons8-nessuna-modifica-48.png" />
+    <None Include="Resources\icons8-modifica-casella-100.png" />
+    <None Include="Resources\icons8-quaderno-48.png" />
     <None Include="Resources\icons8-piccola-persona-48.png" />
     <None Include="Resources\icons8-pin-3-48.png" />
     <None Include="Resources\icons8-inserisci-una-riga-sopra-48.png" />
