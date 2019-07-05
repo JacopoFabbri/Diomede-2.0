@@ -46,12 +46,13 @@ namespace Diomede2
                             listView1.Items.Add("Ponteggi");
                             listView1.Items.Add("PraticheEdili");
                             listView1.Items.Add("Carpenterie");
+                            fileToolStripMenuItem.DropDownItems[0].Visible = true;
                         }
                         else if (utente.Ruolo == 3)
                         {
                             listView1.Items.Add("Ponteggi");
-                            menuStrip1.Visible = false;
-                            button2.Visible = true;
+                            fileToolStripMenuItem.Visible = true;
+                            fileToolStripMenuItem.DropDownItems[0].Visible = false;
                         }
 
                     }
