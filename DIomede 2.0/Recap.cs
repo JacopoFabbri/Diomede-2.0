@@ -154,12 +154,56 @@ namespace Diomede2
 
         private void Button6_Click(object sender, EventArgs e)
         {
-
+            InserimentoPagamento p = new InserimentoPagamento(db, commessa.Id);
+            p.Show();
         }
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            
+            if (dataGridView1.SelectedRows != null)
+                if (MessageBox.Show(
+                        "Stai per eliminare " +
+                        (string)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?",
+                        "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) ==
+                    DialogResult.Yes)
+                    try
+                    {
+                        var clienti = op.CercaLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]
+                            .Cells[0].Value);
+                        op.CancellaLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0]
+                            .Value);
+                        MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedRows != null)
+                if (MessageBox.Show(
+                        "Stai per eliminare " +
+                        (string)dataGridView1.Rows[dataGridView2.SelectedRows[0].Index].Cells[1].Value + " .Confermi?",
+                        "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) ==
+                    DialogResult.Yes)
+                    try
+                    {
+                        var clienti = op.CercaPagamento((int)dataGridView2.Rows[dataGridView2.SelectedRows[0].Index]
+                            .Cells[0].Value);
+                        op.CancellaPagamento((int)dataGridView2.Rows[dataGridView2.SelectedRows[0].Index].Cells[0]
+                            .Value);
+                        MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
         }
     }
 }
