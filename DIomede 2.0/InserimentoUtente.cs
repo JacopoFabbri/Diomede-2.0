@@ -22,7 +22,7 @@ namespace Diomede2
 
         private void InserimentoUtente_Load(object sender, EventArgs e)
         {
-            o = new Operaziones("UTENTI");
+            o = new Operaziones("Utenza");
             lista = o.CercaRuolo();
             foreach(Database.Ruolo r in lista)
             {
