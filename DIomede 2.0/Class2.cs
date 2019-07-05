@@ -11,7 +11,7 @@ namespace Diomede2
 
         public OperazionePraticheEdili(string nomeDB)
         {
-            conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database=" + nomeDB +";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
+            conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database=" + nomeDB + ";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
         }
 
         public void InserimentoCliente(string nome, string indirizzo, string cap, string citta, string pec,
@@ -1161,6 +1161,8 @@ namespace Diomede2
             return contatto;
         }
 
+
+
         public void UpdatePagamento(int id, string numeroCommessa, double importo, string note, string fattura,
             DateTime dataFattura, DateTime data, int cliente, int commessa)
         {
@@ -1337,7 +1339,7 @@ namespace Diomede2
                 {
                     var cliente = new Cliente
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Indirizzo = "" + lettore[2],
                         Cap = "" + lettore[3],
@@ -1377,7 +1379,7 @@ namespace Diomede2
                 {
                     var cliente = new Cliente
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Indirizzo = "" + lettore[2],
                         Cap = "" + lettore[3],
@@ -1416,7 +1418,7 @@ namespace Diomede2
                 while (lettore.Read())
                     cliente = new Cliente
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Indirizzo = "" + lettore[2],
                         Cap = "" + lettore[3],
@@ -1455,7 +1457,7 @@ namespace Diomede2
                 {
                     var c = new Cliente
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Indirizzo = "" + lettore[2],
                         Cap = "" + lettore[3],
@@ -1568,7 +1570,7 @@ namespace Diomede2
                 {
                     var contatto = new Contatto
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Indirizzo = "" + lettore[2],
                         Cap = "" + lettore[3],
@@ -1576,10 +1578,10 @@ namespace Diomede2
                         Pec = "" + lettore[5],
                         Email = "" + lettore[6],
                         Iva = "" + lettore[7],
-                        Ditta = (int) lettore[8],
+                        Ditta = (int)lettore[8],
                         Cellulare = "" + lettore[9],
                         Tel = "" + lettore[10],
-                        Ruolo = (int) lettore[11]
+                        Ruolo = (int)lettore[11]
                     };
                     lista.Add(contatto);
                 }
@@ -1610,7 +1612,7 @@ namespace Diomede2
                 {
                     var contatto = new Contatto
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Indirizzo = "" + lettore[2],
                         Cap = "" + lettore[3],
@@ -1618,10 +1620,10 @@ namespace Diomede2
                         Pec = "" + lettore[5],
                         Email = "" + lettore[6],
                         Iva = "" + lettore[7],
-                        Ditta = (int) lettore[8],
+                        Ditta = (int)lettore[8],
                         Cellulare = "" + lettore[9],
                         Tel = "" + lettore[10],
-                        Ruolo = (int) lettore[11]
+                        Ruolo = (int)lettore[11]
                     };
                     lista.Add(contatto);
                 }
@@ -1652,7 +1654,7 @@ namespace Diomede2
                 {
                     var contatto = new Contatto
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Indirizzo = "" + lettore[2],
                         Cap = "" + lettore[3],
@@ -1660,10 +1662,10 @@ namespace Diomede2
                         Pec = "" + lettore[5],
                         Email = "" + lettore[6],
                         Iva = "" + lettore[7],
-                        Ditta = (int) lettore[8],
+                        Ditta = (int)lettore[8],
                         Cellulare = "" + lettore[9],
                         Tel = "" + lettore[10],
-                        Ruolo = (int) lettore[11]
+                        Ruolo = (int)lettore[11]
                     };
                 }
             }
@@ -1694,7 +1696,7 @@ namespace Diomede2
                 {
                     var contatto = new Contatto
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Indirizzo = "" + lettore[2],
                         Cap = "" + lettore[3],
@@ -1702,10 +1704,10 @@ namespace Diomede2
                         Pec = "" + lettore[5],
                         Email = "" + lettore[6],
                         Iva = "" + lettore[7],
-                        Ditta = (int) lettore[8],
+                        Ditta = (int)lettore[8],
                         Cellulare = "" + lettore[9],
                         Tel = "" + lettore[10],
-                        Ruolo = (int) lettore[11]
+                        Ruolo = (int)lettore[11]
                     };
                     contattos.Add(contatto);
                 }
@@ -1806,7 +1808,7 @@ namespace Diomede2
                 {
                     var ruolo = new Ruolo
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Desc = "" + lettore[2]
                     };
@@ -1839,7 +1841,7 @@ namespace Diomede2
                 {
                     var ruolo = new Ruolo
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Desc = "" + lettore[2]
                     };
@@ -1872,7 +1874,7 @@ namespace Diomede2
                 {
                     var r = new Ruolo
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Desc = "" + lettore[2]
                     };
@@ -1905,7 +1907,7 @@ namespace Diomede2
                 {
                     var r = new Ruolo
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Desc = "" + lettore[2]
                     };
@@ -2018,13 +2020,13 @@ namespace Diomede2
                 {
                     var bozza = new Bozza
                     {
-                        Id = (int) lettore[0],
-                        Data = (DateTime) lettore[1],
-                        Pacchetto = (int) lettore[2],
-                        Importo = (double) lettore[3],
+                        Id = (int)lettore[0],
+                        Data = (DateTime)lettore[1],
+                        Pacchetto = (int)lettore[2],
+                        Importo = (double)lettore[3],
                         IdentificativoPreventivo = "" + lettore[4],
-                        Cliente = (int) lettore[5],
-                        Accettazione = (bool) lettore[6]
+                        Cliente = (int)lettore[5],
+                        Accettazione = (bool)lettore[6]
                     };
                     lista.Add(bozza);
                 }
@@ -2055,13 +2057,13 @@ namespace Diomede2
                 {
                     var bozza = new Bozza
                     {
-                        Id = (int) lettore[0],
-                        Data = (DateTime) lettore[1],
-                        Pacchetto = (int) lettore[2],
-                        Importo = (double) lettore[3],
+                        Id = (int)lettore[0],
+                        Data = (DateTime)lettore[1],
+                        Pacchetto = (int)lettore[2],
+                        Importo = (double)lettore[3],
                         IdentificativoPreventivo = "" + lettore[4],
-                        Cliente = (int) lettore[5],
-                        Accettazione = (bool) lettore[6]
+                        Cliente = (int)lettore[5],
+                        Accettazione = (bool)lettore[6]
                     };
                     lista.Add(bozza);
                 }
@@ -2092,13 +2094,13 @@ namespace Diomede2
                 {
                     var b = new Bozza
                     {
-                        Id = (int) lettore[0],
-                        Data = (DateTime) lettore[1],
-                        Pacchetto = (int) lettore[2],
-                        Importo = (double) lettore[3],
+                        Id = (int)lettore[0],
+                        Data = (DateTime)lettore[1],
+                        Pacchetto = (int)lettore[2],
+                        Importo = (double)lettore[3],
                         IdentificativoPreventivo = "" + lettore[4],
-                        Cliente = (int) lettore[5],
-                        Accettazione = (bool) lettore[6]
+                        Cliente = (int)lettore[5],
+                        Accettazione = (bool)lettore[6]
                     };
                     bozza = b;
                 }
@@ -2129,13 +2131,13 @@ namespace Diomede2
                 {
                     var b = new Bozza
                     {
-                        Id = (int) lettore[0],
-                        Data = (DateTime) lettore[1],
-                        Pacchetto = (int) lettore[2],
-                        Importo = (double) lettore[3],
-                        IdentificativoPreventivo = (string) lettore[4],
-                        Cliente = (int) lettore[5],
-                        Accettazione = (bool) lettore[6]
+                        Id = (int)lettore[0],
+                        Data = (DateTime)lettore[1],
+                        Pacchetto = (int)lettore[2],
+                        Importo = (double)lettore[3],
+                        IdentificativoPreventivo = (string)lettore[4],
+                        Cliente = (int)lettore[5],
+                        Accettazione = (bool)lettore[6]
                     };
                     bozza.Add(b);
                 }
@@ -2273,12 +2275,12 @@ namespace Diomede2
                         DateTime.TryParse(lettore[3] + "", out dateValue);
                         var c = new Commessa
                         {
-                            Id = (int) lettore[0],
-                            Ditta = (int) lettore[1],
-                            NumeroCommessa = (string) lettore[2],
+                            Id = (int)lettore[0],
+                            Ditta = (int)lettore[1],
+                            NumeroCommessa = (string)lettore[2],
                             Data = dateValue,
                             Referente = "" + lettore[4],
-                            Bozza = (int) lettore[5],
+                            Bozza = (int)lettore[5],
                             IndirizzoCantiere = "" + lettore[6],
                             TecnicoInterno = "" + lettore[7],
                             Note = "" + lettore[8]
@@ -2289,12 +2291,12 @@ namespace Diomede2
                     {
                         var c = new Commessa
                         {
-                            Id = (int) lettore[0],
-                            Ditta = (int) lettore[1],
-                            NumeroCommessa = (string) lettore[2],
+                            Id = (int)lettore[0],
+                            Ditta = (int)lettore[1],
+                            NumeroCommessa = (string)lettore[2],
                             Data = new DateTime(),
                             Referente = "" + lettore[4],
-                            Bozza = (int) lettore[5]
+                            Bozza = (int)lettore[5]
                         };
                         lista.Add(c);
                     }
@@ -2328,12 +2330,12 @@ namespace Diomede2
                         DateTime.TryParse(lettore[3] + "", out dateValue);
                         var c = new Commessa
                         {
-                            Id = (int) lettore[0],
-                            Ditta = (int) lettore[1],
-                            NumeroCommessa = (string) lettore[2],
+                            Id = (int)lettore[0],
+                            Ditta = (int)lettore[1],
+                            NumeroCommessa = (string)lettore[2],
                             Data = dateValue,
                             Referente = "" + lettore[4],
-                            Bozza = (int) lettore[5],
+                            Bozza = (int)lettore[5],
                             IndirizzoCantiere = "" + lettore[6],
                             TecnicoInterno = "" + lettore[7],
                             Note = "" + lettore[8]
@@ -2344,12 +2346,12 @@ namespace Diomede2
                     {
                         var c = new Commessa
                         {
-                            Id = (int) lettore[0],
-                            Ditta = (int) lettore[1],
-                            NumeroCommessa = (string) lettore[2],
+                            Id = (int)lettore[0],
+                            Ditta = (int)lettore[1],
+                            NumeroCommessa = (string)lettore[2],
                             Data = new DateTime(),
                             Referente = "" + lettore[4],
-                            Bozza = (int) lettore[5],
+                            Bozza = (int)lettore[5],
                             IndirizzoCantiere = "" + lettore[6],
                             TecnicoInterno = "" + lettore[7],
                             Note = "" + lettore[8]
@@ -2386,12 +2388,12 @@ namespace Diomede2
                         DateTime.TryParse(lettore[3] + "", out dateValue);
                         var c = new Commessa
                         {
-                            Id = (int) lettore[0],
-                            Ditta = (int) lettore[1],
-                            NumeroCommessa = (string) lettore[2],
+                            Id = (int)lettore[0],
+                            Ditta = (int)lettore[1],
+                            NumeroCommessa = (string)lettore[2],
                             Data = dateValue,
                             Referente = "" + lettore[4],
-                            Bozza = (int) lettore[5],
+                            Bozza = (int)lettore[5],
                             IndirizzoCantiere = "" + lettore[6],
                             TecnicoInterno = "" + lettore[7],
                             Note = "" + lettore[8]
@@ -2402,12 +2404,12 @@ namespace Diomede2
                     {
                         var c = new Commessa
                         {
-                            Id = (int) lettore[0],
-                            Ditta = (int) lettore[1],
-                            NumeroCommessa = (string) lettore[2],
+                            Id = (int)lettore[0],
+                            Ditta = (int)lettore[1],
+                            NumeroCommessa = (string)lettore[2],
                             Data = new DateTime(),
                             Referente = "" + lettore[4],
-                            Bozza = (int) lettore[5],
+                            Bozza = (int)lettore[5],
                             IndirizzoCantiere = "" + lettore[6],
                             TecnicoInterno = "" + lettore[7],
                             Note = "" + lettore[8]
@@ -2444,12 +2446,12 @@ namespace Diomede2
                         DateTime.TryParse(lettore[3] + "", out dateValue);
                         var c = new Commessa
                         {
-                            Id = (int) lettore[0],
-                            Ditta = (int) lettore[1],
-                            NumeroCommessa = (string) lettore[2],
+                            Id = (int)lettore[0],
+                            Ditta = (int)lettore[1],
+                            NumeroCommessa = (string)lettore[2],
                             Data = dateValue,
                             Referente = "" + lettore[4],
-                            Bozza = (int) lettore[5],
+                            Bozza = (int)lettore[5],
                             IndirizzoCantiere = "" + lettore[6],
                             TecnicoInterno = "" + lettore[7],
                             Note = "" + lettore[8]
@@ -2460,12 +2462,12 @@ namespace Diomede2
                     {
                         var c = new Commessa
                         {
-                            Id = (int) lettore[0],
-                            Ditta = (int) lettore[1],
-                            NumeroCommessa = (string) lettore[2],
+                            Id = (int)lettore[0],
+                            Ditta = (int)lettore[1],
+                            NumeroCommessa = (string)lettore[2],
                             Data = new DateTime(),
                             Referente = "" + lettore[4],
-                            Bozza = (int) lettore[5],
+                            Bozza = (int)lettore[5],
                             IndirizzoCantiere = "" + lettore[6],
                             TecnicoInterno = "" + lettore[7],
                             Note = "" + lettore[8]
@@ -2590,11 +2592,11 @@ namespace Diomede2
                 {
                     var lavorazione = new Lavorazione
                     {
-                        Id = (int) lettore[0],
-                        Operazione = (string) lettore[1],
-                        Pacchetto = (int) lettore[2],
-                        Importo = (double) lettore[3],
-                        Desc = (string) lettore[4]
+                        Id = (int)lettore[0],
+                        Operazione = (string)lettore[1],
+                        Pacchetto = (int)lettore[2],
+                        Importo = (double)lettore[3],
+                        Desc = (string)lettore[4]
                     };
                     ;
                     lista.Add(lavorazione);
@@ -2626,11 +2628,11 @@ namespace Diomede2
                 {
                     var lavorazione = new Lavorazione
                     {
-                        Id = (int) lettore[0],
-                        Operazione = (string) lettore[1],
-                        Pacchetto = (int) lettore[2],
-                        Importo = (double) lettore[3],
-                        Desc = (string) lettore[4]
+                        Id = (int)lettore[0],
+                        Operazione = (string)lettore[1],
+                        Pacchetto = (int)lettore[2],
+                        Importo = (double)lettore[3],
+                        Desc = (string)lettore[4]
                     };
                     ;
                     lista.Add(lavorazione);
@@ -2662,11 +2664,11 @@ namespace Diomede2
                 {
                     var l = new Lavorazione
                     {
-                        Id = (int) lettore[0],
-                        Operazione = (string) lettore[1],
-                        Pacchetto = (int) lettore[2],
-                        Importo = (double) lettore[3],
-                        Desc = (string) lettore[4]
+                        Id = (int)lettore[0],
+                        Operazione = (string)lettore[1],
+                        Pacchetto = (int)lettore[2],
+                        Importo = (double)lettore[3],
+                        Desc = (string)lettore[4]
                     };
                     lavorazione = l;
                 }
@@ -2697,11 +2699,11 @@ namespace Diomede2
                 {
                     var l = new Lavorazione
                     {
-                        Id = (int) lettore[0],
-                        Operazione = (string) lettore[1],
-                        Pacchetto = (int) lettore[2],
-                        Importo = (double) lettore[3],
-                        Desc = (string) lettore[4]
+                        Id = (int)lettore[0],
+                        Operazione = (string)lettore[1],
+                        Pacchetto = (int)lettore[2],
+                        Importo = (double)lettore[3],
+                        Desc = (string)lettore[4]
                     };
                     ;
                     lavorazione.Add(l);
@@ -2803,12 +2805,12 @@ namespace Diomede2
                 {
                     var lavorazione = new Lavorazioni
                     {
-                        Id = (int) lettore[0],
-                        Nome = (string) lettore[1],
-                        Desc = (string) lettore[2],
-                        Scadenze = (string) lettore[3],
-                        MacroLavorazione = (int) lettore[4],
-                        Prezzo = (double) lettore[5]
+                        Id = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        Desc = (string)lettore[2],
+                        Scadenze = (string)lettore[3],
+                        MacroLavorazione = (int)lettore[4],
+                        Prezzo = (double)lettore[5]
                     };
                     lista.Add(lavorazione);
                 }
@@ -2839,12 +2841,12 @@ namespace Diomede2
                 {
                     var lavorazione = new Lavorazioni
                     {
-                        Id = (int) lettore[0],
-                        Nome = (string) lettore[1],
-                        Desc = (string) lettore[2],
-                        Scadenze = (string) lettore[3],
-                        MacroLavorazione = (int) lettore[4],
-                        Prezzo = (double) lettore[5]
+                        Id = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        Desc = (string)lettore[2],
+                        Scadenze = (string)lettore[3],
+                        MacroLavorazione = (int)lettore[4],
+                        Prezzo = (double)lettore[5]
                     };
                     lista.Add(lavorazione);
                 }
@@ -2875,12 +2877,12 @@ namespace Diomede2
                 {
                     var l = new Lavorazioni
                     {
-                        Id = (int) lettore[0],
-                        Nome = (string) lettore[1],
-                        Desc = (string) lettore[2],
-                        Scadenze = (string) lettore[3],
-                        MacroLavorazione = (int) lettore[4],
-                        Prezzo = (double) lettore[5]
+                        Id = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        Desc = (string)lettore[2],
+                        Scadenze = (string)lettore[3],
+                        MacroLavorazione = (int)lettore[4],
+                        Prezzo = (double)lettore[5]
                     };
                     lavorazione = l;
                 }
@@ -2911,12 +2913,12 @@ namespace Diomede2
                 {
                     var l = new Lavorazioni
                     {
-                        Id = (int) lettore[0],
-                        Nome = (string) lettore[1],
-                        Desc = (string) lettore[2],
-                        Scadenze = (string) lettore[3],
-                        MacroLavorazione = (int) lettore[4],
-                        Prezzo = (double) lettore[5]
+                        Id = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        Desc = (string)lettore[2],
+                        Scadenze = (string)lettore[3],
+                        MacroLavorazione = (int)lettore[4],
+                        Prezzo = (double)lettore[5]
                     };
                     lavorazione.Add(l);
                 }
@@ -3017,9 +3019,9 @@ namespace Diomede2
                 {
                     var lavorazione = new TipologiaMacroLavorazione
                     {
-                        Id = (int) lettore[0],
-                        Nome = (string) lettore[1],
-                        Desc = (string) lettore[2]
+                        Id = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        Desc = (string)lettore[2]
                     };
                     ;
                     lista.Add(lavorazione);
@@ -3052,9 +3054,9 @@ namespace Diomede2
                 {
                     var lavorazione = new TipologiaMacroLavorazione
                     {
-                        Id = (int) lettore[0],
-                        Nome = (string) lettore[1],
-                        Desc = (string) lettore[2]
+                        Id = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        Desc = (string)lettore[2]
                     };
                     ;
                     lista.Add(lavorazione);
@@ -3087,9 +3089,9 @@ namespace Diomede2
                 {
                     var l = new TipologiaMacroLavorazione
                     {
-                        Id = (int) lettore[0],
-                        Nome = (string) lettore[1],
-                        Desc = (string) lettore[2]
+                        Id = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        Desc = (string)lettore[2]
                     };
                     lavorazione = l;
                 }
@@ -3121,9 +3123,9 @@ namespace Diomede2
                 {
                     var l = new TipologiaMacroLavorazione
                     {
-                        Id = (int) lettore[0],
-                        Nome = (string) lettore[1],
-                        Desc = (string) lettore[2]
+                        Id = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        Desc = (string)lettore[2]
                     };
                     ;
                     lavorazione.Add(l);
@@ -3226,10 +3228,10 @@ namespace Diomede2
                 {
                     var lavorazione = new Pacchetto
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Note = "" + lettore[2],
-                        TipologiaMacro = (int) lettore[3]
+                        TipologiaMacro = (int)lettore[3]
                     };
                     ;
                     lista.Add(lavorazione);
@@ -3261,10 +3263,10 @@ namespace Diomede2
                 {
                     var lavorazione = new Pacchetto
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Note = "" + lettore[2],
-                        TipologiaMacro = (int) lettore[3]
+                        TipologiaMacro = (int)lettore[3]
                     };
                     ;
                     lista.Add(lavorazione);
@@ -3296,10 +3298,10 @@ namespace Diomede2
                 {
                     var l = new Pacchetto
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Note = "" + lettore[2],
-                        TipologiaMacro = (int) lettore[3]
+                        TipologiaMacro = (int)lettore[3]
                     };
                     lavorazione = l;
                 }
@@ -3330,10 +3332,10 @@ namespace Diomede2
                 {
                     var l = new Pacchetto
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Note = "" + lettore[2],
-                        TipologiaMacro = (int) lettore[3]
+                        TipologiaMacro = (int)lettore[3]
                     };
                     ;
                     lavorazione.Add(l);
@@ -3437,14 +3439,14 @@ namespace Diomede2
                 {
                     var lavorazione = new MacroLavorazione
                     {
-                        Id = (int) lettore[0],
-                        Nome = (string) lettore[1],
-                        DataInizio = (DateTime) lettore[2],
-                        DataFine = (DateTime) lettore[3],
-                        Prezzo = (double) lettore[4],
-                        NumeroCommessa = (string) lettore[5],
-                        Tipologia = (int) lettore[6],
-                        Descrizione = (string) lettore[7]
+                        Id = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        DataInizio = (DateTime)lettore[2],
+                        DataFine = (DateTime)lettore[3],
+                        Prezzo = (double)lettore[4],
+                        NumeroCommessa = (string)lettore[5],
+                        Tipologia = (int)lettore[6],
+                        Descrizione = (string)lettore[7]
                     };
                     ;
                     lista.Add(lavorazione);
@@ -3476,14 +3478,14 @@ namespace Diomede2
                 {
                     var lavorazione = new MacroLavorazione
                     {
-                        Id = (int) lettore[0],
-                        Nome = (string) lettore[1],
-                        DataInizio = (DateTime) lettore[2],
-                        DataFine = (DateTime) lettore[3],
-                        Prezzo = (double) lettore[4],
-                        NumeroCommessa = (string) lettore[5],
-                        Tipologia = (int) lettore[6],
-                        Descrizione = (string) lettore[7]
+                        Id = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        DataInizio = (DateTime)lettore[2],
+                        DataFine = (DateTime)lettore[3],
+                        Prezzo = (double)lettore[4],
+                        NumeroCommessa = (string)lettore[5],
+                        Tipologia = (int)lettore[6],
+                        Descrizione = (string)lettore[7]
                     };
                     ;
                     lista.Add(lavorazione);
@@ -3515,14 +3517,14 @@ namespace Diomede2
                 {
                     var l = new MacroLavorazione
                     {
-                        Id = (int) lettore[0],
-                        Nome = (string) lettore[1],
-                        DataInizio = (DateTime) lettore[2],
-                        DataFine = (DateTime) lettore[3],
-                        Prezzo = (double) lettore[4],
-                        NumeroCommessa = (string) lettore[5],
-                        Tipologia = (int) lettore[6],
-                        Descrizione = (string) lettore[7]
+                        Id = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        DataInizio = (DateTime)lettore[2],
+                        DataFine = (DateTime)lettore[3],
+                        Prezzo = (double)lettore[4],
+                        NumeroCommessa = (string)lettore[5],
+                        Tipologia = (int)lettore[6],
+                        Descrizione = (string)lettore[7]
                     };
                     lavorazione = l;
                 }
@@ -3553,14 +3555,14 @@ namespace Diomede2
                 {
                     var l = new MacroLavorazione
                     {
-                        Id = (int) lettore[0],
-                        Nome = (string) lettore[1],
-                        DataInizio = (DateTime) lettore[2],
-                        DataFine = (DateTime) lettore[3],
-                        Prezzo = (double) lettore[4],
-                        NumeroCommessa = (string) lettore[5],
-                        Tipologia = (int) lettore[6],
-                        Descrizione = (string) lettore[7]
+                        Id = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        DataInizio = (DateTime)lettore[2],
+                        DataFine = (DateTime)lettore[3],
+                        Prezzo = (double)lettore[4],
+                        NumeroCommessa = (string)lettore[5],
+                        Tipologia = (int)lettore[6],
+                        Descrizione = (string)lettore[7]
                     };
                     ;
                     lavorazione.Add(l);
@@ -3663,12 +3665,12 @@ namespace Diomede2
                 {
                     var lavorazione = new TipologiaLavorazione
                     {
-                        Id = (int) lettore[0],
-                        Nome = (string) lettore[1],
-                        Descrizione = (string) lettore[2],
-                        Prezzo = (double) lettore[3],
-                        Scadenze = (string) lettore[4],
-                        Macrolavorazione = (int) lettore[5]
+                        Id = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        Descrizione = (string)lettore[2],
+                        Prezzo = (double)lettore[3],
+                        Scadenze = (string)lettore[4],
+                        Macrolavorazione = (int)lettore[5]
                     };
                     ;
                     lista.Add(lavorazione);
@@ -3700,12 +3702,12 @@ namespace Diomede2
                 {
                     var lavorazione = new TipologiaLavorazione
                     {
-                        Id = (int) lettore[0],
-                        Nome = (string) lettore[1],
-                        Descrizione = (string) lettore[2],
-                        Prezzo = (double) lettore[3],
-                        Scadenze = (string) lettore[4],
-                        Macrolavorazione = (int) lettore[5]
+                        Id = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        Descrizione = (string)lettore[2],
+                        Prezzo = (double)lettore[3],
+                        Scadenze = (string)lettore[4],
+                        Macrolavorazione = (int)lettore[5]
                     };
                     ;
                     lista.Add(lavorazione);
@@ -3737,12 +3739,12 @@ namespace Diomede2
                 {
                     var l = new TipologiaLavorazione
                     {
-                        Id = (int) lettore[0],
-                        Nome = (string) lettore[1],
-                        Descrizione = (string) lettore[2],
-                        Prezzo = (double) lettore[3],
-                        Scadenze = (string) lettore[4],
-                        Macrolavorazione = (int) lettore[5]
+                        Id = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        Descrizione = (string)lettore[2],
+                        Prezzo = (double)lettore[3],
+                        Scadenze = (string)lettore[4],
+                        Macrolavorazione = (int)lettore[5]
                     };
                     lavorazione = l;
                 }
@@ -3774,12 +3776,12 @@ namespace Diomede2
                 {
                     var l = new TipologiaLavorazione
                     {
-                        Id = (int) lettore[0],
-                        Nome = (string) lettore[1],
-                        Descrizione = (string) lettore[2],
-                        Prezzo = (double) lettore[3],
-                        Scadenze = (string) lettore[4],
-                        Macrolavorazione = (int) lettore[5]
+                        Id = (int)lettore[0],
+                        Nome = (string)lettore[1],
+                        Descrizione = (string)lettore[2],
+                        Prezzo = (double)lettore[3],
+                        Scadenze = (string)lettore[4],
+                        Macrolavorazione = (int)lettore[5]
                     };
                     ;
                     lavorazione.Add(l);
@@ -3883,14 +3885,14 @@ namespace Diomede2
                 {
                     var lavorazione = new Operazione
                     {
-                        Id = (int) lettore[0],
-                        Commitente = (int) lettore[1],
-                        Tipologia = (int) lettore[2],
-                        Data = (DateTime) lettore[3],
-                        DataProtocollo = (string) lettore[4],
-                        DataVisuraSopraluogo = (string) lettore[5],
-                        Offerta = (double) lettore[6],
-                        NumeroCommessa = (string) lettore[7]
+                        Id = (int)lettore[0],
+                        Commitente = (int)lettore[1],
+                        Tipologia = (int)lettore[2],
+                        Data = (DateTime)lettore[3],
+                        DataProtocollo = (string)lettore[4],
+                        DataVisuraSopraluogo = (string)lettore[5],
+                        Offerta = (double)lettore[6],
+                        NumeroCommessa = (string)lettore[7]
                     };
                     ;
                     lista.Add(lavorazione);
@@ -3922,14 +3924,14 @@ namespace Diomede2
                 {
                     var lavorazione = new Operazione
                     {
-                        Id = (int) lettore[0],
-                        Commitente = (int) lettore[1],
-                        Tipologia = (int) lettore[2],
-                        Data = (DateTime) lettore[3],
-                        DataProtocollo = (string) lettore[4],
-                        DataVisuraSopraluogo = (string) lettore[5],
-                        Offerta = (double) lettore[6],
-                        NumeroCommessa = (string) lettore[7]
+                        Id = (int)lettore[0],
+                        Commitente = (int)lettore[1],
+                        Tipologia = (int)lettore[2],
+                        Data = (DateTime)lettore[3],
+                        DataProtocollo = (string)lettore[4],
+                        DataVisuraSopraluogo = (string)lettore[5],
+                        Offerta = (double)lettore[6],
+                        NumeroCommessa = (string)lettore[7]
                     };
                     ;
                     lista.Add(lavorazione);
@@ -3961,14 +3963,14 @@ namespace Diomede2
                 {
                     var l = new Operazione
                     {
-                        Id = (int) lettore[0],
-                        Commitente = (int) lettore[1],
-                        Tipologia = (int) lettore[2],
-                        Data = (DateTime) lettore[3],
-                        DataProtocollo = (string) lettore[4],
-                        DataVisuraSopraluogo = (string) lettore[5],
-                        Offerta = (double) lettore[6],
-                        NumeroCommessa = (string) lettore[7]
+                        Id = (int)lettore[0],
+                        Commitente = (int)lettore[1],
+                        Tipologia = (int)lettore[2],
+                        Data = (DateTime)lettore[3],
+                        DataProtocollo = (string)lettore[4],
+                        DataVisuraSopraluogo = (string)lettore[5],
+                        Offerta = (double)lettore[6],
+                        NumeroCommessa = (string)lettore[7]
                     };
                     lavorazione = l;
                 }
@@ -3999,14 +4001,14 @@ namespace Diomede2
                 {
                     var l = new Operazione
                     {
-                        Id = (int) lettore[0],
-                        Commitente = (int) lettore[1],
-                        Tipologia = (int) lettore[2],
-                        Data = (DateTime) lettore[3],
-                        DataProtocollo = (string) lettore[4],
-                        DataVisuraSopraluogo = (string) lettore[5],
-                        Offerta = (double) lettore[6],
-                        NumeroCommessa = (string) lettore[7]
+                        Id = (int)lettore[0],
+                        Commitente = (int)lettore[1],
+                        Tipologia = (int)lettore[2],
+                        Data = (DateTime)lettore[3],
+                        DataProtocollo = (string)lettore[4],
+                        DataVisuraSopraluogo = (string)lettore[5],
+                        Offerta = (double)lettore[6],
+                        NumeroCommessa = (string)lettore[7]
                     };
                     ;
                     lavorazione.Add(l);
@@ -4115,15 +4117,15 @@ namespace Diomede2
                     DateTime.TryParse(lettore[6] + "", out dataFattura);
                     var lavorazione = new Pagamento
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         NumeroCommessa = "" + lettore[1],
                         Importo = Convert.ToDouble(lettore[2] + ""),
                         Note = "" + lettore[3],
                         Fattura = "" + lettore[4],
                         Data = data,
                         DataFattura = dataFattura,
-                        Cliente = (int) lettore[7],
-                        Commessa = (int) lettore[8]
+                        Cliente = (int)lettore[7],
+                        Commessa = (int)lettore[8]
                     };
 
                     lista.Add(lavorazione);
@@ -4158,15 +4160,15 @@ namespace Diomede2
                     DateTime.TryParse(lettore[6] + "", out dataFattura);
                     var lavorazione = new Pagamento
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         NumeroCommessa = "" + lettore[1],
                         Importo = Convert.ToDouble(lettore[2] + ""),
                         Note = "" + lettore[3],
                         Fattura = "" + lettore[4],
                         Data = data,
                         DataFattura = dataFattura,
-                        Cliente = (int) lettore[7],
-                        Commessa = (int) lettore[8]
+                        Cliente = (int)lettore[7],
+                        Commessa = (int)lettore[8]
                     };
 
                     lista.Add(lavorazione);
@@ -4201,15 +4203,15 @@ namespace Diomede2
                     DateTime.TryParse(lettore[6] + "", out dataFattura);
                     var l = new Pagamento
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         NumeroCommessa = "" + lettore[1],
                         Importo = Convert.ToDouble(lettore[2] + ""),
                         Note = "" + lettore[3],
                         Fattura = "" + lettore[4],
                         Data = data,
                         DataFattura = dataFattura,
-                        Cliente = (int) lettore[7],
-                        Commessa = (int) lettore[8]
+                        Cliente = (int)lettore[7],
+                        Commessa = (int)lettore[8]
                     };
 
                     lavorazione = l;
@@ -4244,15 +4246,15 @@ namespace Diomede2
                     DateTime.TryParse(lettore[6] + "", out dataFattura);
                     var l = new Pagamento
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         NumeroCommessa = "" + lettore[1],
                         Importo = Convert.ToDouble(lettore[2] + ""),
                         Note = "" + lettore[3],
                         Fattura = "" + lettore[4],
                         Data = data,
                         DataFattura = dataFattura,
-                        Cliente = (int) lettore[7],
-                        Commessa = (int) lettore[8]
+                        Cliente = (int)lettore[7],
+                        Commessa = (int)lettore[8]
                     };
 
                     lavorazione.Add(l);
