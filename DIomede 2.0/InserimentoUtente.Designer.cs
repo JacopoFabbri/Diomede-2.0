@@ -89,7 +89,7 @@
             this.button1.Location = new System.Drawing.Point(165, 136);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 23);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Inserisci";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
@@ -101,7 +101,7 @@
             this.label2.Location = new System.Drawing.Point(3, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 10;
             this.label2.Text = "Username:";
             // 
             // label3
@@ -120,7 +120,7 @@
             this.textBox2.Location = new System.Drawing.Point(152, 53);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(143, 20);
-            this.textBox2.TabIndex = 5;
+            this.textBox2.TabIndex = 1;
             // 
             // comboBox1
             // 
@@ -128,7 +128,7 @@
             this.comboBox1.Location = new System.Drawing.Point(152, 87);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(143, 21);
-            this.comboBox1.TabIndex = 6;
+            this.comboBox1.TabIndex = 2;
             // 
             // InserimentoUtente
             // 

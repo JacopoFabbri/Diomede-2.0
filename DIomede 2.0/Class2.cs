@@ -11,8 +11,7 @@ namespace Diomede2
 
         public OperazionePraticheEdili(string nomeDB)
         {
-            conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database=" + nomeDB +
-                                    ";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
+            conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database=" + nomeDB +";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
         }
 
         public void InserimentoCliente(string nome, string indirizzo, string cap, string citta, string pec,

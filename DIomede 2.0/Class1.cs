@@ -13,7 +13,8 @@ namespace Database
             conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database=" + nomeDB +
                                     ";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
         }
-        public void inserisciUtente(String user, String pass, int ruolo)
+
+        public void inserisciUtente(string user, string pass, int ruolo)
         {
             try
             {
@@ -25,6 +26,7 @@ namespace Database
                 throw new Exception(ex.ToString());
             }
         }
+
         public Utente CercaUtente(string u)
         {
             Utente utente;
@@ -72,6 +74,7 @@ namespace Database
 
             return ruolo;
         }
+
         public void ModificaDatiUtente(int id, string u, string p)
         {
             try
@@ -95,12 +98,13 @@ namespace Database
             con = conn;
         }
 
-        public void inserisciUtente(String user, String pass, int ruolo)
+        public void inserisciUtente(string user, string pass, int ruolo)
         {
             try
             {
                 con.Open();
-                var command = new MySqlCommand("INSERT INTO `UTENTI` `USERNAME`, `PASSWORD`, `RUOLO`) VALUES ('" + user + "','" + pass + "','" + ruolo + "')");
+                var command = new MySqlCommand("INSERT INTO `UTENTI` `USERNAME`, `PASSWORD`, `RUOLO`) VALUES ('" +
+                                               user + "','" + pass + "','" + ruolo + "')");
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -112,6 +116,7 @@ namespace Database
                 con.Close();
             }
         }
+
         public Utente CercaUtente(string user)
         {
             Utente u = null;
@@ -126,10 +131,10 @@ namespace Database
                 {
                     var utente = new Utente
                     {
-                        Id = (int)lettore[0],
-                        Username = (string)lettore[1],
-                        Password = (string)lettore[2],
-                        Ruolo = (int)lettore[3]
+                        Id = (int) lettore[0],
+                        Username = (string) lettore[1],
+                        Password = (string) lettore[2],
+                        Ruolo = (int) lettore[3]
                     };
                     u = utente;
                 }
@@ -191,10 +196,10 @@ namespace Database
                 {
                     var ruolo = new Ruolo
                     {
-                        ID = (int)lettore[0],
-                        Nome = (string)lettore[1],
-                        Macro = (string)lettore[2],
-                        Job = (string)lettore[3]
+                        ID = (int) lettore[0],
+                        Nome = (string) lettore[1],
+                        Macro = (string) lettore[2],
+                        Job = (string) lettore[3]
                     };
                     r = ruolo;
                 }
@@ -210,9 +215,10 @@ namespace Database
 
             return r;
         }
+
         public List<Ruolo> CercaRuolo()
         {
-            List<Ruolo> r = new List<Ruolo>();
+            var r = new List<Ruolo>();
             try
             {
                 con.Open();
@@ -224,10 +230,10 @@ namespace Database
                 {
                     var ruolo = new Ruolo
                     {
-                        ID = (int)lettore[0],
-                        Nome = (string)lettore[1],
-                        Macro = (string)lettore[2],
-                        Job = (string)lettore[3]
+                        ID = (int) lettore[0],
+                        Nome = (string) lettore[1],
+                        Macro = (string) lettore[2],
+                        Job = (string) lettore[3]
                     };
                     r.Add(ruolo);
                 }
