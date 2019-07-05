@@ -258,6 +258,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InserimentoPagamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inserimento Pagamento";
             this.Load += new System.EventHandler(this.InserimentoPagamento_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

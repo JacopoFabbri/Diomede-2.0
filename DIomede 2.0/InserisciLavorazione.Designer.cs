@@ -165,6 +165,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InserisciLavorazione";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inserisci Lavorazione";
             this.Load += new System.EventHandler(this.InserisciLavorazione_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

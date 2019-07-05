@@ -288,6 +288,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InserimentoCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inserimento Cliente";
             this.Load += new System.EventHandler(this.InserimentoCliente_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

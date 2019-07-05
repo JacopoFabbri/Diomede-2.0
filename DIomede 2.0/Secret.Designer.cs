@@ -59,6 +59,7 @@
             this.Controls.Add(this.webBrowser2);
             this.Controls.Add(this.webBrowser1);
             this.Name = "Secret";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Secret";
             this.ResumeLayout(false);
 

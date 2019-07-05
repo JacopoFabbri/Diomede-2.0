@@ -124,6 +124,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListaLavorazione";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista Lavorazione";
             this.Load += new System.EventHandler(this.ListaLavorazione_Load);
             this.menuStrip1.ResumeLayout(false);

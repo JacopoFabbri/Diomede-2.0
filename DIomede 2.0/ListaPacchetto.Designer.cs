@@ -147,6 +147,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ListaPacchetto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista Pacchetto";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ListaPacchetto_FormClosing);
             this.Load += new System.EventHandler(this.ListaPacchetto_Load);

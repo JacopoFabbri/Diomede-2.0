@@ -121,6 +121,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InserisciPacchetto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inserisci Pacchetto";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InserisciPacchetto_FormClosing);
             this.Load += new System.EventHandler(this.InserisciPacchetto_Load);

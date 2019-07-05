@@ -76,9 +76,9 @@
             this.ClientSize = new System.Drawing.Size(207, 109);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "VisualizzatorePacchetto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VisualizzatorePacchetto";
             this.Load += new System.EventHandler(this.VisualizzatorePacchetto_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Visualizzatore_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

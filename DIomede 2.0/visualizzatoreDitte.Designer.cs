@@ -78,9 +78,9 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VisualizzatoreDitte";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visualizzatore";
             this.Load += new System.EventHandler(this.VisualizzatoreDitte_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Visualizzatore_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
