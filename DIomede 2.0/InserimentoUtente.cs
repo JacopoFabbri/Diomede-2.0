@@ -1,11 +1,6 @@
 ﻿using Database;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Diomede2
@@ -32,6 +27,8 @@ namespace Diomede2
             try
             {
                 o.inserisciUtente(textBox1.Text, textBox2.Text, lista[comboBox1.SelectedIndex].ID);
+                MessageBox.Show("Utente Inserito", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch (Exception ex)
             {

@@ -38,8 +38,7 @@ namespace Diomede2
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            InserimentoUtente u = new InserimentoUtente();
-            u.Show();
+
         }
     }
 }

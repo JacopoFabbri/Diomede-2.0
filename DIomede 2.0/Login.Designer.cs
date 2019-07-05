@@ -37,13 +37,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inserisciUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificaPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button2 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 45);
+            this.label2.Location = new System.Drawing.Point(12, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 3;
@@ -51,14 +58,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 13);
+            this.textBox1.Location = new System.Drawing.Point(73, 21);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(174, 20);
             this.textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(73, 45);
+            this.textBox2.Location = new System.Drawing.Point(73, 55);
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(174, 20);
@@ -67,7 +74,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(15, 79);
+            this.checkBox1.Location = new System.Drawing.Point(15, 95);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(73, 17);
             this.checkBox1.TabIndex = 4;
@@ -76,9 +83,9 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(43, 12);
+            this.listView1.Location = new System.Drawing.Point(44, 24);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(180, 187);
+            this.listView1.Size = new System.Drawing.Size(180, 210);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
@@ -88,7 +95,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 13);
+            this.label1.Location = new System.Drawing.Point(12, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 2;
@@ -96,12 +103,13 @@
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackgroundImage = global::Diomede2.Properties.Resources.icons8_eliminare_48;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.Cursor = System.Windows.Forms.Cursors.No;
-            this.button3.Location = new System.Drawing.Point(153, 223);
+            this.button3.Location = new System.Drawing.Point(119, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 43);
+            this.button3.Size = new System.Drawing.Size(110, 32);
             this.button3.TabIndex = 6;
             this.button3.Text = "Logout";
             this.button3.UseVisualStyleBackColor = true;
@@ -113,7 +121,7 @@
             this.button1.BackgroundImage = global::Diomede2.Properties.Resources.icons8_chiave_64;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Cursor = System.Windows.Forms.Cursors.AppStarting;
-            this.button1.Location = new System.Drawing.Point(153, 89);
+            this.button1.Location = new System.Drawing.Point(153, 105);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 26);
             this.button1.TabIndex = 3;
@@ -121,39 +129,93 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.button3, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button2, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(15, 240);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(232, 40);
+            this.tableLayoutPanel2.TabIndex = 8;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel2_Paint);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(268, 27);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inserisciUtenteToolStripMenuItem,
+            this.modificaPasswordToolStripMenuItem});
+            this.fileToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(41, 23);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // inserisciUtenteToolStripMenuItem
+            // 
+            this.inserisciUtenteToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_piccola_persona_48;
+            this.inserisciUtenteToolStripMenuItem.Name = "inserisciUtenteToolStripMenuItem";
+            this.inserisciUtenteToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
+            this.inserisciUtenteToolStripMenuItem.Text = "Inserisci Utente";
+            this.inserisciUtenteToolStripMenuItem.Click += new System.EventHandler(this.InserisciUtenteToolStripMenuItem_Click);
+            // 
+            // modificaPasswordToolStripMenuItem
+            // 
+            this.modificaPasswordToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_password_64;
+            this.modificaPasswordToolStripMenuItem.Name = "modificaPasswordToolStripMenuItem";
+            this.modificaPasswordToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
+            this.modificaPasswordToolStripMenuItem.Text = "Modifica Password";
+            this.modificaPasswordToolStripMenuItem.Click += new System.EventHandler(this.ModificaPasswordToolStripMenuItem_Click);
+            // 
             // button2
             // 
-            this.button2.BackgroundImage = global::Diomede2.Properties.Resources.icons8_password_64;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.button2.Location = new System.Drawing.Point(15, 223);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(3, 8);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 43);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Modifica Password";
+            this.button2.Size = new System.Drawing.Size(110, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click_1);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(268, 283);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,11 +226,16 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inserisciUtenteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificaPasswordToolStripMenuItem;
+        private System.Windows.Forms.Button button2;
     }
 }
 

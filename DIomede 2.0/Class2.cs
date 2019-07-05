@@ -1308,8 +1308,7 @@ namespace Diomede2
             try
             {
                 con.Open();
-                var command = new MySqlCommand(
-                    "INSERT INTO `ANAGRAFICACLIENTI`(`NOME`, `INDIRIZZO`, `CAP`, `CITTA`, `PEC`, `EMAIL`, `PARTITAIVA`, `TELEFONOFISSO`, `SDI`) VALUES('" +
+                var command = new MySqlCommand("INSERT INTO `ANAGRAFICACLIENTI`(`NOME`, `INDIRIZZO`, `CAP`, `CITTA`, `PEC`, `EMAIL`, `PARTITAIVA`, `TELEFONOFISSO`, `SDI`) VALUES('" +
                     nome + "','" + indirizzo + "','" + cap + "','" + citta + "','" + pec + "','" + email + "','" +
                     partitaIva + "','" + telefono + "','" + sdi + "')", con);
                 command.ExecuteNonQuery();

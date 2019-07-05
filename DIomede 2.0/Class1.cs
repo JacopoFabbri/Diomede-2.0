@@ -10,8 +10,7 @@ namespace Database
 
         public Operaziones(string nomeDB)
         {
-            conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database=" + nomeDB +
-                                    ";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
+            conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database=" + nomeDB +";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
         }
 
         public void inserisciUtente(string user, string pass, int ruolo)
@@ -103,8 +102,8 @@ namespace Database
             try
             {
                 con.Open();
-                var command = new MySqlCommand("INSERT INTO `UTENTI` `USERNAME`, `PASSWORD`, `RUOLO`) VALUES ('" +
-                                               user + "','" + pass + "','" + ruolo + "')");
+                var command = new MySqlCommand("INSERT INTO `UTENTI`( `USERNAME`, `PASSWORD`, `RUOLO`) VALUES ('" +
+                                               user + "','" + pass + "','" + ruolo + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)

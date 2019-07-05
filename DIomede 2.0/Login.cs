@@ -50,9 +50,10 @@ namespace Diomede2
                         else if (utente.Ruolo == 3)
                         {
                             listView1.Items.Add("Ponteggi");
+                            menuStrip1.Visible = false;
+                            button2.Visible = true;
                         }
 
-                        button2.Visible = true;
                     }
                     else
                     {
@@ -73,8 +74,9 @@ namespace Diomede2
                 textBox2.Visible = false;
                 checkBox1.Visible = false;
                 button1.Visible = false;
-                button2.Visible = true;
+                button2.Visible = false;
                 button3.Visible = true;
+                menuStrip1.Visible = true;
             }
             catch (Exception)
             {
@@ -86,6 +88,7 @@ namespace Diomede2
         private void Form1_Load(object sender, EventArgs e)
         {
             checkBox1.Checked = true;
+            menuStrip1.Visible = false;
             var path = Directory.GetCurrentDirectory();
             if (Directory.Exists(path + "\\Login"))
                 if (File.Exists(path + "\\Login\\user.txt"))
@@ -102,7 +105,6 @@ namespace Diomede2
                         else
                             break;
                     }
-
                     sr.Close();
                 }
         }
@@ -120,12 +122,6 @@ namespace Diomede2
             Hide();
         }
 
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-            var sec = new Secret();
-            sec.Show();
-        }
-
         private void Button3_Click(object sender, EventArgs e)
         {
             listView1.Visible = false;
@@ -137,6 +133,30 @@ namespace Diomede2
             button1.Visible = true;
             button2.Visible = false;
             button3.Visible = false;
+            menuStrip1.Visible = false;
+        }
+
+        private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ModificaPasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new ModificaPassword(utente);
+            frm.Show();
+        }
+
+        private void InserisciUtenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InserimentoUtente u = new InserimentoUtente();
+            u.Show();
+        }
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            var frm = new ModificaPassword(utente);
+            frm.Show();
         }
     }
 }
