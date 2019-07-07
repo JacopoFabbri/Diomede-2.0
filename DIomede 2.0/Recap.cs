@@ -22,7 +22,6 @@ namespace Diomede2
             idCommessa = id;
             InitializeComponent();
         }
-
         private void Recap_Load(object sender, EventArgs e)
         {
             op = new OperazionePraticheEdili(db);
@@ -55,7 +54,6 @@ namespace Diomede2
             dataGridView1.Columns[0].Visible = false;
             dataGridView2.Columns[0].Visible = false;
         }
-
         private void Button1_Click_1(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
@@ -68,7 +66,7 @@ namespace Diomede2
                         {
                             op.UpdateLavorazioni((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", "" + riga.Cells["DESC"].Value, "" + riga.Cells["SCADENZE"].Value, (int)riga.Cells["MACROLAVORAZIONE"].Value, (double)riga.Cells["PREZZO"].Value);
                         }
-                        catch (Exception ex)
+                        catch
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -88,7 +86,6 @@ namespace Diomede2
             dataGridView1.DataSource = listaLavorazione;
             dataGridView2.Columns[0].Visible = false;
         }
-
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
@@ -96,7 +93,6 @@ namespace Diomede2
                 cella.Style.ForeColor = Color.Red;
             }
         }
-
         private void Button7_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
@@ -121,7 +117,6 @@ namespace Diomede2
             dataGridView1.DataSource = listaPagamenti;
             dataGridView1.Columns[0].Visible = false;
         }
-
         private void DataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             foreach (DataGridViewCell cella in dataGridView2.Rows[e.RowIndex].Cells)
@@ -129,14 +124,14 @@ namespace Diomede2
                 cella.Style.ForeColor = Color.Red;
             }
         }
-
         private void Button3_Click(object sender, EventArgs e)
         {
             try
             {
                 op.UpdateCommessa(commessa.Id, textBox6.Text);
                 op.UpdateBozza(commessa.Bozza, Convert.ToDouble(textBox5.Text));
-
+                Cliente c = op.CercaClientiId(commessa.Ditta);
+                op.UpdateCliente(c.Id, textBox2.Text, c.Indirizzo, c.Cap, c.Citta, c.Pec, c.Email, c.Iva, c.Tel, c.Sdi);
             }
             catch
             {
@@ -144,19 +139,16 @@ namespace Diomede2
 
             }
         }
-
         private void Button4_Click(object sender, EventArgs e)
         {
             InserimentoLavorazioni ciao = new InserimentoLavorazioni(db, listaMacrolavorazione[comboBox1.SelectedIndex].Id);
             ciao.Show();
         }
-
         private void Button6_Click(object sender, EventArgs e)
         {
             InserimentoPagamento p = new InserimentoPagamento(db, commessa.Id);
             p.Show();
         }
-
         private void Button5_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows != null)
@@ -180,7 +172,6 @@ namespace Diomede2
                             MessageBoxIcon.Error);
                     }
         }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             if (dataGridView2.SelectedRows != null)

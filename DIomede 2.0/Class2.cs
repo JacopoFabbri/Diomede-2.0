@@ -2194,7 +2194,7 @@ namespace Diomede2
 
                 command = new MySqlCommand(
                     "UPDATE `BOZZA` SET `IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) +
-                    " WHERE `ID` = '" + id + "'", con);
+                    "' WHERE `ID` = '" + id + "'", con);
 
                 command.ExecuteNonQuery();
             }
