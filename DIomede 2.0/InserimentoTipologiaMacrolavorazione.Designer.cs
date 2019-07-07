@@ -116,6 +116,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InserimentoTipologiaMacrolavorazione";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inserimento Tipologia Macrolavorazione";
             this.Load += new System.EventHandler(this.InserimentoTipologiaMacrolavorazione_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

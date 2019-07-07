@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,20 +34,21 @@ namespace Diomede2
             foreach (MacroLavorazione m in listaMacrolavorazione)
             {
                 s += m.Nome + "\n";
+                comboBox1.Items.Add(m.Nome);
             }
             textBox3.Text = s;
             textBox4.Text = op.CercaBozzaId(commessa.Bozza).IdentificativoPreventivo;
             textBox5.Text = "" + op.CercaBozzaId(commessa.Bozza).Importo;
-            List<Lavorazioni> listaLavorazioni = new List<Lavorazioni>();
+            List<Lavorazione> listaLavorazione = new List<Lavorazione>();
             foreach (MacroLavorazione m in listaMacrolavorazione)
             {
-                List<Lavorazioni> list = op.FiltraLavorazioni("MACROLAVORAZIONE", "" + m.Id);
-                foreach (Lavorazioni l in list)
+                List<Lavorazione> list = op.FiltraLavorazione("MACROLAVORAZIONE", "" + m.Id);
+                foreach (Lavorazione l in list)
                 {
-                    listaLavorazioni.Add(l);
+                    listaLavorazione.Add(l);
                 }
             }
-            dataGridView1.DataSource = listaLavorazioni;
+            dataGridView1.DataSource = listaLavorazione;
             List<Pagamento> listaPagamenti = op.FiltraPagamento("COMMESSA", "" + commessa.Id);
             dataGridView2.DataSource = listaPagamenti;
             textBox6.Text = commessa.Note;
@@ -56,7 +56,7 @@ namespace Diomede2
             dataGridView2.Columns[0].Visible = false;
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void Button1_Click_1(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
             {
@@ -76,16 +76,16 @@ namespace Diomede2
                     }
                 }
             }
-            List<Lavorazioni> listaLavorazioni = new List<Lavorazioni>();
+            List<Lavorazione> listaLavorazione = new List<Lavorazione>();
             foreach (MacroLavorazione m in listaMacrolavorazione)
             {
-                List<Lavorazioni> list = op.FiltraLavorazioni("MACROLAVORAZIONE", "" + m.Id);
-                foreach (Lavorazioni l in list)
+                List<Lavorazione> list = op.FiltraLavorazione("MACROLAVORAZIONE", "" + m.Id);
+                foreach (Lavorazione l in list)
                 {
-                    listaLavorazioni.Add(l);
+                    listaLavorazione.Add(l);
                 }
             }
-            dataGridView1.DataSource = listaLavorazioni;
+            dataGridView1.DataSource = listaLavorazione;
             dataGridView2.Columns[0].Visible = false;
         }
 
@@ -97,7 +97,7 @@ namespace Diomede2
             }
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void Button7_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
             {
@@ -143,6 +143,66 @@ namespace Diomede2
                 MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            InserimentoLavorazioni ciao = new InserimentoLavorazioni(db, listaMacrolavorazione[comboBox1.SelectedIndex].Id);
+            ciao.Show();
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            InserimentoPagamento p = new InserimentoPagamento(db, commessa.Id);
+            p.Show();
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows != null)
+                if (MessageBox.Show(
+                        "Stai per eliminare " +
+                        (string)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?",
+                        "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) ==
+                    DialogResult.Yes)
+                    try
+                    {
+                        var clienti = op.CercaLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]
+                            .Cells[0].Value);
+                        op.CancellaLavorazione((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0]
+                            .Value);
+                        MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedRows != null)
+                if (MessageBox.Show(
+                        "Stai per eliminare " +
+                        (string)dataGridView1.Rows[dataGridView2.SelectedRows[0].Index].Cells[1].Value + " .Confermi?",
+                        "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) ==
+                    DialogResult.Yes)
+                    try
+                    {
+                        var clienti = op.CercaPagamento((int)dataGridView2.Rows[dataGridView2.SelectedRows[0].Index]
+                            .Cells[0].Value);
+                        op.CancellaPagamento((int)dataGridView2.Rows[dataGridView2.SelectedRows[0].Index].Cells[0]
+                            .Value);
+                        MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
         }
     }
 }

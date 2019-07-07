@@ -139,6 +139,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ListaLavorazioni";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista Lavorazioni";
             this.Load += new System.EventHandler(this.ListaLavorazioni_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

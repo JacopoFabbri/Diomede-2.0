@@ -1,22 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Diomede2
 {
     public partial class FiltroLavorazioni : Form
     {
-        DataGridView dataTable;
-        List<Lavorazione> lista;
-        OperazionePraticheEdili op;
-        String db;
-        public FiltroLavorazioni(DataGridView d, String dbName)
+        private readonly DataGridView dataTable;
+        private readonly string db;
+        private List<Lavorazione> lista;
+        private OperazionePraticheEdili op;
+
+        public FiltroLavorazioni(DataGridView d, string dbName)
         {
             db = dbName;
             dataTable = d;
@@ -40,92 +35,67 @@ namespace Diomede2
                 Application.Exit();
             }
         }
+
         private void Button1_Click_1(object sender, EventArgs e)
         {
-
-                dataTable.DataSource = op.FiltraLavorazione("" + comboBox1.SelectedItem, "" + comboBox2.SelectedItem);
-            
+            dataTable.DataSource = op.FiltraLavorazione("" + comboBox1.SelectedItem, "" + comboBox2.SelectedItem);
         }
+
         private void ComboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             comboBox2.Items.Clear();
             if (comboBox1.SelectedItem.Equals("OPERAZIONE"))
-            {
-                foreach (Lavorazione c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
-                        if (c.Operazione.ToString().Equals(o.ToString()))
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
+                        if (c.Operazione.Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
-                    if (flag)
-                    {
-                        comboBox2.Items.Add(c.Operazione.ToString());
-                    }
+
+                    if (flag) comboBox2.Items.Add(c.Operazione);
                 }
-            }
             else if (comboBox1.SelectedItem.Equals("PACCHETTO"))
-            {
-                foreach (Lavorazione c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
                         if (c.Pacchetto.ToString().Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
-                    if (flag)
-                    {
-                        comboBox2.Items.Add(c.Pacchetto);
-                    }
+
+                    if (flag) comboBox2.Items.Add(c.Pacchetto);
                 }
-            }
             else if (comboBox1.SelectedItem.Equals("IMPORTO"))
-            {
-                foreach (Lavorazione c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
                         if (c.Importo.ToString().Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
-                    if (flag)
-                    {
-                        comboBox2.Items.Add(c.Importo.ToString());
-                    }
+
+                    if (flag) comboBox2.Items.Add(c.Importo.ToString());
                 }
-            }
             else if (comboBox1.SelectedItem.Equals("DESC"))
-            {
-                foreach (Lavorazione c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
-                        if (c.Desc.ToString().Equals(o.ToString()))
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
+                        if (c.Desc.Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
-                    if (flag)
-                    {
-                        comboBox2.Items.Add(c.Desc);
-                    }
-                }
-            }
-        }
 
+                    if (flag) comboBox2.Items.Add(c.Desc);
+                }
+        }
     }
 }

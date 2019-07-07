@@ -1,21 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Diomede2
 {
     public partial class InserisciTipologiaLavorazione : Form
     {
-        List<TipologiaMacroLavorazione> lista;
-        readonly String db;
+        private readonly string db;
         private readonly OperazionePraticheEdili op;
-        public InserisciTipologiaLavorazione(String dbName)
+        private List<TipologiaMacroLavorazione> lista;
+
+        public InserisciTipologiaLavorazione(string dbName)
         {
             db = dbName;
             InitializeComponent();
@@ -26,22 +21,22 @@ namespace Diomede2
         {
             try
             {
-                op.InserimentoTipologialavorazione(textBox1.Text, textBox2.Text, Convert.ToDouble(textBox3.Text), textBox4.Text,lista[comboBox1.SelectedIndex].Id);
-                MessageBox.Show("Tipologia di Lavorazione Inserita", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                op.InserimentoTipologialavorazione(textBox1.Text, textBox2.Text, Convert.ToDouble(textBox3.Text),
+                    textBox4.Text, lista[comboBox1.SelectedIndex].Id);
+                MessageBox.Show("Tipologia di Lavorazione Inserita", "Inserito", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                Close();
             }
             catch
             {
                 MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
             }
         }
+
         private void InserisciTipologiaLavorazione_Load(object sender, EventArgs e)
         {
             lista = op.CercaTipologiaMacroLavorazione();
-            foreach (TipologiaMacroLavorazione t in lista)
-            {
-                comboBox1.Items.Add(t.Nome);
-            }
+            foreach (var t in lista) comboBox1.Items.Add(t.Nome);
         }
     }
 }

@@ -73,9 +73,11 @@
             // 
             // listView1
             // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.listView1.Location = new System.Drawing.Point(8, 31);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(131, 389);
+            this.listView1.Size = new System.Drawing.Size(131, 391);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
@@ -84,9 +86,11 @@
             // 
             // listView2
             // 
+            this.listView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.listView2.Location = new System.Drawing.Point(291, 31);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(131, 389);
+            this.listView2.Size = new System.Drawing.Size(131, 391);
             this.listView2.TabIndex = 3;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.List;
@@ -106,7 +110,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(785, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(806, 27);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -244,6 +248,7 @@
             this.visualizzaListaBozzeToolStripMenuItem,
             this.nascondiListaBozzeToolStripMenuItem});
             this.aggiungiToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.aggiungiToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_nessuna_modifica_48;
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
             this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.aggiungiToolStripMenuItem.Text = "Bozze";
@@ -285,6 +290,7 @@
             this.pacchettoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listaPacchettoToolStripMenuItem,
             this.inserisciPacchettoToolStripMenuItem});
+            this.pacchettoToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_modifica_casella_100;
             this.pacchettoToolStripMenuItem.Name = "pacchettoToolStripMenuItem";
             this.pacchettoToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.pacchettoToolStripMenuItem.Text = "Pacchetto";
@@ -311,8 +317,9 @@
             this.commesseToolStripMenuItem,
             this.macroLavorazioniToolStripMenuItem1});
             this.gestioneCommesseToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gestioneCommesseToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_quaderno_48;
             this.gestioneCommesseToolStripMenuItem.Name = "gestioneCommesseToolStripMenuItem";
-            this.gestioneCommesseToolStripMenuItem.Size = new System.Drawing.Size(146, 23);
+            this.gestioneCommesseToolStripMenuItem.Size = new System.Drawing.Size(162, 23);
             this.gestioneCommesseToolStripMenuItem.Text = "Gestione Commesse";
             // 
             // commesseToolStripMenuItem
@@ -403,9 +410,11 @@
             // 
             // listView3
             // 
+            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.listView3.Location = new System.Drawing.Point(428, 31);
             this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(131, 389);
+            this.listView3.Size = new System.Drawing.Size(131, 391);
             this.listView3.TabIndex = 10;
             this.listView3.UseCompatibleStateImageBehavior = false;
             this.listView3.View = System.Windows.Forms.View.List;
@@ -415,7 +424,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 425);
+            this.ClientSize = new System.Drawing.Size(806, 427);
             this.Controls.Add(this.listView3);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);
@@ -423,6 +432,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Dashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.Load += new System.EventHandler(this.Form2_Load);

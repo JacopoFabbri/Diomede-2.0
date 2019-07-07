@@ -1,26 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Diomede2
 {
     public partial class InserimentoCliente : Form
     {
-        readonly String db;
-        ListaClienti form;
-        public InserimentoCliente(String dbName, ListaClienti frm)
+        private readonly string db;
+        private readonly ListaClienti form;
+
+        public InserimentoCliente(string dbName, ListaClienti frm)
         {
             form = frm;
             db = dbName;
             InitializeComponent();
         }
-        public InserimentoCliente(String dbName)
+
+        public InserimentoCliente(string dbName)
         {
             db = dbName;
             InitializeComponent();
@@ -30,17 +25,18 @@ namespace Diomede2
         {
             try
             {
-                OperazionePraticheEdili op = new OperazionePraticheEdili(db);
-                op.InserimentoCliente(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, textBox8.Text, textBox9.Text);
+                var op = new OperazionePraticheEdili(db);
+                op.InserimentoCliente(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text,
+                    textBox6.Text, textBox7.Text, textBox8.Text, textBox9.Text);
                 MessageBox.Show("Cliente Inserito", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (form == null)
                 {
-                    this.Close();
+                    Close();
                 }
                 else
                 {
                     form.Form4_Load(sender, e);
-                    this.Close();
+                    Close();
                 }
             }
             catch (Exception)
@@ -51,7 +47,6 @@ namespace Diomede2
 
         private void InserimentoCliente_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

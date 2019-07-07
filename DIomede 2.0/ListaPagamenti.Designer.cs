@@ -119,6 +119,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ListaPagamenti";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista Pagamenti";
             this.Load += new System.EventHandler(this.ListaPagamenti_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

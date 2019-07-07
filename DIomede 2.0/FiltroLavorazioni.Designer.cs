@@ -71,6 +71,7 @@
             this.Controls.Add(this.comboBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FiltroLavorazioni";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filtro";
             this.Load += new System.EventHandler(this.FiltroLavorazioni_Load_1);
             this.ResumeLayout(false);

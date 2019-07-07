@@ -61,6 +61,7 @@
             this.Controls.Add(this.listView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VisualizzatoreMacrolavorazioni";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visualizzatore Macrolavorazioni";
             this.Load += new System.EventHandler(this.VisualizzatoreMacrolavorazioni_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Visualizzatore_KeyDown);

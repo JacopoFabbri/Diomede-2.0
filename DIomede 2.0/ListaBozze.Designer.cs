@@ -140,6 +140,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ListaBozze";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista Bozze";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ListaBozze_FormClosing);
             this.Load += new System.EventHandler(this.ListaBozze_Load);

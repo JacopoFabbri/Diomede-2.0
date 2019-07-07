@@ -1,22 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Diomede2
 {
     public partial class FiltroClienti : Form
     {
-        DataGridView dataTable;
-        List<Cliente> lista;
-        OperazionePraticheEdili op;
-        String db;
-        public FiltroClienti(DataGridView d, String dbName)
+        private readonly DataGridView dataTable;
+        private readonly string db;
+        private List<Cliente> lista;
+        private OperazionePraticheEdili op;
+
+        public FiltroClienti(DataGridView d, string dbName)
         {
             db = dbName;
             dataTable = d;
@@ -50,181 +45,127 @@ namespace Diomede2
         {
             comboBox2.Items.Clear();
             if (comboBox1.SelectedItem.Equals("NOME"))
-            {
-                foreach(Cliente c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
                         if (c.Nome.Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
-                    if (flag)
-                    {
-                        comboBox2.Items.Add(c.Nome);
-                    }
+
+                    if (flag) comboBox2.Items.Add(c.Nome);
                 }
-            }
             else if (comboBox1.SelectedItem.Equals("INDIRIZZO"))
-            {
-                foreach (Cliente c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
                         if (c.Indirizzo.Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
-                    if (flag)
-                    {
-                        comboBox2.Items.Add(c.Indirizzo);
-                    }
+
+                    if (flag) comboBox2.Items.Add(c.Indirizzo);
                 }
-            }
             else if (comboBox1.SelectedItem.Equals("CAP"))
-            {
-                foreach (Cliente c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
                         if (c.Cap.Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
-                    if (flag)
-                    {
-                        comboBox2.Items.Add(c.Cap);
-                    }
+
+                    if (flag) comboBox2.Items.Add(c.Cap);
                 }
-            }
             else if (comboBox1.SelectedItem.Equals("CITTA"))
-            {
-                foreach (Cliente c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
                         if (c.Citta.Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
-                    if (flag)
-                    {
-                        comboBox2.Items.Add(c.Citta);
-                    }
+
+                    if (flag) comboBox2.Items.Add(c.Citta);
                 }
-            }
             else if (comboBox1.SelectedItem.Equals("PEC"))
-            {
-                foreach (Cliente c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
                         if (c.Pec.Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
-                    if (flag)
-                    {
-                        comboBox2.Items.Add(c.Pec);
-                    }
+
+                    if (flag) comboBox2.Items.Add(c.Pec);
                 }
-            }
             else if (comboBox1.SelectedItem.Equals("EMAIL"))
-            {
-                foreach (Cliente c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
                         if (c.Email.Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
-                    if (flag)
-                    {
-                        comboBox2.Items.Add(c.Email);
-                    }
+
+                    if (flag) comboBox2.Items.Add(c.Email);
                 }
-            }
             else if (comboBox1.SelectedItem.Equals("PARTITAIVA"))
-            {
-                foreach (Cliente c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
                         if (c.Iva.Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
-                    if (flag)
-                    {
-                        comboBox2.Items.Add(c.Iva);
-                    }
+
+                    if (flag) comboBox2.Items.Add(c.Iva);
                 }
-            }
             else if (comboBox1.SelectedItem.Equals("TELEFONOFISSO"))
-            {
-                foreach (Cliente c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
                         if (c.Tel.Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
-                    if (flag)
-                    {
-                        comboBox2.Items.Add(c.Tel);
-                    }
+
+                    if (flag) comboBox2.Items.Add(c.Tel);
                 }
-            }
             else if (comboBox1.SelectedItem.Equals("SDI"))
-            {
-                foreach (Cliente c in lista)
+                foreach (var c in lista)
                 {
-                    Boolean flag = true;
-                    foreach (Object o in comboBox2.Items)
-                    {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
                         if (c.Sdi.Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
-                    }
-                    if (flag)
-                    {
-                        comboBox2.Items.Add(c.Sdi);
-                    }
+
+                    if (flag) comboBox2.Items.Add(c.Sdi);
                 }
-            }
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            dataTable.DataSource = op.FiltraClienti("" + comboBox1.SelectedItem,"" + comboBox2.SelectedItem);
+            dataTable.DataSource = op.FiltraClienti("" + comboBox1.SelectedItem, "" + comboBox2.SelectedItem);
         }
     }
 }
