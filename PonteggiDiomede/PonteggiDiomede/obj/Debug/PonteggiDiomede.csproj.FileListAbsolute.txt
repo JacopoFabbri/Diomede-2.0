@@ -1,0 +1,12 @@
+C:\Users\Asus\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.Properties.Resources.resources
+C:\Users\Asus\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\bin\Debug\PonteggiDiomede.exe.config
+C:\Users\Asus\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\bin\Debug\PonteggiDiomede.exe
+C:\Users\Asus\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\bin\Debug\PonteggiDiomede.pdb
+C:\Users\Asus\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\bin\Debug\MySql.Data.dll
+C:\Users\Asus\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.csproj.CopyComplete
+C:\Users\Asus\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.exe
+C:\Users\Asus\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.pdb
+C:\Users\Asus\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.Login.resources
