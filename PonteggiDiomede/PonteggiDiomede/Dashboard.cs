@@ -45,5 +45,31 @@ namespace Diomede2
             }
 
         }
+
+        private void ListaClientiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ListaClienti l = new ListaClienti(settore, this);
+                l.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Errore imprevisto contattare l'assistenza");
+            }
+        }
+
+        private void AggiungiClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InserimentoCliente i = new InserimentoCliente(settore);
+                i.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Errore imprevisto contattare l'assistenza");
+            }
+        }
     }
 }
