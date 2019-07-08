@@ -63,67 +63,6 @@ namespace Diomede2.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _21276 {
-            get {
-                object obj = ResourceManager.GetObject("21276", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _21846246_botón_de_icono_de_papelera_rojo_web {
-            get {
-                object obj = ResourceManager.GetObject("21846246-botón-de-icono-de-papelera-rojo-web", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _39220 {
-            get {
-                object obj = ResourceManager.GetObject("39220", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _52300 {
-            get {
-                object obj = ResourceManager.GetObject("52300", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap depositphotos_136096742_stock_illustration_dollar_banknote_icon_illustration_isolated {
-            get {
-                object obj = ResourceManager.GetObject("depositphotos_136096742-stock-illustration-dollar-banknote-icon-illustration-isol" +
-                        "ated", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap freccia_giu_in_basso_ios_simbolo_7_interfaccia_318_34332 {
-            get {
-                object obj = ResourceManager.GetObject("freccia-giu-in-basso-ios-simbolo-7-interfaccia_318-34332", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icons8_aggiungere_il_contatto_alla_società_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-aggiungere-il-contatto-alla-società-48", resourceCulture);

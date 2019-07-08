@@ -90,7 +90,7 @@ namespace Diomede2
                                 .Cells[0].Value);
                             op.CancellaCommessa((int) dataGridView1.Rows[dataGridView1.SelectedRows[i].Index].Cells[0]
                                 .Value);
-                            MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK,
+                            MessageBox.Show("Commessa Eliminata", "Conferma", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
                         }
                         catch
@@ -146,7 +146,7 @@ namespace Diomede2
                                 .Cells[0].Value);
                             op.CancellaCommessa((int) dataGridView1.Rows[dataGridView1.SelectedRows[i].Index].Cells[0]
                                 .Value);
-                            MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK,
+                            MessageBox.Show("Commessa Eliminata", "Conferma", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
                         }
                         catch

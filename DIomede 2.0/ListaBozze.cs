@@ -106,7 +106,7 @@ namespace Diomede2
                         var clienti = op.CercaBozzaId((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]
                             .Cells[0].Value);
                         op.CancellaBozza((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
-                        MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK,
+                        MessageBox.Show("Bozza Eliminata", "Conferma", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
                     catch
