@@ -146,10 +146,6 @@ namespace Diomede2
             button3.Visible = false;
             menuStrip1.Visible = false;
         }
-        private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void ModificaPasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new ModificaPassword(utente);
