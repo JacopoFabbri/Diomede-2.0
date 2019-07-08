@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.listView1 = new System.Windows.Forms.ListView();
             this.listView2 = new System.Windows.Forms.ListView();
@@ -39,22 +38,6 @@
             this.aggiungiClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostraListaClientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nascondiListaClientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestioneTipologieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.macrolavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaMacroLavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inserisciMacroLavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaLavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inserisciLavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestioneBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aggiungiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inserisciBozzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visualizzaListaBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nascondiListaBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pacchettoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaPacchettoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inserisciPacchettoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestioneCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,8 +49,6 @@
             this.pagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaPagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,7 +68,7 @@
             // 
             this.listView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.listView2.Location = new System.Drawing.Point(291, 31);
+            this.listView2.Location = new System.Drawing.Point(145, 30);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(131, 391);
             this.listView2.TabIndex = 3;
@@ -100,8 +81,6 @@
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
-            this.gestioneTipologieToolStripMenuItem,
-            this.gestioneBozzeToolStripMenuItem,
             this.gestioneCommesseToolStripMenuItem,
             this.gestioneEconomicaToolStripMenuItem,
             this.exitToolStripMenuItem});
@@ -157,125 +136,6 @@
             this.nascondiListaClientiToolStripMenuItem.Name = "nascondiListaClientiToolStripMenuItem";
             this.nascondiListaClientiToolStripMenuItem.Size = new System.Drawing.Size(208, 24);
             this.nascondiListaClientiToolStripMenuItem.Text = "Nascondi Lista Clienti";
-            // 
-            // gestioneTipologieToolStripMenuItem
-            // 
-            this.gestioneTipologieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.macrolavorazioniToolStripMenuItem,
-            this.lavorazioniToolStripMenuItem});
-            this.gestioneTipologieToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gestioneTipologieToolStripMenuItem.Name = "gestioneTipologieToolStripMenuItem";
-            this.gestioneTipologieToolStripMenuItem.Size = new System.Drawing.Size(134, 23);
-            this.gestioneTipologieToolStripMenuItem.Text = "Gestione Tipologie";
-            // 
-            // macrolavorazioniToolStripMenuItem
-            // 
-            this.macrolavorazioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listaMacroLavorazioniToolStripMenuItem,
-            this.inserisciMacroLavorazioniToolStripMenuItem});
-            this.macrolavorazioniToolStripMenuItem.Name = "macrolavorazioniToolStripMenuItem";
-            this.macrolavorazioniToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
-            this.macrolavorazioniToolStripMenuItem.Text = "Macro Lavorazioni";
-            // 
-            // listaMacroLavorazioniToolStripMenuItem
-            // 
-            this.listaMacroLavorazioniToolStripMenuItem.Name = "listaMacroLavorazioniToolStripMenuItem";
-            this.listaMacroLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(242, 24);
-            this.listaMacroLavorazioniToolStripMenuItem.Text = "Lista Macro Lavorazioni";
-            // 
-            // inserisciMacroLavorazioniToolStripMenuItem
-            // 
-            this.inserisciMacroLavorazioniToolStripMenuItem.Name = "inserisciMacroLavorazioniToolStripMenuItem";
-            this.inserisciMacroLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(242, 24);
-            this.inserisciMacroLavorazioniToolStripMenuItem.Text = "Inserisci Macro Lavorazioni";
-            // 
-            // lavorazioniToolStripMenuItem
-            // 
-            this.lavorazioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listaLavorazioniToolStripMenuItem,
-            this.inserisciLavorazioniToolStripMenuItem});
-            this.lavorazioniToolStripMenuItem.Name = "lavorazioniToolStripMenuItem";
-            this.lavorazioniToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
-            this.lavorazioniToolStripMenuItem.Text = "Lavorazioni";
-            // 
-            // listaLavorazioniToolStripMenuItem
-            // 
-            this.listaLavorazioniToolStripMenuItem.Name = "listaLavorazioniToolStripMenuItem";
-            this.listaLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(199, 24);
-            this.listaLavorazioniToolStripMenuItem.Text = "Lista Lavorazioni";
-            // 
-            // inserisciLavorazioniToolStripMenuItem
-            // 
-            this.inserisciLavorazioniToolStripMenuItem.Name = "inserisciLavorazioniToolStripMenuItem";
-            this.inserisciLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(199, 24);
-            this.inserisciLavorazioniToolStripMenuItem.Text = "Inserisci Lavorazioni";
-            // 
-            // gestioneBozzeToolStripMenuItem
-            // 
-            this.gestioneBozzeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aggiungiToolStripMenuItem,
-            this.pacchettoToolStripMenuItem});
-            this.gestioneBozzeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gestioneBozzeToolStripMenuItem.Name = "gestioneBozzeToolStripMenuItem";
-            this.gestioneBozzeToolStripMenuItem.Size = new System.Drawing.Size(114, 23);
-            this.gestioneBozzeToolStripMenuItem.Text = "Gestione Bozze";
-            // 
-            // aggiungiToolStripMenuItem
-            // 
-            this.aggiungiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listaBozzeToolStripMenuItem,
-            this.inserisciBozzaToolStripMenuItem,
-            this.visualizzaListaBozzeToolStripMenuItem,
-            this.nascondiListaBozzeToolStripMenuItem});
-            this.aggiungiToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
-            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
-            this.aggiungiToolStripMenuItem.Text = "Bozze";
-            // 
-            // listaBozzeToolStripMenuItem
-            // 
-            this.listaBozzeToolStripMenuItem.Name = "listaBozzeToolStripMenuItem";
-            this.listaBozzeToolStripMenuItem.Size = new System.Drawing.Size(207, 24);
-            this.listaBozzeToolStripMenuItem.Text = "Lista Bozze";
-            // 
-            // inserisciBozzaToolStripMenuItem
-            // 
-            this.inserisciBozzaToolStripMenuItem.Name = "inserisciBozzaToolStripMenuItem";
-            this.inserisciBozzaToolStripMenuItem.Size = new System.Drawing.Size(207, 24);
-            this.inserisciBozzaToolStripMenuItem.Text = "Inserisci Bozza";
-            // 
-            // visualizzaListaBozzeToolStripMenuItem
-            // 
-            this.visualizzaListaBozzeToolStripMenuItem.Name = "visualizzaListaBozzeToolStripMenuItem";
-            this.visualizzaListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(207, 24);
-            this.visualizzaListaBozzeToolStripMenuItem.Text = "Visualizza Lista Bozze";
-            // 
-            // nascondiListaBozzeToolStripMenuItem
-            // 
-            this.nascondiListaBozzeToolStripMenuItem.Name = "nascondiListaBozzeToolStripMenuItem";
-            this.nascondiListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(207, 24);
-            this.nascondiListaBozzeToolStripMenuItem.Text = "Nascondi Lista Bozze";
-            // 
-            // pacchettoToolStripMenuItem
-            // 
-            this.pacchettoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listaPacchettoToolStripMenuItem,
-            this.inserisciPacchettoToolStripMenuItem});
-            this.pacchettoToolStripMenuItem.Name = "pacchettoToolStripMenuItem";
-            this.pacchettoToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
-            this.pacchettoToolStripMenuItem.Text = "Pacchetto";
-            // 
-            // listaPacchettoToolStripMenuItem
-            // 
-            this.listaPacchettoToolStripMenuItem.Name = "listaPacchettoToolStripMenuItem";
-            this.listaPacchettoToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
-            this.listaPacchettoToolStripMenuItem.Text = "Lista Pacchetto";
-            // 
-            // inserisciPacchettoToolStripMenuItem
-            // 
-            this.inserisciPacchettoToolStripMenuItem.Name = "inserisciPacchettoToolStripMenuItem";
-            this.inserisciPacchettoToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
-            this.inserisciPacchettoToolStripMenuItem.Text = "Inserisci Pacchetto";
             // 
             // gestioneCommesseToolStripMenuItem
             // 
@@ -343,7 +203,7 @@
             this.pagamentiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listaPagamentiToolStripMenuItem});
             this.pagamentiToolStripMenuItem.Name = "pagamentiToolStripMenuItem";
-            this.pagamentiToolStripMenuItem.Size = new System.Drawing.Size(143, 24);
+            this.pagamentiToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.pagamentiToolStripMenuItem.Text = "Pagamenti";
             // 
             // listaPagamentiToolStripMenuItem
@@ -355,28 +215,16 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.exitToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_eliminare_48;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(42, 23);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(58, 23);
             this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // listView3
-            // 
-            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.listView3.Location = new System.Drawing.Point(428, 31);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(131, 391);
-            this.listView3.TabIndex = 10;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.List;
-            this.listView3.Visible = false;
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 427);
-            this.Controls.Add(this.listView3);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.menuStrip1);
@@ -403,34 +251,16 @@
         private System.Windows.Forms.ToolStripMenuItem aggiungiClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mostraListaClientiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nascondiListaClientiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestioneBozzeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestioneTipologieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestioneCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestioneEconomicaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aggiungiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listaBozzeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inserisciBozzaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem visualizzaListaBozzeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nascondiListaBozzeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pacchettoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listaPacchettoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inserisciPacchettoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lavorazioniToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listaLavorazioniToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inserisciLavorazioniToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem macrolavorazioniToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listaMacroLavorazioniToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inserisciMacroLavorazioniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem commesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem macroLavorazioniToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem listaMacroLavorazioniToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem pagamentiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaPagamentiToolStripMenuItem;
-        private System.Windows.Forms.ListView listView3;
         private System.Windows.Forms.ToolStripMenuItem mostraListaCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nascondiListaCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.Timer timer1;
     }
 }
