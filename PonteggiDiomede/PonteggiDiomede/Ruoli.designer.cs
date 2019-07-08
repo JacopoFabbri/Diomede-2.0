@@ -92,14 +92,12 @@
             this.aggiungiToolStripMenuItem,
             this.eliminaToolStripMenuItem});
             this.editToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.editToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_servizi_48;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(60, 23);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // aggiornaToolStripMenuItem
             // 
-            this.aggiornaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_sincronizzare_48;
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
             this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
@@ -107,7 +105,6 @@
             // 
             // aggiungiToolStripMenuItem
             // 
-            this.aggiungiToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_più_48;
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
             this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.aggiungiToolStripMenuItem.Text = "Aggiungi";
@@ -115,7 +112,6 @@
             // 
             // eliminaToolStripMenuItem
             // 
-            this.eliminaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_cestino_48;
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
             this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.eliminaToolStripMenuItem.Text = "Elimina";
