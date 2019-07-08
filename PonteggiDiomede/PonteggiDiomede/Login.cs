@@ -133,6 +133,11 @@ namespace Diomede2
                     MessageBox.Show(ex.ToString());
                 }
             }
+            else
+            {
+                Dashboard l = new Dashboard(listView1.SelectedItems[0].Text, this);
+                l.Show();
+            }
 
         }
     }

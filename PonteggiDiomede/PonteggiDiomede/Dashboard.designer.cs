@@ -73,7 +73,7 @@
             // 
             // listView1
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.listView1.Location = new System.Drawing.Point(8, 31);
             this.listView1.Name = "listView1";
@@ -85,7 +85,7 @@
             // 
             // listView2
             // 
-            this.listView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.listView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.listView2.Location = new System.Drawing.Point(291, 31);
             this.listView2.Name = "listView2";
@@ -118,7 +118,7 @@
             this.toolStripMenuItem2});
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(133, 23);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(117, 23);
             this.toolStripMenuItem1.Text = "Gestione Clienti";
             // 
             // toolStripMenuItem2
@@ -163,7 +163,7 @@
             this.lavorazioniToolStripMenuItem});
             this.gestioneTipologieToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gestioneTipologieToolStripMenuItem.Name = "gestioneTipologieToolStripMenuItem";
-            this.gestioneTipologieToolStripMenuItem.Size = new System.Drawing.Size(150, 23);
+            this.gestioneTipologieToolStripMenuItem.Size = new System.Drawing.Size(134, 23);
             this.gestioneTipologieToolStripMenuItem.Text = "Gestione Tipologie";
             // 
             // macrolavorazioniToolStripMenuItem
@@ -215,7 +215,7 @@
             this.pacchettoToolStripMenuItem});
             this.gestioneBozzeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gestioneBozzeToolStripMenuItem.Name = "gestioneBozzeToolStripMenuItem";
-            this.gestioneBozzeToolStripMenuItem.Size = new System.Drawing.Size(130, 23);
+            this.gestioneBozzeToolStripMenuItem.Size = new System.Drawing.Size(114, 23);
             this.gestioneBozzeToolStripMenuItem.Text = "Gestione Bozze";
             // 
             // aggiungiToolStripMenuItem
@@ -282,7 +282,7 @@
             this.macroLavorazioniToolStripMenuItem1});
             this.gestioneCommesseToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gestioneCommesseToolStripMenuItem.Name = "gestioneCommesseToolStripMenuItem";
-            this.gestioneCommesseToolStripMenuItem.Size = new System.Drawing.Size(162, 23);
+            this.gestioneCommesseToolStripMenuItem.Size = new System.Drawing.Size(146, 23);
             this.gestioneCommesseToolStripMenuItem.Text = "Gestione Commesse";
             // 
             // commesseToolStripMenuItem
@@ -333,7 +333,7 @@
             this.pagamentiToolStripMenuItem});
             this.gestioneEconomicaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gestioneEconomicaToolStripMenuItem.Name = "gestioneEconomicaToolStripMenuItem";
-            this.gestioneEconomicaToolStripMenuItem.Size = new System.Drawing.Size(160, 23);
+            this.gestioneEconomicaToolStripMenuItem.Size = new System.Drawing.Size(144, 23);
             this.gestioneEconomicaToolStripMenuItem.Text = "Gestione Economica";
             // 
             // pagamentiToolStripMenuItem
@@ -354,12 +354,12 @@
             // 
             this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(58, 23);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(42, 23);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // listView3
             // 
-            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.listView3.Location = new System.Drawing.Point(428, 31);
             this.listView3.Name = "listView3";
@@ -383,6 +383,7 @@
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
