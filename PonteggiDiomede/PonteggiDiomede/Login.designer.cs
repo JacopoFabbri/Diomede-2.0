@@ -87,7 +87,8 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
             this.listView1.Visible = false;
-
+            this.listView1.Click += new System.EventHandler(this.ListView1_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;

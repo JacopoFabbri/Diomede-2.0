@@ -13,8 +13,6 @@ namespace Diomede2
         {
             InitializeComponent();
         }
-
-
         private void Button1_Click(object sender, EventArgs e)
         {
             listView1.Clear();
@@ -84,7 +82,6 @@ namespace Diomede2
                 textBox2.Clear();
             }
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             checkBox1.Checked = true;
@@ -108,20 +105,35 @@ namespace Diomede2
                     sr.Close();
                 }
         }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             var frm = new ModificaPassword(utente);
             frm.Show();
         }
-
         private void ListView1_Click(object sender, EventArgs e)
         {
-            var frm = new Dashboard(listView1.SelectedItems[0].Text, this);
-            frm.Show();
-            Hide();
+            if (listView1.SelectedItems[0].Text.Equals("Ponteggi"))
+            {
+                try
+                {
+                    System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                    proc.EnableRaisingEvents = false;
+                    proc.StartInfo.FileName = "C:/Users/Ponteggi5/Desktop/Diomede-2.0/PonteggiDiomede/PonteggiDiomede/bin/Debug/PonteggiDiomede.exe";
+                    proc.Start();
+                    Application.Exit();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            else
+            {
+                var frm = new Dashboard(listView1.SelectedItems[0].Text, this);
+                frm.Show();
+                Hide();
+            }
         }
-
         private void Button3_Click(object sender, EventArgs e)
         {
             listView1.Visible = false;
@@ -134,24 +146,20 @@ namespace Diomede2
             button3.Visible = false;
             menuStrip1.Visible = false;
         }
-
         private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
         private void ModificaPasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new ModificaPassword(utente);
             frm.Show();
         }
-
         private void InserisciUtenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InserimentoUtente u = new InserimentoUtente();
             u.Show();
         }
-
         private void Button2_Click_1(object sender, EventArgs e)
         {
             var frm = new ModificaPassword(utente);

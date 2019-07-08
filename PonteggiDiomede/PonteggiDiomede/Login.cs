@@ -119,8 +119,24 @@ namespace Diomede2
             button3.Visible = false;
             menuStrip1.Visible = false;
         }
-        private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+
+        private void ListView1_Click(object sender, EventArgs e)
         {
+            if (listView1.SelectedItems[0].Text.Equals("PraticheEdili"))
+            {
+                try
+                {
+                    System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                    proc.EnableRaisingEvents = false;
+                    proc.StartInfo.FileName = "C:/Users/Ponteggi5/Desktop/Diomede-2.0/DIomede 2.0/bin/Debug/Diomede2.exe";
+                    proc.Start();
+                    Application.Exit();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
 
         }
     }
