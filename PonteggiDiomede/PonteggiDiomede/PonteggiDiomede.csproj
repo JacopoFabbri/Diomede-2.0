@@ -51,6 +51,12 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Class2.cs" />
+    <Compile Include="Contatti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contatti.designer.cs">
+      <DependentUpon>Contatti.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,18 @@
     </Compile>
     <Compile Include="InserimentoCliente.designer.cs">
       <DependentUpon>InserimentoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserimentoContatto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoContatto.designer.cs">
+      <DependentUpon>InserimentoContatto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserimentoRuolo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoRuolo.designer.cs">
+      <DependentUpon>InserimentoRuolo.cs</DependentUpon>
     </Compile>
     <Compile Include="ListaClienti.cs">
       <SubType>Form</SubType>
@@ -77,11 +95,38 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ruoli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ruoli.designer.cs">
+      <DependentUpon>Ruoli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="visualizzatore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="visualizzatore.designer.cs">
+      <DependentUpon>visualizzatore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizzatoreDitte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualizzatoreDitte.designer.cs">
+      <DependentUpon>VisualizzatoreDitte.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Contatti.resx">
+      <DependentUpon>Contatti.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InserimentoCliente.resx">
       <DependentUpon>InserimentoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserimentoContatto.resx">
+      <DependentUpon>InserimentoContatto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserimentoRuolo.resx">
+      <DependentUpon>InserimentoRuolo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaClienti.resx">
       <DependentUpon>ListaClienti.cs</DependentUpon>
@@ -98,6 +143,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ruoli.resx">
+      <DependentUpon>Ruoli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="visualizzatore.resx">
+      <DependentUpon>visualizzatore.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
