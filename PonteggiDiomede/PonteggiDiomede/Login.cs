@@ -8,13 +8,10 @@ namespace Diomede2
     public partial class Login : Form
     {
         private Utente utente;
-
         public Login()
         {
             InitializeComponent();
         }
-
-
         private void Button1_Click(object sender, EventArgs e)
         {
             listView1.Clear();
@@ -119,7 +116,6 @@ namespace Diomede2
             button3.Visible = false;
             menuStrip1.Visible = false;
         }
-
         private void ListView1_Click(object sender, EventArgs e)
         {
             if (listView1.SelectedItems[0].Text.Equals("PraticheEdili"))
