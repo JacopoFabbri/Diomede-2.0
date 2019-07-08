@@ -43,23 +43,11 @@ namespace Diomede2
 
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
-        }
+            foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
+            {
+                cella.Style.ForeColor = Color.Red;
+            }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void Button3_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void Button1_Click_1(object sender, EventArgs e)
-        {
         }
 
         private void AggiornaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -69,8 +57,8 @@ namespace Diomede2
                     if (riga.Cells[0].Style.ForeColor == Color.Red)
                         try
                         {
-                            op.UpdateRuolo((int) riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "",
-                                riga.Cells["DESCRIZIONE"].Value + "");
+                            op.UpdateRuolo((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "",
+                                riga.Cells["DESC"].Value + "");
                         }
                         catch
                         {
@@ -93,14 +81,14 @@ namespace Diomede2
             if (dataGridView1.SelectedRows != null)
                 if (MessageBox.Show(
                         "Stai per eliminare " +
-                        (string) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?",
+                        (string)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?",
                         "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) ==
                     DialogResult.Yes)
                     try
                     {
-                        var clienti = op.CercaRuoloId((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]
+                        var clienti = op.CercaRuoloId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]
                             .Cells[0].Value);
-                        op.CancellaRuolo((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        op.CancellaRuolo((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
                         MessageBox.Show("Ruolo Eliminato", "Conferma", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
