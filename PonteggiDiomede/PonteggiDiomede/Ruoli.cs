@@ -9,14 +9,12 @@ namespace Diomede2
         private readonly string db;
         private readonly InserimentoContatto c;
         private OperazionePraticheEdili op;
-
         public Ruoli(string dbNAme, InserimentoContatto c)
         {
             this.c = c;
             db = dbNAme;
             InitializeComponent();
         }
-
         private void Form6_Load(object sender, EventArgs e)
         {
             try
@@ -40,12 +38,10 @@ namespace Diomede2
                 Application.Exit();
             }
         }
-
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
         }
-
         private void AggiornaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
@@ -65,13 +61,11 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaRuolo();
             dataGridView1.Columns[0].Visible = false;
         }
-
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new InserimentoRuolo(db, c);
             frm.Show();
         }
-
         private void EliminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows != null)

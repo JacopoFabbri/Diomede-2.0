@@ -9,14 +9,12 @@ namespace Diomede2
         private readonly string db;
         private readonly Dashboard formPrecente;
         private OperazionePraticheEdili op;
-
         public ListaClienti(string dbName, Dashboard frm)
         {
             formPrecente = frm;
             db = dbName;
             InitializeComponent();
         }
-
         public void Form4_Load(object sender, EventArgs e)
         {
             try
@@ -34,12 +32,10 @@ namespace Diomede2
             formPrecente.Hide();
             dataGridView1.Focus();
         }
-
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
@@ -62,7 +58,6 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaClienti();
             dataGridView1.Columns[0].Visible = false;
         }
-
         private void Form4_FormClosed(object sender, FormClosedEventArgs e)
         {
             try
@@ -74,13 +69,11 @@ namespace Diomede2
             {
             }
         }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             var frm = new InserimentoCliente(db);
             frm.Show();
         }
-
         private void Button3_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows != null)
@@ -107,7 +100,6 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaClienti();
             dataGridView1.Columns[0].Visible = false;
         }
-
         private void AggiornaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
@@ -130,13 +122,11 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaClienti();
             dataGridView1.Columns[0].Visible = false;
         }
-
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new InserimentoCliente(db, this);
             frm.Show();
         }
-
         private void EliminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows != null)
@@ -163,7 +153,6 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaClienti();
             dataGridView1.Columns[0].Visible = false;
         }
-
         private void FiltroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var f = new FiltroClienti(dataGridView1, db);
