@@ -52,6 +52,12 @@ namespace Diomede2
                             fileToolStripMenuItem.Visible = true;
                             fileToolStripMenuItem.DropDownItems[0].Visible = false;
                         }
+                        else if (utente.Ruolo == 5)
+                        {
+                            listView1.Items.Add("PraticheEdili");
+                            fileToolStripMenuItem.Visible = true;
+                            fileToolStripMenuItem.DropDownItems[0].Visible = false;
+                        }
 
                     }
                     else
