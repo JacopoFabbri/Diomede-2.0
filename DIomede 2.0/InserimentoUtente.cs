@@ -21,8 +21,7 @@ namespace Diomede2
             lista = o.CercaRuolo();
             foreach (var r in lista)
             {
-                if (r.ID != 1)
-                    comboBox1.Items.Add(r.Nome);
+                comboBox1.Items.Add(r.Nome);
 
             }
         }
