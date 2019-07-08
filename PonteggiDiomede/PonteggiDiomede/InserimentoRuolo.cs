@@ -7,15 +7,12 @@ namespace Diomede2
     {
         private readonly string db;
         private readonly InserimentoContatto c;
-
         public InserimentoRuolo(string dbName, InserimentoContatto c)
         {
             this.c = c;
             db = dbName;
             InitializeComponent();
         }
-
-
         private void Button1_Click(object sender, EventArgs e)
         {
             try
