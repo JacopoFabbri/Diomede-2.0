@@ -10,14 +10,12 @@ namespace Diomede2
         private readonly string db;
         private readonly Dashboard formPrecente;
         private OperazionePraticheEdili op;
-
         public ListaBozze(string dbName, Dashboard frm)
         {
             formPrecente = frm;
             db = dbName;
             InitializeComponent();
         }
-
         private void ListaBozze_Load(object sender, EventArgs e)
         {
             try
@@ -38,17 +36,14 @@ namespace Diomede2
 
             formPrecente.Hide();
         }
-
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
         }
-
         private void ListaBozze_FormClosing(object sender, FormClosingEventArgs e)
         {
             formPrecente.Show();
         }
-
         private void AggiornaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
@@ -84,7 +79,7 @@ namespace Diomede2
                                     (DateTime) riga.Cells["DATA"].Value, "", (int) riga.Cells["ID"].Value, "", "", "");
                             }
                         }
-                        catch (Exception ex)
+                        catch 
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -93,13 +88,11 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaBozza();
             dataGridView1.Columns[0].Visible = false;
         }
-
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var ib = new InserimentoBozza(db, this);
             ib.Show();
         }
-
         private void EliminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows != null)
@@ -125,7 +118,6 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaBozza();
             dataGridView1.Columns[0].Visible = false;
         }
-
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 6)
@@ -135,13 +127,11 @@ namespace Diomede2
                 dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
             }
         }
-
         private void FiltraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var f = new FiltroBozze(dataGridView1, db);
             f.Show();
         }
-
         private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.ColumnIndex == 5)

@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{144C0E5F-70AF-4EF2-BEB9-D5E336E14DB7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Diomede2</RootNamespace>
+    <AssemblyName>Diomede2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LOGO DEFINITIVO.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.15\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InserimentoLavorazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoLavorazioni.Designer.cs">
+      <DependentUpon>InserimentoLavorazioni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Class2.cs" />
+    <Compile Include="Class3.cs" />
+    <Compile Include="FiltroLavorazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiltroLavorazioni.Designer.cs">
+      <DependentUpon>FiltroLavorazioni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FiltroBozze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiltroBozze.Designer.cs">
+      <DependentUpon>FiltroBozze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FiltroClienti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiltroClienti.Designer.cs">
+      <DependentUpon>FiltroClienti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserimentoBozza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoBozza.Designer.cs">
+      <DependentUpon>InserimentoBozza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserimentoMacroLavorazione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoMacroLavorazione.Designer.cs">
+      <DependentUpon>InserimentoMacroLavorazione.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserimentoPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoPagamento.Designer.cs">
+      <DependentUpon>InserimentoPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserimentoTipologiaMacrolavorazione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoTipologiaMacrolavorazione.Designer.cs">
+      <DependentUpon>InserimentoTipologiaMacrolavorazione.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserimentoUtente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoUtente.Designer.cs">
+      <DependentUpon>InserimentoUtente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserisciLavorazione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserisciLavorazione.Designer.cs">
+      <DependentUpon>InserisciLavorazione.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserisciPacchetto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserisciPacchetto.Designer.cs">
+      <DependentUpon>InserisciPacchetto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserisciTipologiaLavorazione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserisciTipologiaLavorazione.Designer.cs">
+      <DependentUpon>InserisciTipologiaLavorazione.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaBozze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaBozze.Designer.cs">
+      <DependentUpon>ListaBozze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCommesse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaCommesse.Designer.cs">
+      <DependentUpon>ListaCommesse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaLavorazione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaLavorazione.Designer.cs">
+      <DependentUpon>ListaLavorazione.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaLavorazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaLavorazioni.Designer.cs">
+      <DependentUpon>ListaLavorazioni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaMacroLavorazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaMacroLavorazioni.Designer.cs">
+      <DependentUpon>ListaMacroLavorazioni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPacchetto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaPacchetto.Designer.cs">
+      <DependentUpon>ListaPacchetto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPagamenti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaPagamenti.Designer.cs">
+      <DependentUpon>ListaPagamenti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaTipoogiaLavorazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaTipoogiaLavorazioni.Designer.cs">
+      <DependentUpon>ListaTipoogiaLavorazioni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserimentoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoCliente.Designer.cs">
+      <DependentUpon>InserimentoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaClienti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaClienti.Designer.cs">
+      <DependentUpon>ListaClienti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserimentoContatto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoContatto.Designer.cs">
+      <DependentUpon>InserimentoContatto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificaPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificaPassword.Designer.cs">
+      <DependentUpon>ModificaPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recap.Designer.cs">
+      <DependentUpon>Recap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ruoli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ruoli.Designer.cs">
+      <DependentUpon>Ruoli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contatti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contatti.Designer.cs">
+      <DependentUpon>Contatti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserimentoRuolo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoRuolo.Designer.cs">
+      <DependentUpon>InserimentoRuolo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Secret.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secret.Designer.cs">
+      <DependentUpon>Secret.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TipologieMacrolavorazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipologieMacrolavorazioni.Designer.cs">
+      <DependentUpon>TipologieMacrolavorazioni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="visualizzatore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="visualizzatore.Designer.cs">
+      <DependentUpon>visualizzatore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizzatoreDitte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualizzatoreDitte.Designer.cs">
+      <DependentUpon>VisualizzatoreDitte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizzatoreMacrolavorazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualizzatoreMacrolavorazioni.Designer.cs">
+      <DependentUpon>VisualizzatoreMacrolavorazioni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizzatorePacchetto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualizzatorePacchetto.Designer.cs">
+      <DependentUpon>VisualizzatorePacchetto.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="InserimentoLavorazioni.resx">
+      <DependentUpon>InserimentoLavorazioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FiltroLavorazioni.resx">
+      <DependentUpon>FiltroLavorazioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FiltroBozze.resx">
+      <DependentUpon>FiltroBozze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FiltroClienti.resx">
+      <DependentUpon>FiltroClienti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserimentoBozza.resx">
+      <DependentUpon>InserimentoBozza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserimentoMacroLavorazione.resx">
+      <DependentUpon>InserimentoMacroLavorazione.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserimentoPagamento.resx">
+      <DependentUpon>InserimentoPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserimentoTipologiaMacrolavorazione.resx">
+      <DependentUpon>InserimentoTipologiaMacrolavorazione.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserimentoUtente.resx">
+      <DependentUpon>InserimentoUtente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserisciLavorazione.resx">
+      <DependentUpon>InserisciLavorazione.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserisciPacchetto.resx">
+      <DependentUpon>InserisciPacchetto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserisciTipologiaLavorazione.resx">
+      <DependentUpon>InserisciTipologiaLavorazione.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaBozze.resx">
+      <DependentUpon>ListaBozze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaCommesse.resx">
+      <DependentUpon>ListaCommesse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaLavorazione.resx">
+      <DependentUpon>ListaLavorazione.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaLavorazioni.resx">
+      <DependentUpon>ListaLavorazioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaMacroLavorazioni.resx">
+      <DependentUpon>ListaMacroLavorazioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPacchetto.resx">
+      <DependentUpon>ListaPacchetto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPagamenti.resx">
+      <DependentUpon>ListaPagamenti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaTipoogiaLavorazioni.resx">
+      <DependentUpon>ListaTipoogiaLavorazioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserimentoCliente.resx">
+      <DependentUpon>InserimentoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaClienti.resx">
+      <DependentUpon>ListaClienti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserimentoContatto.resx">
+      <DependentUpon>InserimentoContatto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificaPassword.resx">
+      <DependentUpon>ModificaPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recap.resx">
+      <DependentUpon>Recap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ruoli.resx">
+      <DependentUpon>Ruoli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contatti.resx">
+      <DependentUpon>Contatti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserimentoRuolo.resx">
+      <DependentUpon>InserimentoRuolo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Secret.resx">
+      <DependentUpon>Secret.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipologieMacrolavorazioni.resx">
+      <DependentUpon>TipologieMacrolavorazioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="visualizzatore.resx">
+      <DependentUpon>visualizzatore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizzatoreDitte.resx">
+      <DependentUpon>VisualizzatoreDitte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizzatoreMacrolavorazioni.resx">
+      <DependentUpon>VisualizzatoreMacrolavorazioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizzatorePacchetto.resx">
+      <DependentUpon>VisualizzatorePacchetto.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LOGO DEFINITIVO.ico" />
+    <None Include="Resources\icons8-chiave-64.png" />
+    <None Include="Resources\icons8-password-64.png" />
+    <None Include="Resources\icons8-nessuna-modifica-48.png" />
+    <None Include="Resources\icons8-modifica-casella-100.png" />
+    <None Include="Resources\icons8-quaderno-48.png" />
+    <None Include="Resources\icons8-piccola-persona-48.png" />
+    <None Include="Resources\icons8-pin-3-48.png" />
+    <None Include="Resources\icons8-inserisci-una-riga-sopra-48.png" />
+    <None Include="Resources\icons8-filtro-riempito-48.png" />
+    <None Include="Resources\icons8-inserisci-tabella-48.png" />
+    <None Include="Resources\icons8-scatola-di-cartone-48.png" />
+    <None Include="Resources\icons8-modifica-utente-uomo-16.png" />
+    <None Include="Resources\icons8-storico-dei-pagamenti-64.png" />
+    <None Include="Resources\icons8-rimuovi-immagine-48.png" />
+    <None Include="Resources\icons8-apri-libro-64.png" />
+    <None Include="Resources\icons8-lista-di-cose-da-fare-100.png" />
+    <None Include="Resources\icons8-società-cliente-48.png" />
+    <None Include="Resources\icons8-azienda-64.png" />
+    <None Include="Resources\icons8-elenco-numerato-64.png" />
+    <None Include="Resources\icons8-gestione-aziendale-64.png" />
+    <None Include="Resources\icons8-modifica-file-48.png" />
+    <None Include="Resources\icons8-casella-di-controllo-selezionata-48.png" />
+    <None Include="Resources\icons8-gestione-sviluppo-commerciale-48.png" />
+    <None Include="Resources\icons8-sacco-dei-soldi-16.png" />
+    <None Include="Resources\icons8-servizi-48.png" />
+    <None Include="Resources\icons8-cestino-48.png" />
+    <None Include="Resources\icons8-sincronizzare-48.png" />
+    <None Include="Resources\icons8-più-48.png" />
+    <None Include="Resources\icons8-aggiungere-il-contatto-alla-società-481.png" />
+    <None Include="Resources\icons8-eliminare-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

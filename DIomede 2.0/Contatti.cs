@@ -48,7 +48,7 @@ namespace Diomede2
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();

@@ -142,7 +142,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 21);
             this.button2.TabIndex = 10;
-            this.button2.Text = "Aggiorna";
+            this.button2.Text = "Elimina";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
@@ -411,7 +411,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(135, 21);
             this.button4.TabIndex = 0;
-            this.button4.Text = "button4";
+            this.button4.Text = "Inserisci";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // comboBox1
