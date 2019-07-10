@@ -1638,9 +1638,9 @@ namespace Diomede2
             {
                 con.Open();
                 var command = new MySqlCommand(
-                    "INSERT INTO `COMMESSA`(`DITTA`, `NUMEROCOMMESSA`, `DATA`, `REFERENTE`, `INDIRIZZOCANTIERE`, `TECNICOINTERNO`, `NOTE`, `BOZZA`, `DATAESECUZIONE`, `DATARICHIESTACONSEGNA`, `INVIO`, `DATAINVIO) VALUES('" +
+                    "INSERT INTO `COMMESSA`(`DITTA`, `NUMEROCOMMESSA`, `DATA`, `REFERENTE`, `INDIRIZZOCANTIERE`, `TECNICOINTERNO`, `NOTE`, `BOZZA`, `DATAESECUZIONE`, `DATARICHIESTACONSEGNA`, `INVIO`, `DATAINVIO`) VALUES('" +
                     ditta + "','" + numerocommessa + "','" + data.ToString("yyyy/MM/dd") + "','" + referente + "','" + indirizzoCantiere + "','" + tecnico + "','" + note + "','" +
-                    bozza + "','" + dataEsecuzione.ToString("yyyy/MM/dd") + "','" + dataRichiestaConsegna.ToString("yyyy/MM/dd") + "','" + nome + dataInvio.ToString("yyyy/MM/dd hh:mm") + "')", con);
+                    bozza + "','" + dataEsecuzione.ToString("yyyy/MM/dd") + "','" + dataRichiestaConsegna.ToString("yyyy/MM/dd") + "','" + nome + "','" + dataInvio.ToString("yyyy/MM/dd hh:mm") + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)

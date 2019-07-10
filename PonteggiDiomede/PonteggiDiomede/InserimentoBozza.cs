@@ -24,10 +24,6 @@ namespace Diomede2
             InitializeComponent();
         }
 
-        private void TextBox2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void InserimentoBozza_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -56,8 +52,8 @@ namespace Diomede2
                     commessa = op1.GeneraCommessa("PO/B", listaAmministrazione[1], "PraticheEdili", true);
                 }
 
-                op.InserimentoBozza(dateTimePicker1.Value, double.Parse(textBox3.Text),textBox2.Text ,commessa,
-                    lista[comboBox1.SelectedIndex].Id, false);
+                op.InserimentoBozza(dateTimePicker1.Value, double.Parse(textBox1.Text), comboBox2.SelectedItem.ToString() + comboBox3.SelectedItem.ToString(), commessa,
+                    lista[comboBox1.SelectedIndex].Id, false); ;
                 MessageBox.Show("Bozza Inserita", "Inserita:", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
@@ -72,6 +68,20 @@ namespace Diomede2
             op = new OperazionePraticheEdili(db);
             lista = op.CercaClienti();
             foreach (var c in lista) comboBox1.Items.Add(c.Nome);
+            comboBox2.Items.Add("Nuovo");
+            comboBox2.Items.Add("Agg-");
+            for(int i = 1; i < 30; i++)
+            {
+                comboBox3.Items.Add(i + "");
+            }
+        }
+
+        private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedItem.ToString().Equals("Agg-"))
+            {
+                comboBox3.Visible = true;
+            }
         }
     }
 }

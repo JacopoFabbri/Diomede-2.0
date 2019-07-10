@@ -78,7 +78,7 @@ namespace Diomede2
                                     (DateTime)riga.Cells["DATA"].Value, "", "", "", "", (int)riga.Cells["ID"].Value, new DateTime(), new DateTime(), "", new DateTime());
                             }
                         }
-                        catch
+                        catch (Exception ex)
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
