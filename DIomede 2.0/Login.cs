@@ -58,7 +58,15 @@ namespace Diomede2
                             fileToolStripMenuItem.Visible = true;
                             fileToolStripMenuItem.DropDownItems[0].Visible = false;
                         }
-
+                        listView1.Visible = true;
+                        label1.Visible = false;
+                        label2.Visible = false;
+                        textBox1.Visible = false;
+                        textBox2.Visible = false;
+                        checkBox1.Visible = false;
+                        button1.Visible = false;
+                        button3.Visible = true;
+                        menuStrip1.Visible = true;
                     }
                     else
                     {
@@ -69,18 +77,11 @@ namespace Diomede2
                 }
                 else
                 {
-                    MessageBox.Show("Utente non trovato!");
+                    MessageBox.Show("Utente non trovato!","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    textBox1.Clear();
+                    textBox2.Clear();
                 }
 
-                listView1.Visible = true;
-                label1.Visible = false;
-                label2.Visible = false;
-                textBox1.Visible = false;
-                textBox2.Visible = false;
-                checkBox1.Visible = false;
-                button1.Visible = false;
-                button3.Visible = true;
-                menuStrip1.Visible = true;
             }
             catch (Exception)
             {
@@ -151,6 +152,7 @@ namespace Diomede2
             button1.Visible = true;
             button3.Visible = false;
             menuStrip1.Visible = false;
+            textBox2.Clear();
         }
         private void ModificaPasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -393,33 +393,34 @@
             // tableLayoutPanel9
             // 
             this.tableLayoutPanel9.ColumnCount = 2;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.42857F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
             this.tableLayoutPanel9.Controls.Add(this.button4, 1, 0);
             this.tableLayoutPanel9.Controls.Add(this.comboBox1, 0, 0);
             this.tableLayoutPanel9.Location = new System.Drawing.Point(291, 3);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel9.Size = new System.Drawing.Size(282, 27);
             this.tableLayoutPanel9.TabIndex = 11;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(144, 3);
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Location = new System.Drawing.Point(207, 3);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(135, 21);
+            this.button4.Size = new System.Drawing.Size(72, 21);
             this.button4.TabIndex = 0;
             this.button4.Text = "Inserisci";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(3, 3);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(135, 21);
+            this.comboBox1.Size = new System.Drawing.Size(195, 21);
             this.comboBox1.TabIndex = 1;
             // 
             // tableLayoutPanel6
