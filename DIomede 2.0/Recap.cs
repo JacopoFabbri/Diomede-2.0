@@ -24,35 +24,42 @@ namespace Diomede2
         }
         private void Recap_Load(object sender, EventArgs e)
         {
-            op = new OperazionePraticheEdili(db);
-            commessa = op.CercaCommessa(idCommessa);
-            textBox1.Text = "" + commessa.NumeroCommessa;
-            textBox2.Text = op.CercaClientiId(commessa.Ditta).Nome;
-            listaMacrolavorazione = op.FiltraMacroLavorazione("COMMESSA", "" + commessa.Id);
-            String s = "";
-            foreach (MacroLavorazione m in listaMacrolavorazione)
+            try
             {
-                s += m.Nome + "\n";
-                comboBox1.Items.Add(m.Nome);
-            }
-            textBox3.Text = s;
-            textBox4.Text = op.CercaBozzaId(commessa.Bozza).IdentificativoPreventivo;
-            textBox5.Text = "" + op.CercaBozzaId(commessa.Bozza).Importo;
-            List<Lavorazione> listaLavorazione = new List<Lavorazione>();
-            foreach (MacroLavorazione m in listaMacrolavorazione)
-            {
-                List<Lavorazione> list = op.FiltraLavorazione("MACROLAVORAZIONE", "" + m.Id);
-                foreach (Lavorazione l in list)
+                op = new OperazionePraticheEdili(db);
+                commessa = op.CercaCommessa(idCommessa);
+                textBox1.Text = "" + commessa.NumeroCommessa;
+                textBox2.Text = op.CercaClientiId(commessa.Ditta).Nome;
+                listaMacrolavorazione = op.FiltraMacroLavorazione("COMMESSA", "" + commessa.Id);
+                String s = "";
+                foreach (MacroLavorazione m in listaMacrolavorazione)
                 {
-                    listaLavorazione.Add(l);
+                    s += m.Nome + "\n";
+                    comboBox1.Items.Add(m.Nome);
                 }
+                textBox3.Text = s;
+                textBox4.Text = op.CercaBozzaId(commessa.Bozza).IdentificativoPreventivo;
+                textBox5.Text = "" + op.CercaBozzaId(commessa.Bozza).Importo;
+                List<Lavorazioni> listaLavorazione = new List<Lavorazioni>();
+                foreach (MacroLavorazione m in listaMacrolavorazione)
+                {
+                    List<Lavorazioni> list = op.FiltraLavorazioni("MACROLAVORAZIONE", "" + m.Id);
+                    foreach (Lavorazioni l in list)
+                    {
+                        listaLavorazione.Add(l);
+                    }
+                }
+                dataGridView1.DataSource = listaLavorazione;
+                List<Pagamento> listaPagamenti = op.FiltraPagamento("COMMESSA", "" + commessa.Id);
+                dataGridView2.DataSource = listaPagamenti;
+                textBox6.Text = commessa.Note;
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView2.Columns[0].Visible = false;
+            }catch
+            {
+                MessageBox.Show("ciao");
             }
-            dataGridView1.DataSource = listaLavorazione;
-            List<Pagamento> listaPagamenti = op.FiltraPagamento("COMMESSA", "" + commessa.Id);
-            dataGridView2.DataSource = listaPagamenti;
-            textBox6.Text = commessa.Note;
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView2.Columns[0].Visible = false;
+
         }
         private void Button1_Click_1(object sender, EventArgs e)
         {

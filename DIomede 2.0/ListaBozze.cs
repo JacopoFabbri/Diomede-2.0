@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -10,6 +11,7 @@ namespace Diomede2
         private readonly string db;
         private readonly Dashboard formPrecente;
         private OperazionePraticheEdili op;
+        private List<Bozza> lista;
         public ListaBozze(string dbName, Dashboard frm)
         {
             formPrecente = frm;
@@ -21,14 +23,54 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
+                /*
+                DataGridViewColumn d = new DataGridViewColumn();
+                d.Name = "ID";
+                d.ValueType = typeof(DataGridViewTextBoxCell);
+                dataGridView1.Columns.Add(d);
+                d.Name = "DATA";
+                d.ValueType = typeof(DataGridViewTextBoxCell);
+                dataGridView1.Columns.Add(d);
+                d.Name = "PACCHETTO";
+                d.ValueType = typeof(DataGridViewTextBoxCell);
+                dataGridView1.Columns.Add(d);
+                d.Name = "IMPORTO";
+                d.ValueType = typeof(DataGridViewTextBoxCell);
+                dataGridView1.Columns.Add(d);
+                d.Name = "NUMEROCOMMESSA";
+                d.ValueType = typeof(DataGridViewTextBoxCell);
+                dataGridView1.Columns.Add(d);
+                d.Name = "CLIENTE";
+                d.ValueType = typeof(DataGridViewTextBoxCell);
+                dataGridView1.Columns.Add(d);
+                d.Name = "ACCETAZIONE";
+                d.ValueType = typeof(DataGridViewCheckBoxCell);
+                dataGridView1.Columns.Add(d);
+
                 if (op.CercaBozza() != null)
                 {
+                    lista = op.CercaBozza();
+                    int riga = 1;
+                    
+                    foreach(Bozza b in lista)
+                    {
+                        dataGridView1.Rows[riga].Cells[0].Value = b.Id;
+                        dataGridView1.Rows[riga].Cells[1].Value = b.Data;
+                        dataGridView1.Rows[riga].Cells[2].Value = op.FiltraPacchetto("ID", "" + b.Pacchetto)[0].Nome;
+                        dataGridView1.Rows[riga].Cells[3].Value = b.Importo;
+                        dataGridView1.Rows[riga].Cells[4].Value = b.IdentificativoPreventivo;
+                        dataGridView1.Rows[riga].Cells[5].Value = op.FiltraClienti("ID", "" + b.Cliente)[0].Nome;
+                        dataGridView1.Rows[riga].Cells[6].Value = b.Accettazione;
+
+                    }
+
+                    */
                     dataGridView1.DataSource = op.CercaBozza();
                     dataGridView1.Columns[0].Visible = false;
                     dataGridView1.Columns[3].ReadOnly = true;
-                }
+                
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();
