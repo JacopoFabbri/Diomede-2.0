@@ -190,7 +190,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InserimentoBozza";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Inserimento Bozza";
+            this.Text = "Inserimento Preventivo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InserimentoBozza_FormClosing);
             this.Load += new System.EventHandler(this.InserimentoBozza_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
