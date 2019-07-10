@@ -86,5 +86,16 @@ namespace Diomede2
             var frm = new InserimentoCliente(db, this);
             frm.Show();
         }
+        private void Form4_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                formPrecente.Show();
+                formPrecente.Form2_Load(sender, e);
+            }
+            catch
+            {
+            }
+        }
     }
 }
