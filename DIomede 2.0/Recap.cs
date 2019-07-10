@@ -63,35 +63,41 @@ namespace Diomede2
         }
         private void Button1_Click_1(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow riga in dataGridView1.Rows)
+            try
             {
-                if (riga.Cells[0].Value != null)
+                foreach (DataGridViewRow riga in dataGridView1.Rows)
                 {
-                    if (riga.Cells[0].Style.ForeColor == Color.Red)
+                    if (riga.Cells[0].Value != null)
                     {
-                        try
+                        if (riga.Cells[0].Style.ForeColor == Color.Red)
                         {
-                            op.UpdateLavorazioni((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", "" + riga.Cells["DESC"].Value, "" + riga.Cells["SCADENZE"].Value, (int)riga.Cells["MACROLAVORAZIONE"].Value, (double)riga.Cells["PREZZO"].Value);
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            try
+                            {
+                                op.UpdateLavorazioni((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", "" + riga.Cells["DESC"].Value, "" + riga.Cells["SCADENZE"].Value, (int)riga.Cells["MACROLAVORAZIONE"].Value, (double)riga.Cells["PREZZO"].Value);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                            }
                         }
                     }
                 }
-            }
-            List<Lavorazione> listaLavorazione = new List<Lavorazione>();
-            foreach (MacroLavorazione m in listaMacrolavorazione)
-            {
-                List<Lavorazione> list = op.FiltraLavorazione("MACROLAVORAZIONE", "" + m.Id);
-                foreach (Lavorazione l in list)
+                List<Lavorazioni> listaLavorazione = new List<Lavorazioni>();
+                foreach (MacroLavorazione m in listaMacrolavorazione)
                 {
-                    listaLavorazione.Add(l);
+                    List<Lavorazioni> list = op.FiltraLavorazioni("MACROLAVORAZIONE", "" + m.Id);
+                    foreach (Lavorazioni l in list)
+                    {
+                        listaLavorazione.Add(l);
+                    }
                 }
+                dataGridView1.DataSource = listaLavorazione;
+                dataGridView1.Columns[0].Visible = false;
+            }catch(Exception ex)
+            {
+                MessageBox.Show("sistemami");
             }
-            dataGridView1.DataSource = listaLavorazione;
-            dataGridView2.Columns[0].Visible = false;
         }
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -102,7 +108,7 @@ namespace Diomede2
         }
         private void Button7_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow riga in dataGridView1.Rows)
+            foreach (DataGridViewRow riga in dataGridView2.Rows)
             {
                 if (riga.Cells[0].Value != null)
                 {
@@ -121,8 +127,8 @@ namespace Diomede2
                 }
             }
             List<Pagamento> listaPagamenti = op.FiltraPagamento("COMMESSA", "" + commessa.Id);
-            dataGridView1.DataSource = listaPagamenti;
-            dataGridView1.Columns[0].Visible = false;
+            dataGridView2.DataSource = listaPagamenti;
+            dataGridView2.Columns[0].Visible = false;
         }
         private void DataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -202,5 +208,7 @@ namespace Diomede2
                             MessageBoxIcon.Error);
                     }
         }
+
+
     }
 }

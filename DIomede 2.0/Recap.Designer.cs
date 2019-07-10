@@ -413,6 +413,7 @@
             this.button4.TabIndex = 0;
             this.button4.Text = "Inserisci";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // comboBox1
             // 
