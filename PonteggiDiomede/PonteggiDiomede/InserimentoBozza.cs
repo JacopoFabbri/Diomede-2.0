@@ -59,7 +59,7 @@ namespace Diomede2
                     commessa = op1.GeneraCommessa("PO/B", listaAmministrazione[1], "PraticheEdili", true);
                 }
 
-                op.InserimentoBozza(dateTimePicker1.Value, double.Parse(textBox3.Text),Convert.ToInt32(textBox2.Text) ,commessa,
+                op.InserimentoBozza(dateTimePicker1.Value, double.Parse(textBox3.Text),textBox2.Text ,commessa,
                     lista[comboBox1.SelectedIndex].Id, false);
                 MessageBox.Show("Bozza Inserita", "Inserita:", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();

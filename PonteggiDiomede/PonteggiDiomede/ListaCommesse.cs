@@ -46,10 +46,10 @@ namespace Diomede2
                     if (riga.Cells[0].Style.ForeColor == Color.Red)
                         try
                         {
-                            op.UpdateCommessa((int) riga.Cells["ID"].Value, (int) riga.Cells["DITTA"].Value,
-                                riga.Cells["NUMEROCOMMESSA"].Value + "", (DateTime) riga.Cells["DATA"].Value,
+                            op.UpdateCommessa((int)riga.Cells["ID"].Value, (int)riga.Cells["DITTA"].Value,
+                                riga.Cells["NUMEROCOMMESSA"].Value + "", (DateTime)riga.Cells["DATA"].Value,
                                 riga.Cells["REFERENTE"].Value + "", "" + riga.Cells["INDIRIZZOCANTIERE"].Value,
-                                "" + riga.Cells["TECNICOINTERNO"].Value, "" + riga.Cells["NOTE"].Value);
+                                "" + riga.Cells["TECNICOINTERNO"].Value, "" + riga.Cells["NOTE"].Value, (int)riga.Cells["BOZZA"].Value, (DateTime)riga.Cells["DATAESECUZIONE"].Value, (DateTime)riga.Cells["DATARICHIESTACONSEGNA"].Value, (String)riga.Cells["INVIO"].Value, (DateTime)riga.Cells["DATAORAINVIO"].Value);
                         }
                         catch
                         {
@@ -81,14 +81,14 @@ namespace Diomede2
                 for (var i = 0; i < dataGridView1.SelectedRows.Count; i++)
                     if (MessageBox.Show(
                             "Stai per eliminare " +
-                            (string) dataGridView1.Rows[dataGridView1.SelectedRows[i].Index].Cells[2].Value +
+                            (string)dataGridView1.Rows[dataGridView1.SelectedRows[i].Index].Cells[2].Value +
                             " .Confermi?", "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel,
                             MessageBoxIcon.Warning) == DialogResult.Yes)
                         try
                         {
-                            var clienti = op.CercaCommessa((int) dataGridView1.Rows[dataGridView1.SelectedRows[i].Index]
+                            var clienti = op.CercaCommessa((int)dataGridView1.Rows[dataGridView1.SelectedRows[i].Index]
                                 .Cells[0].Value);
-                            op.CancellaCommessa((int) dataGridView1.Rows[dataGridView1.SelectedRows[i].Index].Cells[0]
+                            op.CancellaCommessa((int)dataGridView1.Rows[dataGridView1.SelectedRows[i].Index].Cells[0]
                                 .Value);
                             MessageBox.Show("Commessa Eliminata", "Conferma", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
@@ -105,7 +105,7 @@ namespace Diomede2
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            var frm = new InserimentoPagamento(db, (int) dataGridView1.SelectedRows[0].Cells[0].Value);
+            var frm = new InserimentoPagamento(db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
             frm.Show();
         }
 
@@ -116,10 +116,10 @@ namespace Diomede2
                     if (riga.Cells[0].Style.ForeColor == Color.Red)
                         try
                         {
-                            op.UpdateCommessa((int) riga.Cells["ID"].Value, (int) riga.Cells["DITTA"].Value,
-                                riga.Cells["NUMEROCOMMESSA"].Value + "", (DateTime) riga.Cells["DATA"].Value,
+                            op.UpdateCommessa((int)riga.Cells["ID"].Value, (int)riga.Cells["DITTA"].Value,
+                                riga.Cells["NUMEROCOMMESSA"].Value + "", (DateTime)riga.Cells["DATA"].Value,
                                 riga.Cells["REFERENTE"].Value + "", "" + riga.Cells["INDIRIZZOCANTIERE"].Value,
-                                "" + riga.Cells["TECNICOINTERNO"].Value, "" + riga.Cells["NOTE"].Value);
+                                "" + riga.Cells["TECNICOINTERNO"].Value, "" + riga.Cells["NOTE"].Value, (int)riga.Cells["BOZZA"].Value,(DateTime)riga.Cells["DATAESECUZIONE"].Value,(DateTime)riga.Cells["DATARICHIESTACONSEGNA"].Value,"" + riga.Cells["INVIO"].Value, (DateTime)riga.Cells["DATAORAINVIO"].Value);
                         }
                         catch
                         {
@@ -137,14 +137,14 @@ namespace Diomede2
                 for (var i = 0; i < dataGridView1.SelectedRows.Count; i++)
                     if (MessageBox.Show(
                             "Stai per eliminare " +
-                            (string) dataGridView1.Rows[dataGridView1.SelectedRows[i].Index].Cells[2].Value +
+                            (string)dataGridView1.Rows[dataGridView1.SelectedRows[i].Index].Cells[2].Value +
                             " .Confermi?", "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel,
                             MessageBoxIcon.Warning) == DialogResult.Yes)
                         try
                         {
-                            var clienti = op.CercaCommessa((int) dataGridView1.Rows[dataGridView1.SelectedRows[i].Index]
+                            var clienti = op.CercaCommessa((int)dataGridView1.Rows[dataGridView1.SelectedRows[i].Index]
                                 .Cells[0].Value);
-                            op.CancellaCommessa((int) dataGridView1.Rows[dataGridView1.SelectedRows[i].Index].Cells[0]
+                            op.CancellaCommessa((int)dataGridView1.Rows[dataGridView1.SelectedRows[i].Index].Cells[0]
                                 .Value);
                             MessageBox.Show("Commessa Eliminata", "Conferma", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
@@ -161,13 +161,13 @@ namespace Diomede2
 
         private void PagamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new InserimentoPagamento(db, (int) dataGridView1.SelectedRows[0].Cells[0].Value);
+            var frm = new InserimentoPagamento(db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
             frm.Show();
         }
 
         private void SelezionaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var r = new Recap(db, (int) dataGridView1.SelectedRows[0].Cells[0].Value);
+            var r = new Recap(db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
             r.Show();
         }
 
@@ -176,7 +176,7 @@ namespace Diomede2
             if (e.ColumnIndex == 1)
                 if (e.RowIndex != -1)
                 {
-                    var v = new VisualizzatoreDitte(db, (int) dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
+                    var v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
                         dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
                     v.Show();
                 }

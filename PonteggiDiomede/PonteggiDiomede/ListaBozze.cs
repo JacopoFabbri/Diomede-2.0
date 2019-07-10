@@ -51,13 +51,13 @@ namespace Diomede2
                     if (riga.Cells[0].Style.ForeColor == Color.Red)
                         try
                         {
-                            op.UpdateBozza((int) riga.Cells["ID"].Value, (DateTime) riga.Cells["DATA"].Value, (double) riga.Cells["IMPORTO"].Value, (int)riga.Cells["LAVORAZIONE"].Value,
-                                riga.Cells["IDENTIFICATIVOPREVENTIVO"].Value + "", (int) riga.Cells["CLIENTE"].Value,
-                                (bool) riga.Cells["ACCETTAZIONE"].Value);
-                            if ((bool) riga.Cells["ACCETTAZIONE"].Value)
+                            op.UpdateBozza((int)riga.Cells["ID"].Value, (DateTime)riga.Cells["DATA"].Value, (double)riga.Cells["IMPORTO"].Value, (String)riga.Cells["FASEPROGETTO"].Value,
+                                riga.Cells["IDENTIFICATIVOPREVENTIVO"].Value + "", (int)riga.Cells["CLIENTE"].Value,
+                                (bool)riga.Cells["ACCETTAZIONE"].Value);
+                            if ((bool)riga.Cells["ACCETTAZIONE"].Value)
                             {
                                 var op1 = new OperazioneAmministrazione("Amministrazione");
-                                var c = op.CercaClientiId((int) riga.Cells["CLIENTE"].Value);
+                                var c = op.CercaClientiId((int)riga.Cells["CLIENTE"].Value);
                                 var listaAmministrazione = op1.FiltraCliente("NOME", c.Nome);
                                 List<ClienteAmministrazione> listaCliente = null;
                                 string commessa;
@@ -74,11 +74,11 @@ namespace Diomede2
                                         false);
                                 }
 
-                                op.InserimentoCommessa((int) riga.Cells["CLIENTE"].Value, commessa,
-                                    (DateTime) riga.Cells["DATA"].Value, "", (int) riga.Cells["ID"].Value, "", "", "");
+                                op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, commessa,
+                                    (DateTime)riga.Cells["DATA"].Value, "", "", "", "", (int)riga.Cells["ID"].Value, new DateTime(), new DateTime(), "", new DateTime());
                             }
                         }
-                        catch 
+                        catch
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -97,14 +97,14 @@ namespace Diomede2
             if (dataGridView1.SelectedRows != null)
                 if (MessageBox.Show(
                         "Stai per eliminare " +
-                        (string) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[4].Value + " .Confermi?",
+                        (string)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[4].Value + " .Confermi?",
                         "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) ==
                     DialogResult.Yes)
                     try
                     {
-                        var clienti = op.CercaBozzaId((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]
+                        var clienti = op.CercaBozzaId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]
                             .Cells[0].Value);
-                        op.CancellaBozza((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        op.CancellaBozza((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
                         MessageBox.Show("Bozza Eliminata", "Conferma", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
@@ -137,7 +137,7 @@ namespace Diomede2
             {
                 if (e.RowIndex != -1)
                 {
-                    var v = new VisualizzatoreDitte(db, (int) dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
+                    var v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
                         dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
                     v.Show();
                 }
