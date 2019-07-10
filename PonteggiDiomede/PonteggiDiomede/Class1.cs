@@ -12,7 +12,6 @@ namespace Database
         {
             conn.ConnectionString = "User Id=Lorenzo; Host=192.168.1.135;Port = 3307;Database=" + nomeDB +";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
         }
-
         public void inserisciUtente(string user, string pass, int ruolo)
         {
             try
@@ -25,7 +24,6 @@ namespace Database
                 throw new Exception(ex.ToString());
             }
         }
-
         public Utente CercaUtente(string u)
         {
             Utente utente;
@@ -41,7 +39,6 @@ namespace Database
 
             return utente;
         }
-
         public Ruolo CercaRuolo(int i)
         {
             Ruolo ruolo;
@@ -57,7 +54,6 @@ namespace Database
 
             return ruolo;
         }
-
         public List<Ruolo> CercaRuolo()
         {
             List<Ruolo> ruolo;
@@ -73,7 +69,6 @@ namespace Database
 
             return ruolo;
         }
-
         public void ModificaDatiUtente(int id, string u, string p)
         {
             try
@@ -91,12 +86,10 @@ namespace Database
     public class UtenteDB
     {
         private readonly MySqlConnection con;
-
         public UtenteDB(MySqlConnection conn)
         {
             con = conn;
         }
-
         public void inserisciUtente(string user, string pass, int ruolo)
         {
             try
@@ -115,7 +108,6 @@ namespace Database
                 con.Close();
             }
         }
-
         public Utente CercaUtente(string user)
         {
             Utente u = null;
@@ -149,7 +141,6 @@ namespace Database
 
             return u;
         }
-
         public void ModificaUserPass(int id, string u, string p)
         {
             try
@@ -175,12 +166,10 @@ namespace Database
     public class RuoloDB
     {
         private readonly MySqlConnection con;
-
         public RuoloDB(MySqlConnection conn)
         {
             con = conn;
         }
-
         public Ruolo CercaRuolo(int id)
         {
             Ruolo r = null;
@@ -214,7 +203,6 @@ namespace Database
 
             return r;
         }
-
         public List<Ruolo> CercaRuolo()
         {
             var r = new List<Ruolo>();
@@ -253,11 +241,8 @@ namespace Database
     public class Utente
     {
         public string Username { get; set; }
-
         public string Password { get; set; }
-
         public int Ruolo { get; set; }
-
         public int Id { get; set; }
     }
 
@@ -265,9 +250,7 @@ namespace Database
     {
         public int ID { get; set; }
         public string Nome { get; set; }
-
         public string Macro { get; set; }
-
         public string Job { get; set; }
     }
 }
