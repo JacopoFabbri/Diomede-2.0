@@ -11,7 +11,6 @@ namespace Diomede2
         private readonly string db;
         private readonly Dashboard formPrecente;
         private OperazionePraticheEdili op;
-        private List<Bozza> lista;
         public ListaBozze(string dbName, Dashboard frm)
         {
             formPrecente = frm;
@@ -70,7 +69,7 @@ namespace Diomede2
                     dataGridView1.Columns[3].ReadOnly = true;
                 
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();
