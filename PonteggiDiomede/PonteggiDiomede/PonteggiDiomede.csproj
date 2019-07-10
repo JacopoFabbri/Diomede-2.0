@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Class2.cs" />
+    <Compile Include="Class3.cs" />
     <Compile Include="Contatti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +63,18 @@
     </Compile>
     <Compile Include="Dashboard.designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FiltroBozze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiltroBozze.designer.cs">
+      <DependentUpon>FiltroBozze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserimentoBozza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoBozza.designer.cs">
+      <DependentUpon>InserimentoBozza.cs</DependentUpon>
     </Compile>
     <Compile Include="InserimentoCliente.cs">
       <SubType>Form</SubType>
@@ -80,6 +93,12 @@
     </Compile>
     <Compile Include="InserimentoRuolo.designer.cs">
       <DependentUpon>InserimentoRuolo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaBozze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaBozze.designer.cs">
+      <DependentUpon>ListaBozze.cs</DependentUpon>
     </Compile>
     <Compile Include="ListaClienti.cs">
       <SubType>Form</SubType>
@@ -119,6 +138,12 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FiltroBozze.resx">
+      <DependentUpon>FiltroBozze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserimentoBozza.resx">
+      <DependentUpon>InserimentoBozza.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InserimentoCliente.resx">
       <DependentUpon>InserimentoCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InserimentoRuolo.resx">
       <DependentUpon>InserimentoRuolo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaBozze.resx">
+      <DependentUpon>ListaBozze.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaClienti.resx">
       <DependentUpon>ListaClienti.cs</DependentUpon>

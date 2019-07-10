@@ -38,6 +38,12 @@
             this.aggiungiClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostraListaClientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nascondiListaClientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bozzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bozzaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inserisciBozzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostraListaBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nascondiListaBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestioneCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,12 +56,6 @@
             this.listaPagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView3 = new System.Windows.Forms.ListView();
-            this.bozzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bozzaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inserisciBozzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mostraListaBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nascondiListaBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,7 +116,7 @@
             this.mostraListaClientiToolStripMenuItem,
             this.nascondiListaClientiToolStripMenuItem});
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(108, 24);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem2.Text = "Ditta";
             // 
             // listaClientiToolStripMenuItem
@@ -138,12 +138,61 @@
             this.mostraListaClientiToolStripMenuItem.Name = "mostraListaClientiToolStripMenuItem";
             this.mostraListaClientiToolStripMenuItem.Size = new System.Drawing.Size(208, 24);
             this.mostraListaClientiToolStripMenuItem.Text = "Mostra Lista Clienti";
+            this.mostraListaClientiToolStripMenuItem.Click += new System.EventHandler(this.MostraListaClientiToolStripMenuItem_Click);
             // 
             // nascondiListaClientiToolStripMenuItem
             // 
             this.nascondiListaClientiToolStripMenuItem.Name = "nascondiListaClientiToolStripMenuItem";
             this.nascondiListaClientiToolStripMenuItem.Size = new System.Drawing.Size(208, 24);
             this.nascondiListaClientiToolStripMenuItem.Text = "Nascondi Lista Clienti";
+            this.nascondiListaClientiToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaClientiToolStripMenuItem_Click);
+            // 
+            // bozzaToolStripMenuItem
+            // 
+            this.bozzaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bozzaToolStripMenuItem1});
+            this.bozzaToolStripMenuItem.Name = "bozzaToolStripMenuItem";
+            this.bozzaToolStripMenuItem.Size = new System.Drawing.Size(56, 23);
+            this.bozzaToolStripMenuItem.Text = "Bozza";
+            // 
+            // bozzaToolStripMenuItem1
+            // 
+            this.bozzaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaBozzeToolStripMenuItem,
+            this.inserisciBozzaToolStripMenuItem,
+            this.mostraListaBozzeToolStripMenuItem,
+            this.nascondiListaBozzeToolStripMenuItem});
+            this.bozzaToolStripMenuItem1.Name = "bozzaToolStripMenuItem1";
+            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.bozzaToolStripMenuItem1.Text = "Bozza";
+            // 
+            // listaBozzeToolStripMenuItem
+            // 
+            this.listaBozzeToolStripMenuItem.Name = "listaBozzeToolStripMenuItem";
+            this.listaBozzeToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.listaBozzeToolStripMenuItem.Text = "Lista Bozze";
+            this.listaBozzeToolStripMenuItem.Click += new System.EventHandler(this.ListaBozzeToolStripMenuItem_Click);
+            // 
+            // inserisciBozzaToolStripMenuItem
+            // 
+            this.inserisciBozzaToolStripMenuItem.Name = "inserisciBozzaToolStripMenuItem";
+            this.inserisciBozzaToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.inserisciBozzaToolStripMenuItem.Text = "Inserisci Bozza";
+            this.inserisciBozzaToolStripMenuItem.Click += new System.EventHandler(this.InserisciBozzaToolStripMenuItem_Click);
+            // 
+            // mostraListaBozzeToolStripMenuItem
+            // 
+            this.mostraListaBozzeToolStripMenuItem.Name = "mostraListaBozzeToolStripMenuItem";
+            this.mostraListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.mostraListaBozzeToolStripMenuItem.Text = "Mostra lista Bozze";
+            this.mostraListaBozzeToolStripMenuItem.Click += new System.EventHandler(this.VisualizzaListaBozzeToolStripMenuItem_Click);
+            // 
+            // nascondiListaBozzeToolStripMenuItem
+            // 
+            this.nascondiListaBozzeToolStripMenuItem.Name = "nascondiListaBozzeToolStripMenuItem";
+            this.nascondiListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.nascondiListaBozzeToolStripMenuItem.Text = "Nascondi lista Bozze";
+            this.nascondiListaBozzeToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaBozzeToolStripMenuItem_Click);
             // 
             // gestioneCommesseToolStripMenuItem
             // 
@@ -239,49 +288,6 @@
             this.listView3.UseCompatibleStateImageBehavior = false;
             this.listView3.View = System.Windows.Forms.View.List;
             this.listView3.Visible = false;
-            // 
-            // bozzaToolStripMenuItem
-            // 
-            this.bozzaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bozzaToolStripMenuItem1});
-            this.bozzaToolStripMenuItem.Name = "bozzaToolStripMenuItem";
-            this.bozzaToolStripMenuItem.Size = new System.Drawing.Size(56, 23);
-            this.bozzaToolStripMenuItem.Text = "Bozza";
-            // 
-            // bozzaToolStripMenuItem1
-            // 
-            this.bozzaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listaBozzeToolStripMenuItem,
-            this.inserisciBozzaToolStripMenuItem,
-            this.mostraListaBozzeToolStripMenuItem,
-            this.nascondiListaBozzeToolStripMenuItem});
-            this.bozzaToolStripMenuItem1.Name = "bozzaToolStripMenuItem1";
-            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
-            this.bozzaToolStripMenuItem1.Text = "Bozza";
-            // 
-            // listaBozzeToolStripMenuItem
-            // 
-            this.listaBozzeToolStripMenuItem.Name = "listaBozzeToolStripMenuItem";
-            this.listaBozzeToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
-            this.listaBozzeToolStripMenuItem.Text = "Lista Bozze";
-            // 
-            // inserisciBozzaToolStripMenuItem
-            // 
-            this.inserisciBozzaToolStripMenuItem.Name = "inserisciBozzaToolStripMenuItem";
-            this.inserisciBozzaToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
-            this.inserisciBozzaToolStripMenuItem.Text = "Inserisci Bozza";
-            // 
-            // mostraListaBozzeToolStripMenuItem
-            // 
-            this.mostraListaBozzeToolStripMenuItem.Name = "mostraListaBozzeToolStripMenuItem";
-            this.mostraListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
-            this.mostraListaBozzeToolStripMenuItem.Text = "Mostra lista Bozze";
-            // 
-            // nascondiListaBozzeToolStripMenuItem
-            // 
-            this.nascondiListaBozzeToolStripMenuItem.Name = "nascondiListaBozzeToolStripMenuItem";
-            this.nascondiListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
-            this.nascondiListaBozzeToolStripMenuItem.Text = "Nascondi lista Bozze";
             // 
             // Dashboard
             // 

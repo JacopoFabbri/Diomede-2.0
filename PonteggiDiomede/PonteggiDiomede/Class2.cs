@@ -306,13 +306,13 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        public void InserimentoBozza(DateTime data, string pacchetto, double importo, string numerocommessa,
+        public void InserimentoBozza(DateTime data, double importo, int lavorazione, string numerocommessa,
             int cliente, bool accettazione)
         {
             try
             {
                 var bDB = new BozzaDB(conn);
-                bDB.Inserimento(data, pacchetto, importo, numerocommessa, cliente, accettazione);
+                bDB.Inserimento(data, importo, lavorazione, numerocommessa,  cliente, accettazione);
             }
             catch (Exception e)
             {
@@ -379,13 +379,13 @@ namespace Diomede2
 
             return contatto;
         }
-        public void UpdateBozza(int id, DateTime data, string pacchetto, double importo, string numerocommessa,
+        public void UpdateBozza(int id, DateTime data, double importo, int lavorazione, string numerocommessa,
             int cliente, bool accettazione)
         {
             try
             {
                 var bDB = new BozzaDB(conn);
-                bDB.AggiornaBozza(id, data, pacchetto, importo, numerocommessa, cliente, accettazione);
+                bDB.AggiornaBozza(id, data, importo, lavorazione, numerocommessa, cliente, accettazione);
             }
             catch (Exception e)
             {
@@ -1427,7 +1427,7 @@ namespace Diomede2
             con = conn;
         }
 
-        public void Inserimento(DateTime data, string pacchetto, double importo, string numerocommessa, int cliente,
+        public void Inserimento(DateTime data, double importo, int lavorazione, string numerocommessa, int cliente,
             bool accettazione)
         {
             try
@@ -1436,15 +1436,15 @@ namespace Diomede2
                 MySqlCommand command;
                 if (accettazione)
                     command = new MySqlCommand(
-                        "INSERT INTO `BOZZA`(`DATA`, `PACCHETTO`,`IMPORTO`,`NUMEROCOMMESSA`,`CLIENTE`,`ACCETTAZIONE`) VALUES('" +
-                        data.ToString("yyyy/MM/dd") + "','" + pacchetto + "','" +
-                        importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" + numerocommessa + "','" +
+                        "INSERT INTO `BOZZA`(`DATA`,`IMPORTO`,`LAVORAZIONE`,`NUMEROCOMMESSA`,`CLIENTE`,`ACCETTAZIONE`) VALUES('" +
+                        data.ToString("yyyy/MM/dd") + "','" +
+                        importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" + lavorazione + "','" + numerocommessa + "','" +
                         cliente + "','1')", con);
                 else
                     command = new MySqlCommand(
-                        "INSERT INTO `BOZZA`(`DATA`, `PACCHETTO`,`IMPORTO`,`NUMEROCOMMESSA`,`CLIENTE`,`ACCETTAZIONE`) VALUES('" +
-                        data.ToString("yyyy/MM/dd") + "','" + pacchetto + "','" +
-                        importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" + numerocommessa + "','" +
+                        "INSERT INTO `BOZZA`(`DATA`,`IMPORTO`,`LAVORAZIONE`,`NUMEROCOMMESSA`,`CLIENTE`,`ACCETTAZIONE`) VALUES('" +
+                        data.ToString("yyyy/MM/dd") + "','" +
+                        importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" + lavorazione + "','" + numerocommessa + "','" +
                         cliente + "','0')", con);
                 command.ExecuteNonQuery();
             }
@@ -1609,7 +1609,7 @@ namespace Diomede2
             return bozza;
         }
 
-        public void AggiornaBozza(int id, DateTime data, string pacchetto, double importo, string numerocommessa,
+        public void AggiornaBozza(int id, DateTime data, double importo, int lavorazione, string numerocommessa,
             int cliente, bool accettazione)
         {
             try
@@ -1618,13 +1618,13 @@ namespace Diomede2
                 MySqlCommand command;
                 if (accettazione)
                     command = new MySqlCommand(
-                        "UPDATE `BOZZA` SET `DATA`='" + data.ToString("yyyy/MM/dd") + "',`PACCHETTO`='" + pacchetto +
+                        "UPDATE `BOZZA` SET `DATA`='" + data.ToString("yyyy/MM/dd") + "',`LAVORAZIONE`='" + lavorazione +
                         "',`IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) +
                         "',`NUMEROCOMMESSA`='" + numerocommessa + "',`CLIENTE`='" + cliente +
                         "',`ACCETTAZIONE`='1' WHERE `ID` = '" + id + "'", con);
                 else
                     command = new MySqlCommand(
-                        "UPDATE `BOZZA` SET `DATA`='" + data.ToString("yyyy/MM/dd") + "',`PACCHETTO`='" + pacchetto +
+                        "UPDATE `BOZZA` SET `DATA`='" + data.ToString("yyyy/MM/dd") + "',`LAVORAZIONE`='" + lavorazione +
                         "',`IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) +
                         "',`NUMEROCOMMESSA`='" + numerocommessa + "',`CLIENTE`='" + cliente +
                         "',`ACCETTAZIONE`='0' WHERE `ID` = '" + id + "'", con);

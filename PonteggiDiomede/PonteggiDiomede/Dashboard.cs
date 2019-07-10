@@ -71,5 +71,37 @@ namespace Diomede2
                 MessageBox.Show("Errore imprevisto contattare l'assistenza");
             }
         }
+
+        private void MostraListaClientiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1.Visible = true;
+        }
+
+        private void NascondiListaClientiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView1.Visible = true;
+        }
+
+        private void ListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var lB = new ListaBozze(settore, this);
+            lB.Show();
+        }
+
+        private void InserisciBozzaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var ib = new InserimentoBozza(settore);
+            ib.Show();
+        }
+        private void VisualizzaListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dashboard_Load(sender, e);
+            listView2.Visible = true;
+        }
+
+        private void NascondiListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView2.Visible = false;
+        }
     }
 }
