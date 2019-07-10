@@ -51,3 +51,8 @@ C:\Users\Andre\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\bin\Debug\Goo
 C:\Users\Andre\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Andre\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\bin\Debug\MySql.Data.xml
 C:\Users\Andre\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.csproj.CopyComplete
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.Contatti.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.InserimentoContatto.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.InserimentoRuolo.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.Ruoli.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.visualizzatore.resources

@@ -48,7 +48,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>LOGO DEFINITIVO.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
@@ -419,7 +420,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LOGO DEFINITIVO.ico" />
     <None Include="Resources\icons8-chiave-64.png" />
     <None Include="Resources\icons8-password-64.png" />
     <None Include="Resources\icons8-nessuna-modifica-48.png" />

@@ -379,15 +379,5 @@ namespace Diomede2.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap LOGO_DEFINITIVO {
-            get {
-                object obj = ResourceManager.GetObject("LOGO DEFINITIVO", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
