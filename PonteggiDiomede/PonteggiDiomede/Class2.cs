@@ -1655,6 +1655,9 @@ namespace Diomede2
         public List<Commessa> ListaCommesse()
         {
             DateTime dateValue;
+            DateTime dataValue2;
+            DateTime dataValue3;
+            DateTime dataValue4;
             var lista = new List<Commessa>();
             try
             {
@@ -1667,30 +1670,24 @@ namespace Diomede2
                     if (!(lettore[3] + "").Equals(""))
                     {
                         DateTime.TryParse(lettore[3] + "", out dateValue);
+                        DateTime.TryParse(lettore[9] + "", out dataValue2);
+                        DateTime.TryParse(lettore[10] + "", out dataValue3);
+                        DateTime.TryParse(lettore[12] + "", out dataValue4);
                         var c = new Commessa
                         {
                             Id = (int)lettore[0],
                             Ditta = (int)lettore[1],
-                            NumeroCommessa = (string)lettore[2],
+                            NumeroCommessa = "" + lettore[2],
                             Data = dateValue,
                             Referente = "" + lettore[4],
-                            Bozza = (int)lettore[5],
-                            IndirizzoCantiere = "" + lettore[6],
-                            TecnicoInterno = "" + lettore[7],
-                            Note = "" + lettore[8]
-                        };
-                        lista.Add(c);
-                    }
-                    else
-                    {
-                        var c = new Commessa
-                        {
-                            Id = (int)lettore[0],
-                            Ditta = (int)lettore[1],
-                            NumeroCommessa = (string)lettore[2],
-                            Data = new DateTime(),
-                            Referente = "" + lettore[4],
-                            Bozza = (int)lettore[5]
+                            IndirizzoCantiere = "" + lettore[5],
+                            TecnicoInterno = "" + lettore[6],
+                            Note = "" + lettore[7],
+                            Bozza = (int)lettore[8],
+                            DataEsecuzione = dataValue2,
+                            DataRichestaConsegna = dataValue3,
+                            Invio = "" + lettore [11],
+                            DataOraInvio = dataValue4
                         };
                         lista.Add(c);
                     }
@@ -1708,7 +1705,11 @@ namespace Diomede2
         }
         public List<Commessa> ListaCommesse(string n)
         {
+
             DateTime dateValue;
+            DateTime dataValue2;
+            DateTime dataValue3;
+            DateTime dataValue4;
             var lista = new List<Commessa>();
             try
             {
@@ -1720,37 +1721,30 @@ namespace Diomede2
                 while (lettore.Read())
                     if (!(lettore[3] + "").Equals(""))
                     {
+
                         DateTime.TryParse(lettore[3] + "", out dateValue);
+                        DateTime.TryParse(lettore[9] + "", out dataValue2);
+                        DateTime.TryParse(lettore[10] + "", out dataValue3);
+                        DateTime.TryParse(lettore[12] + "", out dataValue4);
                         var c = new Commessa
                         {
                             Id = (int)lettore[0],
                             Ditta = (int)lettore[1],
-                            NumeroCommessa = (string)lettore[2],
+                            NumeroCommessa = "" + lettore[2],
                             Data = dateValue,
                             Referente = "" + lettore[4],
-                            Bozza = (int)lettore[5],
-                            IndirizzoCantiere = "" + lettore[6],
-                            TecnicoInterno = "" + lettore[7],
-                            Note = "" + lettore[8]
+                            IndirizzoCantiere = "" + lettore[5],
+                            TecnicoInterno = "" + lettore[6],
+                            Note = "" + lettore[7],
+                            Bozza = (int)lettore[8],
+                            DataEsecuzione = dataValue2,
+                            DataRichestaConsegna = dataValue3,
+                            Invio = "" + lettore[11],
+                            DataOraInvio = dataValue4
                         };
                         lista.Add(c);
                     }
-                    else
-                    {
-                        var c = new Commessa
-                        {
-                            Id = (int)lettore[0],
-                            Ditta = (int)lettore[1],
-                            NumeroCommessa = (string)lettore[2],
-                            Data = new DateTime(),
-                            Referente = "" + lettore[4],
-                            Bozza = (int)lettore[5],
-                            IndirizzoCantiere = "" + lettore[6],
-                            TecnicoInterno = "" + lettore[7],
-                            Note = "" + lettore[8]
-                        };
-                        lista.Add(c);
-                    }
+                    
             }
             catch (Exception ex)
             {
@@ -1765,7 +1759,11 @@ namespace Diomede2
         }
         public Commessa CercaCommesse(int id)
         {
+
             DateTime dateValue;
+            DateTime dataValue2;
+            DateTime dataValue3;
+            DateTime dataValue4;
             Commessa commessa = null;
             try
             {
@@ -1778,33 +1776,24 @@ namespace Diomede2
                     if (!(lettore[3] + "").Equals(""))
                     {
                         DateTime.TryParse(lettore[3] + "", out dateValue);
+                        DateTime.TryParse(lettore[9] + "", out dataValue2);
+                        DateTime.TryParse(lettore[10] + "", out dataValue3);
+                        DateTime.TryParse(lettore[12] + "", out dataValue4);
                         var c = new Commessa
                         {
                             Id = (int)lettore[0],
                             Ditta = (int)lettore[1],
-                            NumeroCommessa = (string)lettore[2],
+                            NumeroCommessa = "" + lettore[2],
                             Data = dateValue,
                             Referente = "" + lettore[4],
-                            Bozza = (int)lettore[5],
-                            IndirizzoCantiere = "" + lettore[6],
-                            TecnicoInterno = "" + lettore[7],
-                            Note = "" + lettore[8]
-                        };
-                        commessa = c;
-                    }
-                    else
-                    {
-                        var c = new Commessa
-                        {
-                            Id = (int)lettore[0],
-                            Ditta = (int)lettore[1],
-                            NumeroCommessa = (string)lettore[2],
-                            Data = new DateTime(),
-                            Referente = "" + lettore[4],
-                            Bozza = (int)lettore[5],
-                            IndirizzoCantiere = "" + lettore[6],
-                            TecnicoInterno = "" + lettore[7],
-                            Note = "" + lettore[8]
+                            IndirizzoCantiere = "" + lettore[5],
+                            TecnicoInterno = "" + lettore[6],
+                            Note = "" + lettore[7],
+                            Bozza = (int)lettore[8],
+                            DataEsecuzione = dataValue2,
+                            DataRichestaConsegna = dataValue3,
+                            Invio = "" + lettore[11],
+                            DataOraInvio = dataValue4
                         };
                         commessa = c;
                     }
@@ -1822,7 +1811,11 @@ namespace Diomede2
         }
         public List<Commessa> FiltroCommesse(string s, string g)
         {
+
             DateTime dateValue;
+            DateTime dataValue2;
+            DateTime dataValue3;
+            DateTime dataValue4;
             var commessa = new List<Commessa>();
             try
             {
@@ -1835,17 +1828,25 @@ namespace Diomede2
                     if (!(lettore[3] + "").Equals(""))
                     {
                         DateTime.TryParse(lettore[3] + "", out dateValue);
+                        DateTime.TryParse(lettore[9] + "", out dataValue2);
+                        DateTime.TryParse(lettore[10] + "", out dataValue3);
+                        DateTime.TryParse(lettore[12] + "", out dataValue4);
                         var c = new Commessa
                         {
+
                             Id = (int)lettore[0],
                             Ditta = (int)lettore[1],
-                            NumeroCommessa = (string)lettore[2],
+                            NumeroCommessa = "" + lettore[2],
                             Data = dateValue,
                             Referente = "" + lettore[4],
-                            Bozza = (int)lettore[5],
-                            IndirizzoCantiere = "" + lettore[6],
-                            TecnicoInterno = "" + lettore[7],
-                            Note = "" + lettore[8]
+                            IndirizzoCantiere = "" + lettore[5],
+                            TecnicoInterno = "" + lettore[6],
+                            Note = "" + lettore[7],
+                            Bozza = (int)lettore[8],
+                            DataEsecuzione = dataValue2,
+                            DataRichestaConsegna = dataValue3,
+                            Invio = "" + lettore[11],
+                            DataOraInvio = dataValue4
                         };
                         commessa.Add(c);
                     }
