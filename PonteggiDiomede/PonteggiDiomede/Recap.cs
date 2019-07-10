@@ -47,7 +47,7 @@ namespace Diomede2
                     {
                         try
                         {
-                            op.UpdateLavorazioni((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", "" + riga.Cells["DESC"].Value, "" + riga.Cells["SCADENZE"].Value, (int)riga.Cells["MACROLAVORAZIONE"].Value, (double)riga.Cells["PREZZO"].Value);
+                            op.UpdateLavorazioni((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", "" + riga.Cells["DESC"].Value, (double)riga.Cells["PREZZO"].Value,(int)riga.Cells["COMMESSA"].Value, (DateTime)riga.Cells["DATA"].Value, "" + riga.Cells["ASSEGNATO"].Value);
                         }
                         catch
                         {

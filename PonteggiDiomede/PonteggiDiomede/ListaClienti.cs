@@ -91,7 +91,7 @@ namespace Diomede2
             try
             {
                 formPrecente.Show();
-                formPrecente.Form2_Load(sender, e);
+                formPrecente.Dashboard_Load(sender, e);
             }
             catch
             {
