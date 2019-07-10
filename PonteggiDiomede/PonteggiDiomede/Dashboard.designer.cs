@@ -54,8 +54,8 @@
             this.gestioneEconomicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaPagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView3 = new System.Windows.Forms.ListView();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,7 +116,7 @@
             this.mostraListaClientiToolStripMenuItem,
             this.nascondiListaClientiToolStripMenuItem});
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(108, 24);
             this.toolStripMenuItem2.Text = "Ditta";
             // 
             // listaClientiToolStripMenuItem
@@ -163,7 +163,7 @@
             this.mostraListaBozzeToolStripMenuItem,
             this.nascondiListaBozzeToolStripMenuItem});
             this.bozzaToolStripMenuItem1.Name = "bozzaToolStripMenuItem1";
-            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(113, 24);
             this.bozzaToolStripMenuItem1.Text = "Bozza";
             // 
             // listaBozzeToolStripMenuItem
@@ -219,18 +219,21 @@
             this.listaCommesseToolStripMenuItem.Name = "listaCommesseToolStripMenuItem";
             this.listaCommesseToolStripMenuItem.Size = new System.Drawing.Size(237, 24);
             this.listaCommesseToolStripMenuItem.Text = "Lista Commesse";
+            this.listaCommesseToolStripMenuItem.Click += new System.EventHandler(this.ListaCommesseToolStripMenuItem_Click);
             // 
             // mostraListaCommesseToolStripMenuItem
             // 
             this.mostraListaCommesseToolStripMenuItem.Name = "mostraListaCommesseToolStripMenuItem";
             this.mostraListaCommesseToolStripMenuItem.Size = new System.Drawing.Size(237, 24);
             this.mostraListaCommesseToolStripMenuItem.Text = "Mostra Lista Commesse";
+            this.mostraListaCommesseToolStripMenuItem.Click += new System.EventHandler(this.MostraListaCommesseToolStripMenuItem_Click);
             // 
             // nascondiListaCommesseToolStripMenuItem
             // 
             this.nascondiListaCommesseToolStripMenuItem.Name = "nascondiListaCommesseToolStripMenuItem";
             this.nascondiListaCommesseToolStripMenuItem.Size = new System.Drawing.Size(237, 24);
             this.nascondiListaCommesseToolStripMenuItem.Text = "Nascondi Lista Commesse";
+            this.nascondiListaCommesseToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaCommesseToolStripMenuItem_Click);
             // 
             // macroLavorazioniToolStripMenuItem1
             // 
@@ -269,14 +272,6 @@
             this.listaPagamentiToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.listaPagamentiToolStripMenuItem.Text = "Lista Pagamenti";
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.exitToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_eliminare_48;
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(58, 23);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
             // listView3
             // 
             this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -288,6 +283,14 @@
             this.listView3.UseCompatibleStateImageBehavior = false;
             this.listView3.View = System.Windows.Forms.View.List;
             this.listView3.Visible = false;
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.exitToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_eliminare_48;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(58, 23);
+            this.exitToolStripMenuItem.Text = "Exit";
             // 
             // Dashboard
             // 

@@ -11,7 +11,6 @@ namespace Diomede2
         private readonly string db;
         private List<Bozza> lista;
         private readonly List<Cliente> listaClienti = new List<Cliente>();
-        private readonly List<Pacchetto> listaPacchetti = new List<Pacchetto>();
         private OperazionePraticheEdili op;
 
         public FiltroBozze(DataGridView d, string dbName)
@@ -46,12 +45,6 @@ namespace Diomede2
             if (comboBox1.SelectedItem.ToString().Equals("CLIENTE"))
                 dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem,
                     "" + listaClienti[comboBox2.SelectedIndex].Id);
-            else if (comboBox1.SelectedItem.ToString().Equals("PACCHETTO"))
-                dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem,
-                    "" + listaPacchetti[comboBox2.SelectedIndex].Id);
-            else if (comboBox1.SelectedItem.ToString().Equals("IDENTIFICATIVOPREVENTIVO"))
-                dataTable.DataSource =
-                    op.FiltraBozza("NUMEROCOMMESSA", "" + listaPacchetti[comboBox2.SelectedIndex].Id);
             else
                 dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem, "" + comboBox2.SelectedItem);
         }
@@ -71,23 +64,6 @@ namespace Diomede2
                         }
 
                     if (flag) comboBox2.Items.Add(c.Data.ToString("yyyy-MM-dd"));
-                }
-            else if (comboBox1.SelectedItem.Equals("PACCHETTO"))
-                foreach (var c in lista)
-                {
-                    var flag = true;
-                    foreach (var o in comboBox2.Items)
-                        if (c.Pacchetto.ToString().Equals(o.ToString()))
-                        {
-                            flag = false;
-                            break;
-                        }
-
-                    if (flag)
-                    {
-                        listaPacchetti.Add(op.CercaPacchetto(c.Pacchetto));
-                        comboBox2.Items.Add(op.CercaPacchetto(c.Pacchetto).Nome);
-                    }
                 }
             else if (comboBox1.SelectedItem.Equals("IMPORTO"))
                 foreach (var c in lista)

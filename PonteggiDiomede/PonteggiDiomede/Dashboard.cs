@@ -18,7 +18,7 @@ namespace Diomede2
             settore = s;
             InitializeComponent();
         }
-        private void Dashboard_Load(object sender, EventArgs e)
+        public void Dashboard_Load(object sender, EventArgs e)
         {
             try
             {
@@ -100,6 +100,22 @@ namespace Diomede2
         }
 
         private void NascondiListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listView2.Visible = false;
+        }
+        private void ListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new ListaCommesse(settore, this);
+            frm.Show();
+        }
+
+        private void MostraListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dashboard_Load(sender, e);
+            listView2.Visible = true;
+        }
+
+        private void NascondiListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listView2.Visible = false;
         }
