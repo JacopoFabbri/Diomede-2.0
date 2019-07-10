@@ -90,7 +90,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.50078F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(362, 474);
             this.tableLayoutPanel1.TabIndex = 5;
-            this.tableLayoutPanel1.Visible = false;
             // 
             // textBox2
             // 
