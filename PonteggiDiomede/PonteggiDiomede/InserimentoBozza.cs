@@ -26,10 +26,7 @@ namespace Diomede2
 
         private void TextBox2_Click(object sender, EventArgs e)
         {
-           /* 
-            var lp = new ListaPacchetto(db, this, textBox2);
-            lp.Show();
-            */
+
         }
 
         private void InserimentoBozza_FormClosing(object sender, FormClosingEventArgs e)
