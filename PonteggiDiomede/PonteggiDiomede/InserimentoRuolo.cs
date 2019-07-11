@@ -23,7 +23,7 @@ namespace Diomede2
                 c.Form5_Load(sender, e);
                 Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
             }

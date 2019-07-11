@@ -57,7 +57,7 @@ namespace Diomede2
                 MessageBox.Show("Bozza Inserita", "Inserita:", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati");
             }
@@ -81,6 +81,10 @@ namespace Diomede2
             if (comboBox2.SelectedItem.ToString().Equals("Agg-"))
             {
                 comboBox3.Visible = true;
+            }
+            else
+            {
+                comboBox3.Visible = false;
             }
         }
     }
