@@ -52,12 +52,20 @@ namespace Diomede2
                     commessa = op1.GeneraCommessa("PO/B", listaAmministrazione[1], "PraticheEdili", true);
                 }
 
-                op.InserimentoBozza(dateTimePicker1.Value, double.Parse(textBox1.Text), comboBox2.SelectedItem.ToString() + comboBox3.SelectedItem.ToString(), commessa,
-                    lista[comboBox1.SelectedIndex].Id, false); ;
+                if (comboBox2.SelectedItem.ToString().Equals("Nuovo"))
+                {
+                    op.InserimentoBozza(dateTimePicker1.Value, double.Parse(textBox1.Text), comboBox2.SelectedItem.ToString(), commessa,
+                    lista[comboBox1.SelectedIndex].Id, false);
+                }
+                else
+                {
+                    op.InserimentoBozza(dateTimePicker1.Value, double.Parse(textBox1.Text), comboBox2.SelectedItem.ToString() + comboBox3.SelectedItem.ToString(), commessa,
+                        lista[comboBox1.SelectedIndex].Id, false);
+                }
                 MessageBox.Show("Bozza Inserita", "Inserita:", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati");
             }
@@ -70,7 +78,7 @@ namespace Diomede2
             foreach (var c in lista) comboBox1.Items.Add(c.Nome);
             comboBox2.Items.Add("Nuovo");
             comboBox2.Items.Add("Agg-");
-            for(int i = 1; i < 30; i++)
+            for (int i = 1; i < 30; i++)
             {
                 comboBox3.Items.Add(i + "");
             }
@@ -81,6 +89,10 @@ namespace Diomede2
             if (comboBox2.SelectedItem.ToString().Equals("Agg-"))
             {
                 comboBox3.Visible = true;
+            }
+            else
+            {
+                comboBox3.Visible = false;
             }
         }
     }

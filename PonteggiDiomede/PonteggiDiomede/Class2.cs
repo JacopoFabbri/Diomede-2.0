@@ -1191,7 +1191,7 @@ namespace Diomede2
             {
                 con.Open();
                 var command =
-                    new MySqlCommand("INSERT INTO `RUOLI`(`NOME`, `DESC`) VALUES('" + nome + "','" + desc + "')", con);
+                    new MySqlCommand("INSERT INTO `RUOLI`(`NOME`, `DESCRIZIONE`) VALUES('" + nome + "','" + desc + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)

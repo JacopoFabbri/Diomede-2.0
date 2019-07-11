@@ -75,7 +75,7 @@ namespace Diomede2
                             {
                                 op.UpdateLavorazioni((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", "" + riga.Cells["DESC"].Value, "" + riga.Cells["SCADENZE"].Value, (int)riga.Cells["MACROLAVORAZIONE"].Value, (double)riga.Cells["PREZZO"].Value);
                             }
-                            catch (Exception ex)
+                            catch
                             {
                                 MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -94,7 +94,7 @@ namespace Diomede2
                 }
                 dataGridView1.DataSource = listaLavorazione;
                 dataGridView1.Columns[0].Visible = false;
-            }catch(Exception ex)
+            }catch
             {
                 MessageBox.Show("sistemami");
             }
