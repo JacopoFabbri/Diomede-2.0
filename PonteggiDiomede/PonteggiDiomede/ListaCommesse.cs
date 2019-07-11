@@ -25,7 +25,7 @@ namespace Diomede2
                 dataGridView1.DataSource = op.CercaCommessa();
                 dataGridView1.Columns[0].Visible = false;
             }
-            catch (Exception ex)
+            catch 
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
             }

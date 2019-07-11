@@ -135,7 +135,7 @@ namespace Diomede2
             }
             else
             {
-                Dashboard l = new Dashboard(listView1.SelectedItems[0].Text, this);
+                Dashboard l = new Dashboard(listView1.SelectedItems[0].Text);
                 l.Show();
             }
 
