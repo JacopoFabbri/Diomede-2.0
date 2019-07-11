@@ -26,8 +26,8 @@ namespace Diomede2
                     {
                         if (checkBox1.Checked)
                         {
-                            var path = Directory.GetCurrentDirectory();
-                            if (!Directory.Exists(path + "\\Login"))
+                            var path = Environment.SpecialFolder.Personal.Equals(Environment.SpecialFolder.ApplicationData);
+                            if (!Directory.Exists( path+ "\\Login"))
                             {
                                 Directory.CreateDirectory(path + "\\Login");
                                 if (File.Exists(path + "\\Login\\user.paco")) File.Create(path + "\\Login\\user.paco");
@@ -93,7 +93,7 @@ namespace Diomede2
         {
             checkBox1.Checked = true;
             menuStrip1.Visible = false;
-            var path = Directory.GetCurrentDirectory();
+            var path = Environment.SpecialFolder.Personal.Equals(Environment.SpecialFolder.ApplicationData);
             if (Directory.Exists(path + "\\Login"))
                 if (File.Exists(path + "\\Login\\user.paco"))
                 {
