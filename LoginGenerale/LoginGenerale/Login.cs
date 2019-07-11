@@ -83,9 +83,9 @@ namespace Diomede2
                 }
 
             }
-            catch (Exception ex)
+            catch 
             {
-                MessageBox.Show("Errore non specificato riprovare!"  + "\n" + ex.ToString());
+                MessageBox.Show("Errore non specificato riprovare!");
                 textBox2.Clear();
             }
         }

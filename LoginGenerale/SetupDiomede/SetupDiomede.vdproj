@@ -236,7 +236,7 @@
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_538D20FD955F4F928DA3E1A0181E053D"
             {
             "SourcePath" = "8:..\\LoginGenerale\\bin\\Debug\\Login\\user.txt"
-            "TargetName" = "8:user.paco"
+            "TargetName" = "8:user.txt"
             "Tag" = "8:"
             "Folder" = "8:_1CAF43D0B0224AD0B9C9F67EA3B53078"
             "Condition" = "8:"
@@ -527,7 +527,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SetupDiomede"
         "ProductCode" = "8:{CCD4A5C7-7E1E-4FCF-99BE-EF6B62ABAD88}"
-        "PackageCode" = "8:{6471A720-C487-4647-A62D-3014FCFCFFFE}"
+        "PackageCode" = "8:{625FB01E-052B-4189-B845-BA9412A5B064}"
         "UpgradeCode" = "8:{DC312D70-5E12-4333-911D-CC0058CDA1AA}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
