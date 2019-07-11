@@ -125,7 +125,7 @@ namespace Diomede2
                 {
                     System.Diagnostics.Process proc = new System.Diagnostics.Process();
                     proc.EnableRaisingEvents = false;
-                    proc.StartInfo.FileName = "C:/Users/Ponteggi5/Desktop/Diomede-2.0/PonteggiDiomede/PonteggiDiomede/bin/Debug/PonteggiDiomede.exe";
+                    proc.StartInfo.FileName = "C:/Users/Andre/Desktop/Diomede-2.0PonteggiDiomede/PonteggiDiomede/bin/Debug/PonteggiDiomede.exe";
                     proc.Start();
                     Application.Exit();
                 }
