@@ -10,6 +10,7 @@ namespace Diomede2
     {
         private readonly string db;
         private readonly Dashboard formPrecente;
+        private List<Bozza> lista;
         private OperazionePraticheEdili op;
         public ListaBozze(string dbName, Dashboard frm)
         {
@@ -23,36 +24,49 @@ namespace Diomede2
             {
                 op = new OperazionePraticheEdili(db);
                 /*
-                DataGridViewColumn d = new DataGridViewColumn();
-                d.Name = "ID";
-                d.ValueType = typeof(DataGridViewTextBoxCell);
-                dataGridView1.Columns.Add(d);
-                d.Name = "DATA";
-                d.ValueType = typeof(DataGridViewTextBoxCell);
-                dataGridView1.Columns.Add(d);
-                d.Name = "PACCHETTO";
-                d.ValueType = typeof(DataGridViewTextBoxCell);
-                dataGridView1.Columns.Add(d);
-                d.Name = "IMPORTO";
-                d.ValueType = typeof(DataGridViewTextBoxCell);
-                dataGridView1.Columns.Add(d);
-                d.Name = "NUMEROCOMMESSA";
-                d.ValueType = typeof(DataGridViewTextBoxCell);
-                dataGridView1.Columns.Add(d);
-                d.Name = "CLIENTE";
-                d.ValueType = typeof(DataGridViewTextBoxCell);
-                dataGridView1.Columns.Add(d);
-                d.Name = "ACCETAZIONE";
-                d.ValueType = typeof(DataGridViewCheckBoxCell);
-                dataGridView1.Columns.Add(d);
+                this.Controls.Add(dataGridView1);
 
+                dataGridView1.ColumnCount = 7;
+
+                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+                dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dataGridView1.ColumnHeadersDefaultCellStyle.Font =
+                    new Font(dataGridView1.Font, FontStyle.Bold);
+
+                dataGridView1.Location = new Point(8, 8);
+                dataGridView1.Size = new Size(500, 250);
+                dataGridView1.AutoSizeRowsMode =
+                    DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+                dataGridView1.ColumnHeadersBorderStyle =
+                    DataGridViewHeaderBorderStyle.Single;
+                dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+                dataGridView1.GridColor = Color.Black;
+                dataGridView1.RowHeadersVisible = false;
+
+                dataGridView1.Columns[0].Name = "ID";
+                dataGridView1.Columns[1].Name = "DATA";
+                dataGridView1.Columns[2].Name = "PACCHETTO";
+                dataGridView1.Columns[3].Name = "IMPORTO";
+                dataGridView1.Columns[4].Name = "NUMEROCOMMESSA";
+                dataGridView1.Columns[5].Name = "CLIENTE";
+                dataGridView1.Columns[6].Name = "ACCETTAZIONE";
+
+                dataGridView1.Columns[4].DefaultCellStyle.Font =
+                    new Font(dataGridView1.DefaultCellStyle.Font, FontStyle.Italic);
+
+                dataGridView1.SelectionMode =
+                    DataGridViewSelectionMode.FullRowSelect;
+                dataGridView1.MultiSelect = false;
+                dataGridView1.Dock = DockStyle.Fill;
+                
                 if (op.CercaBozza() != null)
                 {
                     lista = op.CercaBozza();
                     int riga = 1;
-                    
-                    foreach(Bozza b in lista)
+
+                    foreach (Bozza b in lista)
                     {
+                        dataGridView1.Rows.Add();
                         dataGridView1.Rows[riga].Cells[0].Value = b.Id;
                         dataGridView1.Rows[riga].Cells[1].Value = b.Data;
                         dataGridView1.Rows[riga].Cells[2].Value = op.FiltraPacchetto("ID", "" + b.Pacchetto)[0].Nome;
@@ -62,14 +76,14 @@ namespace Diomede2
                         dataGridView1.Rows[riga].Cells[6].Value = b.Accettazione;
 
                     }
+                }
+                */
+                op.CercaBozza();
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[3].ReadOnly = true;
 
-                    */
-                    dataGridView1.DataSource = op.CercaBozza();
-                    dataGridView1.Columns[0].Visible = false;
-                    dataGridView1.Columns[3].ReadOnly = true;
-                
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();
@@ -92,14 +106,14 @@ namespace Diomede2
                     if (riga.Cells[0].Style.ForeColor == Color.Red)
                         try
                         {
-                            op.UpdateBozza((int) riga.Cells["ID"].Value, (DateTime) riga.Cells["DATA"].Value,
-                                riga.Cells["PACCHETTO"].Value + "", (double) riga.Cells["IMPORTO"].Value,
-                                riga.Cells["IDENTIFICATIVOPREVENTIVO"].Value + "", (int) riga.Cells["CLIENTE"].Value,
-                                (bool) riga.Cells["ACCETTAZIONE"].Value);
-                            if ((bool) riga.Cells["ACCETTAZIONE"].Value)
+                            op.UpdateBozza((int)riga.Cells["ID"].Value, (DateTime)riga.Cells["DATA"].Value,
+                                riga.Cells["PACCHETTO"].Value + "", (double)riga.Cells["IMPORTO"].Value,
+                                riga.Cells["IDENTIFICATIVOPREVENTIVO"].Value + "", (int)riga.Cells["CLIENTE"].Value,
+                                (bool)riga.Cells["ACCETTAZIONE"].Value);
+                            if ((bool)riga.Cells["ACCETTAZIONE"].Value)
                             {
                                 var op1 = new OperazioneAmministrazione("Amministrazione");
-                                var c = op.CercaClientiId((int) riga.Cells["CLIENTE"].Value);
+                                var c = op.CercaClientiId((int)riga.Cells["CLIENTE"].Value);
                                 var listaAmministrazione = op1.FiltraCliente("NOME", c.Nome);
                                 List<ClienteAmministrazione> listaCliente = null;
                                 string commessa;
@@ -116,11 +130,11 @@ namespace Diomede2
                                         false);
                                 }
 
-                                op.InserimentoCommessa((int) riga.Cells["CLIENTE"].Value, commessa,
-                                    (DateTime) riga.Cells["DATA"].Value, "", (int) riga.Cells["ID"].Value, "", "", "");
+                                op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, commessa,
+                                    (DateTime)riga.Cells["DATA"].Value, "", (int)riga.Cells["ID"].Value, "", "", "");
                             }
                         }
-                        catch 
+                        catch
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -139,14 +153,14 @@ namespace Diomede2
             if (dataGridView1.SelectedRows != null)
                 if (MessageBox.Show(
                         "Stai per eliminare " +
-                        (string) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[4].Value + " .Confermi?",
+                        (string)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[4].Value + " .Confermi?",
                         "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) ==
                     DialogResult.Yes)
                     try
                     {
-                        var clienti = op.CercaBozzaId((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]
+                        var clienti = op.CercaBozzaId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]
                             .Cells[0].Value);
-                        op.CancellaBozza((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        op.CancellaBozza((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
                         MessageBox.Show("Bozza Eliminata", "Conferma", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
@@ -179,7 +193,7 @@ namespace Diomede2
             {
                 if (e.RowIndex != -1)
                 {
-                    var v = new VisualizzatoreDitte(db, (int) dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
+                    var v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
                         dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
                     v.Show();
                 }
@@ -188,11 +202,16 @@ namespace Diomede2
             {
                 if (e.RowIndex != -1)
                 {
-                    var v = new VisualizzatorePacchetto(db, (int) dataGridView1.Rows[e.RowIndex].Cells[2].Value,
+                    var v = new VisualizzatorePacchetto(db, (int)dataGridView1.Rows[e.RowIndex].Cells[2].Value,
                         dataGridView1.Rows[e.RowIndex].Cells[2]);
                     v.Show();
                 }
             }
+        }
+
+        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
