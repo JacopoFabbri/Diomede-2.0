@@ -30,10 +30,10 @@ namespace Diomede2
                             if (!Directory.Exists(path + "\\Login"))
                             {
                                 Directory.CreateDirectory(path + "\\Login");
-                                if (File.Exists(path + "\\Login\\user.txt")) File.Create(path + "\\Login\\user.txt");
+                                if (File.Exists(path + "\\Login\\user.paco")) File.Create(path + "\\Login\\user.paco");
                             }
 
-                            var sw = new StreamWriter(path + "\\Login\\user.txt");
+                            var sw = new StreamWriter(path + "\\Login\\user.paco");
                             sw.WriteLine("user:" + textBox1.Text + "\npass:" + textBox2.Text);
                             sw.Close();
                         }
@@ -95,9 +95,9 @@ namespace Diomede2
             menuStrip1.Visible = false;
             var path = Directory.GetCurrentDirectory();
             if (Directory.Exists(path + "\\Login"))
-                if (File.Exists(path + "\\Login\\user.txt"))
+                if (File.Exists(path + "\\Login\\user.paco"))
                 {
-                    var sr = new StreamReader(path + "\\Login\\user.txt");
+                    var sr = new StreamReader(path + "\\Login\\user.paco");
                     while (true)
                     {
                         var s = sr.ReadLine();

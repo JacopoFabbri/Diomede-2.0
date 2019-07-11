@@ -6,7 +6,6 @@ namespace Diomede2
 {
     public partial class Dashboard : Form
     {
-        private readonly Login formPrecedente;
         private readonly string settore;
         private List<Cliente> lista;
         private List<Bozza> listaBozze;
@@ -42,10 +41,6 @@ namespace Diomede2
             var cliente = lista[listView1.SelectedItems[0].Index];
             var frm1 = new Contatti(cliente, settore, this);
             frm1.Show();
-        }
-        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            formPrecedente.Show();
         }
         private void ListView2_Click(object sender, EventArgs e)
         {
