@@ -10,7 +10,7 @@ namespace Diomede2
     {
         private readonly string db;
         private readonly Dashboard formPrecente;
-        private List<Bozza> lista;
+        //private List<Bozza> lista;
         private OperazionePraticheEdili op;
         public ListaBozze(string dbName, Dashboard frm)
         {
@@ -83,7 +83,7 @@ namespace Diomede2
                 dataGridView1.Columns[3].ReadOnly = true;
 
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();
@@ -207,11 +207,6 @@ namespace Diomede2
                     v.Show();
                 }
             }
-        }
-
-        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
     }
 }
