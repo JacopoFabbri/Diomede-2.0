@@ -62,3 +62,9 @@ C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.ListaBozze.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.ListaCommesse.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.Recap.resources
+C:\Users\Andre\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.FiltroBozze.resources
+C:\Users\Andre\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.InserimentoBozza.resources
+C:\Users\Andre\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.InserimentoPagamento.resources
+C:\Users\Andre\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.ListaBozze.resources
+C:\Users\Andre\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.ListaCommesse.resources
+C:\Users\Andre\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.Recap.resources
