@@ -6,15 +6,13 @@ namespace Diomede2
 {
     public partial class Dashboard : Form
     {
-        private readonly Login formPrecedente;
         private readonly string settore;
         private List<Cliente> lista;
         private List<Bozza> listaBozze;
         private List<Commessa> listaCommesse;
         private OperazionePraticheEdili op;
-        public Dashboard(string s, Login f)
+        public Dashboard(string s)
         {
-            formPrecedente = f;
             settore = s;
             InitializeComponent();
         }
