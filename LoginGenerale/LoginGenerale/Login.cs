@@ -127,16 +127,25 @@ namespace Diomede2
                     proc.EnableRaisingEvents = false;
                     proc.StartInfo.FileName = "C:/Users/Andre/Desktop/Diomede-2.0/PonteggiDiomede/PonteggiDiomede/bin/Debug/PonteggiDiomede.exe";
                     proc.Start();
-                    Application.Exit();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
             }
-            else
+            else if(listView1.SelectedItems[0].Text.Equals("PraticheEdili"))
             {
-
+                try
+                {
+                    System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                    proc.EnableRaisingEvents = false;
+                    proc.StartInfo.FileName = "C:/Users/Andre/Desktop/Diomede-2.0/PonteggiDiomede/PonteggiDiomede/bin/Debug/PonteggiDiomede.exe";
+                    proc.Start();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
         }
         private void Button3_Click(object sender, EventArgs e)
