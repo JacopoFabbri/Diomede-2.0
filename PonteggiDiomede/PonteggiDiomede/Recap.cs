@@ -29,17 +29,13 @@ namespace Diomede2
                 commessa = op.CercaCommessa(idCommessa);
                 textBox1.Text = "" + commessa.NumeroCommessa;
                 textBox2.Text = op.CercaClientiId(commessa.Ditta).Nome;
-                textBox4.Text = op.CercaBozzaId(commessa.Bozza).IdentificativoPreventivo;
                 textBox5.Text = "" + op.CercaBozzaId(commessa.Bozza).Importo;
                 List<Lavorazioni> listaLavorazione = new List<Lavorazioni>();
                 dataGridView1.DataSource = listaLavorazione;
-                List<Pagamento> listaPagamenti = op.FiltraPagamento("COMMESSA", "" + commessa.Id);
-                dataGridView2.DataSource = listaPagamenti;
                 textBox6.Text = commessa.Note;
                 dataGridView1.Columns[0].Visible = false;
-                dataGridView2.Columns[0].Visible = false;
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("ciao");
             }
@@ -49,37 +45,6 @@ namespace Diomede2
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
-            {
-                cella.Style.ForeColor = Color.Red;
-            }
-        }
-        private void Button7_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow riga in dataGridView2.Rows)
-            {
-                if (riga.Cells[0].Value != null)
-                {
-                    if (riga.Cells[0].Style.ForeColor == Color.Red)
-                    {
-                        try
-                        {
-                            op.UpdatePagamento((int)riga.Cells["ID"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (double)riga.Cells["IMPORTO"].Value, riga.Cells["NOTE"].Value + "", riga.Cells["FATTURA"].Value + "", (DateTime)riga.Cells["DATAFATTURA"].Value, (DateTime)riga.Cells["DATA"].Value, (int)riga.Cells["CLIENTE"].Value, (int)riga.Cells["COMMESSA"].Value);
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
-                    }
-                }
-            }
-            List<Pagamento> listaPagamenti = op.FiltraPagamento("COMMESSA", "" + commessa.Id);
-            dataGridView2.DataSource = listaPagamenti;
-            dataGridView2.Columns[0].Visible = false;
-        }
-        private void DataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            foreach (DataGridViewCell cella in dataGridView2.Rows[e.RowIndex].Cells)
             {
                 cella.Style.ForeColor = Color.Red;
             }
@@ -105,31 +70,5 @@ namespace Diomede2
             InserimentoPagamento p = new InserimentoPagamento(db, commessa.Id);
             p.Show();
         }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            if (dataGridView2.SelectedRows != null)
-                if (MessageBox.Show(
-                        "Stai per eliminare " +
-                        (string)dataGridView1.Rows[dataGridView2.SelectedRows[0].Index].Cells[1].Value + " .Confermi?",
-                        "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) ==
-                    DialogResult.Yes)
-                    try
-                    {
-                        var clienti = op.CercaPagamento((int)dataGridView2.Rows[dataGridView2.SelectedRows[0].Index]
-                            .Cells[0].Value);
-                        op.CancellaPagamento((int)dataGridView2.Rows[dataGridView2.SelectedRows[0].Index].Cells[0]
-                            .Value);
-                        MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                    }
-        }
-
-
     }
 }
