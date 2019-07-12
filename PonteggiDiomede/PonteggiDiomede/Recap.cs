@@ -23,41 +23,29 @@ namespace Diomede2
         }
         private void Recap_Load(object sender, EventArgs e)
         {
-            op = new OperazionePraticheEdili(db);
-            commessa = op.CercaCommessa(idCommessa);
-            textBox1.Text = "" + commessa.NumeroCommessa;
-            textBox2.Text = op.CercaClientiId(commessa.Ditta).Nome;
-            String s = "";
-            textBox3.Text = s;
-            textBox4.Text = op.CercaBozzaId(commessa.Bozza).IdentificativoPreventivo;
-            textBox5.Text = "" + op.CercaBozzaId(commessa.Bozza).Importo;
-            List<Pagamento> listaPagamenti = op.FiltraPagamento("COMMESSA", "" + commessa.Id);
-            dataGridView2.DataSource = listaPagamenti;
-            textBox6.Text = commessa.Note;
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView2.Columns[0].Visible = false;
-        }
-        private void Button1_Click_1(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow riga in dataGridView1.Rows)
+            try
             {
-                if (riga.Cells[0].Value != null)
-                {
-                    if (riga.Cells[0].Style.ForeColor == Color.Red)
-                    {
-                        try
-                        {
-                            op.UpdateLavorazioni((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", "" + riga.Cells["DESC"].Value, (double)riga.Cells["PREZZO"].Value,(int)riga.Cells["COMMESSA"].Value, (DateTime)riga.Cells["DATA"].Value, "" + riga.Cells["ASSEGNATO"].Value);
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
-                    }
-                }
+                op = new OperazionePraticheEdili(db);
+                commessa = op.CercaCommessa(idCommessa);
+                textBox1.Text = "" + commessa.NumeroCommessa;
+                textBox2.Text = op.CercaClientiId(commessa.Ditta).Nome;
+                textBox4.Text = op.CercaBozzaId(commessa.Bozza).IdentificativoPreventivo;
+                textBox5.Text = "" + op.CercaBozzaId(commessa.Bozza).Importo;
+                List<Lavorazioni> listaLavorazione = new List<Lavorazioni>();
+                dataGridView1.DataSource = listaLavorazione;
+                List<Pagamento> listaPagamenti = op.FiltraPagamento("COMMESSA", "" + commessa.Id);
+                dataGridView2.DataSource = listaPagamenti;
+                textBox6.Text = commessa.Note;
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView2.Columns[0].Visible = false;
             }
+            catch
+            {
+                MessageBox.Show("ciao");
+            }
+
         }
+
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
@@ -67,7 +55,7 @@ namespace Diomede2
         }
         private void Button7_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow riga in dataGridView1.Rows)
+            foreach (DataGridViewRow riga in dataGridView2.Rows)
             {
                 if (riga.Cells[0].Value != null)
                 {
@@ -86,8 +74,8 @@ namespace Diomede2
                 }
             }
             List<Pagamento> listaPagamenti = op.FiltraPagamento("COMMESSA", "" + commessa.Id);
-            dataGridView1.DataSource = listaPagamenti;
-            dataGridView1.Columns[0].Visible = false;
+            dataGridView2.DataSource = listaPagamenti;
+            dataGridView2.Columns[0].Visible = false;
         }
         private void DataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -111,18 +99,13 @@ namespace Diomede2
 
             }
         }
-        private void Button4_Click(object sender, EventArgs e)
-        {
 
-        }
         private void Button6_Click(object sender, EventArgs e)
         {
             InserimentoPagamento p = new InserimentoPagamento(db, commessa.Id);
             p.Show();
         }
-        private void Button5_Click(object sender, EventArgs e)
-        {
-        }
+
         private void Button2_Click(object sender, EventArgs e)
         {
             if (dataGridView2.SelectedRows != null)
@@ -146,5 +129,7 @@ namespace Diomede2
                             MessageBoxIcon.Error);
                     }
         }
+
+
     }
 }
