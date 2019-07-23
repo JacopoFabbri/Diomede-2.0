@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Diomede2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,43 @@ namespace PonteggiDiomede
 {
     public partial class InserimentoLavorazione : Form
     {
-        public InserimentoLavorazione()
+        int id;
+        Commessa c;
+        OperazionePraticheEdili op;
+        public InserimentoLavorazione(int idCommessa)
         {
+            id = idCommessa;
+            op = new OperazionePraticheEdili("Ponteggi");
             InitializeComponent();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                op.InserimentoLavorazioni(textBox1.Text, textBox2.Text, Convert.ToDouble(textBox3.Text), c.Id, dateTimePicker1.Value, textBox5.Text);
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
+            }
+        }
+
+        private void InserimentoLavorazione_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                c = op.CercaCommessa(id);
+                textBox4.Text = c.NumeroCommessa;
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
+            }
+
         }
     }
 }
