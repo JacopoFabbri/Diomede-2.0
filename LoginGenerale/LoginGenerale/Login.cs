@@ -26,8 +26,8 @@ namespace Diomede2
                     {
                         if (checkBox1.Checked)
                         {
-                            var path = Directory.GetCurrentDirectory();
-                            if (!Directory.Exists(path + "\\Login"))
+                            var path = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
+                            if (!Directory.Exists( path+ "\\Login"))
                             {
                                 Directory.CreateDirectory(path + "\\Login");
                                 if (File.Exists(path + "\\Login\\user.paco")) File.Create(path + "\\Login\\user.paco");
@@ -93,7 +93,7 @@ namespace Diomede2
         {
             checkBox1.Checked = true;
             menuStrip1.Visible = false;
-            var path = Directory.GetCurrentDirectory();
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
             if (Directory.Exists(path + "\\Login"))
                 if (File.Exists(path + "\\Login\\user.paco"))
                 {
@@ -119,13 +119,14 @@ namespace Diomede2
         }
         private void ListView1_Click(object sender, EventArgs e)
         {
+            var path = Directory.GetCurrentDirectory();
             if (listView1.SelectedItems[0].Text.Equals("Ponteggi"))
             {
                 try
                 {
                     System.Diagnostics.Process proc = new System.Diagnostics.Process();
                     proc.EnableRaisingEvents = false;
-                    proc.StartInfo.FileName = "C:/Users/Andre/Desktop/Diomede-2.0/PonteggiDiomede/PonteggiDiomede/bin/Debug/PonteggiDiomede.exe";
+                    proc.StartInfo.FileName = path + "/PonteggiDiomede.exe";
                     proc.Start();
                 }
                 catch (Exception ex)
@@ -139,7 +140,7 @@ namespace Diomede2
                 {
                     System.Diagnostics.Process proc = new System.Diagnostics.Process();
                     proc.EnableRaisingEvents = false;
-                    proc.StartInfo.FileName = "C:/Users/Andre/Desktop/Diomede-2.0/DIomede 2.0/bin/Debug/Diomede2.exe";
+                    proc.StartInfo.FileName = path + "/Diomede2.exe";
                     proc.Start();
                 }
                 catch (Exception ex)

@@ -21,12 +21,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_538D20FD955F4F928DA3E1A0181E053D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_5A06B0EECCD32B52BF95B2B8CF857FAD"
         "OwnerKey" = "8:_E47A9C987B4648A6B3018DF005A9F992"
         "MsmSig" = "8:_UNDEFINED"
@@ -41,6 +35,12 @@
         {
         "MsmKey" = "8:_8DA4E4C04A827650684D5BFB19664AED"
         "OwnerKey" = "8:_CD5685DBD8944128B366D449E8D631C1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_947C15B4044A42ACAB5F7E51E5D6E67C"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -172,6 +172,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -231,26 +239,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_538D20FD955F4F928DA3E1A0181E053D"
-            {
-            "SourcePath" = "8:..\\LoginGenerale\\bin\\Debug\\Login\\user.txt"
-            "TargetName" = "8:user.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_1CAF43D0B0224AD0B9C9F67EA3B53078"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5A06B0EECCD32B52BF95B2B8CF857FAD"
@@ -313,6 +301,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_947C15B4044A42ACAB5F7E51E5D6E67C"
+            {
+            "SourcePath" = "8:..\\LoginGenerale\\bin\\Debug\\Login\\user.paco"
+            "TargetName" = "8:user.paco"
+            "Tag" = "8:"
+            "Folder" = "8:_848A51E984114096A0A96CB7AD54C98F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CD5685DBD8944128B366D449E8D631C1"
@@ -465,6 +473,28 @@
         }
         "Folder"
         {
+            "{1525181F-901A-416C-8A58-119130FE478E}:_04ADB72AE98641919F42D9EBCD8C63CF"
+            {
+            "Name" = "8:#1915"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:AppDataFolder"
+                "Folders"
+                {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_848A51E984114096A0A96CB7AD54C98F"
+                    {
+                    "Name" = "8:Login"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_55236D1E89DD4D0EAC826503368960D0"
+                        "Folders"
+                        {
+                        }
+                    }
+                }
+            }
             "{1525181F-901A-416C-8A58-119130FE478E}:_84C2874325214C689E64938446390FAC"
             {
             "Name" = "8:#1916"
@@ -486,17 +516,6 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_1CAF43D0B0224AD0B9C9F67EA3B53078"
-                    {
-                    "Name" = "8:Login"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_55236D1E89DD4D0EAC826503368960D0"
-                        "Folders"
-                        {
-                        }
-                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_F2D50C0E05314880B54ECDB7CD1EEA7F"
@@ -527,11 +546,11 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SetupDiomede"
         "ProductCode" = "8:{CCD4A5C7-7E1E-4FCF-99BE-EF6B62ABAD88}"
-        "PackageCode" = "8:{625FB01E-052B-4189-B845-BA9412A5B064}"
+        "PackageCode" = "8:{3CD65F13-7489-4CF0-8780-77D2E62091AF}"
         "UpgradeCode" = "8:{DC312D70-5E12-4333-911D-CC0058CDA1AA}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
@@ -544,7 +563,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_E742AD5ABF0A4EE69924C507C394C13D"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
