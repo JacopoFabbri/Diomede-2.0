@@ -47,13 +47,13 @@ namespace Diomede2
         private void AggiornaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
+            {
                 if (riga.Cells[0].Value != null)
                     if (riga.Cells[0].Style.ForeColor == Color.Red)
                         try
                         {
                             op.UpdateBozza((int)riga.Cells["ID"].Value, (DateTime)riga.Cells["DATA"].Value, (double)riga.Cells["IMPORTO"].Value, (String)riga.Cells["FASEPROGETTO"].Value,
-                                riga.Cells["IDENTIFICATIVOPREVENTIVO"].Value + "", (int)riga.Cells["CLIENTE"].Value,
-                                (bool)riga.Cells["ACCETTAZIONE"].Value);
+                                riga.Cells["IDENTIFICATIVOPREVENTIVO"].Value + "", (int)riga.Cells["CLIENTE"].Value, (bool)riga.Cells["ACCETTAZIONE"].Value);
                             if ((bool)riga.Cells["ACCETTAZIONE"].Value)
                             {
                                 var op1 = new OperazioneAmministrazione("Amministrazione");
@@ -77,13 +77,17 @@ namespace Diomede2
                                 op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, commessa,
                                     (DateTime)riga.Cells["DATA"].Value, "", "", "", "", (int)riga.Cells["ID"].Value, new DateTime(), new DateTime(), "", new DateTime());
                             }
+                            else
+                            {
+
+                            }
                         }
-                        catch 
+                        catch
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-
+            }
             dataGridView1.DataSource = op.CercaBozza();
             dataGridView1.Columns[0].Visible = false;
         }

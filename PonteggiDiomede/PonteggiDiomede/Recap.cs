@@ -35,7 +35,7 @@ namespace Diomede2
                 textBox6.Text = commessa.Note;
                 dataGridView1.Columns[0].Visible = false;
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("ciao");
             }
