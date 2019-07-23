@@ -124,6 +124,7 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
+
         public List<Contatto> CercaContatti()
         {
             List<Contatto> lista;
@@ -415,6 +416,18 @@ namespace Diomede2
             }
         }
         public void InserimentoCommessa(int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note, int bozza, DateTime dataEsecuzione, DateTime dataRichiestaConsegna, String nome, DateTime dataInvio)
+        {
+            try
+            {
+                var bDB = new CommessaDB(conn);
+                bDB.Inserimento(ditta, numerocommessa, data, referente, indirizzoCantiere, tecnico, note, bozza, dataEsecuzione, dataRichiestaConsegna, nome, dataInvio);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void InserimentoCommessa(int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note, int bozza, String dataEsecuzione, String dataRichiestaConsegna, String nome, String dataInvio)
         {
             try
             {
@@ -1641,6 +1654,26 @@ namespace Diomede2
                     "INSERT INTO `COMMESSA`(`DITTA`, `NUMEROCOMMESSA`, `DATA`, `REFERENTE`, `INDIRIZZOCANTIERE`, `TECNICOINTERNO`, `NOTE`, `BOZZA`, `DATAESECUZIONE`, `DATARICHIESTACONSEGNA`, `INVIO`, `DATAINVIO`) VALUES('" +
                     ditta + "','" + numerocommessa + "','" + data.ToString("yyyy/MM/dd") + "','" + referente + "','" + indirizzoCantiere + "','" + tecnico + "','" + note + "','" +
                     bozza + "','" + dataEsecuzione.ToString("yyyy/MM/dd") + "','" + dataRichiestaConsegna.ToString("yyyy/MM/dd") + "','" + nome + "','" + dataInvio.ToString("yyyy/MM/dd hh:mm") + "')", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void Inserimento(int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note, int bozza, String dataEsecuzione, String dataRichiestaConsegna, String nome, String dataInvio)
+        {
+            try
+            {
+                con.Open();
+                var command = new MySqlCommand(
+                    "INSERT INTO `COMMESSA`(`DITTA`, `NUMEROCOMMESSA`, `DATA`, `REFERENTE`, `INDIRIZZOCANTIERE`, `TECNICOINTERNO`, `NOTE`, `BOZZA`, `DATAESECUZIONE`, `DATARICHIESTACONSEGNA`, `INVIO`, `DATAINVIO`) VALUES('" +
+                    ditta + "','" + numerocommessa + "','" + data.ToString("yyyy/MM/dd") + "','" + referente + "','" + indirizzoCantiere + "','" + tecnico + "','" + note + "','" +
+                    bozza + "'," + dataEsecuzione + "," + dataRichiestaConsegna + ",'" + nome + "'," + dataInvio + ")", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)

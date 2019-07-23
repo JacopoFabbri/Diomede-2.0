@@ -54,7 +54,7 @@ namespace Diomede2
                         {
                             op.UpdateBozza((int)riga.Cells["ID"].Value, (DateTime)riga.Cells["DATA"].Value, (double)riga.Cells["IMPORTO"].Value, (String)riga.Cells["FASEPROGETTO"].Value,
                                 riga.Cells["IDENTIFICATIVOPREVENTIVO"].Value + "", (int)riga.Cells["CLIENTE"].Value, (bool)riga.Cells["ACCETTAZIONE"].Value);
-                            if ((bool)riga.Cells["Accettazione"].Value)
+                            if ((bool)riga.Cells["ACCETTAZIONE"].Value)
                             {
                                 if (op.FiltraCommessa("BOZZA", "" + (int)riga.Cells["ID"].Value).Count == 0)
                                 {
@@ -78,7 +78,7 @@ namespace Diomede2
                                     }
 
                                     op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, commessa,
-                                        (DateTime)riga.Cells["DATA"].Value, "", "", "", "", (int)riga.Cells["ID"].Value, new DateTime(), new DateTime(), "", new DateTime());
+                                        (DateTime)riga.Cells["DATA"].Value, "", "", "", "", (int)riga.Cells["ID"].Value, "NULL", "NULL", "", "NULL");
                                 }
                             }
                             else
@@ -131,7 +131,14 @@ namespace Diomede2
             {
                 foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
                     cella.Style.ForeColor = Color.Red;
-                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+                if((bool)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == true)
+                {
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = false;
+                }
+                else
+                {
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+                }
             }
         }
         private void FiltraToolStripMenuItem_Click(object sender, EventArgs e)
