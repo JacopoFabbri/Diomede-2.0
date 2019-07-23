@@ -16,7 +16,6 @@ namespace Diomede2
             db = dbName;
             InitializeComponent();
         }
-
         private void ListaCommesse_Load(object sender, EventArgs e)
         {
             try
@@ -34,12 +33,10 @@ namespace Diomede2
             formPrecente.Hide();
             dataGridView1.Focus();
         }
-
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
@@ -61,7 +58,6 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaCommessa();
             dataGridView1.Columns[0].Visible = false;
         }
-
         private void Form4_FormClosed(object sender, FormClosedEventArgs e)
         {
             try
@@ -75,7 +71,6 @@ namespace Diomede2
                     MessageBoxIcon.Error);
             }
         }
-
         private void Button3_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -103,13 +98,11 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaCommessa();
             dataGridView1.Columns[0].Visible = false;
         }
-
         private void Button4_Click(object sender, EventArgs e)
         {
             var frm = new InserimentoPagamento(db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
             frm.Show();
         }
-
         private void AggiornaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
@@ -135,7 +128,6 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaCommessa();
             dataGridView1.Columns[0].Visible = false;
         }
-
         private void EliminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -163,19 +155,16 @@ namespace Diomede2
             dataGridView1.DataSource = op.CercaCommessa();
             dataGridView1.Columns[0].Visible = false;
         }
-
         private void PagamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new InserimentoPagamento(db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
             frm.Show();
         }
-
         private void SelezionaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var r = new Recap(db, (int)dataGridView1.SelectedRows[0].Cells[0].Value);
             r.Show();
         }
-
         private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.ColumnIndex == 1)
