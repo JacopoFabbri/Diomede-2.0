@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PonteggiDiomede;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,12 +31,12 @@ namespace Diomede2
                 textBox1.Text = "" + commessa.NumeroCommessa;
                 textBox2.Text = op.CercaClientiId(commessa.Ditta).Nome;
                 textBox5.Text = "" + op.CercaBozzaId(commessa.Bozza).Importo;
-                List<Lavorazioni> listaLavorazione = new List<Lavorazioni>();
+                List<Lavorazioni> listaLavorazione = op.FiltraLavorazioni("COMMESSA", "" + idCommessa);
                 dataGridView1.DataSource = listaLavorazione;
                 textBox6.Text = commessa.Note;
                 dataGridView1.Columns[0].Visible = false;
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("ciao");
             }
@@ -73,7 +74,23 @@ namespace Diomede2
 
         private void Button4_Click(object sender, EventArgs e)
         {
+            InserimentoLavorazione l = new InserimentoLavorazione(idCommessa);
+            l.Show();
+        }
 
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                List<Lavorazioni> listaLavorazione = op.FiltraLavorazioni("COMMESSA", "" + idCommessa);
+                dataGridView1.DataSource = listaLavorazione;
+                dataGridView1.Columns[0].Visible = false;
+            }
+            catch
+            {
+                MessageBox.Show("ciao");
+            }
         }
     }
 }

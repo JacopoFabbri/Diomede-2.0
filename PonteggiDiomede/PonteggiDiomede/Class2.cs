@@ -1984,8 +1984,8 @@ namespace Diomede2
             {
                 con.Open();
                 var command = new MySqlCommand(
-                    "INSERT INTO `LAVORAZIONI`( `NOME`, `DESC`, `PREZZO`, `COMMESSA`, `DATA`, `ASSEGNAMENTO`) VALUES('" +
-                    nome + "','" + desc + "','" + prezzo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" + commessa + "','" + data.ToString("yyyy/MM/dd") + "','" + assegnamento + "','"
+                    "INSERT INTO `LAVORAZIONI`( `NOME`, `DESC`, `PREZZO`, `COMMESSA`, `DATA`, `ASEGNAMENTO`) VALUES('" +
+                    nome + "','" + desc + "','" + prezzo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" + commessa + "','" + data.ToString("yyyy/MM/dd") + "','" + assegnamento
                      + "')", con);
                 command.ExecuteNonQuery();
             }
@@ -2114,6 +2114,7 @@ namespace Diomede2
 
         public List<Lavorazioni> FiltroLavorazioni(string s, string g)
         {
+            DateTime data;
             var lavorazione = new List<Lavorazioni>();
             try
             {
@@ -2124,16 +2125,17 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
+                    DateTime.TryParse(lettore[5] + "", out data);
                     var l = new Lavorazioni
                     {
 
                         Id = (int)lettore[0],
-                        Nome = (string)lettore[1],
-                        Desc = (string)lettore[2],
+                        Nome = "" + lettore[1],
+                        Desc = "" + lettore[2],
                         Prezzo = (double)lettore[3],
                         Commessa = (int)lettore[4],
-                        data = (DateTime)lettore[5],
-                        assegnato = (String)lettore[5]
+                        data = data,
+                        assegnato = "" + lettore[6]
                     };
                     lavorazione.Add(l);
                 }
