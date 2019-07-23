@@ -26,11 +26,11 @@ namespace Diomede2
             {
                 op = new OperazionePraticheEdili(db);
                 comboBox1.Items.Add("DATA");
-                comboBox1.Items.Add("PACCHETTO");
                 comboBox1.Items.Add("IMPORTO");
-                comboBox1.Items.Add("IDENTIFICATIVOPREVENTIVO");
+                comboBox1.Items.Add("FASEPROGETTO");
+                comboBox1.Items.Add("NUMEROCOMMESSA");
                 comboBox1.Items.Add("CLIENTE");
-                comboBox1.Items.Add("ACCETAZIONE");
+                comboBox1.Items.Add("ACCETTAZIONE");
                 lista = op.CercaBozza();
             }
             catch
@@ -78,7 +78,7 @@ namespace Diomede2
 
                     if (flag) comboBox2.Items.Add(c.Importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")));
                 }
-            else if (comboBox1.SelectedItem.Equals("IDENTIFICATIVOPREVENTIVO"))
+            else if (comboBox1.SelectedItem.Equals("FASEPROGETTO"))
                 foreach (var c in lista)
                 {
                     var flag = true;
@@ -91,7 +91,7 @@ namespace Diomede2
 
                     if (flag) comboBox2.Items.Add(c.IdentificativoPreventivo);
                 }
-            else if (comboBox1.SelectedItem.Equals("CLIENTE"))
+            else if (comboBox1.SelectedItem.Equals("NUMEROCOMMESSA"))
                 foreach (var c in lista)
                 {
                     Cliente cliente;
