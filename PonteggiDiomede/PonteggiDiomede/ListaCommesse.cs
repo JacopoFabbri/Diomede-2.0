@@ -24,6 +24,7 @@ namespace Diomede2
                 op = new OperazionePraticheEdili(db);
                 dataGridView1.DataSource = op.CercaCommessa();
                 dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[8].Visible = false;
             }
             catch 
             {
@@ -116,12 +117,16 @@ namespace Diomede2
                     if (riga.Cells[0].Style.ForeColor == Color.Red)
                         try
                         {
-                            op.UpdateCommessa((int)riga.Cells["ID"].Value, (int)riga.Cells["DITTA"].Value,
-                                riga.Cells["NUMEROCOMMESSA"].Value + "", (DateTime)riga.Cells["DATA"].Value,
-                                riga.Cells["REFERENTE"].Value + "", "" + riga.Cells["INDIRIZZOCANTIERE"].Value,
-                                "" + riga.Cells["TECNICOINTERNO"].Value, "" + riga.Cells["NOTE"].Value, (int)riga.Cells["BOZZA"].Value,(DateTime)riga.Cells["DATAESECUZIONE"].Value,(DateTime)riga.Cells["DATARICHIESTACONSEGNA"].Value,"" + riga.Cells["INVIO"].Value, (DateTime)riga.Cells["DATAORAINVIO"].Value);
+                            op.UpdateCommessa((int)riga.Cells["Id"].Value, (int)riga.Cells["Ditta"].Value,
+                                riga.Cells["NumeroCommessa"].Value + "", (DateTime)riga.Cells["Data"].Value,
+                                riga.Cells["Referente"].Value + "", "" + riga.Cells["IndirizzoCantiere"].Value,
+                                "" + riga.Cells["TecnicoInterno"].Value, "" + riga.Cells["Note"].Value,
+                                (int)riga.Cells["Bozza"].Value,(DateTime)riga.Cells["DataEsecuzione"].Value,
+                                (DateTime)riga.Cells["DataRichestaConsegna"].Value,"" + riga.Cells["Invio"].Value, 
+                                (DateTime)riga.Cells["DataOraInvio"].Value);
+
                         }
-                        catch
+                        catch 
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
