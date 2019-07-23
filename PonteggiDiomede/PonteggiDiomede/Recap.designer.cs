@@ -47,7 +47,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.button4 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -109,14 +108,14 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(871, 215);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(871, 216);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 180);
+            this.label5.Location = new System.Drawing.Point(3, 182);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 9;
@@ -126,7 +125,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 126);
+            this.label3.Location = new System.Drawing.Point(3, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 13);
             this.label3.TabIndex = 7;
@@ -136,7 +135,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 73);
+            this.label2.Location = new System.Drawing.Point(3, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 6;
@@ -152,7 +151,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(438, 56);
+            this.textBox2.Location = new System.Drawing.Point(438, 57);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(324, 20);
             this.textBox2.TabIndex = 1;
@@ -160,7 +159,7 @@
             // textBox3
             // 
             this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(438, 109);
+            this.textBox3.Location = new System.Drawing.Point(438, 111);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(324, 20);
@@ -168,7 +167,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(438, 162);
+            this.textBox5.Location = new System.Drawing.Point(438, 165);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(324, 20);
             this.textBox5.TabIndex = 4;
@@ -194,13 +193,13 @@
             this.tableLayoutPanel4.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.dataGridView1, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel7, 0, 2);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 224);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 225);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 3;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(871, 215);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(871, 216);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // label6
@@ -268,7 +267,6 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.42857F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
             this.tableLayoutPanel9.Controls.Add(this.button4, 1, 0);
-            this.tableLayoutPanel9.Controls.Add(this.comboBox1, 0, 0);
             this.tableLayoutPanel9.Location = new System.Drawing.Point(291, 3);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
@@ -285,14 +283,7 @@
             this.button4.TabIndex = 0;
             this.button4.Text = "Inserisci";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(195, 21);
-            this.comboBox1.TabIndex = 1;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -305,13 +296,13 @@
             this.tableLayoutPanel6.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.button3, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.textBox6, 0, 1);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 445);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 447);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 3;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(871, 218);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(871, 216);
             this.tableLayoutPanel6.TabIndex = 5;
             // 
             // label8
@@ -326,7 +317,7 @@
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(793, 188);
+            this.button3.Location = new System.Drawing.Point(793, 186);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 27);
             this.button3.TabIndex = 9;
@@ -342,7 +333,7 @@
             this.textBox6.Location = new System.Drawing.Point(3, 24);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(865, 146);
+            this.textBox6.Size = new System.Drawing.Size(865, 145);
             this.textBox6.TabIndex = 10;
             // 
             // tableLayoutPanel2
@@ -410,6 +401,5 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

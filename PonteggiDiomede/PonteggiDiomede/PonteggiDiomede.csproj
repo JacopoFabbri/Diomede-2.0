@@ -91,6 +91,12 @@
     <Compile Include="InserimentoContatto.designer.cs">
       <DependentUpon>InserimentoContatto.cs</DependentUpon>
     </Compile>
+    <Compile Include="InserimentoLavorazione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoLavorazione.Designer.cs">
+      <DependentUpon>InserimentoLavorazione.cs</DependentUpon>
+    </Compile>
     <Compile Include="InserimentoPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InserimentoContatto.resx">
       <DependentUpon>InserimentoContatto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserimentoLavorazione.resx">
+      <DependentUpon>InserimentoLavorazione.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InserimentoPagamento.resx">
       <DependentUpon>InserimentoPagamento.cs</DependentUpon>

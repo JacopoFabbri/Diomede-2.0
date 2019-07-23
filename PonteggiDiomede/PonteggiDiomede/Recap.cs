@@ -70,5 +70,10 @@ namespace Diomede2
             InserimentoPagamento p = new InserimentoPagamento(db, commessa.Id);
             p.Show();
         }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
