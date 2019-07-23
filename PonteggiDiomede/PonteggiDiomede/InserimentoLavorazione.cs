@@ -31,7 +31,7 @@ namespace PonteggiDiomede
                 op.InserimentoLavorazioni(textBox1.Text, textBox2.Text, Convert.ToDouble(textBox3.Text), c.Id, dateTimePicker1.Value, textBox5.Text);
 
             }
-            catch (Exception es)
+            catch
             {
                 MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
             }
