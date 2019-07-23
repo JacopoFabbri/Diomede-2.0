@@ -54,28 +54,32 @@ namespace Diomede2
                         {
                             op.UpdateBozza((int)riga.Cells["ID"].Value, (DateTime)riga.Cells["DATA"].Value, (double)riga.Cells["IMPORTO"].Value, (String)riga.Cells["FASEPROGETTO"].Value,
                                 riga.Cells["IDENTIFICATIVOPREVENTIVO"].Value + "", (int)riga.Cells["CLIENTE"].Value, (bool)riga.Cells["ACCETTAZIONE"].Value);
-                            if ((bool)riga.Cells["ACCETTAZIONE"].Value)
+                            if ((bool)riga.Cells["Accettazione"].Value)
                             {
-                                var op1 = new OperazioneAmministrazione("Amministrazione");
-                                var c = op.CercaClientiId((int)riga.Cells["CLIENTE"].Value);
-                                var listaAmministrazione = op1.FiltraCliente("NOME", c.Nome);
-                                List<ClienteAmministrazione> listaCliente = null;
-                                string commessa;
-                                if (listaAmministrazione.Count <= 0)
+                                if (op.FiltraCommessa("BOZZA", "" + (int)riga.Cells["ID"].Value).Count == 0)
                                 {
-                                    op1.InserimentoCliente(c.Nome, c.Tel, c.Email, c.Iva, c.Sdi);
-                                    listaCliente = op1.CercaCliente();
-                                    commessa = op1.GeneraCommessa("PO", listaCliente[listaCliente.Count - 1],
-                                        "PraticheEdili", false);
-                                }
-                                else
-                                {
-                                    commessa = op1.GeneraCommessa("PO", listaAmministrazione[1], "PraticheEdili",
-                                        false);
-                                }
 
-                                op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, commessa,
-                                    (DateTime)riga.Cells["DATA"].Value, "", "", "", "", (int)riga.Cells["ID"].Value, new DateTime(), new DateTime(), "", new DateTime());
+                                    var op1 = new OperazioneAmministrazione("Amministrazione");
+                                    var c = op.CercaClientiId((int)riga.Cells["CLIENTE"].Value);
+                                    var listaAmministrazione = op1.FiltraCliente("NOME", c.Nome);
+                                    List<ClienteAmministrazione> listaCliente = null;
+                                    string commessa;
+                                    if (listaAmministrazione.Count <= 0)
+                                    {
+                                        op1.InserimentoCliente(c.Nome, c.Tel, c.Email, c.Iva, c.Sdi);
+                                        listaCliente = op1.CercaCliente();
+                                        commessa = op1.GeneraCommessa("PO", listaCliente[listaCliente.Count - 1],
+                                            "Ponteggi", false);
+                                    }
+                                    else
+                                    {
+                                        commessa = op1.GeneraCommessa("PO", listaAmministrazione[1], "Ponteggi",
+                                            false);
+                                    }
+
+                                    op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, commessa,
+                                        (DateTime)riga.Cells["DATA"].Value, "", "", "", "", (int)riga.Cells["ID"].Value, new DateTime(), new DateTime(), "", new DateTime());
+                                }
                             }
                             else
                             {
