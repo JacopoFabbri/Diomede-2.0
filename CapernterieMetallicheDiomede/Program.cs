@@ -16,7 +16,7 @@ namespace Diomede2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dashboard("CarpenterieMetalliche"));
+            Application.Run(new Dashboard("CarpenteriaMetallica"));
         }
     }
 }

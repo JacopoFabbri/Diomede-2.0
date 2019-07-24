@@ -90,7 +90,6 @@ namespace Diomede2
         {
             listView2.Visible = false;
         }
-
         private void MostraListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dashboard_Load(sender, e);
