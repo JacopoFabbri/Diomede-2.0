@@ -37,7 +37,7 @@ namespace Diomede2
                     foreach (var c in listaCommesse)
                         listView3.Items.Add(c.NumeroCommessa);
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Errore Imprevisto Contattare i gestori del servizio");
             }
@@ -47,7 +47,8 @@ namespace Diomede2
         {
             try
             {
-
+                ListaClienti lc = new ListaClienti(settore, this);
+                lc.Show();
             }
             catch
             {
@@ -75,7 +76,15 @@ namespace Diomede2
         }
         private void ListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                ListaBozze lb = new ListaBozze(settore, this);
+                lb.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Errore imprevisto contattare l'assistenza");
+            }
         }
         private void InserisciBozzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
