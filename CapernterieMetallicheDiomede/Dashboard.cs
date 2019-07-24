@@ -117,5 +117,18 @@ namespace Diomede2
             Contatti c = new Contatti(lista[listView1.SelectedIndices[0]], settore, this);
             c.Show();
         }
+
+        private void ListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ListaCommesse lb = new ListaCommesse(settore, this);
+                lb.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Errore imprevisto contattare l'assistenza");
+            }
+        }
     }
 }

@@ -220,6 +220,7 @@
             this.listaCommesseToolStripMenuItem.Name = "listaCommesseToolStripMenuItem";
             this.listaCommesseToolStripMenuItem.Size = new System.Drawing.Size(237, 24);
             this.listaCommesseToolStripMenuItem.Text = "Lista Commesse";
+            this.listaCommesseToolStripMenuItem.Click += new System.EventHandler(this.ListaCommesseToolStripMenuItem_Click);
             // 
             // mostraListaCommesseToolStripMenuItem
             // 
@@ -276,7 +277,7 @@
             // 
             this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(58, 23);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(42, 23);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
