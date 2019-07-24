@@ -7,3 +7,10 @@ C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Ca
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CapernterieMetallicheDiomede.csproj.CoreCompileInputs.cache
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CapernterieMetallicheDiomede.exe
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CapernterieMetallicheDiomede.pdb
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.Contatti.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.Dashboard.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.InserimentoContatto.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\PonteggiDiomede.InserimentoLavorazione.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.InserimentoPagamento.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.FiltroBozze.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.InserimentoLavorazione.resources

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapernterieMetallicheDiomede
+namespace Diomede2
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace CapernterieMetallicheDiomede
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run();
+            Application.Run(new Dashboard("CarpenterieMetalliche"));
         }
     }
 }

@@ -47,8 +47,7 @@ namespace Diomede2
         {
             try
             {
-                ListaClienti l = new ListaClienti(settore, this);
-                l.Show();
+
             }
             catch
             {
@@ -59,8 +58,7 @@ namespace Diomede2
         {
             try
             {
-                InserimentoCliente i = new InserimentoCliente(settore);
-                i.Show();
+
             }
             catch
             {
@@ -77,13 +75,11 @@ namespace Diomede2
         }
         private void ListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var lB = new ListaBozze(settore, this);
-            lB.Show();
+
         }
         private void InserisciBozzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var ib = new InserimentoBozza(settore);
-            ib.Show();
+
         }
         private void VisualizzaListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -94,11 +90,7 @@ namespace Diomede2
         {
             listView2.Visible = false;
         }
-        private void ListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var frm = new ListaCommesse(settore, this);
-            frm.Show();
-        }
+
         private void MostraListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dashboard_Load(sender, e);

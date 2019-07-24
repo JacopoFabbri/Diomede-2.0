@@ -276,7 +276,6 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.exitToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_eliminare_48;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(58, 23);
             this.exitToolStripMenuItem.Text = "Exit";
