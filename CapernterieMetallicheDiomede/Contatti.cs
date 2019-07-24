@@ -72,28 +72,6 @@ namespace Diomede2
             foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
         }
 
-        private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.ColumnIndex == 11)
-            {
-                if (e.RowIndex != -1)
-                {
-                    var v = new visualizzatore(db, (int) dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
-                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                    v.Show();
-                }
-            }
-            else if (e.ColumnIndex == 8)
-            {
-                if (e.RowIndex != -1)
-                {
-                    var v = new VisualizzatoreDitte(db, (int) dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
-                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                    v.Show();
-                }
-            }
-        }
-
         private void AggiornaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
