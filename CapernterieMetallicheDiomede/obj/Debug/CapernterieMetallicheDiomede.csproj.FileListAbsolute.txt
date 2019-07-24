@@ -1,0 +1,9 @@
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\CapernterieMetallicheDiomede.exe.config
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\CapernterieMetallicheDiomede.exe
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\CapernterieMetallicheDiomede.pdb
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CapernterieMetallicheDiomede.csprojAssemblyReference.cache
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CapernterieMetallicheDiomede.Properties.Resources.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CapernterieMetallicheDiomede.csproj.GenerateResource.cache
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CapernterieMetallicheDiomede.csproj.CoreCompileInputs.cache
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CapernterieMetallicheDiomede.exe
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CapernterieMetallicheDiomede.pdb
