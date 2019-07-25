@@ -28,14 +28,21 @@ namespace Diomede2
                 foreach (DataGridViewRow r in dataGridView1.Rows)
                 {
                     String s = "" + r.Cells["DataOraInvio"].Value;
-                    if (!r.Cells["DataOraInvio"].Value.ToString().Equals("NULL"))
-                        if (!((DateTime)r.Cells["DataOraInvio"].Value).ToString("yyyy/MM/dd hh:mm").Equals("0001-01-01 12:00:00"))
+                    if (!((DateTime)r.Cells["DataOraInvio"].Value).ToString("yyyy/MM/dd hh:mm").Equals("0001-01-01 12:00:00") && !r.Cells["DataOraInvio"].Value.ToString().Equals("01/01/0001 00:00:00"))
+                    {
+                        foreach (DataGridViewCell c in r.Cells)
                         {
-                            foreach(DataGridViewCell c in r.Cells)
-                            {
-                                c.Style.BackColor = Color.Green;
-                            }
+                            c.Style.BackColor = Color.Green;
                         }
+                    }
+                    else if (((DateTime)r.Cells["DATAESECUZIONE"].Value).ToString("yyyy/MM/dd").Equals(DateTime.Now.ToString("yyyy/MM/dd")))
+                    {
+                        foreach (DataGridViewCell c in r.Cells)
+                        {
+                            c.Style.BackColor = Color.Yellow;
+                        }
+                    }
+
                 }
             }
             catch
@@ -140,6 +147,25 @@ namespace Diomede2
 
             dataGridView1.DataSource = op.CercaCommessa();
             dataGridView1.Columns[0].Visible = false;
+            foreach (DataGridViewRow r in dataGridView1.Rows)
+            {
+                String s = "" + r.Cells["DataOraInvio"].Value;
+                if (!((DateTime)r.Cells["DataOraInvio"].Value).ToString("yyyy/MM/dd hh:mm").Equals("0001-01-01 12:00:00") && !r.Cells["DataOraInvio"].Value.ToString().Equals("01/01/0001 00:00:00"))
+                {
+                    foreach (DataGridViewCell c in r.Cells)
+                    {
+                        c.Style.BackColor = Color.Green;
+                    }
+                }
+                else if (((DateTime)r.Cells["DATAESECUZIONE"].Value).ToString("yyyy/MM/dd").Equals(DateTime.Now.ToString("yyyy/MM/dd")))
+                {
+                    foreach (DataGridViewCell c in r.Cells)
+                    {
+                        c.Style.BackColor = Color.Yellow;
+                    }
+                }
+
+            }
         }
         private void EliminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
