@@ -29,7 +29,7 @@ namespace PonteggiDiomede
             try
             {
 
-                op.InserimentoLavorazioni(textBox1.Text, textBox2.Text, 0, c.Id, dateTimePicker1.Value, comboBox1.SelectedItem.ToString());
+                op.InserimentoLavorazioni(comboBox2.SelectedItem.ToString(), textBox2.Text, 0, c.Id, dateTimePicker1.Value, comboBox1.SelectedItem.ToString());
 
             }
             catch
@@ -51,6 +51,12 @@ namespace PonteggiDiomede
                 comboBox1.Items.Add("Rossana");
                 comboBox1.Items.Add("Marco");
                 comboBox1.Items.Add("Maverick");
+
+                comboBox2.Items.Add("Rilievo");
+                comboBox2.Items.Add("Disegno");
+                comboBox2.Items.Add("Relazione");
+                comboBox2.Items.Add("Disegno e Relazione");
+
 
             }
             catch 
