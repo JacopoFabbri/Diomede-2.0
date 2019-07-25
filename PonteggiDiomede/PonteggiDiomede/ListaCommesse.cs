@@ -225,10 +225,10 @@ namespace Diomede2
                     listaLavorazioni = op.FiltraLavorazioni("COMMESSA", "" +c.Id);
                     ws.Cells[x, 1].Value = c.NumeroCommessa;
                     ws.Cells[x, 3].Value = c.Data;
-                    ws.Cells[x, 4].Value = op.CercaClientiId(c.Id);
+                    ws.Cells[x, 4].Value = op.CercaClientiId(c.Id).Nome;
                     ws.Cells[x, 5].Value = c.IndirizzoCantiere;
                     ws.Cells[x, 6].Value = op.CercaBozzaId(c.Bozza).FaseProgetto;
-                    ws.Cells[x, 7].Value = op.CercaClientiId(c.Id);
+                    ws.Cells[x, 7].Value = "Ponteggi";
                     foreach(Lavorazioni l in listaLavorazioni)
                     {
                         if (l.Nome.Equals("Sopraluogo"))
@@ -250,6 +250,7 @@ namespace Diomede2
                     ws.Cells[x, 16].Value = c.DataOraInvio.ToString("dd/MM/yyyy");
                     ws.Cells[x, 17].Value = c.DataOraInvio.ToString("hh:mm");
                     ws.Cells[x, 18].Value = c.NoteGeneriche;
+                    ws.Cells[x, 19].Value = op.CercaBozzaId(c.Bozza).Importo;
 
 
                     x++;
