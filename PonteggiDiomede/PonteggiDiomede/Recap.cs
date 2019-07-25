@@ -116,7 +116,7 @@ namespace Diomede2
                 dataGridView1.DataSource = listaLavorazione;
                 dataGridView1.Columns[0].Visible = false;
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
