@@ -35,6 +35,9 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LOGO DEFINITIVO.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
       <HintPath>..\..\..\..\Downloads\MySql.Data.dll</HintPath>
@@ -296,6 +299,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-casella-di-controllo-selezionata-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LOGO DEFINITIVO.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
