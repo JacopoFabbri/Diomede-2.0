@@ -61,27 +61,6 @@ namespace Diomede2
         {
             foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
         }
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow riga in dataGridView1.Rows)
-                if (riga.Cells[0].Value != null)
-                    if (riga.Cells[0].Style.ForeColor == Color.Red)
-                        try
-                        {
-                            op.UpdateCommessa((int)riga.Cells["ID"].Value, (int)riga.Cells["DITTA"].Value,
-                                riga.Cells["NUMEROCOMMESSA"].Value + "", (DateTime)riga.Cells["DATA"].Value,
-                                riga.Cells["REFERENTE"].Value + "", "" + riga.Cells["INDIRIZZOCANTIERE"].Value,
-                                "" + riga.Cells["TECNICOINTERNO"].Value, "" + riga.Cells["NOTE"].Value, (int)riga.Cells["BOZZA"].Value, (DateTime)riga.Cells["DATAESECUZIONE"].Value, (DateTime)riga.Cells["DATARICHIESTACONSEGNA"].Value, (String)riga.Cells["INVIO"].Value, (DateTime)riga.Cells["DATAORAINVIO"].Value, "" + riga.Cells["NOTEGENERICHE"].Value);
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-
-            dataGridView1.DataSource = op.CercaCommessa();
-            dataGridView1.Columns[0].Visible = false;
-        }
         private void Form4_FormClosed(object sender, FormClosedEventArgs e)
         {
             try
@@ -224,9 +203,9 @@ namespace Diomede2
             f.Show();
         }
 
-        private void Button1_Click_1(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            String path = Directory.GetCurrentDirectory() + "ALL - PROJECTS - Gestione Ponteggi.xlsm";
+            String path = Directory.GetCurrentDirectory() + "\\Modelli\\ALL - PROJECTS - Gestione Ponteggi.xlsm";
             Excel.Application objApp;
             try
             {
@@ -275,12 +254,14 @@ namespace Diomede2
 
                     x++;
                 }
+                wb.SaveAs(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "result.xlsm");
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento\n" + ex.ToString(), "Errore",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error) ;
             }
         }
+
     }
 }
