@@ -34,13 +34,13 @@
         "Entry"
         {
         "MsmKey" = "8:_8DA4E4C04A827650684D5BFB19664AED"
-        "OwnerKey" = "8:_E47A9C987B4648A6B3018DF005A9F992"
+        "OwnerKey" = "8:_CD5685DBD8944128B366D449E8D631C1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_8DA4E4C04A827650684D5BFB19664AED"
-        "OwnerKey" = "8:_CD5685DBD8944128B366D449E8D631C1"
+        "OwnerKey" = "8:_E47A9C987B4648A6B3018DF005A9F992"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -94,19 +94,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D647E678188B4CDE81845FC1AD13FE95"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D50E0AD111EFC1E9D14393C3603279E8"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CD5685DBD8944128B366D449E8D631C1"
+        "OwnerKey" = "8:_388EBB84E2C063655C0147291B0AFB8F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -118,7 +106,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_388EBB84E2C063655C0147291B0AFB8F"
+        "OwnerKey" = "8:_CD5685DBD8944128B366D449E8D631C1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_D50E0AD111EFC1E9D14393C3603279E8"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_D647E678188B4CDE81845FC1AD13FE95"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -570,7 +570,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:SetupDiomede"
+        "ProductName" = "8:Diomede 2.0"
         "ProductCode" = "8:{CCD4A5C7-7E1E-4FCF-99BE-EF6B62ABAD88}"
         "PackageCode" = "8:{54592999-DE00-45B5-B704-3321778B3D73}"
         "UpgradeCode" = "8:{DC312D70-5E12-4333-911D-CC0058CDA1AA}"
@@ -583,11 +583,11 @@
         "Manufacturer" = "8:All Projects S.r.l."
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:SetupDiomede"
+        "Title" = "8:Diomede 2.0"
         "Subject" = "8:"
         "ARPCONTACT" = "8:All Projects S.r.l."
         "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:"
+        "ARPCOMMENTS" = "8:Setup per gestionale Diomede 2.0"
         "ARPURLINFOABOUT" = "8:"
         "ARPPRODUCTICON" = "8:_E742AD5ABF0A4EE69924C507C394C13D"
         "ARPIconIndex" = "3:0"
