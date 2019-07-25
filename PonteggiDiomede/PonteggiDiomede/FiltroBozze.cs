@@ -124,5 +124,10 @@ namespace Diomede2
                     if (flag) comboBox2.Items.Add(c.Accettazione);
                 }
         }
+
+        private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

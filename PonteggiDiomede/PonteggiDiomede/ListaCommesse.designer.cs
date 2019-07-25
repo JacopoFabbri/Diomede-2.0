@@ -95,7 +95,7 @@
             this.eliminaToolStripMenuItem,
             this.pagamentoToolStripMenuItem});
             this.operazioniToolStripMenuItem.Name = "operazioniToolStripMenuItem";
-            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(60, 23);
+            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(44, 23);
             this.operazioniToolStripMenuItem.Text = "Edit";
             // 
             // aggiornaToolStripMenuItem
@@ -122,13 +122,14 @@
             // macroLavorazioniToolStripMenuItem
             // 
             this.macroLavorazioniToolStripMenuItem.Name = "macroLavorazioniToolStripMenuItem";
-            this.macroLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(149, 23);
-            this.macroLavorazioniToolStripMenuItem.Text = "Macro Lavorazioni";
+            this.macroLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(52, 23);
+            this.macroLavorazioniToolStripMenuItem.Text = "Filtro";
+            this.macroLavorazioniToolStripMenuItem.Click += new System.EventHandler(this.MacroLavorazioniToolStripMenuItem_Click);
             // 
             // selezionaToolStripMenuItem
             // 
             this.selezionaToolStripMenuItem.Name = "selezionaToolStripMenuItem";
-            this.selezionaToolStripMenuItem.Size = new System.Drawing.Size(93, 23);
+            this.selezionaToolStripMenuItem.Size = new System.Drawing.Size(77, 23);
             this.selezionaToolStripMenuItem.Text = "Seleziona";
             this.selezionaToolStripMenuItem.Click += new System.EventHandler(this.SelezionaToolStripMenuItem_Click);
             // 

@@ -73,6 +73,12 @@
     <Compile Include="FiltroBozze.designer.cs">
       <DependentUpon>FiltroBozze.cs</DependentUpon>
     </Compile>
+    <Compile Include="FiltroCommesse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiltroCommesse.Designer.cs">
+      <DependentUpon>FiltroCommesse.cs</DependentUpon>
+    </Compile>
     <Compile Include="InserimentoBozza.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FiltroBozze.resx">
       <DependentUpon>FiltroBozze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FiltroCommesse.resx">
+      <DependentUpon>FiltroCommesse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InserimentoBozza.resx">
       <DependentUpon>InserimentoBozza.cs</DependentUpon>

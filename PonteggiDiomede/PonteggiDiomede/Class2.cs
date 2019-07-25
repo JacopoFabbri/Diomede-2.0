@@ -415,24 +415,24 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        public void InserimentoCommessa(int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note, int bozza, DateTime dataEsecuzione, DateTime dataRichiestaConsegna, String nome, DateTime dataInvio)
+        public void InserimentoCommessa(int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note, int bozza, DateTime dataEsecuzione, DateTime dataRichiestaConsegna, String nome, DateTime dataInvio, String n)
         {
             try
             {
                 var bDB = new CommessaDB(conn);
-                bDB.Inserimento(ditta, numerocommessa, data, referente, indirizzoCantiere, tecnico, note, bozza, dataEsecuzione, dataRichiestaConsegna, nome, dataInvio);
+                bDB.Inserimento(ditta, numerocommessa, data, referente, indirizzoCantiere, tecnico, note, bozza, dataEsecuzione, dataRichiestaConsegna, nome, dataInvio, n);
             }
             catch (Exception e)
             {
                 throw new Exception(e.ToString());
             }
         }
-        public void InserimentoCommessa(int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note, int bozza, String dataEsecuzione, String dataRichiestaConsegna, String nome, String dataInvio)
+        public void InserimentoCommessa(int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note, int bozza, String dataEsecuzione, String dataRichiestaConsegna, String nome, String dataInvio, String n)
         {
             try
             {
                 var bDB = new CommessaDB(conn);
-                bDB.Inserimento(ditta, numerocommessa, data, referente, indirizzoCantiere, tecnico, note, bozza, dataEsecuzione, dataRichiestaConsegna, nome, dataInvio);
+                bDB.Inserimento(ditta, numerocommessa, data, referente, indirizzoCantiere, tecnico, note, bozza, dataEsecuzione, dataRichiestaConsegna, nome, dataInvio, n);
             }
             catch (Exception e)
             {
@@ -499,12 +499,12 @@ namespace Diomede2
 
             return contatto;
         }
-        public void UpdateCommessa(int id, int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note, int bozza, DateTime dataEsecuzione, DateTime dataRichiestaConsegna, String nome, DateTime dataInvio)
+        public void UpdateCommessa(int id, int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note, int bozza, DateTime dataEsecuzione, DateTime dataRichiestaConsegna, String nome, DateTime dataInvio, String n)
         {
             try
             {
                 var bDB = new CommessaDB(conn);
-                bDB.AggiornaCommesse(id, ditta, numerocommessa, data, referente, indirizzoCantiere, tecnico, note, bozza, dataEsecuzione, dataRichiestaConsegna, nome, dataInvio);
+                bDB.AggiornaCommesse(id, ditta, numerocommessa, data, referente, indirizzoCantiere, tecnico, note, bozza, dataEsecuzione, dataRichiestaConsegna, nome, dataInvio, n);
             }
             catch (Exception e)
             {
@@ -1645,15 +1645,15 @@ namespace Diomede2
             con = conn;
         }
 
-        public void Inserimento(int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note, int bozza, DateTime dataEsecuzione, DateTime dataRichiestaConsegna, String nome, DateTime dataInvio)
+        public void Inserimento(int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note, int bozza, DateTime dataEsecuzione, DateTime dataRichiestaConsegna, String nome, DateTime dataInvio, String n)
         {
             try
             {
                 con.Open();
                 var command = new MySqlCommand(
-                    "INSERT INTO `COMMESSA`(`DITTA`, `NUMEROCOMMESSA`, `DATA`, `REFERENTE`, `INDIRIZZOCANTIERE`, `TECNICOINTERNO`, `NOTE`, `BOZZA`, `DATAESECUZIONE`, `DATARICHIESTACONSEGNA`, `INVIO`, `DATAINVIO`) VALUES('" +
+                    "INSERT INTO `COMMESSA`(`DITTA`, `NUMEROCOMMESSA`, `DATA`, `REFERENTE`, `INDIRIZZOCANTIERE`, `TECNICOINTERNO`, `NOTE`, `BOZZA`, `DATAESECUZIONE`, `DATARICHIESTACONSEGNA`, `INVIO`, `DATAINVIO`, `NOTEGENERICHE`) VALUES('" +
                     ditta + "','" + numerocommessa + "','" + data.ToString("yyyy/MM/dd") + "','" + referente + "','" + indirizzoCantiere + "','" + tecnico + "','" + note + "','" +
-                    bozza + "','" + dataEsecuzione.ToString("yyyy/MM/dd") + "','" + dataRichiestaConsegna.ToString("yyyy/MM/dd") + "','" + nome + "','" + dataInvio.ToString("yyyy/MM/dd hh:mm") + "')", con);
+                    bozza + "','" + dataEsecuzione.ToString("yyyy/MM/dd") + "','" + dataRichiestaConsegna.ToString("yyyy/MM/dd") + "','" + nome + "','" + dataInvio.ToString("yyyy/MM/dd hh:mm") + "','" + n + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -1665,15 +1665,15 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public void Inserimento(int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note, int bozza, String dataEsecuzione, String dataRichiestaConsegna, String nome, String dataInvio)
+        public void Inserimento(int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note, int bozza, String dataEsecuzione, String dataRichiestaConsegna, String nome, String dataInvio, String n)
         {
             try
             {
                 con.Open();
                 var command = new MySqlCommand(
-                    "INSERT INTO `COMMESSA`(`DITTA`, `NUMEROCOMMESSA`, `DATA`, `REFERENTE`, `INDIRIZZOCANTIERE`, `TECNICOINTERNO`, `NOTE`, `BOZZA`, `DATAESECUZIONE`, `DATARICHIESTACONSEGNA`, `INVIO`, `DATAINVIO`) VALUES('" +
+                    "INSERT INTO `COMMESSA`(`DITTA`, `NUMEROCOMMESSA`, `DATA`, `REFERENTE`, `INDIRIZZOCANTIERE`, `TECNICOINTERNO`, `NOTE`, `BOZZA`, `DATAESECUZIONE`, `DATARICHIESTACONSEGNA`, `INVIO`, `DATAINVIO`, `NOTEGENERICHE`) VALUES('" +
                     ditta + "','" + numerocommessa + "','" + data.ToString("yyyy/MM/dd") + "','" + referente + "','" + indirizzoCantiere + "','" + tecnico + "','" + note + "','" +
-                    bozza + "'," + dataEsecuzione + "," + dataRichiestaConsegna + ",'" + nome + "'," + dataInvio + ")", con);
+                    bozza + "'," + dataEsecuzione + "," + dataRichiestaConsegna + ",'" + nome + "'," + dataInvio + "'," + n + ")", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -1719,8 +1719,10 @@ namespace Diomede2
                             Bozza = (int)lettore[8],
                             DataEsecuzione = dataValue2,
                             DataRichestaConsegna = dataValue3,
-                            Invio = "" + lettore [11],
-                            DataOraInvio = dataValue4
+                            Invio = "" + lettore[11],
+                            DataOraInvio = dataValue4,
+                            NoteGeneriche = "" + lettore[13]
+
                         };
                         lista.Add(c);
                     }
@@ -1773,11 +1775,12 @@ namespace Diomede2
                             DataEsecuzione = dataValue2,
                             DataRichestaConsegna = dataValue3,
                             Invio = "" + lettore[11],
-                            DataOraInvio = dataValue4
+                            DataOraInvio = dataValue4,
+                            NoteGeneriche = "" + lettore[13]
                         };
                         lista.Add(c);
                     }
-                    
+
             }
             catch (Exception ex)
             {
@@ -1826,7 +1829,8 @@ namespace Diomede2
                             DataEsecuzione = dataValue2,
                             DataRichestaConsegna = dataValue3,
                             Invio = "" + lettore[11],
-                            DataOraInvio = dataValue4
+                            DataOraInvio = dataValue4,
+                            NoteGeneriche = "" + lettore[13]
                         };
                         commessa = c;
                     }
@@ -1879,7 +1883,8 @@ namespace Diomede2
                             DataEsecuzione = dataValue2,
                             DataRichestaConsegna = dataValue3,
                             Invio = "" + lettore[11],
-                            DataOraInvio = dataValue4
+                            DataOraInvio = dataValue4,
+                            NoteGeneriche = "" + lettore[13]
                         };
                         commessa.Add(c);
                     }
@@ -1895,7 +1900,8 @@ namespace Diomede2
                             Bozza = (int)lettore[5],
                             IndirizzoCantiere = "" + lettore[6],
                             TecnicoInterno = "" + lettore[7],
-                            Note = "" + lettore[8]
+                            Note = "" + lettore[8],
+                            NoteGeneriche = "" + lettore[13]
                         };
                         commessa.Add(c);
                     }
@@ -1911,7 +1917,7 @@ namespace Diomede2
 
             return commessa;
         }
-        public void AggiornaCommesse(int id, int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note, int bozza, DateTime dataEsecuzione, DateTime dataRichiestaConsegna, String nome, DateTime dataInvio)
+        public void AggiornaCommesse(int id, int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note, int bozza, DateTime dataEsecuzione, DateTime dataRichiestaConsegna, String nome, DateTime dataInvio, String n)
         {
             try
             {
@@ -1919,7 +1925,7 @@ namespace Diomede2
                 var command = new MySqlCommand(
                     "UPDATE `COMMESSA` SET `DITTA`='" + ditta + "',`NUMEROCOMMESSA`='" + numerocommessa + "',`DATA`='" +
                     data.ToString("yyyy/MM/dd") + "',`REFERENTE`='" + referente + "',`INDIRIZZOCANTIERE`='" +
-                    indirizzoCantiere + "',`TECNICOINTERNO`='" + tecnico + "',`NOTE`='" + note + "',`BOZZA`='" + bozza + "',`DATAESECUZIONE`='" + dataEsecuzione.ToString("yyyy/MM/dd") + "',`DATARICHIESTACONSEGNA`='" + dataRichiestaConsegna.ToString("yyyy/MM/dd") + "',`INVIO`='" + nome + "',`DATAINVIO`='" + dataInvio.ToString("yyyy/MM/dd hh:mm") + "' WHERE `ID` = '" +
+                    indirizzoCantiere + "',`TECNICOINTERNO`='" + tecnico + "',`NOTE`='" + note + "',`BOZZA`='" + bozza + "',`DATAESECUZIONE`='" + dataEsecuzione.ToString("yyyy/MM/dd") + "',`DATARICHIESTACONSEGNA`='" + dataRichiestaConsegna.ToString("yyyy/MM/dd") + "',`INVIO`='" + nome + "',`DATAINVIO`='" + dataInvio.ToString("yyyy/MM/dd hh:mm") + "',`NOTEGENERICHE`='" + n + "' WHERE `ID` = '" +
                     id + "'", con);
                 command.ExecuteNonQuery();
             }
@@ -2535,6 +2541,8 @@ namespace Diomede2
         public DateTime DataRichestaConsegna { get; set; }
         public string Invio { get; set; }
         public DateTime DataOraInvio { get; set; }
+        public string NoteGeneriche { get; set; }
+
 
 
 

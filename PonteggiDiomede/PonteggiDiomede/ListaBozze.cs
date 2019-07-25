@@ -78,7 +78,7 @@ namespace Diomede2
                                     }
 
                                     op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, commessa,
-                                        (DateTime)riga.Cells["DATA"].Value, "", "", "", "", (int)riga.Cells["ID"].Value, "NULL", "NULL", "", "NULL");
+                                        (DateTime)riga.Cells["DATA"].Value, "", "", "", "", (int)riga.Cells["ID"].Value, "NULL", "NULL", "", "NULL", "");
                                 }
                             }
                             else

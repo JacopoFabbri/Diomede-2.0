@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PonteggiDiomede;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -47,7 +48,7 @@ namespace Diomede2
                             op.UpdateCommessa((int)riga.Cells["ID"].Value, (int)riga.Cells["DITTA"].Value,
                                 riga.Cells["NUMEROCOMMESSA"].Value + "", (DateTime)riga.Cells["DATA"].Value,
                                 riga.Cells["REFERENTE"].Value + "", "" + riga.Cells["INDIRIZZOCANTIERE"].Value,
-                                "" + riga.Cells["TECNICOINTERNO"].Value, "" + riga.Cells["NOTE"].Value, (int)riga.Cells["BOZZA"].Value, (DateTime)riga.Cells["DATAESECUZIONE"].Value, (DateTime)riga.Cells["DATARICHIESTACONSEGNA"].Value, (String)riga.Cells["INVIO"].Value, (DateTime)riga.Cells["DATAORAINVIO"].Value);
+                                "" + riga.Cells["TECNICOINTERNO"].Value, "" + riga.Cells["NOTE"].Value, (int)riga.Cells["BOZZA"].Value, (DateTime)riga.Cells["DATAESECUZIONE"].Value, (DateTime)riga.Cells["DATARICHIESTACONSEGNA"].Value, (String)riga.Cells["INVIO"].Value, (DateTime)riga.Cells["DATAORAINVIO"].Value, "" + riga.Cells["NOTEGENERICHE"].Value);
                         }
                         catch
                         {
@@ -116,7 +117,7 @@ namespace Diomede2
                                 "" + riga.Cells["TecnicoInterno"].Value, "" + riga.Cells["Note"].Value,
                                 (int)riga.Cells["Bozza"].Value,(DateTime)riga.Cells["DataEsecuzione"].Value,
                                 (DateTime)riga.Cells["DataRichestaConsegna"].Value,"" + riga.Cells["Invio"].Value, 
-                                (DateTime)riga.Cells["DataOraInvio"].Value);
+                                (DateTime)riga.Cells["DataOraInvio"].Value, "" + riga.Cells["NOTEGENERICHE"].Value);
 
                         }
                         catch 
@@ -174,6 +175,12 @@ namespace Diomede2
                         dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
                     v.Show();
                 }
+        }
+
+        private void MacroLavorazioniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new FiltroCommesse(dataGridView1, db);
+            f.Show();
         }
     }
 }
