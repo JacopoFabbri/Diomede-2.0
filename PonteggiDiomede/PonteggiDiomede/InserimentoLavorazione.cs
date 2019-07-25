@@ -28,9 +28,8 @@ namespace PonteggiDiomede
 
             try
             {
-                Double d = Convert.ToDouble(textBox3.Text);
 
-                op.InserimentoLavorazioni(textBox1.Text, textBox2.Text, d, c.Id, dateTimePicker1.Value, textBox5.Text);
+                op.InserimentoLavorazioni(textBox1.Text, textBox2.Text, 0, c.Id, dateTimePicker1.Value, comboBox1.SelectedItem.ToString());
 
             }
             catch
@@ -45,6 +44,13 @@ namespace PonteggiDiomede
             {
                 c = op.CercaCommessa(id);
                 textBox4.Text = c.NumeroCommessa;
+                comboBox1.Items.Add("Andrea");
+                comboBox1.Items.Add("James");
+                comboBox1.Items.Add("Nicolas");
+                comboBox1.Items.Add("Fabio");
+                comboBox1.Items.Add("Rossana");
+                comboBox1.Items.Add("Marco");
+                comboBox1.Items.Add("Maverick");
 
             }
             catch 
