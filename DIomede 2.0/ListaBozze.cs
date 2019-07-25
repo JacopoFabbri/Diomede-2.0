@@ -112,26 +112,30 @@ namespace Diomede2
                                 (bool)riga.Cells["ACCETTAZIONE"].Value);
                             if ((bool)riga.Cells["ACCETTAZIONE"].Value)
                             {
-                                var op1 = new OperazioneAmministrazione("Amministrazione");
-                                var c = op.CercaClientiId((int)riga.Cells["CLIENTE"].Value);
-                                var listaAmministrazione = op1.FiltraCliente("NOME", c.Nome);
-                                List<ClienteAmministrazione> listaCliente = null;
-                                string commessa;
-                                if (listaAmministrazione.Count <= 0)
+                                if (op.FiltraCommessa("BOZZA", "" + (int)riga.Cells["ID"].Value).Count == 0)
                                 {
-                                    op1.InserimentoCliente(c.Nome, c.Tel, c.Email, c.Iva, c.Sdi);
-                                    listaCliente = op1.CercaCliente();
-                                    commessa = op1.GeneraCommessa("PE", listaCliente[listaCliente.Count - 1],
-                                        "PraticheEdili", false);
-                                }
-                                else
-                                {
-                                    commessa = op1.GeneraCommessa("PE", listaAmministrazione[1], "PraticheEdili",
-                                        false);
-                                }
 
-                                op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, commessa,
-                                    (DateTime)riga.Cells["DATA"].Value, "", (int)riga.Cells["ID"].Value, "", "", "");
+                                    var op1 = new OperazioneAmministrazione("Amministrazione");
+                                    var c = op.CercaClientiId((int)riga.Cells["CLIENTE"].Value);
+                                    var listaAmministrazione = op1.FiltraCliente("NOME", c.Nome);
+                                    List<ClienteAmministrazione> listaCliente = null;
+                                    string commessa;
+                                    if (listaAmministrazione.Count <= 0)
+                                    {
+                                        op1.InserimentoCliente(c.Nome, c.Tel, c.Email, c.Iva, c.Sdi);
+                                        listaCliente = op1.CercaCliente();
+                                        commessa = op1.GeneraCommessa("PE", listaCliente[listaCliente.Count - 1],
+                                            "PraticheEdili", false);
+                                    }
+                                    else
+                                    {
+                                        commessa = op1.GeneraCommessa("PE", listaAmministrazione[1], "PraticheEdili",
+                                            false);
+                                    }
+
+                                    op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, commessa,
+                                        (DateTime)riga.Cells["DATA"].Value, "", (int)riga.Cells["ID"].Value, "", "", "");
+                                }
                             }
                         }
                         catch
