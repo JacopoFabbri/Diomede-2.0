@@ -27,12 +27,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_82E223EF2AD148979FE531C1A52FCCDF"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_8DA4E4C04A827650684D5BFB19664AED"
         "OwnerKey" = "8:_D647E678188B4CDE81845FC1AD13FE95"
         "MsmSig" = "8:_UNDEFINED"
@@ -52,6 +46,12 @@
         "Entry"
         {
         "MsmKey" = "8:_947C15B4044A42ACAB5F7E51E5D6E67C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AAA26E8D818A4672953EAC6EC96DF1A7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -267,26 +267,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_82E223EF2AD148979FE531C1A52FCCDF"
-            {
-            "SourcePath" = "8:S:\\Da Aggiungere all'installer\\ALL-PROJECTS-Gestione Ponteggi.xlsm"
-            "TargetName" = "8:ALL-PROJECTS-Gestione Ponteggi.xlsm"
-            "Tag" = "8:"
-            "Folder" = "8:_06859677D3B341D7A1A4C178958F4E48"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8DA4E4C04A827650684D5BFB19664AED"
             {
             "AssemblyRegister" = "3:1"
@@ -324,6 +304,26 @@
             "TargetName" = "8:user.paco"
             "Tag" = "8:"
             "Folder" = "8:_848A51E984114096A0A96CB7AD54C98F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AAA26E8D818A4672953EAC6EC96DF1A7"
+            {
+            "SourcePath" = "8:ALL-PROJECTS-Gestione Ponteggi.xlsm"
+            "TargetName" = "8:ALL-PROJECTS-Gestione Ponteggi.xlsm"
+            "Tag" = "8:"
+            "Folder" = "8:_06859677D3B341D7A1A4C178958F4E48"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -572,7 +572,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SetupDiomede"
         "ProductCode" = "8:{CCD4A5C7-7E1E-4FCF-99BE-EF6B62ABAD88}"
-        "PackageCode" = "8:{42539061-C1B5-412C-9824-CD23D6FD6F74}"
+        "PackageCode" = "8:{54592999-DE00-45B5-B704-3321778B3D73}"
         "UpgradeCode" = "8:{DC312D70-5E12-4333-911D-CC0058CDA1AA}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
