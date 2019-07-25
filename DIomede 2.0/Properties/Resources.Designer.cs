@@ -213,6 +213,26 @@ namespace Diomede2.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_martello_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-martello-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_martello_e_incudine_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-martello-e-incudine-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_modifica_casella_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-modifica-casella-100", resourceCulture);
@@ -366,6 +386,16 @@ namespace Diomede2.Properties {
         internal static System.Drawing.Bitmap icons8_storico_dei_pagamenti_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-storico-dei-pagamenti-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_web_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-web-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
