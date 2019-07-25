@@ -4280,8 +4280,8 @@ namespace Diomede2
                 con.Open();
                 var command = new MySqlCommand(
                     "UPDATE `PAGAMENTO` SET `NUMEROCOMMESSA`='" + numeroCommessa + "',`IMPORTO`='" + importo +
-                    "',`NOTE`='" + note + "',`FATTURA`='" + fattura + "',`DATAFATTURA`='" + dataFattura + "',`DATA`='" +
-                    data + "',`CLIENTE`='" + cliente + "',`COMMESSA`='" + commessa + "' WHERE `ID` = '" + id + "'",
+                    "',`NOTE`='" + note + "',`FATTURA`='" + fattura + "',`DATAFATTURA`='" + dataFattura.ToString("yyyy/MM/dd") + "',`DATA`='" +
+                    data.ToString("yyyy/MM/dd") + "',`CLIENTE`='" + cliente + "',`COMMESSA`='" + commessa + "' WHERE `ID` = '" + id + "'",
                     con);
                 command.ExecuteNonQuery();
             }

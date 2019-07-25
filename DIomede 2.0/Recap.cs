@@ -55,7 +55,8 @@ namespace Diomede2
                 textBox6.Text = commessa.Note;
                 dataGridView1.Columns[0].Visible = false;
                 dataGridView2.Columns[0].Visible = false;
-            }catch
+            }
+            catch
             {
                 MessageBox.Show("ciao");
             }
@@ -94,7 +95,8 @@ namespace Diomede2
                 }
                 dataGridView1.DataSource = listaLavorazione;
                 dataGridView1.Columns[0].Visible = false;
-            }catch
+            }
+            catch
             {
                 MessageBox.Show("sistemami");
             }
@@ -118,7 +120,7 @@ namespace Diomede2
                         {
                             op.UpdatePagamento((int)riga.Cells["ID"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", (double)riga.Cells["IMPORTO"].Value, riga.Cells["NOTE"].Value + "", riga.Cells["FATTURA"].Value + "", (DateTime)riga.Cells["DATAFATTURA"].Value, (DateTime)riga.Cells["DATA"].Value, (int)riga.Cells["CLIENTE"].Value, (int)riga.Cells["COMMESSA"].Value);
                         }
-                        catch
+                        catch (Exception ex)
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -188,12 +190,13 @@ namespace Diomede2
         private void Button2_Click(object sender, EventArgs e)
         {
             if (dataGridView2.SelectedRows != null)
-                if (MessageBox.Show(
+                try
+                {
+                    if (MessageBox.Show(
                         "Stai per eliminare " +
-                        (string)dataGridView1.Rows[dataGridView2.SelectedRows[0].Index].Cells[1].Value + " .Confermi?",
+                        dataGridView2.Rows[dataGridView2.SelectedRows[0].Index].Cells[1].Value + " .Confermi?",
                         "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) ==
                     DialogResult.Yes)
-                    try
                     {
                         var clienti = op.CercaPagamento((int)dataGridView2.Rows[dataGridView2.SelectedRows[0].Index]
                             .Cells[0].Value);
@@ -202,11 +205,12 @@ namespace Diomede2
                         MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
-                    catch
-                    {
-                        MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
         }
 
 

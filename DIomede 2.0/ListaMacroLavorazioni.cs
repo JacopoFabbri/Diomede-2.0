@@ -69,7 +69,7 @@ namespace Diomede2
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
-            dataGridView1.DataSource = op.CercaMacroLavorazione();
+            dataGridView1.DataSource = op.FiltraMacroLavorazione("COMMESSA", idMacroLavorazione + "");
             dataGridView1.Columns[0].Visible = false;
         }
 
@@ -103,7 +103,7 @@ namespace Diomede2
                             MessageBoxIcon.Error);
                     }
 
-            dataGridView1.DataSource = op.CercaMacroLavorazione();
+            dataGridView1.DataSource = op.FiltraMacroLavorazione("COMMESSA", idMacroLavorazione + "");
             dataGridView1.Columns[0].Visible = false;
         }
 

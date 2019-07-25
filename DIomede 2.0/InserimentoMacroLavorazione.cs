@@ -20,15 +20,22 @@ namespace Diomede2
 
         private void InserimentoMacroLavorazioni_Load(object sender, EventArgs e)
         {
-            op = new OperazionePraticheEdili(db);
-            if (idB != 0)
+            try
             {
-                textBox3.Text = op.FiltraCommessa("BOZZA", idB + "")[0].NumeroCommessa;
-                textBox5.Text = op.FiltraCommessa("BOZZA", idB + "")[0].Id + "";
-            }
+                op = new OperazionePraticheEdili(db);
+                if (idB != 0)
+                {
+                    textBox3.Text = op.CercaCommessa(idB).NumeroCommessa;
+                    textBox5.Text = op.CercaCommessa(idB).Id + "";
+                }
 
-            lista = op.CercaTipologiaMacroLavorazione();
-            foreach (var m in lista) comboBox1.Items.Add(m.Nome);
+                lista = op.CercaTipologiaMacroLavorazione();
+                foreach (var m in lista) comboBox1.Items.Add(m.Nome);
+            }
+            catch
+            {
+                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
+            }
         }
 
         private void Button1_Click(object sender, EventArgs e)
