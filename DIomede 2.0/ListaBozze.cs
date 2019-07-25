@@ -78,7 +78,7 @@ namespace Diomede2
                     }
                 }
                 */
-                op.CercaBozza();
+                dataGridView1.DataSource = op.CercaBozza();
                 dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[3].ReadOnly = true;
 
