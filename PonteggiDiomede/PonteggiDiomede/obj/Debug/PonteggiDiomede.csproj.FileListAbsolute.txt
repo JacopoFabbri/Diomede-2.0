@@ -85,3 +85,4 @@ C:\Users\Asus\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diom
 C:\Users\Asus\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.Ruoli.resources
 C:\Users\Asus\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.visualizzatore.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.InserimentoLavorazione.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.FiltroCommesse.resources

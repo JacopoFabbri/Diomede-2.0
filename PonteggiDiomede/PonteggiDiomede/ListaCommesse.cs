@@ -25,8 +25,19 @@ namespace Diomede2
                 dataGridView1.DataSource = op.CercaCommessa();
                 dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[8].Visible = false;
+                foreach (DataGridViewRow r in dataGridView1.Rows)
+                {
+                    if (!r.Cells["DataOraInvio"].Value.ToString().Equals(""))
+                        if (!((DateTime)r.Cells["DataOraInvio"].Value).ToString("yyyy/MM/dd hh:mm").Equals("0001-01-01 12:00:00"))
+                        {
+                            foreach(DataGridViewCell c in r.Cells)
+                            {
+                                c.Style.BackColor = Color.Green;
+                            }
+                        }
+                }
             }
-            catch 
+            catch
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
             }
@@ -115,12 +126,12 @@ namespace Diomede2
                                 riga.Cells["NumeroCommessa"].Value + "", (DateTime)riga.Cells["Data"].Value,
                                 riga.Cells["Referente"].Value + "", "" + riga.Cells["IndirizzoCantiere"].Value,
                                 "" + riga.Cells["TecnicoInterno"].Value, "" + riga.Cells["Note"].Value,
-                                (int)riga.Cells["Bozza"].Value,(DateTime)riga.Cells["DataEsecuzione"].Value,
-                                (DateTime)riga.Cells["DataRichestaConsegna"].Value,"" + riga.Cells["Invio"].Value, 
+                                (int)riga.Cells["Bozza"].Value, (DateTime)riga.Cells["DataEsecuzione"].Value,
+                                (DateTime)riga.Cells["DataRichestaConsegna"].Value, "" + riga.Cells["Invio"].Value,
                                 (DateTime)riga.Cells["DataOraInvio"].Value, "" + riga.Cells["NOTEGENERICHE"].Value);
 
                         }
-                        catch 
+                        catch
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -176,7 +187,6 @@ namespace Diomede2
                     v.Show();
                 }
         }
-
         private void MacroLavorazioniToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var f = new FiltroCommesse(dataGridView1, db);
