@@ -27,7 +27,8 @@ namespace Diomede2
                 dataGridView1.Columns[8].Visible = false;
                 foreach (DataGridViewRow r in dataGridView1.Rows)
                 {
-                    if (!r.Cells["DataOraInvio"].Value.ToString().Equals(""))
+                    String s = "" + r.Cells["DataOraInvio"].Value;
+                    if (!r.Cells["DataOraInvio"].Value.ToString().Equals("NULL"))
                         if (!((DateTime)r.Cells["DataOraInvio"].Value).ToString("yyyy/MM/dd hh:mm").Equals("0001-01-01 12:00:00"))
                         {
                             foreach(DataGridViewCell c in r.Cells)
