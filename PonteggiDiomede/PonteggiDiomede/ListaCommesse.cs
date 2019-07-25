@@ -205,7 +205,7 @@ namespace Diomede2
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            String path = Directory.GetCurrentDirectory() + "\\Modelli\\ALL - PROJECTS - Gestione Ponteggi.xlsm";
+            String path = Directory.GetCurrentDirectory() + "\\Modelli\\ALL-PROJECTS-Gestione Ponteggi.xlsm";
             Excel.Application objApp;
             try
             {
@@ -214,7 +214,7 @@ namespace Diomede2
                 Excel.Worksheet ws = wb.Sheets["Foglio1"];
                 ws.Activate();
                 int x = 3;
-                while (ws.Cells[x,1].Value.Equals(""))
+                while (ws.Cells[x,1].Value != null)
                 {
                     x++;
                 }
@@ -254,7 +254,8 @@ namespace Diomede2
 
                     x++;
                 }
-                wb.SaveAs(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "result.xlsm");
+                wb.SaveAs(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\result.xlsm");
+                objApp.Quit();
             }
             catch (Exception ex)
             {

@@ -87,3 +87,6 @@ C:\Users\Asus\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diom
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.InserimentoLavorazione.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.FiltroCommesse.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.csproj.ResolveComReference.cache
+C:\Users\Andre\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.csproj.ResolveComReference.cache
+C:\Users\Andre\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.FiltroCommesse.resources
+C:\Users\Andre\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.InserimentoLavorazione.resources
