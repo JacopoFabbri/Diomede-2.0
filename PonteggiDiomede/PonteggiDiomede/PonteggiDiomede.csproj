@@ -243,5 +243,59 @@
   <ItemGroup>
     <None Include="Resources\icons8-eliminare-48.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-azienda-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-società-cliente-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lista-di-cose-da-fare-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-modifica-utente-uomo-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-apri-libro-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-rimuovi-immagine-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-modifica-file-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-nessuna-modifica-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-inserisci-tabella-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-quaderno-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-web-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-servizi-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sincronizzare-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-più-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eliminare-481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-filtro-riempito-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sacco-dei-soldi-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-casella-di-controllo-selezionata-48.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

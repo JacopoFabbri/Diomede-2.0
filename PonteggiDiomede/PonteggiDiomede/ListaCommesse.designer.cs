@@ -35,9 +35,9 @@
             this.operazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aggiornaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.macroLavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selezionaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -94,44 +94,50 @@
             this.aggiornaToolStripMenuItem,
             this.eliminaToolStripMenuItem,
             this.pagamentoToolStripMenuItem});
+            this.operazioniToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_servizi_48;
             this.operazioniToolStripMenuItem.Name = "operazioniToolStripMenuItem";
-            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(44, 23);
+            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(60, 23);
             this.operazioniToolStripMenuItem.Text = "Edit";
             // 
             // aggiornaToolStripMenuItem
             // 
+            this.aggiornaToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_sincronizzare_48;
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
-            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
             this.aggiornaToolStripMenuItem.Click += new System.EventHandler(this.AggiornaToolStripMenuItem_Click);
             // 
             // eliminaToolStripMenuItem
             // 
+            this.eliminaToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_eliminare_48;
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
-            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.eliminaToolStripMenuItem.Text = "Elimina";
             this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.EliminaToolStripMenuItem_Click);
             // 
-            // pagamentoToolStripMenuItem
-            // 
-            this.pagamentoToolStripMenuItem.Name = "pagamentoToolStripMenuItem";
-            this.pagamentoToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
-            this.pagamentoToolStripMenuItem.Text = "Pagamento";
-            this.pagamentoToolStripMenuItem.Click += new System.EventHandler(this.PagamentoToolStripMenuItem_Click);
-            // 
             // macroLavorazioniToolStripMenuItem
             // 
+            this.macroLavorazioniToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_filtro_riempito_48;
             this.macroLavorazioniToolStripMenuItem.Name = "macroLavorazioniToolStripMenuItem";
-            this.macroLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(52, 23);
+            this.macroLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(68, 23);
             this.macroLavorazioniToolStripMenuItem.Text = "Filtro";
             this.macroLavorazioniToolStripMenuItem.Click += new System.EventHandler(this.MacroLavorazioniToolStripMenuItem_Click);
             // 
             // selezionaToolStripMenuItem
             // 
+            this.selezionaToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_casella_di_controllo_selezionata_48;
             this.selezionaToolStripMenuItem.Name = "selezionaToolStripMenuItem";
-            this.selezionaToolStripMenuItem.Size = new System.Drawing.Size(77, 23);
+            this.selezionaToolStripMenuItem.Size = new System.Drawing.Size(93, 23);
             this.selezionaToolStripMenuItem.Text = "Seleziona";
             this.selezionaToolStripMenuItem.Click += new System.EventHandler(this.SelezionaToolStripMenuItem_Click);
+            // 
+            // pagamentoToolStripMenuItem
+            // 
+            this.pagamentoToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_sacco_dei_soldi_16;
+            this.pagamentoToolStripMenuItem.Name = "pagamentoToolStripMenuItem";
+            this.pagamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.pagamentoToolStripMenuItem.Text = "Pagamento";
+            this.pagamentoToolStripMenuItem.Click += new System.EventHandler(this.PagamentoToolStripMenuItem_Click);
             // 
             // ListaCommesse
             // 

@@ -83,9 +83,39 @@ namespace PonteggiDiomede.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_casella_di_controllo_selezionata_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-casella-di-controllo-selezionata-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_eliminare_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-eliminare-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_eliminare_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-eliminare-481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_filtro_riempito_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-filtro-riempito-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,6 +173,16 @@ namespace PonteggiDiomede.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_più_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-più-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_quaderno_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-quaderno-48", resourceCulture);
@@ -156,6 +196,36 @@ namespace PonteggiDiomede.Properties {
         internal static System.Drawing.Bitmap icons8_rimuovi_immagine_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-rimuovi-immagine-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sacco_dei_soldi_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sacco-dei-soldi-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_servizi_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-servizi-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sincronizzare_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sincronizzare-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
