@@ -207,9 +207,9 @@ namespace Diomede2
         {
             String path = Directory.GetCurrentDirectory() + "\\Modelli\\ALL-PROJECTS-Gestione Ponteggi.xlsm";
             Excel.Application objApp;
+            objApp = new Excel.Application();
             try
             {
-                objApp = new Excel.Application();
                 Excel.Workbook wb = objApp.Workbooks.Open(path);
                 Excel.Worksheet ws = wb.Sheets["Foglio1"];
                 ws.Activate();
@@ -224,8 +224,9 @@ namespace Diomede2
                 {
                     listaLavorazioni = op.FiltraLavorazioni("COMMESSA", "" +c.Id);
                     ws.Cells[x, 1].Value = c.NumeroCommessa;
+                    ws.Cells[x, 2].Value = c.NumeroCommessa;
                     ws.Cells[x, 3].Value = c.Data;
-                    ws.Cells[x, 4].Value = op.CercaClientiId(c.Id).Nome;
+                    ws.Cells[x, 4].Value = "" + op.CercaClientiId(c.Ditta).Nome;
                     ws.Cells[x, 5].Value = c.IndirizzoCantiere;
                     ws.Cells[x, 6].Value = op.CercaBozzaId(c.Bozza).FaseProgetto;
                     ws.Cells[x, 7].Value = "Ponteggi";
@@ -256,12 +257,15 @@ namespace Diomede2
                     x++;
                 }
                 wb.SaveAs(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\result.xlsm");
-                objApp.Quit();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento\n" + ex.ToString(), "Errore",
                     MessageBoxButtons.OK, MessageBoxIcon.Error) ;
+            }
+            finally
+            {
+                objApp.Quit();
             }
         }
 
