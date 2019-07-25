@@ -120,7 +120,7 @@ namespace Diomede2
 
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new InserimentoContatto(cliente, db);
+            var frm = new InserimentoContatto(cliente, db, dataGridView1);
             frm.Show();
         }
 

@@ -10,8 +10,11 @@ namespace Diomede2
         private readonly string db;
         private List<Ruolo> lista;
 
-        public InserimentoContatto(Cliente c, string dbName)
+        DataGridView dgV;
+
+        public InserimentoContatto(Cliente c, string dbName, DataGridView dv)
         {
+            dgV = dv;
             cliente = c;
             db = dbName;
             InitializeComponent();
@@ -41,6 +44,7 @@ namespace Diomede2
                         textBox6.Text, textBox7.Text, textBox8.Text, textBox9.Text, textBox10.Text,
                         "" + lista[comboBox1.SelectedIndex].Id);
                     MessageBox.Show("Contatto Inserito", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgV.DataSource = op.FiltraContratto("Cliente", "" + cliente.Id);
                     Close();
                 }
             }
@@ -50,9 +54,6 @@ namespace Diomede2
             }
         }
 
-        private void Button2_Click(object sender, EventArgs e)
-        {
-        }
 
         private void InserisciRuoloToolStripMenuItem_Click(object sender, EventArgs e)
         {
