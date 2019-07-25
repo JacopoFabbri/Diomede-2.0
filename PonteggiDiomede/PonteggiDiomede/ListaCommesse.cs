@@ -1,7 +1,12 @@
-﻿using PonteggiDiomede;
+﻿using Microsoft.Office.Interop.Excel;
+using PonteggiDiomede;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Diomede2
 {
@@ -218,6 +223,40 @@ namespace Diomede2
         {
             var f = new FiltroCommesse(dataGridView1, db);
             f.Show();
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            String path = Directory.GetCurrentDirectory() + "ALL - PROJECTS - Gestione Ponteggi.xlsm";
+            Excel.Application objApp;
+            try
+            {
+                objApp = new Excel.Application();
+                Workbook wb = objApp.Workbooks.Open(path);
+                Worksheet ws = wb.Sheets["Foglio1"];
+                ws.Activate();
+                int x = 3;
+                while (ws.Cells[x,1].Value.Equals(""))
+                {
+                    x++;
+                }
+                List<Commessa> listaCommessa = op.CercaCommessa();
+                foreach(Commessa c in listaCommessa)
+                {
+                    ws.Cells[x, 1].Value = c.NumeroCommessa;
+                    ws.Cells[x, 3].Value = c.Data;
+                    ws.Cells[x, 4].Value = op.CercaClientiId(c.Id);
+                    ws.Cells[x, 5].Value = c.IndirizzoCantiere;
+                    ws.Cells[x, 6].Value = op.CercaBozzaId(c.Bozza).FaseProgetto;
+                    ws.Cells[x, 7].Value = op.CercaClientiId(c.Id);
+                    x++;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
