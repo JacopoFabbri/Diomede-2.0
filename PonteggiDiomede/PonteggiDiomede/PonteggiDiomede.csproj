@@ -244,33 +244,58 @@
     <None Include="Resources\icons8-eliminare-48.png" />
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="Microsoft.Office.Core">
-      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
-      <VersionMajor>2</VersionMajor>
-      <VersionMinor>8</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="Microsoft.Office.Interop.Excel">
-      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>9</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="VBIDE">
-      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>5</VersionMajor>
-      <VersionMinor>3</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
+    <None Include="Resources\icons8-azienda-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-società-cliente-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lista-di-cose-da-fare-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-modifica-utente-uomo-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-apri-libro-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-rimuovi-immagine-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-modifica-file-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-nessuna-modifica-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-inserisci-tabella-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-quaderno-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-web-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-servizi-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sincronizzare-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-più-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eliminare-481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-filtro-riempito-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sacco-dei-soldi-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-casella-di-controllo-selezionata-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

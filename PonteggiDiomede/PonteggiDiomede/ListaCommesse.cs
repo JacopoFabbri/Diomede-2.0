@@ -1,4 +1,4 @@
-﻿using Microsoft.Office.Interop.Excel;
+﻿
 using PonteggiDiomede;
 using System;
 using System.Collections.Generic;
@@ -232,8 +232,8 @@ namespace Diomede2
             try
             {
                 objApp = new Excel.Application();
-                Workbook wb = objApp.Workbooks.Open(path);
-                Worksheet ws = wb.Sheets["Foglio1"];
+                Excel.Workbook wb = objApp.Workbooks.Open(path);
+                Excel.Worksheet ws = wb.Sheets["Foglio1"];
                 ws.Activate();
                 int x = 3;
                 while (ws.Cells[x,1].Value.Equals(""))
