@@ -1,5 +1,4 @@
-﻿
-using PonteggiDiomede;
+﻿using PonteggiDiomede;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
