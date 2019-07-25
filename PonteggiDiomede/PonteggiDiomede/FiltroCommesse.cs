@@ -40,6 +40,25 @@ namespace PonteggiDiomede
             }
             else
                 dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem, "" + comboBox2.SelectedItem);
+            foreach (DataGridViewRow r in dataTable.Rows)
+            {
+                String s = "" + r.Cells["DataOraInvio"].Value;
+                if (!((DateTime)r.Cells["DataOraInvio"].Value).ToString("yyyy/MM/dd hh:mm").Equals("0001-01-01 12:00:00") && !r.Cells["DataOraInvio"].Value.ToString().Equals("01/01/0001 00:00:00"))
+                {
+                    foreach (DataGridViewCell c in r.Cells)
+                    {
+                        c.Style.BackColor = Color.Green;
+                    }
+                }
+                else if (((DateTime)r.Cells["DATAESECUZIONE"].Value).ToString("yyyy/MM/dd").Equals(DateTime.Now.ToString("yyyy/MM/dd")))
+                {
+                    foreach (DataGridViewCell c in r.Cells)
+                    {
+                        c.Style.BackColor = Color.Yellow;
+                    }
+                }
+
+            }
         }
 
         private void FiltroCommesse_Load(object sender, EventArgs e)
