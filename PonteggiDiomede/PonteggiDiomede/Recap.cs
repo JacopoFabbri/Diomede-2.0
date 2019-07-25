@@ -92,5 +92,35 @@ namespace Diomede2
                 MessageBox.Show("ciao");
             }
         }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedRows != null)
+                {
+                    foreach (DataGridViewRow r in dataGridView1.SelectedRows)
+                        if (MessageBox.Show(
+                                "Stai per eliminare " +
+                                r.Cells[1].Value + " .Confermi?",
+                                "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) ==
+                            DialogResult.Yes)
+                        {
+                            var clienti = op.CercaLavorazioni((int)r.Cells[0].Value);
+                            op.CancellaLavorazioni((int)r.Cells[0].Value);
+                            MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                        }
+                }
+                List<Lavorazioni> listaLavorazione = op.FiltraLavorazioni("COMMESSA", "" + idCommessa);
+                dataGridView1.DataSource = listaLavorazione;
+                dataGridView1.Columns[0].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
     }
 }

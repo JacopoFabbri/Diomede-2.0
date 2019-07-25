@@ -28,7 +28,9 @@ namespace PonteggiDiomede
 
             try
             {
-                op.InserimentoLavorazioni(textBox1.Text, textBox2.Text, Convert.ToDouble(textBox3.Text), c.Id, dateTimePicker1.Value, textBox5.Text);
+                Double d = Convert.ToDouble(textBox3.Text);
+
+                op.InserimentoLavorazioni(textBox1.Text, textBox2.Text, d, c.Id, dateTimePicker1.Value, textBox5.Text);
 
             }
             catch

@@ -2076,6 +2076,7 @@ namespace Diomede2
 
         public Lavorazioni CercaLavorazione(int id)
         {
+            DateTime data;
             Lavorazioni lavorazione = null;
             try
             {
@@ -2086,6 +2087,7 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
+                    DateTime.TryParse(lettore[5] + "", out data);
                     var l = new Lavorazioni
                     {
 
@@ -2094,8 +2096,8 @@ namespace Diomede2
                         Desc = (string)lettore[2],
                         Prezzo = (double)lettore[3],
                         Commessa = (int)lettore[4],
-                        data = (DateTime)lettore[5],
-                        assegnato = (String)lettore[5]
+                        data = data,
+                        assegnato = (String)lettore[6]
                     };
                     lavorazione = l;
                 }
