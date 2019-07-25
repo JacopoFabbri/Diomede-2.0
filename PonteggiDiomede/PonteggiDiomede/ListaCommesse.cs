@@ -1,4 +1,4 @@
-﻿using Microsoft.Office.Interop.Excel;
+﻿
 using PonteggiDiomede;
 using System;
 using System.Collections.Generic;
@@ -232,8 +232,8 @@ namespace Diomede2
             try
             {
                 objApp = new Excel.Application();
-                Workbook wb = objApp.Workbooks.Open(path);
-                Worksheet ws = wb.Sheets["Foglio1"];
+                Excel.Workbook wb = objApp.Workbooks.Open(path);
+                Excel.Worksheet ws = wb.Sheets["Foglio1"];
                 ws.Activate();
                 int x = 3;
                 while (ws.Cells[x,1].Value.Equals(""))
@@ -241,14 +241,39 @@ namespace Diomede2
                     x++;
                 }
                 List<Commessa> listaCommessa = op.CercaCommessa();
-                foreach(Commessa c in listaCommessa)
+                List<Lavorazioni> listaLavorazioni;
+                foreach (Commessa c in listaCommessa)
                 {
+                    listaLavorazioni = op.FiltraLavorazioni("COMMESSA", "" +c.Id);
                     ws.Cells[x, 1].Value = c.NumeroCommessa;
                     ws.Cells[x, 3].Value = c.Data;
                     ws.Cells[x, 4].Value = op.CercaClientiId(c.Id);
                     ws.Cells[x, 5].Value = c.IndirizzoCantiere;
                     ws.Cells[x, 6].Value = op.CercaBozzaId(c.Bozza).FaseProgetto;
                     ws.Cells[x, 7].Value = op.CercaClientiId(c.Id);
+                    foreach(Lavorazioni l in listaLavorazioni)
+                    {
+                        if (l.Nome.Equals("Sopraluogo"))
+                        {
+                            ws.Cells[x, 8].Value = l.assegnato;
+                            ws.Cells[x, 9].Value = l.data.ToString("dd/MM/yyyy");
+                        }else if (l.Nome.Equals("Disegno"))
+                        {
+                            ws.Cells[x, 10].Value = l.assegnato;
+                        }else if (l.Nome.Equals("Disegno e Relazione"))
+                        {
+                            ws.Cells[x, 11].Value = l.assegnato;
+                        }
+                    }
+                    ws.Cells[x, 12].Value = c.DataEsecuzione.ToString("dd/MM/yyyy");
+                    ws.Cells[x, 13].Value = c.DataRichestaConsegna.ToString("dd/MM/yyyy");
+                    ws.Cells[x, 14].Value = c.Note;
+                    ws.Cells[x, 15].Value = c.Invio;
+                    ws.Cells[x, 16].Value = c.DataOraInvio.ToString("dd/MM/yyyy");
+                    ws.Cells[x, 17].Value = c.DataOraInvio.ToString("hh:mm");
+                    ws.Cells[x, 18].Value = c.NoteGeneriche;
+
+
                     x++;
                 }
             }

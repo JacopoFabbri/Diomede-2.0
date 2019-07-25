@@ -52,7 +52,7 @@ namespace PonteggiDiomede
                 comboBox1.Items.Add("Marco");
                 comboBox1.Items.Add("Maverick");
 
-                comboBox2.Items.Add("Rilievo");
+                comboBox2.Items.Add("Sopraluogo");
                 comboBox2.Items.Add("Disegno");
                 comboBox2.Items.Add("Relazione");
                 comboBox2.Items.Add("Disegno e Relazione");
