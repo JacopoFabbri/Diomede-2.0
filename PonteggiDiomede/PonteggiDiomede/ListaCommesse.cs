@@ -132,7 +132,6 @@ namespace Diomede2
             dataGridView1.Columns[0].Visible = false;
             foreach (DataGridViewRow r in dataGridView1.Rows)
             {
-                String s = "" + r.Cells["DataOraInvio"].Value;
                 if (!((DateTime)r.Cells["DataOraInvio"].Value).ToString("yyyy/MM/dd hh:mm").Equals("0001-01-01 12:00:00") && !r.Cells["DataOraInvio"].Value.ToString().Equals("01/01/0001 00:00:00"))
                 {
                     foreach (DataGridViewCell c in r.Cells)
@@ -214,10 +213,6 @@ namespace Diomede2
                 Excel.Worksheet ws = wb.Sheets["Foglio1"];
                 ws.Activate();
                 int x = 3;
-                while (ws.Cells[x,1].Value != null)
-                {
-                    x++;
-                }
                 List<Commessa> listaCommessa = op.CercaCommessa();
                 List<Lavorazioni> listaLavorazioni;
                 foreach (Commessa c in listaCommessa)
@@ -252,9 +247,16 @@ namespace Diomede2
                     ws.Cells[x, 17].Value = c.DataOraInvio.ToString("hh:mm");
                     ws.Cells[x, 18].Value = c.NoteGeneriche;
                     ws.Cells[x, 19].Value = op.CercaBozzaId(c.Bozza).Importo;
+                    if (!c.DataOraInvio.ToString("yyyy/MM/dd hh:mm").Equals("0001-01-01 12:00:00") && !c.DataOraInvio.ToString("yyyy/MM/dd hh:mm").Equals("01/01/0001 00:00:00"))
+                    {
+                        ws.Cells[x, 22].Value = "v";
+                    }
+                    else if (c.DataEsecuzione.ToString("yyyy/MM/dd").Equals(DateTime.Now.ToString("yyyy/MM/dd")))
+                    {
+                        ws.Cells[x, 22].Value = "g";
+                    }
 
-
-                    x++;
+                        x++;
                 }
                 wb.SaveAs(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\result.xlsm");
             }
