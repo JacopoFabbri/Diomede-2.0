@@ -19,15 +19,12 @@ namespace PonteggiDiomede
         private readonly List<Cliente> listaClienti = new List<Cliente>();
         private OperazionePraticheEdili op;
         private readonly List<Bozza> listaBozze = new List<Bozza>();
-
-
         public FiltroCommesse(DataGridView d, String s)
         {
             dataTable = d;
             db = s;
             InitializeComponent();
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem.ToString().Equals("DITTA"))
@@ -60,7 +57,6 @@ namespace PonteggiDiomede
 
             }
         }
-
         private void FiltroCommesse_Load(object sender, EventArgs e)
         {
             try
@@ -87,7 +83,6 @@ namespace PonteggiDiomede
                 Application.Exit();
             }
         }
-
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBox2.Items.Clear();

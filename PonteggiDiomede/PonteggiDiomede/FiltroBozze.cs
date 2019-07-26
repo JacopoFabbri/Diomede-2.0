@@ -12,14 +12,12 @@ namespace Diomede2
         private List<Bozza> lista;
         private readonly List<Cliente> listaClienti = new List<Cliente>();
         private OperazionePraticheEdili op;
-
         public FiltroBozze(DataGridView d, string dbName)
         {
             db = dbName;
             dataTable = d;
             InitializeComponent();
         }
-
         private void FiltroBozze_Load(object sender, EventArgs e)
         {
             try
@@ -39,7 +37,6 @@ namespace Diomede2
                 Application.Exit();
             }
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem.ToString().Equals("CLIENTE"))
@@ -48,7 +45,6 @@ namespace Diomede2
             else
                 dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem, "" + comboBox2.SelectedItem);
         }
-
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBox2.Items.Clear();
@@ -124,7 +120,6 @@ namespace Diomede2
                     if (flag) comboBox2.Items.Add(c.Accettazione);
                 }
         }
-
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
