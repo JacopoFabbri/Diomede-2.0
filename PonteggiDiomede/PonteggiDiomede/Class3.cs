@@ -16,12 +16,12 @@ namespace Diomede2
 
 
         public void InserimentoCommessa(int numero, int anno, string settore, string commessa, int cliente,
-            string settoreIntero, bool bozza)
+            string settoreIntero)
         {
             try
             {
                 var bDB = new CommessaAmministrazioneDB(conn);
-                bDB.Inserimento(numero, anno, settore, commessa, cliente, settoreIntero, bozza);
+                bDB.Inserimento(numero, anno, settore, commessa, cliente, settoreIntero);
             }
             catch (Exception e)
             {
@@ -223,30 +223,77 @@ namespace Diomede2
             }
         }
 
+        public void InserimentoBozza(int numero, int anno, string settore, string commessa, int cliente,
+            string settoreIntero)
+        {
+            try
+            {
+                var bDB = new PreventivoAmministrazioneDB(conn);
+                bDB.Inserimento(numero, anno, settore, commessa, cliente, settoreIntero);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+
+
+        public List<PreventivoAmministrazione> FiltraPreventivo(string s, string g)
+        {
+            List<PreventivoAmministrazione> contatto;
+            try
+            {
+                var bDB = new PreventivoAmministrazioneDB(conn);
+                contatto = bDB.FiltroCommessa(s, g);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+
+            return contatto;
+        }
+
         public string GeneraCommessa(string s, ClienteAmministrazione c, string settore, bool bozza)
         {
             try
             {
-                if (bozza)
-                {
-                }
 
-                string commessa;
-                var anno = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
-                var lista = FiltraCommessa("ANNO", "" + anno);
-                if (lista.Count > 0)
+                string commessa = "";
+                if (bozza == false)
                 {
-                    InserimentoCommessa(lista[lista.Count - 1].Numero + 1, anno, s,
-                        "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore, bozza);
+                    var anno = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
+                    var lista = FiltraCommessa("ANNO", "" + anno);
+                    if (lista.Count > 0)
+                    {
+                        InserimentoCommessa(lista[lista.Count - 1].Numero + 1, anno, s,
+                            "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore);
 
-                    commessa = "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s;
+                        commessa = "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s;
+                    }
+                    else
+                    {
+                        InserimentoCommessa(1, anno, s, "" + 1 + "/" + anno + "/" + s, c.Id, settore);
+                        commessa = "" + 1 + "/" + anno + "/" + s;
+                    }
                 }
                 else
                 {
-                    InserimentoCommessa(1, anno, s, "" + 1 + "/" + anno + "/" + s, c.Id, settore, bozza);
-                    commessa = "" + 1 + "/" + anno + "/" + s;
-                }
+                    var anno = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
+                    var lista = FiltraPreventivo("ANNO", "" + anno);
+                    if (lista.Count > 0)
+                    {
+                        InserimentoBozza(lista[lista.Count - 1].Numero + 1, anno, s,
+                            "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore);
 
+                        commessa = "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s;
+                    }
+                    else
+                    {
+                        InserimentoBozza(1, anno, s, "" + 1 + "/" + anno + "/" + s, c.Id, settore);
+                        commessa = "" + 1 + "/" + anno + "/" + s;
+                    }
+                }
                 return commessa;
             }
             catch (Exception e)
@@ -254,6 +301,7 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
+        
     }
 
     public class CommessaAmministrazioneDB
@@ -273,7 +321,7 @@ namespace Diomede2
                 MySqlCommand command;
                 con.Open();
                     command = new MySqlCommand(
-                        "INSERT INTO `PREVENTIVO`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`) VALUES('" +
+                        "INSERT INTO `COMMESSA`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`) VALUES('" +
                         numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" +
                         settoreIntero +  "')", con);
 
@@ -296,7 +344,7 @@ namespace Diomede2
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                var command = new MySqlCommand("SELECT * FROM `PREVENTIVO`", con);
+                var command = new MySqlCommand("SELECT * FROM `COMMESSA`", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
@@ -335,7 +383,7 @@ namespace Diomede2
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                var command = new MySqlCommand("SELECT * FROM `PREVENTIVO` WHERE `ID` = '" + n + "'", con);
+                var command = new MySqlCommand("SELECT * FROM `COMMESSA` WHERE `ID` = '" + n + "'", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
@@ -374,7 +422,7 @@ namespace Diomede2
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                var command = new MySqlCommand("SELECT * FROM `PREVENTIVO` WHERE `ID` = '" + id + "'", con);
+                var command = new MySqlCommand("SELECT * FROM `COMMESSA` WHERE `ID` = '" + id + "'", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
@@ -413,7 +461,7 @@ namespace Diomede2
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                var command = new MySqlCommand("SELECT * FROM `PREVENTIVO` WHERE `" + s + "` = '" + g + "'", con);
+                var command = new MySqlCommand("SELECT * FROM `COMMESSA` WHERE `" + s + "` = '" + g + "'", con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
@@ -451,7 +499,7 @@ namespace Diomede2
             {
                 con.Open();
                 var command = new MySqlCommand(
-                    "UPDATE `PREVENTIVO` SET `NUMMERO`='" + numero + "',`ANNO`='" + anno + "',`SETTORE`='" + settore +
+                    "UPDATE `COMMESSA` SET `NUMMERO`='" + numero + "',`ANNO`='" + anno + "',`SETTORE`='" + settore +
                     "',`COMMESSA`='" + commessa + "',`CLIENTE`='" + cliente + "',`SETTOREINTERO`='" + settoreIntero +
                     "' WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
@@ -501,7 +549,7 @@ namespace Diomede2
                 MySqlCommand command;
                 con.Open();
                 command = new MySqlCommand(
-                    "INSERT INTO `PREVENTIVO`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`, `BOZZA`) VALUES('" +
+                    "INSERT INTO `PREVENTIVO`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`) VALUES('" +
                     numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" +
                     settoreIntero + "')", con);
 
@@ -517,126 +565,10 @@ namespace Diomede2
             }
         }
 
-        public List<CommessaAmministrazione> ListaCommessa()
+
+        public List<PreventivoAmministrazione> FiltroCommessa(string s, string g)
         {
-            var lista = new List<CommessaAmministrazione>();
-            try
-            {
-                con.Open();
-                MySqlDataReader lettore = null;
-                var command = new MySqlCommand("SELECT * FROM `PREVENTIVO`", con);
-                lettore = command.ExecuteReader();
-
-                while (lettore.Read())
-                {
-                    CommessaAmministrazione lavorazione;
-                    lavorazione = new CommessaAmministrazione
-                    {
-                        Id = (int)lettore[0],
-                        Numero = (int)lettore[1],
-                        Anno = (int)lettore[2],
-                        Settore = "" + lettore[3],
-                        Commessa = "" + lettore[4],
-                        Cliente = (int)lettore[5],
-                        SettoreIntero = "" + lettore[6]
-                    };
-
-                    lista.Add(lavorazione);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.ToString());
-            }
-            finally
-            {
-                con.Close();
-            }
-
-            return lista;
-        }
-
-        public List<CommessaAmministrazione> ListaCommessa(string n)
-        {
-            var lista = new List<CommessaAmministrazione>();
-            try
-            {
-                con.Open();
-                MySqlDataReader lettore = null;
-                var command = new MySqlCommand("SELECT * FROM `PREVENTIVO` WHERE `ID` = '" + n + "'", con);
-                lettore = command.ExecuteReader();
-
-                while (lettore.Read())
-                {
-                    CommessaAmministrazione lavorazione;
-                    lavorazione = new CommessaAmministrazione
-                    {
-                        Id = (int)lettore[0],
-                        Numero = (int)lettore[1],
-                        Anno = (int)lettore[2],
-                        Settore = "" + lettore[3],
-                        Commessa = "" + lettore[4],
-                        Cliente = (int)lettore[5],
-                        SettoreIntero = "" + lettore[6]
-                    };
-
-                    lista.Add(lavorazione);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.ToString());
-            }
-            finally
-            {
-                con.Close();
-            }
-
-            return lista;
-        }
-
-        public CommessaAmministrazione CercaCommessa(int id)
-        {
-            CommessaAmministrazione lavorazione = null;
-            try
-            {
-                con.Open();
-                MySqlDataReader lettore = null;
-                var command = new MySqlCommand("SELECT * FROM `PREVENTIVO` WHERE `ID` = '" + id + "'", con);
-                lettore = command.ExecuteReader();
-
-                while (lettore.Read())
-                {
-                    CommessaAmministrazione l;
-                    l = new CommessaAmministrazione
-                    {
-                        Id = (int)lettore[0],
-                        Numero = (int)lettore[1],
-                        Anno = (int)lettore[2],
-                        Settore = "" + lettore[3],
-                        Commessa = "" + lettore[4],
-                        Cliente = (int)lettore[5],
-                        SettoreIntero = "" + lettore[6]
-                    };
-
-                    lavorazione = l;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.ToString());
-            }
-            finally
-            {
-                con.Close();
-            }
-
-            return lavorazione;
-        }
-
-        public List<CommessaAmministrazione> FiltroCommessa(string s, string g)
-        {
-            var lavorazione = new List<CommessaAmministrazione>();
+            var lavorazione = new List<PreventivoAmministrazione>();
             try
             {
                 con.Open();
@@ -646,7 +578,7 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    var l = new CommessaAmministrazione
+                    var l = new PreventivoAmministrazione
                     {
                         Id = (int)lettore[0],
                         Numero = (int)lettore[1],

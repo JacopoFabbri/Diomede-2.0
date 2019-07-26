@@ -1673,7 +1673,7 @@ namespace Diomede2
                 var command = new MySqlCommand(
                     "INSERT INTO `COMMESSA`(`DITTA`, `NUMEROCOMMESSA`, `DATA`, `REFERENTE`, `INDIRIZZOCANTIERE`, `TECNICOINTERNO`, `NOTE`, `BOZZA`, `DATAESECUZIONE`, `DATARICHIESTACONSEGNA`, `INVIO`, `DATAINVIO`, `NOTEGENERICHE`) VALUES('" +
                     ditta + "','" + numerocommessa + "','" + data.ToString("yyyy/MM/dd") + "','" + referente + "','" + indirizzoCantiere + "','" + tecnico + "','" + note + "','" +
-                    bozza + "'," + dataEsecuzione + "," + dataRichiestaConsegna + ",'" + nome + "'," + dataInvio + "'," + n + ")", con);
+                    bozza + "'," + dataEsecuzione + "," + dataRichiestaConsegna + ",'" + nome + "'," + dataInvio + ",'" + n + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
