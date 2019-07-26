@@ -53,7 +53,7 @@ namespace Diomede2
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
             }
-
+            label1.Text = dataGridView1.SelectedRows.Count + "";
             formPrecente.Hide();
             dataGridView1.Focus();
         }
@@ -218,6 +218,7 @@ namespace Diomede2
                 foreach (Commessa c in listaCommessa)
                 {
                     listaLavorazioni = op.FiltraLavorazioni("COMMESSA", "" +c.Id);
+
                     ws.Cells[x, 1].Value = c.NumeroCommessa;
                     ws.Cells[x, 2].Value = c.NumeroCommessa;
                     ws.Cells[x, 3].Value = c.Data;
@@ -271,5 +272,11 @@ namespace Diomede2
             }
         }
 
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+
+            label1.Text = dataGridView1.SelectedRows.Count + "";
+
+        }
     }
 }
