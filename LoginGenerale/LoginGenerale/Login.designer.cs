@@ -41,6 +41,7 @@
             this.inserisciUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificaPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.inserisciUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,7 +128,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inserisciUtenteToolStripMenuItem,
-            this.modificaPasswordToolStripMenuItem});
+            this.modificaPasswordToolStripMenuItem,
+            this.inserisciUpdateToolStripMenuItem});
             this.fileToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fileToolStripMenuItem.Image = global::LoginGenerale.Properties.Resources.product_documents_48px;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -162,6 +164,13 @@
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // inserisciUpdateToolStripMenuItem
+            // 
+            this.inserisciUpdateToolStripMenuItem.Name = "inserisciUpdateToolStripMenuItem";
+            this.inserisciUpdateToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.inserisciUpdateToolStripMenuItem.Text = "Inserisci Update";
+            this.inserisciUpdateToolStripMenuItem.Click += new System.EventHandler(this.InserisciUpdateToolStripMenuItem_Click);
             // 
             // Login
             // 
@@ -203,6 +212,7 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inserisciUtenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificaPasswordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inserisciUpdateToolStripMenuItem;
     }
 }
 
