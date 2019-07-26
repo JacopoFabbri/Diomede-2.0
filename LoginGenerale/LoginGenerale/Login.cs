@@ -4,13 +4,13 @@ using System.Windows.Forms;
 using Database;
 using System.Net;
 using System.Text;
+using System.Collections.Generic;
 
 namespace Diomede2
 {
     public partial class Login : Form
     {
         private Utente utente;
-        private readonly string ciao;
 
         public Login()
         {
@@ -18,10 +18,20 @@ namespace Diomede2
         }
         private void Button1_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(Application.ProductVersion);
+            var op = new Operaziones("Utenza");
+            List<Update> u = op.CercaUpdate();
+            if (u.Count != 0)
+            {
+                if (!u[u.Count - 1].Versione.Equals(Application.ProductVersion))
+                {
+                    MessageBox.Show("Aggiornamento Disponibile Installare la nuova versione");
+                }
+            }
             listView1.Clear();
             try
             {
-                var op = new Operaziones("Utenza");
+                op = new Operaziones("Utenza");
                 utente = op.CercaUtente(textBox1.Text);
                 if (utente != null)
                 {
@@ -196,6 +206,13 @@ namespace Diomede2
         {
             var frm = new ModificaPassword(utente);
             frm.Show();
+        }
+
+        private void InserisciUpdateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            var op = new Operaziones("Utenza");
+            op.inserisciUpdate(Application.ProductVersion);
         }
     }
 }

@@ -86,6 +86,34 @@ namespace Database
                 throw new Exception(e.ToString());
             }
         }
+
+        public List<Update> CercaUpdate()
+        {
+            List<Update> ruolo;
+            try
+            {
+                var db = new UpdateDB(conn);
+                ruolo = db.Cerca();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+
+            return ruolo;
+        }
+        public void inserisciUpdate(String versione)
+        {
+            try
+            {
+                var db = new UpdateDB(conn);
+                db.inserisciUpdate(versione);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+        }
     }
 
     public class UtenteDB
@@ -250,6 +278,70 @@ namespace Database
         }
     }
 
+
+    public class UpdateDB
+    {
+        private readonly MySqlConnection con;
+
+        public UpdateDB(MySqlConnection conn)
+        {
+            con = conn;
+        }
+
+        public void inserisciUpdate(string versione)
+        {
+            try
+            {
+                con.Open();
+                var command = new MySqlCommand("INSERT INTO `Update`( `Versione` ) VALUES ('" +
+                                               versione + "')", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public List<Update> Cerca()
+        {
+            List<Update> r = new List<Update>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                var command = new MySqlCommand("SELECT * FROM `Update`", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    var ruolo = new Update
+                    {
+                        ID = (int)lettore[0],
+                        Versione = "" + lettore[1],
+                        Descrizione = "" +lettore[2]
+                    };
+                    r.Add(ruolo);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return r;
+        }
+
+    }
+
     public class Utente
     {
         public string Username { get; set; }
@@ -269,5 +361,13 @@ namespace Database
         public string Macro { get; set; }
 
         public string Job { get; set; }
+    }
+    public class Update
+    {
+        public int ID { get; set; }
+        public string Versione { get; set; }
+
+        public string Descrizione { get; set; }
+
     }
 }
