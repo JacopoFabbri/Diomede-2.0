@@ -21,8 +21,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_388EBB84E2C063655C0147291B0AFB8F"
+        "OwnerKey" = "8:_B6EA7454D5071732EA6DF223F2FBC963"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4D85C1C3152140AC8551B84A7E6307C4"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7A7B1E61B9C70ED7B0396BFA94B932EC"
+        "OwnerKey" = "8:_B6EA7454D5071732EA6DF223F2FBC963"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -57,6 +69,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_B6EA7454D5071732EA6DF223F2FBC963"
+        "OwnerKey" = "8:_C38A4D8C075D44469C346CA45C8E5536"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C38A4D8C075D44469C346CA45C8E5536"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_CD5685DBD8944128B366D449E8D631C1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -65,6 +89,12 @@
         {
         "MsmKey" = "8:_D50E0AD111EFC1E9D14393C3603279E8"
         "OwnerKey" = "8:_8DA4E4C04A827650684D5BFB19664AED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D50E0AD111EFC1E9D14393C3603279E8"
+        "OwnerKey" = "8:_B6EA7454D5071732EA6DF223F2FBC963"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -94,19 +124,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_388EBB84E2C063655C0147291B0AFB8F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8DA4E4C04A827650684D5BFB19664AED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CD5685DBD8944128B366D449E8D631C1"
+        "OwnerKey" = "8:_D647E678188B4CDE81845FC1AD13FE95"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -118,7 +136,37 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D647E678188B4CDE81845FC1AD13FE95"
+        "OwnerKey" = "8:_CD5685DBD8944128B366D449E8D631C1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C38A4D8C075D44469C346CA45C8E5536"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_B6EA7454D5071732EA6DF223F2FBC963"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_7A7B1E61B9C70ED7B0396BFA94B932EC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8DA4E4C04A827650684D5BFB19664AED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_388EBB84E2C063655C0147291B0AFB8F"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -267,6 +315,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7A7B1E61B9C70ED7B0396BFA94B932EC"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_7A7B1E61B9C70ED7B0396BFA94B932EC"
+                    {
+                    "Name" = "8:Renci.SshNet.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Renci.SshNet.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_C718A515FC04460FA0801BDCE4D31CBC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8DA4E4C04A827650684D5BFB19664AED"
             {
             "AssemblyRegister" = "3:1"
@@ -324,6 +403,68 @@
             "TargetName" = "8:ALL-PROJECTS-Gestione Ponteggi.xlsm"
             "Tag" = "8:"
             "Folder" = "8:_06859677D3B341D7A1A4C178958F4E48"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B6EA7454D5071732EA6DF223F2FBC963"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_B6EA7454D5071732EA6DF223F2FBC963"
+                    {
+                    "Name" = "8:MySql.Data.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:MySql.Data.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_C718A515FC04460FA0801BDCE4D31CBC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C38A4D8C075D44469C346CA45C8E5536"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:CarpenterieMetallicheDiomede, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_C38A4D8C075D44469C346CA45C8E5536"
+                    {
+                    "Name" = "8:CarpenterieMetallicheDiomede.exe"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\..\\CapernterieMetallicheDiomede\\bin\\Debug\\CarpenterieMetallicheDiomede.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_C718A515FC04460FA0801BDCE4D31CBC"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -572,7 +713,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Diomede 2.0"
         "ProductCode" = "8:{CCD4A5C7-7E1E-4FCF-99BE-EF6B62ABAD88}"
-        "PackageCode" = "8:{54592999-DE00-45B5-B704-3321778B3D73}"
+        "PackageCode" = "8:{08C8BF27-1889-402E-B840-D9774990FED0}"
         "UpgradeCode" = "8:{DC312D70-5E12-4333-911D-CC0058CDA1AA}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -694,7 +835,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_484EEFB167BE45D2B19DB01AE4A54A97"
             {
-            "Name" = "8:LoginDiomede"
+            "Name" = "8:Diomede 2.0"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -708,7 +849,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_763F8249515746749C4882BB057886A1"
             {
-            "Name" = "8:LoginDiomede"
+            "Name" = "8:Diomede 2.0"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"

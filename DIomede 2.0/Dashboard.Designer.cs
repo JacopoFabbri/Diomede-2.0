@@ -184,6 +184,7 @@
             this.macrolavorazioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listaMacroLavorazioniToolStripMenuItem,
             this.inserisciMacroLavorazioniToolStripMenuItem});
+            this.macrolavorazioniToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_martello_e_incudine_48;
             this.macrolavorazioniToolStripMenuItem.Name = "macrolavorazioniToolStripMenuItem";
             this.macrolavorazioniToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
             this.macrolavorazioniToolStripMenuItem.Text = "Macro Lavorazioni";
@@ -209,6 +210,7 @@
             this.lavorazioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listaLavorazioniToolStripMenuItem,
             this.inserisciLavorazioniToolStripMenuItem});
+            this.lavorazioniToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_martello_64;
             this.lavorazioniToolStripMenuItem.Name = "lavorazioniToolStripMenuItem";
             this.lavorazioniToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
             this.lavorazioniToolStripMenuItem.Text = "Lavorazioni";
@@ -328,6 +330,7 @@
             this.listaCommesseToolStripMenuItem,
             this.mostraListaCommesseToolStripMenuItem,
             this.nascondiListaCommesseToolStripMenuItem});
+            this.commesseToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_web_48;
             this.commesseToolStripMenuItem.Name = "commesseToolStripMenuItem";
             this.commesseToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
             this.commesseToolStripMenuItem.Text = "Commesse";
@@ -360,6 +363,7 @@
             // 
             this.macroLavorazioniToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listaMacroLavorazioniToolStripMenuItem1});
+            this.macroLavorazioniToolStripMenuItem1.Image = global::Diomede2.Properties.Resources.icons8_martello_64;
             this.macroLavorazioniToolStripMenuItem1.Name = "macroLavorazioniToolStripMenuItem1";
             this.macroLavorazioniToolStripMenuItem1.Size = new System.Drawing.Size(190, 24);
             this.macroLavorazioniToolStripMenuItem1.Text = "Macro Lavorazioni";

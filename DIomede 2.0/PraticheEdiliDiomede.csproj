@@ -476,6 +476,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LOGO DEFINITIVO.ico" />
+    <None Include="Resources\icons8-martello-e-incudine-48.png" />
+    <None Include="Resources\icons8-martello-64.png" />
+    <None Include="Resources\icons8-web-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
