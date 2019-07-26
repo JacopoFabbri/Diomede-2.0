@@ -17,7 +17,6 @@ C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\bin\Debug
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\bin\Debug\MySql.Data.xml
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.csprojAssemblyReference.cache
-C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.Login.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.Properties.Resources.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.csproj.GenerateResource.cache
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.csproj.CoreCompileInputs.cache

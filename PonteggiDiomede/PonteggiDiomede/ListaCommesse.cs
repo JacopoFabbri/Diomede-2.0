@@ -278,5 +278,10 @@ namespace Diomede2
             label1.Text = dataGridView1.SelectedRows.Count + "";
 
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
     }
 }
