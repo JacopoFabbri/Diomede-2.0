@@ -14,7 +14,6 @@ namespace Diomede2
         private readonly string db;
         private readonly Dashboard formPrecente;
         private OperazionePraticheEdili op;
-
         public ListaCommesse(string dbName, Dashboard frm)
         {
             formPrecente = frm;
