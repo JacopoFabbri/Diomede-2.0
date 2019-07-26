@@ -2,12 +2,15 @@
 using System.IO;
 using System.Windows.Forms;
 using Database;
+using System.Net;
+using System.Text;
 
 namespace Diomede2
 {
     public partial class Login : Form
     {
         private Utente utente;
+        private readonly string ciao;
 
         public Login()
         {
@@ -91,6 +94,8 @@ namespace Diomede2
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            FtpWebRequest gigio = new FtpWebRequest(ciao);
+            gigio = FtpAmoda;
             checkBox1.Checked = true;
             menuStrip1.Visible = false;
             var path = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
@@ -193,6 +198,48 @@ namespace Diomede2
         {
             var frm = new ModificaPassword(utente);
             frm.Show();
+        }
+    }
+}
+class FtpAmoda
+{
+    private string strUri = "ftp://192.168.1.135/Share/TABELLE%20E%20VARIE/Versione.txt";
+    private string user = "a.passarella";
+    private string password = "casati1234";
+
+    public string[] listFiles()
+    {
+        string[] list;
+        try
+        {
+            StringBuilder sb = new StringBuilder();
+            FtpWebRequest request = (FtpWebRequest)FtpWebRequest.Create(strUri);
+            request.UseBinary = true;
+            request.Credentials = new NetworkCredential(user, password);
+            request.Method = WebRequestMethods.Ftp.ListDirectory;
+            request.Proxy = null;
+            request.KeepAlive = false;
+            request.UsePassive = true;
+            WebResponse response = request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            while (!reader.EndOfStream)
+            {
+                string fileName = reader.ReadLine();
+                if (fileName.EndsWith(".txt"))
+                {
+                    sb.Append(fileName.ToString()).Append("\n");
+                }
+            }
+            sb.Remove(sb.ToString().LastIndexOf('\n'), 1);
+            reader.Close();
+            response.Close();
+            return sb.ToString().Split('\n');
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            list = null;
+            return list;
         }
     }
 }

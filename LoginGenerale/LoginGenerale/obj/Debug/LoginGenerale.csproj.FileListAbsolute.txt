@@ -47,3 +47,4 @@ C:\Users\Andre\Desktop\Diomede-2.0\LoginGenerale\LoginGenerale\obj\Debug\LoginGe
 C:\Users\Andre\Desktop\Diomede-2.0\LoginGenerale\LoginGenerale\obj\Debug\LoginGenerale.csproj.CopyComplete
 C:\Users\Andre\Desktop\Diomede-2.0\LoginGenerale\LoginGenerale\obj\Debug\LoginGenerale.exe
 C:\Users\Andre\Desktop\Diomede-2.0\LoginGenerale\LoginGenerale\obj\Debug\LoginGenerale.pdb
+C:\Users\Andre\Desktop\Diomede-2.0\LoginGenerale\LoginGenerale\obj\Debug\LoginGenerale.csprojAssemblyReference.cache
