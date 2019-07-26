@@ -18,7 +18,6 @@ namespace Diomede2
         }
         private void Button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Application.ProductVersion);
             var op = new Operaziones("Utenza");
             List<Update> u = op.CercaUpdate();
             if (u.Count != 0)
