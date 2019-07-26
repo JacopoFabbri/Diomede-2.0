@@ -115,6 +115,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LOGO DEFINITIVO.ico" />
+    <None Include="Resources\icons8-eliminare-48.png" />
+    <None Include="Resources\icons8-chiave-48.png" />
+    <None Include="Resources\icons8-chiave-64.png" />
+    <None Include="Resources\product_documents_48px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

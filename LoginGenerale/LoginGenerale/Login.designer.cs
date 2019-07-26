@@ -36,11 +36,11 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserisciUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificaPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,9 +80,9 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(44, 24);
+            this.listView1.Location = new System.Drawing.Point(44, 40);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(180, 210);
+            this.listView1.Size = new System.Drawing.Size(180, 194);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
@@ -101,6 +101,7 @@
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackgroundImage = global::LoginGenerale.Properties.Resources.icons8_eliminare_48;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.Cursor = System.Windows.Forms.Cursors.No;
             this.button3.Location = new System.Drawing.Point(137, 240);
@@ -112,25 +113,13 @@
             this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
-            // button1
-            // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Cursor = System.Windows.Forms.Cursors.AppStarting;
-            this.button1.Location = new System.Drawing.Point(153, 105);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 26);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(268, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(268, 29);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -139,16 +128,17 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inserisciUtenteToolStripMenuItem,
             this.modificaPasswordToolStripMenuItem});
-            this.fileToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.fileToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fileToolStripMenuItem.Image = global::LoginGenerale.Properties.Resources.product_documents_48px;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(41, 23);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(62, 25);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // inserisciUtenteToolStripMenuItem
             // 
             this.inserisciUtenteToolStripMenuItem.Image = global::LoginGenerale.Properties.Resources.icons8_piccola_persona_48;
             this.inserisciUtenteToolStripMenuItem.Name = "inserisciUtenteToolStripMenuItem";
-            this.inserisciUtenteToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
+            this.inserisciUtenteToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.inserisciUtenteToolStripMenuItem.Text = "Inserisci Utente";
             this.inserisciUtenteToolStripMenuItem.Click += new System.EventHandler(this.InserisciUtenteToolStripMenuItem_Click);
             // 
@@ -156,9 +146,22 @@
             // 
             this.modificaPasswordToolStripMenuItem.Image = global::LoginGenerale.Properties.Resources.icons8_password_64;
             this.modificaPasswordToolStripMenuItem.Name = "modificaPasswordToolStripMenuItem";
-            this.modificaPasswordToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
+            this.modificaPasswordToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.modificaPasswordToolStripMenuItem.Text = "Modifica Password";
             this.modificaPasswordToolStripMenuItem.Click += new System.EventHandler(this.ModificaPasswordToolStripMenuItem_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::LoginGenerale.Properties.Resources.icons8_chiave_48;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.button1.Location = new System.Drawing.Point(153, 105);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 37);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Login";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Login
             // 

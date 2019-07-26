@@ -63,6 +63,36 @@ namespace LoginGenerale.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_chiave_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-chiave-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_chiave_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-chiave-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_eliminare_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-eliminare-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_password_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-password-64", resourceCulture);
@@ -76,6 +106,16 @@ namespace LoginGenerale.Properties {
         internal static System.Drawing.Bitmap icons8_piccola_persona_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-piccola-persona-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap product_documents_48px {
+            get {
+                object obj = ResourceManager.GetObject("product_documents_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
