@@ -10,7 +10,6 @@ namespace Diomede2
         private readonly string db;
         private readonly Dashboard formPrecente;
         private OperazionePraticheEdili op;
-
         public Contatti(Cliente c, string dbName, Dashboard frm)
         {
             formPrecente = frm;
@@ -18,8 +17,6 @@ namespace Diomede2
             db = dbName;
             InitializeComponent();
         }
-
-
         private void Form7_Load(object sender, EventArgs e)
         {
             try
@@ -57,21 +54,17 @@ namespace Diomede2
             formPrecente.Hide();
             dataGridView1.Focus();
         }
-
         private void Form7_FormClosed(object sender, FormClosedEventArgs e)
         {
             formPrecente.Show();
         }
-
         private void Button3_Click(object sender, EventArgs e)
         {
         }
-
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
         }
-
         private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.ColumnIndex == 11)
@@ -93,7 +86,6 @@ namespace Diomede2
                 }
             }
         }
-
         private void AggiornaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
@@ -117,13 +109,11 @@ namespace Diomede2
             dataGridView1.DataSource = op.FiltraContratto("DITTA", "" + cliente.Id);
             dataGridView1.Columns[0].Visible = false;
         }
-
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new InserimentoContatto(cliente, db);
             frm.Show();
         }
-
         private void EliminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows != null)
