@@ -302,6 +302,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LOGO DEFINITIVO.ico" />
+    <None Include="Resources\icons8-chiudi-la-finestra-100.png" />
+    <None Include="Resources\iconfinder-home-4341294_120570.png" />
+    <None Include="Resources\MIND MAP1.png" />
+    <None Include="Resources\phone_14402.png" />
+    <None Include="Resources\MIND MAP.png" />
+    <None Include="Resources\people-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

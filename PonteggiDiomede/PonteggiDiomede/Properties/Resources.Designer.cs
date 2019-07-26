@@ -63,6 +63,16 @@ namespace PonteggiDiomede.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_home_4341294_120570 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder-home-4341294_120570", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_apri_libro_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-apri-libro-64", resourceCulture);
@@ -86,6 +96,16 @@ namespace PonteggiDiomede.Properties {
         internal static System.Drawing.Bitmap icons8_casella_di_controllo_selezionata_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-casella-di-controllo-selezionata-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_chiudi_la_finestra_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-chiudi-la-finestra-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +266,46 @@ namespace PonteggiDiomede.Properties {
         internal static System.Drawing.Bitmap icons8_web_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-web-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MIND_MAP {
+            get {
+                object obj = ResourceManager.GetObject("MIND MAP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MIND_MAP1 {
+            get {
+                object obj = ResourceManager.GetObject("MIND MAP1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap people_icon {
+            get {
+                object obj = ResourceManager.GetObject("people-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap phone_14402 {
+            get {
+                object obj = ResourceManager.GetObject("phone_14402", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

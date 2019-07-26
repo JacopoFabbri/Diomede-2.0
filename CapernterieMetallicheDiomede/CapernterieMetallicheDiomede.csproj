@@ -217,6 +217,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LOGO DEFINITIVO.ico" />
+    <None Include="Resources\icons8-fiore-del-centro-benessere-64.png" />
     <None Include="Resources\icons8-bouquet-di-fiori-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

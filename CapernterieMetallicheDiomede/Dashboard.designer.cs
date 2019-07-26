@@ -117,7 +117,7 @@
             this.mostraListaClientiToolStripMenuItem,
             this.nascondiListaClientiToolStripMenuItem});
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(108, 24);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem2.Text = "Ditta";
             // 
             // listaClientiToolStripMenuItem
@@ -286,6 +286,8 @@
             // 
             this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.listView3.BackColor = System.Drawing.SystemColors.Window;
+            this.listView3.BackgroundImageTiled = true;
             this.listView3.Location = new System.Drawing.Point(282, 30);
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(131, 391);
@@ -298,6 +300,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_bouquet_di_fiori_64;
             this.ClientSize = new System.Drawing.Size(806, 427);
             this.Controls.Add(this.listView3);
             this.Controls.Add(this.listView2);

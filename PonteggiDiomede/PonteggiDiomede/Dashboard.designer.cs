@@ -65,6 +65,7 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
             this.listView1.Visible = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.ListView1_SelectedIndexChanged);
             // 
             // listView2
             // 
@@ -80,7 +81,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.bozzaToolStripMenuItem,
@@ -89,7 +90,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(806, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(806, 29);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -109,10 +110,10 @@
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2});
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.Image = global::PonteggiDiomede.Properties.Resources.icons8_azienda_64;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(133, 23);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(147, 25);
             this.toolStripMenuItem1.Text = "Gestione Clienti";
             // 
             // toolStripMenuItem2
@@ -124,14 +125,14 @@
             this.nascondiListaClientiToolStripMenuItem});
             this.toolStripMenuItem2.Image = global::PonteggiDiomede.Properties.Resources.icons8_società_cliente_48;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(113, 26);
             this.toolStripMenuItem2.Text = "Ditta";
             // 
             // listaClientiToolStripMenuItem
             // 
             this.listaClientiToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_lista_di_cose_da_fare_100;
             this.listaClientiToolStripMenuItem.Name = "listaClientiToolStripMenuItem";
-            this.listaClientiToolStripMenuItem.Size = new System.Drawing.Size(208, 24);
+            this.listaClientiToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.listaClientiToolStripMenuItem.Text = "Lista Clienti";
             this.listaClientiToolStripMenuItem.Click += new System.EventHandler(this.ListaClientiToolStripMenuItem_Click);
             // 
@@ -139,7 +140,7 @@
             // 
             this.aggiungiClienteToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_modifica_utente_uomo_16;
             this.aggiungiClienteToolStripMenuItem.Name = "aggiungiClienteToolStripMenuItem";
-            this.aggiungiClienteToolStripMenuItem.Size = new System.Drawing.Size(208, 24);
+            this.aggiungiClienteToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.aggiungiClienteToolStripMenuItem.Text = "Aggiungi Cliente";
             this.aggiungiClienteToolStripMenuItem.Click += new System.EventHandler(this.AggiungiClienteToolStripMenuItem_Click);
             // 
@@ -147,7 +148,7 @@
             // 
             this.mostraListaClientiToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_apri_libro_64;
             this.mostraListaClientiToolStripMenuItem.Name = "mostraListaClientiToolStripMenuItem";
-            this.mostraListaClientiToolStripMenuItem.Size = new System.Drawing.Size(208, 24);
+            this.mostraListaClientiToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.mostraListaClientiToolStripMenuItem.Text = "Mostra Lista Clienti";
             this.mostraListaClientiToolStripMenuItem.Click += new System.EventHandler(this.MostraListaClientiToolStripMenuItem_Click);
             // 
@@ -155,7 +156,7 @@
             // 
             this.nascondiListaClientiToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_rimuovi_immagine_48;
             this.nascondiListaClientiToolStripMenuItem.Name = "nascondiListaClientiToolStripMenuItem";
-            this.nascondiListaClientiToolStripMenuItem.Size = new System.Drawing.Size(208, 24);
+            this.nascondiListaClientiToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.nascondiListaClientiToolStripMenuItem.Text = "Nascondi Lista Clienti";
             this.nascondiListaClientiToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaClientiToolStripMenuItem_Click);
             // 
@@ -165,7 +166,7 @@
             this.bozzaToolStripMenuItem1});
             this.bozzaToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_modifica_file_48;
             this.bozzaToolStripMenuItem.Name = "bozzaToolStripMenuItem";
-            this.bozzaToolStripMenuItem.Size = new System.Drawing.Size(72, 23);
+            this.bozzaToolStripMenuItem.Size = new System.Drawing.Size(78, 25);
             this.bozzaToolStripMenuItem.Text = "Bozza";
             // 
             // bozzaToolStripMenuItem1
@@ -177,14 +178,14 @@
             this.nascondiListaBozzeToolStripMenuItem});
             this.bozzaToolStripMenuItem1.Image = global::PonteggiDiomede.Properties.Resources.icons8_nessuna_modifica_48;
             this.bozzaToolStripMenuItem1.Name = "bozzaToolStripMenuItem1";
-            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(120, 26);
             this.bozzaToolStripMenuItem1.Text = "Bozza";
             // 
             // listaBozzeToolStripMenuItem
             // 
             this.listaBozzeToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_lista_di_cose_da_fare_100;
             this.listaBozzeToolStripMenuItem.Name = "listaBozzeToolStripMenuItem";
-            this.listaBozzeToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.listaBozzeToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.listaBozzeToolStripMenuItem.Text = "Lista Bozze";
             this.listaBozzeToolStripMenuItem.Click += new System.EventHandler(this.ListaBozzeToolStripMenuItem_Click);
             // 
@@ -192,7 +193,7 @@
             // 
             this.inserisciBozzaToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_inserisci_tabella_48;
             this.inserisciBozzaToolStripMenuItem.Name = "inserisciBozzaToolStripMenuItem";
-            this.inserisciBozzaToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.inserisciBozzaToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.inserisciBozzaToolStripMenuItem.Text = "Inserisci Bozza";
             this.inserisciBozzaToolStripMenuItem.Click += new System.EventHandler(this.InserisciBozzaToolStripMenuItem_Click);
             // 
@@ -200,7 +201,7 @@
             // 
             this.mostraListaBozzeToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_apri_libro_64;
             this.mostraListaBozzeToolStripMenuItem.Name = "mostraListaBozzeToolStripMenuItem";
-            this.mostraListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.mostraListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.mostraListaBozzeToolStripMenuItem.Text = "Mostra lista Bozze";
             this.mostraListaBozzeToolStripMenuItem.Click += new System.EventHandler(this.VisualizzaListaBozzeToolStripMenuItem_Click);
             // 
@@ -208,7 +209,7 @@
             // 
             this.nascondiListaBozzeToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_rimuovi_immagine_48;
             this.nascondiListaBozzeToolStripMenuItem.Name = "nascondiListaBozzeToolStripMenuItem";
-            this.nascondiListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.nascondiListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.nascondiListaBozzeToolStripMenuItem.Text = "Nascondi lista Bozze";
             this.nascondiListaBozzeToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaBozzeToolStripMenuItem_Click);
             // 
@@ -216,10 +217,10 @@
             // 
             this.gestioneCommesseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.commesseToolStripMenuItem});
-            this.gestioneCommesseToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gestioneCommesseToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestioneCommesseToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_quaderno_48;
             this.gestioneCommesseToolStripMenuItem.Name = "gestioneCommesseToolStripMenuItem";
-            this.gestioneCommesseToolStripMenuItem.Size = new System.Drawing.Size(162, 23);
+            this.gestioneCommesseToolStripMenuItem.Size = new System.Drawing.Size(180, 25);
             this.gestioneCommesseToolStripMenuItem.Text = "Gestione Commesse";
             // 
             // commesseToolStripMenuItem
@@ -230,14 +231,14 @@
             this.nascondiListaCommesseToolStripMenuItem});
             this.commesseToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_web_48;
             this.commesseToolStripMenuItem.Name = "commesseToolStripMenuItem";
-            this.commesseToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.commesseToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
             this.commesseToolStripMenuItem.Text = "Commesse";
             // 
             // listaCommesseToolStripMenuItem
             // 
             this.listaCommesseToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_lista_di_cose_da_fare_100;
             this.listaCommesseToolStripMenuItem.Name = "listaCommesseToolStripMenuItem";
-            this.listaCommesseToolStripMenuItem.Size = new System.Drawing.Size(237, 24);
+            this.listaCommesseToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
             this.listaCommesseToolStripMenuItem.Text = "Lista Commesse";
             this.listaCommesseToolStripMenuItem.Click += new System.EventHandler(this.ListaCommesseToolStripMenuItem_Click);
             // 
@@ -245,7 +246,7 @@
             // 
             this.mostraListaCommesseToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_apri_libro_64;
             this.mostraListaCommesseToolStripMenuItem.Name = "mostraListaCommesseToolStripMenuItem";
-            this.mostraListaCommesseToolStripMenuItem.Size = new System.Drawing.Size(237, 24);
+            this.mostraListaCommesseToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
             this.mostraListaCommesseToolStripMenuItem.Text = "Mostra Lista Commesse";
             this.mostraListaCommesseToolStripMenuItem.Click += new System.EventHandler(this.MostraListaCommesseToolStripMenuItem_Click);
             // 
@@ -253,16 +254,16 @@
             // 
             this.nascondiListaCommesseToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_rimuovi_immagine_48;
             this.nascondiListaCommesseToolStripMenuItem.Name = "nascondiListaCommesseToolStripMenuItem";
-            this.nascondiListaCommesseToolStripMenuItem.Size = new System.Drawing.Size(237, 24);
+            this.nascondiListaCommesseToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
             this.nascondiListaCommesseToolStripMenuItem.Text = "Nascondi Lista Commesse";
             this.nascondiListaCommesseToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaCommesseToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_eliminare_48;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(58, 23);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(62, 25);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 

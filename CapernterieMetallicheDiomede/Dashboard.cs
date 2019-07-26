@@ -103,11 +103,11 @@ namespace Diomede2
         private void MostraListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dashboard_Load(sender, e);
-            listView2.Visible = true;
+            listView3.Visible = true;
         }
         private void NascondiListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            listView2.Visible = false;
+            listView3.Visible = false;
         }
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
