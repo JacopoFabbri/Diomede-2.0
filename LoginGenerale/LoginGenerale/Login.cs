@@ -27,7 +27,7 @@ namespace Diomede2
                         if (checkBox1.Checked)
                         {
                             var path = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
-                            if (!Directory.Exists( path+ "\\Login"))
+                            if (!Directory.Exists( path + "\\Login"))
                             {
                                 Directory.CreateDirectory(path + "\\Login");
                                 if (File.Exists(path + "\\Login\\user.paco")) File.Create(path + "\\Login\\user.paco");
@@ -128,6 +128,7 @@ namespace Diomede2
                     proc.EnableRaisingEvents = false;
                     proc.StartInfo.FileName = path + "/PonteggiDiomede.exe";
                     proc.Start();
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -142,6 +143,22 @@ namespace Diomede2
                     proc.EnableRaisingEvents = false;
                     proc.StartInfo.FileName = path + "/Diomede2.exe";
                     proc.Start();
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            else if (listView1.SelectedItems[0].Text.Equals("Carpenterie"))
+            {
+                try
+                {
+                    System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                    proc.EnableRaisingEvents = false;
+                    proc.StartInfo.FileName = path + "/CarpenterieMetallicheDiomede.exe";
+                    proc.Start();
+                    this.Close();
                 }
                 catch (Exception ex)
                 {

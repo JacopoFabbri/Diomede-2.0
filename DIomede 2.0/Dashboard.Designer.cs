@@ -33,8 +33,6 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.listView2 = new System.Windows.Forms.ListView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaClientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,6 +66,8 @@
             this.pagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaPagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,18 +113,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(824, 27);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // listView3
-            // 
-            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.listView3.Location = new System.Drawing.Point(428, 31);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(131, 391);
-            this.listView3.TabIndex = 10;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.List;
-            this.listView3.Visible = false;
             // 
             // toolStripMenuItem1
             // 
@@ -404,14 +392,14 @@
             this.listaPagamentiToolStripMenuItem});
             this.pagamentiToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_sacco_dei_soldi_16;
             this.pagamentiToolStripMenuItem.Name = "pagamentiToolStripMenuItem";
-            this.pagamentiToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.pagamentiToolStripMenuItem.Size = new System.Drawing.Size(143, 24);
             this.pagamentiToolStripMenuItem.Text = "Pagamenti";
             // 
             // listaPagamentiToolStripMenuItem
             // 
             this.listaPagamentiToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_storico_dei_pagamenti_64;
             this.listaPagamentiToolStripMenuItem.Name = "listaPagamentiToolStripMenuItem";
-            this.listaPagamentiToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.listaPagamentiToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.listaPagamentiToolStripMenuItem.Text = "Lista Pagamenti";
             this.listaPagamentiToolStripMenuItem.Click += new System.EventHandler(this.ListaPagamentiToolStripMenuItem_Click);
             // 
@@ -423,6 +411,18 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(58, 23);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
+            // 
+            // listView3
+            // 
+            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.listView3.Location = new System.Drawing.Point(428, 31);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(131, 391);
+            this.listView3.TabIndex = 10;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.List;
+            this.listView3.Visible = false;
             // 
             // Dashboard
             // 
