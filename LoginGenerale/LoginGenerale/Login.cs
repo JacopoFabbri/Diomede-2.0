@@ -50,7 +50,7 @@ namespace Diomede2
                             sw.Close();
                         }
 
-                        if (utente.Ruolo == 1 || utente.Ruolo == 4)
+                        if (utente.Ruolo == 1 || utente.Ruolo == 4 || utente.Ruolo == 6)
                         {
                             listView1.Items.Add("Occupazione");
                             listView1.Items.Add("Ponteggi");
