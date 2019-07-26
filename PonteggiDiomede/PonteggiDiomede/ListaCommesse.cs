@@ -14,7 +14,6 @@ namespace Diomede2
         private readonly string db;
         private readonly Dashboard formPrecente;
         private OperazionePraticheEdili op;
-
         public ListaCommesse(string dbName, Dashboard frm)
         {
             formPrecente = frm;
@@ -201,7 +200,6 @@ namespace Diomede2
             var f = new FiltroCommesse(dataGridView1, db);
             f.Show();
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             String path = Directory.GetCurrentDirectory() + "\\Modelli\\ALL-PROJECTS-Gestione Ponteggi.xlsm";
@@ -271,14 +269,12 @@ namespace Diomede2
                 objApp.Quit();
             }
         }
-
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
         {
 
             label1.Text = dataGridView1.SelectedRows.Count + "";
 
         }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();

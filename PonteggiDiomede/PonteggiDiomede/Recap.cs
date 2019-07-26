@@ -42,7 +42,6 @@ namespace Diomede2
             }
 
         }
-
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
@@ -65,19 +64,16 @@ namespace Diomede2
 
             }
         }
-
         private void Button6_Click(object sender, EventArgs e)
         {
             InserimentoPagamento p = new InserimentoPagamento(db, commessa.Id);
             p.Show();
         }
-
         private void Button4_Click(object sender, EventArgs e)
         {
             InserimentoLavorazione l = new InserimentoLavorazione(idCommessa);
             l.Show();
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
 
@@ -91,8 +87,7 @@ namespace Diomede2
             {
                 MessageBox.Show("ciao");
             }
-        }
-
+        }       
         private void Button5_Click(object sender, EventArgs e)
         {
             try
