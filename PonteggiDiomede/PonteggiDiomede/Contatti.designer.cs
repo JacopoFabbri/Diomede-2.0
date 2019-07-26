@@ -100,7 +100,7 @@
             // 
             this.aggiornaToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_sincronizzare_48;
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
-            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
             this.aggiornaToolStripMenuItem.Click += new System.EventHandler(this.AggiornaToolStripMenuItem_Click);
             // 
@@ -108,7 +108,7 @@
             // 
             this.aggiungiToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_più_48;
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
-            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.aggiungiToolStripMenuItem.Text = "Aggiungi";
             this.aggiungiToolStripMenuItem.Click += new System.EventHandler(this.AggiungiToolStripMenuItem_Click);
             // 
@@ -116,7 +116,7 @@
             // 
             this.eliminaToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_eliminare_481;
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
-            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.eliminaToolStripMenuItem.Text = "Elimina";
             this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.EliminaToolStripMenuItem_Click);
             // 
