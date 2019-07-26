@@ -276,8 +276,9 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.exitToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_bouquet_di_fiori_64;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(42, 23);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(58, 23);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 

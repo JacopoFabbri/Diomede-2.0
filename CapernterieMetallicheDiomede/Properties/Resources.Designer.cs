@@ -59,5 +59,15 @@ namespace CarpenterieMetallicheDiomede.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_bouquet_di_fiori_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-bouquet-di-fiori-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

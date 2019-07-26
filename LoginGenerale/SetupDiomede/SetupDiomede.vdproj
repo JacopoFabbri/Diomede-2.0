@@ -373,7 +373,7 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -713,7 +713,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Diomede 2.0"
         "ProductCode" = "8:{CCD4A5C7-7E1E-4FCF-99BE-EF6B62ABAD88}"
-        "PackageCode" = "8:{08C8BF27-1889-402E-B840-D9774990FED0}"
+        "PackageCode" = "8:{F6CBC4C0-C925-4A43-ACB6-AB10B0C53F5A}"
         "UpgradeCode" = "8:{DC312D70-5E12-4333-911D-CC0058CDA1AA}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
