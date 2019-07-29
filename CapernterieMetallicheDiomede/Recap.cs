@@ -39,7 +39,6 @@ namespace Diomede2
             {
                 MessageBox.Show("ciao");
             }
-
         }
 
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -61,10 +60,8 @@ namespace Diomede2
             catch
             {
                 MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
-
         private void Button6_Click(object sender, EventArgs e)
         {
             InserimentoPagamento p = new InserimentoPagamento(db, commessa.Id);
