@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarpenterieMetallicheDiomede;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -182,6 +183,12 @@ namespace Diomede2
                         dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
                     v.Show();
                 }
+        }
+
+        private void InserimentoCommessaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InserimentoCommessa i = new InserimentoCommessa("CarpenteriaMetallica");
+            i.Show();
         }
     }
 }

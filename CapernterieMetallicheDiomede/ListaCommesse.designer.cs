@@ -38,6 +38,7 @@
             this.pagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.macroLavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selezionaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inserimentoCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -93,44 +94,52 @@
             this.operazioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aggiornaToolStripMenuItem,
             this.eliminaToolStripMenuItem,
-            this.pagamentoToolStripMenuItem});
+            this.pagamentoToolStripMenuItem,
+            this.inserimentoCommessaToolStripMenuItem});
             this.operazioniToolStripMenuItem.Name = "operazioniToolStripMenuItem";
-            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(60, 23);
+            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(44, 23);
             this.operazioniToolStripMenuItem.Text = "Edit";
             // 
             // aggiornaToolStripMenuItem
             // 
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
-            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
             this.aggiornaToolStripMenuItem.Click += new System.EventHandler(this.AggiornaToolStripMenuItem_Click);
             // 
             // eliminaToolStripMenuItem
             // 
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
-            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
             this.eliminaToolStripMenuItem.Text = "Elimina";
             this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.EliminaToolStripMenuItem_Click);
             // 
             // pagamentoToolStripMenuItem
             // 
             this.pagamentoToolStripMenuItem.Name = "pagamentoToolStripMenuItem";
-            this.pagamentoToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
+            this.pagamentoToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
             this.pagamentoToolStripMenuItem.Text = "Pagamento";
             this.pagamentoToolStripMenuItem.Click += new System.EventHandler(this.PagamentoToolStripMenuItem_Click);
             // 
             // macroLavorazioniToolStripMenuItem
             // 
             this.macroLavorazioniToolStripMenuItem.Name = "macroLavorazioniToolStripMenuItem";
-            this.macroLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(149, 23);
+            this.macroLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(133, 23);
             this.macroLavorazioniToolStripMenuItem.Text = "Macro Lavorazioni";
             // 
             // selezionaToolStripMenuItem
             // 
             this.selezionaToolStripMenuItem.Name = "selezionaToolStripMenuItem";
-            this.selezionaToolStripMenuItem.Size = new System.Drawing.Size(93, 23);
+            this.selezionaToolStripMenuItem.Size = new System.Drawing.Size(77, 23);
             this.selezionaToolStripMenuItem.Text = "Seleziona";
             this.selezionaToolStripMenuItem.Click += new System.EventHandler(this.SelezionaToolStripMenuItem_Click);
+            // 
+            // inserimentoCommessaToolStripMenuItem
+            // 
+            this.inserimentoCommessaToolStripMenuItem.Name = "inserimentoCommessaToolStripMenuItem";
+            this.inserimentoCommessaToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
+            this.inserimentoCommessaToolStripMenuItem.Text = "Inserimento Commessa";
+            this.inserimentoCommessaToolStripMenuItem.Click += new System.EventHandler(this.InserimentoCommessaToolStripMenuItem_Click);
             // 
             // ListaCommesse
             // 
@@ -166,5 +175,6 @@
         private System.Windows.Forms.ToolStripMenuItem pagamentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem macroLavorazioniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selezionaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inserimentoCommessaToolStripMenuItem;
     }
 }
