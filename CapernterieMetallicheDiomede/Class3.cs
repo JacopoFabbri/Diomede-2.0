@@ -251,7 +251,6 @@ namespace Diomede2
             }
         }
     }
-
     public class CommessaAmministrazioneDB
     {
         private readonly MySqlConnection con;
@@ -522,7 +521,6 @@ namespace Diomede2
             }
         }
     }
-
     public class ClienteAmministrazioneDB
     {
         private readonly MySqlConnection con;
@@ -740,7 +738,6 @@ namespace Diomede2
             }
         }
     }
-
     public class ClienteAmministrazione
     {
         public int Id { get; set; }
@@ -755,7 +752,6 @@ namespace Diomede2
 
         public string Sdi { get; set; }
     }
-
     public class CommessaAmministrazione
     {
         public int Id { get; set; }
