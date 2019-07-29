@@ -32,11 +32,8 @@ C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\Carpen
 C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\CarpenterieMetallicheDiomede.pdb
 C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\Google.Protobuf.dll
-C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\MySql.Data.dll
-C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\Renci.SshNet.dll
 C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\Google.Protobuf.xml
 C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\MySql.Data.xml
-C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\Renci.SshNet.xml
 C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.Contatti.resources
 C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.Dashboard.resources
 C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.FiltroBozze.resources
@@ -83,3 +80,5 @@ C:\Users\Ponteggi5\Desktop\JacopoFabbri\Diomede-2.0\CapernterieMetallicheDiomede
 C:\Users\Ponteggi5\Desktop\JacopoFabbri\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CapernterieMetallicheDiomede.csproj.CopyComplete
 C:\Users\Ponteggi5\Desktop\JacopoFabbri\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.exe
 C:\Users\Ponteggi5\Desktop\JacopoFabbri\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.pdb
+C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CapernterieMetallicheDiomede.csprojAssemblyReference.cache
+C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\MySql.Data.dll

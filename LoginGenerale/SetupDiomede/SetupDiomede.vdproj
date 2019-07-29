@@ -15,20 +15,8 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_2338C004537007DE38BC316807A29452"
-        "OwnerKey" = "8:_C38A4D8C075D44469C346CA45C8E5536"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_388EBB84E2C063655C0147291B0AFB8F"
         "OwnerKey" = "8:_8DA4E4C04A827650684D5BFB19664AED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_388EBB84E2C063655C0147291B0AFB8F"
-        "OwnerKey" = "8:_2338C004537007DE38BC316807A29452"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -41,6 +29,12 @@
         {
         "MsmKey" = "8:_8DA4E4C04A827650684D5BFB19664AED"
         "OwnerKey" = "8:_D647E678188B4CDE81845FC1AD13FE95"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8DA4E4C04A827650684D5BFB19664AED"
+        "OwnerKey" = "8:_C38A4D8C075D44469C346CA45C8E5536"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -69,12 +63,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_AB29424BC3D2DF9B6718E4674422B1B0"
-        "OwnerKey" = "8:_2338C004537007DE38BC316807A29452"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_C38A4D8C075D44469C346CA45C8E5536"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -89,12 +77,6 @@
         {
         "MsmKey" = "8:_D50E0AD111EFC1E9D14393C3603279E8"
         "OwnerKey" = "8:_8DA4E4C04A827650684D5BFB19664AED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D50E0AD111EFC1E9D14393C3603279E8"
-        "OwnerKey" = "8:_2338C004537007DE38BC316807A29452"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -143,18 +125,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_C38A4D8C075D44469C346CA45C8E5536"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2338C004537007DE38BC316807A29452"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AB29424BC3D2DF9B6718E4674422B1B0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -264,37 +234,6 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2338C004537007DE38BC316807A29452"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_2338C004537007DE38BC316807A29452"
-                    {
-                    "Name" = "8:MySql.Data.DLL"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:MySql.Data.DLL"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_C718A515FC04460FA0801BDCE4D31CBC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_388EBB84E2C063655C0147291B0AFB8F"
             {
             "AssemblyRegister" = "3:1"
@@ -329,7 +268,7 @@
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4D85C1C3152140AC8551B84A7E6307C4"
             {
             "SourcePath" = "8:Senza titolo-1.bmp"
-            "TargetName" = "8:Senza titolo-1.bmp"
+            "TargetName" = "8:banner.bmp"
             "Tag" = "8:"
             "Folder" = "8:_C718A515FC04460FA0801BDCE4D31CBC"
             "Condition" = "8:"
@@ -415,37 +354,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AB29424BC3D2DF9B6718E4674422B1B0"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_AB29424BC3D2DF9B6718E4674422B1B0"
-                    {
-                    "Name" = "8:Renci.SshNet.DLL"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Renci.SshNet.DLL"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_C718A515FC04460FA0801BDCE4D31CBC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C38A4D8C075D44469C346CA45C8E5536"
@@ -713,7 +621,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Diomede 2.0"
         "ProductCode" = "8:{CCD4A5C7-7E1E-4FCF-99BE-EF6B62ABAD88}"
-        "PackageCode" = "8:{D4F03B45-9EDB-4B30-87FC-B5A7B41AF3F9}"
+        "PackageCode" = "8:{5A9A3761-D10C-47A8-9B67-5193570FD897}"
         "UpgradeCode" = "8:{DC312D70-5E12-4333-911D-CC0058CDA1AA}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
