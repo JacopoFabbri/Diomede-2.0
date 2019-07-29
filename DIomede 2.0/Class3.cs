@@ -222,27 +222,77 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
+        public void InserimentoBozza(int numero, int anno, string settore, string commessa, int cliente,
+    string settoreIntero)
+        {
+            try
+            {
+                var bDB = new PreventivoAmministrazioneDB(conn);
+                bDB.Inserimento(numero, anno, settore, commessa, cliente, settoreIntero);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+
+        public List<PreventivoAmministrazione> FiltraPreventivo(string s, string g)
+        {
+            List<PreventivoAmministrazione> contatto;
+            try
+            {
+                var bDB = new PreventivoAmministrazioneDB(conn);
+                contatto = bDB.FiltroCommessa(s, g);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+
+            return contatto;
+        }
 
         public string GeneraCommessa(string s, ClienteAmministrazione c, string settore, bool bozza)
         {
             try
             {
                 string commessa;
-                var anno = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
-                var lista = FiltraCommessa("ANNO", "" + anno);
-                if (lista.Count > 0)
-                {
-                    InserimentoCommessa(lista[lista.Count - 1].Numero + 1, anno, s,
-                        "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore, bozza);
 
-                    commessa = "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s;
+                if (bozza == false)
+                {
+                    var anno = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
+                    var lista = FiltraCommessa("ANNO", "" + anno);
+                    if (lista.Count > 0)
+                    {
+                        InserimentoCommessa(lista[lista.Count - 1].Numero + 1, anno, s,
+                            "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore, bozza);
+
+                        commessa = "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s;
+                    }
+                    else
+                    {
+                        InserimentoCommessa(1, anno, s, "" + 1 + "/" + anno + "/" + s, c.Id, settore, bozza);
+                        commessa = "" + 1 + "/" + anno + "/" + s;
+                    }
+
                 }
                 else
                 {
-                    InserimentoCommessa(1, anno, s, "" + 1 + "/" + anno + "/" + s, c.Id, settore, bozza);
-                    commessa = "" + 1 + "/" + anno + "/" + s;
-                }
+                    var anno = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
+                    var lista = FiltraPreventivo("ANNO", "" + anno);
+                    if (lista.Count > 0)
+                    {
+                        InserimentoBozza(lista[lista.Count - 1].Numero + 1, anno, s,
+                            "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore);
 
+                        commessa = "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s;
+                    }
+                    else
+                    {
+                        InserimentoBozza(1, anno, s, "" + 1 + "/" + anno + "/" + s, c.Id, settore);
+                        commessa = "" + 1 + "/" + anno + "/" + s;
+                    }
+                }
                 return commessa;
             }
             catch (Exception e)
@@ -251,7 +301,117 @@ namespace Diomede2
             }
         }
     }
+    public class PreventivoAmministrazioneDB
+    {
+        private readonly MySqlConnection con;
 
+        public PreventivoAmministrazioneDB(MySqlConnection conn)
+        {
+            con = conn;
+        }
+
+        public void Inserimento(int numero, int anno, string settore, string commessa, int cliente,
+            string settoreIntero)
+        {
+            try
+            {
+                MySqlCommand command;
+                con.Open();
+                command = new MySqlCommand(
+                    "INSERT INTO `PREVENTIVO`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`) VALUES('" +
+                    numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" +
+                    settoreIntero + "')", con);
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<PreventivoAmministrazione> FiltroCommessa(string s, string g)
+        {
+            var lavorazione = new List<PreventivoAmministrazione>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                var command = new MySqlCommand("SELECT * FROM `PREVENTIVO` WHERE `" + s + "` = '" + g + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    var l = new PreventivoAmministrazione
+                    {
+                        Id = (int)lettore[0],
+                        Numero = (int)lettore[1],
+                        Anno = (int)lettore[2],
+                        Settore = "" + lettore[3],
+                        Commessa = "" + lettore[4],
+                        Cliente = (int)lettore[5],
+                        SettoreIntero = "" + lettore[6]
+                    };
+
+                    lavorazione.Add(l);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return lavorazione;
+        }
+
+        public void AggiornaCommessa(int id, int numero, int anno, string settore, string commessa, int cliente,
+            string settoreIntero)
+        {
+            try
+            {
+                con.Open();
+                var command = new MySqlCommand(
+                    "UPDATE `PREVENTIVO` SET `NUMMERO`='" + numero + "',`ANNO`='" + anno + "',`SETTORE`='" + settore +
+                    "',`COMMESSA`='" + commessa + "',`CLIENTE`='" + cliente + "',`SETTOREINTERO`='" + settoreIntero +
+                    "' WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void RimuoviCommessa(int id)
+        {
+            try
+            {
+                con.Open();
+                var command = new MySqlCommand("DELETE FROM `COMMESSA` WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+    }
     public class CommessaAmministrazioneDB
     {
         private readonly MySqlConnection con;
@@ -268,17 +428,10 @@ namespace Diomede2
             {
                 MySqlCommand command;
                 con.Open();
-                if (bozza)
-                    command = new MySqlCommand(
-                        "INSERT INTO `COMMESSA`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`, `BOZZA`) VALUES('" +
-                        numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" +
-                        settoreIntero + "','" + 1 + "')", con);
-                else
-                    command = new MySqlCommand(
-                        "INSERT INTO `COMMESSA`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`, `BOZZA`) VALUES('" +
-                        numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" +
-                        settoreIntero + "','" + 0 + "')", con);
-
+                command = new MySqlCommand(
+                    "INSERT INTO `COMMESSA`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`) VALUES('" +
+                    numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" +
+                    settoreIntero + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -304,27 +457,27 @@ namespace Diomede2
                 while (lettore.Read())
                 {
                     CommessaAmministrazione lavorazione;
-                    if ((int) lettore[7] == 1)
+                    if ((int)lettore[7] == 1)
                         lavorazione = new CommessaAmministrazione
                         {
-                            Id = (int) lettore[0],
-                            Numero = (int) lettore[1],
-                            Anno = (int) lettore[2],
+                            Id = (int)lettore[0],
+                            Numero = (int)lettore[1],
+                            Anno = (int)lettore[2],
                             Settore = "" + lettore[3],
                             Commessa = "" + lettore[4],
-                            Cliente = (int) lettore[5],
+                            Cliente = (int)lettore[5],
                             SettoreIntero = "" + lettore[6],
                             Bozza = true
                         };
                     else
                         lavorazione = new CommessaAmministrazione
                         {
-                            Id = (int) lettore[0],
-                            Numero = (int) lettore[1],
-                            Anno = (int) lettore[2],
+                            Id = (int)lettore[0],
+                            Numero = (int)lettore[1],
+                            Anno = (int)lettore[2],
                             Settore = "" + lettore[3],
                             Commessa = "" + lettore[4],
-                            Cliente = (int) lettore[5],
+                            Cliente = (int)lettore[5],
                             SettoreIntero = "" + lettore[6],
                             Bozza = false
                         };
@@ -357,27 +510,27 @@ namespace Diomede2
                 while (lettore.Read())
                 {
                     CommessaAmministrazione lavorazione;
-                    if ((int) lettore[7] == 1)
+                    if ((int)lettore[7] == 1)
                         lavorazione = new CommessaAmministrazione
                         {
-                            Id = (int) lettore[0],
-                            Numero = (int) lettore[1],
-                            Anno = (int) lettore[2],
+                            Id = (int)lettore[0],
+                            Numero = (int)lettore[1],
+                            Anno = (int)lettore[2],
                             Settore = "" + lettore[3],
                             Commessa = "" + lettore[4],
-                            Cliente = (int) lettore[5],
+                            Cliente = (int)lettore[5],
                             SettoreIntero = "" + lettore[6],
                             Bozza = true
                         };
                     else
                         lavorazione = new CommessaAmministrazione
                         {
-                            Id = (int) lettore[0],
-                            Numero = (int) lettore[1],
-                            Anno = (int) lettore[2],
+                            Id = (int)lettore[0],
+                            Numero = (int)lettore[1],
+                            Anno = (int)lettore[2],
                             Settore = "" + lettore[3],
                             Commessa = "" + lettore[4],
-                            Cliente = (int) lettore[5],
+                            Cliente = (int)lettore[5],
                             SettoreIntero = "" + lettore[6],
                             Bozza = false
                         };
@@ -410,27 +563,27 @@ namespace Diomede2
                 while (lettore.Read())
                 {
                     CommessaAmministrazione l;
-                    if ((int) lettore[7] == 1)
+                    if ((int)lettore[7] == 1)
                         l = new CommessaAmministrazione
                         {
-                            Id = (int) lettore[0],
-                            Numero = (int) lettore[1],
-                            Anno = (int) lettore[2],
+                            Id = (int)lettore[0],
+                            Numero = (int)lettore[1],
+                            Anno = (int)lettore[2],
                             Settore = "" + lettore[3],
                             Commessa = "" + lettore[4],
-                            Cliente = (int) lettore[5],
+                            Cliente = (int)lettore[5],
                             SettoreIntero = "" + lettore[6],
                             Bozza = true
                         };
                     else
                         l = new CommessaAmministrazione
                         {
-                            Id = (int) lettore[0],
-                            Numero = (int) lettore[1],
-                            Anno = (int) lettore[2],
+                            Id = (int)lettore[0],
+                            Numero = (int)lettore[1],
+                            Anno = (int)lettore[2],
                             Settore = "" + lettore[3],
                             Commessa = "" + lettore[4],
-                            Cliente = (int) lettore[5],
+                            Cliente = (int)lettore[5],
                             SettoreIntero = "" + lettore[6],
                             Bozza = false
                         };
@@ -464,14 +617,13 @@ namespace Diomede2
                 {
                     var l = new CommessaAmministrazione
                     {
-                        Id = (int) lettore[0],
-                        Numero = (int) lettore[1],
-                        Anno = (int) lettore[2],
+                        Id = (int)lettore[0],
+                        Numero = (int)lettore[1],
+                        Anno = (int)lettore[2],
                         Settore = "" + lettore[3],
                         Commessa = "" + lettore[4],
-                        Cliente = (int) lettore[5],
-                        SettoreIntero = "" + lettore[6],
-                        Bozza = (bool) lettore[7]
+                        Cliente = (int)lettore[5],
+                        SettoreIntero = "" + lettore[6]
                     };
 
                     lavorazione.Add(l);
@@ -574,7 +726,7 @@ namespace Diomede2
                 {
                     var lavorazione = new ClienteAmministrazione
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Tel = "" + lettore[2],
                         Email = "" + lettore[3],
@@ -611,7 +763,7 @@ namespace Diomede2
                 {
                     var lavorazione = new ClienteAmministrazione
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Tel = "" + lettore[2],
                         Email = "" + lettore[3],
@@ -648,7 +800,7 @@ namespace Diomede2
                 {
                     var l = new ClienteAmministrazione
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Tel = "" + lettore[2],
                         Email = "" + lettore[3],
@@ -685,7 +837,7 @@ namespace Diomede2
                 {
                     var l = new ClienteAmministrazione
                     {
-                        Id = (int) lettore[0],
+                        Id = (int)lettore[0],
                         Nome = "" + lettore[1],
                         Tel = "" + lettore[2],
                         Email = "" + lettore[3],
@@ -781,4 +933,23 @@ namespace Diomede2
 
         public bool Bozza { get; set; }
     }
+    public class PreventivoAmministrazione
+    {
+        public int Id { get; set; }
+
+        public int Numero { get; set; }
+
+        public int Anno { get; set; }
+
+        public string Settore { get; set; }
+
+        public string Commessa { get; set; }
+
+        public int Cliente { get; set; }
+
+        public string SettoreIntero { get; set; }
+
+    }
+
 }
+

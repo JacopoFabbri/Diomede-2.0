@@ -7,7 +7,6 @@ namespace Diomede2
     public partial class InserisciPacchetto : Form
     {
         private readonly string db;
-        private List<TipologiaMacroLavorazione> lista;
         private readonly OperazionePraticheEdili op;
 
         public InserisciPacchetto(string dBName)
@@ -19,9 +18,7 @@ namespace Diomede2
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            op.InserimentoTipologiaMacrolavorazione(textBox1.Text, textBox2.Text);
-            lista = op.CercaTipologiaMacroLavorazione();
-            op.InserimentoPacchetto(textBox1.Text, textBox2.Text, lista[lista.Count - 1].Id);
+            op.InserimentoPacchetto(textBox1.Text, textBox2.Text);
 
 
             MessageBox.Show("Pacchetto Inserito", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);

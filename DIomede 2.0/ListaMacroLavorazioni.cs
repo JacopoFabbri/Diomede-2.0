@@ -44,7 +44,7 @@ namespace Diomede2
                     dataGridView1.Columns[0].Visible = false;
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();
@@ -60,8 +60,7 @@ namespace Diomede2
                         {
                             op.UpdateMacroLavorazione((int) riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "",
                                 (DateTime) riga.Cells["DATAINIZIO"].Value, (DateTime) riga.Cells["DATAFINE"].Value,
-                                (double) riga.Cells["PREZZO"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "",
-                                (int) riga.Cells["TIPOLOGIA"].Value, riga.Cells["DESC"].Value + "");
+                                (double) riga.Cells["PREZZO"].Value, riga.Cells["NUMEROCOMMESSA"].Value + "", riga.Cells["DESC"].Value + "");
                         }
                         catch
                         {

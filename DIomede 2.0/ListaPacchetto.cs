@@ -51,7 +51,7 @@ namespace Diomede2
                     dataGridView1.DataSource = op.CercaPacchetto();
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();
@@ -66,7 +66,7 @@ namespace Diomede2
                         try
                         {
                             op.UpdatePacchetto((int) riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "",
-                                riga.Cells["NOTE"].Value + "", (int) riga.Cells["TIPOLOGIAMACRO"].Value);
+                                riga.Cells["NOTE"].Value + "");
                         }
                         catch
                         {

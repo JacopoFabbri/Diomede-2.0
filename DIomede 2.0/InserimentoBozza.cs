@@ -26,8 +26,14 @@ namespace Diomede2
 
         private void TextBox2_Click(object sender, EventArgs e)
         {
-            var lp = new ListaPacchetto(db, this, textBox2);
-            lp.Show();
+            try
+            {
+                var lp = new ListaPacchetto(db, this, textBox2);
+                lp.Show();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void InserimentoBozza_FormClosing(object sender, FormClosingEventArgs e)
@@ -62,7 +68,7 @@ namespace Diomede2
                 MessageBox.Show("Bozza Inserita", "Inserita:", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati");
             }
@@ -73,6 +79,11 @@ namespace Diomede2
             op = new OperazionePraticheEdili(db);
             lista = op.CercaClienti();
             foreach (var c in lista) comboBox1.Items.Add(c.Nome);
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -89,26 +89,6 @@ namespace Diomede2
             var iP = new InserisciPacchetto(settore);
             iP.Show();
         }
-        private void ListaLavorazioniToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var frm = new ListaTipoogiaLavorazioni(settore);
-            frm.Show();
-        }
-        private void InserisciLavorazioniToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var iL = new InserisciTipologiaLavorazione(settore);
-            iL.Show();
-        }
-        private void ListaMacroLavorazioniToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var frm = new TipologieMacrolavorazioni(settore);
-            frm.Show();
-        }
-        private void InserisciMacroLavorazioniToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var frm = new InserimentoTipologiaMacrolavorazione(settore);
-            frm.Show();
-        }
        private void ListaContattiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new Contatti(null, settore, this);
@@ -161,5 +141,6 @@ namespace Diomede2
             var s = new Secret();
             s.Show();
         }
+
     }
 }

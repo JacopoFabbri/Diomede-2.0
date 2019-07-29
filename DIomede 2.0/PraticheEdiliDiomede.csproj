@@ -121,12 +121,6 @@
     <Compile Include="InserimentoPagamento.Designer.cs">
       <DependentUpon>InserimentoPagamento.cs</DependentUpon>
     </Compile>
-    <Compile Include="InserimentoTipologiaMacrolavorazione.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InserimentoTipologiaMacrolavorazione.Designer.cs">
-      <DependentUpon>InserimentoTipologiaMacrolavorazione.cs</DependentUpon>
-    </Compile>
     <Compile Include="InserimentoUtente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,12 +138,6 @@
     </Compile>
     <Compile Include="InserisciPacchetto.Designer.cs">
       <DependentUpon>InserisciPacchetto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InserisciTipologiaLavorazione.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InserisciTipologiaLavorazione.Designer.cs">
-      <DependentUpon>InserisciTipologiaLavorazione.cs</DependentUpon>
     </Compile>
     <Compile Include="ListaBozze.cs">
       <SubType>Form</SubType>
@@ -192,12 +180,6 @@
     </Compile>
     <Compile Include="ListaPagamenti.Designer.cs">
       <DependentUpon>ListaPagamenti.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListaTipoogiaLavorazioni.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListaTipoogiaLavorazioni.Designer.cs">
-      <DependentUpon>ListaTipoogiaLavorazioni.cs</DependentUpon>
     </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
@@ -266,12 +248,6 @@
     <Compile Include="Secret.Designer.cs">
       <DependentUpon>Secret.cs</DependentUpon>
     </Compile>
-    <Compile Include="TipologieMacrolavorazioni.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TipologieMacrolavorazioni.Designer.cs">
-      <DependentUpon>TipologieMacrolavorazioni.cs</DependentUpon>
-    </Compile>
     <Compile Include="visualizzatore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,9 +293,6 @@
     <EmbeddedResource Include="InserimentoPagamento.resx">
       <DependentUpon>InserimentoPagamento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InserimentoTipologiaMacrolavorazione.resx">
-      <DependentUpon>InserimentoTipologiaMacrolavorazione.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="InserimentoUtente.resx">
       <DependentUpon>InserimentoUtente.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,9 +301,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InserisciPacchetto.resx">
       <DependentUpon>InserisciPacchetto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InserisciTipologiaLavorazione.resx">
-      <DependentUpon>InserisciTipologiaLavorazione.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaBozze.resx">
       <DependentUpon>ListaBozze.cs</DependentUpon>
@@ -352,9 +322,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaPagamenti.resx">
       <DependentUpon>ListaPagamenti.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListaTipoogiaLavorazioni.resx">
-      <DependentUpon>ListaTipoogiaLavorazioni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -390,9 +357,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Secret.resx">
       <DependentUpon>Secret.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TipologieMacrolavorazioni.resx">
-      <DependentUpon>TipologieMacrolavorazioni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="visualizzatore.resx">
       <DependentUpon>visualizzatore.cs</DependentUpon>

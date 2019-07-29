@@ -138,7 +138,7 @@ namespace Diomede2
                                 }
                             }
                         }
-                        catch
+                        catch 
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);

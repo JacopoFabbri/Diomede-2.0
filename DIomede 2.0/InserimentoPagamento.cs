@@ -8,7 +8,6 @@ namespace Diomede2
     {
         private readonly string db;
         private readonly int idB;
-        private List<TipologiaMacroLavorazione> lista;
         private OperazionePraticheEdili op;
 
         public InserimentoPagamento(string dbName, int idCommessa)
@@ -28,7 +27,6 @@ namespace Diomede2
                 textBox6.Text = idB + "";
             }
 
-            lista = op.CercaTipologiaMacroLavorazione();
         }
 
         private void Button1_Click(object sender, EventArgs e)

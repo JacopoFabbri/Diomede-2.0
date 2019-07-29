@@ -7,7 +7,6 @@ namespace Diomede2
     public partial class VisualizzatoreMacrolavorazioni : Form
     {
         private readonly DataGridView data;
-        private List<TipologiaMacroLavorazione> lista;
         private readonly OperazionePraticheEdili op;
         private readonly int riga;
 
@@ -23,7 +22,6 @@ namespace Diomede2
         {
             if (listView1.SelectedItems.Count > 0)
             {
-                data.Rows[riga].Cells[5].Value = lista[listView1.SelectedItems[0].Index].Id;
                 Close();
             }
             else
@@ -34,10 +32,6 @@ namespace Diomede2
 
         private void VisualizzatoreMacrolavorazioni_Load(object sender, EventArgs e)
         {
-            lista = op.CercaTipologiaMacroLavorazione();
-            if (lista.Count > 0)
-                foreach (var t in lista)
-                    listView1.Items.Add(t.Nome);
         }
 
         private void Visualizzatore_KeyDown(object sender, KeyEventArgs e)
