@@ -124,7 +124,6 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-
         public List<Contatto> CercaContatti()
         {
             List<Contatto> lista;
@@ -439,6 +438,18 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
+        public void InserimentoCommessa(int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note)
+        {
+            try
+            {
+                var bDB = new CommessaDB(conn);
+                bDB.Inserimento(ditta, numerocommessa, data, referente, indirizzoCantiere, tecnico, note);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
         public List<Commessa> CercaCommessa()
         {
             List<Commessa> lista;
@@ -731,7 +742,6 @@ namespace Diomede2
             }
         }
     }
-
     public class ClienteDB
     {
         private readonly MySqlConnection con;
@@ -955,7 +965,6 @@ namespace Diomede2
             }
         }
     }
-
     public class ContattoDB
     {
         private readonly MySqlConnection con;
@@ -1189,7 +1198,6 @@ namespace Diomede2
             }
         }
     }
-
     public class RuoloDB
     {
         private readonly MySqlConnection con;
@@ -1382,7 +1390,6 @@ namespace Diomede2
             }
         }
     }
-
     public class BozzaDB
     {
         private readonly MySqlConnection con;
@@ -1635,7 +1642,6 @@ namespace Diomede2
             }
         }
     }
-
     public class CommessaDB
     {
         private readonly MySqlConnection con;
@@ -1685,6 +1691,26 @@ namespace Diomede2
                 con.Close();
             }
         }
+        public void Inserimento(int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note)
+        {
+            try
+            {
+                con.Open();
+                var command = new MySqlCommand(
+                    "INSERT INTO `COMMESSA`(`DITTA`, `NUMEROCOMMESSA`, `DATA`, `REFERENTE`, `INDIRIZZOCANTIERE`, `TECNICOINTERNO`, `NOTE`) VALUES('" +
+                    ditta + "','" + numerocommessa + "','" + data.ToString("yyyy/MM/dd") + "','" + referente + "','" + indirizzoCantiere + "','" + tecnico + "','" + note + "')", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         public List<Commessa> ListaCommesse()
         {
             DateTime dateValue;
@@ -1706,22 +1732,24 @@ namespace Diomede2
                         DateTime.TryParse(lettore[9] + "", out dataValue2);
                         DateTime.TryParse(lettore[10] + "", out dataValue3);
                         DateTime.TryParse(lettore[12] + "", out dataValue4);
-                        var c = new Commessa
+                        var c = new Commessa();
+
+                        c.Id = (int)lettore[0];
+                        c.Ditta = (int)lettore[1];
+                        c.NumeroCommessa = "" + lettore[2];
+                        c.Data = dateValue;
+                        c.Referente = "" + lettore[4];
+                        c.IndirizzoCantiere = "" + lettore[5];
+                        c.TecnicoInterno = "" + lettore[6];
+                        c.Note = "" + lettore[7];
+                        if (lettore[8].ToString().Equals("NULL"))
                         {
-                            Id = (int)lettore[0],
-                            Ditta = (int)lettore[1],
-                            NumeroCommessa = "" + lettore[2],
-                            Data = dateValue,
-                            Referente = "" + lettore[4],
-                            IndirizzoCantiere = "" + lettore[5],
-                            TecnicoInterno = "" + lettore[6],
-                            Note = "" + lettore[7],
-                            Bozza = (int)lettore[8],
-                            DataEsecuzione = dataValue2,
-                            DataRichestaConsegna = dataValue3,
-                            Invio = "" + lettore [11],
-                            DataOraInvio = dataValue4
-                        };
+                            c.Bozza = (int)lettore[8];
+                        }
+                        c.DataEsecuzione = dataValue2;
+                        c.DataRichestaConsegna = dataValue3;
+                        c.Invio = "" + lettore[11];
+                        c.DataOraInvio = dataValue4;
                         lista.Add(c);
                     }
             }
@@ -1777,7 +1805,7 @@ namespace Diomede2
                         };
                         lista.Add(c);
                     }
-                    
+
             }
             catch (Exception ex)
             {
@@ -1968,7 +1996,6 @@ namespace Diomede2
             }
         }
     }
-
     public class LavorazioneDB
     {
         private readonly MySqlConnection con;
@@ -2191,7 +2218,6 @@ namespace Diomede2
             }
         }
     }
-
     public class PagamentoDB
     {
         private readonly MySqlConnection con;
@@ -2437,7 +2463,6 @@ namespace Diomede2
             }
         }
     }
-
     public class Cliente
     {
         public int Id { get; set; }
@@ -2460,7 +2485,6 @@ namespace Diomede2
 
         public string Sdi { get; set; }
     }
-
     public class Contatto
     {
         public int Id { get; set; }
@@ -2487,7 +2511,6 @@ namespace Diomede2
 
         public int Ruolo { get; set; }
     }
-
     public class Ruolo
     {
         public int Id { get; set; }
@@ -2496,7 +2519,6 @@ namespace Diomede2
 
         public string Desc { get; set; }
     }
-
     public class Bozza
     {
         public int Id { get; set; }
@@ -2557,7 +2579,6 @@ namespace Diomede2
 
         public double Importo { get; set; }
     }
-
     public class Lavorazioni
     {
         public int Id { get; set; }

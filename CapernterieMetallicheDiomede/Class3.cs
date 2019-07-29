@@ -16,12 +16,12 @@ namespace Diomede2
 
 
         public void InserimentoCommessa(int numero, int anno, string settore, string commessa, int cliente,
-            string settoreIntero, bool bozza)
+            string settoreIntero)
         {
             try
             {
                 var bDB = new CommessaAmministrazioneDB(conn);
-                bDB.Inserimento(numero, anno, settore, commessa, cliente, settoreIntero, bozza);
+                bDB.Inserimento(numero, anno, settore, commessa, cliente, settoreIntero);
             }
             catch (Exception e)
             {
@@ -233,13 +233,13 @@ namespace Diomede2
                 if (lista.Count > 0)
                 {
                     InserimentoCommessa(lista[lista.Count - 1].Numero + 1, anno, s,
-                        "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore, bozza);
+                        "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore);
 
                     commessa = "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s;
                 }
                 else
                 {
-                    InserimentoCommessa(1, anno, s, "" + 1 + "/" + anno + "/" + s, c.Id, settore, bozza);
+                    InserimentoCommessa(1, anno, s, "" + 1 + "/" + anno + "/" + s, c.Id, settore);
                     commessa = "" + 1 + "/" + anno + "/" + s;
                 }
 
@@ -262,22 +262,16 @@ namespace Diomede2
         }
 
         public void Inserimento(int numero, int anno, string settore, string commessa, int cliente,
-            string settoreIntero, bool bozza)
+            string settoreIntero)
         {
             try
             {
                 MySqlCommand command;
                 con.Open();
-                if (bozza)
                     command = new MySqlCommand(
-                        "INSERT INTO `COMMESSA`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`, `BOZZA`) VALUES('" +
+                        "INSERT INTO `COMMESSA`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`) VALUES('" +
                         numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" +
-                        settoreIntero + "','" + 1 + "')", con);
-                else
-                    command = new MySqlCommand(
-                        "INSERT INTO `COMMESSA`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`, `BOZZA`) VALUES('" +
-                        numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" +
-                        settoreIntero + "','" + 0 + "')", con);
+                        settoreIntero + "')", con);
 
                 command.ExecuteNonQuery();
             }
@@ -470,8 +464,7 @@ namespace Diomede2
                         Settore = "" + lettore[3],
                         Commessa = "" + lettore[4],
                         Cliente = (int) lettore[5],
-                        SettoreIntero = "" + lettore[6],
-                        Bozza = (bool) lettore[7]
+                        SettoreIntero = "" + lettore[6]
                     };
 
                     lavorazione.Add(l);
