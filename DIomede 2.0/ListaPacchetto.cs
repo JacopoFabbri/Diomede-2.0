@@ -51,7 +51,7 @@ namespace Diomede2
                     dataGridView1.DataSource = op.CercaPacchetto();
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();
