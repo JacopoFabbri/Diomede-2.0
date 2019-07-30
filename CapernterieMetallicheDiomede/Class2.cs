@@ -741,12 +741,12 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        public void InserimentoAcconti(double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura)
+        public void InserimentoAcconti(double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura, int commessa)
         {
             try
             {
                 var bDB = new AccontiDB(conn);
-                bDB.Inserimento(importo, note, desc, dataInserimento, dataFattura, noteFattura);
+                bDB.Inserimento(importo, note, desc, dataInserimento, dataFattura, noteFattura, commessa);
             }
             catch (Exception e)
             {
@@ -813,12 +813,12 @@ namespace Diomede2
 
             return contatto;
         }
-        public void UpdateAcconti(int id, double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura)
+        public void UpdateAcconti(int id, double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura, int commessa)
         {
             try
             {
                 var bDB = new AccontiDB(conn);
-                bDB.AggiornaOperazione(id, importo, note, desc, dataInserimento, dataFattura, noteFattura);
+                bDB.AggiornaOperazione(id, importo, note, desc, dataInserimento, dataFattura, noteFattura, commessa);
             }
             catch (Exception e)
             {
@@ -1929,7 +1929,7 @@ namespace Diomede2
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
-                    if (!(lettore[3] + "").Equals(""))
+                    if (!(lettore[3] + "").Equals("") && lettore[8].ToString().Equals("0"))
                     {
                         DateTime.TryParse(lettore[3] + "", out dateValue);
                         DateTime.TryParse(lettore[9] + "", out dataValue2);
@@ -1946,6 +1946,29 @@ namespace Diomede2
                             TecnicoInterno = "" + lettore[6],
                             Note = "" + lettore[7],
                             Bozza = (int)lettore[8],
+                            DataEsecuzione = dataValue2,
+                            DataRichestaConsegna = dataValue3,
+                            Invio = "" + lettore[11],
+                            DataOraInvio = dataValue4
+                        };
+                        commessa = c;
+                    }
+                    else
+                    {
+                        DateTime.TryParse(lettore[3] + "", out dateValue);
+                        DateTime.TryParse(lettore[9] + "", out dataValue2);
+                        DateTime.TryParse(lettore[10] + "", out dataValue3);
+                        DateTime.TryParse(lettore[12] + "", out dataValue4);
+                        var c = new Commessa
+                        {
+                            Id = (int)lettore[0],
+                            Ditta = (int)lettore[1],
+                            NumeroCommessa = "" + lettore[2],
+                            Data = dateValue,
+                            Referente = "" + lettore[4],
+                            IndirizzoCantiere = "" + lettore[5],
+                            TecnicoInterno = "" + lettore[6],
+                            Note = "" + lettore[7],
                             DataEsecuzione = dataValue2,
                             DataRichestaConsegna = dataValue3,
                             Invio = "" + lettore[11],
@@ -2549,16 +2572,16 @@ namespace Diomede2
         {
             con = conn;
         }
-        public void Inserimento(double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura)
+        public void Inserimento(double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura, int commessa)
         {
             try
             {
                 con.Open();
                 var command = new MySqlCommand(
-                    "INSERT INTO `ACCONTI`(`IMPORTO`, `NOTE`, `DESC`, `DATAINSERIMENTO`, `DATAFATTURA`, `NOTEFATTURA`) VALUES (" +
+                    "INSERT INTO `ACCONTI`(`IMPORTO`, `NOTE`, `DESC`, `DATAINSERIMENTO`, `DATAFATTURA`, `NOTEFATTURA`, `COMMESSA`) VALUES (" +
                     importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" +
                     note + "','" + desc + "','" + dataInserimento.ToString("yyyy/MM/dd") + "','" +
-                    dataFattura.ToString("yyyy/MM/dd") + "','" + noteFattura + "')", con);
+                    dataFattura.ToString("yyyy/MM/dd") + "','" + noteFattura + "','" + commessa + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -2593,7 +2616,8 @@ namespace Diomede2
                         Desc = "" + lettore[3],
                         DataInserimento = dataInserimento,
                         DataFattura = dataFattura,
-                        NoteFattura = "" + lettore[6]
+                        NoteFattura = "" + lettore[6],
+                        Commessa = (int)lettore[7]
 
                     };
 
@@ -2634,8 +2658,8 @@ namespace Diomede2
                         Desc = "" + lettore[3],
                         DataInserimento = dataInserimento,
                         DataFattura = dataFattura,
-                        NoteFattura = "" + lettore[6]
-
+                        NoteFattura = "" + lettore[6],
+                        Commessa = (int)lettore[7]
                     };
 
                     lista.Add(lavorazione);
@@ -2675,7 +2699,8 @@ namespace Diomede2
                         Desc = "" + lettore[3],
                         DataInserimento = dataInserimento,
                         DataFattura = dataFattura,
-                        NoteFattura = "" + lettore[6]
+                        NoteFattura = "" + lettore[6],
+                        Commessa = (int)lettore[7]
 
                     };
 
@@ -2716,7 +2741,8 @@ namespace Diomede2
                         Desc = "" + lettore[3],
                         DataInserimento = dataInserimento,
                         DataFattura = dataFattura,
-                        NoteFattura = "" + lettore[6]
+                        NoteFattura = "" + lettore[6],
+                        Commessa = (int)lettore[7]
 
                     };
 
@@ -2734,7 +2760,7 @@ namespace Diomede2
 
             return lavorazione;
         }
-        public void AggiornaOperazione(int id, double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura)
+        public void AggiornaOperazione(int id, double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura, int commessa)
         {
             try
             {
@@ -2743,7 +2769,8 @@ namespace Diomede2
                     "UPDATE `ACCONTI` SET `IMPORTO`='" + importo + "',`NOTE`='" + note +
                     "',`DESC`='" + desc + "',`DATAINSERIMENTO`='" + dataInserimento +
                     "',`DATAFATTURA`='" + dataFattura + "',`NOTEFATTURA`='" +
-                    noteFattura + "' WHERE `ID` = '" + id + "')", con);
+                    noteFattura + "',`COMMESSA`='" +
+                    commessa + "' WHERE `ID` = '" + id + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -2776,90 +2803,57 @@ namespace Diomede2
     public class Cliente
     {
         public int Id { get; set; }
-
         public string Nome { get; set; }
-
         public string Indirizzo { get; set; }
-
         public string Cap { get; set; }
-
         public string Citta { get; set; }
-
         public string Email { get; set; }
-
         public string Iva { get; set; }
-
         public string Tel { get; set; }
-
         public string Pec { get; set; }
-
         public string Sdi { get; set; }
     }
     public class Contatto
     {
         public int Id { get; set; }
-
         public string Nome { get; set; }
-
         public string Indirizzo { get; set; }
-
         public string Cap { get; set; }
-
         public string Citta { get; set; }
-
         public string Pec { get; set; }
-
         public string Email { get; set; }
-
         public string Iva { get; set; }
-
         public int Ditta { get; set; }
-
         public string Cellulare { get; set; }
-
         public string Tel { get; set; }
-
         public int Ruolo { get; set; }
     }
     public class Ruolo
     {
         public int Id { get; set; }
-
         public string Nome { get; set; }
-
         public string Desc { get; set; }
     }
     public class Bozza
     {
         public int Id { get; set; }
-
         public DateTime Data { get; set; }
-
         public double Importo { get; set; }
-
         public string FaseProgetto { get; set; }
-
         public string IdentificativoPreventivo { get; set; }
-
         public int Cliente { get; set; }
-
         public bool Accettazione { get; set; }
     }
     public class Commessa
     {
         public int Id { get; set; }
-
         public int Ditta { get; set; }
-
         public string NumeroCommessa { get; set; }
-
         public DateTime Data { get; set; }
-
         public string Referente { get; set; }
         public string IndirizzoCantiere { get; set; }
         public string TecnicoInterno { get; set; }
         public string Note { get; set; }
-
         public int Bozza { get; set; }
         public DateTime DataEsecuzione { get; set; }
         public DateTime DataRichestaConsegna { get; set; }
@@ -2872,21 +2866,13 @@ namespace Diomede2
     public class Pagamento
     {
         public int Id { get; set; }
-
         public string NumeroCommessa { get; set; }
-
         public string Note { get; set; }
-
         public string Fattura { get; set; }
-
         public DateTime DataFattura { get; set; }
-
         public DateTime Data { get; set; }
-
         public int Cliente { get; set; }
-
         public int Commessa { get; set; }
-
         public double Importo { get; set; }
     }
     public class Lavorazioni
@@ -2908,6 +2894,7 @@ namespace Diomede2
         public DateTime DataInserimento { get; set; }
         public DateTime DataFattura { get; set; }
         public String NoteFattura { get; set; }
+        public int Commessa { get; set; }
 
     }
 }
