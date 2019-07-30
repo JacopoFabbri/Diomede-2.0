@@ -114,7 +114,7 @@ namespace Diomede2
                     if (riga.Cells[0].Value != null)
                         if (riga.Cells[0].Style.ForeColor == Color.Red)
 
-                            op.UpdateAcconti((int)riga.Cells["ID"].Value, (double)riga.Cells["IMPORTO"].Value, riga.Cells["NOTE"].Value + "",
+                            op.UpdateAcconti((int)riga.Cells["ID"].Value, "" + riga.Cells["NOME"].Value, (double)riga.Cells["IMPORTO"].Value, riga.Cells["NOTE"].Value + "",
                                 riga.Cells["DESC"].Value + "", (DateTime)riga.Cells["DATAINSERIMENTO"].Value,
                                 (DateTime)riga.Cells["DATAFATTURA"].Value, riga.Cells["NOTEFATTURA"].Value + "",
                                 (int)riga.Cells["COMMESSA"].Value);

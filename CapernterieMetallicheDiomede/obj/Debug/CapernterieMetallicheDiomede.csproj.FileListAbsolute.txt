@@ -82,3 +82,4 @@ C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Ca
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.exe
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.pdb
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\MySql.Data.dll
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.InserisciAcconto.resources

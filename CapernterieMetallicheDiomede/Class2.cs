@@ -813,12 +813,12 @@ namespace Diomede2
 
             return contatto;
         }
-        public void UpdateAcconti(int id, double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura, int commessa)
+        public void UpdateAcconti(int id, String nome, double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura, int commessa)
         {
             try
             {
                 var bDB = new AccontiDB(conn);
-                bDB.AggiornaOperazione(id, importo, note, desc, dataInserimento, dataFattura, noteFattura, commessa);
+                bDB.AggiornaOperazione(id, nome, importo, note, desc, dataInserimento, dataFattura, noteFattura, commessa);
             }
             catch (Exception e)
             {
