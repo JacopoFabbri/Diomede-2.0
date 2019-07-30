@@ -14,7 +14,6 @@ namespace CarpenterieMetallicheDiomede
     public partial class InserisciAcconto : Form
     {
         private readonly string db;
-        private readonly ListaBozze formPrecedente;
         private int id;
         private OperazionePraticheEdili op;
         public InserisciAcconto(string dbName, int idCommessa)
@@ -22,10 +21,6 @@ namespace CarpenterieMetallicheDiomede
             id = idCommessa;
             db = dbName;
             InitializeComponent();
-        }
-        private void InserisciAcconto_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (formPrecedente != null) formPrecedente.Show();
         }
         private void Button1_Click(object sender, EventArgs e)
         {

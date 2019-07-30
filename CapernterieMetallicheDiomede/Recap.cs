@@ -177,6 +177,6 @@ namespace Diomede2
 
             dataGridView1.DataSource = op.FiltraLavorazioni("COMMESSA", "" + idCommessa);
             dataGridView1.Columns[0].Visible = false;
-        }
+        }  
     }
 }
