@@ -22,7 +22,6 @@ namespace Diomede2
             op = new OperazionePraticheEdili("Ponteggi");
             InitializeComponent();
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
 
@@ -36,7 +35,6 @@ namespace Diomede2
                 MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
             }
         }
-
         private void InserimentoLavorazione_Load(object sender, EventArgs e)
         {
              try
