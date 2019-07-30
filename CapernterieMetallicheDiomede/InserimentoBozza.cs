@@ -10,26 +10,21 @@ namespace Diomede2
         private readonly ListaBozze formPrecedente;
         private List<Cliente> lista = new List<Cliente>();
         private OperazionePraticheEdili op;
-
         public InserimentoBozza(string dbName, ListaBozze lb)
         {
             formPrecedente = lb;
             db = dbName;
             InitializeComponent();
         }
-
         public InserimentoBozza(string dbName)
         {
             db = dbName;
             InitializeComponent();
         }
-
-
         private void InserimentoBozza_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (formPrecedente != null) formPrecedente.Show();
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             try
@@ -70,7 +65,6 @@ namespace Diomede2
                 MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati");
             }
         }
-
         private void InserimentoBozza_Load(object sender, EventArgs e)
         {
             op = new OperazionePraticheEdili(db);
@@ -83,7 +77,6 @@ namespace Diomede2
                 comboBox3.Items.Add(i + "");
             }
         }
-
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox2.SelectedItem.ToString().Equals("Agg-"))

@@ -39,7 +39,7 @@ namespace Diomede2
 
         private void InserimentoLavorazione_Load(object sender, EventArgs e)
         {
-            try
+             try
             {
                 c = op.CercaCommessa(id);
                 textBox4.Text = c.NumeroCommessa;
