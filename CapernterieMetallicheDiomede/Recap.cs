@@ -15,6 +15,7 @@ namespace Diomede2
         int idCommessa;
         OperazionePraticheEdili op;
         Commessa commessa;
+        List<Cliente> listaCLienti;
         public Recap(String dbName, int id)
         {
             db = dbName;
@@ -28,7 +29,8 @@ namespace Diomede2
                 op = new OperazionePraticheEdili(db);
                 commessa = op.CercaCommessa(idCommessa);
                 textBox1.Text = "" + commessa.NumeroCommessa;
-                textBox2.Text = op.CercaClientiId(commessa.Ditta).Nome;
+                listaCLienti = op.CercaClienti();
+                foreach (Cliente c in listaCLienti) comboBox1.Items.Add(c.Nome);
                 textBox5.Text = "" + op.CercaBozzaId(commessa.Bozza).Importo;
                 List<Lavorazioni> listaLavorazione = op.FiltraLavorazioni("COMMESSA", "" + idCommessa);
                 dataGridView1.DataSource = listaLavorazione;
@@ -40,7 +42,6 @@ namespace Diomede2
                 MessageBox.Show("ciao");
             }
         }
-
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
@@ -48,32 +49,6 @@ namespace Diomede2
                 cella.Style.ForeColor = Color.Red;
             }
         }
-        private void Button3_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                op.UpdateCommessa(commessa.Id, textBox6.Text);
-                op.UpdateBozza(commessa.Bozza, Convert.ToDouble(textBox5.Text));
-                Cliente c = op.CercaClientiId(commessa.Ditta);
-                op.UpdateCliente(c.Id, textBox2.Text, c.Indirizzo, c.Cap, c.Citta, c.Pec, c.Email, c.Iva, c.Tel, c.Sdi);
-            }
-            catch
-            {
-                MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void Button6_Click(object sender, EventArgs e)
-        {
-            InserimentoPagamento p = new InserimentoPagamento(db, commessa.Id);
-            p.Show();
-        }
-
-        private void Button4_Click(object sender, EventArgs e)
-        {
-            InserimentoLavorazione l = new InserimentoLavorazione(idCommessa);
-            l.Show();
-        }
-
         private void Button1_Click(object sender, EventArgs e)
         {
 
@@ -87,6 +62,29 @@ namespace Diomede2
             {
                 MessageBox.Show("ciao");
             }
+        }
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                op.UpdateCommessa(commessa.Id, textBox6.Text, listaCLienti[comboBox1.SelectedIndex].Id);
+                op.UpdateBozza(commessa.Bozza, Convert.ToDouble(textBox5.Text));
+                
+            }
+            catch
+            {
+                MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            InserimentoLavorazione l = new InserimentoLavorazione(idCommessa);
+            l.Show();
+        }
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            InserimentoPagamento p = new InserimentoPagamento(db, commessa.Id);
+            p.Show();
         }
     }
 }

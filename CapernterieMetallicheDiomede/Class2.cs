@@ -522,12 +522,12 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        public void UpdateCommessa(int id, string note)
+        public void UpdateCommessa(int id, string note, int ditta)
         {
             try
             {
                 var bDB = new CommessaDB(conn);
-                bDB.AggiornaCommesse(id, note);
+                bDB.AggiornaCommesse(id, note, ditta);
             }
             catch (Exception e)
             {
@@ -1960,12 +1960,12 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public void AggiornaCommesse(int id, string note)
+        public void AggiornaCommesse(int id, string note, int ditta)
         {
             try
             {
                 con.Open();
-                var command = new MySqlCommand("UPDATE `COMMESSA` SET `NOTE`='" + note + "' WHERE `ID` = '" + id + "'",
+                var command = new MySqlCommand("UPDATE `COMMESSA` SET `NOTE`='" + note +"',`DITTA`= '" + ditta + "' WHERE `ID` = '" + id + "'",
                     con);
                 command.ExecuteNonQuery();
             }
