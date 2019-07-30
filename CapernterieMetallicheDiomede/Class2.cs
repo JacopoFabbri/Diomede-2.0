@@ -741,12 +741,12 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        public void InserimentoAcconti(double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura, int commessa)
+        public void InserimentoAcconti(String nome, double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura, int commessa)
         {
             try
             {
                 var bDB = new AccontiDB(conn);
-                bDB.Inserimento(importo, note, desc, dataInserimento, dataFattura, noteFattura, commessa);
+                bDB.Inserimento(nome, importo, note, desc, dataInserimento, dataFattura, noteFattura, commessa);
             }
             catch (Exception e)
             {
@@ -2572,13 +2572,13 @@ namespace Diomede2
         {
             con = conn;
         }
-        public void Inserimento(double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura, int commessa)
+        public void Inserimento(String nome, double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura, int commessa)
         {
             try
             {
                 con.Open();
                 var command = new MySqlCommand(
-                    "INSERT INTO `ACCONTI`(`IMPORTO`, `NOTE`, `DESC`, `DATAINSERIMENTO`, `DATAFATTURA`, `NOTEFATTURA`, `COMMESSA`) VALUES (" +
+                    "INSERT INTO `ACCONTI`(`NOME`,`IMPORTO`, `NOTE`, `DESC`, `DATAINSERIMENTO`, `DATAFATTURA`, `NOTEFATTURA`, `COMMESSA`) VALUES ('" + nome + "','" +
                     importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" +
                     note + "','" + desc + "','" + dataInserimento.ToString("yyyy/MM/dd") + "','" +
                     dataFattura.ToString("yyyy/MM/dd") + "','" + noteFattura + "','" + commessa + "')", con);
@@ -2760,13 +2760,13 @@ namespace Diomede2
 
             return lavorazione;
         }
-        public void AggiornaOperazione(int id, double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura, int commessa)
+        public void AggiornaOperazione(int id, String nome, double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura, int commessa)
         {
             try
             {
                 con.Open();
                 var command = new MySqlCommand(
-                    "UPDATE `ACCONTI` SET `IMPORTO`='" + importo + "',`NOTE`='" + note +
+                    "UPDATE `ACCONTI` SET `NOME`='" + nome + "',`IMPORTO`='" + importo + "',`NOTE`='" + note +
                     "',`DESC`='" + desc + "',`DATAINSERIMENTO`='" + dataInserimento +
                     "',`DATAFATTURA`='" + dataFattura + "',`NOTEFATTURA`='" +
                     noteFattura + "',`COMMESSA`='" +
