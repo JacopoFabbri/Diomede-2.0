@@ -741,6 +741,102 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
+        public void InserimentoAcconti(double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura)
+        {
+            try
+            {
+                var bDB = new AccontiDB(conn);
+                bDB.Inserimento(importo, note, desc, dataInserimento, dataFattura, noteFattura);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public List<Acconti> CercaAcconti()
+        {
+            List<Acconti> lista;
+            try
+            {
+                var bDB = new AccontiDB(conn);
+                lista = bDB.ListaOperazione();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+
+            return lista;
+        }
+        public List<Acconti> CercaAcconti(string n)
+        {
+            List<Acconti> lista;
+            try
+            {
+                var bDB = new AccontiDB(conn);
+                lista = bDB.ListaOperazione(n);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+
+            return lista;
+        }
+        public Acconti CercaAcconti(int id)
+        {
+            Acconti contatto;
+            try
+            {
+                var bDB = new AccontiDB(conn);
+                contatto = bDB.CercaOperazione(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+
+            return contatto;
+        }
+        public List<Acconti> FiltraAcconti(string s, string g)
+        {
+            List<Acconti> contatto;
+            try
+            {
+                var bDB = new AccontiDB(conn);
+                contatto = bDB.FiltroOperazione(s, g);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+
+            return contatto;
+        }
+        public void UpdateAcconti(int id, double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura)
+        {
+            try
+            {
+                var bDB = new AccontiDB(conn);
+                bDB.AggiornaOperazione(id, importo, note, desc, dataInserimento, dataFattura, noteFattura);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
+        public void CancellaAcconti(int id)
+        {
+            try
+            {
+                var bDB = new AccontiDB(conn);
+                bDB.RimuoviOperazione(id);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
     }
     public class ClienteDB
     {
@@ -1710,7 +1806,6 @@ namespace Diomede2
                 con.Close();
             }
         }
-
         public List<Commessa> ListaCommesse()
         {
             DateTime dateValue;
@@ -1965,7 +2060,7 @@ namespace Diomede2
             try
             {
                 con.Open();
-                var command = new MySqlCommand("UPDATE `COMMESSA` SET `NOTE`='" + note +"',`DITTA`= '" + ditta + "' WHERE `ID` = '" + id + "'",
+                var command = new MySqlCommand("UPDATE `COMMESSA` SET `NOTE`='" + note + "',`DITTA`= '" + ditta + "' WHERE `ID` = '" + id + "'",
                     con);
                 command.ExecuteNonQuery();
             }
@@ -1999,12 +2094,10 @@ namespace Diomede2
     public class LavorazioneDB
     {
         private readonly MySqlConnection con;
-
         public LavorazioneDB(MySqlConnection conn)
         {
             con = conn;
         }
-
         public void Inserimento(string nome, string desc, double prezzo, int commessa, DateTime data, String assegnamento)
         {
             try
@@ -2025,7 +2118,6 @@ namespace Diomede2
                 con.Close();
             }
         }
-
         public List<Lavorazioni> ListaLavorazioni()
         {
             var lista = new List<Lavorazioni>();
@@ -2062,7 +2154,6 @@ namespace Diomede2
 
             return lista;
         }
-
         public List<Lavorazioni> ListaLavorazioni(string n)
         {
             var lista = new List<Lavorazioni>();
@@ -2100,7 +2191,6 @@ namespace Diomede2
 
             return lista;
         }
-
         public Lavorazioni CercaLavorazione(int id)
         {
             Lavorazioni lavorazione = null;
@@ -2138,7 +2228,6 @@ namespace Diomede2
 
             return lavorazione;
         }
-
         public List<Lavorazioni> FiltroLavorazioni(string s, string g)
         {
             DateTime data;
@@ -2178,7 +2267,6 @@ namespace Diomede2
 
             return lavorazione;
         }
-
         public void AggiornaLavorazioni(int id, string nome, string desc, double prezzo, int commessa, DateTime data, String asegnamento)
         {
             try
@@ -2199,7 +2287,6 @@ namespace Diomede2
                 con.Close();
             }
         }
-
         public void RimuoviLavorazioni(int id)
         {
             try
@@ -2221,12 +2308,10 @@ namespace Diomede2
     public class PagamentoDB
     {
         private readonly MySqlConnection con;
-
         public PagamentoDB(MySqlConnection conn)
         {
             con = conn;
         }
-
         public void Inserimento(string numeroCommessa, double importo, string note, string fattura,
             DateTime dataFattura, DateTime data, int cliente, int commessa)
         {
@@ -2249,7 +2334,6 @@ namespace Diomede2
                 con.Close();
             }
         }
-
         public List<Pagamento> ListaOperazione()
         {
             DateTime data, dataFattura;
@@ -2292,7 +2376,6 @@ namespace Diomede2
 
             return lista;
         }
-
         public List<Pagamento> ListaOperazione(string n)
         {
             DateTime data, dataFattura;
@@ -2335,7 +2418,6 @@ namespace Diomede2
 
             return lista;
         }
-
         public Pagamento CercaOperazione(int id)
         {
             DateTime data, dataFattura;
@@ -2378,7 +2460,6 @@ namespace Diomede2
 
             return lavorazione;
         }
-
         public List<Pagamento> FiltroOperazione(string s, string g)
         {
             DateTime data, dataFattura;
@@ -2421,7 +2502,6 @@ namespace Diomede2
 
             return lavorazione;
         }
-
         public void AggiornaOperazione(int id, string numeroCommessa, double importo, string note, string fattura,
             DateTime dataFattura, DateTime data, int cliente, int commessa)
         {
@@ -2444,13 +2524,243 @@ namespace Diomede2
                 con.Close();
             }
         }
-
         public void RimuoviOperazione(int id)
         {
             try
             {
                 con.Open();
                 var command = new MySqlCommand("DELETE FROM `PAGAMENTO` WHERE `ID` = '" + id + "'", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+    }
+    public class AccontiDB
+    {
+        private readonly MySqlConnection con;
+        public AccontiDB(MySqlConnection conn)
+        {
+            con = conn;
+        }
+        public void Inserimento(double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura)
+        {
+            try
+            {
+                con.Open();
+                var command = new MySqlCommand(
+                    "INSERT INTO `ACCONTI`(`IMPORTO`, `NOTE`, `DESC`, `DATAINSERIMENTO`, `DATAFATTURA`, `NOTEFATTURA`) VALUES (" +
+                    importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "','" +
+                    note + "','" + desc + "','" + dataInserimento.ToString("yyyy/MM/dd") + "','" +
+                    dataFattura.ToString("yyyy/MM/dd") + "','" + noteFattura + "')", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<Acconti> ListaOperazione()
+        {
+            DateTime dataInserimento, dataFattura;
+            var lista = new List<Acconti>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                var command = new MySqlCommand("SELECT * FROM `ACCONTI`", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    DateTime.TryParse(lettore[4] + "", out dataInserimento);
+                    DateTime.TryParse(lettore[5] + "", out dataFattura);
+                    var lavorazione = new Acconti
+                    {
+                        Id = (int)lettore[0],
+                        Importo = (double)lettore[1],
+                        Note = "" + lettore[2],
+                        Desc = "" + lettore[3],
+                        DataInserimento = dataInserimento,
+                        DataFattura = dataFattura,
+                        NoteFattura = "" + lettore[6]
+
+                    };
+
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return lista;
+        }
+        public List<Acconti> ListaOperazione(string n)
+        {
+            DateTime dataInserimento, dataFattura;
+            var lista = new List<Acconti>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                var command = new MySqlCommand("SELECT * FROM `ACCONTI` WHERE `ID` = '" + n + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    DateTime.TryParse(lettore[5] + "", out dataInserimento);
+                    DateTime.TryParse(lettore[6] + "", out dataFattura);
+                    var lavorazione = new Acconti
+                    {
+                        Id = (int)lettore[0],
+                        Importo = (double)lettore[1],
+                        Note = "" + lettore[2],
+                        Desc = "" + lettore[3],
+                        DataInserimento = dataInserimento,
+                        DataFattura = dataFattura,
+                        NoteFattura = "" + lettore[6]
+
+                    };
+
+                    lista.Add(lavorazione);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return lista;
+        }
+        public Acconti CercaOperazione(int id)
+        {
+            DateTime dataInserimento, dataFattura;
+            Acconti lavorazione = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                var command = new MySqlCommand("SELECT * FROM `ACCONTI` WHERE `ID` = '" + id + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    DateTime.TryParse(lettore[5] + "", out dataInserimento);
+                    DateTime.TryParse(lettore[6] + "", out dataFattura);
+                    var l = new Acconti
+                    {
+                        Id = (int)lettore[0],
+                        Importo = (double)lettore[1],
+                        Note = "" + lettore[2],
+                        Desc = "" + lettore[3],
+                        DataInserimento = dataInserimento,
+                        DataFattura = dataFattura,
+                        NoteFattura = "" + lettore[6]
+
+                    };
+
+                    lavorazione = l;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return lavorazione;
+        }
+        public List<Acconti> FiltroOperazione(string s, string g)
+        {
+            DateTime dataInserimento, dataFattura;
+            var lavorazione = new List<Acconti>();
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                var command = new MySqlCommand("SELECT * FROM `ACCONTI` WHERE `" + s + "` = '" + g + "'", con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    DateTime.TryParse(lettore[5] + "", out dataInserimento);
+                    DateTime.TryParse(lettore[6] + "", out dataFattura);
+                    var l = new Acconti
+                    {
+                        Id = (int)lettore[0],
+                        Importo = (double)lettore[1],
+                        Note = "" + lettore[2],
+                        Desc = "" + lettore[3],
+                        DataInserimento = dataInserimento,
+                        DataFattura = dataFattura,
+                        NoteFattura = "" + lettore[6]
+
+                    };
+
+                    lavorazione.Add(l);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return lavorazione;
+        }
+        public void AggiornaOperazione(int id, double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura)
+        {
+            try
+            {
+                con.Open();
+                var command = new MySqlCommand(
+                    "UPDATE `ACCONTI` SET `IMPORTO`='" + importo + "',`NOTE`='" + note +
+                    "',`DESC`='" + desc + "',`DATAINSERIMENTO`='" + dataInserimento +
+                    "',`DATAFATTURA`='" + dataFattura + "',`NOTEFATTURA`='" +
+                    noteFattura + "' WHERE `ID` = '" + id + "')", con);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void RimuoviOperazione(int id)
+        {
+            try
+            {
+                con.Open();
+                var command = new MySqlCommand("DELETE FROM `ACCONTI` WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -2582,18 +2892,22 @@ namespace Diomede2
     public class Lavorazioni
     {
         public int Id { get; set; }
-
         public string Nome { get; set; }
-
         public string Desc { get; set; }
-
         public double Prezzo { get; set; }
-
         public int Commessa { get; set; }
-
         public DateTime data { get; set; }
-
         public string assegnato { get; set; }
+    }
+    public class Acconti
+    {
+        public int Id { get; set; }
+        public double Importo { get; set; }
+        public String Note { get; set; }
+        public String Desc { get; set; }
+        public DateTime DataInserimento { get; set; }
+        public DateTime DataFattura { get; set; }
+        public String NoteFattura { get; set; }
 
     }
 }

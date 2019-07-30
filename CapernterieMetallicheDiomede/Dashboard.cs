@@ -38,7 +38,7 @@ namespace Diomede2
                     foreach (var c in listaCommesse)
                         listView3.Items.Add(c.NumeroCommessa);
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Errore Imprevisto Contattare i gestori del servizio");
             }
