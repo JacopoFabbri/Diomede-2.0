@@ -51,9 +51,6 @@
             this.nascondiListaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.macroLavorazioniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaMacroLavorazioniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestioneEconomicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaPagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView3 = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
@@ -91,7 +88,6 @@
             this.toolStripMenuItem1,
             this.bozzaToolStripMenuItem,
             this.gestioneCommesseToolStripMenuItem,
-            this.gestioneEconomicaToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -250,29 +246,6 @@
             this.listaMacroLavorazioniToolStripMenuItem1.Size = new System.Drawing.Size(222, 24);
             this.listaMacroLavorazioniToolStripMenuItem1.Text = "Lista Macro Lavorazioni";
             // 
-            // gestioneEconomicaToolStripMenuItem
-            // 
-            this.gestioneEconomicaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pagamentiToolStripMenuItem});
-            this.gestioneEconomicaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gestioneEconomicaToolStripMenuItem.Name = "gestioneEconomicaToolStripMenuItem";
-            this.gestioneEconomicaToolStripMenuItem.Size = new System.Drawing.Size(144, 23);
-            this.gestioneEconomicaToolStripMenuItem.Text = "Gestione Economica";
-            // 
-            // pagamentiToolStripMenuItem
-            // 
-            this.pagamentiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listaPagamentiToolStripMenuItem});
-            this.pagamentiToolStripMenuItem.Name = "pagamentiToolStripMenuItem";
-            this.pagamentiToolStripMenuItem.Size = new System.Drawing.Size(143, 24);
-            this.pagamentiToolStripMenuItem.Text = "Pagamenti";
-            // 
-            // listaPagamentiToolStripMenuItem
-            // 
-            this.listaPagamentiToolStripMenuItem.Name = "listaPagamentiToolStripMenuItem";
-            this.listaPagamentiToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
-            this.listaPagamentiToolStripMenuItem.Text = "Lista Pagamenti";
-            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -329,13 +302,10 @@
         private System.Windows.Forms.ToolStripMenuItem mostraListaClientiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nascondiListaClientiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestioneCommesseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestioneEconomicaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem commesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem macroLavorazioniToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem listaMacroLavorazioniToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem pagamentiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listaPagamentiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mostraListaCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nascondiListaCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
