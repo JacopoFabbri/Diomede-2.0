@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarpenterieMetallicheDiomede;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -130,7 +131,8 @@ namespace Diomede2
         }
         private void Button2_Click(object sender, EventArgs e)
         {
-
+            InserimentoAcconto i = new InserimentoAcconto(idCommessa);
+            i.Show();
         }
         private void Button7_Click(object sender, EventArgs e)
         {

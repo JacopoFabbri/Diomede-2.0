@@ -30,7 +30,7 @@ namespace PonteggiDiomede
             {
 
                 op.InserimentoLavorazioni(comboBox2.SelectedItem.ToString(), textBox2.Text, 0, c.Id, dateTimePicker1.Value, comboBox1.SelectedItem.ToString());
-
+                this.Close();
             }
             catch
             {

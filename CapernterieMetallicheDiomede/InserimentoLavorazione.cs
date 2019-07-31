@@ -19,10 +19,9 @@ namespace Diomede2
         public InserimentoLavorazione(int idCommessa)
         {
             id = idCommessa;
-            op = new OperazionePraticheEdili("Ponteggi");
+            op = new OperazionePraticheEdili("CarpenteriaMetallica");
             InitializeComponent();
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
 
@@ -36,7 +35,6 @@ namespace Diomede2
                 MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
             }
         }
-
         private void InserimentoLavorazione_Load(object sender, EventArgs e)
         {
              try

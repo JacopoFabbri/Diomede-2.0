@@ -59,7 +59,7 @@ namespace CarpenterieMetallicheDiomede
                     commessa = op1.GeneraCommessa("CM", listaAmministrazione[1], "CarpenteriaMetallica", true);
                 }
 
-                op.InserimentoCommessa(lista[comboBox1.SelectedIndex].Id, textBox1.Text, dateTimePicker1.Value, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text);
+                op.InserimentoCommessa(lista[comboBox1.SelectedIndex].Id, commessa, dateTimePicker1.Value, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text);
                 MessageBox.Show("Bozza Inserita", "Inserita:", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
