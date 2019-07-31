@@ -19,7 +19,7 @@ namespace Diomede2
         public InserimentoLavorazione(int idCommessa)
         {
             id = idCommessa;
-            op = new OperazionePraticheEdili("Ponteggi");
+            op = new OperazionePraticheEdili("CarpenteriaMetallica");
             InitializeComponent();
         }
         private void Button1_Click(object sender, EventArgs e)
