@@ -32,13 +32,14 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.listView2 = new System.Windows.Forms.ListView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.bozzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listView3 = new System.Windows.Forms.ListView();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaClientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aggiungiClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostraListaClientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nascondiListaClientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bozzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bozzaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserisciBozzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +53,6 @@
             this.macroLavorazioniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaMacroLavorazioniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listView3 = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,17 +92,41 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(806, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(806, 29);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // bozzaToolStripMenuItem
+            // 
+            this.bozzaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bozzaToolStripMenuItem1});
+            this.bozzaToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_modifica_file_48;
+            this.bozzaToolStripMenuItem.Name = "bozzaToolStripMenuItem";
+            this.bozzaToolStripMenuItem.Size = new System.Drawing.Size(155, 25);
+            this.bozzaToolStripMenuItem.Text = "Gestione Preventivi";
+            // 
+            // listView3
+            // 
+            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.listView3.BackColor = System.Drawing.SystemColors.Window;
+            this.listView3.BackgroundImageTiled = true;
+            this.listView3.Location = new System.Drawing.Point(282, 30);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(131, 391);
+            this.listView3.TabIndex = 10;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.List;
+            this.listView3.Visible = false;
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2});
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_azienda_64;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(117, 23);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(147, 25);
             this.toolStripMenuItem1.Text = "Gestione Clienti";
             // 
             // toolStripMenuItem2
@@ -112,45 +136,42 @@
             this.aggiungiClienteToolStripMenuItem,
             this.mostraListaClientiToolStripMenuItem,
             this.nascondiListaClientiToolStripMenuItem});
+            this.toolStripMenuItem2.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_aggiungere_il_contatto_alla_società_48;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(108, 24);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(113, 26);
             this.toolStripMenuItem2.Text = "Ditta";
             // 
             // listaClientiToolStripMenuItem
             // 
+            this.listaClientiToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_lista_di_cose_da_fare_100;
             this.listaClientiToolStripMenuItem.Name = "listaClientiToolStripMenuItem";
-            this.listaClientiToolStripMenuItem.Size = new System.Drawing.Size(208, 24);
+            this.listaClientiToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.listaClientiToolStripMenuItem.Text = "Lista Clienti";
             this.listaClientiToolStripMenuItem.Click += new System.EventHandler(this.ListaClientiToolStripMenuItem_Click);
             // 
             // aggiungiClienteToolStripMenuItem
             // 
+            this.aggiungiClienteToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_modifica_utente_uomo_16;
             this.aggiungiClienteToolStripMenuItem.Name = "aggiungiClienteToolStripMenuItem";
-            this.aggiungiClienteToolStripMenuItem.Size = new System.Drawing.Size(208, 24);
+            this.aggiungiClienteToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.aggiungiClienteToolStripMenuItem.Text = "Aggiungi Cliente";
             this.aggiungiClienteToolStripMenuItem.Click += new System.EventHandler(this.AggiungiClienteToolStripMenuItem_Click);
             // 
             // mostraListaClientiToolStripMenuItem
             // 
+            this.mostraListaClientiToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_apri_libro_64;
             this.mostraListaClientiToolStripMenuItem.Name = "mostraListaClientiToolStripMenuItem";
-            this.mostraListaClientiToolStripMenuItem.Size = new System.Drawing.Size(208, 24);
+            this.mostraListaClientiToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.mostraListaClientiToolStripMenuItem.Text = "Mostra Lista Clienti";
             this.mostraListaClientiToolStripMenuItem.Click += new System.EventHandler(this.MostraListaClientiToolStripMenuItem_Click);
             // 
             // nascondiListaClientiToolStripMenuItem
             // 
+            this.nascondiListaClientiToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_rimuovi_immagine_48;
             this.nascondiListaClientiToolStripMenuItem.Name = "nascondiListaClientiToolStripMenuItem";
-            this.nascondiListaClientiToolStripMenuItem.Size = new System.Drawing.Size(208, 24);
+            this.nascondiListaClientiToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.nascondiListaClientiToolStripMenuItem.Text = "Nascondi Lista Clienti";
             this.nascondiListaClientiToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaClientiToolStripMenuItem_Click);
-            // 
-            // bozzaToolStripMenuItem
-            // 
-            this.bozzaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bozzaToolStripMenuItem1});
-            this.bozzaToolStripMenuItem.Name = "bozzaToolStripMenuItem";
-            this.bozzaToolStripMenuItem.Size = new System.Drawing.Size(56, 23);
-            this.bozzaToolStripMenuItem.Text = "Bozza";
             // 
             // bozzaToolStripMenuItem1
             // 
@@ -159,36 +180,41 @@
             this.inserisciBozzaToolStripMenuItem,
             this.mostraListaBozzeToolStripMenuItem,
             this.nascondiListaBozzeToolStripMenuItem});
+            this.bozzaToolStripMenuItem1.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_nessuna_modifica_48;
             this.bozzaToolStripMenuItem1.Name = "bozzaToolStripMenuItem1";
-            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(113, 24);
-            this.bozzaToolStripMenuItem1.Text = "Bozza";
+            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.bozzaToolStripMenuItem1.Text = "Preventivo";
             // 
             // listaBozzeToolStripMenuItem
             // 
+            this.listaBozzeToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_lista_di_cose_da_fare_100;
             this.listaBozzeToolStripMenuItem.Name = "listaBozzeToolStripMenuItem";
-            this.listaBozzeToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
-            this.listaBozzeToolStripMenuItem.Text = "Lista Bozze";
+            this.listaBozzeToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
+            this.listaBozzeToolStripMenuItem.Text = "Lista Preventivi";
             this.listaBozzeToolStripMenuItem.Click += new System.EventHandler(this.ListaBozzeToolStripMenuItem_Click);
             // 
             // inserisciBozzaToolStripMenuItem
             // 
+            this.inserisciBozzaToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_inserisci_tabella_48;
             this.inserisciBozzaToolStripMenuItem.Name = "inserisciBozzaToolStripMenuItem";
-            this.inserisciBozzaToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
-            this.inserisciBozzaToolStripMenuItem.Text = "Inserisci Bozza";
+            this.inserisciBozzaToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
+            this.inserisciBozzaToolStripMenuItem.Text = "Inserisci Preventivo";
             this.inserisciBozzaToolStripMenuItem.Click += new System.EventHandler(this.InserisciBozzaToolStripMenuItem_Click);
             // 
             // mostraListaBozzeToolStripMenuItem
             // 
+            this.mostraListaBozzeToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_apri_libro_64;
             this.mostraListaBozzeToolStripMenuItem.Name = "mostraListaBozzeToolStripMenuItem";
-            this.mostraListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
-            this.mostraListaBozzeToolStripMenuItem.Text = "Mostra lista Bozze";
+            this.mostraListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
+            this.mostraListaBozzeToolStripMenuItem.Text = "Mostra lista Preventivi";
             this.mostraListaBozzeToolStripMenuItem.Click += new System.EventHandler(this.VisualizzaListaBozzeToolStripMenuItem_Click);
             // 
             // nascondiListaBozzeToolStripMenuItem
             // 
+            this.nascondiListaBozzeToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_rimuovi_immagine_48;
             this.nascondiListaBozzeToolStripMenuItem.Name = "nascondiListaBozzeToolStripMenuItem";
-            this.nascondiListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
-            this.nascondiListaBozzeToolStripMenuItem.Text = "Nascondi lista Bozze";
+            this.nascondiListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
+            this.nascondiListaBozzeToolStripMenuItem.Text = "Nascondi lista Preventivi";
             this.nascondiListaBozzeToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaBozzeToolStripMenuItem_Click);
             // 
             // gestioneCommesseToolStripMenuItem
@@ -197,8 +223,9 @@
             this.commesseToolStripMenuItem,
             this.macroLavorazioniToolStripMenuItem1});
             this.gestioneCommesseToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gestioneCommesseToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_quaderno_48;
             this.gestioneCommesseToolStripMenuItem.Name = "gestioneCommesseToolStripMenuItem";
-            this.gestioneCommesseToolStripMenuItem.Size = new System.Drawing.Size(146, 23);
+            this.gestioneCommesseToolStripMenuItem.Size = new System.Drawing.Size(162, 25);
             this.gestioneCommesseToolStripMenuItem.Text = "Gestione Commesse";
             // 
             // commesseToolStripMenuItem
@@ -207,12 +234,14 @@
             this.listaCommesseToolStripMenuItem,
             this.mostraListaCommesseToolStripMenuItem,
             this.nascondiListaCommesseToolStripMenuItem});
+            this.commesseToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_web_48;
             this.commesseToolStripMenuItem.Name = "commesseToolStripMenuItem";
             this.commesseToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
             this.commesseToolStripMenuItem.Text = "Commesse";
             // 
             // listaCommesseToolStripMenuItem
             // 
+            this.listaCommesseToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_lista_di_cose_da_fare_100;
             this.listaCommesseToolStripMenuItem.Name = "listaCommesseToolStripMenuItem";
             this.listaCommesseToolStripMenuItem.Size = new System.Drawing.Size(237, 24);
             this.listaCommesseToolStripMenuItem.Text = "Lista Commesse";
@@ -220,6 +249,7 @@
             // 
             // mostraListaCommesseToolStripMenuItem
             // 
+            this.mostraListaCommesseToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_apri_libro_64;
             this.mostraListaCommesseToolStripMenuItem.Name = "mostraListaCommesseToolStripMenuItem";
             this.mostraListaCommesseToolStripMenuItem.Size = new System.Drawing.Size(237, 24);
             this.mostraListaCommesseToolStripMenuItem.Text = "Mostra Lista Commesse";
@@ -227,6 +257,7 @@
             // 
             // nascondiListaCommesseToolStripMenuItem
             // 
+            this.nascondiListaCommesseToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_rimuovi_immagine_48;
             this.nascondiListaCommesseToolStripMenuItem.Name = "nascondiListaCommesseToolStripMenuItem";
             this.nascondiListaCommesseToolStripMenuItem.Size = new System.Drawing.Size(237, 24);
             this.nascondiListaCommesseToolStripMenuItem.Text = "Nascondi Lista Commesse";
@@ -236,6 +267,7 @@
             // 
             this.macroLavorazioniToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listaMacroLavorazioniToolStripMenuItem1});
+            this.macroLavorazioniToolStripMenuItem1.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_martello_64;
             this.macroLavorazioniToolStripMenuItem1.Name = "macroLavorazioniToolStripMenuItem1";
             this.macroLavorazioniToolStripMenuItem1.Size = new System.Drawing.Size(190, 24);
             this.macroLavorazioniToolStripMenuItem1.Text = "Macro Lavorazioni";
@@ -251,23 +283,9 @@
             this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.exitToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_stemma_della_ferrari_48;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(58, 23);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(58, 25);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
-            // 
-            // listView3
-            // 
-            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.listView3.BackColor = System.Drawing.SystemColors.Window;
-            this.listView3.BackgroundImageTiled = true;
-            this.listView3.Location = new System.Drawing.Point(282, 30);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(131, 391);
-            this.listView3.TabIndex = 10;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.List;
-            this.listView3.Visible = false;
             // 
             // Dashboard
             // 

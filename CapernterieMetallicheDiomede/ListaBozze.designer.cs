@@ -81,7 +81,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(906, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(906, 29);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -91,29 +91,30 @@
             this.aggiornaToolStripMenuItem,
             this.aggiungiToolStripMenuItem,
             this.eliminaToolStripMenuItem});
-            this.operazioniToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.operazioniToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.operazioniToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_servizi_48;
             this.operazioniToolStripMenuItem.Name = "operazioniToolStripMenuItem";
-            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(60, 23);
+            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(64, 25);
             this.operazioniToolStripMenuItem.Text = "Edit";
             // 
             // aggiornaToolStripMenuItem
             // 
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
-            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
             this.aggiornaToolStripMenuItem.Click += new System.EventHandler(this.AggiornaToolStripMenuItem_Click);
             // 
             // aggiungiToolStripMenuItem
             // 
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
-            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.aggiungiToolStripMenuItem.Text = "Aggiungi";
             this.aggiungiToolStripMenuItem.Click += new System.EventHandler(this.AggiungiToolStripMenuItem_Click);
             // 
             // eliminaToolStripMenuItem
             // 
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
-            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.eliminaToolStripMenuItem.Text = "Elimina";
             this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.EliminaToolStripMenuItem_Click);
             // 
@@ -121,7 +122,7 @@
             // 
             this.filtraToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.filtraToolStripMenuItem.Name = "filtraToolStripMenuItem";
-            this.filtraToolStripMenuItem.Size = new System.Drawing.Size(68, 23);
+            this.filtraToolStripMenuItem.Size = new System.Drawing.Size(52, 25);
             this.filtraToolStripMenuItem.Text = "Filtro";
             this.filtraToolStripMenuItem.Click += new System.EventHandler(this.FiltraToolStripMenuItem_Click);
             // 
