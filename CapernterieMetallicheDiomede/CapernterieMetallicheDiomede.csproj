@@ -239,6 +239,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LOGO DEFINITIVO.ico" />
+    <None Include="Resources\icons8-cestino-48.png" />
+    <None Include="Resources\icons8-più-48.png" />
+    <None Include="Resources\icons8-sincronizzare-48.png" />
+    <None Include="Resources\icons8-servizi-48.png" />
+    <None Include="Resources\icons8-modifica-file-48.png" />
+    <None Include="Resources\icons8-martello-64.png" />
+    <None Include="Resources\betoniera_home.png" />
+    <None Include="Resources\icons8-web-48.png" />
+    <None Include="Resources\icons8-quaderno-48.png" />
+    <None Include="Resources\icons8-inserisci-tabella-48.png" />
+    <None Include="Resources\icons8-nessuna-modifica-48.png" />
+    <None Include="Resources\icons8-rimuovi-immagine-48.png" />
+    <None Include="Resources\icons8-apri-libro-64.png" />
+    <None Include="Resources\icons8-modifica-utente-uomo-16.png" />
+    <None Include="Resources\icons8-lista-di-cose-da-fare-100.png" />
+    <None Include="Resources\icons8-aggiungere-il-contatto-alla-società-48.png" />
+    <None Include="Resources\icons8-azienda-64.png" />
     <None Include="Resources\icons8-fiore-del-centro-benessere-64.png" />
     <None Include="Resources\icons8-bouquet-di-fiori-64.png" />
   </ItemGroup>
