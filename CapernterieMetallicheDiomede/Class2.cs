@@ -818,7 +818,7 @@ namespace Diomede2
             try
             {
                 var bDB = new AccontiDB(conn);
-                bDB.AggiornaOperazione(id, nome, importo, note, desc, dataInserimento, dataFattura, noteFattura, commessa);
+                bDB.AggiornaOperazione(id,importo, note, desc, dataInserimento, dataFattura, noteFattura, commessa);
             }
             catch (Exception e)
             {
