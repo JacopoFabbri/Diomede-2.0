@@ -249,7 +249,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.exitToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_bouquet_di_fiori_64;
+            this.exitToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_stemma_della_ferrari_48;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(58, 23);
             this.exitToolStripMenuItem.Text = "Exit";

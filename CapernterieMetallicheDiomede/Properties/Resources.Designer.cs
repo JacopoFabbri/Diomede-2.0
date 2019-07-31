@@ -79,5 +79,25 @@ namespace CarpenterieMetallicheDiomede.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_stemma_della_ferrari_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-stemma-della-ferrari-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_stemma_della_ferrari_481 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-stemma-della-ferrari-481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
