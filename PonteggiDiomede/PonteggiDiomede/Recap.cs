@@ -69,7 +69,7 @@ namespace Diomede2
             InserimentoPagamento p = new InserimentoPagamento(db, commessa.Id);
             p.Show();
         }
-        private void Button4_Click(object sender, EventArgs e)
+        private void Button4_Click_1(object sender, EventArgs e)
         {
             InserimentoLavorazione l = new InserimentoLavorazione(idCommessa);
             l.Show();
@@ -117,5 +117,6 @@ namespace Diomede2
                     MessageBoxIcon.Error);
             }
         }
+
     }
 }
