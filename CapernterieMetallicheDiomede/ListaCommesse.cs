@@ -190,5 +190,10 @@ namespace Diomede2
             InserimentoCommessa i = new InserimentoCommessa("CarpenteriaMetallica");
             i.Show();
         }
+
+        private void Chart1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

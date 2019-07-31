@@ -277,7 +277,20 @@ namespace Diomede2
         }
         private void Button2_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
+            chart1.Visible = true;
+            chart1.Series["Importo"].Points.Clear();
+            //openFileDialog1.ShowDialog();                
+            List<Commessa> listaCommessa = op.CercaCommessa();
+            foreach(Commessa c in listaCommessa)
+            {
+                double x = op.CercaBozzaId(c.Bozza).Importo;
+                chart1.Series["Importo"].Points.AddXY(c.Data,x);
+            }
+        }
+
+        private void Chart1_Click(object sender, EventArgs e)
+        {
+            chart1.Visible = false;
         }
     }
 }
