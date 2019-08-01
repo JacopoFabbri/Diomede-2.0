@@ -125,7 +125,7 @@
             this.nascondiListaClientiToolStripMenuItem});
             this.toolStripMenuItem2.Image = global::Diomede2.Properties.Resources.icons8_aggiungere_il_contatto_alla_società_481;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(113, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem2.Text = "Ditta";
             // 
             // listaClientiToolStripMenuItem
@@ -181,7 +181,7 @@
             this.aggiungiToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.aggiungiToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_nessuna_modifica_48;
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
-            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.aggiungiToolStripMenuItem.Text = "Preventivo";
             // 
             // listaBozzeToolStripMenuItem
@@ -189,7 +189,7 @@
             this.listaBozzeToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_lista_di_cose_da_fare_100;
             this.listaBozzeToolStripMenuItem.Name = "listaBozzeToolStripMenuItem";
             this.listaBozzeToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
-            this.listaBozzeToolStripMenuItem.Text = "Lista Preventivo";
+            this.listaBozzeToolStripMenuItem.Text = "Lista Preventivi";
             this.listaBozzeToolStripMenuItem.Click += new System.EventHandler(this.ListaBozzeToolStripMenuItem_Click);
             // 
             // inserisciBozzaToolStripMenuItem
@@ -223,7 +223,7 @@
             this.inserisciPacchettoToolStripMenuItem});
             this.pacchettoToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_modifica_casella_100;
             this.pacchettoToolStripMenuItem.Name = "pacchettoToolStripMenuItem";
-            this.pacchettoToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.pacchettoToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.pacchettoToolStripMenuItem.Text = "Pacchetto";
             // 
             // listaPacchettoToolStripMenuItem
