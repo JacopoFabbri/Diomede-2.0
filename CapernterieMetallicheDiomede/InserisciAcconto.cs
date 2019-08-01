@@ -26,7 +26,7 @@ namespace CarpenterieMetallicheDiomede
         {
             try
             {
-                op.InserimentoAcconti(textBox1.Text, Convert.ToDouble(textBox3.Text), textBox2.Text, textBox1.Text, dateTimePicker1.Value, dateTimePicker2.Value, textBox3.Text, Convert.ToInt32(textBox5.Text));
+                op.InserimentoAcconti(Convert.ToDouble(textBox3.Text), textBox2.Text, textBox1.Text, dateTimePicker1.Value, dateTimePicker2.Value, textBox3.Text, Convert.ToInt32(textBox5.Text));
                 MessageBox.Show("Bozza Inserita", "Inserita:", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
