@@ -37,7 +37,6 @@
             this.eliminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserimentoCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.macroLavorazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selezionaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -81,11 +80,10 @@
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.operazioniToolStripMenuItem,
-            this.macroLavorazioniToolStripMenuItem,
             this.selezionaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(904, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(904, 29);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -96,48 +94,50 @@
             this.eliminaToolStripMenuItem,
             this.pagamentoToolStripMenuItem,
             this.inserimentoCommessaToolStripMenuItem});
+            this.operazioniToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.operazioniToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_servizi_48;
             this.operazioniToolStripMenuItem.Name = "operazioniToolStripMenuItem";
-            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(44, 23);
+            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(64, 25);
             this.operazioniToolStripMenuItem.Text = "Edit";
             // 
             // aggiornaToolStripMenuItem
             // 
+            this.aggiornaToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_sincronizzare_48;
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
-            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
+            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
             this.aggiornaToolStripMenuItem.Click += new System.EventHandler(this.AggiornaToolStripMenuItem_Click);
             // 
             // eliminaToolStripMenuItem
             // 
+            this.eliminaToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_cestino_48;
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
-            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
             this.eliminaToolStripMenuItem.Text = "Elimina";
             this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.EliminaToolStripMenuItem_Click);
             // 
             // pagamentoToolStripMenuItem
             // 
+            this.pagamentoToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_sacco_dei_soldi_16;
             this.pagamentoToolStripMenuItem.Name = "pagamentoToolStripMenuItem";
-            this.pagamentoToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
+            this.pagamentoToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
             this.pagamentoToolStripMenuItem.Text = "Pagamento";
             this.pagamentoToolStripMenuItem.Click += new System.EventHandler(this.PagamentoToolStripMenuItem_Click);
             // 
             // inserimentoCommessaToolStripMenuItem
             // 
+            this.inserimentoCommessaToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_più_48;
             this.inserimentoCommessaToolStripMenuItem.Name = "inserimentoCommessaToolStripMenuItem";
-            this.inserimentoCommessaToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
+            this.inserimentoCommessaToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
             this.inserimentoCommessaToolStripMenuItem.Text = "Inserimento Commessa";
             this.inserimentoCommessaToolStripMenuItem.Click += new System.EventHandler(this.InserimentoCommessaToolStripMenuItem_Click);
             // 
-            // macroLavorazioniToolStripMenuItem
-            // 
-            this.macroLavorazioniToolStripMenuItem.Name = "macroLavorazioniToolStripMenuItem";
-            this.macroLavorazioniToolStripMenuItem.Size = new System.Drawing.Size(133, 23);
-            this.macroLavorazioniToolStripMenuItem.Text = "Macro Lavorazioni";
-            // 
             // selezionaToolStripMenuItem
             // 
+            this.selezionaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selezionaToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_casella_di_controllo_selezionata_48;
             this.selezionaToolStripMenuItem.Name = "selezionaToolStripMenuItem";
-            this.selezionaToolStripMenuItem.Size = new System.Drawing.Size(77, 23);
+            this.selezionaToolStripMenuItem.Size = new System.Drawing.Size(104, 25);
             this.selezionaToolStripMenuItem.Text = "Seleziona";
             this.selezionaToolStripMenuItem.Click += new System.EventHandler(this.SelezionaToolStripMenuItem_Click);
             // 
@@ -173,7 +173,6 @@
         private System.Windows.Forms.ToolStripMenuItem aggiornaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pagamentoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem macroLavorazioniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selezionaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inserimentoCommessaToolStripMenuItem;
     }
