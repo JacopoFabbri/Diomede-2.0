@@ -90,7 +90,8 @@ namespace Diomede2
         }
         private void InserisciBozzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+           var ib = new InserimentoBozza(settore);
+            ib.Show();
         }
         private void VisualizzaListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
         {
