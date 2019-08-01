@@ -130,6 +130,12 @@
     <Compile Include="InserimentoPagamento.designer.cs">
       <DependentUpon>InserimentoPagamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="InserimentoRuolo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoRuolo.designer.cs">
+      <DependentUpon>InserimentoRuolo.cs</DependentUpon>
+    </Compile>
     <Compile Include="InserisciAcconto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,12 @@
     </Compile>
     <Compile Include="Recap.designer.cs">
       <DependentUpon>Recap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ruoli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ruoli.designer.cs">
+      <DependentUpon>Ruoli.cs</DependentUpon>
     </Compile>
     <Compile Include="VisualizzatoreDitte.cs">
       <SubType>Form</SubType>
@@ -198,6 +210,9 @@
     <EmbeddedResource Include="InserimentoPagamento.resx">
       <DependentUpon>InserimentoPagamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InserimentoRuolo.resx">
+      <DependentUpon>InserimentoRuolo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InserisciAcconto.resx">
       <DependentUpon>InserisciAcconto.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +237,9 @@
     </Compile>
     <EmbeddedResource Include="Recap.resx">
       <DependentUpon>Recap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ruoli.resx">
+      <DependentUpon>Ruoli.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="packages.config" />
