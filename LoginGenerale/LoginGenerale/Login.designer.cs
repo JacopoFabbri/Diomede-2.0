@@ -40,8 +40,8 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserisciUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificaPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.inserisciUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,6 +89,7 @@
             this.listView1.View = System.Windows.Forms.View.List;
             this.listView1.Visible = false;
             this.listView1.Click += new System.EventHandler(this.ListView1_Click);
+            this.listView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ListView1_KeyDown);
             // 
             // label1
             // 
@@ -152,6 +153,13 @@
             this.modificaPasswordToolStripMenuItem.Text = "Modifica Password";
             this.modificaPasswordToolStripMenuItem.Click += new System.EventHandler(this.ModificaPasswordToolStripMenuItem_Click);
             // 
+            // inserisciUpdateToolStripMenuItem
+            // 
+            this.inserisciUpdateToolStripMenuItem.Name = "inserisciUpdateToolStripMenuItem";
+            this.inserisciUpdateToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.inserisciUpdateToolStripMenuItem.Text = "Inserisci Update";
+            this.inserisciUpdateToolStripMenuItem.Click += new System.EventHandler(this.InserisciUpdateToolStripMenuItem_Click);
+            // 
             // button1
             // 
             this.button1.BackgroundImage = global::LoginGenerale.Properties.Resources.icons8_chiave_48;
@@ -164,13 +172,6 @@
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // inserisciUpdateToolStripMenuItem
-            // 
-            this.inserisciUpdateToolStripMenuItem.Name = "inserisciUpdateToolStripMenuItem";
-            this.inserisciUpdateToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
-            this.inserisciUpdateToolStripMenuItem.Text = "Inserisci Update";
-            this.inserisciUpdateToolStripMenuItem.Click += new System.EventHandler(this.InserisciUpdateToolStripMenuItem_Click);
             // 
             // Login
             // 

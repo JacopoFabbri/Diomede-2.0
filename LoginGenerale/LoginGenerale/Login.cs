@@ -206,12 +206,63 @@ namespace Diomede2
             var frm = new ModificaPassword(utente);
             frm.Show();
         }
-
         private void InserisciUpdateToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             var op = new Operaziones("Utenza");
             op.inserisciUpdate(Application.ProductVersion);
+        }
+        private void ListView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                var path = Directory.GetCurrentDirectory();
+                if (listView1.SelectedItems[0].Text.Equals("Ponteggi"))
+                {
+                    try
+                    {
+                        System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                        proc.EnableRaisingEvents = false;
+                        proc.StartInfo.FileName = path + "/PonteggiDiomede.exe";
+                        proc.Start();
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                else if (listView1.SelectedItems[0].Text.Equals("PraticheEdili"))
+                {
+                    try
+                    {
+                        System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                        proc.EnableRaisingEvents = false;
+                        proc.StartInfo.FileName = path + "/Diomede2.exe";
+                        proc.Start();
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                else if (listView1.SelectedItems[0].Text.Equals("Carpenterie"))
+                {
+                    try
+                    {
+                        System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                        proc.EnableRaisingEvents = false;
+                        proc.StartInfo.FileName = path + "/CarpenterieMetallicheDiomede.exe";
+                        proc.Start();
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+            }
         }
     }
 }
