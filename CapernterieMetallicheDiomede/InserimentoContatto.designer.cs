@@ -335,8 +335,9 @@
             // 
             this.inserisciRuoloToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.inserisciRuoloToolStripMenuItem.Name = "inserisciRuoloToolStripMenuItem";
-            this.inserisciRuoloToolStripMenuItem.Size = new System.Drawing.Size(124, 23);
+            this.inserisciRuoloToolStripMenuItem.Size = new System.Drawing.Size(108, 23);
             this.inserisciRuoloToolStripMenuItem.Text = "Inserisci Ruolo";
+            this.inserisciRuoloToolStripMenuItem.Click += new System.EventHandler(this.InserisciRuoloToolStripMenuItem_Click);
             // 
             // InserimentoContatto
             // 

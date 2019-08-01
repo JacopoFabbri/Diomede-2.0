@@ -50,5 +50,10 @@ namespace Diomede2
             }
         }
 
+        private void InserisciRuoloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ruoli r = new Ruoli(db, this);
+            r.Show();
+        }
     }
 }
