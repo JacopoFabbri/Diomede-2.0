@@ -185,9 +185,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Note:";
+            this.label2.Text = "Indirizzo:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label3
