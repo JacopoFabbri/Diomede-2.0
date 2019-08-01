@@ -83,3 +83,7 @@ C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Ca
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.pdb
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\MySql.Data.dll
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.InserisciAcconto.resources
+C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CapernterieMetallicheDiomede.csprojAssemblyReference.cache
+C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.InserimentoAcconto.resources
+C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.InserimentoCommessa.resources
+C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.InserisciAcconto.resources
