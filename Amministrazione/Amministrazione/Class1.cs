@@ -209,7 +209,7 @@ namespace Amministrazione
                 throw new Exception(e.ToString());
             }
         }
-        public void InserimentoCommessa(int numero, int anno, string settore, string commessa, int preventivo, int cliente, string settoreintero, string cantiere, string note, bool chiusa, DateTime datachiusura, bool fatturata, DateTime datafattura, int acconti, int pagamenti, DateTime datainserimento, string importo)
+        public void InserimentoCommessa(int numero, int anno, string settore, string commessa, int preventivo, int cliente, string settoreintero, string cantiere, string note, bool chiusa, DateTime datachiusura, bool fatturata, DateTime datafattura, int acconti, int pagamenti, DateTime datainserimento, double importo)
         {
             try
             {
@@ -842,7 +842,6 @@ namespace Amministrazione
             DateTime dateValue;
             DateTime dataValue2;
             DateTime dataValue3;
-            DateTime dataValue4;
             var lista = new List<Commessa>();
             try
             {
@@ -854,10 +853,9 @@ namespace Amministrazione
                 while (lettore.Read())
                     if (!(lettore[3] + "").Equals(""))
                     {
-                        DateTime.TryParse(lettore[3] + "", out dateValue);
-                        DateTime.TryParse(lettore[9] + "", out dataValue2);
-                        DateTime.TryParse(lettore[10] + "", out dataValue3);
-                        DateTime.TryParse(lettore[12] + "", out dataValue4);
+                        DateTime.TryParse(lettore[11] + "", out dateValue);
+                        DateTime.TryParse(lettore[13] + "", out dataValue2);
+                        DateTime.TryParse(lettore[16] + "", out dataValue3);
                         var c = new Commessa();
 
                         c.Id = (int)lettore[0];
@@ -869,13 +867,32 @@ namespace Amministrazione
                         {
                             c.preventivo = (int)lettore[5];
                         }
-                        c.cliente = "" + lettore[5];
-                        c.TecnicoInterno = "" + lettore[6];
-                        c.Note = "" + lettore[7];
-                        c.DataEsecuzione = dataValue2;
-                        c.DataRichestaConsegna = dataValue3;
-                        c.Invio = "" + lettore[11];
-                        c.DataOraInvio = dataValue4;
+                        c.cliente = (int)lettore[6];
+                        c.settoreintero = "" + lettore[7];
+                        c.cantiere = "" + lettore[8];
+                        c.note = "" + lettore[9];
+                        if ((int)lettore[10] == 1)
+                        {
+                            c.chiusa = true;
+                        }
+                        else
+                        {
+                            c.chiusa = false;
+                        }
+                        c.datachiusura = dateValue;
+                        if ((int)lettore[12] == 1)
+                        {
+                            c.fatturata = true;
+                        }
+                        else
+                        {
+                            c.fatturata = false;
+                        }
+                        c.datafattura = dataValue2;
+                        c.acconti = (int)lettore[14];
+                        c.pagamenti = (int)lettore[15];
+                        c.datainserimento = dataValue3;
+                        c.importo = (double)lettore[17];
                         lista.Add(c);
                     }
             }
@@ -913,22 +930,43 @@ namespace Amministrazione
                         DateTime.TryParse(lettore[9] + "", out dataValue2);
                         DateTime.TryParse(lettore[10] + "", out dataValue3);
                         DateTime.TryParse(lettore[12] + "", out dataValue4);
-                        var c = new Commessa
+                        var c = new Commessa();
+
+                        c.Id = (int)lettore[0];
+                        c.numero = (int)lettore[1];
+                        c.anno = (int)lettore[2];
+                        c.settore = "" + lettore[3];
+                        c.commessa = "" + lettore[4];
+                        if (lettore[5].ToString().Equals("NULL"))
                         {
-                            Id = (int)lettore[0],
-                            Ditta = (int)lettore[1],
-                            NumeroCommessa = "" + lettore[2],
-                            Data = dateValue,
-                            Referente = "" + lettore[4],
-                            IndirizzoCantiere = "" + lettore[5],
-                            TecnicoInterno = "" + lettore[6],
-                            Note = "" + lettore[7],
-                            Bozza = (int)lettore[8],
-                            DataEsecuzione = dataValue2,
-                            DataRichestaConsegna = dataValue3,
-                            Invio = "" + lettore[11],
-                            DataOraInvio = dataValue4
-                        };
+                            c.preventivo = (int)lettore[5];
+                        }
+                        c.cliente = (int)lettore[6];
+                        c.settoreintero = "" + lettore[7];
+                        c.cantiere = "" + lettore[8];
+                        c.note = "" + lettore[9];
+                        if ((int)lettore[10] == 1)
+                        {
+                            c.chiusa = true;
+                        }
+                        else
+                        {
+                            c.chiusa = false;
+                        }
+                        c.datachiusura = dateValue;
+                        if ((int)lettore[12] == 1)
+                        {
+                            c.fatturata = true;
+                        }
+                        else
+                        {
+                            c.fatturata = false;
+                        }
+                        c.datafattura = dataValue2;
+                        c.acconti = (int)lettore[14];
+                        c.pagamenti = (int)lettore[15];
+                        c.datainserimento = dataValue3;
+                        c.importo = (double)lettore[17];
                         lista.Add(c);
                     }
 
@@ -947,7 +985,7 @@ namespace Amministrazione
         public Commessa CercaCommesse(int id)
         {
 
-            DateTime dateValue;
+            DateTime dateValue = DateTime.Today;
             DateTime dataValue2;
             DateTime dataValue3;
             DateTime dataValue4;
@@ -960,53 +998,48 @@ namespace Amministrazione
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
-                    if (!(lettore[3] + "").Equals("") && lettore[8].ToString().Equals("0"))
-                    {
                         DateTime.TryParse(lettore[3] + "", out dateValue);
                         DateTime.TryParse(lettore[9] + "", out dataValue2);
                         DateTime.TryParse(lettore[10] + "", out dataValue3);
                         DateTime.TryParse(lettore[12] + "", out dataValue4);
-                        var c = new Commessa
+                        var c = new Commessa();
+
+                        c.Id = (int)lettore[0];
+                        c.numero = (int)lettore[1];
+                        c.anno = (int)lettore[2];
+                        c.settore = "" + lettore[3];
+                        c.commessa = "" + lettore[4];
+                        if (lettore[5].ToString().Equals("NULL"))
                         {
-                            Id = (int)lettore[0],
-                            Ditta = (int)lettore[1],
-                            NumeroCommessa = "" + lettore[2],
-                            Data = dateValue,
-                            Referente = "" + lettore[4],
-                            IndirizzoCantiere = "" + lettore[5],
-                            TecnicoInterno = "" + lettore[6],
-                            Note = "" + lettore[7],
-                            Bozza = (int)lettore[8],
-                            DataEsecuzione = dataValue2,
-                            DataRichestaConsegna = dataValue3,
-                            Invio = "" + lettore[11],
-                            DataOraInvio = dataValue4
-                        };
-                        commessa = c;
-                    }
-                    else
-                    {
-                        DateTime.TryParse(lettore[3] + "", out dateValue);
-                        DateTime.TryParse(lettore[9] + "", out dataValue2);
-                        DateTime.TryParse(lettore[10] + "", out dataValue3);
-                        DateTime.TryParse(lettore[12] + "", out dataValue4);
-                        var c = new Commessa
+                            c.preventivo = (int)lettore[5];
+                        }
+                        c.cliente = (int)lettore[6];
+                        c.settoreintero = "" + lettore[7];
+                        c.cantiere = "" + lettore[8];
+                        c.note = "" + lettore[9];
+                        if ((int)lettore[10] == 1)
                         {
-                            Id = (int)lettore[0],
-                            Ditta = (int)lettore[1],
-                            NumeroCommessa = "" + lettore[2],
-                            Data = dateValue,
-                            Referente = "" + lettore[4],
-                            IndirizzoCantiere = "" + lettore[5],
-                            TecnicoInterno = "" + lettore[6],
-                            Note = "" + lettore[7],
-                            DataEsecuzione = dataValue2,
-                            DataRichestaConsegna = dataValue3,
-                            Invio = "" + lettore[11],
-                            DataOraInvio = dataValue4
-                        };
+                            c.chiusa = true;
+                        }
+                        else
+                        {
+                            c.chiusa = false;
+                        }
+                        c.datachiusura = dateValue;
+                        if ((int)lettore[12] == 1)
+                        {
+                            c.fatturata = true;
+                        }
+                        else
+                        {
+                            c.fatturata = false;
+                        }
+                        c.datafattura = dataValue2;
+                        c.acconti = (int)lettore[14];
+                        c.pagamenti = (int)lettore[15];
+                        c.datainserimento = dataValue3;
+                        c.importo = (double)lettore[17];
                         commessa = c;
-                    }
             }
             catch (Exception ex)
             {
@@ -1022,7 +1055,7 @@ namespace Amministrazione
         public List<Commessa> FiltroCommesse(string s, string g)
         {
 
-            DateTime dateValue;
+            DateTime dateValue = DateTime.Today;
             DateTime dataValue2;
             DateTime dataValue3;
             DateTime dataValue4;
@@ -1035,47 +1068,48 @@ namespace Amministrazione
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
-                    if (!(lettore[3] + "").Equals(""))
-                    {
-                        DateTime.TryParse(lettore[3] + "", out dateValue);
-                        DateTime.TryParse(lettore[9] + "", out dataValue2);
-                        DateTime.TryParse(lettore[10] + "", out dataValue3);
-                        DateTime.TryParse(lettore[12] + "", out dataValue4);
-                        var c = new Commessa
-                        {
+                    DateTime.TryParse(lettore[3] + "", out dateValue);
+                DateTime.TryParse(lettore[9] + "", out dataValue2);
+                DateTime.TryParse(lettore[10] + "", out dataValue3);
+                DateTime.TryParse(lettore[12] + "", out dataValue4);
+                var c = new Commessa();
 
-                            Id = (int)lettore[0],
-                            Ditta = (int)lettore[1],
-                            NumeroCommessa = "" + lettore[2],
-                            Data = dateValue,
-                            Referente = "" + lettore[4],
-                            IndirizzoCantiere = "" + lettore[5],
-                            TecnicoInterno = "" + lettore[6],
-                            Note = "" + lettore[7],
-                            Bozza = (int)lettore[8],
-                            DataEsecuzione = dataValue2,
-                            DataRichestaConsegna = dataValue3,
-                            Invio = "" + lettore[11],
-                            DataOraInvio = dataValue4
-                        };
-                        commessa.Add(c);
-                    }
-                    else
-                    {
-                        var c = new Commessa
-                        {
-                            Id = (int)lettore[0],
-                            Ditta = (int)lettore[1],
-                            NumeroCommessa = (string)lettore[2],
-                            Data = new DateTime(),
-                            Referente = "" + lettore[4],
-                            Bozza = (int)lettore[5],
-                            IndirizzoCantiere = "" + lettore[6],
-                            TecnicoInterno = "" + lettore[7],
-                            Note = "" + lettore[8]
-                        };
-                        commessa.Add(c);
-                    }
+                c.Id = (int)lettore[0];
+                c.numero = (int)lettore[1];
+                c.anno = (int)lettore[2];
+                c.settore = "" + lettore[3];
+                c.commessa = "" + lettore[4];
+                if (lettore[5].ToString().Equals("NULL"))
+                {
+                    c.preventivo = (int)lettore[5];
+                }
+                c.cliente = (int)lettore[6];
+                c.settoreintero = "" + lettore[7];
+                c.cantiere = "" + lettore[8];
+                c.note = "" + lettore[9];
+                if ((int)lettore[10] == 1)
+                {
+                    c.chiusa = true;
+                }
+                else
+                {
+                    c.chiusa = false;
+                }
+                c.datachiusura = dateValue;
+                if ((int)lettore[12] == 1)
+                {
+                    c.fatturata = true;
+                }
+                else
+                {
+                    c.fatturata = false;
+                }
+                c.datafattura = dataValue2;
+                c.acconti = (int)lettore[14];
+                c.pagamenti = (int)lettore[15];
+                c.datainserimento = dataValue3;
+                c.importo = (double)lettore[17];
+                commessa.Add(c);
             }
             catch (Exception ex)
             {
