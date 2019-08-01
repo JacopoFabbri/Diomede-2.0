@@ -60,7 +60,8 @@ namespace Diomede2
         {
             try
             {
-
+                var frm = new InserimentoCliente(settore);
+                frm.Show();
             }
             catch
             {
@@ -73,7 +74,7 @@ namespace Diomede2
         }
         private void NascondiListaClientiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            listView1.Visible = true;
+            listView1.Visible = false;
         }
         private void ListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
         {
