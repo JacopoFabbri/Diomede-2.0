@@ -70,6 +70,12 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EyeSoft.Core, Version=3.0.6836.35031, Culture=neutral, PublicKeyToken=f52adcc2e30d4b8f, processorArchitecture=MSIL">
+      <HintPath>..\packages\EyeSoft.Core.3.0.6836.35031\lib\net45\EyeSoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EyeSoft.Windows, Version=3.0.6836.35031, Culture=neutral, PublicKeyToken=f52adcc2e30d4b8f, processorArchitecture=MSIL">
+      <HintPath>..\packages\EyeSoft.Windows.3.0.6836.35031\lib\net45\EyeSoft.Windows.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.0.16.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\MySql.Data.dll</HintPath>
@@ -129,6 +135,7 @@
     </Compile>
     <None Include="app.manifest" />
     <None Include="LoginGenerale_TemporaryKey.pfx" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
