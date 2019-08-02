@@ -258,6 +258,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LOGO DEFINITIVO.ico" />
+    <None Include="Resources\icons8-piccola-persona-48.png" />
     <None Include="Resources\icons8-casella-di-controllo-selezionata-48.png" />
     <None Include="Resources\icons8-sacco-dei-soldi-16.png" />
     <None Include="Resources\icons8-filtro-riempito-48.png" />

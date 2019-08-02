@@ -213,6 +213,16 @@ namespace CarpenterieMetallicheDiomede.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_piccola_persona_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-piccola-persona-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_più_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-più-48", resourceCulture);

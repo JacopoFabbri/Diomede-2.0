@@ -327,15 +327,16 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(364, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(364, 29);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // inserisciRuoloToolStripMenuItem
             // 
-            this.inserisciRuoloToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.inserisciRuoloToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inserisciRuoloToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_piccola_persona_48;
             this.inserisciRuoloToolStripMenuItem.Name = "inserisciRuoloToolStripMenuItem";
-            this.inserisciRuoloToolStripMenuItem.Size = new System.Drawing.Size(108, 23);
+            this.inserisciRuoloToolStripMenuItem.Size = new System.Drawing.Size(139, 25);
             this.inserisciRuoloToolStripMenuItem.Text = "Inserisci Ruolo";
             this.inserisciRuoloToolStripMenuItem.Click += new System.EventHandler(this.InserisciRuoloToolStripMenuItem_Click);
             // 
