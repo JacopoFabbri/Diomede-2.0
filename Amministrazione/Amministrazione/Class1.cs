@@ -1206,10 +1206,6 @@ namespace Amministrazione
             }
         }
 
-        internal void Inserimento(int numero, int anno, string settore, object data, object referente, object indirizzoCantiere, object tecnico, string note, object bozza, object dataEsecuzione, object dataRichiestaConsegna, object nome, object dataInvio)
-        {
-            throw new NotImplementedException();
-        }
     }
     public class Cliente
     {
