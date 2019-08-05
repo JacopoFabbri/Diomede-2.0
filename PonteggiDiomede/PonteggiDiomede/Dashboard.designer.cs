@@ -113,7 +113,7 @@
             this.nascondiListaClientiToolStripMenuItem});
             this.toolStripMenuItem2.Image = global::PonteggiDiomede.Properties.Resources.icons8_società_cliente_48;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(113, 26);
             this.toolStripMenuItem2.Text = "Ditta";
             // 
             // listaClientiToolStripMenuItem
@@ -166,7 +166,7 @@
             this.nascondiListaBozzeToolStripMenuItem});
             this.bozzaToolStripMenuItem1.Image = global::PonteggiDiomede.Properties.Resources.icons8_nessuna_modifica_48;
             this.bozzaToolStripMenuItem1.Name = "bozzaToolStripMenuItem1";
-            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
+            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(154, 26);
             this.bozzaToolStripMenuItem1.Text = "Preventivo";
             // 
             // listaBozzeToolStripMenuItem
