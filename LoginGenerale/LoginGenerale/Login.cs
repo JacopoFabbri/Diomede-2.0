@@ -18,6 +18,7 @@ namespace Diomede2
         }
         private void Button1_Click(object sender, EventArgs e)
         {
+            toolStripProgressBar1.Value = 50;
             var op = new Operaziones("Utenza");
             List<Update> u = op.CercaUpdate();
             if (u.Count != 0)
@@ -79,12 +80,14 @@ namespace Diomede2
                         button1.Visible = false;
                         button3.Visible = true;
                         menuStrip1.Visible = true;
+                        toolStripProgressBar1.Value = 75;
                     }
                     else
                     {
                         MessageBox.Show("Password errata riprovare!", "Attenzione:", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                         textBox2.Clear();
+                        toolStripProgressBar1.Value = 0;
                     }
                 }
                 else
@@ -103,7 +106,7 @@ namespace Diomede2
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            label3.Text = Application.ProductVersion;
+            toolStripStatusLabel1.Text = Application.ProductVersion;
             checkBox1.Checked = true;
             menuStrip1.Visible = false;
             var path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
@@ -178,9 +181,12 @@ namespace Diomede2
                     MessageBox.Show(ex.ToString());
                 }
             }
+
+            toolStripProgressBar1.Value = 100;
         }
         private void Button3_Click(object sender, EventArgs e)
         {
+            toolStripProgressBar1.Value = 0;
             listView1.Visible = false;
             label1.Visible = true;
             label2.Visible = true;

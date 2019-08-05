@@ -60,3 +60,6 @@ C:\Users\Ponteggi5\Desktop\JacopoFabbri\Diomede-2.0\LoginGenerale\LoginGenerale\
 C:\Users\Ponteggi5\Desktop\JacopoFabbri\Diomede-2.0\LoginGenerale\LoginGenerale\obj\Debug\LoginGenerale.exe
 C:\Users\Ponteggi5\Desktop\JacopoFabbri\Diomede-2.0\LoginGenerale\LoginGenerale\obj\Debug\LoginGenerale.pdb
 C:\Users\Ponteggi5\Desktop\JacopoFabbri\Diomede-2.0\LoginGenerale\LoginGenerale\bin\Debug\MySql.Data.dll
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\LoginGenerale\LoginGenerale\bin\Debug\EyeSoft.Core.dll
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\LoginGenerale\LoginGenerale\bin\Debug\EyeSoft.Windows.dll
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\LoginGenerale\LoginGenerale\bin\Debug\EyeSoft.Core.pdb
