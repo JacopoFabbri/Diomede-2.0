@@ -31,7 +31,7 @@ namespace Diomede2
             }
             catch (Exception)
             {
-                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
+                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione","Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

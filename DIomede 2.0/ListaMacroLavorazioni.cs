@@ -46,7 +46,7 @@ namespace Diomede2
             }
             catch 
             {
-                MessageBox.Show("Impossibile accedere a quest'area !!!");
+                MessageBox.Show("Impossibile accedere a quest'area !!!","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 Application.Exit();
             }
         }
@@ -115,7 +115,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Controlla il valore del prezzo e riprova");
+                MessageBox.Show("Controlla il valore del prezzo e riprova","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
     }

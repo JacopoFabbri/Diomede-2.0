@@ -30,7 +30,7 @@ namespace Diomede2
                 foreach (var r in lista)
                     comboBox1.Items.Add(r.Nome);
             else
-                MessageBox.Show("Inserire almeno un ruolo!");
+                MessageBox.Show("Inserire almeno un ruolo!","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace Diomede2
             }
             catch (Exception)
             {
-                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
+                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

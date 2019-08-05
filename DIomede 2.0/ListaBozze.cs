@@ -85,7 +85,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Impossibile accedere a quest'area !!!");
+                MessageBox.Show("Impossibile accedere a quest'area !!!","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 Application.Exit();
             }
 
