@@ -334,7 +334,7 @@ namespace Amministrazione
             try
             {
                 con.Open();
-                var command = new MySqlCommand("INSERT INTO `CLIENTI`(`NOME`, `INDIRIZZO`, `CAP`, `CITTA`, `PEC`, `EMAIL`, `PARTITAIVA`, `TELEFONOFISSO`, `SDI`) VALUES('" +
+                var command = new MySqlCommand("INSERT INTO `CLIENTI`(`NOME`, `INDIRIZZO`, `CAP`, `CITTA`, `PEC`, `EMAIL`, `PARTITAIVA`, `TEL`, `SDI`) VALUES('" +
                     nome + "','" + indirizzo + "','" + cap + "','" + citta + "','" + pec + "','" + email + "','" +
                     partitaIva + "','" + telefono + "','" + sdi + "')", con);
                 command.ExecuteNonQuery();
@@ -593,10 +593,10 @@ namespace Amministrazione
                         Pec = "" + lettore[5],
                         Email = "" + lettore[6],
                         Iva = "" + lettore[7],
-                        CLIENTI = (int)lettore[8],
+                        Ditta = (int)lettore[8],
                         Cellulare = "" + lettore[9],
                         Tel = "" + lettore[10],
-                        Ruolo = (int)lettore[11]
+                        Ruolo = "" + lettore[11]
                     };
                     lista.Add(contatto);
                 }
@@ -634,10 +634,10 @@ namespace Amministrazione
                         Pec = "" + lettore[5],
                         Email = "" + lettore[6],
                         Iva = "" + lettore[7],
-                        CLIENTI = (int)lettore[8],
+                        Ditta = (int)lettore[8],
                         Cellulare = "" + lettore[9],
                         Tel = "" + lettore[10],
-                        Ruolo = (int)lettore[11]
+                        Ruolo = "" + lettore[11]
                     };
                     lista.Add(contatto);
                 }
@@ -675,10 +675,10 @@ namespace Amministrazione
                         Pec = "" + lettore[5],
                         Email = "" + lettore[6],
                         Iva = "" + lettore[7],
-                        CLIENTI = (int)lettore[8],
+                        Ditta = (int)lettore[8],
                         Cellulare = "" + lettore[9],
                         Tel = "" + lettore[10],
-                        Ruolo = (int)lettore[11]
+                        Ruolo = "" + lettore[11]
                     };
                 }
             }
@@ -716,10 +716,10 @@ namespace Amministrazione
                         Pec = "" + lettore[5],
                         Email = "" + lettore[6],
                         Iva = "" + lettore[7],
-                        CLIENTI = (int)lettore[8],
+                        Ditta = (int)lettore[8],
                         Cellulare = "" + lettore[9],
                         Tel = "" + lettore[10],
-                        Ruolo = (int)lettore[11]
+                        Ruolo = "" + lettore[11]
                     };
                     contattos.Add(contatto);
                 }
@@ -1235,11 +1235,11 @@ namespace Amministrazione
                 con.Close();
             }
         }
-        public List<Commessa> ListaCommesse()
+        public List<Acconto> ListaAcconti()
         {
-            DateTime dateValue;
+            DateTime dataValue;
             DateTime dataValue2;
-            var lista = new List<Commessa>();
+            var lista = new List<Acconto>();
             try
             {
                 con.Open();
@@ -1249,87 +1249,37 @@ namespace Amministrazione
 
                 while (lettore.Read())
                 {
-
-                    DateTime.TryParse(lettore[3] + "", out dateValue);
-                    DateTime.TryParse(lettore[9] + "", out dataValue2);
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.ToString());
-            }
-            finally
-            {
-                con.Close();
-            }
-
-            return lista;
-        }
-        public List<Commessa> ListaCommesse(string n)
-        {
-
-            DateTime dateValue;
-            DateTime dataValue2;
-            DateTime dataValue3;
-            DateTime dataValue4;
-            var lista = new List<Commessa>();
-            try
-            {
-                con.Open();
-                MySqlDataReader lettore = null;
-                var command = new MySqlCommand("SELECT * FROM `COMMESSA` WHERE `ID` = '" + n + "'", con);
-                lettore = command.ExecuteReader();
-
-                while (lettore.Read())
-                    if (!(lettore[3] + "").Equals(""))
+                    if (lettore[4].Equals(""))
                     {
+                       DateTime.TryParse("01-01-0001",out dataValue);
+                    }
+                    else
+                    {
+                        DateTime.TryParse(lettore[4] + "", out dataValue);
 
-                        DateTime.TryParse(lettore[3] + "", out dateValue);
-                        DateTime.TryParse(lettore[9] + "", out dataValue2);
-                        DateTime.TryParse(lettore[10] + "", out dataValue3);
-                        DateTime.TryParse(lettore[12] + "", out dataValue4);
-                        var c = new Commessa();
-
-                        c.Id = (int)lettore[0];
-                        c.numero = (int)lettore[1];
-                        c.anno = (int)lettore[2];
-                        c.settore = "" + lettore[3];
-                        c.commessa = "" + lettore[4];
-                        if (lettore[5].ToString().Equals("NULL"))
-                        {
-                            c.preventivo = (int)lettore[5];
-                        }
-                        c.cliente = (int)lettore[6];
-                        c.settoreintero = "" + lettore[7];
-                        c.cantiere = "" + lettore[8];
-                        c.note = "" + lettore[9];
-                        if ((int)lettore[10] == 1)
-                        {
-                            c.chiusa = true;
-                        }
-                        else
-                        {
-                            c.chiusa = false;
-                        }
-                        c.datachiusura = dateValue;
-                        if ((int)lettore[12] == 1)
-                        {
-                            c.fatturata = true;
-                        }
-                        else
-                        {
-                            c.fatturata = false;
-                        }
-                        c.datafattura = dataValue2;
-                        c.acconti = (int)lettore[14];
-                        c.pagamenti = (int)lettore[15];
-                        c.datainserimento = dataValue3;
-                        c.importo = (double)lettore[17];
-                        lista.Add(c);
                     }
 
+                    if (lettore[5].Equals(""))
+                    {
+                        DateTime.TryParse("01-01-0001", out dataValue2);
+                    }
+                    else
+                    {
+                        DateTime.TryParse(lettore[5] + "", out dataValue2);
+
+                    }
+                    Acconto a = new Acconto();
+                    a.Id = (int)lettore[0];
+                    a.Importo = (double)lettore[1];
+                    a.Note = "" + lettore[2];
+                    a.Desc = "" + lettore[3];
+                    a.DataInserimento = dataValue;
+                    a.DataFattura = dataValue2;
+                    a.NoteFattura = "" + lettore[6];
+                    a.Commessa = (int)lettore[7];
+
+                }
+
             }
             catch (Exception ex)
             {
@@ -1342,64 +1292,52 @@ namespace Amministrazione
 
             return lista;
         }
-        public Commessa CercaCommesse(int id)
+        public List<Acconto> ListaAcconti(string n)
         {
 
-            DateTime dateValue = DateTime.Today;
+            DateTime dataValue;
             DateTime dataValue2;
-            DateTime dataValue3;
-            DateTime dataValue4;
-            Commessa commessa = null;
+            var lista = new List<Acconto>();
             try
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                var command = new MySqlCommand("SELECT * FROM `COMMESSA` WHERE `ID` = '" + id + "'", con);
+                var command = new MySqlCommand("SELECT * FROM `ACCONTI` WHERE `ID` = "+n, con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
-                    DateTime.TryParse(lettore[3] + "", out dateValue);
-                DateTime.TryParse(lettore[9] + "", out dataValue2);
-                DateTime.TryParse(lettore[10] + "", out dataValue3);
-                DateTime.TryParse(lettore[12] + "", out dataValue4);
-                var c = new Commessa();
+                {
+                    if (lettore[4].Equals(""))
+                    {
+                        DateTime.TryParse("01-01-0001", out dataValue);
+                    }
+                    else
+                    {
+                        DateTime.TryParse(lettore[4] + "", out dataValue);
 
-                c.Id = (int)lettore[0];
-                c.numero = (int)lettore[1];
-                c.anno = (int)lettore[2];
-                c.settore = "" + lettore[3];
-                c.commessa = "" + lettore[4];
-                if (lettore[5].ToString().Equals("NULL"))
-                {
-                    c.preventivo = (int)lettore[5];
+                    }
+
+                    if (lettore[5].Equals(""))
+                    {
+                        DateTime.TryParse("01-01-0001", out dataValue2);
+                    }
+                    else
+                    {
+                        DateTime.TryParse(lettore[5] + "", out dataValue2);
+
+                    }
+                    Acconto a = new Acconto();
+                    a.Id = (int)lettore[0];
+                    a.Importo = (double)lettore[1];
+                    a.Note = "" + lettore[2];
+                    a.Desc = "" + lettore[3];
+                    a.DataInserimento = dataValue;
+                    a.DataFattura = dataValue2;
+                    a.NoteFattura = "" + lettore[6];
+                    a.Commessa = (int)lettore[7];
+
                 }
-                c.cliente = (int)lettore[6];
-                c.settoreintero = "" + lettore[7];
-                c.cantiere = "" + lettore[8];
-                c.note = "" + lettore[9];
-                if ((int)lettore[10] == 1)
-                {
-                    c.chiusa = true;
-                }
-                else
-                {
-                    c.chiusa = false;
-                }
-                c.datachiusura = dateValue;
-                if ((int)lettore[12] == 1)
-                {
-                    c.fatturata = true;
-                }
-                else
-                {
-                    c.fatturata = false;
-                }
-                c.datafattura = dataValue2;
-                c.acconti = (int)lettore[14];
-                c.pagamenti = (int)lettore[15];
-                c.datainserimento = dataValue3;
-                c.importo = (double)lettore[17];
-                commessa = c;
+
             }
             catch (Exception ex)
             {
@@ -1410,16 +1348,72 @@ namespace Amministrazione
                 con.Close();
             }
 
-            return commessa;
+            return lista;
         }
-        public List<Commessa> FiltroCommesse(string s, string g)
+        public Acconto CercaAcconto(int id)
         {
 
-            DateTime dateValue = DateTime.Today;
+            DateTime dataValue;
             DateTime dataValue2;
-            DateTime dataValue3;
-            DateTime dataValue4;
-            var commessa = new List<Commessa>();
+            Acconto a = null;
+            try
+            {
+                con.Open();
+                MySqlDataReader lettore = null;
+                var command = new MySqlCommand("SELECT * FROM `ACCONTI` WHERE `ID` = " + id, con);
+                lettore = command.ExecuteReader();
+
+                while (lettore.Read())
+                {
+                    if (lettore[4].Equals(""))
+                    {
+                        DateTime.TryParse("01-01-0001", out dataValue);
+                    }
+                    else
+                    {
+                        DateTime.TryParse(lettore[4] + "", out dataValue);
+
+                    }
+
+                    if (lettore[5].Equals(""))
+                    {
+                        DateTime.TryParse("01-01-0001", out dataValue2);
+                    }
+                    else
+                    {
+                        DateTime.TryParse(lettore[5] + "", out dataValue2);
+
+                    }
+                    a = new Acconto();
+                    a.Id = (int)lettore[0];
+                    a.Importo = (double)lettore[1];
+                    a.Note = "" + lettore[2];
+                    a.Desc = "" + lettore[3];
+                    a.DataInserimento = dataValue;
+                    a.DataFattura = dataValue2;
+                    a.NoteFattura = "" + lettore[6];
+                    a.Commessa = (int)lettore[7];
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return a;
+        }
+        public List<Acconto> FiltroCommesse(string s, string g)
+        {
+
+            DateTime dataValue;
+            DateTime dataValue2;
+            var lista = new List<Acconto>();
             try
             {
                 con.Open();
@@ -1428,98 +1422,39 @@ namespace Amministrazione
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
-                    DateTime.TryParse(lettore[3] + "", out dateValue);
-                DateTime.TryParse(lettore[9] + "", out dataValue2);
-                DateTime.TryParse(lettore[10] + "", out dataValue3);
-                DateTime.TryParse(lettore[12] + "", out dataValue4);
-                var c = new Commessa();
-
-                c.Id = (int)lettore[0];
-                c.numero = (int)lettore[1];
-                c.anno = (int)lettore[2];
-                c.settore = "" + lettore[3];
-                c.commessa = "" + lettore[4];
-                if (lettore[5].ToString().Equals("NULL"))
                 {
-                    c.preventivo = (int)lettore[5];
-                }
-                c.cliente = (int)lettore[6];
-                c.settoreintero = "" + lettore[7];
-                c.cantiere = "" + lettore[8];
-                c.note = "" + lettore[9];
-                if ((int)lettore[10] == 1)
-                {
-                    c.chiusa = true;
-                }
-                else
-                {
-                    c.chiusa = false;
-                }
-                c.datachiusura = dateValue;
-                if ((int)lettore[12] == 1)
-                {
-                    c.fatturata = true;
-                }
-                else
-                {
-                    c.fatturata = false;
-                }
-                c.datafattura = dataValue2;
-                c.acconti = (int)lettore[14];
-                c.pagamenti = (int)lettore[15];
-                c.datainserimento = dataValue3;
-                c.importo = (double)lettore[17];
-                commessa.Add(c);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.ToString());
-            }
-            finally
-            {
-                con.Close();
-            }
-
-            return commessa;
-        }
-        public void AggiornaCommesse(int id, int numero, int anno, string settore, string commessa, int preventivo, int cliente, string settoreintero, string cantiere, string note, bool chiusa, DateTime datachiusura, bool fatturata, DateTime datafattura, int acconti, int pagamenti, DateTime datainserimento, string importo)
-        {
-            try
-            {
-                con.Open();
-                if (chiusa)
-                {
-                    if (fatturata)
+                    if (lettore[4].Equals(""))
                     {
-                        if (chiusa)
-                        {
-                            var command = new MySqlCommand(
-                                "UPDATE `COMMESSA` SET `NUMERO`='" + numero + "',`ANNO`='" + anno + "',`SETTORE`='" + settore + "',`COMMESSA`='" + commessa + "',`PREVENTIVO`='" + preventivo + "',`CLIENTE`='" + cliente + "',`SETTOREINTERO`='" + settoreintero + "',`CANTIERE`='" + cantiere + "',`NOTE`='" + note + "',`CHIUSA`='" + 1 + "',`DATACHIUSURA`='" + datachiusura.ToString("yyyy/MM/dd") + "',`FATTURATA`='" + 1 + "',`DATAFATTURA`='" + datafattura.ToString("yyyy/MM/dd") + "',`ACCONTI`='" + acconti + "',`PAGAMENTI`='" + pagamenti + "',`DATAINSERIMENTO`='" + datainserimento.ToString("yyyy/MM/dd") + "',`IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "' WHERE  `ID` = '" + id + "'", con);
-                            command.ExecuteNonQuery();
-                        }
-                        else
-                        {
-                            var command = new MySqlCommand(
-                                 "UPDATE `COMMESSA` SET `NUMERO`='" + numero + "',`ANNO`='" + anno + "',`SETTORE`='" + settore + "',`COMMESSA`='" + commessa + "',`PREVENTIVO`='" + preventivo + "',`CLIENTE`='" + cliente + "',`SETTOREINTERO`='" + settoreintero + "',`CANTIERE`='" + cantiere + "',`NOTE`='" + note + "',`CHIUSA`='" + 0 + "',`DATACHIUSURA`='" + datachiusura.ToString("yyyy/MM/dd") + "',`FATTURATA`='" + 1 + "',`DATAFATTURA`='" + datafattura.ToString("yyyy/MM/dd") + "',`ACCONTI`='" + acconti + "',`PAGAMENTI`='" + pagamenti + "',`DATAINSERIMENTO`='" + datainserimento.ToString("yyyy/MM/dd") + "',`IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "' WHERE  `ID` = '" + id + "'", con);
-                            command.ExecuteNonQuery();
-                        }
+                        DateTime.TryParse("01-01-0001", out dataValue);
+                    }   
+                    else
+                    {
+                        DateTime.TryParse(lettore[4] + "", out dataValue);
+
+                    }
+
+                    if (lettore[5].Equals(""))
+                    {
+                        DateTime.TryParse("01-01-0001", out dataValue2);
                     }
                     else
                     {
-                        if (chiusa)
-                        {
-                            var command = new MySqlCommand(
-                                "UPDATE `COMMESSA` SET `NUMERO`='" + numero + "',`ANNO`='" + anno + "',`SETTORE`='" + settore + "',`COMMESSA`='" + commessa + "',`PREVENTIVO`='" + preventivo + "',`CLIENTE`='" + cliente + "',`SETTOREINTERO`='" + settoreintero + "',`CANTIERE`='" + cantiere + "',`NOTE`='" + note + "',`CHIUSA`='" + 1 + "',`DATACHIUSURA`='" + datachiusura.ToString("yyyy/MM/dd") + "',`FATTURATA`='" + 0 + "',`DATAFATTURA`='" + datafattura.ToString("yyyy/MM/dd") + "',`ACCONTI`='" + acconti + "',`PAGAMENTI`='" + pagamenti + "',`DATAINSERIMENTO`='" + datainserimento.ToString("yyyy/MM/dd") + "',`IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "' WHERE  `ID` = '" + id + "'", con);
-                            command.ExecuteNonQuery();
-                        }
-                        else
-                        {
-                            var command = new MySqlCommand(
-                                 "UPDATE `COMMESSA` SET `NUMERO`='" + numero + "',`ANNO`='" + anno + "',`SETTORE`='" + settore + "',`COMMESSA`='" + commessa + "',`PREVENTIVO`='" + preventivo + "',`CLIENTE`='" + cliente + "',`SETTOREINTERO`='" + settoreintero + "',`CANTIERE`='" + cantiere + "',`NOTE`='" + note + "',`CHIUSA`='" + 0 + "',`DATACHIUSURA`='" + datachiusura.ToString("yyyy/MM/dd") + "',`FATTURATA`='" + 0 + "',`DATAFATTURA`='" + datafattura.ToString("yyyy/MM/dd") + "',`ACCONTI`='" + acconti + "',`PAGAMENTI`='" + pagamenti + "',`DATAINSERIMENTO`='" + datainserimento.ToString("yyyy/MM/dd") + "',`IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "' WHERE  `ID` = '" + id + "'", con);
-                            command.ExecuteNonQuery();
-                        }
+                        DateTime.TryParse(lettore[5] + "", out dataValue2);
+
                     }
+                    Acconto a = new Acconto();
+                    a.Id = (int)lettore[0];
+                    a.Importo = (double)lettore[1];
+                    a.Note = "" + lettore[2];
+                    a.Desc = "" + lettore[3];
+                    a.DataInserimento = dataValue;
+                    a.DataFattura = dataValue2;
+                    a.NoteFattura = "" + lettore[6];
+                    a.Commessa = (int)lettore[7];
+                    lista.Add(a);
+
                 }
+
             }
             catch (Exception ex)
             {
@@ -1529,15 +1464,20 @@ namespace Amministrazione
             {
                 con.Close();
             }
+
+            return lista;
         }
-        public void AggiornaCommesse(int id, string note, int ditta)
+        public void AggiornaAcconto(int id, double importo, string note, string desc, DateTime datainserimento, DateTime dataFattura, string noteFattura, int commessa)
         {
             try
             {
                 con.Open();
-                var command = new MySqlCommand("UPDATE `COMMESSA` SET `NOTE`='" + note + "',`DITTA`= '" + ditta + "' WHERE `ID` = '" + id + "'",
-                    con);
-                command.ExecuteNonQuery();
+                            var command = new MySqlCommand(
+                            "UPDATE `ACCONTI` SET `IMPORTO`='"+importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "',`NOTE`='"+note+"',`DESC`='"+desc+"',`DATAINSERIMENTO`='"+ datainserimento.ToString("yyyy/MM/dd")+"',`DATAFATTURA`='"+ dataFattura+"',`NOTEFATTURA`='"+noteFattura+"',`COMMESSA`='"+commessa+"' WHERE `ID`="  , con);
+                            command.ExecuteNonQuery();
+                      
+
+
             }
             catch (Exception ex)
             {
@@ -1548,12 +1488,13 @@ namespace Amministrazione
                 con.Close();
             }
         }
+        
         public void RimuoviCommessa(int id)
         {
             try
             {
                 con.Open();
-                var command = new MySqlCommand("DELETE FROM `COMMESSA` WHERE `ID` = '" + id + "'", con);
+                var command = new MySqlCommand("DELETE FROM `ACCONTI` WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -1590,10 +1531,10 @@ namespace Amministrazione
         public string Pec { get; set; }
         public string Email { get; set; }
         public string Iva { get; set; }
-        public int CLIENTI { get; set; }
+        public int Ditta { get; set; }
         public string Cellulare { get; set; }
         public string Tel { get; set; }
-        public int Ruolo { get; set; }
+        public string Ruolo { get; set; }
     }
     public class Commessa
     {
@@ -1625,6 +1566,6 @@ namespace Amministrazione
         public DateTime DataInserimento { get; set; }
         public DateTime DataFattura { get; set; }
         public String NoteFattura { get; set; }
-        public String Commessa { get; set; }
+        public int Commessa { get; set; }
     }
 }

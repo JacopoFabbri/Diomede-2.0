@@ -48,14 +48,65 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Contatti.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Contatti.designer.cs">
+      <DependentUpon>Contatti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserimentoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoCliente.designer.cs">
+      <DependentUpon>InserimentoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserimentoContatto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserimentoContatto.designer.cs">
+      <DependentUpon>InserimentoContatto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaClienti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaClienti.designer.cs">
+      <DependentUpon>ListaClienti.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="visualizzatore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="visualizzatore.designer.cs">
+      <DependentUpon>visualizzatore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizzatoreDitte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualizzatoreDitte.designer.cs">
+      <DependentUpon>VisualizzatoreDitte.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Contatti.resx">
+      <DependentUpon>Contatti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserimentoCliente.resx">
+      <DependentUpon>InserimentoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserimentoContatto.resx">
+      <DependentUpon>InserimentoContatto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaClienti.resx">
+      <DependentUpon>ListaClienti.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -65,6 +116,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="visualizzatore.resx">
+      <DependentUpon>visualizzatore.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
