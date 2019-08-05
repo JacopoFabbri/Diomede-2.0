@@ -53,7 +53,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Impossibile accedere a quest'area !!!");
+                MessageBox.Show("Impossibile accedere a quest'area !!!","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 Application.Exit();
             }
         }
@@ -123,7 +123,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Nessuna riga selezionata \nSeleziona una riga prima di riprovare");
+                MessageBox.Show("Nessuna riga selezionata \nSeleziona una riga prima di riprovare","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
 
