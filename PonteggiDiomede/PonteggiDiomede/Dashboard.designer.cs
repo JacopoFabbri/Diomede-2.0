@@ -113,7 +113,7 @@
             this.nascondiListaClientiToolStripMenuItem});
             this.toolStripMenuItem2.Image = global::PonteggiDiomede.Properties.Resources.icons8_società_cliente_48;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(113, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem2.Text = "Ditta";
             // 
             // listaClientiToolStripMenuItem
@@ -154,8 +154,8 @@
             this.bozzaToolStripMenuItem1});
             this.bozzaToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_modifica_file_48;
             this.bozzaToolStripMenuItem.Name = "bozzaToolStripMenuItem";
-            this.bozzaToolStripMenuItem.Size = new System.Drawing.Size(78, 25);
-            this.bozzaToolStripMenuItem.Text = "Bozza";
+            this.bozzaToolStripMenuItem.Size = new System.Drawing.Size(172, 25);
+            this.bozzaToolStripMenuItem.Text = "Gestione Preventivi";
             // 
             // bozzaToolStripMenuItem1
             // 
@@ -166,39 +166,39 @@
             this.nascondiListaBozzeToolStripMenuItem});
             this.bozzaToolStripMenuItem1.Image = global::PonteggiDiomede.Properties.Resources.icons8_nessuna_modifica_48;
             this.bozzaToolStripMenuItem1.Name = "bozzaToolStripMenuItem1";
-            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(120, 26);
-            this.bozzaToolStripMenuItem1.Text = "Bozza";
+            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
+            this.bozzaToolStripMenuItem1.Text = "Preventivo";
             // 
             // listaBozzeToolStripMenuItem
             // 
             this.listaBozzeToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_lista_di_cose_da_fare_100;
             this.listaBozzeToolStripMenuItem.Name = "listaBozzeToolStripMenuItem";
-            this.listaBozzeToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
-            this.listaBozzeToolStripMenuItem.Text = "Lista Bozze";
+            this.listaBozzeToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
+            this.listaBozzeToolStripMenuItem.Text = "Lista Preventivo";
             this.listaBozzeToolStripMenuItem.Click += new System.EventHandler(this.ListaBozzeToolStripMenuItem_Click);
             // 
             // inserisciBozzaToolStripMenuItem
             // 
             this.inserisciBozzaToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_inserisci_tabella_48;
             this.inserisciBozzaToolStripMenuItem.Name = "inserisciBozzaToolStripMenuItem";
-            this.inserisciBozzaToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
-            this.inserisciBozzaToolStripMenuItem.Text = "Inserisci Bozza";
+            this.inserisciBozzaToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
+            this.inserisciBozzaToolStripMenuItem.Text = "Inserisci Preventivo";
             this.inserisciBozzaToolStripMenuItem.Click += new System.EventHandler(this.InserisciBozzaToolStripMenuItem_Click);
             // 
             // mostraListaBozzeToolStripMenuItem
             // 
             this.mostraListaBozzeToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_apri_libro_64;
             this.mostraListaBozzeToolStripMenuItem.Name = "mostraListaBozzeToolStripMenuItem";
-            this.mostraListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
-            this.mostraListaBozzeToolStripMenuItem.Text = "Mostra lista Bozze";
+            this.mostraListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
+            this.mostraListaBozzeToolStripMenuItem.Text = "Mostra lista Preventivi";
             this.mostraListaBozzeToolStripMenuItem.Click += new System.EventHandler(this.VisualizzaListaBozzeToolStripMenuItem_Click);
             // 
             // nascondiListaBozzeToolStripMenuItem
             // 
             this.nascondiListaBozzeToolStripMenuItem.Image = global::PonteggiDiomede.Properties.Resources.icons8_rimuovi_immagine_48;
             this.nascondiListaBozzeToolStripMenuItem.Name = "nascondiListaBozzeToolStripMenuItem";
-            this.nascondiListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
-            this.nascondiListaBozzeToolStripMenuItem.Text = "Nascondi lista Bozze";
+            this.nascondiListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
+            this.nascondiListaBozzeToolStripMenuItem.Text = "Nascondi lista Preventivi";
             this.nascondiListaBozzeToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaBozzeToolStripMenuItem_Click);
             // 
             // gestioneCommesseToolStripMenuItem

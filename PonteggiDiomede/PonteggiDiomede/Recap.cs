@@ -60,7 +60,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento.", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -85,7 +85,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("ciao");
+                MessageBox.Show("Errore nell'aggiornamento","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }       
         private void Button5_Click(object sender, EventArgs e)
@@ -103,7 +103,7 @@ namespace Diomede2
                         {
                             var clienti = op.CercaLavorazioni((int)r.Cells[0].Value);
                             op.CancellaLavorazioni((int)r.Cells[0].Value);
-                            MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK,
+                            MessageBox.Show("Cliente Eliminato.", "Conferma:", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
                         }
                 }
@@ -113,7 +113,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK,
+                MessageBox.Show("Impossibile cancellare la riga selezionata.", "Errore:", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }

@@ -25,7 +25,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Impossibile accedere a quest'area !!!");
+                MessageBox.Show("Impossibile accedere a quest'area !!!","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 Application.Exit();
             }
 
@@ -51,7 +51,7 @@ namespace Diomede2
                         }
                         catch
                         {
-                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
+                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore:",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
@@ -68,7 +68,7 @@ namespace Diomede2
                         var clienti = op.CercaClientiId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
                         op.CancellaCliente((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0]
                             .Value);
-                        MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK,
+                        MessageBox.Show("Cliente Eliminato", "Conferma:", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
             }
