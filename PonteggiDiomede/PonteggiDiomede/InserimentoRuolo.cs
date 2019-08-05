@@ -19,13 +19,13 @@ namespace Diomede2
             {
                 var op = new OperazionePraticheEdili(db);
                 op.InserimentoRuolo(textBox1.Text, textBox2.Text);
-                MessageBox.Show("Operazione effettuata", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Operazione effettuata", "Inserito:", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 c.Form5_Load(sender, e);
                 Close();
             }
             catch 
             {
-                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
+                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
     }
