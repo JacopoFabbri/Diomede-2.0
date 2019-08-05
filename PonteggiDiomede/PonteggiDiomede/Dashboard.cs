@@ -127,5 +127,10 @@ namespace Diomede2
             proc.StartInfo.FileName = path + "/LoginGenerale.exe";
             proc.Start();
         }
+
+        private void EventLog1_EntryWritten(object sender, System.Diagnostics.EntryWrittenEventArgs e)
+        {
+
+        }
     }
 }
