@@ -34,7 +34,7 @@ namespace PonteggiDiomede
             }
             catch
             {
-                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
+                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -52,7 +52,7 @@ namespace PonteggiDiomede
                 comboBox1.Items.Add("Marco");
                 comboBox1.Items.Add("Maverick");
 
-                comboBox2.Items.Add("Sopraluogo");
+                comboBox2.Items.Add("Sopralluogo");
                 comboBox2.Items.Add("Disegno");
                 comboBox2.Items.Add("Relazione");
                 comboBox2.Items.Add("Disegno e Relazione");
@@ -61,7 +61,7 @@ namespace PonteggiDiomede
             }
             catch 
             {
-                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
+                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
