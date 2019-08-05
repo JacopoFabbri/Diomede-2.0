@@ -43,14 +43,14 @@ namespace Diomede2
                     op.InserimentoContatto(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text,
                         textBox6.Text, textBox7.Text, textBox8.Text, textBox9.Text, textBox10.Text,
                         "" + lista[comboBox1.SelectedIndex].Id);
-                    MessageBox.Show("Contatto Inserito", "Inserito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Contatto Inserito.😀", "Inserito:", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgV.DataSource = op.FiltraContratto("DITTA", "" + cliente.Id);
                     Close();
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione.","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

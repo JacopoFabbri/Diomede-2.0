@@ -65,12 +65,12 @@ namespace Diomede2
 
                 op.InserimentoBozza(dateTimePicker1.Value, textBox2.Text, double.Parse(textBox3.Text), commessa,
                     lista[comboBox1.SelectedIndex].Id, false);
-                MessageBox.Show("Bozza Inserita", "Inserita:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bozza Inserita.😉", "Inserita:", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
             catch 
             {
-                MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati.","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

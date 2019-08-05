@@ -50,7 +50,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Impossibile accedere a quest'area !!!","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Impossibile accedere a quest'area!!!","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 Application.Exit();
             }
 
@@ -110,7 +110,7 @@ namespace Diomede2
                         }
                         catch
                         {
-                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
+                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento.", "Errore:",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
@@ -138,12 +138,12 @@ namespace Diomede2
                             .Cells[0].Value);
                         op.CacellaContatto((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0]
                             .Value);
-                        MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK,
+                        MessageBox.Show("Cliente Eliminato", "Conferma:", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
                     catch
                     {
-                        MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK,
+                        MessageBox.Show("Impossibile cancellare la riga selezionata.", "Errore:", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
 
