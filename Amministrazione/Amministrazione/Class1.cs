@@ -334,7 +334,7 @@ namespace Amministrazione
             try
             {
                 con.Open();
-                var command = new MySqlCommand("INSERT INTO `CLIENTI`(`NOME`, `INDIRIZZO`, `CAP`, `CITTA`, `PEC`, `EMAIL`, `PARTITAIVA`, `TELEFONOFISSO`, `SDI`) VALUES('" +
+                var command = new MySqlCommand("INSERT INTO `CLIENTI`(`NOME`, `INDIRIZZO`, `CAP`, `CITTA`, `PEC`, `EMAIL`, `PARTITAIVA`, `TEL`, `SDI`) VALUES('" +
                     nome + "','" + indirizzo + "','" + cap + "','" + citta + "','" + pec + "','" + email + "','" +
                     partitaIva + "','" + telefono + "','" + sdi + "')", con);
                 command.ExecuteNonQuery();

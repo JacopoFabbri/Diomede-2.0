@@ -12,3 +12,9 @@ C:\Users\Andre\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amm
 C:\Users\Andre\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.csproj.CopyComplete
 C:\Users\Andre\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.exe
 C:\Users\Andre\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.pdb
+C:\Users\Andre\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.Dashboard.resources
+C:\Users\Andre\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.ListaClienti.resources
+C:\Users\Andre\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.InserimentoCliente.resources
+C:\Users\Andre\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.Contatti.resources
+C:\Users\Andre\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.InserimentoContatto.resources
+C:\Users\Andre\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.visualizzatore.resources
