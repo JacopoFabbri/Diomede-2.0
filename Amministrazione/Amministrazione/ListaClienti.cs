@@ -83,7 +83,8 @@ namespace Amministrazione
         }
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            InserimentoCliente cliente = new InserimentoCliente(db);
+            cliente.Show();
         }
         private void Form4_FormClosed(object sender, FormClosedEventArgs e)
         {

@@ -69,7 +69,7 @@ namespace Amministrazione
         }
         private void NascondiListaClientiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            listView1.Visible = true;
+            listView1.Visible = false;
         }
         private void ListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
         {

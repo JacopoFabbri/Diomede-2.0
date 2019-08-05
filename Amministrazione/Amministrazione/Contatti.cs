@@ -45,7 +45,7 @@ namespace Amministrazione
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();

@@ -593,10 +593,10 @@ namespace Amministrazione
                         Pec = "" + lettore[5],
                         Email = "" + lettore[6],
                         Iva = "" + lettore[7],
-                        CLIENTI = (int)lettore[8],
+                        Ditta = (int)lettore[8],
                         Cellulare = "" + lettore[9],
                         Tel = "" + lettore[10],
-                        Ruolo = (int)lettore[11]
+                        Ruolo = "" + lettore[11]
                     };
                     lista.Add(contatto);
                 }
@@ -634,10 +634,10 @@ namespace Amministrazione
                         Pec = "" + lettore[5],
                         Email = "" + lettore[6],
                         Iva = "" + lettore[7],
-                        CLIENTI = (int)lettore[8],
+                        Ditta = (int)lettore[8],
                         Cellulare = "" + lettore[9],
                         Tel = "" + lettore[10],
-                        Ruolo = (int)lettore[11]
+                        Ruolo = "" + lettore[11]
                     };
                     lista.Add(contatto);
                 }
@@ -675,10 +675,10 @@ namespace Amministrazione
                         Pec = "" + lettore[5],
                         Email = "" + lettore[6],
                         Iva = "" + lettore[7],
-                        CLIENTI = (int)lettore[8],
+                        Ditta = (int)lettore[8],
                         Cellulare = "" + lettore[9],
                         Tel = "" + lettore[10],
-                        Ruolo = (int)lettore[11]
+                        Ruolo = "" + lettore[11]
                     };
                 }
             }
@@ -716,10 +716,10 @@ namespace Amministrazione
                         Pec = "" + lettore[5],
                         Email = "" + lettore[6],
                         Iva = "" + lettore[7],
-                        CLIENTI = (int)lettore[8],
+                        Ditta = (int)lettore[8],
                         Cellulare = "" + lettore[9],
                         Tel = "" + lettore[10],
-                        Ruolo = (int)lettore[11]
+                        Ruolo = "" + lettore[11]
                     };
                     contattos.Add(contatto);
                 }
@@ -1531,10 +1531,10 @@ namespace Amministrazione
         public string Pec { get; set; }
         public string Email { get; set; }
         public string Iva { get; set; }
-        public int CLIENTI { get; set; }
+        public int Ditta { get; set; }
         public string Cellulare { get; set; }
         public string Tel { get; set; }
-        public int Ruolo { get; set; }
+        public string Ruolo { get; set; }
     }
     public class Commessa
     {
