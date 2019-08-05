@@ -113,11 +113,6 @@ namespace Diomede2
         }
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var path = Directory.GetCurrentDirectory();
-            System.Diagnostics.Process proc = new System.Diagnostics.Process();
-            proc.EnableRaisingEvents = false;
-            proc.StartInfo.FileName = path + "/LoginGenerale.exe";
-            proc.Start();
             Application.Exit();
         }
         private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -139,6 +134,13 @@ namespace Diomede2
             }
         }
 
-
+        private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var path = Directory.GetCurrentDirectory();
+            System.Diagnostics.Process proc = new System.Diagnostics.Process();
+            proc.EnableRaisingEvents = false;
+            proc.StartInfo.FileName = path + "/LoginGenerale.exe";
+            proc.Start();
+        }
     }
 }

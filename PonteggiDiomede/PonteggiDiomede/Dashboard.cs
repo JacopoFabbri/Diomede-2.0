@@ -111,17 +111,21 @@ namespace Diomede2
         }
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var path = Directory.GetCurrentDirectory();
-                    System.Diagnostics.Process proc = new System.Diagnostics.Process();
-                    proc.EnableRaisingEvents = false;
-                    proc.StartInfo.FileName = path + "/LoginGenerale.exe";
-                    proc.Start();
-                    Application.Exit();
+            Application.Exit();
         }
         private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Contatti c = new Contatti(lista[listView1.SelectedIndices[0]], settore, this);
             c.Show();
+        }
+
+        private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var path = Directory.GetCurrentDirectory();
+            System.Diagnostics.Process proc = new System.Diagnostics.Process();
+            proc.EnableRaisingEvents = false;
+            proc.StartInfo.FileName = path + "/LoginGenerale.exe";
+            proc.Start();
         }
     }
 }

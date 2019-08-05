@@ -32,14 +32,13 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.listView2 = new System.Windows.Forms.ListView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.bozzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listView3 = new System.Windows.Forms.ListView();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaClientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aggiungiClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostraListaClientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nascondiListaClientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bozzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bozzaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserisciBozzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +52,7 @@
             this.macroLavorazioniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listaMacroLavorazioniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listView3 = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,29 +96,6 @@
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // bozzaToolStripMenuItem
-            // 
-            this.bozzaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bozzaToolStripMenuItem1});
-            this.bozzaToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_modifica_file_48;
-            this.bozzaToolStripMenuItem.Name = "bozzaToolStripMenuItem";
-            this.bozzaToolStripMenuItem.Size = new System.Drawing.Size(155, 25);
-            this.bozzaToolStripMenuItem.Text = "Gestione Preventivi";
-            // 
-            // listView3
-            // 
-            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.listView3.BackColor = System.Drawing.SystemColors.Window;
-            this.listView3.BackgroundImageTiled = true;
-            this.listView3.Location = new System.Drawing.Point(282, 30);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(131, 391);
-            this.listView3.TabIndex = 10;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.List;
-            this.listView3.Visible = false;
-            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -138,7 +115,7 @@
             this.nascondiListaClientiToolStripMenuItem});
             this.toolStripMenuItem2.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_aggiungere_il_contatto_alla_società_48;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(108, 24);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(113, 26);
             this.toolStripMenuItem2.Text = "Ditta";
             // 
             // listaClientiToolStripMenuItem
@@ -173,6 +150,15 @@
             this.nascondiListaClientiToolStripMenuItem.Text = "Nascondi Lista Clienti";
             this.nascondiListaClientiToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaClientiToolStripMenuItem_Click);
             // 
+            // bozzaToolStripMenuItem
+            // 
+            this.bozzaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bozzaToolStripMenuItem1});
+            this.bozzaToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_modifica_file_48;
+            this.bozzaToolStripMenuItem.Name = "bozzaToolStripMenuItem";
+            this.bozzaToolStripMenuItem.Size = new System.Drawing.Size(155, 25);
+            this.bozzaToolStripMenuItem.Text = "Gestione Preventivi";
+            // 
             // bozzaToolStripMenuItem1
             // 
             this.bozzaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -182,7 +168,7 @@
             this.nascondiListaBozzeToolStripMenuItem});
             this.bozzaToolStripMenuItem1.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_nessuna_modifica_48;
             this.bozzaToolStripMenuItem1.Name = "bozzaToolStripMenuItem1";
-            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(143, 24);
             this.bozzaToolStripMenuItem1.Text = "Preventivo";
             // 
             // listaBozzeToolStripMenuItem
@@ -287,6 +273,20 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
+            // listView3
+            // 
+            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.listView3.BackColor = System.Drawing.SystemColors.Window;
+            this.listView3.BackgroundImageTiled = true;
+            this.listView3.Location = new System.Drawing.Point(282, 30);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(131, 391);
+            this.listView3.TabIndex = 10;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.List;
+            this.listView3.Visible = false;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,6 +301,7 @@
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Dashboard_FormClosing);
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
