@@ -40,7 +40,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Errore Imprevisto Contattare i gestori del servizio","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Errore Imprevisto Contattare i gestori del servizio.","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
 
         }
@@ -53,7 +53,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Errore imprevisto contattare l'assistenza", "Attenzione:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Errore imprevisto contattare l'assistenza.", "Attenzione:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void AggiungiClienteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Errore imprevisto contattare l'assistenza", "Attenzione:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Errore imprevisto contattare l'assistenza.", "Attenzione:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void MostraListaClientiToolStripMenuItem_Click(object sender, EventArgs e)

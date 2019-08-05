@@ -30,7 +30,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Impossibile accedere a quest'area !!!");
+                MessageBox.Show("Impossibile accedere a quest'area !!!","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 Application.Exit();
             }
 
@@ -88,7 +88,7 @@ namespace Diomede2
                         }
                         catch
                         {
-                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
+                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore:",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
             }

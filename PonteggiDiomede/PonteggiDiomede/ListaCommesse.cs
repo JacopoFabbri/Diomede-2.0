@@ -50,7 +50,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Impossibile accedere a quest'area !!!");
+                MessageBox.Show("Impossibile accedere a quest'area !!!","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             label1.Text = dataGridView1.SelectedRows.Count + "";
             formPrecente.Hide();
@@ -88,7 +88,7 @@ namespace Diomede2
                                 .Cells[0].Value);
                             op.CancellaCommessa((int)dataGridView1.Rows[dataGridView1.SelectedRows[i].Index].Cells[0]
                                 .Value);
-                            MessageBox.Show("Commessa Eliminata", "Conferma", MessageBoxButtons.OK,
+                            MessageBox.Show("Commessa Eliminata", "Conferma:", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
                         }
                         catch
@@ -123,7 +123,7 @@ namespace Diomede2
                         }
                         catch
                         {
-                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
+                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore:",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
@@ -163,7 +163,7 @@ namespace Diomede2
                                 .Cells[0].Value);
                             op.CancellaCommessa((int)dataGridView1.Rows[dataGridView1.SelectedRows[i].Index].Cells[0]
                                 .Value);
-                            MessageBox.Show("Commessa Eliminata", "Conferma", MessageBoxButtons.OK,
+                            MessageBox.Show("Commessa Eliminata", "Conferma:", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
                         }
                         catch
@@ -261,7 +261,7 @@ namespace Diomede2
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento\n" + ex.ToString(), "Errore",
+                MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento\n" + ex.ToString(), "Errore:",
                     MessageBoxButtons.OK, MessageBoxIcon.Error) ;
             }
             finally
