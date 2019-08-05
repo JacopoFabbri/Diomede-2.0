@@ -48,7 +48,7 @@ namespace Diomede2
         {
             try
             {
-                toolStripProgressBar1.ProgressBar.Value = 50;
+                
                 ListaClienti lc = new ListaClienti(settore, this);
                 lc.Show();
             }
@@ -61,6 +61,7 @@ namespace Diomede2
         {
             try
             {
+                toolStripProgressBar1.ProgressBar.Value = 50;
                 var frm = new InserimentoCliente(settore);
                 frm.Show();
             }

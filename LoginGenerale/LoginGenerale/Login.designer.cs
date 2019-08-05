@@ -41,8 +41,11 @@
             this.inserisciUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificaPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -81,7 +84,7 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(44, 40);
+            this.listView1.Location = new System.Drawing.Point(25, 24);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(180, 194);
             this.listView1.TabIndex = 4;
@@ -106,7 +109,7 @@
             this.button3.BackgroundImage = global::LoginGenerale.Properties.Resources.icons8_eliminare_48;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.Cursor = System.Windows.Forms.Cursors.No;
-            this.button3.Location = new System.Drawing.Point(137, 240);
+            this.button3.Location = new System.Drawing.Point(146, 224);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(110, 32);
             this.button3.TabIndex = 6;
@@ -165,21 +168,35 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // label3
+            // statusStrip1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(0, 266);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "label3";
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar1,
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 261);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.statusStrip1.Size = new System.Drawing.Size(268, 22);
+            this.statusStrip1.TabIndex = 10;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(268, 283);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
@@ -197,6 +214,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,7 +234,9 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inserisciUtenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificaPasswordToolStripMenuItem;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 
