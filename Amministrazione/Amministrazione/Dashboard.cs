@@ -95,19 +95,14 @@ namespace Amministrazione
         private void MostraListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dashboard_Load(sender, e);
-            listView2.Visible = true;
+            listView3.Visible = true;
         }
         private void NascondiListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            listView2.Visible = false;
+            listView3.Visible = false;
         }
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var path = Directory.GetCurrentDirectory();
-                    System.Diagnostics.Process proc = new System.Diagnostics.Process();
-                    proc.EnableRaisingEvents = false;
-                    proc.StartInfo.FileName = path + "/LoginGenerale.exe";
-                    proc.Start();
                     Application.Exit();
         }
 
@@ -115,6 +110,15 @@ namespace Amministrazione
         {
             Contatti c = new Contatti(lista[listView1.SelectedIndices[0]], settore, this);
             c.Show();
+        }
+
+        private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var path = Directory.GetCurrentDirectory();
+            System.Diagnostics.Process proc = new System.Diagnostics.Process();
+            proc.EnableRaisingEvents = false;
+            proc.StartInfo.FileName = path + "/LoginGenerale.exe";
+            proc.Start();
         }
     }
 }

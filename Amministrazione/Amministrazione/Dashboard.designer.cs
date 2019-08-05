@@ -111,7 +111,7 @@
             this.mostraListaClientiToolStripMenuItem,
             this.nascondiListaClientiToolStripMenuItem});
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(113, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem2.Text = "Ditta";
             // 
             // listaClientiToolStripMenuItem
@@ -147,8 +147,8 @@
             this.bozzaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bozzaToolStripMenuItem1});
             this.bozzaToolStripMenuItem.Name = "bozzaToolStripMenuItem";
-            this.bozzaToolStripMenuItem.Size = new System.Drawing.Size(62, 25);
-            this.bozzaToolStripMenuItem.Text = "Bozza";
+            this.bozzaToolStripMenuItem.Size = new System.Drawing.Size(156, 25);
+            this.bozzaToolStripMenuItem.Text = "Gestione Preventivi";
             // 
             // bozzaToolStripMenuItem1
             // 
@@ -158,35 +158,35 @@
             this.mostraListaBozzeToolStripMenuItem,
             this.nascondiListaBozzeToolStripMenuItem});
             this.bozzaToolStripMenuItem1.Name = "bozzaToolStripMenuItem1";
-            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(120, 26);
-            this.bozzaToolStripMenuItem1.Text = "Bozza";
+            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
+            this.bozzaToolStripMenuItem1.Text = "Preventivo";
             // 
             // listaBozzeToolStripMenuItem
             // 
             this.listaBozzeToolStripMenuItem.Name = "listaBozzeToolStripMenuItem";
-            this.listaBozzeToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
-            this.listaBozzeToolStripMenuItem.Text = "Lista Bozze";
+            this.listaBozzeToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
+            this.listaBozzeToolStripMenuItem.Text = "Lista Preventivi";
             this.listaBozzeToolStripMenuItem.Click += new System.EventHandler(this.ListaBozzeToolStripMenuItem_Click);
             // 
             // inserisciBozzaToolStripMenuItem
             // 
             this.inserisciBozzaToolStripMenuItem.Name = "inserisciBozzaToolStripMenuItem";
-            this.inserisciBozzaToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
-            this.inserisciBozzaToolStripMenuItem.Text = "Inserisci Bozza";
+            this.inserisciBozzaToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
+            this.inserisciBozzaToolStripMenuItem.Text = "Inserisci Preventivo";
             this.inserisciBozzaToolStripMenuItem.Click += new System.EventHandler(this.InserisciBozzaToolStripMenuItem_Click);
             // 
             // mostraListaBozzeToolStripMenuItem
             // 
             this.mostraListaBozzeToolStripMenuItem.Name = "mostraListaBozzeToolStripMenuItem";
-            this.mostraListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
-            this.mostraListaBozzeToolStripMenuItem.Text = "Mostra lista Bozze";
+            this.mostraListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
+            this.mostraListaBozzeToolStripMenuItem.Text = "Mostra lista Preventivi";
             this.mostraListaBozzeToolStripMenuItem.Click += new System.EventHandler(this.VisualizzaListaBozzeToolStripMenuItem_Click);
             // 
             // nascondiListaBozzeToolStripMenuItem
             // 
             this.nascondiListaBozzeToolStripMenuItem.Name = "nascondiListaBozzeToolStripMenuItem";
-            this.nascondiListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
-            this.nascondiListaBozzeToolStripMenuItem.Text = "Nascondi lista Bozze";
+            this.nascondiListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
+            this.nascondiListaBozzeToolStripMenuItem.Text = "Nascondi lista Preventivi";
             this.nascondiListaBozzeToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaBozzeToolStripMenuItem_Click);
             // 
             // gestioneCommesseToolStripMenuItem
@@ -205,7 +205,7 @@
             this.mostraListaCommesseToolStripMenuItem,
             this.nascondiListaCommesseToolStripMenuItem});
             this.commesseToolStripMenuItem.Name = "commesseToolStripMenuItem";
-            this.commesseToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+            this.commesseToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.commesseToolStripMenuItem.Text = "Commesse";
             // 
             // listaCommesseToolStripMenuItem
@@ -263,6 +263,7 @@
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Dashboard_FormClosing);
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

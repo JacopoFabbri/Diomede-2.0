@@ -39,7 +39,7 @@ namespace Amministrazione
                     Close();
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
             }
