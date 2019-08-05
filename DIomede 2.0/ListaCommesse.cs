@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -21,7 +23,53 @@ namespace Diomede2
         {
             try
             {
+                
                 op = new OperazionePraticheEdili(db);
+                /*
+                DataTable d = new DataTable();
+                d.Columns.Add("DITTA", typeof(int));
+                d.Columns.Add("NUMEROCOMMESSA", typeof(string));
+                d.Columns.Add("DATA", typeof(DateTime));
+                d.Columns.Add("REFERENTE", typeof(string));
+                d.Columns.Add("BOZZA", typeof(int));
+                d.Columns.Add("INDIRIZZOCANTIERE", typeof(string));
+                d.Columns.Add("TECNICOINTERNO", typeof(string));
+                d.Columns.Add("NOTE", typeof(string));
+
+                List<Commessa> lista = op.CercaCommessa();
+                foreach(Commessa c in lista)
+                {
+                    d.Rows.Add(c.Ditta, c.NumeroCommessa, c.Data, c.Referente, c.Bozza, c.IndirizzoCantiere, c.TecnicoInterno, c.Note);
+                }
+
+                DataGridViewComboBoxColumn column = new DataGridViewComboBoxColumn();
+                column.Name = "DITTA";
+                List<Cliente> listaCienti = op.CercaClienti();
+                List<string> listaNomiClienti = new List<string>();
+                foreach(Cliente cl in listaCienti)
+                {
+                    listaNomiClienti.Add(cl.Nome);
+                }
+                column.DataSource = listaNomiClienti;
+                DataGridViewTextBoxColumn columnComessa = new DataGridViewTextBoxColumn();
+
+                DataGridViewComboBoxColumn columnBozza = new DataGridViewComboBoxColumn();
+                columnBozza.Name = "BOZZA";
+                List<Bozza> listaBozze = op.CercaBozza();
+                List<string> ListaNomiBozze = new List<string>();
+                foreach (Bozza cl in listaBozze)
+                {
+                    ListaNomiBozze.Add(cl.IdentificativoPreventivo);
+                }
+                columnBozza.DataSource = ListaNomiBozze;
+
+
+                dataGridView1.Columns.Add(column);
+                dataGridView1.Columns.Add(columnBozza);
+
+                //dataGridView1.DataSource = d;
+                //dataGridView1.Columns[0].Visible = false;
+                */
                 dataGridView1.DataSource = op.CercaCommessa();
                 dataGridView1.Columns[0].Visible = false;
             }
