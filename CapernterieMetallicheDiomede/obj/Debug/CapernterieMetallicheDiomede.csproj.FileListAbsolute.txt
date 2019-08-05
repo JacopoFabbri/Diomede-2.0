@@ -88,3 +88,5 @@ C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Carpen
 C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.InserisciAcconto.resources
 C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.InserimentoRuolo.resources
 C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.Ruoli.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.InserimentoRuolo.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.Ruoli.resources

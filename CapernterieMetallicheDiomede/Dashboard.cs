@@ -48,6 +48,7 @@ namespace Diomede2
         {
             try
             {
+                toolStripProgressBar1.ProgressBar.Value = 50;
                 ListaClienti lc = new ListaClienti(settore, this);
                 lc.Show();
             }
@@ -141,6 +142,11 @@ namespace Diomede2
             proc.EnableRaisingEvents = false;
             proc.StartInfo.FileName = path + "/LoginGenerale.exe";
             proc.Start();
+        }
+
+        private void ToolStripContainer1_BottomToolStripPanel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
