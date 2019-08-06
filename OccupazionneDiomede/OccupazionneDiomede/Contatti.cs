@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Diomede2
+namespace OccupazioneDiomede
 {
     public partial class Contatti : Form
     {
@@ -78,18 +78,19 @@ namespace Diomede2
             {
                 if (e.RowIndex != -1)
                 {
-                    var v = new visualizzatore(db, (int) dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
-                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                    v.Show();
+                   // var v = new visualizzatore(db, (int) dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
+                   //     dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                   // v.Show();
                 }
             }
             else if (e.ColumnIndex == 8)
             {
                 if (e.RowIndex != -1)
                 {
-                    var v = new VisualizzatoreDitte(db, (int) dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
+                  /*  var v = new VisualizzatoreDitte(db, (int) dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
                         dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
                     v.Show();
+                    */
                 }
             }
         }
@@ -120,8 +121,8 @@ namespace Diomede2
 
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new InserimentoContatto(cliente, db, dataGridView1);
-            frm.Show();
+            //var frm = new InserimentoContatto(cliente, db, dataGridView1);
+            //frm.Show();
         }
 
         private void EliminaToolStripMenuItem_Click(object sender, EventArgs e)

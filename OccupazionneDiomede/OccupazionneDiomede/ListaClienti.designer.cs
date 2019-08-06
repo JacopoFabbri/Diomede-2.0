@@ -1,4 +1,4 @@
-﻿namespace Diomede2
+﻿namespace OccupazioneDiomede
 {
     partial class ListaClienti
     {
@@ -91,14 +91,12 @@
             this.aggiornaToolStripMenuItem,
             this.aggiungiToolStripMenuItem,
             this.eliminaToolStripMenuItem});
-            this.operazioniToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_servizi_48;
             this.operazioniToolStripMenuItem.Name = "operazioniToolStripMenuItem";
             this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(60, 23);
             this.operazioniToolStripMenuItem.Text = "Edit";
             // 
             // aggiornaToolStripMenuItem
             // 
-            this.aggiornaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_sincronizzare_48;
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
             this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
@@ -106,7 +104,6 @@
             // 
             // aggiungiToolStripMenuItem
             // 
-            this.aggiungiToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_più_48;
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
             this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.aggiungiToolStripMenuItem.Text = "Aggiungi";
@@ -114,7 +111,6 @@
             // 
             // eliminaToolStripMenuItem
             // 
-            this.eliminaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_eliminare_48;
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
             this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.eliminaToolStripMenuItem.Text = "Elimina";
@@ -122,7 +118,6 @@
             // 
             // filtroToolStripMenuItem
             // 
-            this.filtroToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_filtro_riempito_48;
             this.filtroToolStripMenuItem.Name = "filtroToolStripMenuItem";
             this.filtroToolStripMenuItem.Size = new System.Drawing.Size(68, 23);
             this.filtroToolStripMenuItem.Text = "Filtro";

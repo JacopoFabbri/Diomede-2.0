@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 
-namespace Diomede2
+namespace OccupazioneDiomede
 {
     public class OperazioneAmministrazione
     {

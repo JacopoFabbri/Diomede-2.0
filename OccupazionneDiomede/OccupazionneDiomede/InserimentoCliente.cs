@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Diomede2
+namespace OccupazioneDiomede
 {
     public partial class InserimentoCliente : Form
     {

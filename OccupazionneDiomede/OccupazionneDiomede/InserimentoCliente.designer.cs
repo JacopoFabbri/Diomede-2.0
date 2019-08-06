@@ -1,4 +1,4 @@
-﻿namespace Diomede2
+﻿namespace OccupazioneDiomede
 {
     partial class InserimentoCliente
     {

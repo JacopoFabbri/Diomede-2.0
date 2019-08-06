@@ -4,7 +4,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Diomede2
+namespace OccupazioneDiomede
 {
     public partial class ListaBozze : Form
     {
@@ -149,8 +149,10 @@ namespace Diomede2
         }
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            /*
             var ib = new InserimentoBozza(db, this);
             ib.Show();
+            */
         }
         private void EliminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -188,11 +190,14 @@ namespace Diomede2
         }
         private void FiltraToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            /*
             var f = new FiltroBozze(dataGridView1, db);
             f.Show();
+            */
         }
         private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            /*
             if (e.ColumnIndex == 5)
             {
                 if (e.RowIndex != -1)
@@ -211,6 +216,7 @@ namespace Diomede2
                     v.Show();
                 }
             }
+            */
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Diomede2
+namespace OccupazioneDiomede
 {
     public partial class ListaClienti : Form
     {
@@ -155,8 +155,10 @@ namespace Diomede2
         }
         private void FiltroToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            /*
             var f = new FiltroClienti(dataGridView1, db);
             f.Show();
+            */
         }
     }
 }
