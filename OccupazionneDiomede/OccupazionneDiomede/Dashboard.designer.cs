@@ -1,4 +1,4 @@
-﻿namespace Diomede2
+﻿namespace OccupazioneDiomede
 {
     partial class Dashboard
     {
@@ -86,8 +86,7 @@
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.List;
             this.listView2.Visible = false;
-            this.listView2.Click += new System.EventHandler(this.ListView2_Click);
-            // 
+            //
             // menuStrip1
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -109,7 +108,6 @@
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2});
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem1.Image = global::Diomede2.Properties.Resources.icons8_azienda_64;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(147, 25);
             this.toolStripMenuItem1.Text = "Gestione Clienti";
@@ -121,14 +119,12 @@
             this.aggiungiClienteToolStripMenuItem,
             this.mostraListaClientiToolStripMenuItem,
             this.nascondiListaClientiToolStripMenuItem});
-            this.toolStripMenuItem2.Image = global::Diomede2.Properties.Resources.icons8_aggiungere_il_contatto_alla_società_481;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(113, 26);
             this.toolStripMenuItem2.Text = "Ditta";
             // 
             // listaClientiToolStripMenuItem
             // 
-            this.listaClientiToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_lista_di_cose_da_fare_100;
             this.listaClientiToolStripMenuItem.Name = "listaClientiToolStripMenuItem";
             this.listaClientiToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.listaClientiToolStripMenuItem.Text = "Lista Clienti";
@@ -136,7 +132,6 @@
             // 
             // aggiungiClienteToolStripMenuItem
             // 
-            this.aggiungiClienteToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_modifica_utente_uomo_16;
             this.aggiungiClienteToolStripMenuItem.Name = "aggiungiClienteToolStripMenuItem";
             this.aggiungiClienteToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.aggiungiClienteToolStripMenuItem.Text = "Aggiungi Cliente";
@@ -144,7 +139,6 @@
             // 
             // mostraListaClientiToolStripMenuItem
             // 
-            this.mostraListaClientiToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_apri_libro_64;
             this.mostraListaClientiToolStripMenuItem.Name = "mostraListaClientiToolStripMenuItem";
             this.mostraListaClientiToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.mostraListaClientiToolStripMenuItem.Text = "Mostra Lista Clienti";
@@ -152,7 +146,6 @@
             // 
             // nascondiListaClientiToolStripMenuItem
             // 
-            this.nascondiListaClientiToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_rimuovi_immagine_48;
             this.nascondiListaClientiToolStripMenuItem.Name = "nascondiListaClientiToolStripMenuItem";
             this.nascondiListaClientiToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.nascondiListaClientiToolStripMenuItem.Text = "Nascondi Lista Clienti";
@@ -164,7 +157,6 @@
             this.aggiungiToolStripMenuItem,
             this.pacchettoToolStripMenuItem});
             this.gestioneBozzeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestioneBozzeToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_modifica_file_48;
             this.gestioneBozzeToolStripMenuItem.Name = "gestioneBozzeToolStripMenuItem";
             this.gestioneBozzeToolStripMenuItem.Size = new System.Drawing.Size(172, 25);
             this.gestioneBozzeToolStripMenuItem.Text = "Gestione Preventivi";
@@ -177,14 +169,12 @@
             this.visualizzaListaBozzeToolStripMenuItem,
             this.nascondiListaBozzeToolStripMenuItem});
             this.aggiungiToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.aggiungiToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_nessuna_modifica_48;
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
             this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.aggiungiToolStripMenuItem.Text = "Preventivo";
             // 
             // listaBozzeToolStripMenuItem
             // 
-            this.listaBozzeToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_lista_di_cose_da_fare_100;
             this.listaBozzeToolStripMenuItem.Name = "listaBozzeToolStripMenuItem";
             this.listaBozzeToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
             this.listaBozzeToolStripMenuItem.Text = "Lista Preventivi";
@@ -192,15 +182,12 @@
             // 
             // inserisciBozzaToolStripMenuItem
             // 
-            this.inserisciBozzaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_inserisci_tabella_48;
             this.inserisciBozzaToolStripMenuItem.Name = "inserisciBozzaToolStripMenuItem";
             this.inserisciBozzaToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
             this.inserisciBozzaToolStripMenuItem.Text = "Inserisci Preventivo";
-            this.inserisciBozzaToolStripMenuItem.Click += new System.EventHandler(this.InserisciBozzaToolStripMenuItem_Click);
             // 
             // visualizzaListaBozzeToolStripMenuItem
             // 
-            this.visualizzaListaBozzeToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_apri_libro_64;
             this.visualizzaListaBozzeToolStripMenuItem.Name = "visualizzaListaBozzeToolStripMenuItem";
             this.visualizzaListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
             this.visualizzaListaBozzeToolStripMenuItem.Text = "Visualizza Lista Preventivi";
@@ -208,7 +195,6 @@
             // 
             // nascondiListaBozzeToolStripMenuItem
             // 
-            this.nascondiListaBozzeToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_rimuovi_immagine_48;
             this.nascondiListaBozzeToolStripMenuItem.Name = "nascondiListaBozzeToolStripMenuItem";
             this.nascondiListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
             this.nascondiListaBozzeToolStripMenuItem.Text = "Nascondi Lista Preventivi";
@@ -219,26 +205,21 @@
             this.pacchettoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listaPacchettoToolStripMenuItem,
             this.inserisciPacchettoToolStripMenuItem});
-            this.pacchettoToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_modifica_casella_100;
             this.pacchettoToolStripMenuItem.Name = "pacchettoToolStripMenuItem";
             this.pacchettoToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.pacchettoToolStripMenuItem.Text = "Pacchetto";
             // 
             // listaPacchettoToolStripMenuItem
             // 
-            this.listaPacchettoToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_lista_di_cose_da_fare_100;
             this.listaPacchettoToolStripMenuItem.Name = "listaPacchettoToolStripMenuItem";
             this.listaPacchettoToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
             this.listaPacchettoToolStripMenuItem.Text = "Lista Pacchetto";
-            this.listaPacchettoToolStripMenuItem.Click += new System.EventHandler(this.ListaPacchettoToolStripMenuItem_Click);
             // 
             // inserisciPacchettoToolStripMenuItem
             // 
-            this.inserisciPacchettoToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_scatola_di_cartone_48;
             this.inserisciPacchettoToolStripMenuItem.Name = "inserisciPacchettoToolStripMenuItem";
             this.inserisciPacchettoToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
             this.inserisciPacchettoToolStripMenuItem.Text = "Inserisci Pacchetto";
-            this.inserisciPacchettoToolStripMenuItem.Click += new System.EventHandler(this.InserisciPacchettoToolStripMenuItem_Click);
             // 
             // gestioneCommesseToolStripMenuItem
             // 
@@ -246,7 +227,6 @@
             this.commesseToolStripMenuItem,
             this.macroLavorazioniToolStripMenuItem1});
             this.gestioneCommesseToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestioneCommesseToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_quaderno_48;
             this.gestioneCommesseToolStripMenuItem.Name = "gestioneCommesseToolStripMenuItem";
             this.gestioneCommesseToolStripMenuItem.Size = new System.Drawing.Size(180, 25);
             this.gestioneCommesseToolStripMenuItem.Text = "Gestione Commesse";
@@ -257,22 +237,18 @@
             this.listaCommesseToolStripMenuItem,
             this.mostraListaCommesseToolStripMenuItem,
             this.nascondiListaCommesseToolStripMenuItem});
-            this.commesseToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_web_48;
             this.commesseToolStripMenuItem.Name = "commesseToolStripMenuItem";
             this.commesseToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.commesseToolStripMenuItem.Text = "Commesse";
             // 
             // listaCommesseToolStripMenuItem
             // 
-            this.listaCommesseToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_lista_di_cose_da_fare_100;
             this.listaCommesseToolStripMenuItem.Name = "listaCommesseToolStripMenuItem";
             this.listaCommesseToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
             this.listaCommesseToolStripMenuItem.Text = "Lista Commesse";
-            this.listaCommesseToolStripMenuItem.Click += new System.EventHandler(this.ListaCommesseToolStripMenuItem_Click);
             // 
             // mostraListaCommesseToolStripMenuItem
             // 
-            this.mostraListaCommesseToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_apri_libro_64;
             this.mostraListaCommesseToolStripMenuItem.Name = "mostraListaCommesseToolStripMenuItem";
             this.mostraListaCommesseToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
             this.mostraListaCommesseToolStripMenuItem.Text = "Mostra Lista Commesse";
@@ -280,7 +256,6 @@
             // 
             // nascondiListaCommesseToolStripMenuItem
             // 
-            this.nascondiListaCommesseToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_rimuovi_immagine_48;
             this.nascondiListaCommesseToolStripMenuItem.Name = "nascondiListaCommesseToolStripMenuItem";
             this.nascondiListaCommesseToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
             this.nascondiListaCommesseToolStripMenuItem.Text = "Nascondi Lista Commesse";
@@ -290,25 +265,21 @@
             // 
             this.macroLavorazioniToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listaMacroLavorazioniToolStripMenuItem1});
-            this.macroLavorazioniToolStripMenuItem1.Image = global::Diomede2.Properties.Resources.icons8_martello_64;
             this.macroLavorazioniToolStripMenuItem1.Name = "macroLavorazioniToolStripMenuItem1";
             this.macroLavorazioniToolStripMenuItem1.Size = new System.Drawing.Size(208, 26);
             this.macroLavorazioniToolStripMenuItem1.Text = "Macro Lavorazioni";
             // 
             // listaMacroLavorazioniToolStripMenuItem1
             // 
-            this.listaMacroLavorazioniToolStripMenuItem1.Image = global::Diomede2.Properties.Resources.icons8_lista_di_cose_da_fare_100;
             this.listaMacroLavorazioniToolStripMenuItem1.Name = "listaMacroLavorazioniToolStripMenuItem1";
             this.listaMacroLavorazioniToolStripMenuItem1.Size = new System.Drawing.Size(244, 26);
             this.listaMacroLavorazioniToolStripMenuItem1.Text = "Lista Macro Lavorazioni";
-            this.listaMacroLavorazioniToolStripMenuItem1.Click += new System.EventHandler(this.ListaMacroLavorazioniToolStripMenuItem1_Click);
-            // 
+             // 
             // gestioneEconomicaToolStripMenuItem
             // 
             this.gestioneEconomicaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pagamentiToolStripMenuItem});
             this.gestioneEconomicaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestioneEconomicaToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_gestione_aziendale_64;
             this.gestioneEconomicaToolStripMenuItem.Name = "gestioneEconomicaToolStripMenuItem";
             this.gestioneEconomicaToolStripMenuItem.Size = new System.Drawing.Size(178, 25);
             this.gestioneEconomicaToolStripMenuItem.Text = "Gestione Economica";
@@ -317,23 +288,19 @@
             // 
             this.pagamentiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listaPagamentiToolStripMenuItem});
-            this.pagamentiToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_sacco_dei_soldi_16;
             this.pagamentiToolStripMenuItem.Name = "pagamentiToolStripMenuItem";
             this.pagamentiToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
             this.pagamentiToolStripMenuItem.Text = "Pagamenti";
             // 
             // listaPagamentiToolStripMenuItem
             // 
-            this.listaPagamentiToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_storico_dei_pagamenti_64;
             this.listaPagamentiToolStripMenuItem.Name = "listaPagamentiToolStripMenuItem";
             this.listaPagamentiToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.listaPagamentiToolStripMenuItem.Text = "Lista Pagamenti";
-            this.listaPagamentiToolStripMenuItem.Click += new System.EventHandler(this.ListaPagamentiToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitToolStripMenuItem.Image = global::Diomede2.Properties.Resources.icons8_eliminare_48;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(62, 25);
             this.exitToolStripMenuItem.Text = "Exit";

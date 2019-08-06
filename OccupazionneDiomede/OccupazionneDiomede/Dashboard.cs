@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
-namespace Diomede2
+namespace OccupazioneDiomede
 {
     public partial class Dashboard : Form
     {

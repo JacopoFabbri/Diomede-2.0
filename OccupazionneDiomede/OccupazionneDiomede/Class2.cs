@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using MySql.Data.MySqlClient;
 
-namespace Diomede2
+namespace OccupazioneDiomede
 {
     internal class OperazionePraticheEdili
     {
