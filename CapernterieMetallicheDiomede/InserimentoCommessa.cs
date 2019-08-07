@@ -59,11 +59,11 @@ namespace CarpenterieMetallicheDiomede
                     commessa = op1.GeneraCommessa("CM", listaAmministrazione[1], "CarpenteriaMetallica", true);
                 }
 
-                op.InserimentoCommessa(lista[comboBox1.SelectedIndex].Id, commessa, dateTimePicker1.Value, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text);
+                op.InserimentoCommessa(lista[comboBox1.SelectedIndex].Id, commessa, dateTimePicker1.Value, comboBox2.SelectedItem.ToString(), textBox2.Text, textBox3.Text, textBox5.Text);
                 MessageBox.Show("Bozza Inserita", "Inserita:", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati");
             }
@@ -74,6 +74,9 @@ namespace CarpenterieMetallicheDiomede
             op = new OperazionePraticheEdili(db);
             lista = op.CercaClienti();
             foreach (var c in lista) comboBox1.Items.Add(c.Nome);
+            comboBox2.Items.Add("Alma");
+            comboBox2.Items.Add("Calogero");
+
         }
     }
 }
