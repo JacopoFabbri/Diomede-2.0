@@ -111,7 +111,7 @@
             this.mostraListaClientiToolStripMenuItem,
             this.nascondiListaClientiToolStripMenuItem});
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(113, 26);
             this.toolStripMenuItem2.Text = "Ditta";
             // 
             // listaClientiToolStripMenuItem
@@ -158,7 +158,7 @@
             this.mostraListaBozzeToolStripMenuItem,
             this.nascondiListaBozzeToolStripMenuItem});
             this.bozzaToolStripMenuItem1.Name = "bozzaToolStripMenuItem1";
-            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
+            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(154, 26);
             this.bozzaToolStripMenuItem1.Text = "Preventivo";
             // 
             // listaBozzeToolStripMenuItem
@@ -205,7 +205,7 @@
             this.mostraListaCommesseToolStripMenuItem,
             this.nascondiListaCommesseToolStripMenuItem});
             this.commesseToolStripMenuItem.Name = "commesseToolStripMenuItem";
-            this.commesseToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.commesseToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
             this.commesseToolStripMenuItem.Text = "Commesse";
             // 
             // listaCommesseToolStripMenuItem

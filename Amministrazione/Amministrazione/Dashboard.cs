@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Syncfusion.Windows.Forms.Maps;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
@@ -117,6 +118,16 @@ namespace Amministrazione
             proc.EnableRaisingEvents = false;
             proc.StartInfo.FileName = path + "/LoginGenerale.exe";
             proc.Start();
+        }
+
+        private void DocumentExplorer1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void RadialMenu1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
