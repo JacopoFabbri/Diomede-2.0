@@ -63,3 +63,8 @@ C:\Users\Ponteggi5\Desktop\JacopoFabbri\Diomede-2.0\LoginGenerale\LoginGenerale\
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\LoginGenerale\LoginGenerale\bin\Debug\EyeSoft.Core.dll
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\LoginGenerale\LoginGenerale\bin\Debug\EyeSoft.Windows.dll
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\LoginGenerale\LoginGenerale\bin\Debug\EyeSoft.Core.pdb
+C:\Users\Andre\Desktop\Diomede-2.0\LoginGenerale\LoginGenerale\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\Andre\Desktop\Diomede-2.0\LoginGenerale\LoginGenerale\bin\Debug\EyeSoft.Core.dll
+C:\Users\Andre\Desktop\Diomede-2.0\LoginGenerale\LoginGenerale\bin\Debug\EyeSoft.Windows.dll
+C:\Users\Andre\Desktop\Diomede-2.0\LoginGenerale\LoginGenerale\bin\Debug\Bunifu_UI_v1.5.3.xml
+C:\Users\Andre\Desktop\Diomede-2.0\LoginGenerale\LoginGenerale\bin\Debug\EyeSoft.Core.pdb

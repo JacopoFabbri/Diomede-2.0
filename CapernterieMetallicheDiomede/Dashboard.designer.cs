@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.listView1 = new System.Windows.Forms.ListView();
             this.listView2 = new System.Windows.Forms.ListView();
@@ -53,6 +54,7 @@
             this.listaMacroLavorazioniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView3 = new System.Windows.Forms.ListView();
+            this.radialMenu1 = new Syncfusion.Windows.Forms.Tools.RadialMenu();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,7 +117,7 @@
             this.nascondiListaClientiToolStripMenuItem});
             this.toolStripMenuItem2.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_aggiungere_il_contatto_alla_società_48;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(113, 26);
             this.toolStripMenuItem2.Text = "Ditta";
             // 
             // listaClientiToolStripMenuItem
@@ -287,11 +289,22 @@
             this.listView3.View = System.Windows.Forms.View.List;
             this.listView3.Visible = false;
             // 
+            // radialMenu1
+            // 
+            this.radialMenu1.Location = new System.Drawing.Point(469, 83);
+            this.radialMenu1.MaximumSize = new System.Drawing.Size(700, 700);
+            this.radialMenu1.MinimumSize = new System.Drawing.Size(150, 150);
+            this.radialMenu1.Name = "radialMenu1";
+            this.radialMenu1.Size = new System.Drawing.Size(300, 300);
+            this.radialMenu1.TabIndex = 11;
+            this.radialMenu1.Visible = false;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 427);
+            this.Controls.Add(this.radialMenu1);
             this.Controls.Add(this.listView3);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);
@@ -335,5 +348,6 @@
         private System.Windows.Forms.ToolStripMenuItem inserisciBozzaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mostraListaBozzeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nascondiListaBozzeToolStripMenuItem;
+        private Syncfusion.Windows.Forms.Tools.RadialMenu radialMenu1;
     }
 }
