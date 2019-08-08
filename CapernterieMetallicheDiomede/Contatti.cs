@@ -116,7 +116,7 @@ namespace Diomede2
                             .Cells[0].Value);
                         op.CacellaContatto((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0]
                             .Value);
-                        MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK,
+                        MessageBox.Show("Contatto Eliminato 😭", "Conferma.", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
                     catch
