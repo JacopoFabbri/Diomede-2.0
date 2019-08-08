@@ -146,10 +146,5 @@ namespace Diomede2
             proc.StartInfo.FileName = path + "/LoginGenerale.exe";
             proc.Start();
         }
-
-        private void ToolStripContainer1_BottomToolStripPanel_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
