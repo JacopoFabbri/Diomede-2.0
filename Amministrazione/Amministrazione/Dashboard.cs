@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Syncfusion.Windows.Forms.Maps;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
@@ -73,7 +74,7 @@ namespace Amministrazione
         }
         private void ListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
         }
         private void InserisciBozzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -105,13 +106,11 @@ namespace Amministrazione
         {
                     Application.Exit();
         }
-
         private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Contatti c = new Contatti(lista[listView1.SelectedIndices[0]], settore, this);
             c.Show();
         }
-
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
             var path = Directory.GetCurrentDirectory();
@@ -119,6 +118,16 @@ namespace Amministrazione
             proc.EnableRaisingEvents = false;
             proc.StartInfo.FileName = path + "/LoginGenerale.exe";
             proc.Start();
+        }
+
+        private void DocumentExplorer1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void RadialMenu1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

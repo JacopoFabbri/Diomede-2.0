@@ -118,8 +118,11 @@ namespace Diomede2
         }
         private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Contatti c = new Contatti(lista[listView1.SelectedIndices[0]], settore, this);
-            c.Show();
+            if (listView1.SelectedIndices.Count > 0)
+            {
+                Contatti c = new Contatti(lista[listView1.SelectedIndices[0]], settore, this);
+                c.Show();
+            }
         }
 
         private void ListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -142,11 +145,6 @@ namespace Diomede2
             proc.EnableRaisingEvents = false;
             proc.StartInfo.FileName = path + "/LoginGenerale.exe";
             proc.Start();
-        }
-
-        private void ToolStripContainer1_BottomToolStripPanel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
