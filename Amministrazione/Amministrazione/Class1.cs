@@ -1492,7 +1492,6 @@ namespace Amministrazione
                 con.Close();
             }
         }
-
         public void RimuoviCommessa(int id)
         {
             try

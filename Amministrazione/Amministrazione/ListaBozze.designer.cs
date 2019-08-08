@@ -44,8 +44,8 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -93,27 +93,27 @@
             this.eliminaToolStripMenuItem});
             this.operazioniToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.operazioniToolStripMenuItem.Name = "operazioniToolStripMenuItem";
-            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(64, 25);
+            this.operazioniToolStripMenuItem.Size = new System.Drawing.Size(48, 25);
             this.operazioniToolStripMenuItem.Text = "Edit";
             // 
             // aggiornaToolStripMenuItem
             // 
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
-            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
             this.aggiornaToolStripMenuItem.Click += new System.EventHandler(this.AggiornaToolStripMenuItem_Click);
             // 
             // aggiungiToolStripMenuItem
             // 
             this.aggiungiToolStripMenuItem.Name = "aggiungiToolStripMenuItem";
-            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.aggiungiToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.aggiungiToolStripMenuItem.Text = "Aggiungi";
             this.aggiungiToolStripMenuItem.Click += new System.EventHandler(this.AggiungiToolStripMenuItem_Click);
             // 
             // eliminaToolStripMenuItem
             // 
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
-            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.eliminaToolStripMenuItem.Text = "Elimina";
             this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.EliminaToolStripMenuItem_Click);
             // 
@@ -121,7 +121,7 @@
             // 
             this.filtraToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.filtraToolStripMenuItem.Name = "filtraToolStripMenuItem";
-            this.filtraToolStripMenuItem.Size = new System.Drawing.Size(74, 25);
+            this.filtraToolStripMenuItem.Size = new System.Drawing.Size(58, 25);
             this.filtraToolStripMenuItem.Text = "Filtro";
             this.filtraToolStripMenuItem.Click += new System.EventHandler(this.FiltraToolStripMenuItem_Click);
             // 
