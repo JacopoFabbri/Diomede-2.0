@@ -105,13 +105,11 @@ namespace Amministrazione
         {
                     Application.Exit();
         }
-
         private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Contatti c = new Contatti(lista[listView1.SelectedIndices[0]], settore, this);
             c.Show();
         }
-
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
             var path = Directory.GetCurrentDirectory();
