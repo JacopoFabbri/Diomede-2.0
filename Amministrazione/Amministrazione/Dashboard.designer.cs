@@ -51,6 +51,10 @@
             this.nascondiListaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView3 = new System.Windows.Forms.ListView();
+            this.barItem1 = new Syncfusion.Windows.Forms.Tools.XPMenus.BarItem();
+            this.barItem2 = new Syncfusion.Windows.Forms.Tools.XPMenus.BarItem();
+            this.barItem3 = new Syncfusion.Windows.Forms.Tools.XPMenus.BarItem();
+            this.barItem4 = new Syncfusion.Windows.Forms.Tools.XPMenus.BarItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -249,6 +253,30 @@
             this.listView3.View = System.Windows.Forms.View.List;
             this.listView3.Visible = false;
             // 
+            // barItem1
+            // 
+            this.barItem1.BarName = "barItem1";
+            this.barItem1.ShowToolTipInPopUp = false;
+            this.barItem1.SizeToFit = true;
+            // 
+            // barItem2
+            // 
+            this.barItem2.BarName = "barItem2";
+            this.barItem2.ShowToolTipInPopUp = false;
+            this.barItem2.SizeToFit = true;
+            // 
+            // barItem3
+            // 
+            this.barItem3.BarName = "barItem3";
+            this.barItem3.ShowToolTipInPopUp = false;
+            this.barItem3.SizeToFit = true;
+            // 
+            // barItem4
+            // 
+            this.barItem4.BarName = "barItem4";
+            this.barItem4.ShowToolTipInPopUp = false;
+            this.barItem4.SizeToFit = true;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,5 +323,9 @@
         private System.Windows.Forms.ToolStripMenuItem inserisciBozzaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mostraListaBozzeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nascondiListaBozzeToolStripMenuItem;
+        private Syncfusion.Windows.Forms.Tools.XPMenus.BarItem barItem1;
+        private Syncfusion.Windows.Forms.Tools.XPMenus.BarItem barItem2;
+        private Syncfusion.Windows.Forms.Tools.XPMenus.BarItem barItem3;
+        private Syncfusion.Windows.Forms.Tools.XPMenus.BarItem barItem4;
     }
 }
