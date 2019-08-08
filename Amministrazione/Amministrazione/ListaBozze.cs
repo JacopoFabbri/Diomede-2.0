@@ -9,7 +9,6 @@ namespace Amministrazione
     {
         private readonly string db;
         private readonly Dashboard formPrecente;
-        private OperazioniAmministrazione op;
         public ListaBozze(string dbName, Dashboard frm)
         {
             formPrecente = frm;
