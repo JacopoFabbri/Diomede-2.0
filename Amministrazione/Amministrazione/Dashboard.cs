@@ -98,14 +98,8 @@ namespace Amministrazione
             Dashboard_Load(sender, e);
             listView3.Visible = true;
         }
-        private void NascondiListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            listView3.Visible = false;
-        }
-        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-                    Application.Exit();
-        }
+        private void NascondiListaCommesseToolStripMenuItem_Click(object sender, EventArgs e) => listView3.Visible = false;
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e) => Application.Exit();
         private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Contatti c = new Contatti(lista[listView1.SelectedIndices[0]], settore, this);
@@ -120,14 +114,5 @@ namespace Amministrazione
             proc.Start();
         }
 
-        private void DocumentExplorer1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
-        }
-
-        private void RadialMenu1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
