@@ -73,7 +73,7 @@ namespace Amministrazione
         }
         private void ListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
         }
         private void InserisciBozzaToolStripMenuItem_Click(object sender, EventArgs e)
         {

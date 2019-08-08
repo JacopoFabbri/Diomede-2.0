@@ -871,7 +871,7 @@ namespace Amministrazione
                         c.settoreintero = "" + lettore[7];
                         c.cantiere = "" + lettore[8];
                         c.note = "" + lettore[9];
-                        if ((int)lettore[10] == 1)
+                        if (("" +lettore[10]).Equals("1"))
                         {
                             c.chiusa = true;
                         }
@@ -879,8 +879,9 @@ namespace Amministrazione
                         {
                             c.chiusa = false;
                         }
+
                         c.datachiusura = dateValue;
-                        if ((int)lettore[12] == 1)
+                        if (("" + lettore[12]).Equals("1"))
                         {
                             c.fatturata = true;
                         }
@@ -889,10 +890,13 @@ namespace Amministrazione
                             c.fatturata = false;
                         }
                         c.datafattura = dataValue2;
-                        c.acconti = (int)lettore[14];
-                        c.pagamenti = (int)lettore[15];
+                        if (!lettore[14].ToString().Equals(""))
+                            c.acconti = (int)lettore[14];
+                        if (!lettore[15].ToString().Equals(""))
+                            c.pagamenti = (int)lettore[15];
                         c.datainserimento = dataValue3;
-                        c.importo = (double)lettore[17];
+                        if (!lettore[17].ToString().Equals(""))
+                            c.importo = (double)lettore[17];
                         lista.Add(c);
                     }
             }
@@ -998,48 +1002,48 @@ namespace Amministrazione
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
-                        DateTime.TryParse(lettore[3] + "", out dateValue);
-                        DateTime.TryParse(lettore[9] + "", out dataValue2);
-                        DateTime.TryParse(lettore[10] + "", out dataValue3);
-                        DateTime.TryParse(lettore[12] + "", out dataValue4);
-                        var c = new Commessa();
+                    DateTime.TryParse(lettore[3] + "", out dateValue);
+                DateTime.TryParse(lettore[9] + "", out dataValue2);
+                DateTime.TryParse(lettore[10] + "", out dataValue3);
+                DateTime.TryParse(lettore[12] + "", out dataValue4);
+                var c = new Commessa();
 
-                        c.Id = (int)lettore[0];
-                        c.numero = (int)lettore[1];
-                        c.anno = (int)lettore[2];
-                        c.settore = "" + lettore[3];
-                        c.commessa = "" + lettore[4];
-                        if (lettore[5].ToString().Equals("NULL"))
-                        {
-                            c.preventivo = (int)lettore[5];
-                        }
-                        c.cliente = (int)lettore[6];
-                        c.settoreintero = "" + lettore[7];
-                        c.cantiere = "" + lettore[8];
-                        c.note = "" + lettore[9];
-                        if ((int)lettore[10] == 1)
-                        {
-                            c.chiusa = true;
-                        }
-                        else
-                        {
-                            c.chiusa = false;
-                        }
-                        c.datachiusura = dateValue;
-                        if ((int)lettore[12] == 1)
-                        {
-                            c.fatturata = true;
-                        }
-                        else
-                        {
-                            c.fatturata = false;
-                        }
-                        c.datafattura = dataValue2;
-                        c.acconti = (int)lettore[14];
-                        c.pagamenti = (int)lettore[15];
-                        c.datainserimento = dataValue3;
-                        c.importo = (double)lettore[17];
-                        commessa = c;
+                c.Id = (int)lettore[0];
+                c.numero = (int)lettore[1];
+                c.anno = (int)lettore[2];
+                c.settore = "" + lettore[3];
+                c.commessa = "" + lettore[4];
+                if (lettore[5].ToString().Equals("NULL"))
+                {
+                    c.preventivo = (int)lettore[5];
+                }
+                c.cliente = (int)lettore[6];
+                c.settoreintero = "" + lettore[7];
+                c.cantiere = "" + lettore[8];
+                c.note = "" + lettore[9];
+                if ((int)lettore[10] == 1)
+                {
+                    c.chiusa = true;
+                }
+                else
+                {
+                    c.chiusa = false;
+                }
+                c.datachiusura = dateValue;
+                if ((int)lettore[12] == 1)
+                {
+                    c.fatturata = true;
+                }
+                else
+                {
+                    c.fatturata = false;
+                }
+                c.datafattura = dataValue2;
+                c.acconti = (int)lettore[14];
+                c.pagamenti = (int)lettore[15];
+                c.datainserimento = dataValue3;
+                c.importo = (double)lettore[17];
+                commessa = c;
             }
             catch (Exception ex)
             {
@@ -1251,7 +1255,7 @@ namespace Amministrazione
                 {
                     if (lettore[4].Equals(""))
                     {
-                       DateTime.TryParse("01-01-0001",out dataValue);
+                        DateTime.TryParse("01-01-0001", out dataValue);
                     }
                     else
                     {
@@ -1302,7 +1306,7 @@ namespace Amministrazione
             {
                 con.Open();
                 MySqlDataReader lettore = null;
-                var command = new MySqlCommand("SELECT * FROM `ACCONTI` WHERE `ID` = "+n, con);
+                var command = new MySqlCommand("SELECT * FROM `ACCONTI` WHERE `ID` = " + n, con);
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
@@ -1426,7 +1430,7 @@ namespace Amministrazione
                     if (lettore[4].Equals(""))
                     {
                         DateTime.TryParse("01-01-0001", out dataValue);
-                    }   
+                    }
                     else
                     {
                         DateTime.TryParse(lettore[4] + "", out dataValue);
@@ -1472,10 +1476,10 @@ namespace Amministrazione
             try
             {
                 con.Open();
-                            var command = new MySqlCommand(
-                            "UPDATE `ACCONTI` SET `IMPORTO`='"+importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "',`NOTE`='"+note+"',`DESC`='"+desc+"',`DATAINSERIMENTO`='"+ datainserimento.ToString("yyyy/MM/dd")+"',`DATAFATTURA`='"+ dataFattura+"',`NOTEFATTURA`='"+noteFattura+"',`COMMESSA`='"+commessa+"' WHERE `ID`="  , con);
-                            command.ExecuteNonQuery();
-                      
+                var command = new MySqlCommand(
+                "UPDATE `ACCONTI` SET `IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "',`NOTE`='" + note + "',`DESC`='" + desc + "',`DATAINSERIMENTO`='" + datainserimento.ToString("yyyy/MM/dd") + "',`DATAFATTURA`='" + dataFattura + "',`NOTEFATTURA`='" + noteFattura + "',`COMMESSA`='" + commessa + "' WHERE `ID`=", con);
+                command.ExecuteNonQuery();
+
 
 
             }
@@ -1488,7 +1492,7 @@ namespace Amministrazione
                 con.Close();
             }
         }
-        
+
         public void RimuoviCommessa(int id)
         {
             try
