@@ -156,7 +156,7 @@ namespace Diomede2
                 if (e.RowIndex != -1)
                 {
                     var v = new VisualizzatoreDitte(db, (int) dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
-                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex], dataGridView1, 12);
                     v.Show();
                 }
         }

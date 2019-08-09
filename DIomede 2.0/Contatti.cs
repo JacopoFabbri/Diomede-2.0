@@ -10,6 +10,7 @@ namespace Diomede2
         private readonly string db;
         private readonly Dashboard formPrecente;
         private OperazionePraticheEdili op;
+        private Boolean flag = false;
 
         public Contatti(Cliente c, string dbName, Dashboard frm)
         {
@@ -31,9 +32,19 @@ namespace Diomede2
                     if (lista != null)
                     {
                         dataGridView1.DataSource = lista;
+                        DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                        col.Name = "CLIENTE";
+                        dataGridView1.Columns.Add(col);
+                        foreach (DataGridViewRow r in dataGridView1.Rows)
+                        {
+                            Cliente c = op.CercaClientiId((int)r.Cells[8].Value);
+                            r.Cells[12].Value = c.Nome;
+                        }
                         dataGridView1.Columns[0].Visible = false;
-                        dataGridView1.Columns[8].ReadOnly = true;
-                        dataGridView1.Columns[11].ReadOnly = true;
+                        dataGridView1.Columns[8].Visible = false;
+                        dataGridView1.Columns[11].Visible = false;
+                        dataGridView1.Columns[12].ReadOnly = true;
+                        flag = true;
                     }
                 }
                 else
@@ -42,15 +53,25 @@ namespace Diomede2
                     if (lista != null)
                     {
                         dataGridView1.DataSource = lista;
+                        DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                        col.Name = "CLIENTE";
+                        dataGridView1.Columns.Add(col);
+                        foreach (DataGridViewRow r in dataGridView1.Rows)
+                        {
+                            Cliente c = op.CercaClientiId((int)r.Cells[8].Value);
+                            r.Cells[12].Value = c.Nome;
+                        }
                         dataGridView1.Columns[0].Visible = false;
-                        dataGridView1.Columns[8].ReadOnly = true;
-                        dataGridView1.Columns[11].ReadOnly = true;
+                        dataGridView1.Columns[8].Visible = false;
+                        dataGridView1.Columns[11].Visible = false;
+                        dataGridView1.Columns[12].ReadOnly = true;
+                        flag = true;
                     }
                 }
             }
             catch
             {
-                MessageBox.Show("Impossibile accedere a quest'area!!!","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Impossibile accedere a quest'area!!!", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
 
@@ -69,28 +90,36 @@ namespace Diomede2
 
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
+            if (flag)
+                foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
         }
 
         private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex == 11)
+            try
             {
-                if (e.RowIndex != -1)
+                if (e.ColumnIndex == 11)
                 {
-                    var v = new visualizzatore(db, (int) dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
-                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                    v.Show();
+                    if (e.RowIndex != -1)
+                    {
+                        var v = new visualizzatore(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
+                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                        v.Show();
+                    }
+                }
+                else if (e.ColumnIndex == 12)
+                {
+                    if (e.RowIndex != -1)
+                    {
+                        var v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[8].Value,
+                            dataGridView1.Rows[e.RowIndex].Cells[8], dataGridView1, cliente.Id);
+                        v.Show();
+                    }
                 }
             }
-            else if (e.ColumnIndex == 8)
+            catch
             {
-                if (e.RowIndex != -1)
-                {
-                    var v = new VisualizzatoreDitte(db, (int) dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
-                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
-                    v.Show();
-                }
+                MessageBox.Show("Ciao Capo");
             }
         }
 
@@ -101,11 +130,11 @@ namespace Diomede2
                     if (riga.Cells[0].Style.ForeColor == Color.Red)
                         try
                         {
-                            op.UpdateContatto((int) riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "",
+                            op.UpdateContatto((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "",
                                 riga.Cells["INDIRIZZO"].Value + "", riga.Cells["CAP"].Value + "",
                                 riga.Cells["CITTA"].Value + "", riga.Cells["PEC"].Value + "",
                                 riga.Cells["EMAIL"].Value + "", riga.Cells["Iva"].Value + "",
-                                (int) riga.Cells["DITTA"].Value, riga.Cells["CELLULARE"].Value + "",
+                                (int)riga.Cells["DITTA"].Value, riga.Cells["CELLULARE"].Value + "",
                                 riga.Cells["TEL"].Value + "", riga.Cells["RUOLO"].Value + "");
                         }
                         catch
@@ -115,7 +144,18 @@ namespace Diomede2
                         }
 
             dataGridView1.DataSource = op.FiltraContratto("DITTA", "" + cliente.Id);
+            DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+            col.Name = "CLIENTE";
+            dataGridView1.Columns.Add(col);
+            foreach (DataGridViewRow r in dataGridView1.Rows)
+            {
+                Cliente c = op.CercaClientiId((int)r.Cells[8].Value);
+                r.Cells[12].Value = c.Nome;
+            }
             dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[8].Visible = false;
+            dataGridView1.Columns[11].Visible = false;
+            dataGridView1.Columns[12].ReadOnly = true;
         }
 
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -129,14 +169,14 @@ namespace Diomede2
             if (dataGridView1.SelectedRows != null)
                 if (MessageBox.Show(
                         "Stai per eliminare " +
-                        (string) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?",
+                        (string)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?",
                         "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) ==
                     DialogResult.Yes)
                     try
                     {
-                        var clienti = op.CercaContattoId((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]
+                        var clienti = op.CercaContattoId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]
                             .Cells[0].Value);
-                        op.CacellaContatto((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0]
+                        op.CacellaContatto((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0]
                             .Value);
                         MessageBox.Show("Cliente Eliminato", "Conferma:", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);

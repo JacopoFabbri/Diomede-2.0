@@ -56,6 +56,7 @@ namespace Amministrazione
         {
             try
             {
+
                 InserimentoCliente cliente = new InserimentoCliente(settore);
                 cliente.Show();
             }
