@@ -41,7 +41,7 @@ namespace Diomede2
             {
                 c = op.CercaCommessa(id);
                 textBox4.Text = c.NumeroCommessa;
-
+                textBox3.Text = "" + 0;
             }
             catch 
             {

@@ -76,6 +76,7 @@ namespace Diomede2
             {
                 comboBox3.Items.Add(i + "");
             }
+            textBox1.Text = "" + 0;
         }
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {

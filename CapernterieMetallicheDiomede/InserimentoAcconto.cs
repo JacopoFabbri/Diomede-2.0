@@ -33,5 +33,10 @@ namespace CarpenterieMetallicheDiomede
                 MessageBox.Show("Errore nell'inserimento Riprovare");
             }
         }
+
+        private void InserimentoAcconto_Load(object sender, EventArgs e)
+        {
+            textBox3.Text = "" + 0;
+        }
     }
 }

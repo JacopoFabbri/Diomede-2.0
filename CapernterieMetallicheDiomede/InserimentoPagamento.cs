@@ -25,6 +25,7 @@ namespace Diomede2
                 textBox1.Text = op.CercaCommessa(idB).NumeroCommessa;
                 textBox5.Text = op.CercaCommessa(idB).Ditta + "";
                 textBox6.Text = idB + "";
+                textBox2.Text = "" + 0;
             }
 
         }
