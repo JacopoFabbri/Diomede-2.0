@@ -12,6 +12,8 @@ namespace Diomede2
         private readonly Dashboard formPrecente;
         //private List<Bozza> lista;
         private OperazionePraticheEdili op;
+        private Boolean flag = false;
+
         public ListaBozze(string dbName, Dashboard frm)
         {
             formPrecente = frm;
@@ -23,77 +25,32 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
-                /*
-                this.Controls.Add(dataGridView1);
-
-                dataGridView1.ColumnCount = 7;
-
-                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
-                dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font =
-                    new Font(dataGridView1.Font, FontStyle.Bold);
-
-                dataGridView1.Location = new Point(8, 8);
-                dataGridView1.Size = new Size(500, 250);
-                dataGridView1.AutoSizeRowsMode =
-                    DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-                dataGridView1.ColumnHeadersBorderStyle =
-                    DataGridViewHeaderBorderStyle.Single;
-                dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Single;
-                dataGridView1.GridColor = Color.Black;
-                dataGridView1.RowHeadersVisible = false;
-
-                dataGridView1.Columns[0].Name = "ID";
-                dataGridView1.Columns[1].Name = "DATA";
-                dataGridView1.Columns[2].Name = "PACCHETTO";
-                dataGridView1.Columns[3].Name = "IMPORTO";
-                dataGridView1.Columns[4].Name = "NUMEROCOMMESSA";
-                dataGridView1.Columns[5].Name = "CLIENTE";
-                dataGridView1.Columns[6].Name = "ACCETTAZIONE";
-
-                dataGridView1.Columns[4].DefaultCellStyle.Font =
-                    new Font(dataGridView1.DefaultCellStyle.Font, FontStyle.Italic);
-
-                dataGridView1.SelectionMode =
-                    DataGridViewSelectionMode.FullRowSelect;
-                dataGridView1.MultiSelect = false;
-                dataGridView1.Dock = DockStyle.Fill;
-                
-                if (op.CercaBozza() != null)
-                {
-                    lista = op.CercaBozza();
-                    int riga = 1;
-
-                    foreach (Bozza b in lista)
-                    {
-                        dataGridView1.Rows.Add();
-                        dataGridView1.Rows[riga].Cells[0].Value = b.Id;
-                        dataGridView1.Rows[riga].Cells[1].Value = b.Data;
-                        dataGridView1.Rows[riga].Cells[2].Value = op.FiltraPacchetto("ID", "" + b.Pacchetto)[0].Nome;
-                        dataGridView1.Rows[riga].Cells[3].Value = b.Importo;
-                        dataGridView1.Rows[riga].Cells[4].Value = b.IdentificativoPreventivo;
-                        dataGridView1.Rows[riga].Cells[5].Value = op.FiltraClienti("ID", "" + b.Cliente)[0].Nome;
-                        dataGridView1.Rows[riga].Cells[6].Value = b.Accettazione;
-
-                    }
-                }
-                */
                 dataGridView1.DataSource = op.CercaBozza();
+                DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                col.Name = "TITOLOPACCHETTO";
+                dataGridView1.Columns.Add(col);
+                foreach (DataGridViewRow r in dataGridView1.Rows)
+                {
+                    Pacchetto c = op.CercaPacchetto((int)r.Cells[2].Value);
+                    r.Cells[7].Value = c.Nome;
+                }
                 dataGridView1.Columns[0].Visible = false;
-                dataGridView1.Columns[3].ReadOnly = true;
+                dataGridView1.Columns[2].Visible = false;
+                dataGridView1.Columns[7].ReadOnly = true;
+                flag = true;
 
             }
             catch
             {
-                MessageBox.Show("Impossibile accedere a quest'area !!!","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                Application.Exit();
+                MessageBox.Show("Impossibile accedere a quest'area !!!", "Attenzione:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             formPrecente.Hide();
         }
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
+            if (flag)
+                foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
         }
         private void ListaBozze_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -138,14 +95,28 @@ namespace Diomede2
                                 }
                             }
                         }
-                        catch 
+                        catch
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
             dataGridView1.DataSource = op.CercaBozza();
+            flag = false
+                ;
+            dataGridView1.Columns.Remove("TITOLOPACCHETTO");
+            DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+            col.Name = "TITOLOPACCHETTO";
+            dataGridView1.Columns.Add(col);
+            foreach (DataGridViewRow r in dataGridView1.Rows)
+            {
+                Pacchetto c = op.CercaPacchetto((int)r.Cells[2].Value);
+                r.Cells[7].Value = c.Nome;
+            }
             dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[2].Visible = false;
+            dataGridView1.Columns[7].ReadOnly = true;
+            flag = true;
         }
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -202,7 +173,7 @@ namespace Diomede2
                     v.Show();
                 }*/
             }
-            else if (e.ColumnIndex == 2)
+            else if (e.ColumnIndex == 7)
             {
                 if (e.RowIndex != -1)
                 {
