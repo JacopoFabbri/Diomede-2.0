@@ -34,9 +34,19 @@ namespace Diomede2
                     Pacchetto c = op.CercaPacchetto((int)r.Cells[2].Value);
                     r.Cells[7].Value = c.Nome;
                 }
+                col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                col.Name = "CLIENTE";
+                dataGridView1.Columns.Add(col);
+                foreach (DataGridViewRow r in dataGridView1.Rows)
+                {
+                    Cliente c = op.CercaClientiId((int)r.Cells[5].Value);
+                    r.Cells[8].Value = c.Nome;
+                }
                 dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[2].Visible = false;
+                dataGridView1.Columns[5].Visible = false;
                 dataGridView1.Columns[7].ReadOnly = true;
+                dataGridView1.Columns[8].ReadOnly = true;
                 flag = true;
 
             }
@@ -94,29 +104,46 @@ namespace Diomede2
                                         (DateTime)riga.Cells["DATA"].Value, "", (int)riga.Cells["ID"].Value, "", "", "");
                                 }
                             }
+
                         }
                         catch
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-
-            dataGridView1.DataSource = op.CercaBozza();
-            flag = false
-                ;
-            dataGridView1.Columns.Remove("TITOLOPACCHETTO");
-            DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-            col.Name = "TITOLOPACCHETTO";
-            dataGridView1.Columns.Add(col);
-            foreach (DataGridViewRow r in dataGridView1.Rows)
+            try
             {
-                Pacchetto c = op.CercaPacchetto((int)r.Cells[2].Value);
-                r.Cells[7].Value = c.Nome;
+                dataGridView1.DataSource = op.CercaBozza();
+                flag = false;
+                dataGridView1.Columns.Remove("TITOLOPACCHETTO");
+                dataGridView1.Columns.Remove("CLIENTE");
+                DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                col.Name = "TITOLOPACCHETTO";
+                dataGridView1.Columns.Add(col);
+                foreach (DataGridViewRow r in dataGridView1.Rows)
+                {
+                    Pacchetto c = op.CercaPacchetto((int)r.Cells[2].Value);
+                    r.Cells[7].Value = c.Nome;
+                }
+                col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                col.Name = "CLIENTE";
+                dataGridView1.Columns.Add(col);
+                foreach (DataGridViewRow r in dataGridView1.Rows)
+                {
+                    Cliente c = op.CercaClientiId((int)r.Cells[5].Value);
+                    r.Cells[8].Value = c.Nome;
+                }
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[2].Visible = false;
+                dataGridView1.Columns[5].Visible = false;
+                dataGridView1.Columns[7].ReadOnly = true;
+                dataGridView1.Columns[8].ReadOnly = true;
+                flag = true;
             }
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[2].Visible = false;
-            dataGridView1.Columns[7].ReadOnly = true;
-            flag = true;
+            catch (Exception ex)
+            {
+                MessageBox.Show("errore");
+            }
         }
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -164,14 +191,14 @@ namespace Diomede2
         }
         private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex == 5)
+            if (e.ColumnIndex == 8)
             {
-                /*if (e.RowIndex != -1)
+                if (e.RowIndex != -1)
                 {
-                    var v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
-                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                    var v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[5].Value,
+                        dataGridView1.Rows[e.RowIndex].Cells[5]);
                     v.Show();
-                }*/
+                }
             }
             else if (e.ColumnIndex == 7)
             {
