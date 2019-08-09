@@ -195,12 +195,12 @@ namespace Diomede2
         {
             if (e.ColumnIndex == 5)
             {
-                if (e.RowIndex != -1)
+                /*if (e.RowIndex != -1)
                 {
                     var v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
-                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex], dataGridView1, 12);
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
                     v.Show();
-                }
+                }*/
             }
             else if (e.ColumnIndex == 2)
             {

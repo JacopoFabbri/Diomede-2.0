@@ -181,7 +181,7 @@ namespace Diomede2
             return contatto;
         }
 
-        public List<Contatto> FiltraContratto(string s, string g)
+        public List<Contatto> FiltraContatto(string s, string g)
         {
             List<Contatto> contattos;
             try

@@ -152,13 +152,14 @@ namespace Diomede2
 
         private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex == 6)
+            /*if (e.ColumnIndex == 6)
                 if (e.RowIndex != -1)
                 {
                     var v = new VisualizzatoreDitte(db, (int) dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
-                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex], dataGridView1, 12);
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
                     v.Show();
                 }
+                */
         }
     }
 }

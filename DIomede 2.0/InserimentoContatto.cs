@@ -44,7 +44,7 @@ namespace Diomede2
                         textBox6.Text, textBox7.Text, textBox8.Text, textBox9.Text, textBox10.Text,
                         "" + lista[comboBox1.SelectedIndex].Id);
                     MessageBox.Show("Contatto Inserito.😀", "Inserito:", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgV.DataSource = op.FiltraContratto("DITTA", "" + cliente.Id);
+                    dgV.DataSource = op.FiltraContatto("DITTA", "" + cliente.Id);
                     Close();
                 }
             }
