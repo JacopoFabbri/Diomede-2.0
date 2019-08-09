@@ -140,7 +140,7 @@ namespace Diomede2
                 dataGridView1.Columns[8].ReadOnly = true;
                 flag = true;
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("errore");
             }
@@ -186,7 +186,8 @@ namespace Diomede2
         }
         private void FiltraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var f = new FiltroBozze(dataGridView1, db);
+            flag = false;
+            var f = new FiltroBozze(dataGridView1, db, flag);
             f.Show();
         }
         private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

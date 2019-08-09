@@ -7,17 +7,19 @@ namespace Diomede2
 {
     public partial class FiltroBozze : Form
     {
-        private readonly DataGridView dataTable;
+        private readonly DataGridView dataGridView1;
         private readonly string db;
         private List<Bozza> lista;
         private readonly List<Cliente> listaClienti = new List<Cliente>();
         private readonly List<Pacchetto> listaPacchetti = new List<Pacchetto>();
         private OperazionePraticheEdili op;
+        private Boolean flag;
 
-        public FiltroBozze(DataGridView d, string dbName)
+        public FiltroBozze(DataGridView d, string dbName, Boolean f)
         {
+            flag = f;
             db = dbName;
-            dataTable = d;
+            dataGridView1 = d;
             InitializeComponent();
         }
 
@@ -36,24 +38,126 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Impossibile accedere a quest'area!!!","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Impossibile accedere a quest'area!!!", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString().Equals("CLIENTE"))
-                dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem,
-                    "" + listaClienti[comboBox2.SelectedIndex].Id);
-            else if (comboBox1.SelectedItem.ToString().Equals("PACCHETTO"))
-                dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem,
-                    "" + listaPacchetti[comboBox2.SelectedIndex].Id);
-            else if (comboBox1.SelectedItem.ToString().Equals("IDENTIFICATIVOPREVENTIVO"))
-                dataTable.DataSource =
-                    op.FiltraBozza("NUMEROCOMMESSA", "" + listaPacchetti[comboBox2.SelectedIndex].Id);
-            else
-                dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem, "" + comboBox2.SelectedItem);
+            if (comboBox2.SelectedItem != null && comboBox1.SelectedItem != null)
+                if (comboBox1.SelectedItem.ToString().Equals("CLIENTE"))
+                {
+                    dataGridView1.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem,
+                        "" + listaClienti[comboBox2.SelectedIndex].Id);
+                    dataGridView1.Columns.Remove("TITOLOPACCHETTO");
+                    dataGridView1.Columns.Remove("CLIENTE");
+                    DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                    col.Name = "TITOLOPACCHETTO";
+                    dataGridView1.Columns.Add(col);
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        Pacchetto c = op.CercaPacchetto((int)r.Cells[2].Value);
+                        r.Cells[7].Value = c.Nome;
+                    }
+                    col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                    col.Name = "CLIENTE";
+                    dataGridView1.Columns.Add(col);
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        Cliente c = op.CercaClientiId((int)r.Cells[5].Value);
+                        r.Cells[8].Value = c.Nome;
+                    }
+                    dataGridView1.Columns[0].Visible = false;
+                    dataGridView1.Columns[2].Visible = false;
+                    dataGridView1.Columns[5].Visible = false;
+                    dataGridView1.Columns[7].ReadOnly = true;
+                    dataGridView1.Columns[8].ReadOnly = true;
+                }
+                else if (comboBox1.SelectedItem.ToString().Equals("PACCHETTO"))
+                {
+                    dataGridView1.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem,
+                        "" + listaPacchetti[comboBox2.SelectedIndex].Id);
+                    dataGridView1.Columns.Remove("TITOLOPACCHETTO");
+                    dataGridView1.Columns.Remove("CLIENTE");
+                    DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                    col.Name = "TITOLOPACCHETTO";
+                    dataGridView1.Columns.Add(col);
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        Pacchetto c = op.CercaPacchetto((int)r.Cells[2].Value);
+                        r.Cells[7].Value = c.Nome;
+                    }
+                    col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                    col.Name = "CLIENTE";
+                    dataGridView1.Columns.Add(col);
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        Cliente c = op.CercaClientiId((int)r.Cells[5].Value);
+                        r.Cells[8].Value = c.Nome;
+                    }
+                    dataGridView1.Columns[0].Visible = false;
+                    dataGridView1.Columns[2].Visible = false;
+                    dataGridView1.Columns[5].Visible = false;
+                    dataGridView1.Columns[7].ReadOnly = true;
+                    dataGridView1.Columns[8].ReadOnly = true;
+                }
+                else if (comboBox1.SelectedItem.ToString().Equals("IDENTIFICATIVOPREVENTIVO"))
+                {
+                    dataGridView1.DataSource =
+                        op.FiltraBozza("NUMEROCOMMESSA", "" + listaPacchetti[comboBox2.SelectedIndex].Id);
+                    dataGridView1.Columns.Remove("TITOLOPACCHETTO");
+                    dataGridView1.Columns.Remove("CLIENTE");
+                    DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                    col.Name = "TITOLOPACCHETTO";
+                    dataGridView1.Columns.Add(col);
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        Pacchetto c = op.CercaPacchetto((int)r.Cells[2].Value);
+                        r.Cells[7].Value = c.Nome;
+                    }
+                    col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                    col.Name = "CLIENTE";
+                    dataGridView1.Columns.Add(col);
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        Cliente c = op.CercaClientiId((int)r.Cells[5].Value);
+                        r.Cells[8].Value = c.Nome;
+                    }
+                    dataGridView1.Columns[0].Visible = false;
+                    dataGridView1.Columns[2].Visible = false;
+                    dataGridView1.Columns[5].Visible = false;
+                    dataGridView1.Columns[7].ReadOnly = true;
+                    dataGridView1.Columns[8].ReadOnly = true;
+                }
+                else
+                {
+                    dataGridView1.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem, "" + comboBox2.SelectedItem);
+                    dataGridView1.Columns.Remove("TITOLOPACCHETTO");
+                    dataGridView1.Columns.Remove("CLIENTE");
+                    DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                    col.Name = "TITOLOPACCHETTO";
+                    dataGridView1.Columns.Add(col);
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        Pacchetto c = op.CercaPacchetto((int)r.Cells[2].Value);
+                        r.Cells[7].Value = c.Nome;
+                    }
+                    col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                    col.Name = "CLIENTE";
+                    dataGridView1.Columns.Add(col);
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        Cliente c = op.CercaClientiId((int)r.Cells[5].Value);
+                        r.Cells[8].Value = c.Nome;
+                    }
+                    dataGridView1.Columns[0].Visible = false;
+                    dataGridView1.Columns[2].Visible = false;
+                    dataGridView1.Columns[5].Visible = false;
+                    dataGridView1.Columns[7].ReadOnly = true;
+                    dataGridView1.Columns[8].ReadOnly = true;
+                }
+            flag = true;
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
