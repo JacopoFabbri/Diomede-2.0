@@ -12,11 +12,26 @@ namespace Diomede2
         /// Punto di ingresso principale dell'applicazione.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string [] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dashboard("Ponteggi"));
+            try
+            {
+                if (Convert.ToInt32(args[0]) == 1)
+                {
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    Application.Run(new Dashboard("Ponteggi"));
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("NON SI FA !!!!");
+            }
+
         }
     }
 }

@@ -9,17 +9,24 @@ namespace Diomede2
         ///     Punto di ingresso principale dell'applicazione.
         /// </summary>
         [STAThread]
-        private static void Main()
+        private static void Main(string[] args)
         {
             try
             {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Dashboard("PraticheEdili"));
+                if (Convert.ToInt32(args[0]) == 1)
+                {
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    Application.Run(new Dashboard("PraticheEdili"));
+                }
+                else
+                {
+                    throw new Exception();
+                }
             }
             catch
             {
-                MessageBox.Show("impossibile caricare le risorse dell'applicazione");
+                MessageBox.Show("NON SI FA !!!!");
             }
         }
     }

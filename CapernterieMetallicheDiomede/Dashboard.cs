@@ -48,7 +48,7 @@ namespace Diomede2
         {
             try
             {
-                
+
                 ListaClienti lc = new ListaClienti(settore, this);
                 lc.Show();
             }
@@ -91,7 +91,7 @@ namespace Diomede2
         }
         private void InserisciBozzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           var ib = new InserimentoBozza(settore);
+            var ib = new InserimentoBozza(settore);
             ib.Show();
         }
         private void VisualizzaListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -140,11 +140,18 @@ namespace Diomede2
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var path = Directory.GetCurrentDirectory();
-            System.Diagnostics.Process proc = new System.Diagnostics.Process();
-            proc.EnableRaisingEvents = false;
-            proc.StartInfo.FileName = path + "/LoginGenerale.exe";
-            proc.Start();
+            try
+            {
+                var path = Directory.GetCurrentDirectory();
+                System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                proc.EnableRaisingEvents = false;
+                proc.StartInfo.FileName = path + "/LoginGenerale.exe";
+                proc.Start();
+            }
+            catch
+            {
+                MessageBox.Show("Errore imprevisto contattare l'assistenza");
+            }
         }
     }
 }
