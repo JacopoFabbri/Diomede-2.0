@@ -731,7 +731,6 @@ namespace Diomede2
             }
         }
     }
-
     public class ClienteDB
     {
         private readonly MySqlConnection con;
@@ -955,7 +954,6 @@ namespace Diomede2
             }
         }
     }
-
     public class ContattoDB
     {
         private readonly MySqlConnection con;
@@ -987,7 +985,7 @@ namespace Diomede2
         }
         public List<Contatto> ListaContatti()
         {
-            List<Contatto> lista = null;
+            List<Contatto> lista = new List<Contatto>();
             try
             {
                 con.Open();
@@ -1189,7 +1187,6 @@ namespace Diomede2
             }
         }
     }
-
     public class RuoloDB
     {
         private readonly MySqlConnection con;
@@ -1382,7 +1379,6 @@ namespace Diomede2
             }
         }
     }
-
     public class BozzaDB
     {
         private readonly MySqlConnection con;
@@ -1635,7 +1631,6 @@ namespace Diomede2
             }
         }
     }
-
     public class CommessaDB
     {
         private readonly MySqlConnection con;
@@ -1974,7 +1969,6 @@ namespace Diomede2
             }
         }
     }
-
     public class LavorazioneDB
     {
         private readonly MySqlConnection con;
@@ -2199,7 +2193,6 @@ namespace Diomede2
             }
         }
     }
-
     public class PagamentoDB
     {
         private readonly MySqlConnection con;
@@ -2445,7 +2438,6 @@ namespace Diomede2
             }
         }
     }
-
     public class Cliente
     {
         public int Id { get; set; }
@@ -2468,7 +2460,6 @@ namespace Diomede2
 
         public string Sdi { get; set; }
     }
-
     public class Contatto
     {
         public int Id { get; set; }
@@ -2495,7 +2486,6 @@ namespace Diomede2
 
         public int Ruolo { get; set; }
     }
-
     public class Ruolo
     {
         public int Id { get; set; }
@@ -2504,7 +2494,6 @@ namespace Diomede2
 
         public string Desc { get; set; }
     }
-
     public class Bozza
     {
         public int Id { get; set; }
@@ -2524,18 +2513,13 @@ namespace Diomede2
     public class Commessa
     {
         public int Id { get; set; }
-
         public int Ditta { get; set; }
-
         public string NumeroCommessa { get; set; }
-
         public DateTime Data { get; set; }
-
         public string Referente { get; set; }
         public string IndirizzoCantiere { get; set; }
         public string TecnicoInterno { get; set; }
         public string Note { get; set; }
-
         public int Bozza { get; set; }
         public DateTime DataEsecuzione { get; set; }
         public DateTime DataRichestaConsegna { get; set; }
@@ -2567,7 +2551,6 @@ namespace Diomede2
 
         public double Importo { get; set; }
     }
-
     public class Lavorazioni
     {
         public int Id { get; set; }

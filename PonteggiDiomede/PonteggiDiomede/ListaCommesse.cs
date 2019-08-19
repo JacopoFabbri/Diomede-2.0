@@ -14,6 +14,7 @@ namespace Diomede2
         private readonly string db;
         private readonly Dashboard formPrecente;
         private OperazionePraticheEdili op;
+        private Boolean flag = false;
         public ListaCommesse(string dbName, Dashboard frm)
         {
             formPrecente = frm;
@@ -25,30 +26,44 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
-                dataGridView1.DataSource = op.CercaCommessa();
-                dataGridView1.Columns[0].Visible = false;
-                dataGridView1.Columns[8].Visible = false;
-                foreach (DataGridViewRow r in dataGridView1.Rows)
+                var lista = op.CercaCommessa();
+                if (lista != null)
                 {
-                    String s = "" + r.Cells["DataOraInvio"].Value;
-                    if (!((DateTime)r.Cells["DataOraInvio"].Value).ToString("yyyy/MM/dd hh:mm").Equals("0001-01-01 12:00:00") && !r.Cells["DataOraInvio"].Value.ToString().Equals("01/01/0001 00:00:00"))
+                    dataGridView1.DataSource = lista;
+                    DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                    col.Name = "CLIENTE";
+                    dataGridView1.Columns.Add(col);
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
                     {
-                        foreach (DataGridViewCell c in r.Cells)
-                        {
-                            c.Style.BackColor = Color.Green;
-                        }
+                        Cliente c = op.CercaClientiId((int)r.Cells[1].Value);
+                        r.Cells[14].Value = c.Nome;
                     }
-                    else if (((DateTime)r.Cells["DATAESECUZIONE"].Value).ToString("yyyy/MM/dd").Equals(DateTime.Now.ToString("yyyy/MM/dd")))
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
                     {
-                        foreach (DataGridViewCell c in r.Cells)
+                        String s = "" + r.Cells["DataOraInvio"].Value;
+                        if (!((DateTime)r.Cells["DataOraInvio"].Value).ToString("yyyy/MM/dd hh:mm").Equals("0001-01-01 12:00:00") && !r.Cells["DataOraInvio"].Value.ToString().Equals("01/01/0001 00:00:00"))
                         {
-                            c.Style.BackColor = Color.Yellow;
+                            foreach (DataGridViewCell c in r.Cells)
+                            {
+                                c.Style.BackColor = Color.Green;
+                            }
                         }
-                    }
+                        else if (((DateTime)r.Cells["DATAESECUZIONE"].Value).ToString("yyyy/MM/dd").Equals(DateTime.Now.ToString("yyyy/MM/dd")))
+                        {
+                            foreach (DataGridViewCell c in r.Cells)
+                            {
+                                c.Style.BackColor = Color.Yellow;
+                            }
+                        }
 
+                    }
+                    dataGridView1.Columns[0].Visible = false;
+                    dataGridView1.Columns[1].Visible = false;
+                    dataGridView1.Columns[14].ReadOnly = true;
+                    flag = true;
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
@@ -58,7 +73,8 @@ namespace Diomede2
         }
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
+            if (flag)
+                foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
         }
         private void Form4_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -187,11 +203,11 @@ namespace Diomede2
         }
         private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex == 1)
+            if (e.ColumnIndex == 14)
                 if (e.RowIndex != -1)
                 {
-                    var v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
-                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                    var v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[1].Value,
+                        dataGridView1.Rows[e.RowIndex].Cells[1]);
                     v.Show();
                 }
         }
