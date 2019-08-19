@@ -18,8 +18,8 @@ namespace Diomede2
         }
         private void Button1_Click(object sender, EventArgs e)
         {
-            //toolStripProgressBar1.Value = 50;
-            bunifuProgressBar1.Value = 50;
+            toolStripProgressBar1.Value = 50;
+            //bunifuProgressBar1.Value = 50;
             var op = new Operaziones("Utenza");
             List<Update> u = op.CercaUpdate();
             if (u.Count != 0)
@@ -81,8 +81,8 @@ namespace Diomede2
                         button1.Visible = false;
                         button3.Visible = true;
                         menuStrip1.Visible = true;
-                        //toolStripProgressBar1.Value = 75;
-                        bunifuProgressBar1.Value = 75;
+                        toolStripProgressBar1.Value = 75;
+                        //bunifuProgressBar1.Value = 75;
                     }
                     else
                     {
@@ -232,7 +232,7 @@ namespace Diomede2
                     {
                         System.Diagnostics.Process proc = new System.Diagnostics.Process();
                         proc.EnableRaisingEvents = false;
-                        proc.StartInfo.FileName = path + "/PonteggiDiomede.exe";
+                        proc.StartInfo.FileName = "//192.168.1.135/Share/EXE/PonteggiDiomede.exe";
                         proc.Start();
                         this.Close();
                     }
@@ -262,7 +262,7 @@ namespace Diomede2
                     {
                         System.Diagnostics.Process proc = new System.Diagnostics.Process();
                         proc.EnableRaisingEvents = false;
-                        proc.StartInfo.FileName = path + "/CarpenterieMetallicheDiomede.exe";
+                        proc.StartInfo.FileName = "//192.168.1.135/Share/EXE/CarpenterieMetallicheDiomede.exe";
                         proc.Start();
                         this.Close();
                     }
