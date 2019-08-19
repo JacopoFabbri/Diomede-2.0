@@ -145,6 +145,7 @@ namespace Diomede2
                     System.Diagnostics.Process proc = new System.Diagnostics.Process();
                     proc.EnableRaisingEvents = false;
                     proc.StartInfo.FileName = path + "/PonteggiDiomede.exe";
+                    proc.StartInfo.Arguments = "1";
                     proc.Start();
                     this.Close();
                 }
