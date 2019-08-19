@@ -2162,7 +2162,7 @@ namespace Diomede2
                 var command = new MySqlCommand(
                     "UPDATE `LAVORAZIONI` SET `NOME`='" + nome + "',`DESC`='" + desc + "',`PREZZO`='" + prezzo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) +
                     "',`COMMESSA`='" + commessa + "',`DATA`='" +
-                    data.ToString("yyyy/MM/dd") + "',`ASSEGNAMENTO`='" + asegnamento + "' WHERE `ID` = '" + id + "'", con);
+                    data.ToString("yyyy/MM/dd") + "',`ASEGNAMENTO`='" + asegnamento + "' WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)

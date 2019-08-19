@@ -38,6 +38,14 @@ namespace Diomede2
                         Cliente c = op.CercaClientiId((int)r.Cells[1].Value);
                         r.Cells[14].Value = c.Nome;
                     }
+                    col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                    col.Name = "PREVENTIVO";
+                    dataGridView1.Columns.Add(col);
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        Bozza c = op.CercaBozzaId((int)r.Cells[8].Value);
+                        r.Cells[15].Value = c.IdentificativoPreventivo;
+                    }
                     foreach (DataGridViewRow r in dataGridView1.Rows)
                     {
                         String s = "" + r.Cells["DataOraInvio"].Value;
@@ -60,10 +68,12 @@ namespace Diomede2
                     dataGridView1.Columns[0].Visible = false;
                     dataGridView1.Columns[1].Visible = false;
                     dataGridView1.Columns[14].ReadOnly = true;
+                    dataGridView1.Columns[8].Visible = false;
+                    dataGridView1.Columns[15].ReadOnly = true;
                     flag = true;
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
@@ -142,9 +152,26 @@ namespace Diomede2
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore:",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-
+            flag = false;
             dataGridView1.DataSource = op.CercaCommessa();
-            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns.Remove("CLIENTE");
+            dataGridView1.Columns.Remove("PREVENTIVO");
+            DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+            col.Name = "CLIENTE";
+            dataGridView1.Columns.Add(col);
+            col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+            col.Name = "PREVENTIVO";
+            dataGridView1.Columns.Add(col);
+            foreach (DataGridViewRow r in dataGridView1.Rows)
+            {
+                Cliente c = op.CercaClientiId((int)r.Cells[1].Value);
+                r.Cells[14].Value = c.Nome;
+            }
+            foreach (DataGridViewRow r in dataGridView1.Rows)
+            {
+                Bozza c = op.CercaBozzaId((int)r.Cells[8].Value);
+                r.Cells[15].Value = c.IdentificativoPreventivo;
+            }
             foreach (DataGridViewRow r in dataGridView1.Rows)
             {
                 if (!((DateTime)r.Cells["DataOraInvio"].Value).ToString("yyyy/MM/dd hh:mm").Equals("0001-01-01 12:00:00") && !r.Cells["DataOraInvio"].Value.ToString().Equals("01/01/0001 00:00:00"))
@@ -163,6 +190,12 @@ namespace Diomede2
                 }
 
             }
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[14].ReadOnly = true;
+            dataGridView1.Columns[8].Visible = false;
+            dataGridView1.Columns[15].ReadOnly = true;
+            flag = true;
         }
         private void EliminaToolStripMenuItem_Click(object sender, EventArgs e)
         {

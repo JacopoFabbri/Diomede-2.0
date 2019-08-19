@@ -35,6 +35,7 @@ namespace Diomede2
                 dataGridView1.DataSource = listaLavorazione;
                 textBox6.Text = commessa.Note;
                 dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[4].Visible = false;
             }
             catch
             {
@@ -79,16 +80,29 @@ namespace Diomede2
 
             try
             {
-                List<Lavorazioni> listaLavorazione = op.FiltraLavorazioni("COMMESSA", "" + idCommessa);
+                foreach (DataGridViewRow riga in dataGridView1.Rows)
+                {
+                    if (riga.Cells[0].Value != null)
+                    {
+                        if (riga.Cells[0].Style.ForeColor == Color.Red)
+                        {
+
+                            op.UpdateLavorazioni((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "", "" + riga.Cells["DESC"].Value, (double)riga.Cells["PREZZO"].Value, (int)riga.Cells["COMMESSA"].Value, (DateTime)riga.Cells["DATA"].Value, "" + riga.Cells["ASSEGNATO"].Value);
+
+                        }
+                    }
+                }
+                var listaLavorazione = op.FiltraLavorazioni("COMMESSA", "" + commessa.Id);
                 dataGridView1.DataSource = listaLavorazione;
                 dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[4].Visible = false;
             }
             catch
             {
-                MessageBox.Show("Errore nell'aggiornamento","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Errore nell'aggiornamento", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }       
-        private void Button5_Click(object sender, EventArgs e)
+        }
+        private void Button5_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -117,6 +131,10 @@ namespace Diomede2
                     MessageBoxIcon.Error);
             }
         }
-
     }
 }
+
+
+
+
+
