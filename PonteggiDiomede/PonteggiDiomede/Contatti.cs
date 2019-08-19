@@ -10,6 +10,8 @@ namespace Diomede2
         private readonly string db;
         private readonly Dashboard formPrecente;
         private OperazionePraticheEdili op;
+        private Boolean flag = false;
+
         public Contatti(Cliente c, string dbName, Dashboard frm)
         {
             formPrecente = frm;
@@ -28,9 +30,28 @@ namespace Diomede2
                     if (lista != null)
                     {
                         dataGridView1.DataSource = lista;
+                        DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                        col.Name = "CLIENTE";
+                        dataGridView1.Columns.Add(col);
+                        foreach (DataGridViewRow r in dataGridView1.Rows)
+                        {
+                            Cliente c = op.CercaClientiId((int)r.Cells[8].Value);
+                            r.Cells[12].Value = c.Nome;
+                        }
+                        col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                        col.Name = "RUOLOCONTATTO";
+                        dataGridView1.Columns.Add(col);
+                        foreach (DataGridViewRow r in dataGridView1.Rows)
+                        {
+                            Ruolo c = op.CercaRuoloId((int)r.Cells[11].Value);
+                            r.Cells[13].Value = c.Nome;
+                        }
                         dataGridView1.Columns[0].Visible = false;
-                        dataGridView1.Columns[8].ReadOnly = true;
-                        dataGridView1.Columns[11].ReadOnly = true;
+                        dataGridView1.Columns[8].Visible = false;
+                        dataGridView1.Columns[11].Visible = false;
+                        dataGridView1.Columns[12].ReadOnly = true;
+                        dataGridView1.Columns[13].ReadOnly = true;
+                        flag = true;
                     }
                 }
                 else
@@ -39,15 +60,34 @@ namespace Diomede2
                     if (lista != null)
                     {
                         dataGridView1.DataSource = lista;
+                        DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                        col.Name = "CLIENTE";
+                        dataGridView1.Columns.Add(col);
+                        foreach (DataGridViewRow r in dataGridView1.Rows)
+                        {
+                            Cliente c = op.CercaClientiId((int)r.Cells[8].Value);
+                            r.Cells[12].Value = c.Nome;
+                        }
+                        col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                        col.Name = "RUOLOCONTATTO";
+                        dataGridView1.Columns.Add(col);
+                        foreach (DataGridViewRow r in dataGridView1.Rows)
+                        {
+                            Ruolo c = op.CercaRuoloId((int)r.Cells[11].Value);
+                            r.Cells[13].Value = c.Nome;
+                        }
                         dataGridView1.Columns[0].Visible = false;
-                        dataGridView1.Columns[8].ReadOnly = true;
-                        dataGridView1.Columns[11].ReadOnly = true;
+                        dataGridView1.Columns[8].Visible = false;
+                        dataGridView1.Columns[11].Visible = false;
+                        dataGridView1.Columns[12].ReadOnly = true;
+                        dataGridView1.Columns[13].ReadOnly = true;
+                        flag = true;
                     }
                 }
             }
             catch
             {
-                MessageBox.Show("Impossibile accedere a quest'area !!!","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Impossibile accedere a quest'area!!!", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
 
@@ -63,7 +103,8 @@ namespace Diomede2
         }
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
+            if (flag)
+                foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
         }
         private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -88,26 +129,58 @@ namespace Diomede2
         }
         private void AggiornaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow riga in dataGridView1.Rows)
-                if (riga.Cells[0].Value != null)
-                    if (riga.Cells[0].Style.ForeColor == Color.Red)
-                        try
-                        {
-                            op.UpdateContatto((int) riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "",
-                                riga.Cells["INDIRIZZO"].Value + "", riga.Cells["CAP"].Value + "",
-                                riga.Cells["CITTA"].Value + "", riga.Cells["PEC"].Value + "",
-                                riga.Cells["EMAIL"].Value + "", riga.Cells["Iva"].Value + "",
-                                (int) riga.Cells["DITTA"].Value, riga.Cells["CELLULARE"].Value + "",
-                                riga.Cells["TEL"].Value + "", riga.Cells["RUOLO"].Value + "");
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento.", "Errore:",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+            try
+            {
+                foreach (DataGridViewRow riga in dataGridView1.Rows)
+                    if (riga.Cells[0].Value != null)
+                        if (riga.Cells[0].Style.ForeColor == Color.Red)
 
-            dataGridView1.DataSource = op.FiltraContratto("DITTA", "" + cliente.Id);
-            dataGridView1.Columns[0].Visible = false;
+                            try
+                            {
+                                String s = "" + riga.Cells["DITTA"].Value;
+                                op.UpdateContatto((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "",
+                                    riga.Cells["INDIRIZZO"].Value + "", riga.Cells["CAP"].Value + "",
+                                    riga.Cells["CITTA"].Value + "", riga.Cells["PEC"].Value + "",
+                                    riga.Cells["EMAIL"].Value + "", riga.Cells["Iva"].Value + "",
+                                    (int)riga.Cells["DITTA"].Value, riga.Cells["CELLULARE"].Value + "",
+                                    riga.Cells["TEL"].Value + "", riga.Cells["RUOLO"].Value + "");
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento.", "Errore:",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                flag = false;
+                dataGridView1.DataSource = op.FiltraContratto("DITTA", "" + cliente.Id);
+                dataGridView1.Columns.Remove("CLIENTE");
+                dataGridView1.Columns.Remove("RUOLOCONTATTO");
+                DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                col.Name = "CLIENTE";
+                dataGridView1.Columns.Add(col);
+                foreach (DataGridViewRow r in dataGridView1.Rows)
+                {
+                    Cliente c = op.CercaClientiId((int)r.Cells[8].Value);
+                    r.Cells[12].Value = c.Nome;
+                }
+                col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                col.Name = "RUOLOCONTATTO";
+                dataGridView1.Columns.Add(col);
+                foreach (DataGridViewRow r in dataGridView1.Rows)
+                {
+                    Ruolo c = op.CercaRuoloId((int)r.Cells[11].Value);
+                    r.Cells[13].Value = c.Nome;
+                }
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[8].Visible = false;
+                dataGridView1.Columns[11].Visible = false;
+                dataGridView1.Columns[12].ReadOnly = true;
+                dataGridView1.Columns[13].ReadOnly = true;
+                flag = true;
+            }
+            catch
+            {
+                MessageBox.Show("ciao mondo");
+            }
         }
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
         {

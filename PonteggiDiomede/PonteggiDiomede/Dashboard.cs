@@ -40,7 +40,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Errore Imprevisto Contattare i gestori del servizio.","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Errore Imprevisto Contattare i gestori del servizio.", "Attenzione:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
@@ -121,16 +121,18 @@ namespace Diomede2
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var path = Directory.GetCurrentDirectory();
-            System.Diagnostics.Process proc = new System.Diagnostics.Process();
-            proc.EnableRaisingEvents = false;
-            proc.StartInfo.FileName = path + "/LoginGenerale.exe";
-            proc.Start();
-        }
-
-        private void EventLog1_EntryWritten(object sender, System.Diagnostics.EntryWrittenEventArgs e)
-        {
-
+            try
+            {
+                var path = Directory.GetCurrentDirectory();
+                System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                proc.EnableRaisingEvents = false;
+                proc.StartInfo.FileName = path + "/LoginGenerale.exe";
+                proc.Start();
+            }
+            catch
+            {
+                MessageBox.Show("NON sono riuscito a trovare il file di login");
+            }
         }
     }
 }
