@@ -1538,16 +1538,16 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    var b = new Bozza
-                    {
-                        Id = (int)lettore[0],
-                        Data = (DateTime)lettore[1],
-                        Importo = (double)lettore[2],
-                        FaseProgetto = "" + lettore[3],
-                        IdentificativoPreventivo = "" + lettore[4],
-                        Cliente = (int)lettore[5],
-                        Accettazione = (bool)lettore[6]
-                    };
+                    var b = new Bozza();
+
+                    b.Id = (int)lettore[0];
+                    b.Data = (DateTime)lettore[1];
+                    b.Importo = (double)lettore[2];
+                    b.FaseProgetto = "" + lettore[3];
+                    b.IdentificativoPreventivo = "" + lettore[4];
+                    b.Cliente = (int)lettore[5];
+                    b.Accettazione = (bool)lettore[6];
+                    
                     bozza.Add(b);
                 }
             }

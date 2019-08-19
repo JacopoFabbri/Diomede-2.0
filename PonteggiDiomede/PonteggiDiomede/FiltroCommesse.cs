@@ -36,7 +36,7 @@ namespace PonteggiDiomede
                     "" + listaBozze[comboBox2.SelectedIndex].Id);
             }
             else
-                dataTable.DataSource = op.FiltraBozza("" + comboBox1.SelectedItem, "" + comboBox2.SelectedItem);
+                dataTable.DataSource = op.FiltraCommessa("" + comboBox1.SelectedItem, "" + comboBox2.SelectedItem);
             foreach (DataGridViewRow r in dataTable.Rows)
             {
                 String s = "" + r.Cells["DataOraInvio"].Value;
