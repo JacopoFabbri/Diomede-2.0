@@ -232,7 +232,7 @@ namespace Diomede2
                     {
                         System.Diagnostics.Process proc = new System.Diagnostics.Process();
                         proc.EnableRaisingEvents = false;
-                        proc.StartInfo.FileName = "//192.168.1.135/Share/EXE/PonteggiDiomede.exe";
+                        proc.StartInfo.FileName = path + "/PonteggiDiomede.exe";
                         proc.Start();
                         this.Close();
                     }
@@ -262,7 +262,7 @@ namespace Diomede2
                     {
                         System.Diagnostics.Process proc = new System.Diagnostics.Process();
                         proc.EnableRaisingEvents = false;
-                        proc.StartInfo.FileName = "//192.168.1.135/Share/EXE/CarpenterieMetallicheDiomede.exe";
+                        proc.StartInfo.FileName = path + "/CarpenterieMetallicheDiomede.exe";
                         proc.Start();
                         this.Close();
                     }
