@@ -156,8 +156,28 @@ namespace Diomede2
                             MessageBoxIcon.Error);
                     }
 
-            dataGridView1.DataSource = op.CercaBozza();
-            dataGridView1.Columns[0].Visible = false;
+            try
+            {
+                dataGridView1.DataSource = op.CercaBozza();
+                flag = false;
+                dataGridView1.Columns.Remove("CLIENTE");
+                var col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                col.Name = "CLIENTE";
+                dataGridView1.Columns.Add(col);
+                foreach (DataGridViewRow r in dataGridView1.Rows)
+                {
+                    Cliente c = op.CercaClientiId((int)r.Cells[5].Value);
+                    r.Cells[7].Value = c.Nome;
+                }
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[5].Visible = false;
+                dataGridView1.Columns[7].ReadOnly = true;
+                flag = true;
+            }
+            catch
+            {
+                MessageBox.Show("errore");
+            }
         }
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
