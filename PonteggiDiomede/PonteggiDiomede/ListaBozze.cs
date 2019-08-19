@@ -77,7 +77,7 @@ namespace Diomede2
                                     var listaAmministrazione = op1.FiltraCliente("NOME", c.Nome);
                                     List<ClienteAmministrazione> listaCliente = null;
                                     string commessa;
-                                    if (listaAmministrazione.Count <= 0)
+                                    if (listaAmministrazione.Count > 0)
                                     {
                                         op1.InserimentoCliente(c.Nome, c.Tel, c.Email, c.Iva, c.Sdi);
                                         listaCliente = op1.CercaCliente();
@@ -99,14 +99,27 @@ namespace Diomede2
 
                             }
                         }
-                        catch
+                        catch (Exception ex)
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore:",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
             }
+            flag = false;
             dataGridView1.DataSource = op.CercaBozza();
+            dataGridView1.Columns.Remove("CLIENTE");
+            DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+            col.Name = "CLIENTE";
+            dataGridView1.Columns.Add(col);
+            foreach (DataGridViewRow r in dataGridView1.Rows)
+            {
+                Cliente c = op.CercaClientiId((int)r.Cells[5].Value);
+                r.Cells[7].Value = c.Nome;
+            }
             dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[7].ReadOnly = true;
+            flag = true;
         }
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
         {

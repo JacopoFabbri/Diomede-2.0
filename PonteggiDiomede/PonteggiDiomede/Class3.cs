@@ -14,7 +14,6 @@ namespace Diomede2
                                     ";Persist Security Info=True;Password=KpEDv4Pk0bGYLQtB;";
         }
 
-
         public void InserimentoCommessa(int numero, int anno, string settore, string commessa, int cliente,
             string settoreIntero)
         {
@@ -28,7 +27,6 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-
         public List<CommessaAmministrazione> CercaCommessa()
         {
             List<CommessaAmministrazione> lista;
@@ -44,7 +42,6 @@ namespace Diomede2
 
             return lista;
         }
-
         public List<CommessaAmministrazione> CercaCommessa(string n)
         {
             List<CommessaAmministrazione> lista;
@@ -60,7 +57,6 @@ namespace Diomede2
 
             return lista;
         }
-
         public CommessaAmministrazione CercaCommessa(int id)
         {
             CommessaAmministrazione contatto;
@@ -76,7 +72,6 @@ namespace Diomede2
 
             return contatto;
         }
-
         public List<CommessaAmministrazione> FiltraCommessa(string s, string g)
         {
             List<CommessaAmministrazione> contatto;
@@ -92,7 +87,6 @@ namespace Diomede2
 
             return contatto;
         }
-
         public void UpdatePagamento(int id, int numero, int anno, string settore, string commessa, int cliente,
             string settoreIntero)
         {
@@ -106,7 +100,6 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-
         public void CancellaPagamento(int id)
         {
             try
@@ -119,7 +112,6 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-
         public void InserimentoCliente(string nome, string tel, string email, string partitaIva, string sdi)
         {
             try
@@ -132,7 +124,6 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-
         public List<ClienteAmministrazione> CercaCliente()
         {
             List<ClienteAmministrazione> lista;
@@ -148,7 +139,6 @@ namespace Diomede2
 
             return lista;
         }
-
         public List<ClienteAmministrazione> CercaCliente(string n)
         {
             List<ClienteAmministrazione> lista;
@@ -164,7 +154,6 @@ namespace Diomede2
 
             return lista;
         }
-
         public ClienteAmministrazione CercaCliente(int id)
         {
             ClienteAmministrazione contatto;
@@ -180,7 +169,6 @@ namespace Diomede2
 
             return contatto;
         }
-
         public List<ClienteAmministrazione> FiltraCliente(string s, string g)
         {
             List<ClienteAmministrazione> contatto;
@@ -196,7 +184,6 @@ namespace Diomede2
 
             return contatto;
         }
-
         public void UpdateCliente(int id, string nome, string tel, string email, string partitaIva, string sdi)
         {
             try
@@ -209,7 +196,6 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-
         public void CancellaCliente(int id)
         {
             try
@@ -222,7 +208,6 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-
         public void InserimentoBozza(int numero, int anno, string settore, string commessa, int cliente,
             string settoreIntero)
         {
@@ -236,8 +221,6 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-
-
         public List<PreventivoAmministrazione> FiltraPreventivo(string s, string g)
         {
             List<PreventivoAmministrazione> contatto;
@@ -253,7 +236,6 @@ namespace Diomede2
 
             return contatto;
         }
-
         public string GeneraCommessa(string s, ClienteAmministrazione c, string settore, bool bozza)
         {
             try
@@ -301,9 +283,7 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        
     }
-
     public class CommessaAmministrazioneDB
     {
         private readonly MySqlConnection con;
@@ -321,8 +301,8 @@ namespace Diomede2
                 MySqlCommand command;
                 con.Open();
                     command = new MySqlCommand(
-                        "INSERT INTO `COMMESSA`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`) VALUES('" +
-                        numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" +
+                        "INSERT INTO `COMMESSA`(`NUMERO`, `ANNO`, `SETTORE`, `CLIENTE`, `SETTOREINTERO`) VALUES('" +
+                        numero + "','" + anno + "','" + settore + "','" + cliente + "','" +
                         settoreIntero +  "')", con);
 
                 command.ExecuteNonQuery();
@@ -466,16 +446,14 @@ namespace Diomede2
 
                 while (lettore.Read())
                 {
-                    var l = new CommessaAmministrazione
-                    {
-                        Id = (int) lettore[0],
-                        Numero = (int) lettore[1],
-                        Anno = (int) lettore[2],
-                        Settore = "" + lettore[3],
-                        Commessa = "" + lettore[4],
-                        Cliente = (int) lettore[5],
-                        SettoreIntero = "" + lettore[6]
-                    };
+                    var l = new CommessaAmministrazione();
+                    l.Id = (int)lettore[0];
+                    l.Numero = (int)lettore[1];
+                    l.Anno = (int)lettore[2];
+                    l.Settore = "" + lettore[3];
+                    l.Commessa = "" + lettore[4];
+                    l.Cliente = (int)lettore[6];
+                    l.SettoreIntero = "" + lettore[6];
 
                     lavorazione.Add(l);
                 }
@@ -549,7 +527,7 @@ namespace Diomede2
                 MySqlCommand command;
                 con.Open();
                 command = new MySqlCommand(
-                    "INSERT INTO `PREVENTIVO`(`NUMMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`) VALUES('" +
+                    "INSERT INTO `PREVENTIVO`(`NUMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`) VALUES('" +
                     numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" +
                     settoreIntero + "')", con);
 
@@ -861,7 +839,6 @@ namespace Diomede2
             }
         }
     }
-
     public class ClienteAmministrazione
     {
         public int Id { get; set; }
@@ -876,7 +853,6 @@ namespace Diomede2
 
         public string Sdi { get; set; }
     }
-
     public class CommessaAmministrazione
     {
         public int Id { get; set; }
