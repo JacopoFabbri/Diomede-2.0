@@ -133,11 +133,16 @@ namespace Diomede2
             if (dataGridView1.SelectedRows != null)
                 if (MessageBox.Show(
                         "Stai per eliminare " +
-                        (string) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?",
+                        (string) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " e tutti i suoi contatti .Confermi?",
                         "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) ==
                     DialogResult.Yes)
                     try
                     {
+                        var contatti = op.FiltraContatto("DITTA", "" + dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
+                        foreach(var c in contatti)
+                        {
+                            op.CacellaContatto(c.Id);
+                        }
                         var clienti = op.CercaClientiId((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]
                             .Cells[0].Value);
                         op.CancellaCliente((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0]
@@ -145,7 +150,7 @@ namespace Diomede2
                         MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
-                    catch
+                    catch 
                     {
                         MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
