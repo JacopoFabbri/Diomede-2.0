@@ -87,7 +87,7 @@ namespace Diomede2
                                     var listaAmministrazione = op1.FiltraCliente("NOME", c.Nome);
                                     List<ClienteAmministrazione> listaCliente = null;
                                     string commessa;
-                                    if (listaAmministrazione.Count <= 0)
+                                    if (listaAmministrazione.Count > 0)
                                     {
                                         op1.InserimentoCliente(c.Nome, c.Tel, c.Email, c.Iva, c.Sdi);
                                         listaCliente = op1.CercaCliente();
@@ -101,12 +101,12 @@ namespace Diomede2
                                     }
 
                                     op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, commessa,
-                                        (DateTime)riga.Cells["DATA"].Value, "", (int)riga.Cells["ID"].Value, "", "", "");
+                                        DateTime.Now, "", (int)riga.Cells["ID"].Value, "", "", "");
                                 }
                             }
 
                         }
-                        catch
+                        catch (Exception ex)
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
