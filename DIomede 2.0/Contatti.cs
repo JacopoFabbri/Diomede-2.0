@@ -31,7 +31,7 @@ namespace Diomede2
                     {
                         dataGridView1.DataSource = lista;
                         DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                        col.Name = "CLIENTE";
+                        col.Name = "Cliente";
                         dataGridView1.Columns.Add(col);
                         foreach (DataGridViewRow r in dataGridView1.Rows)
                         {
@@ -39,7 +39,7 @@ namespace Diomede2
                             r.Cells[12].Value = c.Nome;
                         }
                         col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                        col.Name = "RUOLOCONTATTO";
+                        col.Name = "Ruolo";
                         dataGridView1.Columns.Add(col);
                         foreach (DataGridViewRow r in dataGridView1.Rows)
                         {
@@ -61,7 +61,7 @@ namespace Diomede2
                     {
                         dataGridView1.DataSource = lista;
                         DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                        col.Name = "CLIENTE";
+                        col.Name = "Cliente";
                         dataGridView1.Columns.Add(col);
                         foreach (DataGridViewRow r in dataGridView1.Rows)
                         {
@@ -69,7 +69,7 @@ namespace Diomede2
                             r.Cells[12].Value = c.Nome;
                         }
                         col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                        col.Name = "RUOLOCONTATTO";
+                        col.Name = "Ruolo";
                         dataGridView1.Columns.Add(col);
                         foreach (DataGridViewRow r in dataGridView1.Rows)
                         {
@@ -159,10 +159,10 @@ namespace Diomede2
                             }
                 flag = false;
                 dataGridView1.DataSource = op.FiltraContatto("DITTA", "" + cliente.Id);
-                dataGridView1.Columns.Remove("CLIENTE");
-                dataGridView1.Columns.Remove("RUOLOCONTATTO");
+                dataGridView1.Columns.Remove("Cliente");
+                dataGridView1.Columns.Remove("Ruolo");
                 DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                col.Name = "CLIENTE";
+                col.Name = "Cliente";
                 dataGridView1.Columns.Add(col);
                 foreach (DataGridViewRow r in dataGridView1.Rows)
                 {
@@ -170,7 +170,7 @@ namespace Diomede2
                     r.Cells[12].Value = c.Nome;
                 }
                 col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                col.Name = "RUOLOCONTATTO";
+                col.Name = "Ruolo";
                 dataGridView1.Columns.Add(col);
                 foreach (DataGridViewRow r in dataGridView1.Rows)
                 {
