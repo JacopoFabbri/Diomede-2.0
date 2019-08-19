@@ -147,9 +147,21 @@ namespace Diomede2
                         MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
-
+            flag = false;
             dataGridView1.DataSource = op.CercaBozza();
+            dataGridView1.Columns.Remove("CLIENTE");
+            DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+            col.Name = "Cliente";
+            dataGridView1.Columns.Add(col);
+            foreach (DataGridViewRow r in dataGridView1.Rows)
+            {
+                Cliente c = op.CercaClientiId((int)r.Cells[5].Value);
+                r.Cells[7].Value = c.Nome;
+            }
             dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[7].ReadOnly = true;
+            flag = true;
         }
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

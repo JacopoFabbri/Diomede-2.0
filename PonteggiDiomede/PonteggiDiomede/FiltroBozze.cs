@@ -26,7 +26,7 @@ namespace Diomede2
                 comboBox1.Items.Add("DATA");
                 comboBox1.Items.Add("IMPORTO");
                 comboBox1.Items.Add("FASEPROGETTO");
-                comboBox1.Items.Add("IDENTIFICATIVOPREVENTIVO");
+                comboBox1.Items.Add("NUMEROCOMMESSA");
                 comboBox1.Items.Add("CLIENTE");
                 comboBox1.Items.Add("ACCETTAZIONE");
                 lista = op.CercaBozza();
@@ -120,9 +120,6 @@ namespace Diomede2
                     if (flag) comboBox2.Items.Add(c.Accettazione);
                 }
         }
-        private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }
