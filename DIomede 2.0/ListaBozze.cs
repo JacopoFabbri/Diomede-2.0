@@ -25,29 +25,32 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
-                dataGridView1.DataSource = op.CercaBozza();
-                DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                col.Name = "TITOLOPACCHETTO";
-                dataGridView1.Columns.Add(col);
-                foreach (DataGridViewRow r in dataGridView1.Rows)
+                if (op.CercaBozza().Count > 0)
                 {
-                    Pacchetto c = op.CercaPacchetto((int)r.Cells[2].Value);
-                    r.Cells[7].Value = c.Nome;
+                    dataGridView1.DataSource = op.CercaBozza();
+                    DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                    col.Name = "Titolo Pacchetto";
+                    dataGridView1.Columns.Add(col);
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        Pacchetto c = op.CercaPacchetto((int)r.Cells[2].Value);
+                        r.Cells[7].Value = c.Nome;
+                    }
+                    col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                    col.Name = "Cliente";
+                    dataGridView1.Columns.Add(col);
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        Cliente c = op.CercaClientiId((int)r.Cells[5].Value);
+                        r.Cells[8].Value = c.Nome;
+                    }
+                    dataGridView1.Columns[0].Visible = false;
+                    dataGridView1.Columns[2].Visible = false;
+                    dataGridView1.Columns[5].Visible = false;
+                    dataGridView1.Columns[7].ReadOnly = true;
+                    dataGridView1.Columns[8].ReadOnly = true;
+                    flag = true;
                 }
-                col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                col.Name = "CLIENTE";
-                dataGridView1.Columns.Add(col);
-                foreach (DataGridViewRow r in dataGridView1.Rows)
-                {
-                    Cliente c = op.CercaClientiId((int)r.Cells[5].Value);
-                    r.Cells[8].Value = c.Nome;
-                }
-                dataGridView1.Columns[0].Visible = false;
-                dataGridView1.Columns[2].Visible = false;
-                dataGridView1.Columns[5].Visible = false;
-                dataGridView1.Columns[7].ReadOnly = true;
-                dataGridView1.Columns[8].ReadOnly = true;
-                flag = true;
 
             }
             catch
@@ -115,10 +118,10 @@ namespace Diomede2
             {
                 dataGridView1.DataSource = op.CercaBozza();
                 flag = false;
-                dataGridView1.Columns.Remove("TITOLOPACCHETTO");
-                dataGridView1.Columns.Remove("CLIENTE");
+                dataGridView1.Columns.Remove("Titolo Pacchetto");
+                dataGridView1.Columns.Remove("Cliente");
                 DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                col.Name = "TITOLOPACCHETTO";
+                col.Name = "Titolo Pacchetto";
                 dataGridView1.Columns.Add(col);
                 foreach (DataGridViewRow r in dataGridView1.Rows)
                 {
@@ -126,7 +129,7 @@ namespace Diomede2
                     r.Cells[7].Value = c.Nome;
                 }
                 col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                col.Name = "CLIENTE";
+                col.Name = "Cliente";
                 dataGridView1.Columns.Add(col);
                 foreach (DataGridViewRow r in dataGridView1.Rows)
                 {

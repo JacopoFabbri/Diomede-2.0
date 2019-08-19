@@ -27,7 +27,7 @@ namespace Diomede2
                 op = new OperazionePraticheEdili(db);
                 dataGridView1.DataSource = op.CercaCommessa();
                 DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                col.Name = "NUMEROPREVENTIVO";
+                col.Name = "N° Preventivo";
                 dataGridView1.Columns.Add(col);
                 foreach (DataGridViewRow r in dataGridView1.Rows)
                 {
@@ -35,7 +35,7 @@ namespace Diomede2
                     r.Cells[9].Value = c.IdentificativoPreventivo;
                 }
                 col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                col.Name = "CLIENTE";
+                col.Name = "Cliente";
                 dataGridView1.Columns.Add(col);
                 foreach (DataGridViewRow r in dataGridView1.Rows)
                 {
@@ -84,10 +84,10 @@ namespace Diomede2
 
             dataGridView1.DataSource = op.CercaCommessa();
             flag = false;
-            dataGridView1.Columns.Remove("NUMEROPREVENTIVO");
-            dataGridView1.Columns.Remove("CLIENTE");
+            dataGridView1.Columns.Remove("N° Preventivo");
+            dataGridView1.Columns.Remove("Cliente");
             DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-            col.Name = "NUMEROPREVENTIVO";
+            col.Name = "N° Preventivo";
             dataGridView1.Columns.Add(col);
             foreach (DataGridViewRow r in dataGridView1.Rows)
             {
@@ -95,7 +95,7 @@ namespace Diomede2
                 r.Cells[9].Value = c.IdentificativoPreventivo;
             }
             col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-            col.Name = "CLIENTE";
+            col.Name = "Cliente";
             dataGridView1.Columns.Add(col);
             foreach (DataGridViewRow r in dataGridView1.Rows)
             {
@@ -178,10 +178,10 @@ namespace Diomede2
 
             dataGridView1.DataSource = op.CercaCommessa();
             flag = false;
-            dataGridView1.Columns.Remove("NUMEROPREVENTIVO");
-            dataGridView1.Columns.Remove("CLIENTE");
+            dataGridView1.Columns.Remove("N° Preventivo");
+            dataGridView1.Columns.Remove("Cliente");
             DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-            col.Name = "NUMEROPREVENTIVO";
+            col.Name = "N° Preventivo";
             dataGridView1.Columns.Add(col);
             foreach (DataGridViewRow r in dataGridView1.Rows)
             {
@@ -189,7 +189,7 @@ namespace Diomede2
                 r.Cells[9].Value = c.IdentificativoPreventivo;
             }
             col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-            col.Name = "CLIENTE";
+            col.Name = "Cliente";
             dataGridView1.Columns.Add(col);
             foreach (DataGridViewRow r in dataGridView1.Rows)
             {

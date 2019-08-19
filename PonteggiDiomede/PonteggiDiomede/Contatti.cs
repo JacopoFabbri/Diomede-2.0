@@ -152,8 +152,8 @@ namespace Diomede2
                             }
                 flag = false;
                 dataGridView1.DataSource = op.FiltraContratto("DITTA", "" + cliente.Id);
-                dataGridView1.Columns.Remove("CLIENTE");
-                dataGridView1.Columns.Remove("RUOLOCONTATTO");
+                dataGridView1.Columns.Remove("Cliente");
+                dataGridView1.Columns.Remove("Ruolo");
                 DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
                 col.Name = "Cliente";
                 dataGridView1.Columns.Add(col);

@@ -737,7 +737,7 @@ namespace Diomede2
             try
             {
                 var bDB = new MacroLavorazioniDB(conn);
-                bDB.AggiornaLavorazioni(id, nome, dataInizio, dataFine, prezzo, numerocommessa,  desc);
+                bDB.AggiornaLavorazioni(id, nome, dataInizio, dataFine, prezzo, numerocommessa, desc);
             }
             catch (Exception e)
             {
@@ -1208,21 +1208,21 @@ namespace Diomede2
                 MySqlDataReader lettore = null;
                 var command = new MySqlCommand("SELECT * FROM `ANAGRAFICACLIENTI` WHERE `ID` = '" + id + "'", con);
                 lettore = command.ExecuteReader();
-
+                cliente = new Cliente();
                 while (lettore.Read())
-                    cliente = new Cliente
-                    {
-                        Id = (int)lettore[0],
-                        Nome = "" + lettore[1],
-                        Indirizzo = "" + lettore[2],
-                        Cap = "" + lettore[3],
-                        Citta = "" + lettore[4],
-                        Pec = "" + lettore[5],
-                        Email = "" + lettore[6],
-                        Iva = "" + lettore[7],
-                        Tel = "" + lettore[8],
-                        Sdi = "" + lettore[9]
-                    };
+                {
+
+                    cliente.Id = (int)lettore[0];
+                    cliente.Nome = "" + lettore[1];
+                    cliente.Indirizzo = "" + lettore[2];
+                    cliente.Cap = "" + lettore[3];
+                    cliente.Citta = "" + lettore[4];
+                    cliente.Pec = "" + lettore[5];
+                    cliente.Email = "" + lettore[6];
+                    cliente.Iva = "" + lettore[7];
+                    cliente.Tel = "" + lettore[8];
+                    cliente.Sdi = "" + lettore[9];
+                }
             }
             catch (Exception ex)
             {
@@ -3216,7 +3216,7 @@ namespace Diomede2
                 con.Open();
                 var command = new MySqlCommand(
                     "INSERT INTO `OPERAZIONI`(`COMMITENTE`, `DATA`, `DATAPROTOCOLLO`, `DATAVISURALUOGO`, `OFFERTA`, `NUMEROCOMMESSA`) VALUES('" +
-                    commitente +  "','" + data + "','" + dataProtocollo + "','" + dataVisuraLuogo +
+                    commitente + "','" + data + "','" + dataProtocollo + "','" + dataVisuraLuogo +
                     "','" + offerta + "','" + numeroCommessa + "')", con);
                 command.ExecuteNonQuery();
             }
@@ -3388,7 +3388,7 @@ namespace Diomede2
             {
                 con.Open();
                 var command = new MySqlCommand(
-                    "UPDATE `TIPOLOGIALAVORAZIONI` SET `COMMITENTE`='" + commitente + 
+                    "UPDATE `TIPOLOGIALAVORAZIONI` SET `COMMITENTE`='" + commitente +
                     "',`DATA`='" + data + "',`DATAPROTOCOLLO`='" + dataProtocollo + "',`DATAVISURALUOGO`='" +
                     dataVisuraLuogo + "',`OFFERTA`='" + offerta + "',`NUMEROCOMMESSA`='" + numeroCommessa +
                     "' WHERE `ID` = '" + id + "'", con);
@@ -3470,18 +3470,16 @@ namespace Diomede2
                 {
                     DateTime.TryParse(lettore[5] + "", out data);
                     DateTime.TryParse(lettore[6] + "", out dataFattura);
-                    var lavorazione = new Pagamento
-                    {
-                        Id = (int)lettore[0],
-                        NumeroCommessa = "" + lettore[1],
-                        Importo = Convert.ToDouble(lettore[2] + ""),
-                        Note = "" + lettore[3],
-                        Fattura = "" + lettore[4],
-                        Data = data,
-                        DataFattura = dataFattura,
-                        Cliente = (int)lettore[7],
-                        Commessa = (int)lettore[8]
-                    };
+                    var lavorazione = new Pagamento();
+                    lavorazione.Id = (int)lettore[0];
+                    lavorazione.NumeroCommessa = "" + lettore[1];
+                    lavorazione.Importo = Convert.ToDouble(lettore[2] + "");
+                    lavorazione.Note = "" + lettore[3];
+                    lavorazione.Fattura = "" + lettore[4];
+                    lavorazione.Data = data;
+                    lavorazione.DataFattura = dataFattura;
+                    lavorazione.Cliente = (int)lettore[7];
+                    lavorazione.Commessa = (int)lettore[8];
 
                     lista.Add(lavorazione);
                 }
