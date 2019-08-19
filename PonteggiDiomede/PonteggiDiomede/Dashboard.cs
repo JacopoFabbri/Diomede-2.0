@@ -103,7 +103,7 @@ namespace Diomede2
         private void MostraListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dashboard_Load(sender, e);
-            listView2.Visible = true;
+            listView3.Visible = true;
         }
         private void NascondiListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -115,8 +115,11 @@ namespace Diomede2
         }
         private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Contatti c = new Contatti(lista[listView1.SelectedIndices[0]], settore, this);
-            c.Show();
+            if (listView1.SelectedIndices.Count > 0)
+            {
+                Contatti c = new Contatti(lista[listView1.SelectedIndices[0]], settore, this);
+                c.Show();
+            }
         }
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)

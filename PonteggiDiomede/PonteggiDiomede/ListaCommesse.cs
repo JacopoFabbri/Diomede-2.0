@@ -31,7 +31,7 @@ namespace Diomede2
                 {
                     dataGridView1.DataSource = lista;
                     DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                    col.Name = "CLIENTE";
+                    col.Name = "Cliente";
                     dataGridView1.Columns.Add(col);
                     foreach (DataGridViewRow r in dataGridView1.Rows)
                     {
@@ -39,7 +39,7 @@ namespace Diomede2
                         r.Cells[14].Value = c.Nome;
                     }
                     col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                    col.Name = "PREVENTIVO";
+                    col.Name = "Preventivo";
                     dataGridView1.Columns.Add(col);
                     foreach (DataGridViewRow r in dataGridView1.Rows)
                     {
@@ -157,10 +157,10 @@ namespace Diomede2
             dataGridView1.Columns.Remove("CLIENTE");
             dataGridView1.Columns.Remove("PREVENTIVO");
             DataGridViewColumn col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-            col.Name = "CLIENTE";
+            col.Name = "Cliente";
             dataGridView1.Columns.Add(col);
             col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-            col.Name = "PREVENTIVO";
+            col.Name = "Preventivo";
             dataGridView1.Columns.Add(col);
             foreach (DataGridViewRow r in dataGridView1.Rows)
             {
