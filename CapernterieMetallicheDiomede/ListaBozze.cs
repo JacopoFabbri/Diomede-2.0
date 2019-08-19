@@ -10,6 +10,8 @@ namespace Diomede2
         private readonly string db;
         private readonly Dashboard formPrecente;
         private OperazionePraticheEdili op;
+        private Boolean flag = false;
+
         public ListaBozze(string dbName, Dashboard frm)
         {
             formPrecente = frm;
@@ -24,8 +26,19 @@ namespace Diomede2
                 if (op.CercaBozza() != null)
                 {
                     dataGridView1.DataSource = op.CercaBozza();
+                    var col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                    col.Name = "CLIENTE";
+                    dataGridView1.Columns.Add(col);
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        Cliente c = op.CercaClientiId((int)r.Cells[5].Value);
+                        r.Cells[7].Value = c.Nome;
+                    }
                     dataGridView1.Columns[0].Visible = false;
-                    dataGridView1.Columns[3].ReadOnly = true;
+                    dataGridView1.Columns[5].Visible = false;
+                    dataGridView1.Columns[7].ReadOnly = true;
+
+                    flag = true;
                 }
             }
             catch
@@ -38,7 +51,8 @@ namespace Diomede2
         }
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
+            if (flag)
+                foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
         }
         private void ListaBozze_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -92,8 +106,28 @@ namespace Diomede2
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
             }
-            dataGridView1.DataSource = op.CercaBozza();
-            dataGridView1.Columns[0].Visible = false;
+            try
+            {
+                dataGridView1.DataSource = op.CercaBozza();
+                flag = false;
+                dataGridView1.Columns.Remove("CLIENTE");
+                var col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                col.Name = "CLIENTE";
+                dataGridView1.Columns.Add(col);
+                foreach (DataGridViewRow r in dataGridView1.Rows)
+                {
+                    Cliente c = op.CercaClientiId((int)r.Cells[5].Value);
+                    r.Cells[7].Value = c.Nome;
+                }
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[5].Visible = false;
+                dataGridView1.Columns[7].ReadOnly = true;
+                flag = true;
+            }
+            catch
+            {
+                MessageBox.Show("errore");
+            }
         }
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -131,7 +165,7 @@ namespace Diomede2
             {
                 foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells)
                     cella.Style.ForeColor = Color.Red;
-                if((bool)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == true)
+                if ((bool)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == true)
                 {
                     dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = false;
                 }
@@ -148,12 +182,12 @@ namespace Diomede2
         }
         private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex == 5)
+            if (e.ColumnIndex == 7)
             {
                 if (e.RowIndex != -1)
                 {
-                    var v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value,
-                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                    var v = new VisualizzatoreDitte(db, (int)dataGridView1.Rows[e.RowIndex].Cells[5].Value,
+                        dataGridView1.Rows[e.RowIndex].Cells[5]);
                     v.Show();
                 }
             }
