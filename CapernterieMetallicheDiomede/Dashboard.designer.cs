@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.listView1 = new System.Windows.Forms.ListView();
             this.listView2 = new System.Windows.Forms.ListView();
@@ -50,8 +49,6 @@
             this.listaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostraListaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nascondiListaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.macroLavorazioniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaMacroLavorazioniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView3 = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
@@ -207,8 +204,7 @@
             // gestioneCommesseToolStripMenuItem
             // 
             this.gestioneCommesseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.commesseToolStripMenuItem,
-            this.macroLavorazioniToolStripMenuItem1});
+            this.commesseToolStripMenuItem});
             this.gestioneCommesseToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gestioneCommesseToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_quaderno_48;
             this.gestioneCommesseToolStripMenuItem.Name = "gestioneCommesseToolStripMenuItem";
@@ -223,7 +219,7 @@
             this.nascondiListaCommesseToolStripMenuItem});
             this.commesseToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_web_48;
             this.commesseToolStripMenuItem.Name = "commesseToolStripMenuItem";
-            this.commesseToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
+            this.commesseToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.commesseToolStripMenuItem.Text = "Commesse";
             // 
             // listaCommesseToolStripMenuItem
@@ -249,21 +245,6 @@
             this.nascondiListaCommesseToolStripMenuItem.Size = new System.Drawing.Size(237, 24);
             this.nascondiListaCommesseToolStripMenuItem.Text = "Nascondi Lista Commesse";
             this.nascondiListaCommesseToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaCommesseToolStripMenuItem_Click);
-            // 
-            // macroLavorazioniToolStripMenuItem1
-            // 
-            this.macroLavorazioniToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listaMacroLavorazioniToolStripMenuItem1});
-            this.macroLavorazioniToolStripMenuItem1.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_martello_64;
-            this.macroLavorazioniToolStripMenuItem1.Name = "macroLavorazioniToolStripMenuItem1";
-            this.macroLavorazioniToolStripMenuItem1.Size = new System.Drawing.Size(190, 24);
-            this.macroLavorazioniToolStripMenuItem1.Text = "Macro Lavorazioni";
-            // 
-            // listaMacroLavorazioniToolStripMenuItem1
-            // 
-            this.listaMacroLavorazioniToolStripMenuItem1.Name = "listaMacroLavorazioniToolStripMenuItem1";
-            this.listaMacroLavorazioniToolStripMenuItem1.Size = new System.Drawing.Size(222, 24);
-            this.listaMacroLavorazioniToolStripMenuItem1.Text = "Lista Macro Lavorazioni";
             // 
             // exitToolStripMenuItem
             // 
@@ -324,8 +305,6 @@
         private System.Windows.Forms.ToolStripMenuItem gestioneCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem commesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaCommesseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem macroLavorazioniToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem listaMacroLavorazioniToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mostraListaCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nascondiListaCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;

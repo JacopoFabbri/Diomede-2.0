@@ -27,7 +27,7 @@ namespace Diomede2
                 {
                     dataGridView1.DataSource = op.CercaCommessa();
                     var col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                    col.Name = "Cliente ";
+                    col.Name = "Cliente";
                     dataGridView1.Columns.Add(col);
                     foreach (DataGridViewRow r in dataGridView1.Rows)
                     {
@@ -42,6 +42,8 @@ namespace Diomede2
                         Bozza c = op.CercaBozzaId((int)r.Cells[8].Value);
                         if (c != null)
                             r.Cells[14].Value = c.IdentificativoPreventivo;
+                        else
+                            r.Cells[14].Value = "nessun preventivo";
                     }
                     dataGridView1.Columns[0].Visible = false;
                     dataGridView1.Columns[1].Visible = false;
@@ -65,58 +67,7 @@ namespace Diomede2
             if (flag)
                 foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
         }
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow riga in dataGridView1.Rows)
-                if (riga.Cells[0].Value != null)
-                    if (riga.Cells[0].Style.ForeColor == Color.Red)
-                        try
-                        {
-                            op.UpdateCommessa((int)riga.Cells["ID"].Value, (int)riga.Cells["DITTA"].Value,
-                                riga.Cells["NUMEROCOMMESSA"].Value + "", (DateTime)riga.Cells["DATA"].Value,
-                                riga.Cells["REFERENTE"].Value + "", "" + riga.Cells["INDIRIZZOCANTIERE"].Value,
-                                "" + riga.Cells["TECNICOINTERNO"].Value, "" + riga.Cells["NOTE"].Value, (int)riga.Cells["BOZZA"].Value, (DateTime)riga.Cells["DATAESECUZIONE"].Value, (DateTime)riga.Cells["DATARICHIESTACONSEGNA"].Value, (String)riga.Cells["INVIO"].Value, (DateTime)riga.Cells["DATAORAINVIO"].Value);
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-            try
-            {
-                dataGridView1.DataSource = op.CercaCommessa();
-                flag = false;
-                dataGridView1.Columns.Remove("Cliente");
-                dataGridView1.Columns.Remove("Preventivo");
-                var col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                col.Name = "Cliente";
-                dataGridView1.Columns.Add(col);
-                foreach (DataGridViewRow r in dataGridView1.Rows)
-                {
-                    Cliente c = op.CercaClientiId((int)r.Cells[1].Value);
-                    r.Cells[13].Value = c.Nome;
-                }
-                col = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                col.Name = "Preventivo";
-                dataGridView1.Columns.Add(col);
-                foreach (DataGridViewRow r in dataGridView1.Rows)
-                {
-                    Bozza c = op.CercaBozzaId((int)r.Cells[8].Value);
-                    if (c != null)
-                        r.Cells[14].Value = c.IdentificativoPreventivo;
-                }
-                dataGridView1.Columns[0].Visible = false;
-                dataGridView1.Columns[1].Visible = false;
-                dataGridView1.Columns[8].Visible = false;
-                dataGridView1.Columns[13].ReadOnly = true;
-                dataGridView1.Columns[14].ReadOnly = true;
-                flag = true;
-            }
-            catch
-            {
-                MessageBox.Show("Impossibile accedere a quest'area !!!");
-            }
-        }
+        
         private void Form4_FormClosed(object sender, FormClosedEventArgs e)
         {
             try
@@ -157,7 +108,7 @@ namespace Diomede2
 
 
                 flag = false;
-                dataGridView1.Columns.Remove("CLIENTE");
+                dataGridView1.Columns.Remove("Cliente");
                 dataGridView1.Columns.Remove("Preventivo");
                 dataGridView1.DataSource = op.CercaCommessa();
                 var col = new DataGridViewColumn(new DataGridViewTextBoxCell());
@@ -176,6 +127,8 @@ namespace Diomede2
                     Bozza c = op.CercaBozzaId((int)r.Cells[8].Value);
                     if (c != null)
                         r.Cells[14].Value = c.IdentificativoPreventivo;
+                    else
+                        r.Cells[14].Value = "nessun preventivo";
                 }
                 dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[1].Visible = false;
@@ -184,7 +137,7 @@ namespace Diomede2
                 dataGridView1.Columns[14].ReadOnly = true;
                 flag = true;
             }
-            catch 
+            catch (Exception ex)
             {
                 MessageBox.Show("errore");
             }
@@ -235,6 +188,8 @@ namespace Diomede2
                     Bozza c = op.CercaBozzaId((int)r.Cells[8].Value);
                     if (c != null)
                         r.Cells[14].Value = c.IdentificativoPreventivo;
+                    else
+                        r.Cells[14].Value = "nessun preventivo";
                 }
                 dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[1].Visible = false;
