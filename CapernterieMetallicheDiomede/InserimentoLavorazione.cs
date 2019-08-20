@@ -28,7 +28,7 @@ namespace Diomede2
             try
             {
                 op.InserimentoLavorazioni(textBox1.Text, textBox2.Text, Convert.ToDouble(textBox3.Text), c.Id, dateTimePicker1.Value, textBox5.Text);
-
+                MessageBox.Show("Inserimento completato");
             }
             catch
             {

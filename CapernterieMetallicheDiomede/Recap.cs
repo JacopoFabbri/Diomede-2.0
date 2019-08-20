@@ -55,6 +55,8 @@ namespace Diomede2
                 listaAcconti = op.FiltraAcconti("COMMESSA", "" + idCommessa);
                 dataGridView2.DataSource = listaAcconti;
                 dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[4].Visible = false;
+                dataGridView2.Columns[7].Visible = false;
                 textBox5.ReadOnly = true;
             }
             catch
@@ -105,7 +107,7 @@ namespace Diomede2
         }
         private void Button4_Click(object sender, EventArgs e)
         {
-            InserimentoPagamento p = new InserimentoPagamento(db, commessa.Id);
+            InserimentoLavorazione p = new InserimentoLavorazione(commessa.Id);
             p.Show();
         }
         private void Button6_Click(object sender, EventArgs e)
@@ -121,8 +123,9 @@ namespace Diomede2
                                 (DateTime)riga.Cells["DATAFATTURA"].Value, riga.Cells["NOTEFATTURA"].Value + "",
                                 (int)riga.Cells["COMMESSA"].Value);
 
-                dataGridView1.DataSource = op.FiltraAcconti("COMMESSA", "" + idCommessa);
-                dataGridView1.Columns[0].Visible = false;
+                dataGridView2.DataSource = op.FiltraAcconti("COMMESSA", "" + idCommessa);
+                dataGridView2.Columns[0].Visible = false;
+                dataGridView2.Columns[7].Visible = false;
             }
             catch
             {
@@ -157,6 +160,7 @@ namespace Diomede2
 
             dataGridView1.DataSource = op.FiltraAcconti("COMMESSA", "" + idCommessa);
             dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[4].Visible = false;
         }
         private void Button5_Click(object sender, EventArgs e)
         {
