@@ -108,11 +108,18 @@ namespace Amministrazione
         }
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var path = Directory.GetCurrentDirectory();
-            System.Diagnostics.Process proc = new System.Diagnostics.Process();
-            proc.EnableRaisingEvents = false;
-            proc.StartInfo.FileName = path + "/LoginGenerale.exe";
-            proc.Start();
+            try
+            {
+                var path = Directory.GetCurrentDirectory();
+                System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                proc.EnableRaisingEvents = false;
+                proc.StartInfo.FileName = path + "/LoginGenerale.exe";
+                proc.Start();
+            }
+            catch
+            {
+                MessageBox.Show("Login non identificato");
+            }
         }
 
     }
