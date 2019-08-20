@@ -1,0 +1,10 @@
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\OccupazionneDiomede\OccupazionneDiomede\obj\Debug\OccupazioneDiomede.csprojAssemblyReference.cache
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\OccupazionneDiomede\OccupazionneDiomede\obj\Debug\OccupazioneDiomede.Contatti.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\OccupazionneDiomede\OccupazionneDiomede\obj\Debug\OccupazioneDiomede.Dashboard.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\OccupazionneDiomede\OccupazionneDiomede\obj\Debug\OccupazioneDiomede.InserimentoCliente.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\OccupazionneDiomede\OccupazionneDiomede\obj\Debug\OccupazioneDiomede.ListaBozze.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\OccupazionneDiomede\OccupazionneDiomede\obj\Debug\OccupazioneDiomede.ListaClienti.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\OccupazionneDiomede\OccupazionneDiomede\obj\Debug\Diomede2.ListaLavorazione.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\OccupazionneDiomede\OccupazionneDiomede\obj\Debug\OccupazionneDiomede.Properties.Resources.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\OccupazionneDiomede\OccupazionneDiomede\obj\Debug\OccupazioneDiomede.csproj.GenerateResource.cache
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\OccupazionneDiomede\OccupazionneDiomede\obj\Debug\OccupazioneDiomede.csproj.CoreCompileInputs.cache

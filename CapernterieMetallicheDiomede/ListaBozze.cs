@@ -82,22 +82,18 @@ namespace Diomede2
                                     {
                                         op1.InserimentoCliente(c.Nome, c.Tel, c.Email, c.Iva, c.Sdi);
                                         listaCliente = op1.CercaCliente();
-                                        commessa = op1.GeneraCommessa("PO", listaCliente[listaCliente.Count - 1],
-                                            "Ponteggi", false);
+                                        commessa = op1.GeneraCommessa("CM", listaCliente[listaCliente.Count - 1],
+                                            "Carpenteria Metallica", false);
                                     }
                                     else
                                     {
-                                        commessa = op1.GeneraCommessa("PO", listaAmministrazione[1], "Ponteggi",
+                                        commessa = op1.GeneraCommessa("CM", listaAmministrazione[1], "Carpenteria Metallica",
                                             false);
                                     }
 
                                     op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, commessa,
                                         (DateTime)riga.Cells["DATA"].Value, "", "", "", "", (int)riga.Cells["ID"].Value, "NULL", "NULL", "", "NULL");
                                 }
-                            }
-                            else
-                            {
-
                             }
                         }
                         catch
@@ -156,8 +152,28 @@ namespace Diomede2
                             MessageBoxIcon.Error);
                     }
 
-            dataGridView1.DataSource = op.CercaBozza();
-            dataGridView1.Columns[0].Visible = false;
+            try
+            {
+                dataGridView1.DataSource = op.CercaBozza();
+                flag = false;
+                dataGridView1.Columns.Remove("CLIENTE");
+                var col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                col.Name = "CLIENTE";
+                dataGridView1.Columns.Add(col);
+                foreach (DataGridViewRow r in dataGridView1.Rows)
+                {
+                    Cliente c = op.CercaClientiId((int)r.Cells[5].Value);
+                    r.Cells[7].Value = c.Nome;
+                }
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[5].Visible = false;
+                dataGridView1.Columns[7].ReadOnly = true;
+                flag = true;
+            }
+            catch
+            {
+                MessageBox.Show("errore");
+            }
         }
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

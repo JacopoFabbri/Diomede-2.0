@@ -438,12 +438,12 @@ namespace Diomede2
                 throw new Exception(e.ToString());
             }
         }
-        public void InserimentoCommessa(int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note)
+        public void InserimentoCommessa(int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note, int id)
         {
             try
             {
                 var bDB = new CommessaDB(conn);
-                bDB.Inserimento(ditta, numerocommessa, data, referente, indirizzoCantiere, tecnico, note);
+                bDB.Inserimento(ditta, numerocommessa, data, referente, indirizzoCantiere, tecnico, note, id);
             }
             catch (Exception e)
             {
@@ -818,7 +818,7 @@ namespace Diomede2
             try
             {
                 var bDB = new AccontiDB(conn);
-                bDB.AggiornaOperazione(id,importo, note, desc, dataInserimento, dataFattura, noteFattura, commessa);
+                bDB.AggiornaOperazione(id, importo, note, desc, dataInserimento, dataFattura, noteFattura, commessa);
             }
             catch (Exception e)
             {
@@ -1787,14 +1787,14 @@ namespace Diomede2
                 con.Close();
             }
         }
-        public void Inserimento(int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note)
+        public void Inserimento(int ditta, string numerocommessa, DateTime data, string referente, string indirizzoCantiere, string tecnico, string note, int id)
         {
             try
             {
                 con.Open();
                 var command = new MySqlCommand(
-                    "INSERT INTO `COMMESSA`(`DITTA`, `NUMEROCOMMESSA`, `DATA`, `REFERENTE`, `INDIRIZZOCANTIERE`, `TECNICOINTERNO`, `NOTE`) VALUES('" +
-                    ditta + "','" + numerocommessa + "','" + data.ToString("yyyy/MM/dd") + "','" + referente + "','" + indirizzoCantiere + "','" + tecnico + "','" + note + "')", con);
+                    "INSERT INTO `COMMESSA`(`DITTA`, `NUMEROCOMMESSA`, `DATA`, `REFERENTE`, `INDIRIZZOCANTIERE`, `TECNICOINTERNO`, `NOTE`, `BOZZA`) VALUES('" +
+                    ditta + "','" + numerocommessa + "','" + data.ToString("yyyy/MM/dd") + "','" + referente + "','" + indirizzoCantiere + "','" + tecnico + "','" + note + "','" + id + "')", con);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -1837,10 +1837,8 @@ namespace Diomede2
                         c.IndirizzoCantiere = "" + lettore[5];
                         c.TecnicoInterno = "" + lettore[6];
                         c.Note = "" + lettore[7];
-                        if (lettore[8].ToString().Equals("NULL"))
-                        {
-                            c.Bozza = (int)lettore[8];
-                        }
+                        //if (lettore[8].ToString().Equals("NULL"))
+                        c.Bozza = (int)lettore[8];
                         c.DataEsecuzione = dataValue2;
                         c.DataRichestaConsegna = dataValue3;
                         c.Invio = "" + lettore[11];
@@ -2760,7 +2758,7 @@ namespace Diomede2
 
             return lavorazione;
         }
-        public void AggiornaOperazione(int id,double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura, int commessa)
+        public void AggiornaOperazione(int id, double importo, String note, String desc, DateTime dataInserimento, DateTime dataFattura, String noteFattura, int commessa)
         {
             try
             {
