@@ -46,6 +46,7 @@ namespace Diomede2
                 }
                 else
                 {
+                    textBox5.Text = "" + 0;
                     textBox5.Visible = false;
                 }
                 List<Lavorazioni> listaLavorazione = op.FiltraLavorazioni("COMMESSA", "" + idCommessa);
@@ -97,7 +98,7 @@ namespace Diomede2
                 op.UpdateBozza(commessa.Bozza, Convert.ToDouble(textBox5.Text));
 
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -179,6 +180,6 @@ namespace Diomede2
 
             dataGridView1.DataSource = op.FiltraLavorazioni("COMMESSA", "" + idCommessa);
             dataGridView1.Columns[0].Visible = false;
-        }  
+        }
     }
 }
