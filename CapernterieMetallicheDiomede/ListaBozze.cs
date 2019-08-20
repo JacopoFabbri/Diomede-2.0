@@ -95,10 +95,6 @@ namespace Diomede2
                                         (DateTime)riga.Cells["DATA"].Value, "", "", "", "", (int)riga.Cells["ID"].Value, "NULL", "NULL", "", "NULL");
                                 }
                             }
-                            else
-                            {
-
-                            }
                         }
                         catch
                         {
