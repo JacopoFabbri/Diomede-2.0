@@ -13,6 +13,7 @@ namespace Diomede2
         private List<Commessa> listaCommesse;
         private OperazionePraticheEdili op;
         public Dashboard(string s)
+
         {
             settore = s;
             InitializeComponent();
