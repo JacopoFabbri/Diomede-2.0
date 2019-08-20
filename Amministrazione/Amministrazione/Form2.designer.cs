@@ -422,6 +422,7 @@
             // 
             // listView1
             // 
+            this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(393, 119);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(180, 459);
@@ -431,6 +432,7 @@
             // 
             // listView2
             // 
+            this.listView2.HideSelection = false;
             this.listView2.Location = new System.Drawing.Point(596, 118);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(180, 459);
@@ -440,6 +442,7 @@
             // 
             // listView3
             // 
+            this.listView3.HideSelection = false;
             this.listView3.Location = new System.Drawing.Point(798, 118);
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(180, 459);
