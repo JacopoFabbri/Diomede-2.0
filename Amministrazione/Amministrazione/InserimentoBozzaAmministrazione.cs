@@ -4,19 +4,19 @@ using System.Windows.Forms;
 
 namespace Amministrazione
 {
-    public partial class InserimentoBozza : Form
+    public partial class InserimentoBozzaAmministrazione : Form
     {
         private readonly string db;
         private readonly ListaBozze formPrecedente;
         private List<Cliente> lista = new List<Cliente>();
         private OperazioniAmministrazione op;
-        public InserimentoBozza(string dbName, ListaBozze lb)
+        public InserimentoBozzaAmministrazione(string dbName, ListaBozze lb)
         {
             formPrecedente = lb;
             db = dbName;
             InitializeComponent();
         }
-        public InserimentoBozza(string dbName)
+        public InserimentoBozzaAmministrazione(string dbName)
         {
             db = dbName;
             InitializeComponent();

@@ -1,8 +1,8 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using Diomede2;
 
 namespace Amministrazione
 {
@@ -73,14 +73,6 @@ namespace Amministrazione
         {
             listView1.Visible = false;
         }
-        private void ListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-        private void InserisciBozzaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
         private void VisualizzaListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dashboard_Load(sender, e);
@@ -89,10 +81,6 @@ namespace Amministrazione
         private void NascondiListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listView2.Visible = false;
-        }
-        private void ListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
         private void MostraListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -122,5 +110,10 @@ namespace Amministrazione
             }
         }
 
+        private void InserisciPreventivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InserimentoBozza i = new InserimentoBozza("PraticheEdili");
+            i.Show();
+        }
     }
 }
