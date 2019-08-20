@@ -52,7 +52,7 @@ namespace Diomede2
                     flag = true;
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
             }
@@ -147,7 +147,7 @@ namespace Diomede2
                                 (DateTime)riga.Cells["DataOraInvio"].Value);
 
                         }
-                        catch (Exception ex)
+                        catch
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -184,7 +184,7 @@ namespace Diomede2
                 dataGridView1.Columns[14].ReadOnly = true;
                 flag = true;
             }
-            catch (Exception ex)
+            catch 
             {
                 MessageBox.Show("errore");
             }
