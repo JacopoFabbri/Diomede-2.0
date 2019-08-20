@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using Diomede2;
 
 namespace Amministrazione
 {
@@ -110,10 +109,9 @@ namespace Amministrazione
             }
         }
 
-        private void InserisciPreventivoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InserimentoBozza i = new InserimentoBozza("PraticheEdili");
-            i.Show();
+
         }
     }
 }

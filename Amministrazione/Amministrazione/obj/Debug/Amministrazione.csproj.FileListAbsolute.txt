@@ -63,10 +63,4 @@ C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\Amministrazione\Amministrazione\o
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.exe
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.pdb
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.Form2.resources
-C:\Users\Ponteggi5\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Diomede2.InserimentoBozza.resources
-C:\Users\Ponteggi5\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Diomede2.ListaPacchetto.resources
-C:\Users\Ponteggi5\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Diomede2.InserisciPacchetto.resources
-C:\Users\Ponteggi5\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Diomede2.ListaLavorazioni.resources
-C:\Users\Ponteggi5\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Diomede2.FiltroLavorazioni.resources
-C:\Users\Ponteggi5\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Diomede2.InserisciLavorazione.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.InserimentoBozzaAmministrazione.resources

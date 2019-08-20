@@ -54,8 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Class2.cs" />
-    <Compile Include="Class3.cs" />
     <Compile Include="Contatti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,23 +66,11 @@
     <Compile Include="Dashboard.designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="FiltroLavorazioni.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FiltroLavorazioni.designer.cs">
-      <DependentUpon>FiltroLavorazioni.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form2.designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InserimentoBozzaPraticheEdili.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InserimentoBozzaPraticheEdili.designer.cs">
-      <DependentUpon>InserimentoBozzaPraticheEdili.cs</DependentUpon>
     </Compile>
     <Compile Include="InserimentoBozzaAmministrazione.cs">
       <SubType>Form</SubType>
@@ -104,18 +90,6 @@
     <Compile Include="InserimentoContatto.designer.cs">
       <DependentUpon>InserimentoContatto.cs</DependentUpon>
     </Compile>
-    <Compile Include="InserisciLavorazione.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InserisciLavorazione.designer.cs">
-      <DependentUpon>InserisciLavorazione.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InserisciPacchetto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InserisciPacchetto.designer.cs">
-      <DependentUpon>InserisciPacchetto.cs</DependentUpon>
-    </Compile>
     <Compile Include="ListaBozze.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,18 +101,6 @@
     </Compile>
     <Compile Include="ListaClienti.designer.cs">
       <DependentUpon>ListaClienti.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListaLavorazioni.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListaLavorazioni.designer.cs">
-      <DependentUpon>ListaLavorazioni.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListaPacchetto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListaPacchetto.designer.cs">
-      <DependentUpon>ListaPacchetto.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -160,14 +122,8 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FiltroLavorazioni.resx">
-      <DependentUpon>FiltroLavorazioni.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InserimentoBozzaPraticheEdili.resx">
-      <DependentUpon>InserimentoBozzaPraticheEdili.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InserimentoBozzaAmministrazione.resx">
       <DependentUpon>InserimentoBozzaAmministrazione.cs</DependentUpon>
@@ -178,23 +134,11 @@
     <EmbeddedResource Include="InserimentoContatto.resx">
       <DependentUpon>InserimentoContatto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InserisciLavorazione.resx">
-      <DependentUpon>InserisciLavorazione.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InserisciPacchetto.resx">
-      <DependentUpon>InserisciPacchetto.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ListaBozze.resx">
       <DependentUpon>ListaBozze.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaClienti.resx">
       <DependentUpon>ListaClienti.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListaLavorazioni.resx">
-      <DependentUpon>ListaLavorazioni.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListaPacchetto.resx">
-      <DependentUpon>ListaPacchetto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
