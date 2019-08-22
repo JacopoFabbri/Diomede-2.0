@@ -72,11 +72,11 @@
     <Compile Include="Form2.designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="InserimentoBozza.cs">
+    <Compile Include="InserimentoBozzaAmministrazione.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InserimentoBozza.designer.cs">
-      <DependentUpon>InserimentoBozza.cs</DependentUpon>
+    <Compile Include="InserimentoBozzaAmministrazione.designer.cs">
+      <DependentUpon>InserimentoBozzaAmministrazione.cs</DependentUpon>
     </Compile>
     <Compile Include="InserimentoCliente.cs">
       <SubType>Form</SubType>
@@ -125,8 +125,8 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InserimentoBozza.resx">
-      <DependentUpon>InserimentoBozza.cs</DependentUpon>
+    <EmbeddedResource Include="InserimentoBozzaAmministrazione.resx">
+      <DependentUpon>InserimentoBozzaAmministrazione.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InserimentoCliente.resx">
       <DependentUpon>InserimentoCliente.cs</DependentUpon>

@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
@@ -73,14 +72,6 @@ namespace Amministrazione
         {
             listView1.Visible = false;
         }
-        private void ListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-        private void InserisciBozzaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
         private void VisualizzaListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dashboard_Load(sender, e);
@@ -89,10 +80,6 @@ namespace Amministrazione
         private void NascondiListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listView2.Visible = false;
-        }
-        private void ListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
         private void MostraListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -108,12 +95,23 @@ namespace Amministrazione
         }
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var path = Directory.GetCurrentDirectory();
-            System.Diagnostics.Process proc = new System.Diagnostics.Process();
-            proc.EnableRaisingEvents = false;
-            proc.StartInfo.FileName = path + "/LoginGenerale.exe";
-            proc.Start();
+            try
+            {
+                var path = Directory.GetCurrentDirectory();
+                System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                proc.EnableRaisingEvents = false;
+                proc.StartInfo.FileName = path + "/LoginGenerale.exe";
+                proc.Start();
+            }
+            catch
+            {
+                MessageBox.Show("Login non identificato");
+            }
         }
 
+        private void ListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

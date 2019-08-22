@@ -44,6 +44,8 @@
             this.inserisciBozzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostraListaBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nascondiListaBozzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.preventivoPraticheDiomedeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inserisciPreventivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestioneCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -145,7 +147,8 @@
             // bozzaToolStripMenuItem
             // 
             this.bozzaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bozzaToolStripMenuItem1});
+            this.bozzaToolStripMenuItem1,
+            this.preventivoPraticheDiomedeToolStripMenuItem});
             this.bozzaToolStripMenuItem.Name = "bozzaToolStripMenuItem";
             this.bozzaToolStripMenuItem.Size = new System.Drawing.Size(156, 25);
             this.bozzaToolStripMenuItem.Text = "Gestione Preventivi";
@@ -158,7 +161,7 @@
             this.mostraListaBozzeToolStripMenuItem,
             this.nascondiListaBozzeToolStripMenuItem});
             this.bozzaToolStripMenuItem1.Name = "bozzaToolStripMenuItem1";
-            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(154, 26);
+            this.bozzaToolStripMenuItem1.Size = new System.Drawing.Size(281, 26);
             this.bozzaToolStripMenuItem1.Text = "Preventivo";
             // 
             // listaBozzeToolStripMenuItem
@@ -173,7 +176,6 @@
             this.inserisciBozzaToolStripMenuItem.Name = "inserisciBozzaToolStripMenuItem";
             this.inserisciBozzaToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
             this.inserisciBozzaToolStripMenuItem.Text = "Inserisci Preventivo";
-            this.inserisciBozzaToolStripMenuItem.Click += new System.EventHandler(this.InserisciBozzaToolStripMenuItem_Click);
             // 
             // mostraListaBozzeToolStripMenuItem
             // 
@@ -188,6 +190,20 @@
             this.nascondiListaBozzeToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
             this.nascondiListaBozzeToolStripMenuItem.Text = "Nascondi lista Preventivi";
             this.nascondiListaBozzeToolStripMenuItem.Click += new System.EventHandler(this.NascondiListaBozzeToolStripMenuItem_Click);
+            // 
+            // preventivoPraticheDiomedeToolStripMenuItem
+            // 
+            this.preventivoPraticheDiomedeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inserisciPreventivoToolStripMenuItem});
+            this.preventivoPraticheDiomedeToolStripMenuItem.Name = "preventivoPraticheDiomedeToolStripMenuItem";
+            this.preventivoPraticheDiomedeToolStripMenuItem.Size = new System.Drawing.Size(281, 26);
+            this.preventivoPraticheDiomedeToolStripMenuItem.Text = "Preventivo Pratiche Diomede";
+            // 
+            // inserisciPreventivoToolStripMenuItem
+            // 
+            this.inserisciPreventivoToolStripMenuItem.Name = "inserisciPreventivoToolStripMenuItem";
+            this.inserisciPreventivoToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.inserisciPreventivoToolStripMenuItem.Text = "Inserisci Preventivo";
             // 
             // gestioneCommesseToolStripMenuItem
             // 
@@ -213,7 +229,6 @@
             this.listaCommesseToolStripMenuItem.Name = "listaCommesseToolStripMenuItem";
             this.listaCommesseToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
             this.listaCommesseToolStripMenuItem.Text = "Lista Commesse";
-            this.listaCommesseToolStripMenuItem.Click += new System.EventHandler(this.ListaCommesseToolStripMenuItem_Click);
             // 
             // mostraListaCommesseToolStripMenuItem
             // 
@@ -295,5 +310,7 @@
         private System.Windows.Forms.ToolStripMenuItem inserisciBozzaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mostraListaBozzeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nascondiListaBozzeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem preventivoPraticheDiomedeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inserisciPreventivoToolStripMenuItem;
     }
 }
