@@ -255,6 +255,9 @@
     <EmbeddedResource Include="visualizzatore.resx">
       <DependentUpon>visualizzatore.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VisualizzatoreDitte.resx">
+      <DependentUpon>VisualizzatoreDitte.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
