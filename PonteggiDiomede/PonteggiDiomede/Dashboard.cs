@@ -134,7 +134,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("NON sono riuscito a trovare il file di login");
+                MessageBox.Show("NON sono riuscito a trovare il file di login","Attenzione:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
