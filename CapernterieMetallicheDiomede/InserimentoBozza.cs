@@ -62,7 +62,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati");
+                MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
         private void InserimentoBozza_Load(object sender, EventArgs e)

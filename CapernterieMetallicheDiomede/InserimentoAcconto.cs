@@ -27,11 +27,11 @@ namespace CarpenterieMetallicheDiomede
             try
             {
                 op.InserimentoAcconti(Convert.ToDouble(textBox3.Text), textBox1.Text, textBox2.Text, dateTimePicker1.Value, dateTimePicker2.Value, textBox4.Text, id);
-                MessageBox.Show("Inserimento Completato");
+                MessageBox.Show("Inserimento Completato","Completato:",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             catch
             {
-                MessageBox.Show("Errore nell'inserimento Riprovare");
+                MessageBox.Show("Errore nell'inserimento Riprovare", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
