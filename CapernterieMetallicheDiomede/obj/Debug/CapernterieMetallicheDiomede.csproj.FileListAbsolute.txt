@@ -133,7 +133,6 @@ C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\bin\
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\MySql.Data.dll
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\Google.Protobuf.xml
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\MySql.Data.xml
-C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CapernterieMetallicheDiomede.csprojAssemblyReference.cache
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.Contatti.resources
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.Dashboard.resources
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.FiltroBozze.resources
@@ -153,6 +152,7 @@ C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.Recap.resources
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.Ruoli.resources
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.visualizzatore.resources
+C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.VisualizzatoreDitte.resources
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CapernterieMetallicheDiomede.csproj.GenerateResource.cache
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CapernterieMetallicheDiomede.csproj.CoreCompileInputs.cache
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CapernterieMetallicheDiomede.csproj.CopyComplete
