@@ -294,18 +294,21 @@
             this.ponteggiToolStripMenuItem1.Name = "ponteggiToolStripMenuItem1";
             this.ponteggiToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
             this.ponteggiToolStripMenuItem1.Text = "Ponteggi";
+            this.ponteggiToolStripMenuItem1.Click += new System.EventHandler(this.PonteggiToolStripMenuItem1_Click);
             // 
             // carpenteriaToolStripMenuItem
             // 
             this.carpenteriaToolStripMenuItem.Name = "carpenteriaToolStripMenuItem";
             this.carpenteriaToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.carpenteriaToolStripMenuItem.Text = "Carpenteria";
+            this.carpenteriaToolStripMenuItem.Click += new System.EventHandler(this.CarpenteriaToolStripMenuItem_Click);
             // 
             // praticheToolStripMenuItem
             // 
             this.praticheToolStripMenuItem.Name = "praticheToolStripMenuItem";
             this.praticheToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.praticheToolStripMenuItem.Text = "Pratiche";
+            this.praticheToolStripMenuItem.Click += new System.EventHandler(this.PraticheToolStripMenuItem_Click);
             // 
             // Dashboard
             // 

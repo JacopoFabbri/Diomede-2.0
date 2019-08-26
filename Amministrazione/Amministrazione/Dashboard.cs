@@ -126,5 +126,23 @@ namespace Amministrazione
             Diomede5.InserimentoBozza i = new Diomede5.InserimentoBozza("CarpenteriaMetallica");
             i.Show();
         }
+
+        private void PonteggiToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Diomede3.InserimentoCliente i = new Diomede3.InserimentoCliente("Ponteggi");
+            i.Show();
+        }
+
+        private void CarpenteriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Diomede5.InserimentoCliente i = new Diomede5.InserimentoCliente("CarpenteriaMetallica");
+            i.Show();
+        }
+
+        private void PraticheToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Diomede4.InserimentoCliente i = new Diomede4.InserimentoCliente("PraticheEdili");
+            i.Show();
+        }
     }
 }
