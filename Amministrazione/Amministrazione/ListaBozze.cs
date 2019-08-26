@@ -43,11 +43,6 @@ namespace Amministrazione
         {
            
         }
-        private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var ib = new InserimentoBozzaAmministrazione(db, this);
-            ib.Show();
-        }
         private void EliminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
            
