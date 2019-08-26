@@ -52,12 +52,13 @@ namespace Diomede2
                             sw.Close();
                         }
 
-                        if (utente.Ruolo == 1 || utente.Ruolo == 4 || utente.Ruolo == 6 || utente.Ruolo == 7)
+                        if (utente.Ruolo == 1 || utente.Ruolo == 4 || utente.Ruolo == 6 || utente.Ruolo == 7 || utente.Ruolo == 8)
                         {
+                            listView1.Items.Add("Amministrazione");
+                            listView1.Items.Add("Carpenterie");
                             listView1.Items.Add("Occupazione");
                             listView1.Items.Add("Ponteggi");
                             listView1.Items.Add("PraticheEdili");
-                            listView1.Items.Add("Carpenterie");
                             fileToolStripMenuItem.DropDownItems[0].Visible = true;
                         }
                         else if (utente.Ruolo == 3)
@@ -138,7 +139,23 @@ namespace Diomede2
         private void ListView1_Click(object sender, EventArgs e)
         {
             var path = Directory.GetCurrentDirectory();
-            if (listView1.SelectedItems[0].Text.Equals("Ponteggi"))
+            if (listView1.SelectedItems[0].Text.Equals("Amministrazione"))
+            {
+                try
+                {
+                    System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                    proc.EnableRaisingEvents = false;
+                    proc.StartInfo.FileName = path + "/Amministrazione.exe";
+                    proc.StartInfo.Arguments = "1";
+                    proc.Start();
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            else if (listView1.SelectedItems[0].Text.Equals("Ponteggi"))
             {
                 try
                 {
@@ -273,6 +290,22 @@ namespace Diomede2
                     {
                         MessageBox.Show(ex.ToString());
                     }
+                }
+                else if (listView1.SelectedItems[0].Text.Equals("Amministrazione"))
+                {
+                    try
+                    {
+                        System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                        proc.EnableRaisingEvents = false;
+                        proc.StartInfo.FileName = path + "/Amministrazione.exe";
+                        proc.Start();
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+
                 }
             }
         }

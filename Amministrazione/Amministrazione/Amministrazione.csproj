@@ -110,6 +110,12 @@
     <Compile Include="ListaClienti.designer.cs">
       <DependentUpon>ListaClienti.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListaCommesse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaCommesse.designer.cs">
+      <DependentUpon>ListaCommesse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ponteggi\Class2.cs" />
     <Compile Include="Ponteggi\Class3.cs" />
     <Compile Include="Ponteggi\InserimentoBozzaPonteggi.cs">
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaClienti.resx">
       <DependentUpon>ListaClienti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaCommesse.resx">
+      <DependentUpon>ListaCommesse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ponteggi\InserimentoBozzaPonteggi.resx">
       <DependentUpon>InserimentoBozzaPonteggi.cs</DependentUpon>
