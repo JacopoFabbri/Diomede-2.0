@@ -28,11 +28,11 @@ namespace Diomede2
             try
             {
                 op.InserimentoLavorazioni(textBox1.Text, textBox2.Text, Convert.ToDouble(textBox3.Text), c.Id, dateTimePicker1.Value, textBox5.Text);
-                MessageBox.Show("Inserimento completato");
+                MessageBox.Show("Inserimento completato","Completato:",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             catch
             {
-                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
+                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
         private void InserimentoLavorazione_Load(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace Diomede2
             }
             catch 
             {
-                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione");
+                MessageBox.Show("Errore durante l'inserimento \nripetere l'operazione","Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

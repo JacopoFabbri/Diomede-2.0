@@ -315,7 +315,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 41);
             this.button1.TabIndex = 11;
-            this.button1.Text = "Inserisci";
+            this.button1.Text = "&Inserisci";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -335,7 +335,7 @@
             // 
             this.inserisciRuoloToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.inserisciRuoloToolStripMenuItem.Name = "inserisciRuoloToolStripMenuItem";
-            this.inserisciRuoloToolStripMenuItem.Size = new System.Drawing.Size(124, 23);
+            this.inserisciRuoloToolStripMenuItem.Size = new System.Drawing.Size(108, 23);
             this.inserisciRuoloToolStripMenuItem.Text = "Inserisci Ruolo";
             this.inserisciRuoloToolStripMenuItem.Click += new System.EventHandler(this.InserisciRuoloToolStripMenuItem_Click);
             // 

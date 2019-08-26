@@ -43,7 +43,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Impossibile accedere a quest'area !!!");
+                MessageBox.Show("Impossibile accedere a quest'area !!!","Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
 
@@ -122,7 +122,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("errore");
+                MessageBox.Show("Errore","Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)

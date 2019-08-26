@@ -186,8 +186,10 @@ C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\DIomede 2.0\bin\Debug\Diomede2.ex
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\DIomede 2.0\bin\Debug\Diomede2.exe
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\DIomede 2.0\bin\Debug\Diomede2.pdb
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\DIomede 2.0\bin\Debug\Google.Protobuf.dll
+C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\DIomede 2.0\bin\Debug\MySql.Data.dll
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\DIomede 2.0\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\DIomede 2.0\bin\Debug\Google.Protobuf.xml
+C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\DIomede 2.0\bin\Debug\MySql.Data.xml
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\DIomede 2.0\obj\Debug\PraticheEdiliDiomede.csprojAssemblyReference.cache
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.InserimentoLavorazioni.resources
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\DIomede 2.0\obj\Debug\Diomede2.FiltroLavorazioni.resources

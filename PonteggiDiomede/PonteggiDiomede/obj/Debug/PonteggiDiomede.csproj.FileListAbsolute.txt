@@ -126,6 +126,7 @@ C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\b
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\bin\Debug\Google.Protobuf.dll
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\bin\Debug\MySql.Data.xml
+C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.csprojAssemblyReference.cache
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.csproj.ResolveComReference.cache
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.Contatti.resources
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.Dashboard.resources

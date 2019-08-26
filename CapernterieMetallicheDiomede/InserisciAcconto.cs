@@ -32,7 +32,7 @@ namespace CarpenterieMetallicheDiomede
             }
             catch
             {
-                MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati");
+                MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati","Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void InserisciAcconto_Load(object sender, EventArgs e)
