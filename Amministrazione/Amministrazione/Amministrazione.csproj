@@ -113,7 +113,7 @@
     <Compile Include="ListaCommesse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListaCommesse.designer.cs">
+    <Compile Include="ListaCommesse.Designer.cs">
       <DependentUpon>ListaCommesse.cs</DependentUpon>
     </Compile>
     <Compile Include="Ponteggi\Class2.cs" />
