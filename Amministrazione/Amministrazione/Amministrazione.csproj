@@ -53,6 +53,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarpeterieMetalliche\Class2.cs" />
+    <Compile Include="CarpeterieMetalliche\Class3.cs" />
+    <Compile Include="CarpeterieMetalliche\InserimentoBozza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarpeterieMetalliche\InserimentoBozza.designer.cs">
+      <DependentUpon>InserimentoBozza.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="Contatti.cs">
       <SubType>Form</SubType>
@@ -71,12 +79,6 @@
     </Compile>
     <Compile Include="Form2.designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InserimentoBozzaAmministrazione.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InserimentoBozzaAmministrazione.designer.cs">
-      <DependentUpon>InserimentoBozzaAmministrazione.cs</DependentUpon>
     </Compile>
     <Compile Include="InserimentoCliente.cs">
       <SubType>Form</SubType>
@@ -102,6 +104,46 @@
     <Compile Include="ListaClienti.designer.cs">
       <DependentUpon>ListaClienti.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ponteggi\Class2.cs" />
+    <Compile Include="Ponteggi\Class3.cs" />
+    <Compile Include="Ponteggi\InserimentoBozzaPonteggi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ponteggi\InserimentoBozzaPonteggi.designer.cs">
+      <DependentUpon>InserimentoBozzaPonteggi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pratiche Edili\Class2.cs" />
+    <Compile Include="Pratiche Edili\Class3.cs" />
+    <Compile Include="Pratiche Edili\InserimentoBozza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pratiche Edili\InserimentoBozza.designer.cs">
+      <DependentUpon>InserimentoBozza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pratiche Edili\InserisciLavorazione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pratiche Edili\InserisciLavorazione.designer.cs">
+      <DependentUpon>InserisciLavorazione.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pratiche Edili\InserisciPacchetto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pratiche Edili\InserisciPacchetto.designer.cs">
+      <DependentUpon>InserisciPacchetto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pratiche Edili\ListaLavorazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pratiche Edili\ListaLavorazioni.designer.cs">
+      <DependentUpon>ListaLavorazioni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pratiche Edili\ListaPacchetto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pratiche Edili\ListaPacchetto.designer.cs">
+      <DependentUpon>ListaPacchetto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="visualizzatore.cs">
@@ -116,6 +158,9 @@
     <Compile Include="VisualizzatoreDitte.designer.cs">
       <DependentUpon>VisualizzatoreDitte.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CarpeterieMetalliche\InserimentoBozza.resx">
+      <DependentUpon>InserimentoBozza.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Contatti.resx">
       <DependentUpon>Contatti.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,9 +169,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InserimentoBozzaAmministrazione.resx">
-      <DependentUpon>InserimentoBozzaAmministrazione.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InserimentoCliente.resx">
       <DependentUpon>InserimentoCliente.cs</DependentUpon>
@@ -139,6 +181,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaClienti.resx">
       <DependentUpon>ListaClienti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ponteggi\InserimentoBozzaPonteggi.resx">
+      <DependentUpon>InserimentoBozzaPonteggi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pratiche Edili\InserimentoBozza.resx">
+      <DependentUpon>InserimentoBozza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pratiche Edili\InserisciLavorazione.resx">
+      <DependentUpon>InserisciLavorazione.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pratiche Edili\InserisciPacchetto.resx">
+      <DependentUpon>InserisciPacchetto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pratiche Edili\ListaLavorazioni.resx">
+      <DependentUpon>ListaLavorazioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pratiche Edili\ListaPacchetto.resx">
+      <DependentUpon>ListaPacchetto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -169,5 +229,6 @@
   <ItemGroup>
     <None Include="Resources\LOGO DEFINITIVO.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
