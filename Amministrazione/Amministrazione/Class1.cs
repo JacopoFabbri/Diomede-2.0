@@ -1525,41 +1525,43 @@ namespace Amministrazione
             try
             {
                 con.Open();
-                if (chiusa)
+                if (inviato)
                 {
-                    if (fatturata)
+                    if (accettazione)
                     {
                         var command = new MySqlCommand(
-                            "INSERT INTO `COMMESSA`(`NUMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `PREVENTIVO`, `CLIENTE`, `SETTOREINTERO`, `CANTIERE`, `NOTE`, `CHIUSA`, `DATACHIUSURA`, `FATTURATA`, `DATAFATTURA`, `ACCONTI`, `PAGAMENTI`, `DATAINSERIMENTO`, `IMPORTO`) VALUES ('" +
-                            numero + "','" + anno + "','" + settore + "','" + commessa + "','" + preventivo + "','" + cliente + "','" + settoreintero + "','" +
-                            cantiere + "','" + note + "','" + 1 + "','" + datachiusura.ToString("yyyy/MM/dd") + "','" + 1 + "','" + datafattura.ToString("yyyy/MM/dd") + "','" + acconti + "','" + pagamenti + "','" + datainserimento.ToString("yyyy/MM/dd") + "','" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "')", con);
+                            "INSERT INTO `COMMESSA`(`NUMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`, `DATAINS`, `CANTIERE`, `NOTE`, `IMPORTO`, `INVIATO`, `DATAINVIO`, `ACCETTAZIONE`, `DATAACC`, `COMMESSACOMPLETA`) VALUES ('" +
+                            numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" + settoreIntero + "','" + dataInserimento.ToString("yyyy/MM/dd") + "','" + cantiere + "','" + note + "','" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + 
+                            "','" + 1 + "','" + dataInvio.ToString("yyyy/MM/dd") + "','" + 1 + "','" + dataAccettazione.ToString("yyyy/MM/dd") + "','" + commessaCompleta + "')", con);
                         command.ExecuteNonQuery();
                     }
                     else
                     {
                         var command = new MySqlCommand(
-                             "INSERT INTO `COMMESSA`(`NUMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `PREVENTIVO`, `CLIENTE`, `SETTOREINTERO`, `CANTIERE`, `NOTE`, `CHIUSA`, `DATACHIUSURA`, `FATTURATA`, `DATAFATTURA`, `ACCONTI`, `PAGAMENTI`, `DATAINSERIMENTO`, `IMPORTO`) VALUES ('" +
-                             numero + "','" + anno + "','" + settore + "','" + commessa + "','" + preventivo + "','" + cliente + "','" + settoreintero + "','" +
-                             cantiere + "','" + note + "','" + 1 + "','" + datachiusura.ToString("yyyy/MM/dd") + "','" + 0 + "','" + datafattura.ToString("yyyy/MM/dd") + "','" + acconti + "','" + pagamenti + "','" + datainserimento.ToString("yyyy/MM/dd") + "','" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "')", con);
+                            "INSERT INTO `COMMESSA`(`NUMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`, `DATAINS`, `CANTIERE`, `NOTE`, `IMPORTO`, `INVIATO`, `DATAINVIO`, `ACCETTAZIONE`, `DATAACC`, `COMMESSACOMPLETA`) VALUES ('" +
+                            numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" + settoreIntero + "','" + dataInserimento.ToString("yyyy/MM/dd") + "','" + cantiere + "','" + note + "','" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) +
+                            "','" + 1 + "','" + dataInvio.ToString("yyyy/MM/dd") + "','" + 0 + "','" + dataAccettazione.ToString("yyyy/MM/dd") + "','" + commessaCompleta + "')", con);
+
                         command.ExecuteNonQuery();
                     }
                 }
                 else
                 {
-                    if (fatturata)
+                    if (accettazione)
                     {
                         var command = new MySqlCommand(
-                            "INSERT INTO `COMMESSA`(`NUMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `PREVENTIVO`, `CLIENTE`, `SETTOREINTERO`, `CANTIERE`, `NOTE`, `CHIUSA`, `DATACHIUSURA`, `FATTURATA`, `DATAFATTURA`, `ACCONTI`, `PAGAMENTI`, `DATAINSERIMENTO`, `IMPORTO`) VALUES ('" +
-                            numero + "','" + anno + "','" + settore + "','" + commessa + "','" + preventivo + "','" + cliente + "','" + settoreintero + "','" +
-                            cantiere + "','" + note + "','" + 0 + "','" + datachiusura.ToString("yyyy/MM/dd") + "','" + 1 + "','" + datafattura.ToString("yyyy/MM/dd") + "','" + acconti + "','" + pagamenti + "','" + datainserimento.ToString("yyyy/MM/dd") + "','" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "')", con);
+                            "INSERT INTO `COMMESSA`(`NUMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`, `DATAINS`, `CANTIERE`, `NOTE`, `IMPORTO`, `INVIATO`, `DATAINVIO`, `ACCETTAZIONE`, `DATAACC`, `COMMESSACOMPLETA`) VALUES ('" +
+                            numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" + settoreIntero + "','" + dataInserimento.ToString("yyyy/MM/dd") + "','" + cantiere + "','" + note + "','" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) +
+                            "','" + 1 + "','" + dataInvio.ToString("yyyy/MM/dd") + "','" + 1 + "','" + dataAccettazione.ToString("yyyy/MM/dd") + "','" + commessaCompleta + "')", con);
                         command.ExecuteNonQuery();
                     }
                     else
                     {
                         var command = new MySqlCommand(
-                             "INSERT INTO `COMMESSA`(`NUMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `PREVENTIVO`, `CLIENTE`, `SETTOREINTERO`, `CANTIERE`, `NOTE`, `CHIUSA`, `DATACHIUSURA`, `FATTURATA`, `DATAFATTURA`, `ACCONTI`, `PAGAMENTI`, `DATAINSERIMENTO`, `IMPORTO`) VALUES ('" +
-                             numero + "','" + anno + "','" + settore + "','" + commessa + "','" + preventivo + "','" + cliente + "','" + settoreintero + "','" +
-                             cantiere + "','" + note + "','" + 0 + "','" + datachiusura.ToString("yyyy/MM/dd") + "','" + 0 + "','" + datafattura.ToString("yyyy/MM/dd") + "','" + acconti + "','" + pagamenti + "','" + datainserimento.ToString("yyyy/MM/dd") + "','" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "')", con);
+                            "INSERT INTO `COMMESSA`(`NUMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`, `DATAINS`, `CANTIERE`, `NOTE`, `IMPORTO`, `INVIATO`, `DATAINVIO`, `ACCETTAZIONE`, `DATAACC`, `COMMESSACOMPLETA`) VALUES ('" +
+                            numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" + settoreIntero + "','" + dataInserimento.ToString("yyyy/MM/dd") + "','" + cantiere + "','" + note + "','" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) +
+                            "','" + 0 + "','" + dataInvio.ToString("yyyy/MM/dd") + "','" + 0 + "','" + dataAccettazione.ToString("yyyy/MM/dd") + "','" + commessaCompleta + "')", con);
+
                         command.ExecuteNonQuery();
                     }
                 }
@@ -1573,12 +1575,12 @@ namespace Amministrazione
                 con.Close();
             }
         }
-        public List<Commessa> ListaCommesse()
+        public List<Preventivo> ListaPreventivi()
         {
             DateTime dateValue;
             DateTime dataValue2;
             DateTime dataValue3;
-            var lista = new List<Commessa>();
+            var lista = new List<Preventivo>();
             try
             {
                 con.Open();
@@ -1592,28 +1594,28 @@ namespace Amministrazione
                         DateTime.TryParse(lettore[11] + "", out dateValue);
                         DateTime.TryParse(lettore[13] + "", out dataValue2);
                         DateTime.TryParse(lettore[16] + "", out dataValue3);
-                        var c = new Commessa();
+                        var c = new Preventivo();
 
                         c.Id = (int)lettore[0];
                         c.numero = (int)lettore[1];
                         c.anno = (int)lettore[2];
                         c.settore = "" + lettore[3];
-                        c.commessa = "" + lettore[4];
-                        if (lettore[5].ToString().Equals("NULL"))
+                        if (lettore[4].ToString().Equals("NULL"))
                         {
-                            c.preventivo = (int)lettore[5];
+                            c.commessa = (int)lettore[4];
                         }
                         c.cliente = (int)lettore[6];
                         c.settoreintero = "" + lettore[7];
                         c.cantiere = "" + lettore[8];
                         c.note = "" + lettore[9];
+                        if(lettore[9])
                         if (("" + lettore[10]).Equals("1"))
                         {
-                            c.chiusa = true;
+                            c.inviato = true;
                         }
                         else
                         {
-                            c.chiusa = false;
+                            c.inviato = false;
                         }
 
                         c.datachiusura = dateValue;
@@ -2002,8 +2004,7 @@ namespace Amministrazione
         public int numero { get; set; }
         public int anno { get; set; }
         public string settore { get; set; }
-        public string commessa { get; set; }
-        public int preventivo { get; set; }
+        public int commessa { get; set; }
         public int cliente { get; set; }
         public string settoreintero { get; set; }
         public DateTime datainserimento { get; set; }
