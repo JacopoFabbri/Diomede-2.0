@@ -54,6 +54,10 @@
             this.nascondiListaCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView3 = new System.Windows.Forms.ListView();
+            this.inserimentoClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ponteggiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.carpenteriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.praticheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,7 +104,8 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2});
+            this.toolStripMenuItem2,
+            this.inserimentoClienteToolStripMenuItem});
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(131, 25);
@@ -114,7 +119,7 @@
             this.mostraListaClientiToolStripMenuItem,
             this.nascondiListaClientiToolStripMenuItem});
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(113, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(215, 26);
             this.toolStripMenuItem2.Text = "Ditta";
             // 
             // listaClientiToolStripMenuItem
@@ -231,7 +236,7 @@
             this.mostraListaCommesseToolStripMenuItem,
             this.nascondiListaCommesseToolStripMenuItem});
             this.commesseToolStripMenuItem.Name = "commesseToolStripMenuItem";
-            this.commesseToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+            this.commesseToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.commesseToolStripMenuItem.Text = "Commesse";
             // 
             // listaCommesseToolStripMenuItem
@@ -273,6 +278,37 @@
             this.listView3.UseCompatibleStateImageBehavior = false;
             this.listView3.View = System.Windows.Forms.View.List;
             this.listView3.Visible = false;
+            // 
+            // inserimentoClienteToolStripMenuItem
+            // 
+            this.inserimentoClienteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ponteggiToolStripMenuItem1,
+            this.carpenteriaToolStripMenuItem,
+            this.praticheToolStripMenuItem});
+            this.inserimentoClienteToolStripMenuItem.Name = "inserimentoClienteToolStripMenuItem";
+            this.inserimentoClienteToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.inserimentoClienteToolStripMenuItem.Text = "Inserimento Cliente";
+            // 
+            // ponteggiToolStripMenuItem1
+            // 
+            this.ponteggiToolStripMenuItem1.Name = "ponteggiToolStripMenuItem1";
+            this.ponteggiToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
+            this.ponteggiToolStripMenuItem1.Text = "Ponteggi";
+            this.ponteggiToolStripMenuItem1.Click += new System.EventHandler(this.PonteggiToolStripMenuItem1_Click);
+            // 
+            // carpenteriaToolStripMenuItem
+            // 
+            this.carpenteriaToolStripMenuItem.Name = "carpenteriaToolStripMenuItem";
+            this.carpenteriaToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.carpenteriaToolStripMenuItem.Text = "Carpenteria";
+            this.carpenteriaToolStripMenuItem.Click += new System.EventHandler(this.CarpenteriaToolStripMenuItem_Click);
+            // 
+            // praticheToolStripMenuItem
+            // 
+            this.praticheToolStripMenuItem.Name = "praticheToolStripMenuItem";
+            this.praticheToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.praticheToolStripMenuItem.Text = "Pratiche";
+            this.praticheToolStripMenuItem.Click += new System.EventHandler(this.PraticheToolStripMenuItem_Click);
             // 
             // Dashboard
             // 
@@ -323,5 +359,9 @@
         private System.Windows.Forms.ToolStripMenuItem ponteggiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem praticheEdiliToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carpenterieMetallicheToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inserimentoClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ponteggiToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem carpenteriaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem praticheToolStripMenuItem;
     }
 }
