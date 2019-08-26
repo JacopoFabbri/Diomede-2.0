@@ -61,6 +61,12 @@
     <Compile Include="CarpeterieMetalliche\InserimentoBozza.designer.cs">
       <DependentUpon>InserimentoBozza.cs</DependentUpon>
     </Compile>
+    <Compile Include="CarpeterieMetalliche\InserimentoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarpeterieMetalliche\InserimentoCliente.designer.cs">
+      <DependentUpon>InserimentoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="Contatti.cs">
       <SubType>Form</SubType>
@@ -112,6 +118,12 @@
     <Compile Include="Ponteggi\InserimentoBozzaPonteggi.designer.cs">
       <DependentUpon>InserimentoBozzaPonteggi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ponteggi\InserimentoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ponteggi\InserimentoCliente.designer.cs">
+      <DependentUpon>InserimentoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pratiche Edili\Class2.cs" />
     <Compile Include="Pratiche Edili\Class3.cs" />
     <Compile Include="Pratiche Edili\InserimentoBozza.cs">
@@ -119,6 +131,12 @@
     </Compile>
     <Compile Include="Pratiche Edili\InserimentoBozza.designer.cs">
       <DependentUpon>InserimentoBozza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pratiche Edili\InserimentoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pratiche Edili\InserimentoCliente.designer.cs">
+      <DependentUpon>InserimentoCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Pratiche Edili\InserisciLavorazione.cs">
       <SubType>Form</SubType>
@@ -161,6 +179,9 @@
     <EmbeddedResource Include="CarpeterieMetalliche\InserimentoBozza.resx">
       <DependentUpon>InserimentoBozza.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CarpeterieMetalliche\InserimentoCliente.resx">
+      <DependentUpon>InserimentoCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Contatti.resx">
       <DependentUpon>Contatti.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,8 +206,14 @@
     <EmbeddedResource Include="Ponteggi\InserimentoBozzaPonteggi.resx">
       <DependentUpon>InserimentoBozzaPonteggi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ponteggi\InserimentoCliente.resx">
+      <DependentUpon>InserimentoCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pratiche Edili\InserimentoBozza.resx">
       <DependentUpon>InserimentoBozza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pratiche Edili\InserimentoCliente.resx">
+      <DependentUpon>InserimentoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pratiche Edili\InserisciLavorazione.resx">
       <DependentUpon>InserisciLavorazione.cs</DependentUpon>
