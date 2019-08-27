@@ -29,17 +29,36 @@ namespace Amministrazione
             try
             {
                 op = new OperazioniAmministrazione(db);
-                if(op.CercaCommessa() != null)
+                if (op.CercaCommessa() != null)
                 {
                     dataGridView1.DataSource = op.CercaCommessa();
                     var col = new DataGridViewColumn(new DataGridViewTextBoxCell());
                     col.Name = "Preventivo";
                     dataGridView1.Columns.Add(col);
-                    foreach(DataGridViewRow r in dataGridView1.Rows)
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
                     {
-                        
-                    }
+                        Preventivo p = op.CercaPreventivo((int)r.Cells[6].Value);
+                        r.Cells[18].Value = p.commessaCompleta;
 
+                    }
+                    col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                    col.Name = "Cliente";
+                    dataGridView1.Columns.Add(col);
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        Cliente p = op.CercaClientiId((int)r.Cells[7].Value);
+                        r.Cells[19].Value = p.Nome;
+
+                    }
+                    col = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                    col.Name = "Acconti";
+                    dataGridView1.Columns.Add(col);
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        Acconto p = op.CercaAcconti((int)r.Cells[14].Value);
+                        r.Cells[20].Value = p.Note;
+
+                    }
                 }
             }
             catch

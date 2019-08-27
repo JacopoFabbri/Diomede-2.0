@@ -138,5 +138,11 @@ namespace Amministrazione
             Diomede4.InserimentoCliente i = new Diomede4.InserimentoCliente("PraticheEdili");
             i.Show();
         }
+
+        private void ListaCommesseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaCommesse c = new ListaCommesse("Amministrazione", this);
+            c.Show();
+        }
     }
 }
