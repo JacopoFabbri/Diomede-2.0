@@ -131,7 +131,7 @@ namespace Amministrazione
                 dataGridView1.Columns[20].ReadOnly = true;
                 flag = true;
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("errore");
             }

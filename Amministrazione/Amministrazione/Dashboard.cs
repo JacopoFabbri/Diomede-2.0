@@ -144,5 +144,11 @@ namespace Amministrazione
             ListaCommesse c = new ListaCommesse("Amministrazione", this);
             c.Show();
         }
+
+        private void ListaBozzeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListaBozze b = new ListaBozze("Amministrazione", this);
+            b.Show();
+        }
     }
 }

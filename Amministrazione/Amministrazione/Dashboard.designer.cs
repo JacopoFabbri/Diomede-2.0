@@ -205,6 +205,7 @@
             this.listaBozzeToolStripMenuItem.Name = "listaBozzeToolStripMenuItem";
             this.listaBozzeToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
             this.listaBozzeToolStripMenuItem.Text = "Lista Preventivi";
+            this.listaBozzeToolStripMenuItem.Click += new System.EventHandler(this.ListaBozzeToolStripMenuItem_Click);
             // 
             // mostraListaBozzeToolStripMenuItem
             // 
