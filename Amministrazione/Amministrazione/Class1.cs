@@ -461,7 +461,7 @@ namespace Amministrazione
 
             return contatto;
         }
-        public void UpdateAcconti(int id, int numero, int anno, string settore, string commessa, int preventivo, int cliente, string settoreintero, string cantiere, string note, bool chiusa, DateTime datachiusura, bool fatturata, DateTime datafattura, int acconti, int pagamenti, DateTime datainserimento, string importo)
+        public void UpdateAcconti(int id, int numero, int anno, string settore, string commessa, int preventivo, int cliente, string settoreintero, string cantiere, string note, bool chiusa, DateTime datachiusura, bool fatturata, DateTime datafattura, int acconti, int pagamenti, DateTime datainserimento, double importo)
         {
             try
             {
