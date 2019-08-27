@@ -389,6 +389,18 @@ namespace Amministrazione
 
             return contatto;
         }
+        public void UpdatePreventivo(int id, int numero, int anno, string settore, int commessa, int cliente, String settoreIntero, DateTime dataInserimento, String cantiere, String note, double importo, Boolean inviato, DateTime dataInvio, Boolean accettazione, DateTime dataAccettazione, String commessaCompleta)
+        {
+            try
+            {
+                var bDB = new PreventiviDB(conn);
+                bDB.updatePreventivo( id,  numero,  anno,  settore,  commessa,  cliente,  settoreIntero,  dataInserimento,  cantiere,  note,  importo,  inviato,  dataInvio,  accettazione,  dataAccettazione,  commessaCompleta);
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.ToString());
+            }
+        }
         public void InserimentoAcconti(double importo, string note, string desc, DateTime datainserimento, DateTime dataFattura, string noteFattura, int commessa)
         {
             try
@@ -1726,42 +1738,39 @@ namespace Amministrazione
 
             return commessa;
         }
-        /*public void AggiornaCommesse(int id, int numero, int anno, string settore, string commessa, int preventivo, int cliente, string settoreintero, string cantiere, string note, bool chiusa, DateTime datachiusura, bool fatturata, DateTime datafattura, int acconti, int pagamenti, DateTime datainserimento, string importo)
+        public void updatePreventivo(int id, int numero, int anno, string settore, int commessa, int cliente, String settoreIntero, DateTime dataInserimento, String cantiere, String note, double importo, Boolean inviato, DateTime dataInvio, Boolean accettazione, DateTime dataAccettazione, String commessaCompleta)
         {
             try
             {
                 con.Open();
-                if (chiusa)
+                if (inviato)
                 {
-                    if (fatturata)
+                    if (accettazione)
                     {
-                        if (chiusa)
-                        {
-                            var command = new MySqlCommand(
-                                "UPDATE `COMMESSA` SET `NUMERO`='" + numero + "',`ANNO`='" + anno + "',`SETTORE`='" + settore + "',`COMMESSA`='" + commessa + "',`PREVENTIVO`='" + preventivo + "',`CLIENTE`='" + cliente + "',`SETTOREINTERO`='" + settoreintero + "',`CANTIERE`='" + cantiere + "',`NOTE`='" + note + "',`CHIUSA`='" + 1 + "',`DATACHIUSURA`='" + datachiusura.ToString("yyyy/MM/dd") + "',`FATTURATA`='" + 1 + "',`DATAFATTURA`='" + datafattura.ToString("yyyy/MM/dd") + "',`ACCONTI`='" + acconti + "',`PAGAMENTI`='" + pagamenti + "',`DATAINSERIMENTO`='" + datainserimento.ToString("yyyy/MM/dd") + "',`IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "' WHERE  `ID` = '" + id + "'", con);
-                            command.ExecuteNonQuery();
-                        }
-                        else
-                        {
-                            var command = new MySqlCommand(
-                                 "UPDATE `COMMESSA` SET `NUMERO`='" + numero + "',`ANNO`='" + anno + "',`SETTORE`='" + settore + "',`COMMESSA`='" + commessa + "',`PREVENTIVO`='" + preventivo + "',`CLIENTE`='" + cliente + "',`SETTOREINTERO`='" + settoreintero + "',`CANTIERE`='" + cantiere + "',`NOTE`='" + note + "',`CHIUSA`='" + 0 + "',`DATACHIUSURA`='" + datachiusura.ToString("yyyy/MM/dd") + "',`FATTURATA`='" + 1 + "',`DATAFATTURA`='" + datafattura.ToString("yyyy/MM/dd") + "',`ACCONTI`='" + acconti + "',`PAGAMENTI`='" + pagamenti + "',`DATAINSERIMENTO`='" + datainserimento.ToString("yyyy/MM/dd") + "',`IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "' WHERE  `ID` = '" + id + "'", con);
-                            command.ExecuteNonQuery();
-                        }
+                        var command = new MySqlCommand(
+                            "UPDATE `PREVENTIVO` SET `NUMERO`='" + numero + "',`ANNO`='" + anno + "',`SETTORE`='" + settore + "',`COMMESSA`='" + commessa + "',`CLIENTE`='" + cliente + "',`SETTOREINTERO`='" + settoreIntero + "',`DATAINS`='" + dataInserimento.ToString("yyyy/MM/dd") + "',`CANTIERE`='" + cantiere + "',`NOTE`='" + note + "',`IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "',`INVIATO`='" + 1 + "',`DATAINVIO`='" + dataInvio.ToString("yyyy/MM/dd") + "',`ACCETTAZIONE`='" + 1 + "',`DATAACC`='" + dataAccettazione.ToString("yyyy/MM/dd") + "',`COMESSACOMPLETA`='" + commessaCompleta + "' WHERE  `ID` = '" + id + "'", con);
+                        command.ExecuteNonQuery();
                     }
                     else
                     {
-                        if (chiusa)
-                        {
-                            var command = new MySqlCommand(
-                                "UPDATE `COMMESSA` SET `NUMERO`='" + numero + "',`ANNO`='" + anno + "',`SETTORE`='" + settore + "',`COMMESSA`='" + commessa + "',`PREVENTIVO`='" + preventivo + "',`CLIENTE`='" + cliente + "',`SETTOREINTERO`='" + settoreintero + "',`CANTIERE`='" + cantiere + "',`NOTE`='" + note + "',`CHIUSA`='" + 1 + "',`DATACHIUSURA`='" + datachiusura.ToString("yyyy/MM/dd") + "',`FATTURATA`='" + 0 + "',`DATAFATTURA`='" + datafattura.ToString("yyyy/MM/dd") + "',`ACCONTI`='" + acconti + "',`PAGAMENTI`='" + pagamenti + "',`DATAINSERIMENTO`='" + datainserimento.ToString("yyyy/MM/dd") + "',`IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "' WHERE  `ID` = '" + id + "'", con);
-                            command.ExecuteNonQuery();
-                        }
-                        else
-                        {
-                            var command = new MySqlCommand(
-                                 "UPDATE `COMMESSA` SET `NUMERO`='" + numero + "',`ANNO`='" + anno + "',`SETTORE`='" + settore + "',`COMMESSA`='" + commessa + "',`PREVENTIVO`='" + preventivo + "',`CLIENTE`='" + cliente + "',`SETTOREINTERO`='" + settoreintero + "',`CANTIERE`='" + cantiere + "',`NOTE`='" + note + "',`CHIUSA`='" + 0 + "',`DATACHIUSURA`='" + datachiusura.ToString("yyyy/MM/dd") + "',`FATTURATA`='" + 0 + "',`DATAFATTURA`='" + datafattura.ToString("yyyy/MM/dd") + "',`ACCONTI`='" + acconti + "',`PAGAMENTI`='" + pagamenti + "',`DATAINSERIMENTO`='" + datainserimento.ToString("yyyy/MM/dd") + "',`IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "' WHERE  `ID` = '" + id + "'", con);
-                            command.ExecuteNonQuery();
-                        }
+                        var command = new MySqlCommand(
+                            "UPDATE `PREVENTIVO` SET `NUMERO`='" + numero + "',`ANNO`='" + anno + "',`SETTORE`='" + settore + "',`COMMESSA`='" + commessa + "',`CLIENTE`='" + cliente + "',`SETTOREINTERO`='" + settoreIntero + "',`DATAINS`='" + dataInserimento.ToString("yyyy/MM/dd") + "',`CANTIERE`='" + cantiere + "',`NOTE`='" + note + "',`IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "',`INVIATO`='" + 1 + "',`DATAINVIO`='" + dataInvio.ToString("yyyy/MM/dd") + "',`ACCETTAZIONE`='" + 0 + "',`DATAACC`='" + dataAccettazione.ToString("yyyy/MM/dd") + "',`COMESSACOMPLETA`='" + commessaCompleta + "' WHERE  `ID` = '" + id + "'", con);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                else
+                {
+                    if (accettazione)
+                    {
+                        var command = new MySqlCommand(
+                            "UPDATE `PREVENTIVO` SET `NUMERO`='" + numero + "',`ANNO`='" + anno + "',`SETTORE`='" + settore + "',`COMMESSA`='" + commessa + "',`CLIENTE`='" + cliente + "',`SETTOREINTERO`='" + settoreIntero + "',`DATAINS`='" + dataInserimento.ToString("yyyy/MM/dd") + "',`CANTIERE`='" + cantiere + "',`NOTE`='" + note + "',`IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "',`INVIATO`='" + 0 + "',`DATAINVIO`='" + dataInvio.ToString("yyyy/MM/dd") + "',`ACCETTAZIONE`='" + 1 + "',`DATAACC`='" + dataAccettazione.ToString("yyyy/MM/dd") + "',`COMESSACOMPLETA`='" + commessaCompleta + "' WHERE  `ID` = '" + id + "'", con);
+                        command.ExecuteNonQuery();
+                    }
+                    else
+                    {
+                        var command = new MySqlCommand(
+                            "UPDATE `PREVENTIVO` SET `NUMERO`='" + numero + "',`ANNO`='" + anno + "',`SETTORE`='" + settore + "',`COMMESSA`='" + commessa + "',`CLIENTE`='" + cliente + "',`SETTOREINTERO`='" + settoreIntero + "',`DATAINS`='" + dataInserimento.ToString("yyyy/MM/dd") + "',`CANTIERE`='" + cantiere + "',`NOTE`='" + note + "',`IMPORTO`='" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "',`INVIATO`='" + 0 + "',`DATAINVIO`='" + dataInvio.ToString("yyyy/MM/dd") + "',`ACCETTAZIONE`='" + 0 + "',`DATAACC`='" + dataAccettazione.ToString("yyyy/MM/dd") + "',`COMESSACOMPLETA`='" + commessaCompleta + "' WHERE  `ID` = '" + id + "'", con);
+                        command.ExecuteNonQuery();
                     }
                 }
             }
@@ -1774,7 +1783,7 @@ namespace Amministrazione
                 con.Close();
             }
         }
-        public void AggiornaCommesse(int id, string note, int ditta)
+        /*public void AggiornaCommesse(int id, string note, int ditta)
         {
             try
             {
@@ -2166,7 +2175,6 @@ namespace Amministrazione
         public int anno { get; set; }
         public string settore { get; set; }
         public int commessa { get; set; }
-        public int preventivo { get; set; }
         public int cliente { get; set; }
         public string settoreintero { get; set; }
         public DateTime dataInserimento { get; set; }
