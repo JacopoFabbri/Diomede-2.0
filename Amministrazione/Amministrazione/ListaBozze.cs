@@ -7,12 +7,10 @@ namespace Amministrazione
 {
     public partial class ListaBozze : Form
     {
-
         private readonly string db;
         private readonly Dashboard formPrecente;
         private OperazioniAmministrazione op;
         private Boolean flag = false;
-
         public ListaBozze(string dbName, Dashboard frm)
         {
             formPrecente = frm;
@@ -106,7 +104,6 @@ namespace Amministrazione
                 }
             }
         }
-
         private void AggiornaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow riga in dataGridView1.Rows)
