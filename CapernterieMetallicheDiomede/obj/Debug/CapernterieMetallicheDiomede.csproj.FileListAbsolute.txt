@@ -121,9 +121,6 @@ C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\Syncfu
 C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\Syncfusion.Tools.Base.xml
 C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\Syncfusion.Tools.Windows.xml
 C:\Users\Andre\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\Syncfusion.Grid.Windows.XmlSerializers.dll
-C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\ControlzEx.dll
-C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\System.Windows.Interactivity.dll
-C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\ControlzEx.pdb
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.visualizzatore.resources
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\CarpenterieMetallicheDiomede.exe.config
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\CarpenterieMetallicheDiomede.exe
@@ -158,3 +155,4 @@ C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CapernterieMetallicheDiomede.csproj.CopyComplete
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.exe
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.pdb
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.VisualizzatoreDitte.resources
