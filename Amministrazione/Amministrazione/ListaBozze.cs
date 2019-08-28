@@ -11,6 +11,7 @@ namespace Amministrazione
         private readonly Dashboard formPrecente;
         private OperazioniAmministrazione op;
         private Boolean flag = false;
+
         public ListaBozze(string dbName, Dashboard frm)
         {
             formPrecente = frm;
