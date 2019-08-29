@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -122,7 +123,7 @@ namespace Diomede2
 
                     if (flag) comboBox2.Items.Add(c.Email);
                 }
-            else if (comboBox1.SelectedItem.Equals("PARTITA IVA"))
+            else if (comboBox1.SelectedItem.Equals("PARTITAIVA"))
                 foreach (var c in lista)
                 {
                     var flag = true;
@@ -135,7 +136,7 @@ namespace Diomede2
 
                     if (flag) comboBox2.Items.Add(c.Iva);
                 }
-            else if (comboBox1.SelectedItem.Equals("TELEFONO FISSO"))
+            else if (comboBox1.SelectedItem.Equals("TELEFONOFISSO"))
                 foreach (var c in lista)
                 {
                     var flag = true;

@@ -150,3 +150,5 @@ C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\o
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.csproj.CopyComplete
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.exe
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.pdb
+C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\PonteggiDiomede.csprojAssemblyReference.cache
+C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\PonteggiDiomede\PonteggiDiomede\obj\Debug\Diomede2.FiltroClienti.resources

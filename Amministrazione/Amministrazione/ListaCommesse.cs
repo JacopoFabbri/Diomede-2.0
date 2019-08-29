@@ -142,5 +142,12 @@ namespace Amministrazione
             if (flag)
                 foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
         }
+
+        private void FiltroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            flag = false;
+            var f = new FiltroCommessa(dataGridView1, db, flag);
+            f.Show();
+        }
     }
 }

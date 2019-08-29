@@ -87,3 +87,5 @@ C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\Amministrazione\Amministrazione\o
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Diomede3.InserimentoCliente.resources
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Diomede4.InserimentoCliente.resources
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.FiltroBozze.resources
+C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.FiltroClienti.resources
+C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.FiltroCommessa.resources

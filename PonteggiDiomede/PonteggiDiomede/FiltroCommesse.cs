@@ -62,19 +62,19 @@ namespace PonteggiDiomede
             try
             {
                 op = new OperazionePraticheEdili(db);
-                comboBox1.Items.Add("DITTA");
-                comboBox1.Items.Add("NUMEROCOMMESSA");
-                comboBox1.Items.Add("DATA");
-                comboBox1.Items.Add("REFERENTE");
-                comboBox1.Items.Add("INDIRIZZOCANTIERE");
-                comboBox1.Items.Add("TECNICOINTERNO");
-                comboBox1.Items.Add("NOTE");
                 comboBox1.Items.Add("BOZZA");
+                comboBox1.Items.Add("DATA");
                 comboBox1.Items.Add("DATAESECUZIONE");
-                comboBox1.Items.Add("DATARICHIESTACONSEGNA");
-                comboBox1.Items.Add("INVIO");
                 comboBox1.Items.Add("DATAINVIO");
+                comboBox1.Items.Add("DATARICHIESTACONSEGNA");
+                comboBox1.Items.Add("DITTA");
+                comboBox1.Items.Add("INDIRIZZOCANTIERE");
+                comboBox1.Items.Add("INVIO");
+                comboBox1.Items.Add("NOTE");
                 comboBox1.Items.Add("NOTEGENERICHE");
+                comboBox1.Items.Add("NUMEROCOMMESSA");
+                comboBox1.Items.Add("REFERENTE");
+                comboBox1.Items.Add("TECNICOINTERNO");
                 lista = op.CercaCommessa();
             }
             catch

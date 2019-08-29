@@ -394,7 +394,7 @@ namespace Amministrazione
             try
             {
                 var bDB = new PreventiviDB(conn);
-                bDB.updatePreventivo( id,  numero,  anno,  settore,  commessa,  cliente,  settoreIntero,  dataInserimento,  cantiere,  note,  importo,  inviato,  dataInvio,  accettazione,  dataAccettazione,  commessaCompleta);
+                bDB.updatePreventivo(id, numero, anno, settore, commessa, cliente, settoreIntero, dataInserimento, cantiere, note, importo, inviato, dataInvio, accettazione, dataAccettazione, commessaCompleta);
             }
             catch (Exception e)
             {
@@ -1041,7 +1041,7 @@ namespace Amministrazione
                         c.Id = (int)lettore[0];
                         c.Numero = (int)lettore[1];
                         c.Anno = (int)lettore[2];
-                        c.settore = "" + lettore[3];
+                        c.Settore = "" + lettore[3];
                         c.ID_Commessa = "" + lettore[4];
                         if (lettore[5].ToString().Equals("NULL"))
                         {
@@ -1119,7 +1119,7 @@ namespace Amministrazione
                         c.Id = (int)lettore[0];
                         c.Numero = (int)lettore[1];
                         c.Anno = (int)lettore[2];
-                        c.settore = "" + lettore[3];
+                        c.Settore = "" + lettore[3];
                         c.ID_Commessa = "" + lettore[4];
                         if (lettore[5].ToString().Equals("NULL"))
                         {
@@ -1182,48 +1182,50 @@ namespace Amministrazione
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
+                {
                     DateTime.TryParse(lettore[3] + "", out dateValue);
-                DateTime.TryParse(lettore[9] + "", out dataValue2);
-                DateTime.TryParse(lettore[10] + "", out dataValue3);
-                DateTime.TryParse(lettore[12] + "", out dataValue4);
-                var c = new Commessa();
+                    DateTime.TryParse(lettore[9] + "", out dataValue2);
+                    DateTime.TryParse(lettore[10] + "", out dataValue3);
+                    DateTime.TryParse(lettore[12] + "", out dataValue4);
+                    var c = new Commessa();
 
-                c.Id = (int)lettore[0];
-                c.Numero = (int)lettore[1];
-                c.Anno = (int)lettore[2];
-                c.settore = "" + lettore[3];
-                c.ID_Commessa = "" + lettore[4];
-                if (lettore[5].ToString().Equals("NULL"))
-                {
-                    c.Preventivo = (int)lettore[5];
+                    c.Id = (int)lettore[0];
+                    c.Numero = (int)lettore[1];
+                    c.Anno = (int)lettore[2];
+                    c.Settore = "" + lettore[3];
+                    c.ID_Commessa = "" + lettore[4];
+                    if (lettore[5].ToString().Equals("NULL"))
+                    {
+                        c.Preventivo = (int)lettore[5];
+                    }
+                    c.Cliente = (int)lettore[6];
+                    c.Settore_Intero = "" + lettore[7];
+                    c.Cantiere = "" + lettore[8];
+                    c.Note = "" + lettore[9];
+                    if ((int)lettore[10] == 1)
+                    {
+                        c.Chiusa = true;
+                    }
+                    else
+                    {
+                        c.Chiusa = false;
+                    }
+                    c.Data_Chiusura = dateValue;
+                    if ((int)lettore[12] == 1)
+                    {
+                        c.Fatturata = true;
+                    }
+                    else
+                    {
+                        c.Fatturata = false;
+                    }
+                    c.Data_Fattura = dataValue2;
+                    c.Acconti = (int)lettore[14];
+                    c.Pagamenti = (int)lettore[15];
+                    c.Data_Inserimento = dataValue3;
+                    c.Importo = (double)lettore[17];
+                    commessa = c;
                 }
-                c.Cliente = (int)lettore[6];
-                c.Settore_Intero = "" + lettore[7];
-                c.Cantiere = "" + lettore[8];
-                c.Note = "" + lettore[9];
-                if ((int)lettore[10] == 1)
-                {
-                    c.Chiusa = true;
-                }
-                else
-                {
-                    c.Chiusa = false;
-                }
-                c.Data_Chiusura = dateValue;
-                if ((int)lettore[12] == 1)
-                {
-                    c.Fatturata = true;
-                }
-                else
-                {
-                    c.Fatturata = false;
-                }
-                c.Data_Fattura = dataValue2;
-                c.Acconti = (int)lettore[14];
-                c.Pagamenti = (int)lettore[15];
-                c.Data_Inserimento = dataValue3;
-                c.Importo = (double)lettore[17];
-                commessa = c;
             }
             catch (Exception ex)
             {
@@ -1261,7 +1263,7 @@ namespace Amministrazione
                 c.Id = (int)lettore[0];
                 c.Numero = (int)lettore[1];
                 c.Anno = (int)lettore[2];
-                c.settore = "" + lettore[3];
+                c.Settore = "" + lettore[3];
                 c.ID_Commessa = "" + lettore[4];
                 if (lettore[5].ToString().Equals("NULL"))
                 {
@@ -1485,10 +1487,7 @@ namespace Amministrazione
                     c.Data_Inserimento = dateValue;
                     c.Cantiere = "" + lettore[8];
                     c.Note = "" + lettore[9];
-                    if (!lettore[10].ToString().Equals("NULL"))
-                    {
-                        c.Importo = (double)lettore[10];
-                    }
+                    c.Importo = (double)lettore[10];
                     if (("" + lettore[11]).Equals("1"))
                     {
                         c.Inviato = true;
@@ -2152,7 +2151,7 @@ namespace Amministrazione
         public int Id { get; set; }
         public int Numero { get; set; }
         public int Anno { get; set; }
-        public string settore { get; set; }
+        public string Settore { get; set; }
         public string ID_Commessa { get; set; }
         public int Preventivo { get; set; }
         public int Cliente { get; set; }

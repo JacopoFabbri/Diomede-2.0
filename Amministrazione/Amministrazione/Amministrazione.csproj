@@ -80,11 +80,23 @@
     <Compile Include="Dashboard.designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="FiltroCommessa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiltroCommessa.designer.cs">
+      <DependentUpon>FiltroCommessa.cs</DependentUpon>
+    </Compile>
     <Compile Include="FiltroBozze.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FiltroBozze.designer.cs">
       <DependentUpon>FiltroBozze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FiltroClienti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FiltroClienti.designer.cs">
+      <DependentUpon>FiltroClienti.cs</DependentUpon>
     </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
@@ -200,8 +212,14 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FiltroCommessa.resx">
+      <DependentUpon>FiltroCommessa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FiltroBozze.resx">
       <DependentUpon>FiltroBozze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FiltroClienti.resx">
+      <DependentUpon>FiltroClienti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
@@ -317,6 +335,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-filtro-riempito-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sacco-dei-soldi-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-casella-di-controllo-selezionata-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

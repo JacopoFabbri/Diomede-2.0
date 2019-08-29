@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Diomede2
+namespace Amministrazione
 {
     public partial class FiltroClienti : Form
     {
         private readonly DataGridView dataTable;
         private readonly string db;
         private List<Cliente> lista;
-        private OperazionePraticheEdili op;
+        private OperazioniAmministrazione op;
 
         public FiltroClienti(DataGridView d, string dbName)
         {
@@ -22,7 +22,7 @@ namespace Diomede2
         {
             try
             {
-                op = new OperazionePraticheEdili(db);
+                op = new OperazioniAmministrazione(db);
                 comboBox1.Items.Add("CAP");
                 comboBox1.Items.Add("CITTA");
                 comboBox1.Items.Add("EMAIL");
@@ -122,7 +122,7 @@ namespace Diomede2
 
                     if (flag) comboBox2.Items.Add(c.Email);
                 }
-            else if (comboBox1.SelectedItem.Equals("PARTITA IVA"))
+            else if (comboBox1.SelectedItem.Equals("PARTITAIVA"))
                 foreach (var c in lista)
                 {
                     var flag = true;
@@ -135,7 +135,7 @@ namespace Diomede2
 
                     if (flag) comboBox2.Items.Add(c.Iva);
                 }
-            else if (comboBox1.SelectedItem.Equals("TELEFONO FISSO"))
+            else if (comboBox1.SelectedItem.Equals("TELEFONOFISSO"))
                 foreach (var c in lista)
                 {
                     var flag = true;

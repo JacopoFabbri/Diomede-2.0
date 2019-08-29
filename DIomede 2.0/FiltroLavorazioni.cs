@@ -26,7 +26,7 @@ namespace Diomede2
                 comboBox1.Items.Add("OPERAZIONE");
                 comboBox1.Items.Add("PACCHETTO");
                 comboBox1.Items.Add("IMPORTO");
-                comboBox1.Items.Add("DESC");
+                comboBox1.Items.Add("DESCRIZIONE");
                 lista = op.CercaLavorazione();
             }
             catch
@@ -83,7 +83,7 @@ namespace Diomede2
 
                     if (flag) comboBox2.Items.Add(c.Importo.ToString());
                 }
-            else if (comboBox1.SelectedItem.Equals("DESC"))
+            else if (comboBox1.SelectedItem.Equals("DESCRIZIONE"))
                 foreach (var c in lista)
                 {
                     var flag = true;

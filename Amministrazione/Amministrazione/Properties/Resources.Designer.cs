@@ -63,6 +63,16 @@ namespace Amministrazione.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_casella_di_controllo_selezionata_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-casella-di-controllo-selezionata-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_cestino_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-cestino-48", resourceCulture);
@@ -86,6 +96,16 @@ namespace Amministrazione.Properties {
         internal static System.Drawing.Bitmap icons8_più_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-più-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sacco_dei_soldi_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sacco-dei-soldi-16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

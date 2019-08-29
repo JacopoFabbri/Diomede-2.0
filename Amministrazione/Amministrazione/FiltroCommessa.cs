@@ -5,42 +5,44 @@ using System.Windows.Forms;
 
 namespace Amministrazione
 {
-    public partial class FiltroBozze : Form
+    public partial class FiltroCommessa : Form
     {
         private readonly DataGridView dataTable;
         private readonly string db;
-        private List<Preventivo> lista;
+        private List<Commessa> lista;
         private readonly List<Cliente> listaClienti = new List<Cliente>();
         private OperazioniAmministrazione op;
         private bool flag;
-        public FiltroBozze(DataGridView d, string dbName,bool f)
+        public FiltroCommessa(DataGridView d, string dbName,bool f)
         {
             flag = f;
             db = dbName;
             dataTable = d;
             InitializeComponent();
         }
-        private void FiltroBozze_Load(object sender, EventArgs e)
+        private void FiltroCommessa_Load(object sender, EventArgs e)
         {
             try
             {
                 op = new OperazioniAmministrazione(db);
-                comboBox1.Items.Add("ACCETTAZIONE");
+                comboBox1.Items.Add("ACCONTI");
                 comboBox1.Items.Add("ANNO");
                 comboBox1.Items.Add("CANTIERE");
+                comboBox1.Items.Add("CHIUSA");
                 comboBox1.Items.Add("CLIENTE");
                 comboBox1.Items.Add("COMMESSA");
-                comboBox1.Items.Add("COMMESSA COMPLETA");
-                comboBox1.Items.Add("DATA ACCETTAZIONE");
+                comboBox1.Items.Add("DATA CHIUSURA");
+                comboBox1.Items.Add("DATA FATTURA");
                 comboBox1.Items.Add("DATA INSERIMENTO");
-                comboBox1.Items.Add("DATA INVIO");
+                comboBox1.Items.Add("FATTURATA");
                 comboBox1.Items.Add("IMPORTO");
-                comboBox1.Items.Add("INVIATO");
                 comboBox1.Items.Add("NOTE");
                 comboBox1.Items.Add("NUMERO");
-                comboBox1.Items.Add("SETTORE");
+                comboBox1.Items.Add("PAGAMENTI");
+                comboBox1.Items.Add("PREVENTIVO");
                 comboBox1.Items.Add("SETTORE INTERO");
-                lista = op.CercaPreventivo();
+                comboBox1.Items.Add("SETTORE");
+                lista = op.CercaCommessa();
             }
             catch
             {
@@ -51,13 +53,13 @@ namespace Amministrazione
         private void Button1_Click(object sender, EventArgs e)
         {
 
-            dataTable.Columns.Remove("Commessa");
+            dataTable.Columns.Remove("ID_Commessa");
             dataTable.Columns.Remove("Cliente");
             if (comboBox1.SelectedItem.ToString().Equals("CLIENTE"))
-                dataTable.DataSource = op.FiltraPreventivo("" + comboBox1.SelectedItem,
+                dataTable.DataSource = op.FiltraCommessa("" + comboBox1.SelectedItem,
                     "" + listaClienti[comboBox2.SelectedIndex].Id);
             else
-                dataTable.DataSource = op.FiltraPreventivo("" + comboBox1.SelectedItem, "" + comboBox2.SelectedItem);
+                dataTable.DataSource = op.FiltraCommessa("" + comboBox1.SelectedItem, "" + comboBox2.SelectedItem);
 
             var col = new DataGridViewColumn(new DataGridViewTextBoxCell());
             col.Name = "Commessa";
@@ -71,7 +73,7 @@ namespace Amministrazione
                 else
                 {
                     Commessa c = op.CercaCommessa((int)r.Cells[5].Value);
-                    r.Cells[16].Value = c.ID_Commessa;
+                    r.Cells[17].Value = c.ID_Commessa;
                 }
             }
             col = new DataGridViewColumn(new DataGridViewTextBoxCell());
@@ -150,18 +152,18 @@ namespace Amministrazione
                         comboBox2.Items.Add(cliente.Nome);
                     }
                 }
-            else if (comboBox1.SelectedItem.Equals("ACCETTAZIONE"))
+            else if (comboBox1.SelectedItem.Equals("ACCONTI"))
                 foreach (var c in lista)
                 {
                     var flag = true;
                     foreach (var o in comboBox2.Items)
-                        if (c.Accettazione.ToString().Equals(o.ToString()))
+                        if (c.Acconti.ToString().Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
 
-                    if (flag) comboBox2.Items.Add(c.Accettazione);
+                    if (flag) comboBox2.Items.Add(c.Acconti);
                 }
             else if (comboBox1.SelectedItem.Equals("ANNO"))
                 foreach (var c in lista)
@@ -202,57 +204,57 @@ namespace Amministrazione
 
                     if (flag) comboBox2.Items.Add(c.ID_Commessa);
                 }
-            else if (comboBox1.SelectedItem.Equals("COMMESSA COMPLETA"))
+            else if (comboBox1.SelectedItem.Equals("PREVENTIVO"))
                 foreach (var c in lista)
                 {
                     var flag = true;
                     foreach (var o in comboBox2.Items)
-                        if (c.Commessa_Completa.ToString().Equals(o.ToString()))
+                        if (c.Preventivo.ToString().Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
 
-                    if (flag) comboBox2.Items.Add(c.Commessa_Completa);
+                    if (flag) comboBox2.Items.Add(c.Preventivo);
                 }
-            else if (comboBox1.SelectedItem.Equals("DATA ACCETTAZIONE"))
+            else if (comboBox1.SelectedItem.Equals("DATA CHIUSURA"))
                 foreach (var c in lista)
                 {
                     var flag = true;
                     foreach (var o in comboBox2.Items)
-                        if (c.Data_Accettazione.ToString().Equals(o.ToString()))
+                        if (c.Data_Chiusura.ToString().Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
 
-                    if (flag) comboBox2.Items.Add(c.Data_Accettazione);
+                    if (flag) comboBox2.Items.Add(c.Data_Chiusura);
                 }
-            else if (comboBox1.SelectedItem.Equals("DATA INVIO"))
+            else if (comboBox1.SelectedItem.Equals("DATA FATTURA"))
                 foreach (var c in lista)
                 {
                     var flag = true;
                     foreach (var o in comboBox2.Items)
-                        if (c.Data_Invio.ToString().Equals(o.ToString()))
+                        if (c.Data_Fattura.ToString().Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
 
-                    if (flag) comboBox2.Items.Add(c.Data_Invio);
+                    if (flag) comboBox2.Items.Add(c.Data_Fattura);
                 }
-            else if (comboBox1.SelectedItem.Equals("INVIATO"))
+            else if (comboBox1.SelectedItem.Equals("CHIUSA"))
                 foreach (var c in lista)
                 {
                     var flag = true;
                     foreach (var o in comboBox2.Items)
-                        if (c.Inviato.ToString().Equals(o.ToString()))
+                        if (c.Chiusa.ToString().Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
 
-                    if (flag) comboBox2.Items.Add(c.Inviato);
+                    if (flag) comboBox2.Items.Add(c.Chiusa);
                 }
             else if (comboBox1.SelectedItem.Equals("NOTE"))
                 foreach (var c in lista)
@@ -292,6 +294,32 @@ namespace Amministrazione
                         }
 
                     if (flag) comboBox2.Items.Add(c.Settore_Intero);
+                }
+            else if (comboBox1.SelectedItem.Equals("FATTURATA"))
+                foreach (var c in lista)
+                {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
+                        if (c.Fatturata.ToString().Equals(o.ToString()))
+                        {
+                            flag = false;
+                            break;
+                        }
+
+                    if (flag) comboBox2.Items.Add(c.Fatturata);
+                }
+            else if (comboBox1.SelectedItem.Equals("PAGAMENTI"))
+                foreach (var c in lista)
+                {
+                    var flag = true;
+                    foreach (var o in comboBox2.Items)
+                        if (c.Pagamenti.ToString().Equals(o.ToString()))
+                        {
+                            flag = false;
+                            break;
+                        }
+
+                    if (flag) comboBox2.Items.Add(c.Pagamenti);
                 }
         }
 

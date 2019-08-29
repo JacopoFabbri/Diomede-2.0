@@ -97,5 +97,11 @@ namespace Amministrazione
             {
             }
         }
+
+        private void FiltroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new FiltroClienti(dataGridView1, db);
+            f.Show();
+        }
     }
 }
