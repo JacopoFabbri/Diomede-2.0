@@ -38,7 +38,7 @@ namespace Amministrazione
                     foreach (DataGridViewRow r in dataGridView1.Rows)
                     {
                         Preventivo p = op.CercaPreventivo((int)r.Cells[6].Value);
-                        r.Cells[18].Value = p.commessaCompleta;
+                        r.Cells[18].Value = p.Commessa_Completa;
 
                     }
                     col = new DataGridViewColumn(new DataGridViewTextBoxCell());
@@ -101,7 +101,7 @@ namespace Amministrazione
                 foreach (DataGridViewRow r in dataGridView1.Rows)
                 {
                     Preventivo p = op.CercaPreventivo((int)r.Cells[6].Value);
-                    r.Cells[18].Value = p.commessaCompleta;
+                    r.Cells[18].Value = p.Commessa_Completa;
 
                 }
                 col = new DataGridViewColumn(new DataGridViewTextBoxCell());

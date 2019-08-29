@@ -33,7 +33,7 @@ namespace Amministrazione
                     foreach (DataGridViewRow r in dataGridView1.Rows)
                     {
                         Commessa c = op.CercaCommessa((int)r.Cells[4].Value);
-                        r.Cells[17].Value = c.commessa;
+                        r.Cells[17].Value = c.ID_Commessa;
                     }
                     col = new DataGridViewColumn(new DataGridViewTextBoxCell());
                     col.Name = "Cliente";
@@ -46,13 +46,13 @@ namespace Amministrazione
                     dataGridView1.Columns[0].Visible = false;
                     dataGridView1.Columns[4].Visible = false;
                     dataGridView1.Columns[6].Visible = false;
+                    dataGridView1.Columns[16].ReadOnly = true;
                     dataGridView1.Columns[17].ReadOnly = true;
-                    dataGridView1.Columns[18].ReadOnly = true;
                     flag = true;
                 }
 
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();
@@ -91,7 +91,9 @@ namespace Amministrazione
         }
         private void FiltraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            flag = false;
+            var f = new FiltroBozze(dataGridView1, db);
+            f.Show();
         }
         private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -135,7 +137,7 @@ namespace Amministrazione
             foreach (DataGridViewRow r in dataGridView1.Rows)
             {
                 Commessa c = op.CercaCommessa((int)r.Cells[4].Value);
-                r.Cells[17].Value = c.commessa;
+                r.Cells[17].Value = c.ID_Commessa;
             }
             col = new DataGridViewColumn(new DataGridViewTextBoxCell());
             col.Name = "Cliente";
