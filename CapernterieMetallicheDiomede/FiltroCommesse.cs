@@ -63,10 +63,10 @@ namespace Diomede2
             {
                 op = new OperazionePraticheEdili(db);
                 comboBox1.Items.Add("BOZZA");
-                comboBox1.Items.Add("DATA");
-                comboBox1.Items.Add("DATA INVIO");
                 comboBox1.Items.Add("DATA ESECUZIONE");
+                comboBox1.Items.Add("DATA INVIO");
                 comboBox1.Items.Add("DATA RICHIESTA CONSEGNA");
+                comboBox1.Items.Add("DATA");
                 comboBox1.Items.Add("DITTA");
                 comboBox1.Items.Add("INDIRIZZO CANTIERE");
                 comboBox1.Items.Add("INVIO");
