@@ -156,3 +156,5 @@ C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.exe
 C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.pdb
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.VisualizzatoreDitte.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.FiltroClienti.resources
+C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\Diomede2.FiltroCommesse.resources
