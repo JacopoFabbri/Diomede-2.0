@@ -29,11 +29,11 @@ namespace Diomede3
                 {
                     op1.InserimentoCliente(c.Nome, c.Tel, c.Email, c.Iva, c.Sdi);
                     listaCliente = op1.CercaCliente();
-                    commessa = op1.GeneraCommessa("PO/B", listaCliente[listaCliente.Count - 1], "Ponteggi", true);
+                    commessa = op1.GeneraCommessa("PO/B", listaCliente[listaCliente.Count - 1], "Ponteggi", true, double.Parse(textBox1.Text));
                 }
                 else
                 {
-                    commessa = op1.GeneraCommessa("PO/B", listaAmministrazione[1], "Ponteggi", true);
+                    commessa = op1.GeneraCommessa("PO/B", listaAmministrazione[1], "Ponteggi", true, double.Parse(textBox1.Text));
                 }
 
                 if (comboBox2.SelectedItem.ToString().Equals("Nuovo"))
@@ -49,7 +49,7 @@ namespace Diomede3
                 MessageBox.Show("Bozza Inserita", "Inserita:", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }

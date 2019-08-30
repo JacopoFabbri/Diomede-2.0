@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using MySql.Data.MySqlClient;
 
 namespace Diomede3
@@ -209,12 +210,12 @@ namespace Diomede3
             }
         }
         public void InserimentoBozza(int numero, int anno, string settore, string commessa, int cliente,
-            string settoreIntero)
+            string settoreIntero, double prezzo)
         {
             try
             {
                 var bDB = new PreventivoAmministrazioneDB(conn);
-                bDB.Inserimento(numero, anno, settore, commessa, cliente, settoreIntero);
+                bDB.Inserimento(numero, anno, settore, commessa, cliente, settoreIntero, prezzo);
             }
             catch (Exception e)
             {
@@ -236,7 +237,7 @@ namespace Diomede3
 
             return contatto;
         }
-        public string GeneraCommessa(string s, ClienteAmministrazione c, string settore, bool bozza)
+        public string GeneraCommessa(string s, ClienteAmministrazione c, string settore, bool bozza, double prezzo)
         {
             try
             {
@@ -265,14 +266,13 @@ namespace Diomede3
                     var lista = FiltraPreventivo("ANNO", "" + anno);
                     if (lista.Count > 0)
                     {
-                        InserimentoBozza(lista[lista.Count - 1].Numero + 1, anno, s,
-                            "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore);
+                        InserimentoBozza(lista[lista.Count - 1].Numero + 1, anno, s, "0", c.Id, settore, prezzo);
 
                         commessa = "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s;
                     }
                     else
                     {
-                        InserimentoBozza(1, anno, s, "" + 1 + "/" + anno + "/" + s, c.Id, settore);
+                        InserimentoBozza(1, anno, s, "0", c.Id, settore, prezzo);
                         commessa = "" + 1 + "/" + anno + "/" + s;
                     }
                 }
@@ -520,16 +520,15 @@ namespace Diomede3
         }
 
         public void Inserimento(int numero, int anno, string settore, string commessa, int cliente,
-            string settoreIntero)
+            string settoreIntero, double prezzo)
         {
             try
             {
                 MySqlCommand command;
                 con.Open();
                 command = new MySqlCommand(
-                    "INSERT INTO `PREVENTIVO`(`NUMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`) VALUES('" +
-                    numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" +
-                    settoreIntero + "')", con);
+                    "INSERT INTO `PREVENTIVO`(`NUMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`, `IMPORTO`) VALUES('" +
+                    numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" + prezzo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "')", con);
 
                 command.ExecuteNonQuery();
             }

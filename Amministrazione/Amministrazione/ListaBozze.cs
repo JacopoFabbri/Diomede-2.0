@@ -32,27 +32,34 @@ namespace Amministrazione
                     dataGridView1.Columns.Add(col);
                     foreach (DataGridViewRow r in dataGridView1.Rows)
                     {
-                        Commessa c = op.CercaCommessa((int)r.Cells[4].Value);
-                        r.Cells[17].Value = c.commessa;
+                        if (op.CercaCommessa((int)r.Cells[5].Value) == null)
+                        {
+
+                        }
+                        else
+                        {
+                            Commessa c = op.CercaCommessa((int)r.Cells[5].Value);
+                            r.Cells[16].Value = c.ID_Commessa;
+                        }
                     }
                     col = new DataGridViewColumn(new DataGridViewTextBoxCell());
                     col.Name = "Cliente";
                     dataGridView1.Columns.Add(col);
                     foreach (DataGridViewRow r in dataGridView1.Rows)
                     {
-                        Cliente c = op.CercaClientiId((int)r.Cells[6].Value);
-                        r.Cells[18].Value = c.Nome;
+                        Cliente c = op.CercaClientiId((int)r.Cells[5].Value);
+                        r.Cells[17].Value = c.Nome;
                     }
                     dataGridView1.Columns[0].Visible = false;
-                    dataGridView1.Columns[4].Visible = false;
+                    dataGridView1.Columns[5].Visible = false;
                     dataGridView1.Columns[6].Visible = false;
+                    dataGridView1.Columns[16].ReadOnly = true;
                     dataGridView1.Columns[17].ReadOnly = true;
-                    dataGridView1.Columns[18].ReadOnly = true;
                     flag = true;
                 }
 
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!");
                 Application.Exit();
@@ -91,7 +98,9 @@ namespace Amministrazione
         }
         private void FiltraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            flag = false;
+            var f = new FiltroBozze(dataGridView1, db,flag);
+            f.Show();
         }
         private void DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -126,6 +135,7 @@ namespace Amministrazione
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
             }
+            flag = false;
             dataGridView1.Columns.Remove("Commessa");
             dataGridView1.Columns.Remove("Cliente");
             dataGridView1.DataSource = op.CercaPreventivo();
@@ -134,8 +144,15 @@ namespace Amministrazione
             dataGridView1.Columns.Add(col);
             foreach (DataGridViewRow r in dataGridView1.Rows)
             {
-                Commessa c = op.CercaCommessa((int)r.Cells[4].Value);
-                r.Cells[17].Value = c.commessa;
+                if (op.CercaCommessa((int)r.Cells[5].Value) == null)
+                {
+
+                }
+                else
+                {
+                    Commessa c = op.CercaCommessa((int)r.Cells[5].Value);
+                    r.Cells[17].Value = c.ID_Commessa;
+                }
             }
             col = new DataGridViewColumn(new DataGridViewTextBoxCell());
             col.Name = "Cliente";
@@ -146,10 +163,10 @@ namespace Amministrazione
                 r.Cells[18].Value = c.Nome;
             }
             dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[4].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
             dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[16].ReadOnly = true;
             dataGridView1.Columns[17].ReadOnly = true;
-            dataGridView1.Columns[18].ReadOnly = true;
             flag = true;
         }
     }

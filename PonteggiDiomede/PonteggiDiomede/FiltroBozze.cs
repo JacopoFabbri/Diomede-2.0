@@ -23,12 +23,12 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
-                comboBox1.Items.Add("DATA");
-                comboBox1.Items.Add("IMPORTO");
-                comboBox1.Items.Add("FASEPROGETTO");
-                comboBox1.Items.Add("NUMEROCOMMESSA");
-                comboBox1.Items.Add("CLIENTE");
                 comboBox1.Items.Add("ACCETTAZIONE");
+                comboBox1.Items.Add("CLIENTE");
+                comboBox1.Items.Add("DATA");
+                comboBox1.Items.Add("FASE PROGETTO");
+                comboBox1.Items.Add("IMPORTO");
+                comboBox1.Items.Add("NUMERO COMMESSA");
                 lista = op.CercaBozza();
             }
             catch
@@ -74,7 +74,7 @@ namespace Diomede2
 
                     if (flag) comboBox2.Items.Add(c.Importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")));
                 }
-            else if (comboBox1.SelectedItem.Equals("FASEPROGETTO"))
+            else if (comboBox1.SelectedItem.Equals("FASE PROGETTO"))
                 foreach (var c in lista)
                 {
                     var flag = true;
@@ -87,24 +87,18 @@ namespace Diomede2
 
                     if (flag) comboBox2.Items.Add(c.FaseProgetto);
                 }
-            else if (comboBox1.SelectedItem.Equals("CLIENTE"))
+            else if (comboBox1.SelectedItem.Equals("NUMERO COMMESSA"))
                 foreach (var c in lista)
                 {
-                    Cliente cliente;
-                    cliente = op.CercaClientiId(c.Cliente);
                     var flag = true;
                     foreach (var o in comboBox2.Items)
-                        if (cliente.Nome.Equals(o.ToString()))
+                        if (c.IdentificativoPreventivo.ToString().Equals(o.ToString()))
                         {
                             flag = false;
                             break;
                         }
 
-                    if (flag)
-                    {
-                        listaClienti.Add(cliente);
-                        comboBox2.Items.Add(cliente.Nome);
-                    }
+                    if (flag) comboBox2.Items.Add(c.IdentificativoPreventivo);
                 }
             else if (comboBox1.SelectedItem.Equals("ACCETTAZIONE"))
                 foreach (var c in lista)

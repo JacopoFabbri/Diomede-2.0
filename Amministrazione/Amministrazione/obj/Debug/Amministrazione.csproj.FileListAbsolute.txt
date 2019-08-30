@@ -81,3 +81,11 @@ C:\Users\Ponteggi5\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Diomede3.InserimentoCliente.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Diomede4.InserimentoCliente.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.csproj.ResolveComReference.cache
+C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.csproj.ResolveComReference.cache
+C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Diomede5.InserimentoCliente.resources
+C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.ListaCommesse.resources
+C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Diomede3.InserimentoCliente.resources
+C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Diomede4.InserimentoCliente.resources
+C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.FiltroBozze.resources
+C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.FiltroClienti.resources
+C:\Users\Andre\Desktop\Diomede-2.0\Diomede-2.0\Amministrazione\Amministrazione\obj\Debug\Amministrazione.FiltroCommessa.resources

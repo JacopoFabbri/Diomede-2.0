@@ -31,7 +31,7 @@ namespace Amministrazione
                 listaCommesse = op.CercaCommessa();
                 if (listaCommesse != null)
                     foreach (var c in listaCommesse)
-                        listView3.Items.Add(c.commessa);
+                        listView3.Items.Add(c.ID_Commessa);
             }
             catch
             {

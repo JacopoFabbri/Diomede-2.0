@@ -38,7 +38,7 @@ namespace Amministrazione
                     foreach (DataGridViewRow r in dataGridView1.Rows)
                     {
                         Preventivo p = op.CercaPreventivo((int)r.Cells[6].Value);
-                        r.Cells[18].Value = p.commessaCompleta;
+                        r.Cells[18].Value = p.Commessa_Completa;
 
                     }
                     col = new DataGridViewColumn(new DataGridViewTextBoxCell());
@@ -101,7 +101,7 @@ namespace Amministrazione
                 foreach (DataGridViewRow r in dataGridView1.Rows)
                 {
                     Preventivo p = op.CercaPreventivo((int)r.Cells[6].Value);
-                    r.Cells[18].Value = p.commessaCompleta;
+                    r.Cells[18].Value = p.Commessa_Completa;
 
                 }
                 col = new DataGridViewColumn(new DataGridViewTextBoxCell());
@@ -141,6 +141,13 @@ namespace Amministrazione
         {
             if (flag)
                 foreach (DataGridViewCell cella in dataGridView1.Rows[e.RowIndex].Cells) cella.Style.ForeColor = Color.Red;
+        }
+
+        private void FiltroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            flag = false;
+            var f = new FiltroCommessa(dataGridView1, db, flag);
+            f.Show();
         }
     }
 }

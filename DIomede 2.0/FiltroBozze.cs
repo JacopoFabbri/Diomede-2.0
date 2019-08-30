@@ -28,12 +28,13 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
-                comboBox1.Items.Add("DATA");
-                comboBox1.Items.Add("PACCHETTO");
-                comboBox1.Items.Add("IMPORTO");
-                comboBox1.Items.Add("IDENTIFICATIVOPREVENTIVO");
-                comboBox1.Items.Add("CLIENTE");
                 comboBox1.Items.Add("ACCETAZIONE");
+                comboBox1.Items.Add("CLIENTE");
+                comboBox1.Items.Add("DATA");
+                comboBox1.Items.Add("IDENTIFICATIVO PREVENTIVO");
+                comboBox1.Items.Add("IMPORTO");
+                comboBox1.Items.Add("PACCHETTO");
+
                 lista = op.CercaBozza();
             }
             catch
@@ -102,7 +103,7 @@ namespace Diomede2
                     dataGridView1.Columns[7].ReadOnly = true;
                     dataGridView1.Columns[8].ReadOnly = true;
                 }
-                else if (comboBox1.SelectedItem.ToString().Equals("IDENTIFICATIVOPREVENTIVO"))
+                else if (comboBox1.SelectedItem.ToString().Equals("IDENTIFICATIVO PREVENTIVO"))
                 {
                     dataGridView1.DataSource =
                         op.FiltraBozza("NUMEROCOMMESSA", "" + listaPacchetti[comboBox2.SelectedIndex].Id);
@@ -206,7 +207,7 @@ namespace Diomede2
 
                     if (flag) comboBox2.Items.Add(c.Importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")));
                 }
-            else if (comboBox1.SelectedItem.Equals("IDENTIFICATIVOPREVENTIVO"))
+            else if (comboBox1.SelectedItem.Equals("IDENTIFICATIVO PREVENTIVO"))
                 foreach (var c in lista)
                 {
                     var flag = true;

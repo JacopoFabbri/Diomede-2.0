@@ -23,15 +23,15 @@ namespace Diomede2
             try
             {
                 op = new OperazionePraticheEdili(db);
-                comboBox1.Items.Add("NOME");
-                comboBox1.Items.Add("INDIRIZZO");
                 comboBox1.Items.Add("CAP");
                 comboBox1.Items.Add("CITTA");
-                comboBox1.Items.Add("PEC");
                 comboBox1.Items.Add("EMAIL");
-                comboBox1.Items.Add("PARTITAIVA");
-                comboBox1.Items.Add("TELEFONOFISSO");
+                comboBox1.Items.Add("INDIRIZZO");
+                comboBox1.Items.Add("NOME");
+                comboBox1.Items.Add("PARTITA IVA");
+                comboBox1.Items.Add("PEC");
                 comboBox1.Items.Add("SDI");
+                comboBox1.Items.Add("TELEFONO FISSO");
                 lista = op.CercaClienti();
             }
             catch
@@ -122,7 +122,7 @@ namespace Diomede2
 
                     if (flag) comboBox2.Items.Add(c.Email);
                 }
-            else if (comboBox1.SelectedItem.Equals("PARTITAIVA"))
+            else if (comboBox1.SelectedItem.Equals("PARTITA IVA"))
                 foreach (var c in lista)
                 {
                     var flag = true;
@@ -135,7 +135,7 @@ namespace Diomede2
 
                     if (flag) comboBox2.Items.Add(c.Iva);
                 }
-            else if (comboBox1.SelectedItem.Equals("TELEFONOFISSO"))
+            else if (comboBox1.SelectedItem.Equals("TELEFONO FISSO"))
                 foreach (var c in lista)
                 {
                     var flag = true;

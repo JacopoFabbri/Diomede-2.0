@@ -394,7 +394,7 @@ namespace Amministrazione
             try
             {
                 var bDB = new PreventiviDB(conn);
-                bDB.updatePreventivo( id,  numero,  anno,  settore,  commessa,  cliente,  settoreIntero,  dataInserimento,  cantiere,  note,  importo,  inviato,  dataInvio,  accettazione,  dataAccettazione,  commessaCompleta);
+                bDB.updatePreventivo(id, numero, anno, settore, commessa, cliente, settoreIntero, dataInserimento, cantiere, note, importo, inviato, dataInvio, accettazione, dataAccettazione, commessaCompleta);
             }
             catch (Exception e)
             {
@@ -1039,44 +1039,44 @@ namespace Amministrazione
                         var c = new Commessa();
 
                         c.Id = (int)lettore[0];
-                        c.numero = (int)lettore[1];
-                        c.anno = (int)lettore[2];
-                        c.settore = "" + lettore[3];
-                        c.commessa = "" + lettore[4];
+                        c.Numero = (int)lettore[1];
+                        c.Anno = (int)lettore[2];
+                        c.Settore = "" + lettore[3];
+                        c.ID_Commessa = "" + lettore[4];
                         if (lettore[5].ToString().Equals("NULL"))
                         {
-                            c.preventivo = (int)lettore[5];
+                            c.Preventivo = (int)lettore[5];
                         }
-                        c.cliente = (int)lettore[6];
-                        c.settoreintero = "" + lettore[7];
-                        c.cantiere = "" + lettore[8];
-                        c.note = "" + lettore[9];
+                        c.Cliente = (int)lettore[6];
+                        c.Settore_Intero = "" + lettore[7];
+                        c.Cantiere = "" + lettore[8];
+                        c.Note = "" + lettore[9];
                         if (("" + lettore[10]).Equals("1"))
                         {
-                            c.chiusa = true;
+                            c.Chiusa = true;
                         }
                         else
                         {
-                            c.chiusa = false;
+                            c.Chiusa = false;
                         }
 
-                        c.datachiusura = dateValue;
+                        c.Data_Chiusura = dateValue;
                         if (("" + lettore[12]).Equals("1"))
                         {
-                            c.fatturata = true;
+                            c.Fatturata = true;
                         }
                         else
                         {
-                            c.fatturata = false;
+                            c.Fatturata = false;
                         }
-                        c.datafattura = dataValue2;
+                        c.Data_Fattura = dataValue2;
                         if (!lettore[14].ToString().Equals(""))
-                            c.acconti = (int)lettore[14];
+                            c.Acconti = (int)lettore[14];
                         if (!lettore[15].ToString().Equals(""))
-                            c.pagamenti = (int)lettore[15];
-                        c.datainserimento = dataValue3;
+                            c.Pagamenti = (int)lettore[15];
+                        c.Data_Inserimento = dataValue3;
                         if (!lettore[17].ToString().Equals(""))
-                            c.importo = (double)lettore[17];
+                            c.Importo = (double)lettore[17];
                         lista.Add(c);
                     }
             }
@@ -1117,40 +1117,40 @@ namespace Amministrazione
                         var c = new Commessa();
 
                         c.Id = (int)lettore[0];
-                        c.numero = (int)lettore[1];
-                        c.anno = (int)lettore[2];
-                        c.settore = "" + lettore[3];
-                        c.commessa = "" + lettore[4];
+                        c.Numero = (int)lettore[1];
+                        c.Anno = (int)lettore[2];
+                        c.Settore = "" + lettore[3];
+                        c.ID_Commessa = "" + lettore[4];
                         if (lettore[5].ToString().Equals("NULL"))
                         {
-                            c.preventivo = (int)lettore[5];
+                            c.Preventivo = (int)lettore[5];
                         }
-                        c.cliente = (int)lettore[6];
-                        c.settoreintero = "" + lettore[7];
-                        c.cantiere = "" + lettore[8];
-                        c.note = "" + lettore[9];
+                        c.Cliente = (int)lettore[6];
+                        c.Settore_Intero = "" + lettore[7];
+                        c.Cantiere = "" + lettore[8];
+                        c.Note = "" + lettore[9];
                         if ((int)lettore[10] == 1)
                         {
-                            c.chiusa = true;
+                            c.Chiusa = true;
                         }
                         else
                         {
-                            c.chiusa = false;
+                            c.Chiusa = false;
                         }
-                        c.datachiusura = dateValue;
+                        c.Data_Chiusura = dateValue;
                         if ((int)lettore[12] == 1)
                         {
-                            c.fatturata = true;
+                            c.Fatturata = true;
                         }
                         else
                         {
-                            c.fatturata = false;
+                            c.Fatturata = false;
                         }
-                        c.datafattura = dataValue2;
-                        c.acconti = (int)lettore[14];
-                        c.pagamenti = (int)lettore[15];
-                        c.datainserimento = dataValue3;
-                        c.importo = (double)lettore[17];
+                        c.Data_Fattura = dataValue2;
+                        c.Acconti = (int)lettore[14];
+                        c.Pagamenti = (int)lettore[15];
+                        c.Data_Inserimento = dataValue3;
+                        c.Importo = (double)lettore[17];
                         lista.Add(c);
                     }
 
@@ -1182,48 +1182,50 @@ namespace Amministrazione
                 lettore = command.ExecuteReader();
 
                 while (lettore.Read())
+                {
                     DateTime.TryParse(lettore[3] + "", out dateValue);
-                DateTime.TryParse(lettore[9] + "", out dataValue2);
-                DateTime.TryParse(lettore[10] + "", out dataValue3);
-                DateTime.TryParse(lettore[12] + "", out dataValue4);
-                var c = new Commessa();
+                    DateTime.TryParse(lettore[9] + "", out dataValue2);
+                    DateTime.TryParse(lettore[10] + "", out dataValue3);
+                    DateTime.TryParse(lettore[12] + "", out dataValue4);
+                    var c = new Commessa();
 
-                c.Id = (int)lettore[0];
-                c.numero = (int)lettore[1];
-                c.anno = (int)lettore[2];
-                c.settore = "" + lettore[3];
-                c.commessa = "" + lettore[4];
-                if (lettore[5].ToString().Equals("NULL"))
-                {
-                    c.preventivo = (int)lettore[5];
+                    c.Id = (int)lettore[0];
+                    c.Numero = (int)lettore[1];
+                    c.Anno = (int)lettore[2];
+                    c.Settore = "" + lettore[3];
+                    c.ID_Commessa = "" + lettore[4];
+                    if (lettore[5].ToString().Equals("NULL"))
+                    {
+                        c.Preventivo = (int)lettore[5];
+                    }
+                    c.Cliente = (int)lettore[6];
+                    c.Settore_Intero = "" + lettore[7];
+                    c.Cantiere = "" + lettore[8];
+                    c.Note = "" + lettore[9];
+                    if ((int)lettore[10] == 1)
+                    {
+                        c.Chiusa = true;
+                    }
+                    else
+                    {
+                        c.Chiusa = false;
+                    }
+                    c.Data_Chiusura = dateValue;
+                    if ((int)lettore[12] == 1)
+                    {
+                        c.Fatturata = true;
+                    }
+                    else
+                    {
+                        c.Fatturata = false;
+                    }
+                    c.Data_Fattura = dataValue2;
+                    c.Acconti = (int)lettore[14];
+                    c.Pagamenti = (int)lettore[15];
+                    c.Data_Inserimento = dataValue3;
+                    c.Importo = (double)lettore[17];
+                    commessa = c;
                 }
-                c.cliente = (int)lettore[6];
-                c.settoreintero = "" + lettore[7];
-                c.cantiere = "" + lettore[8];
-                c.note = "" + lettore[9];
-                if ((int)lettore[10] == 1)
-                {
-                    c.chiusa = true;
-                }
-                else
-                {
-                    c.chiusa = false;
-                }
-                c.datachiusura = dateValue;
-                if ((int)lettore[12] == 1)
-                {
-                    c.fatturata = true;
-                }
-                else
-                {
-                    c.fatturata = false;
-                }
-                c.datafattura = dataValue2;
-                c.acconti = (int)lettore[14];
-                c.pagamenti = (int)lettore[15];
-                c.datainserimento = dataValue3;
-                c.importo = (double)lettore[17];
-                commessa = c;
             }
             catch (Exception ex)
             {
@@ -1259,40 +1261,40 @@ namespace Amministrazione
                 var c = new Commessa();
 
                 c.Id = (int)lettore[0];
-                c.numero = (int)lettore[1];
-                c.anno = (int)lettore[2];
-                c.settore = "" + lettore[3];
-                c.commessa = "" + lettore[4];
+                c.Numero = (int)lettore[1];
+                c.Anno = (int)lettore[2];
+                c.Settore = "" + lettore[3];
+                c.ID_Commessa = "" + lettore[4];
                 if (lettore[5].ToString().Equals("NULL"))
                 {
-                    c.preventivo = (int)lettore[5];
+                    c.Preventivo = (int)lettore[5];
                 }
-                c.cliente = (int)lettore[6];
-                c.settoreintero = "" + lettore[7];
-                c.cantiere = "" + lettore[8];
-                c.note = "" + lettore[9];
+                c.Cliente = (int)lettore[6];
+                c.Settore_Intero = "" + lettore[7];
+                c.Cantiere = "" + lettore[8];
+                c.Note = "" + lettore[9];
                 if ((int)lettore[10] == 1)
                 {
-                    c.chiusa = true;
+                    c.Chiusa = true;
                 }
                 else
                 {
-                    c.chiusa = false;
+                    c.Chiusa = false;
                 }
-                c.datachiusura = dateValue;
+                c.Data_Chiusura = dateValue;
                 if ((int)lettore[12] == 1)
                 {
-                    c.fatturata = true;
+                    c.Fatturata = true;
                 }
                 else
                 {
-                    c.fatturata = false;
+                    c.Fatturata = false;
                 }
-                c.datafattura = dataValue2;
-                c.acconti = (int)lettore[14];
-                c.pagamenti = (int)lettore[15];
-                c.datainserimento = dataValue3;
-                c.importo = (double)lettore[17];
+                c.Data_Fattura = dataValue2;
+                c.Acconti = (int)lettore[14];
+                c.Pagamenti = (int)lettore[15];
+                c.Data_Inserimento = dataValue3;
+                c.Importo = (double)lettore[17];
                 commessa.Add(c);
             }
             catch (Exception ex)
@@ -1473,41 +1475,38 @@ namespace Amministrazione
                     var c = new Preventivo();
 
                     c.Id = (int)lettore[0];
-                    c.numero = (int)lettore[1];
-                    c.anno = (int)lettore[2];
-                    c.settore = "" + lettore[3];
+                    c.Numero = (int)lettore[1];
+                    c.Anno = (int)lettore[2];
+                    c.Settore = "" + lettore[3];
                     if (!lettore[4].ToString().Equals("NULL"))
                     {
-                        c.commessa = (int)lettore[4];
+                        c.ID_Commessa = (int)lettore[4];
                     }
-                    c.cliente = (int)lettore[5];
-                    c.settoreintero = "" + lettore[6];
-                    c.dataInserimento = dateValue;
-                    c.cantiere = "" + lettore[8];
-                    c.note = "" + lettore[9];
-                    if (!lettore[10].ToString().Equals("NULL"))
-                    {
-                        c.importo = (double)lettore[10];
-                    }
+                    c.Cliente = (int)lettore[5];
+                    c.Settore_Intero = "" + lettore[6];
+                    c.Data_Inserimento = dateValue;
+                    c.Cantiere = "" + lettore[8];
+                    c.Note = "" + lettore[9];
+                    c.Importo = (double)lettore[10];
                     if (("" + lettore[11]).Equals("1"))
                     {
-                        c.inviato = true;
+                        c.Inviato = true;
                     }
                     else
                     {
-                        c.inviato = false;
+                        c.Inviato = false;
                     }
-                    c.dataInvio = dataValue2;
+                    c.Data_Invio = dataValue2;
                     if (("" + lettore[13]).Equals("1"))
                     {
-                        c.accettazione = true;
+                        c.Accettazione = true;
                     }
                     else
                     {
-                        c.accettazione = false;
+                        c.Accettazione = false;
                     }
-                    c.dataAccettazione = dataValue3;
-                    c.commessaCompleta = "" + lettore[15];
+                    c.Data_Accettazione = dataValue3;
+                    c.Commessa_Completa = "" + lettore[15];
                     lista.Add(c);
                 }
 
@@ -1545,41 +1544,41 @@ namespace Amministrazione
                     var c = new Preventivo();
 
                     c.Id = (int)lettore[0];
-                    c.numero = (int)lettore[1];
-                    c.anno = (int)lettore[2];
-                    c.settore = "" + lettore[3];
+                    c.Numero = (int)lettore[1];
+                    c.Anno = (int)lettore[2];
+                    c.Settore = "" + lettore[3];
                     if (!lettore[4].ToString().Equals("NULL"))
                     {
-                        c.commessa = (int)lettore[4];
+                        c.ID_Commessa = (int)lettore[4];
                     }
-                    c.cliente = (int)lettore[5];
-                    c.settoreintero = "" + lettore[6];
-                    c.dataInserimento = dateValue;
-                    c.cantiere = "" + lettore[8];
-                    c.note = "" + lettore[9];
+                    c.Cliente = (int)lettore[5];
+                    c.Settore_Intero = "" + lettore[6];
+                    c.Data_Inserimento = dateValue;
+                    c.Cantiere = "" + lettore[8];
+                    c.Note = "" + lettore[9];
                     if (!lettore[10].ToString().Equals("NULL"))
                     {
-                        c.importo = (double)lettore[10];
+                        c.Importo = (double)lettore[10];
                     }
                     if (("" + lettore[11]).Equals("1"))
                     {
-                        c.inviato = true;
+                        c.Inviato = true;
                     }
                     else
                     {
-                        c.inviato = false;
+                        c.Inviato = false;
                     }
-                    c.dataInvio = dataValue2;
+                    c.Data_Invio = dataValue2;
                     if (("" + lettore[13]).Equals("1"))
                     {
-                        c.accettazione = true;
+                        c.Accettazione = true;
                     }
                     else
                     {
-                        c.accettazione = false;
+                        c.Accettazione = false;
                     }
-                    c.dataAccettazione = dataValue3;
-                    c.commessaCompleta = "" + lettore[15];
+                    c.Data_Accettazione = dataValue3;
+                    c.Commessa_Completa = "" + lettore[15];
                     lista.Add(c);
                 }
 
@@ -1617,41 +1616,41 @@ namespace Amministrazione
                     var c = new Preventivo();
 
                     c.Id = (int)lettore[0];
-                    c.numero = (int)lettore[1];
-                    c.anno = (int)lettore[2];
-                    c.settore = "" + lettore[3];
+                    c.Numero = (int)lettore[1];
+                    c.Anno = (int)lettore[2];
+                    c.Settore = "" + lettore[3];
                     if (!lettore[4].ToString().Equals("NULL"))
                     {
-                        c.commessa = (int)lettore[4];
+                        c.ID_Commessa = (int)lettore[4];
                     }
-                    c.cliente = (int)lettore[5];
-                    c.settoreintero = "" + lettore[6];
-                    c.dataInserimento = dateValue;
-                    c.cantiere = "" + lettore[8];
-                    c.note = "" + lettore[9];
+                    c.Cliente = (int)lettore[5];
+                    c.Settore_Intero = "" + lettore[6];
+                    c.Data_Inserimento = dateValue;
+                    c.Cantiere = "" + lettore[8];
+                    c.Note = "" + lettore[9];
                     if (!lettore[10].ToString().Equals("NULL"))
                     {
-                        c.importo = (double)lettore[10];
+                        c.Importo = (double)lettore[10];
                     }
                     if (("" + lettore[11]).Equals("1"))
                     {
-                        c.inviato = true;
+                        c.Inviato = true;
                     }
                     else
                     {
-                        c.inviato = false;
+                        c.Inviato = false;
                     }
-                    c.dataInvio = dataValue2;
+                    c.Data_Invio = dataValue2;
                     if (("" + lettore[13]).Equals("1"))
                     {
-                        c.accettazione = true;
+                        c.Accettazione = true;
                     }
                     else
                     {
-                        c.accettazione = false;
+                        c.Accettazione = false;
                     }
-                    c.dataAccettazione = dataValue3;
-                    c.commessaCompleta = "" + lettore[15];
+                    c.Data_Accettazione = dataValue3;
+                    c.Commessa_Completa = "" + lettore[15];
                     commessa = c;
                 }
             }
@@ -1689,41 +1688,41 @@ namespace Amministrazione
                     var c = new Preventivo();
 
                     c.Id = (int)lettore[0];
-                    c.numero = (int)lettore[1];
-                    c.anno = (int)lettore[2];
-                    c.settore = "" + lettore[3];
+                    c.Numero = (int)lettore[1];
+                    c.Anno = (int)lettore[2];
+                    c.Settore = "" + lettore[3];
                     if (!lettore[4].ToString().Equals("NULL"))
                     {
-                        c.commessa = (int)lettore[4];
+                        c.ID_Commessa = (int)lettore[4];
                     }
-                    c.cliente = (int)lettore[5];
-                    c.settoreintero = "" + lettore[6];
-                    c.dataInserimento = dateValue;
-                    c.cantiere = "" + lettore[8];
-                    c.note = "" + lettore[9];
+                    c.Cliente = (int)lettore[5];
+                    c.Settore_Intero = "" + lettore[6];
+                    c.Data_Inserimento = dateValue;
+                    c.Cantiere = "" + lettore[8];
+                    c.Note = "" + lettore[9];
                     if (!lettore[10].ToString().Equals("NULL"))
                     {
-                        c.importo = (double)lettore[10];
+                        c.Importo = (double)lettore[10];
                     }
                     if (("" + lettore[11]).Equals("1"))
                     {
-                        c.inviato = true;
+                        c.Inviato = true;
                     }
                     else
                     {
-                        c.inviato = false;
+                        c.Inviato = false;
                     }
-                    c.dataInvio = dataValue2;
+                    c.Data_Invio = dataValue2;
                     if (("" + lettore[13]).Equals("1"))
                     {
-                        c.accettazione = true;
+                        c.Accettazione = true;
                     }
                     else
                     {
-                        c.accettazione = false;
+                        c.Accettazione = false;
                     }
-                    c.dataAccettazione = dataValue3;
-                    c.commessaCompleta = "" + lettore[15];
+                    c.Data_Accettazione = dataValue3;
+                    c.Commessa_Completa = "" + lettore[15];
                     commessa.Add(c);
                 }
             }
@@ -2150,42 +2149,42 @@ namespace Amministrazione
     public class Commessa
     {
         public int Id { get; set; }
-        public int numero { get; set; }
-        public int anno { get; set; }
-        public string settore { get; set; }
-        public string commessa { get; set; }
-        public int preventivo { get; set; }
-        public int cliente { get; set; }
-        public string settoreintero { get; set; }
-        public string cantiere { get; set; }
-        public string note { get; set; }
-        public bool chiusa { get; set; }
-        public DateTime datachiusura { get; set; }
-        public bool fatturata { get; set; }
-        public DateTime datafattura { get; set; }
-        public int acconti { get; set; }
-        public int pagamenti { get; set; }
-        public DateTime datainserimento { get; set; }
-        public double importo { get; set; }
+        public int Numero { get; set; }
+        public int Anno { get; set; }
+        public string Settore { get; set; }
+        public string ID_Commessa { get; set; }
+        public int Preventivo { get; set; }
+        public int Cliente { get; set; }
+        public string Settore_Intero { get; set; }
+        public string Cantiere { get; set; }
+        public string Note { get; set; }
+        public bool Chiusa { get; set; }
+        public DateTime Data_Chiusura { get; set; }
+        public bool Fatturata { get; set; }
+        public DateTime Data_Fattura { get; set; }
+        public int Acconti { get; set; }
+        public int Pagamenti { get; set; }
+        public DateTime Data_Inserimento { get; set; }
+        public double Importo { get; set; }
     }
     public class Preventivo
     {
         public int Id { get; set; }
-        public int numero { get; set; }
-        public int anno { get; set; }
-        public string settore { get; set; }
-        public int commessa { get; set; }
-        public int cliente { get; set; }
-        public string settoreintero { get; set; }
-        public DateTime dataInserimento { get; set; }
-        public string cantiere { get; set; }
-        public string note { get; set; }
-        public double importo { get; set; }
-        public bool inviato { get; set; }
-        public DateTime dataInvio { get; set; }
-        public bool accettazione { get; set; }
-        public DateTime dataAccettazione { get; set; }
-        public string commessaCompleta { get; set; }
+        public int Numero { get; set; }
+        public int Anno { get; set; }
+        public string Settore { get; set; }
+        public int ID_Commessa { get; set; }
+        public int Cliente { get; set; }
+        public string Settore_Intero { get; set; }
+        public DateTime Data_Inserimento { get; set; }
+        public string Cantiere { get; set; }
+        public string Note { get; set; }
+        public double Importo { get; set; }
+        public bool Inviato { get; set; }
+        public DateTime Data_Invio { get; set; }
+        public bool Accettazione { get; set; }
+        public DateTime Data_Accettazione { get; set; }
+        public string Commessa_Completa { get; set; }
     }
     public class Acconto
     {
