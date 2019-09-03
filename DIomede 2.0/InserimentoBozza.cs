@@ -60,7 +60,7 @@ namespace Diomede2
                 }
                 else
                 {
-                    commessa = op1.GeneraCommessa("PE/B", listaAmministrazione[1], "PraticheEdili", true);
+                    commessa = op1.GeneraCommessa("PE/B", listaAmministrazione[0], "PraticheEdili", true);
                 }
 
                 op.InserimentoBozza(dateTimePicker1.Value, textBox2.Text, double.Parse(textBox3.Text), commessa,
