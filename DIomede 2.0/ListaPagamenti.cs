@@ -59,7 +59,7 @@ namespace Diomede2
                     flag = true;
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Impossibile accedere a quest'area !!!", "Attenzione:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

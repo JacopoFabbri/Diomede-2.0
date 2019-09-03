@@ -68,7 +68,7 @@ namespace Diomede2
                 MessageBox.Show("Bozza Inserita.😉", "Inserita:", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati.","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }

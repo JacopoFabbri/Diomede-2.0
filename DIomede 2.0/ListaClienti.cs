@@ -26,7 +26,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Impossibile accedere a quest'area !!!","Attenzione:",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Impossibile accedere a quest'area !!!", "Attenzione:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
 
@@ -44,7 +44,7 @@ namespace Diomede2
                     if (riga.Cells[0].Style.ForeColor == Color.Red)
                         try
                         {
-                            op.UpdateCliente((int) riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "",
+                            op.UpdateCliente((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "",
                                 riga.Cells["INDIRIZZO"].Value + "", riga.Cells["CAP"].Value + "",
                                 riga.Cells["CITTA"].Value + "", riga.Cells["PEC"].Value + "",
                                 riga.Cells["EMAIL"].Value + "", riga.Cells["Iva"].Value + "",
@@ -80,14 +80,14 @@ namespace Diomede2
             if (dataGridView1.SelectedRows != null)
                 if (MessageBox.Show(
                         "Stai per eliminare " +
-                        (string) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?",
+                        (string)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " .Confermi?",
                         "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) ==
                     DialogResult.Yes)
                     try
                     {
-                        var clienti = op.CercaClientiId((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]
+                        var clienti = op.CercaClientiId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]
                             .Cells[0].Value);
-                        op.CancellaCliente((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0]
+                        op.CancellaCliente((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0]
                             .Value);
                         MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
@@ -108,13 +108,17 @@ namespace Diomede2
                     if (riga.Cells[0].Style.ForeColor == Color.Red)
                         try
                         {
-                            op.UpdateCliente((int) riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "",
+                            op.UpdateCliente((int)riga.Cells["ID"].Value, riga.Cells["NOME"].Value + "",
                                 riga.Cells["INDIRIZZO"].Value + "", riga.Cells["CAP"].Value + "",
                                 riga.Cells["CITTA"].Value + "", riga.Cells["PEC"].Value + "",
                                 riga.Cells["EMAIL"].Value + "", riga.Cells["Iva"].Value + "",
                                 riga.Cells["Tel"].Value + "", riga.Cells["SDI"].Value + "");
+                            OperazioneAmministrazione op1 = new OperazioneAmministrazione("Amministrazione");
+                            op1.UpdateCliente(op1.CercaCliente(riga.Cells["NOME"].Value + "")[0].Id, riga.Cells["NOME"].Value + "", riga.Cells["Tel"].Value + "",
+                                riga.Cells["EMAIL"].Value + "", riga.Cells["Iva"].Value + "", riga.Cells["SDI"].Value + "");
+
                         }
-                        catch
+                        catch (Exception ex)
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -133,24 +137,24 @@ namespace Diomede2
             if (dataGridView1.SelectedRows != null)
                 if (MessageBox.Show(
                         "Stai per eliminare " +
-                        (string) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " e tutti i suoi contatti .Confermi?",
+                        (string)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value + " e tutti i suoi contatti .Confermi?",
                         "Conferma Eliminazione richiesta:", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) ==
                     DialogResult.Yes)
                     try
                     {
                         var contatti = op.FiltraContatto("DITTA", "" + dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0].Value);
-                        foreach(var c in contatti)
+                        foreach (var c in contatti)
                         {
                             op.CacellaContatto(c.Id);
                         }
-                        var clienti = op.CercaClientiId((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]
+                        var clienti = op.CercaClientiId((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index]
                             .Cells[0].Value);
-                        op.CancellaCliente((int) dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0]
+                        op.CancellaCliente((int)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[0]
                             .Value);
                         MessageBox.Show("Cliente Eliminato", "Conferma", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
-                    catch 
+                    catch
                     {
                         MessageBox.Show("Impossibile cancellare la riga selezionata", "Errore:", MessageBoxButtons.OK,
                             MessageBoxIcon.Error);

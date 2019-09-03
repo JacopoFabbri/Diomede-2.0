@@ -865,7 +865,7 @@ namespace Diomede2
                 con.Open();
                 var command =
                     new MySqlCommand(
-                        "UPDATE `CLIENTE` SET `NOME`='" + nome + "',`TEL`='" + tel + "',`EMAIL`='" + email +
+                        "UPDATE `CLIENTI` SET `NOME`='" + nome + "',`TEL`='" + tel + "',`EMAIL`='" + email +
                         "',`PARTITAIVA`='" + partitaIva + "',`SDI`='" + sdi + "' WHERE `ID` = '" + id + "'", con);
                 command.ExecuteNonQuery();
             }

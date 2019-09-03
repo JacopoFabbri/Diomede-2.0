@@ -90,7 +90,7 @@ namespace Diomede2
                                     var listaAmministrazione = op1.FiltraCliente("NOME", c.Nome);
                                     List<ClienteAmministrazione> listaCliente = null;
                                     string commessa;
-                                    if (listaAmministrazione.Count > 0)
+                                    if (listaAmministrazione.Count < 0)
                                     {
                                         op1.InserimentoCliente(c.Nome, c.Tel, c.Email, c.Iva, c.Sdi);
                                         listaCliente = op1.CercaCliente();
@@ -99,7 +99,7 @@ namespace Diomede2
                                     }
                                     else
                                     {
-                                        commessa = op1.GeneraCommessa("PE", listaAmministrazione[1], "PraticheEdili",
+                                        commessa = op1.GeneraCommessa("PE", listaAmministrazione[0], "PraticheEdili",
                                             false);
                                     }
 
