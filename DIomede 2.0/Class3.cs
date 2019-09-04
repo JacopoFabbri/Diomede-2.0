@@ -292,10 +292,10 @@ namespace Diomede2
                         }
                         else
                         {
-                            InserimentoBozza(lista[lista.Count - 1].Numero + 1, anno, s,
-                                 "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore, importo);
+                            InserimentoBozza(lista[lista.Count - 1].Numero, anno, s,
+                                 "" + (lista[lista.Count - 1].Numero) + "/" + anno + "/" + s, c.Id, settore, importo);
 
-                            commessa = "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s;
+                            commessa = "" + (lista[lista.Count - 1].Numero) + "/" + anno + "/" + s;
                         }
                     }
                     else

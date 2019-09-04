@@ -266,10 +266,20 @@ namespace Diomede2
                     var lista = FiltraPreventivo("ANNO", "" + anno);
                     if (lista.Count > 0)
                     {
-                        InserimentoBozza(lista[lista.Count - 1].Numero + 1, anno, s,
-                            "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore, importo);
+                        if (lista[lista.Count - 1].Importo != 0)
+                        {
+                            InserimentoBozza(lista[lista.Count - 1].Numero + 1, anno, s,
+                                "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore, importo);
 
-                        commessa = "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s;
+                            commessa = "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s;
+                        }
+                        else
+                        {
+                            InserimentoBozza(lista[lista.Count - 1].Numero, anno, s,
+                                "" + (lista[lista.Count - 1].Numero) + "/" + anno + "/" + s, c.Id, settore, importo);
+
+                            commessa = "" + (lista[lista.Count - 1].Numero) + "/" + anno + "/" + s;
+                        }
                     }
                     else
                     {
@@ -565,7 +575,8 @@ namespace Diomede2
                         Settore = "" + lettore[3],
                         Commessa = "" + lettore[4],
                         Cliente = (int)lettore[5],
-                        SettoreIntero = "" + lettore[6]
+                        SettoreIntero = "" + lettore[6],
+                        Importo = (double) lettore[10]
                     };
 
                     lavorazione.Add(l);
@@ -886,6 +897,8 @@ namespace Diomede2
         public int Cliente { get; set; }
 
         public string SettoreIntero { get; set; }
+
+        public double Importo { get; set; }
 
     }
 }

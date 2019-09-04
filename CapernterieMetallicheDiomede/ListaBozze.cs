@@ -43,7 +43,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Impossibile accedere a quest'area !!!","Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Impossibile accedere a quest'area !!!", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
 
@@ -83,12 +83,12 @@ namespace Diomede2
                                         op1.InserimentoCliente(c.Nome, c.Tel, c.Email, c.Iva, c.Sdi);
                                         listaCliente = op1.CercaCliente();
                                         commessa = op1.GeneraCommessa("CM", listaCliente[listaCliente.Count - 1],
-                                            "Carpenteria Metallica", false);
+                                            "Carpenteria Metallica", false, 0);
                                     }
                                     else
                                     {
                                         commessa = op1.GeneraCommessa("CM", listaAmministrazione[1], "Carpenteria Metallica",
-                                            false);
+                                            false, 0);
                                     }
 
                                     op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, commessa,
@@ -122,7 +122,7 @@ namespace Diomede2
             }
             catch
             {
-                MessageBox.Show("Errore","Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Errore", "Errore:", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void AggiungiToolStripMenuItem_Click(object sender, EventArgs e)
