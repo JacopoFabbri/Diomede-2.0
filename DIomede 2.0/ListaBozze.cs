@@ -95,12 +95,12 @@ namespace Diomede2
                                         op1.InserimentoCliente(c.Nome, c.Tel, c.Email, c.Iva, c.Sdi);
                                         listaCliente = op1.CercaCliente();
                                         commessa = op1.GeneraCommessa("PE", listaCliente[listaCliente.Count - 1],
-                                            "PraticheEdili", false);
+                                            "PraticheEdili", false, (double)riga.Cells["IMPORTO"].Value);
                                     }
                                     else
                                     {
                                         commessa = op1.GeneraCommessa("PE", listaAmministrazione[0], "PraticheEdili",
-                                            false);
+                                            false, (double)riga.Cells["IMPORTO"].Value);
                                     }
 
                                     op.InserimentoCommessa((int)riga.Cells["CLIENTE"].Value, commessa,
