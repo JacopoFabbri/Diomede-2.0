@@ -55,6 +55,7 @@ namespace Diomede2
                 if (listaAmministrazione.Count <= 0)
                 {
                     op1.InserimentoCliente(c.Nome, c.Tel, c.Email, c.Iva, c.Sdi);
+
                     listaCliente = op1.CercaCliente();
                     commessa = op1.GeneraCommessa("PE/B", listaCliente[listaCliente.Count - 1], "PraticheEdili", true);
                 }
