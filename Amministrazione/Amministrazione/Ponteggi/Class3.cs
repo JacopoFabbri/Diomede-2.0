@@ -527,8 +527,8 @@ namespace Diomede3
                 MySqlCommand command;
                 con.Open();
                 command = new MySqlCommand(
-                    "INSERT INTO `PREVENTIVO`(`NUMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`, `IMPORTO`) VALUES('" +
-                    numero + "','" + anno + "','" + settore + "','" + 0 + "','" + cliente + "','" + prezzo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "')", con);
+                    "INSERT INTO `PREVENTIVO`(`NUMERO`, `ANNO`, `SETTORE`, `CLIENTE`, `SETTOREINTERO`, `IMPORTO`) VALUES('" +
+                    numero + "','" + anno + "','" + settore +"','" + cliente + "','" + settoreIntero + "','" + prezzo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "')", con);
 
                 command.ExecuteNonQuery();
             }

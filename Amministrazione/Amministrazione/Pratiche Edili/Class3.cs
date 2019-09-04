@@ -318,8 +318,8 @@ namespace Diomede4
                 MySqlCommand command;
                 con.Open();
                 command = new MySqlCommand(
-                    "INSERT INTO `PREVENTIVO`(`NUMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `COMMESSACOMPLETA`, `CLIENTE`, `SETTOREINTERO`, `DATAINS`) VALUES('" +
-                    numero + "','" + anno + "','" + settore + "','" + 0 + "','"+ commessa + "','" + cliente + "','" +
+                    "INSERT INTO `PREVENTIVO`(`NUMERO`, `ANNO`, `SETTORE`, `COMMESSACOMPLETA`, `CLIENTE`, `SETTOREINTERO`, `DATAINS`) VALUES('" +
+                    numero + "','" + anno + "','" + settore + "','"+ commessa + "','" + cliente + "','" +
                     settoreIntero + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "')", con);
 
                 command.ExecuteNonQuery();

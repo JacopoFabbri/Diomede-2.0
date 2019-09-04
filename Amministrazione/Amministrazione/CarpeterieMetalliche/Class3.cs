@@ -269,7 +269,7 @@ namespace Diomede5
                 con.Open();
                 command = new MySqlCommand(
                     "INSERT INTO `COMMESSA`(`NUMERO`, `ANNO`, `SETTORE`, `COMMESSA`, `CLIENTE`, `SETTOREINTERO`) VALUES('" +
-                    numero + "','" + anno + "','" + settore + "','" + 0 + "','" + cliente + "','" +
+                    numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" +
                     settoreIntero + "')", con);
 
                 command.ExecuteNonQuery();

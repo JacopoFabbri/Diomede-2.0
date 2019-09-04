@@ -33,7 +33,7 @@ namespace Diomede5
                 }
                 else
                 {
-                    commessa = op1.GeneraCommessa("PO/B", listaAmministrazione[1], "PraticheEdili", true);
+                    commessa = op1.GeneraCommessa("PO/B", listaAmministrazione[0], "PraticheEdili", true);
                 }
 
                 if (comboBox2.SelectedItem.ToString().Equals("Nuovo"))

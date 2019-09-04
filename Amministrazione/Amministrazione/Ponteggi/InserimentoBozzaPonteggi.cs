@@ -33,7 +33,7 @@ namespace Diomede3
                 }
                 else
                 {
-                    commessa = op1.GeneraCommessa("PO/B", listaAmministrazione[1], "Ponteggi", true, double.Parse(textBox1.Text));
+                    commessa = op1.GeneraCommessa("PO/B", listaAmministrazione[0], "Ponteggi", true, double.Parse(textBox1.Text));
                 }
 
                 if (comboBox2.SelectedItem.ToString().Equals("Nuovo"))
