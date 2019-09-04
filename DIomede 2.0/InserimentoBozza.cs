@@ -57,11 +57,11 @@ namespace Diomede2
                     op1.InserimentoCliente(c.Nome, c.Tel, c.Email, c.Iva, c.Sdi);
 
                     listaCliente = op1.CercaCliente();
-                    commessa = op1.GeneraCommessa("PE/B", listaCliente[listaCliente.Count - 1], "PraticheEdili", true);
+                    commessa = op1.GeneraCommessa("PE/B", listaCliente[listaCliente.Count - 1], "PraticheEdili", true, double.Parse(textBox3.Text));
                 }
                 else
                 {
-                    commessa = op1.GeneraCommessa("PE/B", listaAmministrazione[0], "PraticheEdili", true);
+                    commessa = op1.GeneraCommessa("PE/B", listaAmministrazione[0], "PraticheEdili", true, double.Parse(textBox3.Text));
                 }
 
                 op.InserimentoBozza(dateTimePicker1.Value, textBox2.Text, double.Parse(textBox3.Text), commessa,

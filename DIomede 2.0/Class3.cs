@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using MySql.Data.MySqlClient;
 
 namespace Diomede2
@@ -223,12 +224,12 @@ namespace Diomede2
             }
         }
         public void InserimentoBozza(int numero, int anno, string settore, string commessa, int cliente,
-    string settoreIntero)
+    string settoreIntero, double importo)
         {
             try
             {
                 var bDB = new PreventivoAmministrazioneDB(conn);
-                bDB.Inserimento(numero, anno, settore, commessa, cliente, settoreIntero);
+                bDB.Inserimento(numero, anno, settore, commessa, cliente, settoreIntero, importo);
             }
             catch (Exception e)
             {
@@ -252,7 +253,7 @@ namespace Diomede2
             return contatto;
         }
 
-        public string GeneraCommessa(string s, ClienteAmministrazione c, string settore, bool bozza)
+        public string GeneraCommessa(string s, ClienteAmministrazione c, string settore, bool bozza, double importo)
         {
             try
             {
@@ -282,14 +283,24 @@ namespace Diomede2
                     var lista = FiltraPreventivo("ANNO", "" + anno);
                     if (lista.Count > 0)
                     {
-                        InserimentoBozza(lista[lista.Count - 1].Numero + 1, anno, s,
-                            "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore);
+                        if (lista[lista.Count - 1].Importo != 0)
+                        {
+                            InserimentoBozza(lista[lista.Count - 1].Numero + 1, anno, s,
+                                "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore, importo);
 
-                        commessa = "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s;
+                            commessa = "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s;
+                        }
+                        else
+                        {
+                            InserimentoBozza(lista[lista.Count - 1].Numero + 1, anno, s,
+                                 "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s, c.Id, settore, importo);
+
+                            commessa = "" + (lista[lista.Count - 1].Numero + 1) + "/" + anno + "/" + s;
+                        }
                     }
                     else
                     {
-                        InserimentoBozza(1, anno, s, "" + 1 + "/" + anno + "/" + s, c.Id, settore);
+                        InserimentoBozza(1, anno, s, "" + 1 + "/" + anno + "/" + s, c.Id, settore, importo);
                         commessa = "" + 1 + "/" + anno + "/" + s;
                     }
                 }
@@ -311,16 +322,16 @@ namespace Diomede2
         }
 
         public void Inserimento(int numero, int anno, string settore, string commessa, int cliente,
-            string settoreIntero)
+            string settoreIntero, double importo)
         {
             try
             {
                 MySqlCommand command;
                 con.Open();
                 command = new MySqlCommand(
-                    "INSERT INTO `PREVENTIVO`(`NUMERO`, `ANNO`, `SETTORE`, `COMMESSACOMPLETA`, `CLIENTE`, `SETTOREINTERO`, `DATAINS`) VALUES('" +
+                    "INSERT INTO `PREVENTIVO`(`NUMERO`, `ANNO`, `SETTORE`, `COMMESSACOMPLETA`, `CLIENTE`, `SETTOREINTERO`, `DATAINS`, `IMPORTO`) VALUES('" +
                     numero + "','" + anno + "','" + settore + "','" + commessa + "','" + cliente + "','" +
-                    settoreIntero + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "')", con);
+                    settoreIntero + "','" + DateTime.Now.ToString("yyyy/MM/dd") + "','" + importo.ToString(CultureInfo.CreateSpecificCulture("en-GB")) + "')", con);
 
                 command.ExecuteNonQuery();
             }
@@ -353,7 +364,8 @@ namespace Diomede2
                         Settore = "" + lettore[3],
                         Commessa = "" + lettore[4],
                         Cliente = (int)lettore[5],
-                        SettoreIntero = "" + lettore[6]
+                        SettoreIntero = "" + lettore[6],
+                        Importo = (double)lettore[10]
                     };
 
                     lavorazione.Add(l);
@@ -944,6 +956,8 @@ namespace Diomede2
         public int Cliente { get; set; }
 
         public string SettoreIntero { get; set; }
+
+        public double Importo { get; set; }
 
     }
 
