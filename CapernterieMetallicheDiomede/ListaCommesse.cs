@@ -232,11 +232,7 @@ namespace Diomede2
                 }
         }
 
-        private void InserimentoCommessaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InserimentoCommessa i = new InserimentoCommessa("CarpenteriaMetallica");
-            i.Show();
-        }
+
 
     }
 }

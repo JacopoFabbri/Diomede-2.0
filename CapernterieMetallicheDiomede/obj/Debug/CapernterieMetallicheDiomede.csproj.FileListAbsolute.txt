@@ -75,7 +75,6 @@ C:\Users\Ponteggi5\Desktop\JacopoFabbri\Diomede-2.0\CapernterieMetallicheDiomede
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\CarpenterieMetallicheDiomede.exe.config
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\CarpenterieMetallicheDiomede.exe
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\bin\Debug\CarpenterieMetallicheDiomede.pdb
-C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.InserimentoCommessa.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.Properties.Resources.resources
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.exe
 C:\Users\Ponteggi5\Desktop\Diomede-2.0\CapernterieMetallicheDiomede\obj\Debug\CarpenterieMetallicheDiomede.pdb

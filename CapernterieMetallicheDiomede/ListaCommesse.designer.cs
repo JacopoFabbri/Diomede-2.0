@@ -36,7 +36,6 @@
             this.aggiornaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inserimentoCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selezionaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -92,8 +91,7 @@
             this.operazioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aggiornaToolStripMenuItem,
             this.eliminaToolStripMenuItem,
-            this.pagamentoToolStripMenuItem,
-            this.inserimentoCommessaToolStripMenuItem});
+            this.pagamentoToolStripMenuItem});
             this.operazioniToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.operazioniToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_servizi_48;
             this.operazioniToolStripMenuItem.Name = "operazioniToolStripMenuItem";
@@ -104,7 +102,7 @@
             // 
             this.aggiornaToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_sincronizzare_48;
             this.aggiornaToolStripMenuItem.Name = "aggiornaToolStripMenuItem";
-            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.aggiornaToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.aggiornaToolStripMenuItem.Text = "Aggiorna";
             this.aggiornaToolStripMenuItem.Click += new System.EventHandler(this.AggiornaToolStripMenuItem_Click);
             // 
@@ -112,7 +110,7 @@
             // 
             this.eliminaToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_cestino_48;
             this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
-            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.eliminaToolStripMenuItem.Text = "Elimina";
             this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.EliminaToolStripMenuItem_Click);
             // 
@@ -120,17 +118,9 @@
             // 
             this.pagamentoToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_sacco_dei_soldi_16;
             this.pagamentoToolStripMenuItem.Name = "pagamentoToolStripMenuItem";
-            this.pagamentoToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.pagamentoToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.pagamentoToolStripMenuItem.Text = "Pagamento";
             this.pagamentoToolStripMenuItem.Click += new System.EventHandler(this.PagamentoToolStripMenuItem_Click);
-            // 
-            // inserimentoCommessaToolStripMenuItem
-            // 
-            this.inserimentoCommessaToolStripMenuItem.Image = global::CarpenterieMetallicheDiomede.Properties.Resources.icons8_più_48;
-            this.inserimentoCommessaToolStripMenuItem.Name = "inserimentoCommessaToolStripMenuItem";
-            this.inserimentoCommessaToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
-            this.inserimentoCommessaToolStripMenuItem.Text = "Inserimento Commessa";
-            this.inserimentoCommessaToolStripMenuItem.Click += new System.EventHandler(this.InserimentoCommessaToolStripMenuItem_Click);
             // 
             // selezionaToolStripMenuItem
             // 
@@ -174,6 +164,5 @@
         private System.Windows.Forms.ToolStripMenuItem eliminaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pagamentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selezionaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inserimentoCommessaToolStripMenuItem;
     }
 }
