@@ -47,7 +47,7 @@ namespace Diomede4
                 }
                 else
                 {
-                    commessa = op1.GeneraCommessa("PE/B", listaAmministrazione[1], "PraticheEdili", true);
+                    commessa = op1.GeneraCommessa("PE/B", listaAmministrazione[0], "PraticheEdili", true);
                 }
 
                 op.InserimentoBozza(dateTimePicker1.Value, textBox2.Text, double.Parse(textBox3.Text), commessa,
@@ -55,7 +55,7 @@ namespace Diomede4
                 MessageBox.Show("Bozza Inserita.😉", "Inserita:", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Errore nella compilazione campi \nriprovare ad inserire tutti i dati.","Errore:",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }

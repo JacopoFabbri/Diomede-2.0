@@ -48,7 +48,10 @@ namespace Amministrazione
                     foreach (DataGridViewRow r in dataGridView1.Rows)
                     {
                         Cliente c = op.CercaClientiId((int)r.Cells[5].Value);
-                        r.Cells[17].Value = c.Nome;
+                        if (c != null)
+                        {
+                            r.Cells[17].Value = c.Nome;
+                        }
                     }
                     dataGridView1.Columns[0].Visible = false;
                     dataGridView1.Columns[5].Visible = false;

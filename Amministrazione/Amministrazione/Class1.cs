@@ -1202,7 +1202,7 @@ namespace Amministrazione
                     c.Settore_Intero = "" + lettore[7];
                     c.Cantiere = "" + lettore[8];
                     c.Note = "" + lettore[9];
-                    if ((int)lettore[10] == 1)
+                    if (("" + lettore[10]).Equals("1"))
                     {
                         c.Chiusa = true;
                     }
@@ -1211,7 +1211,7 @@ namespace Amministrazione
                         c.Chiusa = false;
                     }
                     c.Data_Chiusura = dateValue;
-                    if ((int)lettore[12] == 1)
+                    if (("" + lettore[12]).Equals("1"))
                     {
                         c.Fatturata = true;
                     }
