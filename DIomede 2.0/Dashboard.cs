@@ -152,5 +152,10 @@ namespace Diomede2
                 MessageBox.Show("NON sono riuscito a trovare il file di login","Attenzione:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void ContattiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Contatti c = new Contatti("PraticheEdili", this);
+        }
     }
 }

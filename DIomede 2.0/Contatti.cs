@@ -19,6 +19,12 @@ namespace Diomede2
             db = dbName;
             InitializeComponent();
         }
+        public Contatti(string dbName, Dashboard frm)
+        {
+            formPrecente = frm;
+            db = dbName;
+            InitializeComponent();
+        }
         private void Form7_Load(object sender, EventArgs e)
         {
             try

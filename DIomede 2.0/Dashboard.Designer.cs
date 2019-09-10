@@ -59,6 +59,7 @@
             this.listaPagamentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView3 = new System.Windows.Forms.ListView();
+            this.contattiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,7 +108,8 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2});
+            this.toolStripMenuItem2,
+            this.contattiToolStripMenuItem});
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.Image = global::Diomede2.Properties.Resources.icons8_azienda_64;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -123,7 +125,7 @@
             this.nascondiListaClientiToolStripMenuItem});
             this.toolStripMenuItem2.Image = global::Diomede2.Properties.Resources.icons8_aggiungere_il_contatto_alla_società_481;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(113, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
             this.toolStripMenuItem2.Text = "Ditta";
             // 
             // listaClientiToolStripMenuItem
@@ -351,6 +353,13 @@
             this.listView3.View = System.Windows.Forms.View.List;
             this.listView3.Visible = false;
             // 
+            // contattiToolStripMenuItem
+            // 
+            this.contattiToolStripMenuItem.Name = "contattiToolStripMenuItem";
+            this.contattiToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.contattiToolStripMenuItem.Text = "Contatti";
+            this.contattiToolStripMenuItem.Click += new System.EventHandler(this.ContattiToolStripMenuItem_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,5 +414,6 @@
         private System.Windows.Forms.ToolStripMenuItem mostraListaCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nascondiListaCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contattiToolStripMenuItem;
     }
 }
