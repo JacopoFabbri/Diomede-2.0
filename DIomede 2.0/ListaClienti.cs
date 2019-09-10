@@ -118,7 +118,7 @@ namespace Diomede2
                                 riga.Cells["EMAIL"].Value + "", riga.Cells["Iva"].Value + "", riga.Cells["SDI"].Value + "");
 
                         }
-                        catch (Exception ex)
+                        catch
                         {
                             MessageBox.Show("Errore nell'inserimento di dati controllare l'inserimento", "Errore",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
