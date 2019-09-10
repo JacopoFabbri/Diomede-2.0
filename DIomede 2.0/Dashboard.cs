@@ -156,6 +156,8 @@ namespace Diomede2
         private void ContattiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Contatti c = new Contatti("PraticheEdili", this);
+            c.Show();
+            Hide();
         }
     }
 }

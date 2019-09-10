@@ -1352,7 +1352,7 @@ namespace Diomede2
 
         public List<Contatto> ListaContatti()
         {
-            List<Contatto> lista = null;
+            List<Contatto> lista = new List<Contatto>();
             try
             {
                 con.Open();
@@ -1377,7 +1377,8 @@ namespace Diomede2
                         Tel = "" + lettore[10],
                         Ruolo = (int)lettore[11]
                     };
-                    lista.Add(contatto);
+                    if (contatto != null)
+                        lista.Add(contatto);
                 }
             }
             catch (Exception ex)
